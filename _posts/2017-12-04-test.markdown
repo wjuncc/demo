@@ -27,6 +27,7 @@ windows下，使用rubyinstaller-2.4.2-2-x64.exe安装的ruby，本身就带Ruby
 		jekyll new . --force
 		jekyll serve
 		jekyll build
+		bundle exec jekyll serve
 	
 启动后，手工打开 [http://127.0.0.1:4000/](http://127.0.0.1:4000/)   
 这是一个固定的地址、
