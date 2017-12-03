@@ -1,0 +1,72 @@
+---
+layout: post
+title:  "[sublimeText3] 使用ctags插件实现javascript的代码跳转"
+date:   2014-12-01 01:17:32 +0800
+categories: jekyll update
+---
+
+## 1 使用ctags插件实现javascript的代码跳转 ##
+
+**ctags58** ---是一个命令行工具，生成函数定义的索引，用在VIM，和SublimeText
+
+## 步骤 ##
+
+### 1. 下载 ctags.exe ###
+### 2. 复制到系统环境变量路径， ###  
+网上是windowns/system32，  
+我是 wj7，
+即  
+
+	C:\Python27\Lib\site-packages\wj7\bat\ctags.exe  
+
+### 用法1 常常要手工生成索引 ###
+
+有2种方式来生成ctags索引：  
+1. 打开cmd命令行，执行ctags：
+ 
+     	ctags.exe -R -f .tags    
+
+
+2. ctags的重新生成（在SublimeText的快捷键），
+    	Ctrl+T,Ctrl+R 
+
+
+### 用法2 跳转代码 ###
+ 跳转代码 按2次Ctrl+T
+
+
+-----------------------------------------
+
+## 下面并未成功 ##
+
+### 关联命令行：   ###
+在 Preferences -> Package Control -> Settings -> ctags -> Settings-Default -> command->
+注意这里是设置路径，如果写命令行，反而不对，下面代码错： 
+
+	"command": "C:/Python27/Lib/site-packages/wj7/bat/ctags.exe -R -f .tags ",
+
+
+
+### 关联快捷键：  ### 
+即会生成：   
+CTags.sublime-settings  
+即  
+ 
+	C:\Users\Administrator\AppData\Roaming\Sublime Text 2\Packages\User\CTags.sublime-settings  
+ 
+代码如下：
+
+		[  
+		  {  
+		    "command": "navigate_to_definition",  
+		    "keys": ["f3"]  
+		  }  
+		]  
+
+
+### 遗留问题 ###  
+不知道怎么使用  〜/ .ctag
+
+
+参考  
+* [sublime text 配置ctags](http://blog.csdn.net/luowenzhu/article/details/24364597)  
