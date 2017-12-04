@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 
 ## 步骤： ##
-
+主要参考：[Jekyll search组件](https://www.codeboy.me/2016/01/18/jekyll-search-component/)
 ### 1. 下载 ###
 1. 从git下载，解压后，放在根目录下。
 
@@ -103,6 +103,15 @@ jekyll 添加 include head.html 没有用
 		window.baseurl= "{{site.baseurl}}"
 	  json_url = "{{ "/search/cb-search.json" | prepend: site.baseurl }}"
 	</script>
+
+### 5 上传 git后搜索没有显示 ###
+
+把C盘中的_includes文件夹
+	
+	C:\Ruby24-x64\lib\ruby\gems\2.4.0\gems\minima-2.1.1\_includes
+
+整个复制到项目文件夹下，再上传git
+
 
 （完）
 
