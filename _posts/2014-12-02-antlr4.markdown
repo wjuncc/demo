@@ -1,0 +1,63 @@
+---
+layout: post
+title:  "[antlr4] antlr4的坑"
+date:   2013-12-02 01:17:32 +0800
+categories: jekyll update
+---
+
+
+### Antlr最大的问题是，必须每一个词法都要写。就不能跳过或者过滤吗？
+
+。。。
+
+### 为什么在Intelli IDEA里，右键Test Rule是灰色？
+**因为，分词必须小写。**  
+小写开头的命名，表示分词。作为语法树叶。  
+大写开头的命名，表示语法。不作为语法树叶。  
+
+### Antlr编译g4时，报错说不支持<assoc=right>
+从Antlr4.2起，就不支持assoc，   
+**【解决】** 解决办法很简单，
+
+	<assoc=right>全部删掉。
+
+### Antlr编译g4时，其他报错。
+最大的可能是版本冲突，例如，导出g4所用的jar版本是4.2，而runtime是4.4。  
+ **【解决】** 要确保，编译g4文件的jar版本。使用完整形式：  
+	
+	cd E:\n\sys\pack3\antlr\git\my-1\v4__py3   
+	java -jar E:\n\sys\pack3\antlr\antlr-4.5.1-complete.jar -Dlanguage=Python2 Comma.g4 
+
+  而不是：   
+
+	antlr4 -Dlanguage=Python2 Comma.g4
+
+### 报错说未找到。
+	warning(125): Comma.g4:5:23: implicit definition of token Identifier in parser
+
+就是没有定义的语法。  
+
+	   //  |   expression '.' Identifier  
+注释掉即可。  
+
+
+### 测试hello.py文件报错说，版本冲突。  
+ANTLR runtime and generated code versions disagree: 4.6!=4.5
+ **【解决】** 使用命令行安装版本号：  
+pip install antlr4-python3-runtime==4.5
+
+
+#### 注意 ####
+
+原来的文件在wj7下，丢失了之前的笔记。 要加强备份。
+
+
+#### 参考 ####
+
+* [使用python2和Antlr的详细例子——ANTLR 4 with Python 2 Detailed Example](https://dzone.com/articles/antlr-4-with-python-2-detailed-example)
+* [使用python2和antlr4——Using ANTLR 4 with Python 2](https://dzone.com/articles/using-antlr-4-with-python-2?fromrel=true)
+* [使用JAVA在短时间内解析任意语言](https://dzone.com/articles/parsing-any-language-in-java-in-5-minutes-using-an?fromrel=true)
+
+
+* [使用antlr4及java实现snl语言的解释器](https://www.cnblogs.com/naturemickey/p/3774753.html) 
+* [DRUID VS ANTLR4](https://www.cnblogs.com/laud/p/antlr_vs_druid.html) 

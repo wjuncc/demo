@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[sublimeText3] 使用ctags插件实现javascript的代码跳转"
-date:   2014-12-01 01:17:32 +0800
+date:   2013-12-01 01:17:32 +0800
 categories: jekyll update
 ---
 
