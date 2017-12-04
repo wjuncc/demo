@@ -1,0 +1,134 @@
+---
+layout: post
+title:  "[blog] 3. 给 jekyll 加搜索功能"
+date:   2017-10-05 21:17:32 +0800
+categories: jekyll update
+---
+
+## 步骤： ##
+
+### 1. 下载 ###
+1. 从git下载，解压后，放在根目录下。
+
+### 2. 修改模板文件 ###
+
+2. 在 _include/footer.html 中的 </footer> 后  
+复制粘贴 cb-footer-add.html 中的内容。
+
+
+修改 head.html 文件。  
+路径： C:\Ruby24-x64\lib\ruby\gems\2.4.0\gems\minima-2.1.1\_includes\head.html 
+
+	<link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+修改 footer.html 文件。
+路径： C:\Ruby24-x64\lib\ruby\gems\2.4.0\gems\minima-2.1.1\_includes\footer.html
+
+	<!-- jQuery -->
+	<script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+	
+	<!-- Bootstrap Core JavaScript -->
+	<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+一些常识： 
+
+	_includes jekyll 
+注意，这里要加s。    
+
+
+据[官网](https://jekyllrb.com/docs/structure/)， 
+在3版本后，
+jekyll 添加 include head.html 没有用   
+
+> Starting Jekyll 3.2, a new Jekyll project bootstrapped with jekyll new uses gem-based themes to define the look of the site. This results in a lighter default directory structure : _layouts, _includes and _sass are stored in the theme-gem, by default.
+> minima is the current default theme, and 	
+>		
+>	bundle show minima 
+>		
+> will show you where minima theme's files are stored on your computer.
+
+报错
+
+	C:\Users\Administrator>bundle show minima
+	Could not locate Gemfile or .bundle/ directory
+
+要进入项目文件夹后，
+
+	cd E:\n\wj\171114__Sublime\v66\study\blog\demo
+	bundle show minima
+	C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/minima-2.1.1
+
+### 3 搜索前报错 ###
+
+报错
+
+	jquery.min.js:4 GET http://192.168.1.6:4000/search/cb-search.json 404 (Not Found)
+	send @ jquery.min.js:4
+	ajax @ jquery.min.js:4
+	n.(anonymous function) @ jquery.min.js:4
+	getJSON @ jquery.min.js:4
+	(anonymous) @ cb-search.js:64
+	i @ jquery.min.js:2
+	fireWith @ jquery.min.js:2
+	ready @ jquery.min.js:2
+	J @ jquery.min.js:2
+	cb-search.js:83 json解析错误，搜索功能暂不可用，请检查文章title，确保不含有换行等特殊符号
+
+原因：指向了错误路径   
+解决：
+
+	$.getJSON("/search/cb-search.json").done(function (data) {
+	改成
+	$.getJSON(window.json_url).done(function (data) {
+
+
+在文件 footer.html 新加一段：
+
+	<script type="text/javascript">
+	  json_url = "{{ "/search/cb-search.json" | prepend: site.baseurl }}"
+	</script>
+	
+### 4 搜索结果404. ###
+
+原因：指向了错误路径   
+解决：   
+第69行： 
+
+    //urls.push(item.url);
+    urls.push(window.base_url+item.url);
+
+在文件 footer.html 新加一段：
+
+	<script type="text/javascript">
+		window.baseurl= "{{site.baseurl}}"
+	  json_url = "{{ "/search/cb-search.json" | prepend: site.baseurl }}"
+	</script>
+
+（完）
+
+
+参考： 
+
+* [给jekyll添加炫酷简洁的搜索 - CSDN博客](http://blog.csdn.net/dliyuedong/article/details/46848155) 
+* [Jekyll search组件](https://www.codeboy.me/2016/01/18/jekyll-search-component/)
+
+* [48 个你需要知道的 Jekyll 使用技巧](https://crispgm.com/page/48-tips-for-jekyll-you-should-know.html)
+* [如何将网站搜索功能添加到 Jekyll？_wordpress_帮酷编程问答](https://ask.helplib.com/wordpress/post_1054023)
+
+* [Jekyll搭建博客--人类补完计划](http://xiaokedada.com/2017/05/09/Jekyll-second/)
+* [christian-fei/Simple-Jekyll-Search: A JavaScript library to add search functionality to any Jekyll blog.](https://github.com/christian-fei/Simple-Jekyll-Search)
+* [Home · christian-fei/Simple-Jekyll-Search Wiki](https://github.com/christian-fei/Simple-Jekyll-Search/wiki#enabling-full-text-search)
+
+* [利用 MathJax 在 Jekyll 站点中显示公式](https://www.weining.me/2014/04/29/jekyll-with-kramdown-and-mathjax)
+* [Jekyll+Github个人博客构建之路](http://robotkang.cc/2017/03/HowToCreateBlog/)
+* [使用Github搭建个人博客](http://www.datakit.cn/blog/2014/11/28/Github_build_blog.html)
+
+* [为 Jekyll 站点添加搜索功能  AnnatarHe's blog](https://annatarhe.github.io/2016/03/29/add-search-function-at-github-pages.html)
+* [如何将网站搜索功能添加到Jekyll博客? - DeveloperQ - 开发者问题网 - 海量问题解决方案](http://www.developerq.com/article/1502492089)
+
+* [将以jekyll为框架的blog同时部署在github和coding – 抽筋的葡萄 – A Front-End Developer](http://www.choujindeputao.com/deploy-blog/)
+* [实践：为jekyll构建的博客添加基础功能 - 目田 - SegmentFault](http://https://segmentfault.com/a/1190000000513006)
+* [插件 - Jekyll  简单静态博客网站生成器](http://jekyllcn.com/docs/plugins/)
+* [[译] 搭建一个托管在 GitHub Pages 的 Jekyll 博客，并添加 Disqus 评论功能 - walterlv](https://walterlv.oschina.io/jekyll/2017/09/15/setup-a-jekyll-blog-1.html)
+* [优化 Jekyll 站点的 SEO 技巧](http://www.huangyanlin.com/2012/01/16/the-seo-for-jekyll-blog.html)
+* [为Jekyll网站添加多语言功能 - JOYTOU](http://https://joytou.nets.hk/2017/08/07/multiple-languages/)

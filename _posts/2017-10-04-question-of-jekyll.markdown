@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "2. 用jekyll搭建blog遇到的问题（补）"
-date:   2017-12-04 01:17:32 +0800
+title:  "[blog] 2. 用 jekyll 搭建blog（补问题）"
+date:   2017-10-04 01:17:32 +0800
 categories: jekyll update
 --- 
 
