@@ -3,6 +3,7 @@ layout: post
 title:  "[blog] 3. 给 jekyll 加搜索功能"
 date:   2017-10-05 21:17:32 +0800
 categories: jekyll update
+tags: jekyll
 ---
 
 ## 步骤： ##
@@ -112,6 +113,9 @@ jekyll 添加 include head.html 没有用
 
 整个复制到项目文件夹下，再上传git
 
+### 6 没有显示标签 ###
+
+。。待续
 
 （完）
 

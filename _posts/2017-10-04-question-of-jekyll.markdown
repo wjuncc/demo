@@ -3,6 +3,7 @@ layout: post
 title:  "[blog] 2. 用 jekyll 搭建blog（补问题）"
 date:   2017-10-04 01:17:32 +0800
 categories: jekyll update
+tags: jekyll
 --- 
 
 ## 1. 第1行  jekyll new . --force： ##
