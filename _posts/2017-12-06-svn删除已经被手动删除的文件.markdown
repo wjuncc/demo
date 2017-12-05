@@ -21,18 +21,23 @@ svn delete missing files
 
 
 ### 合并GIT 和 SVN 提交 ###
-接下来，把  
-删除已经missing的文件__SVN.ps1  
-和  
-提交__SVN_0.bat  
+混用cmd和powershell。  
+把 “ 删除已经missing的文件__SVN.ps1 ” 和 “ 
+提交__SVN_0.bat” 合并成一个文件“提交__SVN_1.ps1 ”。
+ 
 
-合并成一个文件。
 
-提交__SVN_1.ps1  
+### 小结 ###
 
-混用cmd和powershell
+1. CMD，2行命令可以合并在一行写，用&连接，  
+powershell，&是保留关键字与非。  
+不可以连写，2行命令必须写2行， 
+2. CMD 的单行注释，是::  ，  
+powershell 是#
 
-## 第1次版本 ##
+### 备份 ###
+
+### 第1次版本 ###
 
 报错
 
@@ -118,14 +123,10 @@ ci 是 commit 的简写 ，改了等于没改
 	PS E:\n\wj\test__svn> .\删除已经missing的文件__SVNv2.ps1
 	svn: E205005: 日志信息是路径名称 (本来想用 -F 选项的吗？)；请使用“--force-log”强制执行
 
-### 小结 ###
+### 其他错误 ###
 
-1. 在CMD中，2行命令可以合并在一行写，用&连接，  
-在powershell中，&是保留关键字与非。  
-不可以连写，2行命令必须写2行， 
-2. CMD 的单行注释，是::  ，  
-powershell 是#
-
+git是子目录，SVN是父级目录， 所以要跳到上一级目录  
+错误
 
 	PS E:\n\wj\blog\demo> .\提交__GIT+SVN.ps1
 	.\提交__GIT+SVN.ps1 : 无法将“.\提交__GIT+SVN.ps1”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写
@@ -136,6 +137,7 @@ powershell 是#
 	    + CategoryInfo          : ObjectNotFound: (.\提交__GIT+SVN.ps1:String) [], CommandNotFoundException
 	    + FullyQualifiedErrorId : CommandNotFoundException
 
+注释错误：
 
 	29d635a..9cc84ec  gh-pages -> gh-pages
 	:跳转到当前盘符 : 无法将“:跳转到当前盘符”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包
