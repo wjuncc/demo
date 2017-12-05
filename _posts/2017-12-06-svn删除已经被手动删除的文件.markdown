@@ -150,5 +150,5 @@ git是子目录，SVN是父级目录， 所以要跳到上一级目录
 
 #### 参考 ####
 
-[svn删除已经被手动删除的文件](http://www.itye.org/archives/2091)
-[SVN command to delete all locally missing files](https://stackoverflow.com/questions/9600382/svn-command-to-delete-all-locally-missing-files)
+* [svn删除已经被手动删除的文件](http://www.itye.org/archives/2091)
+* [SVN command to delete all locally missing files](https://stackoverflow.com/questions/9600382/svn-command-to-delete-all-locally-missing-files)
