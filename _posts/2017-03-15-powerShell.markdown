@@ -1,0 +1,27 @@
+---
+layout: post
+title:  "用scoop安装软件"
+date:   2013-03-03 14:01:12 +0800
+categories: jekyll update
+cats: Powershell
+---
+
+# 用scoop安装软件 #
+  
+安装poweerShell3
+
+参考：  
+
+* [备份和还原用户环境变量 - PowerShell 中文博客](http://www.pstips.net/备份和还原用户环境变量.html)
+* [Windows下的包管理工具scoop - 简书](http://www.jianshu.com/p/bb0ba62b519c)
+* [用 Scoop 改善 Windows Powershell · Chawye Hsu, H404bi](https://h404bi.com/blog/2015/08/23/use-scoop-to-enhance-windows-powershell.html)
+* [Windows 系统的包管理器 - Sheh伟伟的博客](https://davidsheh.github.io/2017/09/09/windows-chocolatey-scoop/)
+* [Scoop Windows 的命令行安装程序管理工具 - 贝尔塔猫 - 博客园](http://www.cnblogs.com/CyLee/p/7197551.html)
+* [windows 下安装 gradle--Linux,ps,Shell,安装,scoop,gradle,执行,https](http://dev.dafan.info/detail/522487?p=)
+* [Scoop在windows平台上进行环境快速部署 - 虫虫购](http://www.chongchonggou.com/g_491440846.html)
+* [Proxy error: 502 Couldn't parse server headers.](http://tli-tli.com/2017/08/06/scoop/)
+* [对个人用户来说，macOS 和 Windows 相比各有怎样的优势和劣势？ - 知乎](https://www.zhihu.com/question/53762753/answer/136656204)
+* [用Surface Pro 3来编程 // Perlfect Blog](http://lich-eng.com/2014/12/12/surface-pro-3-coding-setup/)
+* [推荐 Win 下一款软件： Cmder(操纵命令行必备！); - V2EX](https://www.v2ex.com/t/250557)
+* [《gradle 用户指南中文版》第3章 安装 gradle - macOS - 第七城市](https://m.th7.cn/show/49/201708/222327.html)
+* [使用intelliJ创建 spring boot + gradle + mybatis站点 -头条巴士](http://news.7654.com/a/1984998148399447401)

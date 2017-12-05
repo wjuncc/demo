@@ -7,6 +7,19 @@ categories: jekyll update
 
 ## [python] python读取json文件解析json文件 ##
 
+### 范例 ###
+
+	import json
+
+	#读取json文件
+    jsonStr = uNow.read_fast_return(path)
+    jsonStr = jsonStr.decode('utf8','ignore')
+    obj = json.loads(jsonStr) 
+
+
+	#获取python文件对应的配置文件json 
+    path = uStringPath.replace_suffix(__file__, ".json")
+
 ### 注意 ###
 注意3点：
 
@@ -16,14 +29,6 @@ categories: jekyll update
 	* 键值对中的值，如果是正则，用反斜杠写2次
 	* 键值对中的值，如果是路径，用斜杠写1次，用反斜杠写2次
 
-范例：
-
-	import json as js
-
-	#读取json文件
-    jsonStr = uNow.read_fast_return(path)
-    jsonStr = jsonStr.decode('utf8','ignore')
-    obj = json.loads(jsonStr) 
 
 
 ### 报错 ###

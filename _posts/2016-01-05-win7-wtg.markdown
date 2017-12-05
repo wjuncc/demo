@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "WTG"
+date:   2016-01-05 16:11:12 +0800
+categories: jekyll update
+tags: wtg ,u盘
+---
+
+# win7 WTG #
+
+
+参考： 
+
+* [适合WTG的U盘大排名（20170220更新） - Windows To Go优盘系统 - 萝卜头IT论坛 - Powered by Discuz!](http://bbs.luobotou.org/thread-10680-1-1.html)
+* [适合做Windows To Go(WTG)U盘排行榜-U盘评测-U盘量产网](http://www.upantool.com/pingce/uppc/2016/9379.html)
+* [Windows To Go 固态U盘 WTG USB3.0 SSD CHIPFANCIER 黑色固态U盘 128G【图片 价格 品牌 报价】-京东](http://item.jd.com/11989161030.html)
+* [(/≧▽≦/)咦！又好了！适合WTG的U盘大排名 – 新之助meow](http://www.xinmeow.com/2016/05/29/适合wtg的u盘大排名/)
+* [在U盘上运行的 Windows、windows to go、WTG辅助工具 v4.6 - D_Zet - CSDN博客](http://blog.csdn.net/qqduxingzhe/article/details/73440816)
+* [Windows To Go 辅助工具 - 快速制作可随处运行的 Win10 U盘版系统！(WTG 制作教程) - 异次元软件下载](http://www.iplaysoft.com/wtg-assistant.html)
+* [13秒启动！Windows To Go最佳拍档：Sandisk CZ80 64G开箱+速度测试+安装VHD+WTG傻瓜教程（带附件）_使用评测_什么值得买](https://post.smzdm.com/p/221118/)
+
