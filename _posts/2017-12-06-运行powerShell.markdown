@@ -13,6 +13,25 @@ tags:
 无法加载文件 因为在此系统上禁止运行脚本
 
 
+### 例子1 ###
+打印当前运行的进程，以公司分类：
+
+	# PowerShell cmdlet to group Processes by company
+	$Path = "D:\PowerShell\ProcessCompany.txt"
+	$ProSvc = get-Process |sort company |ft -groupby company 
+	$ProSvc
+	# $ProSvc | out-file $Path
+
+注意，没有输出到ProcessCompany.txt
+
+### 例子2 ###
+	get-childitem c:\windows
+
+powerShell将打印结果输出到txt文件
+	
+	get-childitem c:\windows > C:\Python27\Lib\site-packages\wj7\etc\blog\log.txt
+
+
 #### 参考 ####
 
 * [2. 三种运行Powershell代码的方法-一万小时-ICSEC-51CTO博客](http://blog.51cto.com/jamesoujj/185136)
