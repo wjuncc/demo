@@ -1,11 +1,12 @@
 ---
 layout: post
-title:  "[python] python读取json文件解析json文件"
+title:  "python读取json文件解析json文件"
 date:   2013-11-21 01:17:32 +0800
-categories: jekyll update
+categories: python
+cats: python json
 ---
 
-## [python] python读取json文件解析json文件 ##
+## python读取json文件解析json文件 ##
 
 ### 范例 ###
 
