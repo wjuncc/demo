@@ -20,6 +20,7 @@ svn delete missing files
 	svn status | ? { $_ -match '^!\s+(.*)' } | % { svn rm $Matches[1] }
 
 
+### 合并GIT 和 SVN 提交 ###
 接下来，把  
 删除已经missing的文件__SVN.ps1  
 和  
@@ -28,6 +29,8 @@ svn delete missing files
 合并成一个文件。
 
 提交__SVN_1.ps1  
+
+混用cmd和powershell
 
 ## 第1次版本 ##
 
@@ -42,7 +45,6 @@ svn delete missing files
     + FullyQualifiedErrorId : AmpersandNotAllowed
 
 
-### 混用cmd和powershell ###
 
 ### 第2次版本 ###
 使用“cmd /c 命令”   
@@ -123,6 +125,7 @@ ci 是 commit 的简写 ，改了等于没改
 不可以连写，2行命令必须写2行， 
 2. CMD 的单行注释，是::  ，  
 powershell 是#
+
 
 	PS E:\n\wj\blog\demo> .\提交__GIT+SVN.ps1
 	.\提交__GIT+SVN.ps1 : 无法将“.\提交__GIT+SVN.ps1”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写
