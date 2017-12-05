@@ -19,6 +19,34 @@ tags:
 gg：使用Google查询关键字，如gg Java，就会在Google中查找Java  
 bing：使用Bing查询关键字  
 bd：使用Baidu查询关键字  
+facebook：打开Facebook官网  
+
+
+### 命令 ### 
+
+opt：选项  
+hosts：打开Hosts文件  
+pshell：PowerShell  
+cmd：打开命令行窗口  
+
+
+### 搜索（过滤器） ###
+作用范围：全局搜索框  
+使用方法：命令+冒号+关键字  
+folder：搜索文件夹，如folder：data  
+file：搜索文件  
+exe：搜索Exe文件  
+doc：搜索文档，
+>
+> 支持扩展名：c;chm;cpp;cxx;doc;docm;docx;dot;dotm;dotx;h;hpp;htm;html;hxx;ini;java;js;lua;mdb;mht;mhtml;pdf;potm;potx;ppam;pps;ppsm;ppsx;ppt;pptm;pptx;rtf;sldm;sldx;thmx;txt;vsd;wpd;wps;wri;xlam;xls;xlsb;xlsm;xlsx;xltm;xltx;xmlpic：搜索图片，支持扩展名：ani;bmp;gif;ico;jpe;jpeg;jpg;pcx;png;psd;tga;tif;tiff;wmf  
+
+audio：搜索音频文件，
+>
+> 支持扩展名：aac;ac3;aif;aifc;aiff;amr;ape;au;cda;dts;fla;flac;gym;it;m1a;m2a;m3u;m4a;mid;midi;mka;mod;mp2;mp3;mpa;ogg;ogm;ra;rmi;snd;spc;umx;vgm;vgz;voc;wav;wma;xm  
+
+video：搜索视频文件，
+>
+> 支持扩展名：3g2;3gp;3gp2;3gpp;amr;asf;avi;bdmv;bik;d2v;dat;divx;drc;dsa;dsm;dss;dsv;f4v;flc;fli;flic;flv;ifo;ivf;m1v;m2ts;m2v;m4b;m4p;m4v;mkv;mod;mov;mp2v;mp4;mpe;mpeg;mpg;mpv2;mts;ogm;pss;pva;qt;ram;ratdvd;rm;rmm;rmvb;roq;rpm;smk;swf;tp;tpr;ts;vob;vp6;webm;wm;wmp;wmv
 
 #### 参考 ####
 
