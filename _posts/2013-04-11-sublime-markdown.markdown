@@ -19,10 +19,27 @@ linux下的markdown软件，感觉极不好用。字体大小不能调整。。�
 
 ### 安装 ###
 
-选择时候的前缀是 omni  
-注意，安装 OmniMarkupPreviewer 而不是 Markdown Preveiw
+有2个插件：
 
-会打开chrome浏览器窗口。
+1. OmniMarkupPreviewer (注意带前缀omni)
+2. MarkdownEditing (可装可不装)
+
+
+注意：
+
+1. 安装插件1时，选择的前缀是 omni  
+	是 OmniMarkupPreviewer   
+	而不是 Markdown Preveiw
+
+2. MarkdownEditing是格式化插件，  
+sublime3自带格式化高亮，这个不是必须。 
+
+### 使用
+Ctrl+Shit+P,   
+选择
+Preview current makeup in Browser (Ctrl+Alt+O)  
+在浏览器查看。  
+会打开 chrome 浏览器窗口。
 例如：
 
 	http://127.0.0.1:51004/view/50
@@ -36,14 +53,19 @@ linux下的markdown软件，感觉极不好用。字体大小不能调整。。�
 
 1. 由于它使用了端口，所以说，会和科学上网冲突。  
 	一旦科学上网，这个就是404了。 
-2. 在ubuntu上，未见得能2个窗口并排显示。 
+2. 在ubuntu上，sublime中文输入是个问题。 
+
+
+### 在局域网查看
+[参考](http://blog.csdn.net/qq_30490125/article/details/53230408)
+
+### 下面不再重要 ###
 
 ### Markdown Preveiw 的做法
 而 Markdown Preveiw 插件，是直接导出一个html文件在C盘，
 
 	file:///C:/users/admini~1/appdata/local/temp/17.html
 
-### 下面不再重要 ###
 
 ### 使用 ###
 Set Syntax: Markdown
@@ -52,7 +74,7 @@ Markdown Preveiw: preveiw in browser
 ### 遗留问题
 3. sublime的markdown只能导出html，不能导出pdf。
 
-###### 参考 ######
+#### 参考 ####
 
 * [介绍Sublime3下两款Markdown插件 - 简书](http://www.jianshu.com/p/335b7d1be39e)
 * [Sublime Text3下的markdown插件的安装及配置 - Sinte-Beuve - 博客园](http://www.cnblogs.com/Sinte-Beuve/p/5148108.html)
