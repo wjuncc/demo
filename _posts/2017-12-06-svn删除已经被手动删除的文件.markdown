@@ -132,6 +132,16 @@ ci 是 commit 的简写 ，改了等于没改
 	    + CategoryInfo          : ObjectNotFound: (.\提交__GIT+SVN.ps1:String) [], CommandNotFoundException
 	    + FullyQualifiedErrorId : CommandNotFoundException
 
+
+	29d635a..9cc84ec  gh-pages -> gh-pages
+	:跳转到当前盘符 : 无法将“:跳转到当前盘符”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写，如果包
+	括路径，请确保路径正确，然后再试一次。
+	所在位置 E:\n\wj\blog\提交__GIT+SVN.ps1:9 字符: 1
+	+ :跳转到当前盘符
+	+ ~~~~~~~~
+	    + CategoryInfo          : ObjectNotFound: (:跳转到当前盘符:String) [], CommandNotFoundException
+	    + FullyQualifiedErrorId : CommandNotFoundException
+
 #### 参考 ####
 
 [svn删除已经被手动删除的文件](http://www.itye.org/archives/2091)
