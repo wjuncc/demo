@@ -1,0 +1,129 @@
+---
+layout: post
+title:  "svn删除已经被手动删除的文件"
+date:   2017-12-06 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# svn删除已经被手动删除的文件 #
+
+svn delete missing files
+
+### Linux ###
+
+	svn st | grep ^! | awk '{print " –force "$2}'| xargs svn rm
+
+
+### windows powerShell ###
+
+	svn status | ? { $_ -match '^!\s+(.*)' } | % { svn rm $Matches[1] }
+
+
+接下来，把  
+删除已经missing的文件__SVN.ps1  
+和  
+提交__SVN_0.bat  
+
+合并成一个文件。
+
+提交__SVN_1.ps1  
+
+## 第1次版本 ##
+
+报错
+
+	PS E:\n\wj\test__svn> .\删除已经missing的文件__SVNv2.ps1
+	所在位置 E:\n\wj\test__svn\删除已经missing的文件__SVNv2.ps1:2 字符: 31
+	+ svn add . --no-ignore --force & svn ci -m "" .
+	+                               ~
+	不允许使用与号。& 运算符是为将来使用而保留的；请使用“&”将与号作为字符串进行传递。
+    + CategoryInfo          : ParserError: (:) [], ParseException
+    + FullyQualifiedErrorId : AmpersandNotAllowed
+
+
+### 混用cmd和powershell ###
+
+### 第2次版本 ###
+使用“cmd /c 命令”   
+
+	svn status | ? { $_ -match '^!\s+(.*)' } | % { svn rm $Matches[1] }
+	cmd /c svn add . --no-ignore --force & svn ci -m "" .
+
+报相同错
+
+### 第3次版本 ###
+改成 “&”将与号作为字符串进行传递
+
+	svn status | ? { $_ -match '^!\s+(.*)' } | % { svn rm $Matches[1] }
+	svn add . --no-ignore --force "&" svn commit -m 'upload' . 
+
+报错：
+
+	PS E:\n\wj\test__svn> .\删除已经missing的文件__SVNv2.ps1
+	D         新建文本文档 - 副本 (3).txt
+	D         新建文本文档 - 副本 (5).txt
+	子命令“add”不接受选项“-m [--message] ARG”
+	输入“svn help add”得到用法。
+
+	
+### 第4次版本 ###
+
+断行
+	svn status | ? { $_ -match '^!\s+(.*)' } | % { svn rm $Matches[1] }
+	svn add . --no-ignore --force 
+	svn ci -m "" .
+
+报错
+
+	PS E:\n\wj\test__svn> .\删除已经missing的文件__SVNv2.ps1
+	svn: E205005: 日志信息是路径名称 (本来想用 -F 选项的吗？)；请使用“--force-log”强制执行
+
+### 第5次版本 ###
+
+改成commit
+
+	svn status | ? { $_ -match '^!\s+(.*)' } | % { svn rm $Matches[1] }
+	svn add . --no-ignore --force 
+	svn commit -m "" .
+
+报错
+	
+	PS E:\n\wj\test__svn> .\删除已经missing的文件__SVNv2.ps1
+	svn: E205005: 日志信息是路径名称 (本来想用 -F 选项的吗？)；请使用“--force-log”强制执行
+
+ci 是 commit 的简写 ，改了等于没改
+
+
+
+### 第6次版本 ###
+
+	svn status | ? { $_ -match '^!\s+(.*)' } | % { svn rm $Matches[1] }
+	svn add . --no-ignore --force 
+	svn commit -m 'upload' . 
+
+通过
+
+
+### 第7次版本 ###
+
+	svn status | ? { $_ -match '^!\s+(.*)' } | % { svn rm $Matches[1] }
+	svn add . --no-ignore --force 
+	svn commit -m '' . 
+
+报错
+	
+	PS E:\n\wj\test__svn> .\删除已经missing的文件__SVNv2.ps1
+	svn: E205005: 日志信息是路径名称 (本来想用 -F 选项的吗？)；请使用“--force-log”强制执行
+
+### 小结 ###
+
+在CMD中，2行命令可以合并在一行写，用&连接，  
+在powershell中，&是保留关键字与非。  
+不可以连写，2行命令必须写2行， 
+
+
+#### 参考 ####
+
+[svn删除已经被手动删除的文件](http://www.itye.org/archives/2091)
+[SVN command to delete all locally missing files](https://stackoverflow.com/questions/9600382/svn-command-to-delete-all-locally-missing-files)
