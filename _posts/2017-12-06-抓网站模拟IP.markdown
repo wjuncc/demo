@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "抓网站模拟IP"
+date:   2017-12-06 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# 抓网站模拟IP #
+
+
+#### 参考 ####
+
+* [爬虫访问中，如何解决网站限制IP的问题？ - 知乎](https://www.zhihu.com/question/20392627)
+* [用curl抓取网站数据，仿造IP、防屏蔽终极强悍解决方式 - CSDN博客](http://blog.csdn.net/linglongwunv/article/details/8116359)
+* [python使用ip代理抓取网页 - 陌上行走的博客 - CSDN博客](http://blog.csdn.net/qq_29883591/article/details/52016802)
+* [curl伪造IP地址实现作弊刷票 - Lowky - SegmentFault](https://segmentfault.com/a/1190000003729077)
+* [高度伪造的爬虫&&X-Forwarded-For伪造ip跳过ip限制 - - URl-team](https://www.urlteam.org/2016/08/仿人化伪造请求头/)
+* [用curl抓取网站数据，仿造IP、防屏蔽终极强悍解决方式 - info5 - IT610.com](http://www.it610.com/article/3945292.htm)
+* [用curl抓取网站数据，仿造IP、防屏蔽终极强悍解决方式 - lixiaokai2008](https://my.oschina.net/u/205403/blog/173282)
+* [搜索蜘蛛、机器人模拟抓取 - 站长工具](http://s.tool.chinaz.com/tools/robot.aspx)
+* [用c#伪造ip 打开一个网页_百度知道](https://zhidao.baidu.com/question/500345008.html)
+* [微博-随时随地发现新鲜事](https://weibo.com/login.php)
+* [php基于curl实现随机ip地址抓取内容的方法_php技巧_脚本之家](http://m.jb51.net/article/94417.htm)
+* [爬虫-IP被封解决办法 - John_ABC - 博客园](http://www.cnblogs.com/JohnABC/p/5275109.html)
+* [python爬虫数据抓取方法汇总 - tornytooo - 博客园](http://www.cnblogs.com/starsea/p/5021801.html)
