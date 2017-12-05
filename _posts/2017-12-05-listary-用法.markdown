@@ -8,6 +8,18 @@ tags:
 
 # listary 用法 #
 
+任何地方，双击左键，出现常用目录菜单。  
+可以添加收藏目录，从而实现快速访问。  
+注意，这里和CLauch快捷键冲突，所以要卸载CLauch。
+
+中文搜索用Listary，英文搜索用Everything 为什么？
+
+### 自定义快捷键 ###
+快速打开网页的配置方法是很简单，如下： 
+第一步：打开 listary 配置界面。 
+第二步： Keyword —> Web 
+第三步：添加，然后填写 Keyword:1024, URL:https://letsgg.tk/。 
+
 ### 快捷键 ###
 打开全局搜索框快捷键：Win + S 或 双击Ctrl键  
 前一个项目：Ctrl+P 或 向上键  
