@@ -48,12 +48,11 @@ tags:
 	
 #### 参考 ####
 
+* [Powershell 输出文本到文件：echo - out-file](http://martual.leanote.com/post/Untitled-54c6b0ae38f41110370023e7-21)
 * [PowerShell输出字符串到文件 - PowerShell - 洪哥笔记](http://www.splaybow.com/post/powershell-out-file.html)
 * [powershell如何将write-host结果输出到文件_百度知道](https://zhidao.baidu.com/question/134604827855346325.html)
 * [如何在PowerShell中输出内容_windows_帮酷编程问答](https://ask.helplib.com/windows/post_440344)
-* [Powershell 输出文本到文件：echo - out-file](http://martual.leanote.com/post/Untitled-54c6b0ae38f41110370023e7-21)
 * [使用 Out Cmdlet 重定向数据 - Microsoft Docs](https://docs.microsoft.com/zh-cn/powershell/scripting/getting-started/cookbooks/redirecting-data-with-out---cmdlets?view=powershell-5.1)
 * [我把脚本执行的结果输出到文本，但是看不到 - PowerShell 中文博客](http://www.pstips.net/question/4008.html)
 * [有关PowerShell脚本你必须知道的十个基本概念 - 51CTO.COM](http://os.51cto.com/art/201101/244228.htm)
-* [应该如何将输出保存到一个文本文件？--相关文章](http://www.360doc.com/relevant/106484_more.shtml) 
 * [Powershell 语法总结 - 堕落天使的日志 - 网易博客](http://gaojianzhuang110.blog.163.com/blog/static/1861314620108290363775/)
