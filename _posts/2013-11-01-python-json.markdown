@@ -51,3 +51,5 @@ cats: python json
 
 * [python解析json文件](http://blog.csdn.net/dyx404514/article/details/50186413)
 * [Python解析json之ValueError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)](http://blog.csdn.net/blueheart20/article/details/69704518)
+* [[python] python读取json文件解析json文件](https://wjuncc.github.io/demo/jekyll/update/2013/11/21/python-json.html)
+
