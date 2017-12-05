@@ -123,6 +123,15 @@ ci 是 commit 的简写 ，改了等于没改
 不可以连写，2行命令必须写2行， 
 
 
+	PS E:\n\wj\blog\demo> .\提交__GIT+SVN.ps1
+	.\提交__GIT+SVN.ps1 : 无法将“.\提交__GIT+SVN.ps1”项识别为 cmdlet、函数、脚本文件或可运行程序的名称。请检查名称的拼写
+	，如果包括路径，请确保路径正确，然后再试一次。
+	所在位置 行:1 字符: 1
+	+ .\提交__GIT+SVN.ps1
+	+ ~~~~~~~~~~~~~~~~~
+	    + CategoryInfo          : ObjectNotFound: (.\提交__GIT+SVN.ps1:String) [], CommandNotFoundException
+	    + FullyQualifiedErrorId : CommandNotFoundException
+
 #### 参考 ####
 
 [svn删除已经被手动删除的文件](http://www.itye.org/archives/2091)
