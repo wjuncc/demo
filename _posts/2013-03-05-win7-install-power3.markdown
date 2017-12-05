@@ -58,6 +58,39 @@ $PSVersionTable
 安装后要重启系统。
 
 
+### 重启后 ###
+
+Get-Host
+
+	PS C:\Users\Administrator> Get-Host
+
+	Name             : ConsoleHost
+	Version          : 3.0
+	InstanceId       : 98132909-832f-4b43-8d2d-91e4a01f1029
+	UI               : System.Management.Automation.Internal.Host.InternalHostUserInterface
+	CurrentCulture   : zh-CN
+	CurrentUICulture : zh-CN
+	PrivateData      : Microsoft.PowerShell.ConsoleHost+ConsoleColorProxy
+	IsRunspacePushed : False
+	Runspace         : System.Management.Automation.Runspaces.LocalRunspace
+
+$PSVersionTable
+
+	PS C:\Users\Administrator> $PSVersionTable
+
+	Name                           Value
+	----                           -----
+	PSVersion                      3.0
+	WSManStackVersion              3.0
+	SerializationVersion           1.1.0.1
+	CLRVersion                     4.0.30319.36264
+	BuildVersion                   6.2.9200.16398
+	PSCompatibleVersions           {1.0, 2.0, 3.0}
+	PSRemotingProtocolVersion      2.2
+
+
+（完）
+
 参考：
 
 * [在 Windows 7 和 Windows Server 2008 R2 上安装 Windows PowerShell 3.0-SQL Server Deep Dive-51CTO博客](http://blog.51cto.com/ultrasql/1615299)
