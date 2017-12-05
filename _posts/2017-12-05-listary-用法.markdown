@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "listary 用法"
+date:   2017-10-05 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# listary 用法 #
+
+
+#### 参考 ####
+
+* [Listary使用指南 - 简书](http://www.jianshu.com/p/dc8fe09591a1)
+* [Listary - 热门问答 - 知乎](https://www.zhihu.com/topic/19847885/hot)
+* [精品软件推荐—Listary一款高效人士必备搜索增强工具 - 嘟嘟独立博客](http://tengj.top/2017/03/18/listary/)
+* [Listary作者访谈：自然成长，朴实幸福 – 善用佳软](https://xbeta.info/listary-interview.htm)
+* [快速搜索、启动神器——Wox、Listary - 超能小紫](https://www.mokeyjay.com/archives/1114)
+* [Listary Pro - 能极大幅度提高你 Windows 文件浏览与搜索速度效率的「超级神器」 - 异次元软件下载](http://www.iplaysoft.com/listary.html)
+* [Listary Pro- 文件浏览与搜索增强的超级神器 - 左昱_leftshine - 博客园](http://www.cnblogs.com/leftshine/p/Listary.html)
+* [【工具】[Listary]好用到哭的快速搜索工具 - CSDN博客](http://blog.csdn.net/pillarpeng/article/details/53353713)
+* [Listary——让文件在指尖流动 // Xuanwo's Blog](https://xuanwo.org/2015/07/28/listary/)
+* [Listary - 文件浏览/搜索增强工具（使用说明、下载地址）](http://www.hangge.com/blog/cache/detail_1633.html)
+* [用过Listary软件，你有哪些心得？ - 知乎](https://www.zhihu.com/question/21131318)
+* [Listary – Windows 文件浏览增强工具 - 小众软件](https://www.appinn.com/listary/)
