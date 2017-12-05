@@ -8,6 +8,17 @@ tags:
 
 # listary 用法 #
 
+### 快捷键 ###
+打开全局搜索框快捷键：Win + S 或 双击Ctrl键  
+前一个项目：Ctrl+P 或 向上键  
+后一个项目：Ctrl+N 或 向下键  
+打开动作：Ctrl+O  
+命令自动补全：Tab  
+
+### 搜索引擎 ###
+gg：使用Google查询关键字，如gg Java，就会在Google中查找Java  
+bing：使用Bing查询关键字  
+bd：使用Baidu查询关键字  
 
 #### 参考 ####
 
