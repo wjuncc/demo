@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "php论坛系统"
+date:   2017-12-06 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# php论坛系统 #
+
+
+#### 参考 ####
+
+* [10个PHP免费开源轻社区系统](https://zhuanlan.zhihu.com/p/25663483)
+* [有没有轻量级的论坛程序？越简单越好！ - 知乎](https://www.zhihu.com/question/20655704)
+* [Flarum：美、简洁且流畅的开源论坛系统 - 泡在网上的日子](http://www.jcodecraeer.com/a/phpjiaocheng/2015/0920/3482.html)
+* [论坛系统BBS - 开源软件库 - 开源中国社区](https://oschina.net/project/tag/66/bbs)
+* [论坛系统BBS - 开源软件库 - 开源中国社区](https://oschina.net/project/tag/66/bbs?lang=22&os=35&sort=view)
+* [推荐17款开源论坛系统 - OPEN开源论坛](http://www.open-open.com/solution/view/1319456583093)
+* [10款非常棒的开源论坛系统 - OPEN资讯](http://www.open-open.com/news/view/66040a)
+* [8个国外最流行的PHP ASP开源论坛系统 - 百草园 - ITeye博客](http://koda.iteye.com/blog/229053)
+* [FluxBB快速、轻量级PHP论坛系统 - php源码网-开源程序大全(Open Source) - php教程,PHP开源社区,PHP开源论坛,PHP国外开源,PHP中国站,php+mysql,打造国内最新、最全的php开源代码网PHP开源程序大全](http://www.osphp.com.cn/read.php?562)
+* [求推荐好用的PHP论坛系统_百度知道](https://zhidao.baidu.com/question/267006682.html)
+* [轻量级PHP论坛系统 PunBB](http://www.lolcms.com/jianzhan/94.html)
+* [PHP论坛系统_watchmen_新浪博客](http://blog.sina.com.cn/s/blog_605ffe210100dveg.html)
