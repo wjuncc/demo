@@ -1,3 +1,15 @@
+---
+layout: post
+title:  "Yota3 墨水屏手机"
+date:   2017-10-05 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# Yota3 墨水屏手机 # 
+
+###### 参考 ######
+
 * [改换定位的 Yota 3 来了，但价格并不便宜...](https://cn.engadget.com/2017/09/19/yota-3-official/)
 * [期待 YotaPhone 3 双屏幕手机？它可能并非你所想像](https://cn.engadget.com/2017/06/18/yotaphone-3-yota3-specs-snapdragon-625/)
 * [yotaphone2吧-百度贴吧--YotaPhone 2是俄罗斯自主研发的智能手机--YotaPhone 2是俄罗斯自主研发的智能手机YotaPhone系列的新款机型。YotaPhone 2已经是Yot](http://tieba.baidu.com/f?kw=yotaphone2&ie=utf-8&tp=0&pn=150&traceid=)

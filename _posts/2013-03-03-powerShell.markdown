@@ -6,8 +6,15 @@ categories: jekyll update
 cats: Powershell
 ---
 
+
 # Powershell 能做什么 #
  
+## Powershell 类似软件 ##
+* [ConEmu](https://github.com/Maximus5/ConEmu)
+* [Cmder](https://github.com/cmderdev/cmder)
+* [sharex](https://getsharex.com)
+
+## Powershell 基础 ##
 Powershell 文件后缀名 .ps1  
 
 

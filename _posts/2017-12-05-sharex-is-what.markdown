@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "sharex 是什么"
+date:   2017-10-05 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# sharex 是什么 #
+
+[官网](https://getsharex.com/downloads/)
+
+上传图片无需登录。  
+极快。
+
+###### 参考 ######
+
+* [ShareX – 截图与分享神器，附带几十种「效率工具」的功能集[Windows] - 小众软件](https://www.appinn.com/sharex-screen-capture/)
+* [ShareX 分享從沒這麼簡單過！上傳檔案、截圖標註全能軟體](http://www.playpcesor.com/2014/02/sharex.html)
+* [ShareX 10.0.0 发布，高级截图工具 - 开源中国社区](https://oschina.net/news/63948/sharex-10-0-0)
+* [ShareX --- 全能的截图与分享利器 - 米V米](https://www.mivm.cn/sharex/)
+* [ShareX – 多功能开源分享软件](https://zhuanlan.zhihu.com/p/19627720)
+* [ShareX 免費截圖軟體，上傳網路圖床跟截圖兩個願望一次滿足 - 電腦王阿達](https://www.kocpc.com.tw/archives/159569)
+* [Steam 社区 :: ShareX](http://steamcommunity.com/app/400040/positivereviews/?filterLanguage=schinese&p=1&browsefilter=toprated)
+* [小众软件 - ShareX 是一款 Windows... - Facebook](https://www.facebook.com/appinncom/posts/1249024515168072)
+* [【实用小软件分享】ShareX 一款免费的轻量化截图软件_数码_科技_bilibili_哔哩哔哩](http://www.bilibili.com/video/av12590216/)
