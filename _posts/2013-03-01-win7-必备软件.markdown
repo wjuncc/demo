@@ -8,6 +8,16 @@ cats: win7
 
 # win7 必备软件 #
 
+* LastPass：全平台密码管理自动同步
+* DisplayFusion：多显示器工具
+* PuTTY：开源SSH客户端
+* VMware Workstation：虚拟机
+* Evernote ：全平台笔记软件
+* MarkdownPad： Markdown编辑。
+* Paint.NET： 免费图片处理，
+* Beyond Compare：文件比较
+* WinMerge：文件比较
+* 7-Zip 压缩解压
 * 文件搜索  Everything 1.2.371  
 > 限制： 
 > 1. 磁盘分区转换为NTFS格式；
@@ -28,19 +38,20 @@ cats: win7
 
 * 抓图工具 Snagit 10.0   
 > Snagit附带的图片编辑工具Snagit Editor很好用，用它来调整一下图片比例、对图片作一下修剪、写点文字什么的非常方便。用它转存的JPG、GIF等常见格式基本不用再优化了。
+
 * Clover - 让资源管理器变身Chrome
 * 文件管理——Total Commander  8.0β
-	1. 文件名过滤文件。
-	1. 浏览器的多标签方式浏览，  
-	2. 批量更名 
-	4. 快捷键 
+> 1. 文件名过滤文件。  
+2. 浏览器的多标签方式浏览，    
+3. 批量更名   
+4. 快捷键 
 
-			ctrl+d -> 快捷文件夹
+> 			ctrl+d -> 快捷文件夹
 			ctrl+m -> 批量更名
+		
 
-	5. 拼音首字母过滤
-	
-	不是tc自带的功能，需要下载一个插件：QuickSearch eXtended  
+>5. 拼音首字母过滤:   
+>不是tc自带，下载插件：QuickSearch eXtended  
 
  
 
@@ -49,4 +60,5 @@ cats: win7
 * [舍得的十八般武器(常用电脑软件【2012版】)_舍得_新浪博客](http://blog.sina.com.cn/s/blog_5f2d67f901013ew2.html)
 * [抠图神器Inpaint 4.2 - 舍得学苑 - 博客园](http://www.cnblogs.com/emagic/archive/2012/03/07/2383948.html)
 * [Windows下效率必备软件](https://jeffjade.com/2015/10/19/2015-10-18-Efficacious-win-software/)
+* [Listary作者访谈：自然成长，朴实幸福](https://xbeta.info/listary-interview.htm)
 

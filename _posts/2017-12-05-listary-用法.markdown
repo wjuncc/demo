@@ -18,7 +18,7 @@ tags:
 快速打开网页的配置方法是很简单，如下： 
 第一步：打开 listary 配置界面。 
 第二步： Keyword —> Web 
-第三步：添加，然后填写 Keyword:1024, URL:https://letsgg.tk/。 
+第三步：添加，然后填写 Keyword:1024, URL:https://baidu.com/。 
 
 ### 快捷键 ###
 打开全局搜索框快捷键：Win + S 或 双击Ctrl键  
