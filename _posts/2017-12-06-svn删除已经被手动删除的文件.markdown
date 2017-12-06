@@ -2,8 +2,8 @@
 layout: post
 title:  "svn删除已经被手动删除的文件"
 date:   2017-12-06 21:17:32 +0800
-categories:  
-tags: 
+categories: svn 
+tags: svn
 ---
 
 # svn删除已经被手动删除的文件 #
@@ -19,13 +19,29 @@ svn delete missing files
 
 	svn status | ? { $_ -match '^!\s+(.*)' } | % { svn rm $Matches[1] }
 
+下面是win7：
 
 ### 合并GIT 和 SVN 提交 ###
+
+合并结果：
+
+提交__GIT+SVN.ps1
+
+	cd demo
+	git checkout gh-pages
+	git pull origin gh-pages
+	git add *
+	git commit -m "update"
+	git push origin gh-pages
+	
+	cd ..
+	svn status | ? { $_ -match '^!\s+(.*)' } | % { svn rm $Matches[1] }
+	svn add . --no-ignore --force 
+	svn commit -m 'update' . 
+
 混用cmd和powershell。  
 把 “ 删除已经missing的文件__SVN.ps1 ” 和 “ 
 提交__SVN_0.bat” 合并成一个文件“提交__SVN_1.ps1 ”。
- 
-
 
 ### 小结 ###
 
