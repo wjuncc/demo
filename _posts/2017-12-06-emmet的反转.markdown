@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "emmet的反转"
+date:   2017-12-06 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# emmet的反转 #
+
+
+#### 参考 ####
+
+* [Issues · FredWe/issue-blog · GitHub](https://github.com/FredWe/issue-blog/issues)
+* [javascript - generate Emmet code from HTML - Stack Overflow](https://stackoverflow.com/questions/15206411/generate-emmet-code-from-html)
+* [jquery - Reverse Zen Coding - Stack Overflow](https://stackoverflow.com/questions/4864261/reverse-zen-coding)
+* [jquery - Reverse Zen Coding - Stack Overflow](https://stackoverflow.com/questions/4864261/reverse-zen-coding)
+* [大陸面試題 如何反轉元素內容 - 前端，沒有極限](https://wcc723.github.io/css/2014/02/26/reverse-element/)
