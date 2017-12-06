@@ -8,7 +8,10 @@ tags:
 
 
 # ubuntu bash写git #
-	
+
+	chmod +x upload_git.sh
+	./upload_git.sh
+
 shell执行git命令
 
 	#! /bin/bash

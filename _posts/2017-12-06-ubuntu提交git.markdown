@@ -50,7 +50,15 @@ ubuntu写bash 上传git：
 	git commit -m "update"
 	git push origin gh-pages
 
+直接双击无法执行。
 
+	执行
+	sudo：/home/wj/blog/upload_git.sh: command not found
+	wj@wj-System-Product-Name:~/blog$ sudo ./upload_git.sh
+	sudo：./upload_git.sh: command not found
+	wj@wj-System-Product-Name:~/blog$ ./upload_git.sh
+	bash: ./upload_git.sh: 权限不够
+	wj@wj-System-Product-Name:~/blog$ 
 
 
 #### 参考 ####
