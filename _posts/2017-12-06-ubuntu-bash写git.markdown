@@ -237,6 +237,29 @@ case "${opt}" in
 	* ) echo "Bad option, please choose again"
 esac
 
+case的语法和C family语言差别很大，它需要一个esac（就是case反过来）作为结束标记，每个case分支用右圆括号，用两个分号表示break
+
+### 文件包含 ###
+
+可以使用source和.关键字，如：
+
+	source ./function.sh
+	. ./function.sh
+
+包含一个文件和执行一个文件一样，也要写这个文件的路径，不能光写文件名，比如上述例子中:
+
+	. ./function.sh
+不可以写作：
+
+	. function.sh
+
+
+real_path=`readlink -f $1`#$1是用户输入的参数，如function.sh
+
+	. $real_path
+
+
+
 
 
 # ubuntu bash写git #
@@ -260,6 +283,8 @@ shell执行git命令
 
 #### 参考 ####
 
+* [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/)
+* [Shell脚本编程30分钟入门](https://github.com/qinjx/30min_guides/blob/master/shell.md)
 * [30min_guides/shell.md at master · qinjx/30min_guides · GitHub](https://github.com/qinjx/30min_guides/blob/master/shell.md)
 * [shell执行git命令 - 简书](http://www.jianshu.com/p/bf7206fba067)
 * [How to install git bash on ubuntu? - Stack Overflow](https://stackoverflow.com/questions/11491880/how-to-install-git-bash-on-ubuntu)
