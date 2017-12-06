@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "给 jekyll 加评论功能"
+date:   2017-12-07 21:17:32 +0800
+categories:  
+tags: jekyll
+ 
+---
+
+# 给 jekyll 加评论功能 #
+
+
+#### 参考 ####
+
+* [HyG](https://gaohaoyang.github.io/page2/)
+* [Gaohaoyang/gaohaoyang.github.io: blog & blog theme](https://github.com/Gaohaoyang/gaohaoyang.github.io)
+* [如何评价「多说」即将关闭？有什么替代方案？ - 知乎](https://www.zhihu.com/question/57426274)
+* [imsun/gitment: A comment system based on GitHub Issues.](https://github.com/imsun/gitment)
+* [Gitment：使用 GitHub Issues 搭建评论系统 - I'm Sun](https://imsun.net/posts/gitment-introduction/)
+* [imsun/gitment: A comment system based on GitHub Issues.](https://github.com/imsun/gitment)
+* [Github+Jekyll添加评论支持 - CSDN博客](http://blog.csdn.net/ljinddlj/article/details/52273652)
+* [Github+Jekyll添加评论支持](http://moakap.leanote.com/post/Github-Jekyll添加评论支持)
