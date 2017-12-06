@@ -1,0 +1,20 @@
+---
+layout: post
+title:  "用django搭建手机网站调用PC端指令"
+date:   2017-12-06 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# 用django搭建手机网站调用PC端指令 #
+前端：jqueryUI  
+后端：python  
+路径：
+
+#### 参考 ####
+
+* [Django+Vue.js搭建前后端分离项目的示例，djangovue.js_Javascript - 帮客之家](http://www.bkjia.com/Javascript/1221117.html)
+* [Python之Web框架Django项目搭建全过程，pythondjango_Python教程 - 帮客之家](http://www.bkjia.com/Pythonjc/1210686.html)
+* [Django+Vue.js搭建前后端分离项目 - 简书](http://www.jianshu.com/p/a463e97def9c)
+* [Vue.js和Django搭建前后端分离项目示例详解-PHP中文网](http://m.php.cn/article/376100.html)
+* [Django Ajax - Django 教程 - 自强学堂](https://code.ziqiangxuetang.com/django/django-ajax.html)

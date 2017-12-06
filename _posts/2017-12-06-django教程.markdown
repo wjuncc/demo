@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "django教程"
+date:   2017-12-06 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# django教程 #
+
+
+#### 参考 ####
+
+* [Django 基础教程 - 自强学堂](https://code.ziqiangxuetang.com/django/django-tutorial.html)
+* [从Python到Django入门教程 · GitBook](https://www.gitbook.com/book/borisliu/from-python-to-django/details)
+* [Introduce - Django搭建简易博客教程](https://andrew-liu.gitbooks.io/django-blog/)
+* [Django 学习顺序及入门要求? - 知乎](https://www.zhihu.com/question/21790279)
+* [Django简介 - Django 搭建简易博客教程 - 极客学院Wiki](http://wiki.jikexueyuan.com/project/django-set-up-blog/introduction.html)
+* [前言_Django博客教程_追梦人物的博客](https://www.zmrenwu.com/post/2/)
+* [Django 入门教程__实验楼 - 实验楼](https://www.shiyanlou.com/courses/774)
+* [Django入门教程 - 〔美〕Django社区 - 豆瓣阅读](https://read.douban.com/ebook/284513/)
