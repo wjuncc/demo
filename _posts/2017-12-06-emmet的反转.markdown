@@ -8,6 +8,11 @@ tags:
 
 # emmet的反转 #
 
+### html2jade ###
+npm install -g html2jade
+
+### sizzle  ###
+
 
 #### 参考 ####
 
@@ -16,3 +21,23 @@ tags:
 * [jquery - Reverse Zen Coding - Stack Overflow](https://stackoverflow.com/questions/4864261/reverse-zen-coding)
 * [jquery - Reverse Zen Coding - Stack Overflow](https://stackoverflow.com/questions/4864261/reverse-zen-coding)
 * [大陸面試題 如何反轉元素內容 - 前端，沒有極限](https://wcc723.github.io/css/2014/02/26/reverse-element/)
+* [HTML](http://nbubna.github.io/HTML/)
+* [Convert HTML to abbreviation · Issue #93 · emmetio/emmet · GitHub](https://github.com/emmetio/emmet/issues/93)
+* [Developers - Convert HTML to abbreviation -](https://www.bountysource.com/issues/1105455-convert-html-to-abbreviation?utm_campaign=plugin&utm_content=tracker%2F282104&utm_medium=issues&utm_source=github)
+* [Bountysource](https://www.bountysource.com/?utm_campaign=plugin&utm_content=tracker%2F282104&utm_medium=issues&utm_source=github)
+* [GitHub - adam-lynch/emmetsMustache: Combination of Emmet with Mustache for minimal templates](https://github.com/adam-lynch/emmetsMustache)
+* [Emmet's Mustache](https://adamlynch.com/emmetsMustache/)
+
+2个在线网站 html2jade
+
+* [html2jade](http://html2jade.org)
+* [HTML2Jade - HTML to Jade Online Realtime Converter](http://html2jade.org)
+* [HTML 2 Jade - a converter for HTML](http://html2jade.aaron-powell.com)
+* [html2jade](https://www.npmjs.com/package/html2jade)
+* [HTML to Jade](http://html2jade.vida.io)
+
+Atom插件：
+
+* [html2jade](https://atom.io/packages/html2jade)
+* [html2jade - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=wmaurer.html2jade)
+* [HTML2Jade - Packages - Package Control](https://packagecontrol.io/packages/HTML2Jade)

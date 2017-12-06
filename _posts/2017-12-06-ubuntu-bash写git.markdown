@@ -10,14 +10,20 @@ ubuntu提交git 避免反复输入用户名密码
 ubuntu push git 避免反复输入用户名密码
 
 
+
+### 下面做法没有效果： ###
+
 ubuntu当前用户目录
-1. cd 回车;进入当前用户目录下;
-输入：
-	cd /home/wj
 
-	vim .git-credentials
+1. cd 回车;进入当前用户目录下;  
+	输入：
 
- (如果没有安装vim 用其它编辑器也可以或 sudo apt-get install vim 安装一个)
+		cd /home/wj
+	
+		vim .git-credentials
+
+	 (如果没有安装vim 用其它编辑器也可以或 sudo apt-get install vim 安装一个)
+
 3. 按照以下格式输入内容：
 
 		
@@ -28,13 +34,13 @@ ubuntu当前用户目录
 
 4. 保存退出后执行下面命令
 
-	git config --global credential.helper store
+		git config --global credential.helper store
 
 　　执行完后
 
-　　/home/用户名/.gitconfig 会新增一项
+		/home/用户名/.gitconfig 会新增一项
 
-　　helper = store
+		helper = store
 
 　　这是再执行git push/pull的时候就不会在要求你输入密码了。
 

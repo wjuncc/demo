@@ -1,0 +1,87 @@
+---
+layout: post
+title:  "Jasper2主题"
+date:   2017-10-06 21:17:32 +0800
+categories:  
+tags: jekyll
+
+---
+
+## Jasper2主题
+
+这是Ghost全功能接口，默认主题Casper v2.1.7版本，面向Jekyll / GitHub页面的。
+
+## 演示
+
+[Ghost's Casper](https://demo.ghost.io/) // [Jasper2](https://myjekyll.github.io/jasper2/)
+
+主页
+
+## 特点
+
+* 开源支持多个作者（通过 _data/authors.yml）
+* 完整的作者信息，包括：图片，生物，网站，微博，脸谱等。
+* 说明和个性化封面（通过 _data/tags.yaml）
+* 每个帖子的底部有相关帖子
+* Ghost默认页面有：作者，标签，关于，404等
+* 分页（无限滚动或标准分页，如，一跨多页面的帖子）
+* Atom插件Jekyll-feed插件
+* 可切换的订阅按钮（需要额外服务）
+* 代码有highlight.js高亮
+* 支持Google Analytics
+* 支持Disqus评论（非Ghost标准）
+
+## 入门
+
+### 部署
+
+重要：因为安全原因，Github在使用Github Pages进行部署时，不允许使用插件（在_plugins/下）。也就是说：
+
+1）要么在本地生成网站（下面有更多的细节），然后将生成的HTML（_site/ 或 ../jasper2-pages/的内容）推送到Github仓库，交给GitHub Pages托管;
+
+2）要么用travis-ci（带有jekyll-travis的精品）自动将生成的HTML文件推送到gh-pages分支。 这也是我用来生成Demo的方法。
+
+对于选项1）简单地克隆这个存储库（主分支），然后在目录中运行捆绑exec jekyll服务。 上传生成的_site/（或../jasper2-pages/）内容到你的仓库（master分支如果上传为你的个人页面（例如username.github.io）或gh-pages分支如果上传为项目页面（见Demo）。
+
+对于选项2），您将需要为您的项目分支设置travis-ci。简而言之，你需要的是在_config.yml改变细节，以便推送到你的github仓库。 您还需要生成一个安全密钥添加到您的.travis.yml（你可以找到更多的信息，如何在该文件中）另外阅读jekyll-travis文档。这种方法优势明显，只需将文件更改推送到GitHub，并为您生成所有HTML文件并推送到gh页面。你也知道，如果你的网站建立一切都还好。有任何问题，请与我联系（请参阅下面的 issue tracking）。
+
+### 作者页（Author Pages）
+
+为了正确生成作者页，要重命名每个帖子前面的字段类别，以匹配定义在_data/authors.yml文件中每位作者的用户名。现在最新版支持多个作者博客。
+
+### 编译样式（Compiling Styles）
+
+Casper风格的方式编译在这里：
+
+Jasper2样式使用Gulp/ ostCSS编译来实现未来CSS规范。需要全局安装Node和Gulp。 之后，在主题的根目录执行：
+
+	$ npm install
+	$ gulp
+
+现在你可以编辑/assets/css/下的文件 ，将会自动编译到/assets/built/。
+
+## 问题和贡献
+
+安装需要 Ruby v2.4.2 和 Jekyll v3.6.2。 如果遇到任何问题，请到issue tracker发帖。
+
+自由下载补丁和修复程序。
+
+## 感谢
+
+非常感谢Ghost团队的所有设计工作。 也非常感谢所有的贡献者，这有助于保持项目的活力和更新:）
+
+## 版权和许可
+
+与Ghost团队提供的许可证相同。 见Casper主题许可证。
+
+版权（C）2015-2017  - 根据MIT许可证发布。
+
+特此授予任何人获得本软件及相关文档文件（“软件”）的副本的权利，以无限制地处理本软件，包括但不限于使用，复制，修改，合并 ，发布，分发，再许可和/或出售本软件的副本，并允许本软件所提供的人员在遵守以下条件的情况下这样做：
+
+上述版权声明和本许可声明应包含在本软件的所有副本或主要部分中。
+
+本软件按“原样”提供，不作任何明示或暗示的保证，包括但不限于对适销性，特定用途适用性和不侵权的保证。 在任何情况下，作者或版权所有者均不对任何索赔，损害或其他责任负责，无论是因合同，侵权或其他原因，由本软件或本软件的使用或其他交易引起或与之相关的行为。 
+
+#### 参考 ####
+
+[jasper2](https://github.com/myJekyll/jasper2)
