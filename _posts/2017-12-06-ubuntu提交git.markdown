@@ -8,6 +8,50 @@ tags:
 
 # ubuntu提交git #
 
+## 安装
+
+	sudo apt-get install git
+
+设置用户名和邮箱地址：
+
+	git config --global user.name "XXX"
+	git config --global user.email "XXX"
+
+解释：
+	
+	git config --global user.name "YOUR NAME"
+	git config --global user.email "YOUR EMAIL ADDRESS"
+
+
+## 
+
+从远程仓库下载文件
+
+先cd到路径，再调用clone
+
+	cd '/home/wj/blog'
+	git clone https://github.com/wjuncc/demo.git
+	git checkout gh-pages
+	git pull origin gh-pages
+	
+	git push origin master
+
+
+	git remote add origin https://github.com/dumengnanbuaa/learngit.git
+
+
+上传到git
+
+ubuntu写bash，上传git：
+
+	git checkout gh-pages
+	git pull origin gh-pages
+	git add *
+	git commit -m "update"
+	git push origin gh-pages
+
+
+
 
 #### 参考 ####
 
