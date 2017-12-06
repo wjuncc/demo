@@ -80,6 +80,163 @@ win下的powerShell也是一个道理。
 	your_name='qinjx'
 	str="Hello, I know your are \"$your_name\"! \n"
 
+### 拼接字符串 ###
+
+	your_name="qinjx"
+	greeting="hello, "$your_name" !"
+	greeting_1="hello, ${your_name} !"
+
+	echo $greeting $greeting_1
+
+
+### 获取字符串长度： ###
+
+	string="abcd"
+	echo ${#string} #输出：4
+
+### 提取子字符串 ###
+
+	string="alibaba is a great company"
+	echo ${string:1:4} #输出：liba
+### 查找子字符串 ###
+
+	string="alibaba is a great company"
+echo `expr index "$string" is`#输出：3，这个语句的意思是：找出字母i在这名话中的位置，要在linux下运行，mac下会报错
+
+### 流程控制不可为空 ###
+
+	if (isset($_GET["q"])) {
+		search(q);
+	}
+	else {
+		//do nothing
+	}
+
+举例：
+
+### if ###
+	if condition
+	then
+		command1 
+		command2
+		...
+		commandN 
+	fi
+写成一行（适用于终端命令提示符）：
+
+	if `ps -ef | grep ssh`;  then echo hello; fi
+fi就是if倒过来拼写
+
+### 	if else ###
+	
+	if condition
+	then
+		command1 
+		command2
+		...
+		commandN
+	else
+		command
+	fi
+
+### if else-if else ###
+
+	if condition1
+	then
+		command1
+	elif condition2
+		command2
+	else
+		commandN
+	fi
+
+### for循环 ###
+for var in item1 item2 ... itemN
+do
+	command1
+	command2
+	...
+	commandN
+	done
+
+写成一行：
+
+	for var in item1 item2 ... itemN; do command1; command2… done;
+
+### C风格的for ###
+
+	for (( EXP1; EXP2; EXP3 ))
+	do
+		command1
+		command2
+		command3
+	done
+
+
+### while ###
+
+	while condition
+	do
+		command
+	done
+
+
+### 无限循环 ###
+
+	while :
+	do
+		command
+	done
+或者
+
+	while true
+	do
+		command
+	done
+
+或者
+
+	for (( ; ; ))
+
+until
+
+	until condition
+	do
+		command
+	done
+
+
+
+### case ###
+
+case "${opt}" in
+	"Install-Puppet-Server" )
+		install_master $1
+		exit
+	;;
+
+	"Install-Puppet-Client" )
+		install_client $1
+		exit
+	;;
+
+	"Config-Puppet-Server" )
+		config_puppet_master
+		exit
+	;;
+
+	"Config-Puppet-Client" )
+		config_puppet_client
+		exit
+	;;
+
+	"Exit" )
+		exit
+	;;
+
+	* ) echo "Bad option, please choose again"
+esac
+
 
 
 # ubuntu bash写git #
