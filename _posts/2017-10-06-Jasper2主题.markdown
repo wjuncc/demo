@@ -7,6 +7,9 @@ tags: jekyll
 
 ---
 
+# minima默认主题
+# 翻译 jekyll- Jasper2主题
+[原文](https://github.com/myJekyll/jasper2)
 ## Jasper2主题
 
 这是Ghost全功能接口，默认主题Casper v2.1.7版本，面向Jekyll / GitHub页面的。

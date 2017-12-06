@@ -1,0 +1,105 @@
+---
+layout: post
+title:  "什么是music21"
+date:   2014-12-06 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# 什么是music21 #
+
+[原文 What is music21?](http://web.mit.edu/music21/doc/about/what.html)
+
+## 什么是music21 ##
+Music21是一个python工具包，用来电脑辅助的音乐理论
+ 
+我们用music21來回答某系大型数据集，生成音乐示范，教授音乐基础理论，编辑音符，学习音乐盒大脑。以及作曲（通过算法生成） 
+Music21的一个目标，就是“听得更快”。使用工具包，可以找到感兴趣的音乐片段，获取一段音乐素材的整体轮廓感。我们希望有了电脑辅助后，你有更多时间来聆听和演奏自己喜欢的，使用更少的时间来工作。 
+
+这套系统开始于2008年，经过了持续增长和扩充。Nusic21过去的方向，已经被一些软件采用。参考《作者，感谢，捐献，和声明》来查看作者信息和项目背景。 
+Music21的21，是美国麻省理工大学（MIT，简称麻省）的一个培养项目。在麻省，所有课程都有一个编号。和其他科目一样，音乐也有编号，它的编号是21。麻省，哈佛，史密斯和霍利奥克山大学的音乐系，该工具从初创到完善，做出了贡献。
+ 
+Music21集合了众多工具，简单的使用Python编程语言。安装Music21，使用下面语句引用 python（或者python3更好）
+
+	from music21 import *
+
+好了，这样一来，你就能使用数以千计的音乐工具了。比如说，想要在屏幕上显示音符？键入如下代码：
+
+	n = note.Note("D#3")
+	n.duration.type = 'half'
+	n.show()
+ 
+想要一段完整的3/4拍音节？这么干：
+
+	littleMelody = converter.parse("tinynotation: 3/4 c4 d8 f g16 a g f#")
+	littleMelody.show()
+ 
+听音效？太简单了！（要等1-2秒钟，加载钢琴音效）
+
+	littleMelody.show('midi')
+
+要看《勋伯格第四弦乐四重奏》（Schoenberg’s Fourth String quartet）音行（tone-row）的矩阵表示？
+
+	print (serial.rowToMatrix([2,1,9,10,5,3,4,0,8,7,6,11]) )
+
+	   0 11  7  8  3  1  2 10  6  5  4  9
+	   1  0  8  9  4  2  3 11  7  6  5 10
+	   5  4  0  1  8  6  7  3 11 10  9  2
+	   4  3 11  0  7  5  6  2 10  9  8  1
+	   9  8  4  5  0 10 11  7  3  2  1  6
+	  11 10  6  7  2  0  1  9  5  4  3  8
+	  10  9  5  6  1 11  0  8  4  3  2  7
+	   2  1  9 10  5  3  4  0  8  7  6 11
+	   6  5  1  2  9  7  8  4  0 11 10  3
+	   7  6  2  3 10  8  9  5  1  0 11  4
+	   8  7  3  4 11  9 10  6  2  1  0  5
+	   3  2 10 11  6  4  5  1  9  8  7  0
+
+快速显示，在第十四小节中，哪个音符用的最多？
+
+	dicant = corpus.parse('trecento/Fava_Dicant_nunc_iudei')
+	dicant.plot('histogram')
+ 
+给《巴赫唱诗班， BWV295》每个音符，加上德语音名。 ---- BWV295，《圣灵充满了仁慈》(Des heil' gen Geistes reiche Gnad');
+
+	bwv295 = corpus.parse('bach/bwv295')
+	for thisNote in bwv295.recurse().notes:
+	  thisNote.addLyric(thisNote.pitch.german)
+	bwv295.show()
+ 
+准备一个3/4拍。（这里我们看25行）
+
+	catalog = stream.Opus()
+	for work in corpus.chorales.Iterator(1, 26):
+	    firstTimeSignature = work.parts[0].getTimeSignatures()[0]
+	    if firstTimeSignature.ratioString == '3/4':
+	        incipit = work.measures(0,2)
+	        catalog.insert(0, incipit.implode())
+
+	catalog.show()
+   
+下面讲高级工具。使用反PVI函数
+
+	s = corpus.parse('AlhambraReel')
+	analysis.patel.nPVI(s.flat)
+	 5.755395683453239
+
+## 学习music21（Learning music21） ##
+ 
+Music21使用简单，功能强大。就像那些牛掰软件（Photoshop之于微软Paint，AutoCAD，Excel），有一些学习曲线，特别是没有程序经验的人。
+
+
+要使用Music21，需要熟悉Python。。。。（略）
+
+邮件列表
+
+继续安装
+
+
+#### 参考 ####
+
+* [在music21中，检查部件( 来自 krn )的标签或者名称_music_帮酷编程问答](http://hant.ask.helplib.com/python/post_5401556)
+* [python的简单跨平台MIDI库_audio_帮酷编程问答](https://ask.helplib.com/python/post_854944)
+* [独家 五招教你用Python构建好玩的深度学习应用](https://m.baidu.com/feed/data/landingpage?dsp=wise&nid=3522850174045041170&n_type=1&p_from=5)
+* [深度学习有哪些好玩的且易于实现的论文？ - 知乎](https://www.zhihu.com/question/41231774)
+* [Sphinx 快速入门 — GISpark 0.1 文档](http://gispark.readthedocs.io/zh_CN/latest/jupyter/sphinx_quickstart.html)

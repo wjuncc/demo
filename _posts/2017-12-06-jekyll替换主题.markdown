@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "jekyll替换主题"
+date:   2017-12-06 21:17:32 +0800
+categories:  
+tags: 
+---
+
+# jekyll替换主题 #
+
+
+#### 参考 ####
+
+* [教你10分鐘內替換Jekyll博客樣式 · Fraser Xu](https://fraserxu.me/2013/06/02/change-jekyll-blog-layout-in-ten-minutes/)
+* [如何更換jekyll 主題 · Return to laughter](https://blog.jxtsai.info/2016/10/31/jekyll-theme/)
