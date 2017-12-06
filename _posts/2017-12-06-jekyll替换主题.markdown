@@ -8,8 +8,140 @@ tags:
 
 # jekyll替换主题 #
 
+执行：
+	
+	stepbystep-master
+
+
+[来源](https://github.com/jokinkuang/stepbystep#stepbystep)
+
+### 报错1 ###
+
+Could not find i18n-0.7.0 in any of the sources 
+
+	C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/spec_set.rb:88
+	:in `block in materialize': Could not find i18n-0.7.0 in any of the sources (Bun
+	dler::GemNotFound)
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/s
+	pec_set.rb:82:in `map!'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/s
+	pec_set.rb:82:in `materialize'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/d
+	efinition.rb:170:in `specs'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/d
+	efinition.rb:237:in `specs_for'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/d
+	efinition.rb:226:in `requested_specs'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/r
+	untime.rb:108:in `block in definition_method'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/r
+	untime.rb:20:in `setup'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler.r
+	b:107:in `setup'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/jekyll-3.6.2/lib/jekyll/plug
+	in_manager.rb:50:in `require_from_bundler'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/jekyll-3.6.2/exe/jekyll:11:i
+	n `<top (required)>'
+	        from C:/Ruby24-x64/bin/jekyll:23:in `load'
+	        from C:/Ruby24-x64/bin/jekyll:23:in `<main>'
+
+
+
+[参考-error Could not find i18n-0.7.0 in any of the sources
+](https://stackoverflow.com/questions/27686613/error-could-not-find-i18n-0-7-0-in-any-of-the-sources)
+
+	$ bundle exec rake rails:update:bin
+
+报错：
+
+	E:\n\wj\blog\theme\stepbystep-master>bundle exec rake rails:update:bin
+	Could not find i18n-0.7.0 in any of the sources
+	Run `bundle install` to install missing gems.
+	
+尝试： 
+	
+		gem install i18n --version 0.7
+	
+### 报错2 ###
+	
+	E:\n\wj\blog\theme\stepbystep-master>jekyll serve -w --host=0.0.0.0
+	C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/spec_set.rb:88
+	:in `block in materialize': Could not find json-1.8.3 in any of the sources (Bun
+	dler::GemNotFound)
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/s
+	pec_set.rb:82:in `map!'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/s
+	pec_set.rb:82:in `materialize'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/d
+	efinition.rb:170:in `specs'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/d
+	efinition.rb:237:in `specs_for'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/d
+	efinition.rb:226:in `requested_specs'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/r
+	untime.rb:108:in `block in definition_method'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler/r
+	untime.rb:20:in `setup'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/bundler-1.16.0/lib/bundler.r
+	b:107:in `setup'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/jekyll-3.6.2/lib/jekyll/plug
+	in_manager.rb:50:in `require_from_bundler'
+	        from C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/jekyll-3.6.2/exe/jekyll:11:i
+	n `<top (required)>'
+	        from C:/Ruby24-x64/bin/jekyll:23:in `load'
+	        from C:/Ruby24-x64/bin/jekyll:23:in `<main>'
+
+尝试
+
+	gem install json --version 1.8.3
+
+报错：
+
+	E:\n\wj\blog\theme\stepbystep-master>gem install json --version 1.8.3
+
+	Fetching: json-1.8.3.gem (100%)
+	Temporarily enhancing PATH for MSYS/MINGW...
+	Building native extensions.  This could take a while...
+	ERROR:  Error installing json:
+	        ERROR: Failed to build gem native extension.
+	
+	    current directory: C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/json-1.8.3/ext/jso
+	n/ext/generator
+	C:/Ruby24-x64/bin/ruby.exe -r ./siteconf20171207-4968-px67at.rb extconf.rb
+	creating Makefile
+	
+	current directory: C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/json-1.8.3/ext/json/ex
+	t/generator
+	make "DESTDIR=" clean
+	'make' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���
+	���������ļ���
+	
+	current directory: C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/json-1.8.3/ext/json/ex
+	t/generator
+	make "DESTDIR="
+	'make' �����ڲ����ⲿ���Ҳ���ǿ����еĳ���
+	���������ļ���
+	
+	make failed, exit code 1
+	
+	Gem files will remain installed in C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/json-1
+	.8.3 for inspection.
+	Results logged to C:/Ruby24-x64/lib/ruby/gems/2.4.0/extensions/x64-mingw32/2.4.0
+	/json-1.8.3/gem_make.out
+	
+	E:\n\wj\blog\theme\stepbystep-master>
+
+
+
+
+
+
+
+
+
+
 
 #### 参考 ####
 
-* [教你10分鐘內替換Jekyll博客樣式 · Fraser Xu](https://fraserxu.me/2013/06/02/change-jekyll-blog-layout-in-ten-minutes/)
-* [如何更換jekyll 主題 · Return to laughter](https://blog.jxtsai.info/2016/10/31/jekyll-theme/)
+* [2016-如何更換jekyll 主題 · Return to laughter](https://blog.jxtsai.info/2016/10/31/jekyll-theme/)
+* [2013-教你10分鐘內替換Jekyll博客樣式 · Fraser Xu](https://fraserxu.me/2013/06/02/change-jekyll-blog-layout-in-ten-minutes/)

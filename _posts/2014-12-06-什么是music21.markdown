@@ -3,7 +3,8 @@ layout: post
 title:  "什么是music21"
 date:   2014-12-06 21:17:32 +0800
 categories:  
-tags: 
+tags: midi
+
 ---
 
 # 什么是music21 #
