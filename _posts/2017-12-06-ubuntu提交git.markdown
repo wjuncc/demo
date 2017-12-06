@@ -42,7 +42,7 @@ tags:
 
 上传到git
 
-ubuntu写bash，上传git：
+ubuntu写bash 上传git：
 
 	git checkout gh-pages
 	git pull origin gh-pages
