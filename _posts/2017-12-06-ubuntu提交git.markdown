@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "ubuntu 使用git教程 入门"
+title:  "ubuntu提交git"
 date:   2017-12-06 21:17:32 +0800
 categories:  
 tags: 
 ---
 
-# ubuntu 使用git教程 入门 #
+# ubuntu提交git #
 
 
 #### 参考 ####
