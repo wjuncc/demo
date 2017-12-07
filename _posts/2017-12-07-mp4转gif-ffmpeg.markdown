@@ -76,6 +76,15 @@ ubuntu打开命令行标签页：Ctrl+Shit+T
 	sudo apt-get update
 	sudo apt-get install ffmpeg
 
+错误，或许是没科学上网。
+
+	E: 软件包 ffmpeg 没有可供安装的候选者
+	wj@wj-System-Product-Name:~/blog$ ffmpeg
+	ffmpeg：未找到命令
+	wj@wj-System-Product-Name:~/blog$ sudo add-apt-repository ppa:kirillshkrogalev/ffmpeg-next
+	 This PPA provides backported release ffmpeg for current releases Ubuntu (Trusty, Utopic, etc.)
+	 更多信息： https://launchpad.net/~kirillshkrogalev/+archive/ubuntu/ffmpeg-next
+	按回车继续或者 Ctrl+c 取消添加
 
 
 ### 使用 ###
