@@ -2,7 +2,7 @@
 layout: post
 title:  "WTG"
 date:   2016-01-05 16:11:12 +0800
-categories: jekyll update
+categories: win7
 tags: 
 	wtg 
 	u盘
