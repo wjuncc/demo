@@ -1,14 +1,15 @@
 ---
 layout: post
-title:  "Jasper2主题"
+title:  "jekyll主题 Jasper2 介绍"
 date:   2017-10-06 21:17:32 +0800
 categories:  jekyll
-tags: jekyll
+tags: 
+	- jekyll
+	- 翻译
 
 ---
+minima默认主题
 
-# minima默认主题
-# 翻译 jekyll- Jasper2主题
 [原文](https://github.com/myJekyll/jasper2)
 ## Jasper2主题
 
