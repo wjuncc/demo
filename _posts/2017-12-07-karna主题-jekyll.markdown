@@ -89,11 +89,17 @@ tags:
 
 这是路径问题，  
 打开tags.md，
+#### 修改1 ####
 
 	<script src="/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script> 
-修改
 
+->
 	<script src="{{"/js/jquery.tagcloud.js"| prepend: site.baseurl }}" type="text/javascript" charset="utf-8"></script> 
+
+#### 修改2 ####
+	<a href="{{site.baseurl}}{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+->
+	<a href="{{site.baseurl}}{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
 
 
 ### 报错4 ###
