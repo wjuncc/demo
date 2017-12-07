@@ -3,26 +3,31 @@ layout: post
 title:  "jekyll 问题汇总"
 date:   2017-10-05 21:17:32 +0800
 categories:  jekyll
-tags: - jekyll
+tags: jekyll
 ---
 
 
 
 ## tag的问题 ##
 
-写成：
+1
 
 	tags: wtg  u盘
 
 通过
 
-写成：
+2
 
 	tags: wtg
 	  u盘
 
 不通过
 
+3
+
+	tags: - jekyll
+
+不通过
 
 ## 时间的问题 ##
 jekyll根据系统时间，判断是否生成html。
