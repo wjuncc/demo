@@ -7,7 +7,7 @@ tags:
     - jekyll 
     
 --- 
-
+## jekyll 主题的问题 ##
 本地测试：  
 karna主题的css有问题，在拉小成手机后，再拉大，  
 没有还原到大屏下的多个并列。  
@@ -15,14 +15,14 @@ karna主题的css有问题，在拉小成手机后，再拉大，
 
 在[demo](http://webjeda.com/karna/)会重现这个问题。
 
-##其他主题##
+## 其他主题 ##
 
 * 全部列表：[Jekyll Themes](http://jekyllthemes.org/page2/)  
 
 * [Dopetrope](https://html5up.net/dopetrope)
 * 干净[Clean](http://knaman2609.github.io/clean/)
 * 很好展示了手机端和PC端[Dopetrope](http://jekyllthemes.org/themes/dopetrope/)
-* 很商务：[Jekyll Doc Theme](http://jekyllthemes.org/themes/doc-theme/)  
+* 很商务，像微软：[Jekyll Doc Theme](http://jekyllthemes.org/themes/doc-theme/)  
 * [很有特点]()
 
 
