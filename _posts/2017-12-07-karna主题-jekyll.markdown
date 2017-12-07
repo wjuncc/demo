@@ -8,6 +8,13 @@ tags:
 ---
 
 
+### 小结 ###
+
+1. 生成页面markdown的模板，要加个当前时间戳时分秒，  
+因为用默认时间戳比如23:00:00， jekyll会默默做一件事，  
+如果时间>系统时间,则不显示，实际上，是不导出html文件。  
+不然很花时间。
+
 ### tag有问题 ###
 
 
@@ -70,6 +77,7 @@ tags:
 说明 tag cloud添加成功。
 
 ### 报错2 ###
+
    	Regenerating: 1 file(s) changed at 2017-12-07 15:24:07              Error:could not read file E:/n/wj/blog/demo/_posts/2017-12-07-去掉clover的自带标签.markdown: (<unknown>): could not find expected ':' while scanning a simple key at line 6 column 1 
 	...done in 1.135 seconds.
 
@@ -103,7 +111,7 @@ tags:
 
 	[2017-12-07 15:54:23] ERROR `/demo/django/2017/12/06/用django搭建手机网站调用PC端指令.html' not found.
 
-这是因为不能访问中文路径：
+这是因为。本地不能访问中文路径：
 
 	http://127.0.0.1:4000/demo/django/2017/12/06/用django搭建手机网站调用PC端指令.html
 
@@ -111,8 +119,9 @@ tags:
 
 	http://127.0.0.1:4000/demo/django/2017/12/06/%D3%C3django%B4%EE%BD%A8%CA%D6%BB%FA%CD%F8%D5%BE%B5%F7%D3%C3PC%B6%CB%D6%B8%C1%EE.html
 
+上传git后可以访问中文路径。
 
-上传git后可以
+
 
 下面列一些主题：
 
