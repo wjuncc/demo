@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "阿里云搭建GIT服务器"
+date:   2017-12-08 06:02:02 +0800
+categories:  
+tags: 
+---
+
+# 阿里云搭建GIT服务器 #
+
+
+#### 参考 ####
+
+* [](http://www.cnblogs.com/chorulex/p/5377627.html)
+* [[原创]CI持续集成系统环境---部署gerrit环境完整记录 - 散尽浮华 - 博客园](http://www.cnblogs.com/kevingrace/p/5624122.html)
+* [Gerrit服务器的搭建（Git+Gerrit+PostgreSQL+LDAP） - CSDN博客](http://blog.csdn.net/allhaillouis/article/details/46374959)
+* [5.6. Gerrit代码审核服务器 — GotGit](http://www.worldhello.net/gotgit/05-git-server/055-gerrit.html)
+* [CI持续集成系统环境--部署gerrit · GitBook](https://www.gitbook.com/book/tianyaqingyu/ci-gerrit/details)
+* [【Gerrit】Linux + Gerrit + Nginx + gitweb安装全过程 - KaKa's blog](http://lipeng1667.github.io/2017/01/17/build-gerrit-with-nginx/)
+* [隐私设置错误](https://www.winsonli.net/howto-deplay-gerrit-on-ubuntu/)
+* [Centos 安装配置gerrit - 相关文章](https://www.bbsmax.com/R/ke5jx2yzrl/)
+* [搭建Git服务器 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137583770360579bc4b458f044ce7afed3df579123eca000)
+* [Git - 在服务器上搭建 Git](https://git-scm.com/book/zh/v2/服务器上的-Git-在服务器上搭建-Git)
+* [搭建Git服务器 · LandChanning/DevNote Wiki · GitHub](https://github.com/LandChanning/DevNote/wiki/搭建Git服务器)
+* [搭建自己的Git服务器 - Yunfeng's Hexo Blog](https://vra.github.io/2017/04/19/deploy-git/)
+* [搭建git服务器 - Lixingcong](https://lixingcong.github.io/2017/04/03/setup-git-server/)
+* [搭建Git服务器 - Yikun](http://yikun.github.io/2015/02/05/搭建Git服务器/)
+* [Git 服务器搭建 - 菜鸟教程](http://www.runoob.com/git/git-server.html)
+* [搭建git服务器以及web自动化部署 - 天空的城](http://shomy.top/2016/04/14/git-server-hook/)
+* [如何在Linux系统环境下搭建Git服务器 – 运维派](http://www.yunweipai.com/archives/12471.html)
+* [在阿里云上搭建自己的git服务器_唐霜](http://www.tangshuang.net/1693.html)
+* [阿里云 linux搭建git服务器 - CSDN博客](http://blog.csdn.net/think12/article/details/78596559)
+* [阿里云Linux-CentOS系统下-搭建Git服务器详解_Linux - 阿里云](https://yq.aliyun.com/ziliao/104553)
+* [github - 阿里云上搭建git服务器 - SegmentFault](https://segmentfault.com/q/1010000009048000)
+* [在CentOS搭建Git服务器 - 简书](http://www.jianshu.com/p/69ea5ded3ede)
+* [阿里云Linux-CentOS系统下-搭建Git服务器详解_Linux_脚本之家](http://www.jb51.net/article/98421.htm)
+* [Linux-CentOS(阿里云)系统下搭建Git服务器 - 简书](http://www.jianshu.com/p/8b8c308c1656)
+* [在阿里云上快速搭建git服务器 - Hymanme](http://hymane.itscoder.com/2016/08/01/在阿里云上快速搭建git服务器/)
+* [阿里云搭建Git服务，实现Hexo自动部署 - Yusen's Blog - 学习弯道超车的技巧！](https://imys.net/20160303/hexo-nginx-auto-deploy.html)
+* [Centos 6.4搭建git服务器 - Yan's blog](http://yanliu.org/2015/08/20/Centos-6-4搭建git服务器/)
+* [阿里云Ubuntu搭建git服务器_Linux_第七城市](http://www.th7.cn/system/lin/201704/211944.shtml)
