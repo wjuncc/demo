@@ -2,9 +2,10 @@
 layout: post
 title:  "用django搭建手机网站调用PC端指令"
 date:   2017-12-06 21:17:32 +0800
-categories:  
-tags: django jquery
-
+categories:  django
+tags: 
+  - django 
+  - jquery 
 ---
 
 # 用django搭建手机网站调用PC端指令 #

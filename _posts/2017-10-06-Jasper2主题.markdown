@@ -2,7 +2,7 @@
 layout: post
 title:  "Jasper2主题"
 date:   2017-10-06 21:17:32 +0800
-categories:  
+categories:  jekyll
 tags: jekyll
 
 ---

@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "去掉clover的自带标签"
-date:   2017-12-07 21:17:32 +0800
-categories:  
-tags:clover
-
+date:   2017-12-07 13:17:32 +0800
+categories:  clover
+tags:
+    - jekyll 
 ---
 
 # 去掉clover的自带标签 #
