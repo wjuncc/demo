@@ -4,8 +4,9 @@ title:  "WTG"
 date:   2016-01-05 16:11:12 +0800
 categories: jekyll update
 tags: 
-	- wtg 
-	- u盘
+	wtg 
+	u盘
+
 ---
 
 # win7 WTG #
