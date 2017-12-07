@@ -8,7 +8,7 @@ tags: jekyll
 
 
 
-## tag的问题 ##
+### tag的问题 ###
 
 1
 
@@ -29,7 +29,22 @@ tags: jekyll
 
 不通过
 
-## 时间的问题 ##
+tags:  - jekyll 是推荐做法，为什么不通过？
+
+
+#### 参考 ####
+
+* [使用`Jekyll`遇到的问题 · Issue #19 · mrdulin/blog · GitHub](https://github.com/mrdulin/blog/issues/19)
+* [tags - jekyll推送到github之后tag插件分类页面显示404错误 - SegmentFault](https://segmentfault.com/q/1010000008719834)
+* [Jekyll使用时遇到的各种小问题](http://hyq9508.github.io/jekyll/markdown/ruby/scss/2015/06/23/Jekyll-tips.html)
+* [对这个 jekyll 博客主题的改版和重构](https://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/)
+* [使用Category标签隐藏Jekyll博客文章 - CSDN博客](http://blog.csdn.net/JireRen/article/details/52196249)
+* [给GitHub Pages上的Jekyll站点添加标签支持 - Zero[Z.W.T] Blog](http://www.zerozwt.com/2017/08/28/add-tags-to-jekyll.html)
+* [tags - Jekyll tag_gen plugin not working - Stack Overflow](https://stackoverflow.com/questions/14375331/jekyll-tag-gen-plugin-not-working)
+* [please support tags without need plugins to make github pages support tags · Issue #867 · jekyll/jekyll · GitHub](https://github.com/jekyll/jekyll/issues/867)
+
+
+### 时间的问题 ###
 jekyll根据系统时间，判断是否生成html。
 
 	date:   2017-10-05 21:17:32 +0800
@@ -40,7 +55,7 @@ jekyll根据系统时间，判断是否生成html。
 
 肯定不显示。
 
-# jekyll中文路径 #
+### jekyll中文路径 ###
 这个问题是jekyll2的，在jekyll3下没有了。  
 了解了一下：
 

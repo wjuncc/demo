@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "jekyll 主题 karna"
+title:  "jekyll 主题 karna（有问题放弃）"
 date:   2017-12-07 13:17:32 +0800
 categories:  jekyll
 tags:
