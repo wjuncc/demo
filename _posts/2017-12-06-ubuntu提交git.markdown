@@ -80,14 +80,33 @@ ubuntu写bash 上传git：
 	bash: /home/wj/upload_git.sh: 没有那个文件或目录
 
 
-但是ls看又有这个文件,很是奇
-
 bash: ./upload_git.sh: 权限不够
  linux下权限不够 chmod +x 脚本命令 ./脚本命令 
 就是要写2行：
 
  	chmod +x ./upload_git.sh
  	./upload_git.sh
+
+结果：
+
+	wj@wj-System-Product-Name:~/blog$ ./upload_git.sh
+	M	"_posts/2017-12-07-mp4\350\275\254gif-ffmpeg.markdown"
+	已经位于 'gh-pages'
+	您的分支与上游分支 'origin/gh-pages' 一致。
+	来自 https://github.com/wjuncc/demo
+	 * branch            gh-pages   -> FETCH_HEAD
+	Already up-to-date.
+	[gh-pages 5d9b1c7] update
+	 1 file changed, 30 insertions(+), 2 deletions(-)
+	Counting objects: 8, done.
+	Delta compression using up to 8 threads.
+	Compressing objects: 100% (4/4), done.
+	Writing objects: 100% (4/4), 819 bytes | 0 bytes/s, done.
+	Total 4 (delta 3), reused 0 (delta 0)
+	remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+	To https://github.com/wjuncc/demo.git
+	   f593983..5d9b1c7  gh-pages -> gh-pages
+	wj@wj-System-Product-Name:~/blog$ 
 
 
 估计你是在Windows下编辑的，文件每行末尾会多出^M，所以建议先转格式：
