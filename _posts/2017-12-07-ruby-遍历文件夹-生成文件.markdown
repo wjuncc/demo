@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "ruby 遍历文件夹 生成文件"
+date:   2017-12-07 18:39:06 +0800
+categories:  
+tags: 
+---
+
+# ruby 遍历文件夹 生成文件 #
+
+
+#### 参考 ####
+
+* [ruby遍历文件夹所有文件](http://starzhou.com/blogs/each_directory)
+* [ruby文件夹操作 - 简书](http://www.jianshu.com/p/67de371713a5)
+* [Ruby遍历文件夹 - CSDN博客](http://blog.csdn.net/u010595903/article/details/48376307)
+* [ruby文件操作大全 - Ruby - language - ITeye论坛](http://www.iteye.com/topic/517410)
+* [ruby 遍历文件夹下所有文件，输出文件名 - 为程序员服务](http://outofmemory.cn/code-snippet/9743/bianli-file-jia-suo-exist-file-output-file-name)
+* [第 18 章 File 类与 Dir 类 · ruby基础教程（中文第四版） · 看云](https://www.kancloud.cn/imxieke/ruby-base/107306)
+* [Ruby遍历文件夹同时计算文件的md5sum_WEB编程教程 - 帮客之家](http://www.bkjia.com/ASPjc/1004484.html)
+* [ruby遍历文件夹计算md5sum - CSDN博客 - 钱柜娱乐开户](http://www.tk4479.net/select603/article/details/8306184)
+* [Ruby创建文件夹，文件，以及将结果输入到改文件中_百度知道](https://zhidao.baidu.com/question/485840891.html)
+* [ruby – 获取目录中的文件夹列表 - 代码日志](https://codeday.me/bug/20170718/42771.html)

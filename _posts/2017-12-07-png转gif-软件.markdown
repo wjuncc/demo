@@ -1,0 +1,30 @@
+---
+layout: post
+title:  "png转gif 软件"
+date:   2017-12-07 21:40:23 +0800
+categories:  
+tags: 
+---
+
+# mp4转gif 软件 #
+
+
+itunes获取iphone的视频和图片
+保存为
+导入图片和视频
+
+将录制的mp4文件利用ps，转化为gif动态图片，其实很简单，只需要在ps中打开mp4，然后点文件->储存为web和设备所用格式，然后会弹出操作面板
+
+注意箭头的地方，一般导进去的视频，默认像素是手机屏幕分辨率，544*960，根据时间长短，和博客上传图片文件大小自己调整即可。
+
+还有个循环选项，选择永远的状态，就是在git播放完之后继续循环，建议开启。
+最后点击储存就行了。
+
+
+
+#### 参考 ####
+
+* [从 iPhone、iPad 或 iPod touch 导入照片和视频](https://support.apple.com/zh-cn/HT201302)
+* [将图片导入到 Windows 7](https://support.microsoft.com/zh-cn/help/17449/windows-7-import-pictures)
+* [使用PhotoShop将mp4格式视频转换为gif](http://www.jianshu.com/p/6eee132eb1a3)
+
