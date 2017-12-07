@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "jekyll替换主题(失败)"
+title:  "jekyll主题stepbystep(替换失败)"
 date:   2017-12-06 21:17:32 +0800
-categories:  
-tags: 
+categories: jekyll 
+tags: jekyll
 ---
 
 # jekyll主题stepbystep #
