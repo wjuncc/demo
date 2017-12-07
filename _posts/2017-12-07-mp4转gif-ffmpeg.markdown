@@ -8,6 +8,18 @@ tags:
 
 # mp4转gif ffmpeg #
 
+### 安装 ### 
+
+	sudo apt-get install ffmpeg
+
+### 使用 ###
+
+	ffmpeg -t 3.6 -ss 00:00:01 -i Screencast_2016-01-13-17-01-38.mp4  small-c
+
+
+	注释：3.6是秒数，00:00:01是开始时间。 
+
+
 
 #### 参考 ####
 
