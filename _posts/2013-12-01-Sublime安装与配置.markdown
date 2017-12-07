@@ -1,0 +1,182 @@
+---
+layout: post
+title:  "Sublime安装与配置"
+date:   2013-12-01 01:17:32 +0800
+categories: Sublime
+cats:
+	- Sublime
+
+9:41 2017/11/30
+
+在Win7 64位，同时安装sublumeText2和sublumeText3 
+
+## 1 编译器的取舍 ##
+Atom太慢，ST太快，FD无插件接口。
+
+## 2 SublimeText 配置实情 ##
+
+已确认：  
+
+> * 支持 语法糖的展开，
+> * 支持 宏的展开，
+
+
+几处疑点：
+
+> 1. 是否支持 代码跳转，并不清楚，
+> 2. 是否支持 代码提示，也不清楚，
+> 3. 是否支持 代码自动完成，不清楚，
+
+
+
+
+
+## 4 使用SublimeCodeIntel插件实现 javascript的 代码提示 ##
+
+1. 代码跳转 ，插件 SublimeCodeIntel
+2. 配置SublimeCodeIntel
+在everthing，搜索SublimeCodeIntel。找到ST2下的。
+即 C:\Users\Administrator\AppData\Roaming\Sublime Text 2\Packages\SublimeCodeIntel\SublimeCodeIntel.sublime-settings  
+
+     	"codeintel_selected_catalogs": ["jQuery"]  
+
+	改成  
+
+     	"codeintel_selected_catalogs": ["javascript"]
+    
+
+
+SublimeCodeIntel 也有跳转代码功能，但是要卡1秒：  
+在变量、函数上右键即可。
+
+
+
+#### 参考 ####
+* [JAVASCRIPT SOURCE CODE INDEXING WITH SUBLIME TEXT EDITOR WITH CTAGS](http://www.codefornow.com/2013/04/13/javascript-source-code-indexing-with-sublime-text-editor-with-ctags/)
+* [TS伪代码实现](http://typescript.codeplex.com/SourceControl/changeset/view/d397c54a55db#samples/jquery/jquery.d.ts)
+
+
+ 
+
+谷歌搜索： sublime text ctags  video  javascript
+
+
+ 
+
+
+* [ST2的PHP开发者：使用CTags找到原始定义，  
+Sublime Text 2 For PHP Development: Software Archaeology Using CTags](https://www.youtube.com/watch?v=5j8H73iPd7k)
+
+
+1. ST包的搜索 [https://packagecontrol.io/search/ctags](https://packagecontrol.io/search/ctags)  
+视频中介绍的网站已经失效，即 [https://wbond.net](https://wbond.net)
+  
+
+参考 
+
+* [对于React，哪种编辑器好用？ what is the best IDE for React?](https://discuss.reactjs.org/t/what-is-the-best-ide-for-react/3519/29)
+* [go语言的编辑器](http://blog.buaa.us/godef-plugin-for-sublime-released/)
+* [php编辑器](http://www.cnblogs.com/bananaplan/p/Sublime-Text-3-Powerful.html)
+
+
+
+
+
+## 快捷键 Tab/Ctrl+E 展开语法糖 ##
+
+安装enum后，自带展开功能，零门槛，勿需手工设置。  
+
+
+### 例子1 ###
+
+	p.person
+
+展开后
+
+	<p className="person"></p>
+
+#### 例子2 ####
+
+	ul.dogs>li.dog$*10
+
+展开后
+
+	<ul className="dogs">
+		<li className="dog1"></li>
+		<li className="dog2"></li>
+		<li className="dog3"></li>
+		<li className="dog4"></li>
+		<li className="dog5"></li>
+		<li className="dog6"></li>
+		<li className="dog7"></li>
+		<li className="dog8"></li>
+		<li className="dog9"></li>
+		<li className="dog10"></li>
+	</ul>
+
+这里，美元符号$，表示计数，  
+不加美元符号$，展开后：
+
+	<ul className="dogs">
+		<li className="dog"></li>
+		<li className="dog"></li>
+		<li className="dog"></li>
+		<li className="dog"></li>
+		<li className="dog"></li>
+		<li className="dog"></li>
+		<li className="dog"></li>
+		<li className="dog"></li>
+		<li className="dog"></li>
+		<li className="dog"></li>
+	</ul>
+
+
+#### 例子3 ####
+
+	p.name{{person.name}}+p.age{{person.age}}
+
+展开后
+
+	<p className="name">{person.name}</p>
+	<p className="age">{person.age}</p>
+
+注意，这里，使用单个括号，就达不到效果，  
+使用单个括号，  
+
+	p.name{person.name}+p.age{person.age}
+
+展开后  
+
+	<p className="name">person.name</p>
+	<p className="age">person.age</p>
+
+参考：
+
+* [React JSX的className属性使用技巧-NOV 16 2015](http://wesbos.com/emmet-react-jsx-sublime/)
+* [Sublime Text 3打造開發React的環境](http://eddychang.me/blog/javascript/51-sublime-text-3-react.html)
+
+
+## 用Tab键 切换展开状态 ##
+
+安装tab-trigger.js，增强 语法糖展开，  
+来回切换展开前和展开后的代码。  
+
+prefece > keybinding
+
+复制文件到
+
+
+   	"operand": "source.js, text.html", 
+
+修改成：
+
+  	"operand": "source.js, text.html", 
+
+Speed up development Optimize workflows 
+Become a better developer
+
+
+# preference 
+
+
+

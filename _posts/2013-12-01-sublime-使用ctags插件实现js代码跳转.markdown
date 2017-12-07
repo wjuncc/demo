@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "[sublimeText3] 使用ctags插件实现javascript的代码跳转"
+title:  "sublime使用ctags插件实现js代码跳转"
 date:   2013-12-01 01:17:32 +0800
 categories: jekyll update
 ---
 
-## 1 使用ctags插件实现javascript的代码跳转 ##
+## 1 使用ctags插件实现js代码跳转 ##
 
 **ctags58** ---是一个命令行工具，生成函数定义的索引，用在VIM，和SublimeText
 

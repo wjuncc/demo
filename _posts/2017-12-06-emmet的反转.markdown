@@ -13,6 +13,96 @@ npm install -g html2jade
 
 ### sizzle  ###
 
+### 全局安装html2jade  ### 
+	npm install -g html2jade
+
+注意，要写成 npm install -g html2jade
+而不是  
+
+	npm install html2jade  -g
+实际测试不对
+
+### 配置sublime环境-Node ###
+
+解压SublimeText3__2__带包安装器.rar  
+重命名SublimeText3-node  
+exe也重命名 sublime_node.exe    
+
+
+
+1. 打开 tools > build system > new build system，输入下面代码，
+
+    	{  
+    	"cmd": ["node","$file","$file_base_name"],  
+    	"working_dir":"${project_path:${folder}}",  
+    	"selector":"*.js"  
+   		}
+
+	保存为 Node.sublime-build  
+	即 D:\green\SublimeText3-node\Data\Packages\User\Node.sublime-build 
+
+2. rools> buidling system > Node (即刚刚创建的Node), 把当前的e编译环境切换到Node，
+
+### 参考  ###
+
+*  [youtube - How to set up a JavaScript build system for Sublime Text](https://www.youtube.com/watch?v=W_TzeL4OhL0)  
+
+
+### 测试 ###
+
+	var html2jade = require('html2jade');
+	var html = "<html><body>Hello World</body></html>";
+	html2jade.convertHtml(html, {}, function (err, jade) {
+	  // do your thing
+	});
+
+输出
+
+	html
+	  body Hello World
+	
+	[Finished in 0.3s]
+
+
+### node读取文件 ###
+	var fs = require('fs');
+	//读取文件
+	var data = "";
+	var readableStream = fs.createReadStream('1.html');
+	readableStream.on('data', function(chunk){
+	 data += chunk;
+	});
+	readableStream.on('end', function(){
+	 	//console.log(data);
+	 	do_trans(data)
+	});
+### node写文件 ###
+	function write(w_data) {
+		// body
+		var w_data = new Buffer(w_data);
+		fs.writeFile(__dirname + '/test.txt', w_data, {flag: 'a'}, function (err) {
+		   if(err) {
+		    	//console.error(err);
+		    } else {
+		       console.log('写入成功');
+		    }
+		});
+	}
+
+
+### 等价 ###
+
+jade
+
+    .header_cnt_detail
+      .header_cnt_l_detail
+        ul.nav_detail
+          li.first
+
+等价于 emmet
+
+	.header_cnt_detail>.header_cnt_l_detail>ul.nav_detail>li.first
+
 
 #### 参考 ####
 
