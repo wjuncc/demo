@@ -29,7 +29,7 @@ karna主题的css有问题，在拉小成手机后，再拉大，
 * 对圆角不感冒：[mr-brown](http://jekyllthemes.org/themes/mr-brown/)  
 * 正正方方，不够好：[smart-material](http://jekyllthemes.org/themes/smart-material-theme/)
 * 不如原版好[GridGallery](http://jekyllthemes.org/themes/gridgallery/)  
-* [google-grid-gallery](https://tympanus.net/codrops/2014/03/21/google-grid-gallery/)
+* 4年前，也不过时 [google-grid-gallery](https://tympanus.net/codrops/2014/03/21/google-grid-gallery/) -> [GridGallery](https://github.com/codrops/GridGallery)
 
 * 动画切换花，不喜欢[ModernBlog](http://jekyllthemes.org/themes/modernblog/)
 * 右边不要[Leonids](http://jekyllthemes.org/themes/leonids/)
