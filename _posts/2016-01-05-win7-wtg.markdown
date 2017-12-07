@@ -3,9 +3,7 @@ layout: post
 title:  "WTG"
 date:   2016-01-05 16:11:12 +0800
 categories: win7
-tags: 
-	wtg 
-	u盘
+tags: wtg u盘
 
 ---
 
