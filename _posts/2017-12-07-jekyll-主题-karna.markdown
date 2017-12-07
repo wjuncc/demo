@@ -5,23 +5,27 @@ date:   2017-12-07 13:17:32 +0800
 categories:  jekyll
 tags:
     - jekyll 
----
+    
+--- 
 
+本地测试：  
+karna主题的css有问题，在拉小成手机后，再拉大，  
+没有还原到大屏下的多个并列。  
+而是单张图片左右撑满。  
 
+在[demo](http://webjeda.com/karna/)会重现这个问题。
 
-下面列一些主题：
+##其他可选主题##
 
 [mr-brown](http://jekyllthemes.org/themes/mr-brown/)  
 [smart-material](http://jekyllthemes.org/themes/smart-material-theme/)
 [google-grid-gallery](https://tympanus.net/codrops/2014/03/21/google-grid-gallery/)
 
 
-[高端大气](http://jekyllthemes.org/themes/doc-theme/)
+[高端大气](http://jekyllthemes.org/themes/doc-theme/)  
 [很有特点](http://jekyllthemes.org/themes/doc-theme/)
 
-
-# karna 主题  #
-
+## 备忘录 ##
 下载[karna](http://jekyllthemes.org/themes/karna/)  
 
 报错：
@@ -47,9 +51,6 @@ tags:
 	http://127.0.0.1:4000/karna/
 
 测试OK；  
-这个css有问题，在拉小成手机后，再拉大，  
-没有还原到大屏下的多个并列。  
-而是单张图片左右撑满。
 
 
 #### 参考 ####
