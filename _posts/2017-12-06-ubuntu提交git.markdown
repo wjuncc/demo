@@ -25,6 +25,7 @@ tags:
 
 ## 
 
+
 从远程仓库下载文件
 
 先cd到路径，再调用clone
@@ -44,6 +45,7 @@ tags:
 
 ubuntu写bash 上传git：
 
+	#!/bin/bash
 	git checkout gh-pages
 	git pull origin gh-pages
 	git add *
@@ -60,7 +62,43 @@ ubuntu写bash 上传git：
 	bash: ./upload_git.sh: 权限不够
 	wj@wj-System-Product-Name:~/blog$ 
 
+# 在命令行执行
 
+执行：
+	
+	./upload_git.sh
+
+报错：
+
+	bash: ./upload_git.sh: 没有那个文件或目录
+
+换绝对路径：
+
+	/home/wj/blog/upload_git.sh
+
+报错：
+	bash: /home/wj/upload_git.sh: 没有那个文件或目录
+
+
+但是ls看又有这个文件,很是奇
+
+bash: ./upload_git.sh: 权限不够
+ linux下权限不够 chmod +x 脚本命令 ./脚本命令 
+就是要写2行：
+
+ 	chmod +x ./upload_git.sh
+ 	./upload_git.sh
+
+
+估计你是在Windows下编辑的，文件每行末尾会多出^M，所以建议先转格式：
+搜索
+
+	sudo apt-get install dos2unix
+
+	dos2unix upload_git.sh
+
+	dos2unix ~/blog/demo/upload_git.sh
+	
 #### 参考 ####
 
 * [Ubuntu下Git的安装与使用_Linux教程_Linux公社-Linux系统门户网站](http://www.linuxidc.com/Linux/2016-09/135527.htm)
