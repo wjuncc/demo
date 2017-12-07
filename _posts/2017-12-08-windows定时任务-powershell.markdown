@@ -8,6 +8,19 @@ tags:
 
 # windows定时任务 powershell #
 
+## 创建 ##
+powershell create task scheduler   
+Windows PowerShell ISE
+
+
+
+# Windows PowerShell ISE 介绍 #
+
+* [Powershell快速入门（一） 安装和使用 - 简书](http://www.jianshu.com/p/c8f5c374466a)
+* [不一样的命令行 – Windows PowerShell简介 - grapeot - 博客园](http://www.cnblogs.com/grapeot/archive/2010/02/22/1670822.html)
+* 
+## 修改 ##
+
 用CMD命令 schtasks 创建一个计划任务
 
 	
@@ -27,6 +40,9 @@ Windows的计划任务->bat->PowerShell脚本
 
 #### 参考 ####
 
+
+* [Use PowerShell to Create Scheduled Tasks – Hey, Scripting Guy! Blog](https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/13/use-powershell-to-create-scheduled-tasks/)
+* [New-ScheduledTask](https://docs.microsoft.com/en-us/powershell/module/scheduledtasks/new-scheduledtask?view=win10-ps)
 * [使用批处理及Windows计划任务做每日备份 - Edi Wang](http://edi.wang/post/2012/6/5/daily-backup-using-batch-and-task-schedule-in-windows)
 * [【Windows】设置每分钟执行一次bat脚本的计划任务 - 枫芸志](http://witmax.cn/windows-run-bat-per-minute.html)
 * [Windows 自动定时执行任务的几种实现方法 - 博弈无涯 - 博客园](http://www.cnblogs.com/bmwchampion/archive/2010/08/21/autotimingexcutejob.html)
