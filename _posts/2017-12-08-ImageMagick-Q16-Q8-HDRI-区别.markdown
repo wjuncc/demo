@@ -3,10 +3,22 @@ layout: post
 title:  "ImageMagick Q16 Q8 HDRI 区别"
 date:   2017-12-08 00:41:01 +0800
 categories:  
-tags: 
+tags: ImageMagick
 ---
 
 # ImageMagick Q16 Q8 HDRI 区别 #
+
+
+了解一下：
+
+Q16的色彩数量多。 处理慢。 
+
+相对的：
+
+Q8 的色彩数量少。 处理快。 
+
+默认是Q8
+
 
 
 #### 参考 ####

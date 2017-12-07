@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "阿里云部署git"
+date:   2017-12-08 04:32:47 +0800
+categories:  
+tags: 
+---
+
+# 阿里云部署git #
+
+
+#### 参考 ####
+
+* [在阿里云上搭建自己的git服务器_唐霜](http://www.tangshuang.net/1693.html)
+* [云服务器搭建git仓库 — Msq](https://moshuqi.github.io/2017/03/21/云服务器搭建git仓库/)
+* [在阿里云上搭建Git 服务器 - CSDN博客](http://blog.csdn.net/wershest/article/details/77713923)
+* [node项目部署——阿里云centos部署git服务 - 简书](http://www.jianshu.com/p/d7713fbd3e5d)
+* [搭建git服务器以及web自动化部署 - 天空的城](http://shomy.top/2016/04/14/git-server-hook/)
+* [阿里云搭建Git服务，实现Hexo自动部署 - Yusen's Blog - 学习弯道超车的技巧！](https://imys.net/20160303/hexo-nginx-auto-deploy.html)
+* [使用阿里云提供的git管理代码 - 少延博客](https://www.xsy.me/2017/04/27/how_to_use_aliyun_git.html)
+* [阿里云git服务器搭建 - 程序园](http://www.voidcn.com/article/p-rwovdoqt-sa.html)
+* [阿里云自动部署方案 · GitBook](https://www.gitbook.com/book/jnnock/depoly/details)
