@@ -15,7 +15,9 @@ tags:
 如果时间>系统时间,则不显示，实际上，是不导出html文件。  
 不然很花时间。
 
-2. E:\n\wj\blog\demo\_site\assets\main.css   
+2. 复制E:\n\wj\blog\demo\_site\assets\main.css
+到 E:\n\wj\blog\demo\assets\main.css  
+如果没有文件夹assets，就加一个文件夹assets    
 注释掉  
 
 		/*line-height: 54px;*/
