@@ -1,6 +1,6 @@
 ---
 layout: 	post
-title: 	 	"jekyll Hux主题修改"
+title: 	 	"jekyll主题 Hux 修改"
 subtitle:   ""
 date:   	2017-12-06 21:17:32 +0800
 author:     "wj"
