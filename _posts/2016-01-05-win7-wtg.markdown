@@ -3,9 +3,22 @@ layout: post
 title:  "WTG"
 date:   2016-01-05 16:11:12 +0800
 categories: win7
-tags: wtg 
-	u盘
+tags: wtg u盘
 ---
+
+## tag的问题 ##
+
+写成：
+
+	tags: wtg  u盘
+
+通过
+
+写成：
+
+	tags: wtg
+	  u盘
+不通过
 
 # win7 WTG #
 了解一下：
