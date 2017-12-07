@@ -6,7 +6,10 @@ categories:
 tags: 
 ---
 
-# jekyll替换主题 #
+# jekyll主题stepbystep #
+
+这说明，换插件，要用最新有更新的。
+否则就是坑。
 
 执行：
 	
@@ -131,12 +134,7 @@ Could not find i18n-0.7.0 in any of the sources
 	
 	E:\n\wj\blog\theme\stepbystep-master>
 
-
-
-
-
-
-
+放弃。 
 
 
 

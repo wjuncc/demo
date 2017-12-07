@@ -1,12 +1,30 @@
 ---
 layout: post
-title:  "jekyll问题汇总"
+title:  "jekyll 问题汇总"
 date:   2017-10-05 21:17:32 +0800
-categories:  
-tags: 
+categories:  jekyll
+tags: jekyll
 ---
 
-# jekyll中文路径 #
+
+
+## tag的问题 ##
+
+写成：
+
+	tags: wtg  u盘
+
+通过
+
+写成：
+
+	tags: wtg
+	  u盘
+不通过
+
+
+## 时间的问题 ##
+
 
 # jekyll中文路径 #
 这个问题是jekyll2的，在jekyll3下没有了。  
