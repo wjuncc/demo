@@ -8,17 +8,45 @@ tags:
 
 # mp4转gif ffmpeg #
 
-### 安装 ### 
+ubuntu打开命令行：Ctrl+Alt+T  
+ubuntu打开命令行标签页：Ctrl+Shit+T  
+
+### 安装1 ### 
 
 	sudo apt-get install ffmpeg
 
+报错：
+
+	sudo apt-get install ffmpeg
+	正在读取软件包列表... 完成
+	正在分析软件包的依赖关系树       
+	正在读取状态信息... 完成       
+	现在没有可用的软件包 ffmpeg，但是它被其它的软件包引用了。
+	这可能意味着这个缺失的软件包可能已被废弃，
+	或者只能在其他发布源中找到
+
+
+### 安装2
+
+通过PPA安装FFmpeg 2.5.1 
+
+	sudo add-apt-repository ppa:kirillshkrogalev/ffmpeg-next
+	sudo apt-get update
+	sudo apt-get install ffmpeg
+
+
+
 ### 使用 ###
 
-	ffmpeg -t 3.6 -ss 00:00:01 -i Screencast_2016-01-13-17-01-38.mp4  small-c
+	ffmpeg -t 3.6 -ss 00:00:01 -i Screencast_2016-01-13-17-01-38.mp4  small-clip.gif
 
 
 	注释：3.6是秒数，00:00:01是开始时间。 
 
+### 实例 ###
+CVZK3966.MP4
+
+	ffmpeg -t 3.6 -ss 00:00:01 -i CVZK3966.MP4 CVZK3966.gif
 
 
 #### 参考 ####
