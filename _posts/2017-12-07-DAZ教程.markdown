@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "DAZ教程"
+date:   2017-12-07 12:13:04 +0800
+categories:  
+tags: 
+---
+
+# DAZ教程 #
+
+
+[Daz to Maya插件](https://www.daz3d.com/daz-to-maya)
+
+#### 参考 ####
+
+* [DAZ官网的几个入门教程整理【入门向】_点空创吧](http://771dian.com/cb/topic/V1PgoL-Ul)
+* [DAZ Studio 入门教程-教程-花魁小站](http://www.hkcgart.com/course/detail/id/1052.html)
+* [DAZ 4.6 中文解说教程 - 播单 - 优酷视频](http://list.youku.com/albumlist/show?id=26085296&ascending=1&page=1)
+* [DAZ教程和介绍 - 播单 - 优酷视频](http://list.youku.com/albumlist/show?id=22766015&ascending=1&page=1)
+* [DAZ Studio三维角色造型设计从初级到高级训练视频教程 DAZ STUDIO BEGINNER TO ADVANCED_野生技术协会_科技_bilibili_哔哩哔哩](https://www.bilibili.com/video/av10533217/)
+* [DAZ Studio 简易入手教程！ - Poser中国教程](http://bbs.cguse.com/thread-5240-1-1.html)
+* [基础到高级的Daz视频Daz教程【猪七戒素材论坛】超全乎的！_daz吧_百度贴吧](https://tieba.baidu.com/p/5080760062)
+* [DAZ Studio三维创作高效技巧视频教程](http://www.cgtsj.com/cg/f/vx3070/index.html)
