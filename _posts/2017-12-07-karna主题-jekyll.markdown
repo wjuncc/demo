@@ -3,7 +3,7 @@ layout: post
 title:  "karna主题 jekyll"
 date:   2017-12-07 21:17:32 +0800
 categories:  
-tags:  jekyll
+tags: - jekyll
 
 ---
 
@@ -49,5 +49,6 @@ tags:  jekyll
 没有还原到大屏下的多个并列。  
 而是单张图片左右撑满。
 
-#### 参考 ####
 
+#### 参考 ####
+* [karna](http://jekyllthemes.org/themes/karna/)  
