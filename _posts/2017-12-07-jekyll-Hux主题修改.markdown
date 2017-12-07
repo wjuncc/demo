@@ -1,6 +1,6 @@
 ---
 layout: 	post
-title: 	 	"CleanBlog修改"
+title: 	 	"jekyll Hux主题修改"
 subtitle:   ""
 date:   	2017-12-06 21:17:32 +0800
 author:     "wj"
@@ -10,7 +10,10 @@ tags:
     - jekyll 
 ---
 
+### jekyll ###
+找主题，找到
 ### CleanBlog ###
+[很不错，同步新的+官方](https://github.com/BlackrockDigital/startbootstrap-clean-blog-jekyll)
 
 本来是准备上CleanBlog的，但是
 
@@ -237,3 +240,18 @@ CleanBLog，   生成->   文件名/index.html.
 * [Hello, this is my new theme of blog - YuanFu’s blog - MrFu blog](https://mrfu.me/life/2015/07/19/the_new_blog_theme/)
 * [Codeboy Blog的搭建 - CSDN博客](http://blog.csdn.net/dliyuedong/article/details/47439721)
 * [从零开始折腾Jekyll - Biu^Biu's Blog](http://bluebiu.com/blog/learn-to-use-jekyll.html)
+
+
+
+#### 参考 ####
+2年前或者1年前的，可能和现在的版本3有冲突：
+
+* [全部列表-Jekyll Themes](http://jekyllthemes.org/page2/)
+* [Liberxue/liberxue.github.io: Liberxue blog for Jekyll themes 轻量级自适应 简洁 卡片式博客主题 3秒搞定GitHub blog](https://github.com/Liberxue/liberxue.github.io)
+* [joytou/joytou.github.io: JOYTOU](https://github.com/joytou/joytou.github.io#cn)
+* [不是很美：JOYTOU - 一个热爱折腾、不肯休息的业余程序员！](https://joytou.github.io/cn/)
+* [不喜欢黑白的：Simpleyyt/jekyll-theme-next: Elegant theme for Jekyll.](https://github.com/Simpleyyt/jekyll-theme-next)
+* [正文在右边，要在左边：suyan/suyan.github.io: My Blog.](https://github.com/suyan/suyan.github.io)
+* [很久没有更新了：SimpleGray/README.md at master · mytharcher/SimpleGray](https://github.com/mytharcher/SimpleGray/blob/master/README.md)
+* [很久没有更新了：Huxpro/huxpro.github.io: My Blog / Jekyll Themes / PWA](https://github.com/Huxpro/huxpro.github.io)
+* [很久没有更新了：gansteed/gansteed.github.io](https://github.com/gansteed/gansteed.github.io)
