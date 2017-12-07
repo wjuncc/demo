@@ -15,6 +15,14 @@ tags:
 如果时间>系统时间,则不显示，实际上，是不导出html文件。  
 不然很花时间。
 
+2. E:\n\wj\blog\demo\_site\assets\main.css   
+注释掉  
+
+		/*line-height: 54px;*/
+		.site-nav {
+		  float: right;
+		  /*line-height: 54px;*/ }
+
 ### tag有问题 ###
 
 
