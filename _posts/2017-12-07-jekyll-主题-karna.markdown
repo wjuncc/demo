@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "karna主题 jekyll"
+title:  "jekyll 主题 karna"
 date:   2017-12-07 13:17:32 +0800
 categories:  jekyll
 tags:
@@ -60,31 +60,6 @@ tags:
 > Error: could not read file (<unknown>): could not find expected ':' while scanning a simple key at line 6 column 1
 
 跳过这个问题。  
-### 尝试给默认jekyll加标签  ###
-[参考](http://zixiaojindao.github.io/blogging/2012/09/30/jekyll-category-tag-recent-comment/)
-
-> 1.下载tags.md, 放到github博客根目录下。
-
-> 2.下载jquery.tagcloud.js,放入github博客根目录下的js目录中。
-
-> 3.在你的首页上也就是index.html, index.md中添加tags.html的超链接
-
-> 4.第1步中你需要加上自己的layout域来符合你的主题。
-
-按上述说明，在根下加tags.md。  
-在跟下新建文件夹js，加jquery.tagcloud.js。   
-打开index.md，后，写着：
-
-	---
-	# You don't need to edit this file, it's empty on purpose.
-	# Edit theme's home layout instead if you wanna make some changes
-	# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
-	layout: home
-	---
-
-跳过这一步，在http://127.0.0.1:4000/demo/tags.html看，发现多了个 tag cloud。
-
-说明 tag cloud添加成功。
 
 ### 报错2 ###
 
@@ -92,25 +67,6 @@ tags:
 	...done in 1.135 seconds.
 
 这是因为，头信息中的键值对，键+冒号+值中，冒号后面必须有空格，没有空格就报错。
-
-### 报错3 ###
-
-	2017-12-07 15:29:00] ERROR `/js/jquery.tagcloud.js' not found.
-
-这是路径问题，  
-打开tags.md，
-#### 修改1 ####
-
-	<script src="/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script>  
-->
-
-	<script src="{{"/js/jquery.tagcloud.js"| prepend: site.baseurl }}" type="text/javascript" charset="utf-8"></script> 
-
-#### 修改2 ####
-	<a href="{{site.siteurl}}{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-->
-
-	<a href="{{site.baseurl}}{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
 
 
 ### 报错4 ###
