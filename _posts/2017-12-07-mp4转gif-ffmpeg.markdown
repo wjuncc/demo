@@ -22,6 +22,38 @@ VideoSplitter loader.exe
 CVZK3966.MP4 ->
 CVZK3966.m4v
 
+# 2 裁剪区域
+【版本】ffmpeg version 3.4 Copyright (c) 2000-2017 the FFmpeg developers
+  built with gcc 7.2.0 (GCC)
+
+【备要】 
+
+	
+	ffmpeg -i CVZK3966.m4v -vf "crop=640:1138:0:0" CVZK3966-cut.m4v
+
+报错：
+
+	[Parsed_crop_0 @ 00000000036bff00] Invalid too big or non positive size for widt
+	h '640' or height '1138'
+	[Parsed_crop_0 @ 00000000036bff00] Failed to configure input pad on Parsed_crop_
+	0
+	Error reinitializing filters!
+	Failed to inject frame into filter network: Invalid argument
+	Error while processing the decoded data for stream #0:0
+
+改成：
+
+	ffmpeg -i CVZK3966-32.gif -vf "crop=640:1096:0:42" -y CVZK3966-32-cut.gif
+	
+	-y, 覆盖输出文件
+
+参考：
+
+>
+	ffmpeg -i input.m4v -vf scale=iw/2:-1,crop=ih output.m4v
+> scale=width:height iw/ih 表示输入宽度/高度 -1 表示按输入尺寸等比自动计算  
+> crop=width:height:x:y 
+> x:y 指定裁剪的左上角位置，默认值为 (in_w-out_w)/2 和 (in_h-out_h)/2，即输出视频为原视频的中央区域  
 
 ## 2 mp4转gif 
 【版本】ffmpeg version 3.4 Copyright (c) 2000-2017 the FFmpeg developers
@@ -46,12 +78,48 @@ m4v转gif.bat
   
 C:\Program Files\ImageMagick-7.0.7-Q16
 
+cd E:\n\wj\171207_blogAuto\video
 压缩gif.bat
 
-	cd 
-	convert test.gif -fuzz 5% -layers Optimize result.gif
+	cd E:\n\wj\171207_blogAuto\video
+	convert CVZK3966-32-320.gif -fuzz 5% -layers Optimize CVZK3966-32-320-compress.gif
+
+报错：
+
+	E:\n\wj\171207_blogAuto\video>convert CVZK3966-32-320.gif -fuzz 5% -layers Optimize CVZK3966-32-320-compress.gif
+	无效参数 - -fuzz
+
+convert是windows的分区自带的类型转换程序       
+加上 magick：  
+
+	magick convert CVZK3966-32-320.gif -fuzz 5% -layers Optimize CVZK3966-32-320-compress.gif
+
+CVZK3966-32-320.gif            25M
+CVZK3966-32-320-compress.gif   26M
 
 
+### 切换gif图片 ###
+
+[小tips: CSS或JS实现gif动态图片的停止与播放](http://www.zhangxinxu.com/wordpress/2015/12/css3-animation-js-canvas-gif-pause-stop-play/)
+
+### gif图片加水印 ###
+
+	ffmpeg -i test.mp4 -i logo.png -filter_complex overlay test1.mp4
+
+
+改变位置：
+
+写法1：
+
+	ffmpeg -i CVZK3966-32-cut.gif -i watermark.png -filter_complex overlay=0:90 -y CVZK3966-32-add-mask.gif
+
+写法2：
+
+	::ffmpeg -y -i CVZK3966-32-cut.gif  -vf "movie=watermark.png [wm];[in][wm] overlay=0:90 [out]" -strict experimental CVZK3966-32-add-mask.gif
+
+[FFmpeg总结（十）用ffmpeg进行在视频中加水印图、加gif图](http://blog.csdn.net/hejjunlin/article/details/71104027)
+
+### gif导出序列帧 ###
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
