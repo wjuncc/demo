@@ -97,20 +97,120 @@ Powershell是一种高级脚本框架，通常脚本是在控制台主机上运�
 Windows Server Core仍然可以满足为复杂的自定义数据提供熟悉的用户界面的示例的最终目标。 
 请注意，因为“Server Core”能用鼠标，因此，不用给表单元素添加键盘快捷键。
 
-在进一步的例子中，显示了如何从C＃等价物手动构建Powershell Selenium脚本或自动在Selenium IDE中记录;","In further examples, it is shown how to construct Powershell Selenium scripts from C# equivalents manually or record in Selenium IDE automatically;",null,null,3],["说明使用Powershell运行Selenium录音的确定好处。
+在稍后的例子中，显示了如何手动构建Powershell Selenium脚本（等价于C＃）或自动在Selenium IDE中记录; 
+进一步肯定了使用Powershell运行Selenium录制的好处。
 
-最后，详细介绍一步一步的转换练习。
+最后，手把手的做转换练习。
 
-背景
-人们会认识到Powershell版本的代码实际上与C＃版本相同，只有语义差异。","One will recognize the Powershell version of the code to be practically identical to the C# version with only semantic differences.",null,null,3],["作者的github回购和新代码上的所有可用资源正在日常开发中。
+## 背景 ##
+我们认识到Powershell代码的版本迭代实际上与C＃版本相同，只是语义有差异。
+作者的github代码[sergueik/powershell_ui_samples](https://github.com/sergueik/powershell_ui_samples), 每天会跟进新开发的代码。
 
-我们目前需要构建一个辅助类，负责将信息传递给Powershell脚本调用程序，并以事件处理程序的形式提供给Windows窗体，尽管所有对话框都将以模态方式绘制。","We currently need to construct the helper class responsible for passing information to the Powershell script caller in plain C# and make its properties available to Windows Form in the event handlers, though all dialogs will be drawn modally.",null,null,3],["没有这种紧密的联系，一些难以调试的竞争条件错误可能是可能的。","Without such tight link, some hard-to- debug race condition errors might be possible.",null,null,3],["这些假设的分析推迟到未来的文章。
+我们目前需要构建一个辅助类，负责将信息传递给Powershell脚本调用程序，并以事件处理程序的形式提供给Windows窗体，尽管所有对话框都将以模态方式绘制。
+如果没有这种紧密的联系，很有可能会产生难以调试的错误。
+在作者以后的文章中，再来谈论对此问题的分析。
 
-使用代码
-文章中提供的样本可以很容易地根据读者认为适合的任何目的进行定制。
+## 使用代码 ##
+文中的样本代码，是为了更容易让读者理解而写的。
 
-代码细节
-将用于从表单共享信息到Powershell的类是非常基本的。","The class that will be used to share information from the form to Powershell is quite basic.",null,null,3],["它只需要实现IWin32Window接口;","All it needs is to implement IWin32Window interface;",null,null,3],["它也将有各种私人数据成员与getter和setter和方法 - 在下面的一些例子中的形式使用。
+## 代码细节 ##
+该类是非常基础的，用于把表单窗口的信息传给Powershell。
+它只需要实现IWin32Window接口; 
+它也将有各种私人数据成员与getter和setter和方法 - 如下所示。
+
+	Add-Type -TypeDefinition @"
+
+	// "
+	using System;
+	using System.Windows.Forms;
+	public class Win32Window : IWin32Window
+	{
+	    private IntPtr _hWnd;
+	    private int _data;
+	
+	    public int Data
+	    {
+	        get { return _data; }
+	        set { _data = value; }
+	    }
+	
+	    public Win32Window(IntPtr handle)
+	    {
+	        _hWnd = handle;
+	    }
+	
+	    public IntPtr Handle
+	    {
+	        get { return _hWnd; }
+	    }
+	}
+
+	"@ -ReferencedAssemblies 'System.Windows.Forms.dll'
+
+
+
+Powershell在类中存储了自己的窗口句柄：
+
+	if ($process_window -eq $null ){
+	  $process_window = New-Object Win32Window -ArgumentList
+	  ([System.Diagnostics.Process]::GetCurrentProcess().MainWindowHandle)
+	}
+
+从$caller.Message和$caller.Data读取条目选择和总体状态:
+
+	$DebugPreference = 'Continue'
+
+	  if($process_window.Data -ne $RESULT_CANCEL) {
+	    write-debug ('Selection is : {0}' -f  , $process_window.Message )
+	  } else {
+	    write-debug ('Result is : {0} ({1})' -f
+	    $Readable.Item($process_window.Data) , $process_window.Data )
+	  }
+
+换种语法可以写作：
+
+	$guid = [guid]::NewGuid()
+	
+	$helper_namespace = ("Util_{0}" -f ($guid -replace '-',''))
+	$helper_name = 'Helper'
+	
+	Add-Type -UsingNamespace @(
+	  'System.Drawing',
+	  'System.IO',
+	  'System.Windows.Forms',
+	  'System.Drawing.Imaging',
+	  'System.Collections.Generic',
+	  'System.Text' `
+	  ) `
+	   -MemberDefinition @"
+	// inline C# code without class decoration
+	"@ -ReferencedAssemblies @( 'System.Windows.Forms.dll',`
+	     'System.Drawing.dll',`
+	     'System.Data.dll',`
+	     'System.Xml.dll') `
+	   -Namespace $helper_namespace -Name $helper_name -ErrorAction Stop
+	
+	$helper = New-Object -TypeName ('{0}.{1}' -f $helper_namespace,$helper_type)
+	# the rest of Powershell code 
+
+
+
+
+这样就不用担心每次修改内联C＃代码时都会看到恼人的警告：
+
+	Add-Type : Cannot add type. The type name 'Win32Window' already exists.
+	At C:\developer\sergueik\powershell_ui_samples\treeview_c.ps1:21 char:1
+	+ Add-Type -TypeDefinition @"
+
+
+注意，默认包含了名称空间，不应该在调用agrit中明确提供
+
+
+	Warning as Error:
+	The using directive for 'System' appeared previously in this namespace
+	The using directive for 'System.Runtime.InteropServices' appeared previously in this namespace
+
+
 #### 参考 ####
 
 * [使用格式命令更改输出视图 - Microsoft Docs](https://docs.microsoft.com/zh-cn/powershell/scripting/getting-started/cookbooks/using-format-commands-to-change-output-view?view=powershell-5.1)
