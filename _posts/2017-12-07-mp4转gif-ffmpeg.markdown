@@ -2,13 +2,61 @@
 layout: post
 title:  "mp4转gif ffmpeg"
 date:   2017-12-07 22:52:41 +0800
-categories:  
-tags: 
+categories:  public
+tags: gif ffmpeg
 ---
 
-# mp4转gif ffmpeg #
+# 步骤 #
+
+## 1 裁剪mp4前后帧
+【版本】Boilsoft Video Splitter 6.34.4  
+【备要】 
+uVideoSplitter.py
+调用
+VideoSplitterBat.py
+调用
+VideoSplitter loader.exe
+
+注意：
+处理后文件名有变化：  
+CVZK3966.MP4 ->
+CVZK3966.m4v
 
 
+## 2 mp4转gif 
+【版本】ffmpeg version 3.4 Copyright (c) 2000-2017 the FFmpeg developers
+  built with gcc 7.2.0 (GCC)
+
+【备要】 
+m4v转gif.bat
+
+	%~d0
+	cd %cd%  
+	::定义帧率 32fps:
+	ffmpeg -i CVZK3966.m4v -r 32 -filter:v "setpts=0.125*PTS" -an CVZK3966-32.gif
+	::在前面32fps的基础上，缩放视频尺寸
+	ffmpeg -i CVZK3966-32.gif -vf scale=320:-1 CVZK3966-32-320.gif
+	
+## 3 压缩gif ##
+【版本】  ImageMagick 7.0.7 Q16 (64-bit)  
+【备要】 
+
+1. 添加系统环境变量  
+添加当前路径到系统环境变量.bat  
+  
+C:\Program Files\ImageMagick-7.0.7-Q16
+
+压缩gif.bat
+
+	cd 
+	convert test.gif -fuzz 5% -layers Optimize result.gif
+
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+### 备忘录 ###
 ## win7 命令行 ##
 
 	ffmpeg -t 13.6 -ss 00:00:01 -i CVZK3966.MP4 CVZK3966.gif
