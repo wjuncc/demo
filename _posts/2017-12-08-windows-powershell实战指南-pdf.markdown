@@ -2,13 +2,115 @@
 layout: post
 title:  "windows powershell实战指南 pdf"
 date:   2017-12-08 21:41:26 +0800
-categories:  
-tags: 
+categories:  private
+tags: powershell
 ---
 
 # windows powershell实战指南 pdf #
 
+## 目录 ##
+* 介绍
+* 选择？！
+* 背景
+* 使用代码
+	* 多选择提示
+	* 超时提示
+	* 从复选框和Radiobutton组收集选择
+	* 选中列表框选择
+	* 手风琴菜单
+	* 多选框Combobox
+	* 条形图
+	* 图表的实际数据
+	* 线，bar和饼图
+	* Data Grid概念
+	* 列表视图
+	* 填充GridView数据表
+	* 名单与可折叠的组
+	* 拖放
+	* 上下滚动
+	* Ribbon 按钮
+	* 自定义调试消息框
+	* 杂项。 密码输入
+		* Plain
+		* 活动目录
+		* 会话Cookie
+	* 通用对话框
+	* 带有输入焦点控制的选项卡式对话框
+	* 进度条
+	* 计时器
+	* 任务列表进度
+	* 圈进度指标
+	* 文件系统TreeView
+	* 嵌入XAML
+		* ...on the fly
+		* 更多
+	* 连接WPF事件
+	* 树视图
+		* Plain
+		* 高级
+			* 自定义图标
+			* 背景工作者
+			* DropDown组合框
+			* Tabbed分页
+			* 三态树视图
+			* 标签项目的一棵树
+	* 系统托盘通知图标
+	* Selenium 测试
+	* Selenium IDE IDE Powershell格式
+	* 通用Selenium自动化
+	* 用Selenium sendKeys上传文件
+	* 杂项。 使用WebDriver
+	* 在资源管理器任务栏上显示Selenium调试消息
+	* Selenium EventFiring WebDriver示例
+* 杂项。 工具包
+	* 截图
+	* 隐藏Powershell控制台
+* 在Powershell ISE中编写Selenium脚本
+* 极端情况
+* 解剖过程
+	* 初步讨论
+	* 实际转换到Powershell
+* GitHub上的源代码
+* 历史
 
+## 介绍 ##
+
+Powershell是一种高级脚本框架，通常脚本是在控制台主机上运行的，通常是远程运行的，但Powershell脚本仍然是在Windows计算机上交互使用的。 
+当通用脚本执行时，可能需要选择多个选项。
+需要以级联的方式向用户提供多个选项，通常需要复杂的选择场景。 
+对于某些数据选择，GUI比CLI更直观，更快 - 在控制台中，即使是基本的选择,看起来也不美观。
+
+对于很多情况，普通的旧式Windows窗体仍然是提示用户的一种方便的方式。 
+这是本文的重点。
+我们从[http://www.java2s.com/](http://www.java2s.com/)中找几个基本例子，并将它们转换为Powershell。
+之后，我们使用较早的样本作为更复杂的构件。 
+事实上，这些例子中的所有代码都可以在一个单独的文件中使用，而且不需要独立的设计器代码，这大大简化了转换。
+重点在于，在处理提示，密码，复选框，单选框，检查列表，网格，树形视图，选项卡式对话框以及这些组合的各种数据的时候，将新的Powershell代码保持选择场景所需的最低限度。
+此外，还将演示表单元素特定的事件处理程序将执行PowerShell代码。
+最后，像TreeView这样的控件可以很好地对数据进行可视化处理，而不必反复提示。
+
+另一方面，Windows Presentation Foundation调试起来或多或少有些累，但能用 - 文章中间部分提供了示例。
+与WPF交互需要多线程，这种技术对于长时间运行的脚本的异步状态报告也是有价值的。
+
+令人愉快的是，所有的脚本都能在最小服务器接口中运行，甚至在服务器核心[Windows Server 2012](https://4sysops.com/archives/switch-windows-server-2012-gui-layers-with-powershell/)图形用户界面中也能正常运行。 
+原因是:虽说“移除”了“Server Graphical Shell(服务器图形外壳)”和“Server Graphical Management Tools & Infrastructure(服务器图形管理工具和基础设施)”的Windows功能，但仍然保留了完整的微软.Net框架。 
+Windows Server Core仍然可以满足为复杂的自定义数据提供熟悉的用户界面的示例的最终目标。 
+请注意，因为“Server Core”能用鼠标，因此，不用给表单元素添加键盘快捷键。
+
+在进一步的例子中，显示了如何从C＃等价物手动构建Powershell Selenium脚本或自动在Selenium IDE中记录;","In further examples, it is shown how to construct Powershell Selenium scripts from C# equivalents manually or record in Selenium IDE automatically;",null,null,3],["说明使用Powershell运行Selenium录音的确定好处。
+
+最后，详细介绍一步一步的转换练习。
+
+背景
+人们会认识到Powershell版本的代码实际上与C＃版本相同，只有语义差异。","One will recognize the Powershell version of the code to be practically identical to the C# version with only semantic differences.",null,null,3],["作者的github回购和新代码上的所有可用资源正在日常开发中。
+
+我们目前需要构建一个辅助类，负责将信息传递给Powershell脚本调用程序，并以事件处理程序的形式提供给Windows窗体，尽管所有对话框都将以模态方式绘制。","We currently need to construct the helper class responsible for passing information to the Powershell script caller in plain C# and make its properties available to Windows Form in the event handlers, though all dialogs will be drawn modally.",null,null,3],["没有这种紧密的联系，一些难以调试的竞争条件错误可能是可能的。","Without such tight link, some hard-to- debug race condition errors might be possible.",null,null,3],["这些假设的分析推迟到未来的文章。
+
+使用代码
+文章中提供的样本可以很容易地根据读者认为适合的任何目的进行定制。
+
+代码细节
+将用于从表单共享信息到Powershell的类是非常基本的。","The class that will be used to share information from the form to Powershell is quite basic.",null,null,3],["它只需要实现IWin32Window接口;","All it needs is to implement IWin32Window interface;",null,null,3],["它也将有各种私人数据成员与getter和setter和方法 - 在下面的一些例子中的形式使用。
 #### 参考 ####
 
 * [使用格式命令更改输出视图 - Microsoft Docs](https://docs.microsoft.com/zh-cn/powershell/scripting/getting-started/cookbooks/using-format-commands-to-change-output-view?view=powershell-5.1)
