@@ -86,6 +86,16 @@ https://github.com/masters274/Posh_Repo/tree/8ae45da25bc425b18aff1924ac7396a3d34
 * 
 * pdf
 * http://m.jb51.net/books/209514.html
+* [Building Forms with PowerShell – Part 1 (The Form)](https://blogs.technet.microsoft.com/stephap/2012/04/23/building-forms-with-powershell-part-1-the-form/)
 * [Dealing with Powershell Inputs via Basic Windows Form](https://www.codeproject.com/Articles/799161/Dealing-with-Powershell-Inputs-via-Basic-Windows-F)
 * [使用Windows PowerShell创建WinForm程序-代码之家](http://www.daima234.com/8/14236.html)
 * [在powershell函数中，非模态窗体创建_winforms_帮酷编程问答](https://ask.helplib.com/.net/post_3798940)
+* 
+* building forms with powershell part 3 
+* [Building Forms with PowerShell – Part 1 (The Form) – Something About Scripting](https://blogs.technet.microsoft.com/stephap/2012/04/23/building-forms-with-powershell-part-1-the-form/)
+* [Building a UI using WPF and PowerShell, Part 2 -- Microsoft Certified Professional Magazine Online](https://mcpmag.com/articles/2016/05/05/wpf-and-powershell-part-2.aspx)
+* [FormBorderStyle Enumeration (System.Windows.Forms)](https://msdn.microsoft.com/en-us/library/hw8kes41.aspx)
+* [Building a PowerShell GUI (Part 2) - TechGenix](http://techgenix.com/building-powershell-gui-part2/)
+* [Building a PowerShell GUI (Part 3) - TechGenix](http://techgenix.com/building-powershell-gui-part3/)
+* [PowerShell GUI with HTML - Part 3 – Tiberriver256](http://tiberriver256.github.io/powershell/gui/html/PowerShell-HTML-GUI-Pt3/)
+* [Part 3 Adding Tab Controls – Create your own SQL tools with PowerShell and windows forms - JamesDataTechQ](https://jamesdatatechq.wordpress.com/2015/01/13/part-3-adding-tab-controls-create-your-own-sql-tools-with-powershell-and-windows-forms/)
