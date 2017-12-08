@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[blog] 4. 给 jekyll 加标签功能"
+title:  "DAY3 给 jekyll 加标签功能"
 date:   2017-10-05 21:17:32 +0800
 categories: jekyll update
 tags: jekyll
