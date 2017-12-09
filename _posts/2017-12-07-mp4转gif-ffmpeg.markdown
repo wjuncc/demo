@@ -6,6 +6,23 @@ categories:  public
 tags: gif ffmpeg
 ---
 
+## 小结 ##
+
+
+1. 用Boilsoft裁剪视频。不折腾。比较快。 
+2. 录屏时间长一点，这样用Boilsoft裁剪视频，错位就不那么明显。
+
+其他：
+
+1. 小软件有同样的问题：裁剪的时间点不准确，格式工厂，Boilsoft Video Splitter，Xilisoft Video Cutter；
+2. 专业软件操作麻烦。Premier没有搞懂怎么设置原始尺寸不变。
+2. iMovie不能设置尺寸，默认的电视机横屏。
+3. 机器安装会声会影和Premier报错；没有vc_red.msi，  
+Microsoft Visual C++ 2008 Redistributable无法修复，无法卸载。
+5. 不懂怎么把iphone录屏保存到Mac，iTunes没找到功能。
+6. Mac能连线iPhone录屏。没有试过。 
+
+
 # 步骤 #
 
 ## 1 裁剪mp4前后帧
@@ -26,8 +43,11 @@ CVZK3966.m4v
 长的视频可以。  
 过短的视频不行，必须Adobe Premier
 
+
 	Automatic encoder selection failed for output stream #0:1. Default encoder for format 3gp (codec amr_nb) is probably disabled. Please choose an encoder manually.
 	Error selecting an encoder for stream 0:1
+
+Xilisoft Video Cutter 2 for Mac 2.0.1
 
 在iphone6用手机录屏。
 在mac使用iMovie转视频，
