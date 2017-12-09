@@ -1,0 +1,28 @@
+---
+layout: post
+title:  "BASH 的基本语法"
+date:   2017-12-10 06:12:01 +0800
+categories:  
+tags: 
+---
+
+# BASH 的基本语法 #
+
+
+#### 参考 ####
+
+* [[linux]BASH 的基本语法 - snow__wolf - 博客园](https://www.cnblogs.com/lonelywolfmoutain/p/5950439.html)
+* [BASH 的基本语法 - Google 搜索](https://www.google.com/search?q=BASH+的基本语法&ei=vF4sWpidBonEjwOR1674Bg&start=10&sa=N&biw=853&bih=409&dpr=1.5)
+* [Bash基本语法 - yanweiqi - 博客园](http://www.cnblogs.com/ywqbj/p/5773033.html)
+* [Linux Shell\bash 基本语法与常识 - 简书](http://www.jianshu.com/p/4af01a79c0d4)
+* [Linux bash编程基础语法总结 - Linux运维部落](http://www.178linux.com/2597)
+* [shell基本语法 - canofy - ITeye博客](http://canofy.iteye.com/blog/353382)
+* [shell基本语法脚本一-极客学院](http://jingpin.jikexueyuan.com/article/1863.html)
+* [Bash基本语法与命令 - Powered By Startblog](http://www.clarkcrood.com/Articles/article/51)
+* [bash学习(一)基本语法](https://cndaqiang.github.io/2017/08/07/bash1/)
+* [Linux学习之2——bash shell基本语法和变量 - 程序园](http://www.voidcn.com/article/p-bmgctugk-de.html)
+* [30min_guides/shell.md at master · qinjx/30min_guides · GitHub](https://github.com/qinjx/30min_guides/blob/master/shell.md)
+* [Linux Bash Shell脚本基础知识点介绍 - Putty.biz](https://putty.biz/503)
+* [Bash基本语法 - CSDN博客 - 钱柜娱乐开户](http://www.tk4479.net/xxpresent/article/details/71124451)
+* [Not Found](http://www.freddon.com/articles/18)
+* [bash编程之 shell基本语法--脚本,进程,接口,变量,bash,NAME,解释器](http://dev.dafan.info/detail/339174?p=48)

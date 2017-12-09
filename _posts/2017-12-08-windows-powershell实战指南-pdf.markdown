@@ -7,7 +7,8 @@ tags: powershell
 ---
 
 # windows powershell实战指南 pdf #
-
+翻译
+[原文]
 ## 目录 ##
 * 介绍
 * 选择？！
