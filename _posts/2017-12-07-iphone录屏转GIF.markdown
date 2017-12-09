@@ -9,7 +9,7 @@ tags: gif ffmpeg iphone
 ## 小结 ##
 
 
-1. 用Boilsoft裁剪视频。不折腾。比较快。 
+1. 用 Boilsoft 裁剪视频。不折腾。比较快。 
 2. 录屏时间长一点，这样用Boilsoft裁剪视频，错位就不那么明显。
 
 其他：
