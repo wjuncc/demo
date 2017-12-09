@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "mp4转gif ffmpeg"
+title:  "iphone录屏转GIF"
 date:   2017-12-07 22:52:41 +0800
 categories:  public
-tags: gif ffmpeg
+tags: gif ffmpeg iphone
 ---
 
 ## 小结 ##
@@ -57,10 +57,8 @@ mac转视频 长度和宽度相反
 
 # 2 裁剪区域
 【版本】ffmpeg version 3.4 Copyright (c) 2000-2017 the FFmpeg developers
-  built with gcc 7.2.0 (GCC)
-
-
-【】苹果6的录屏尺寸是720x1280。转小：640x1138
+  built with gcc 7.2.0 (GCC)   
+【尺寸】苹果6的录屏尺寸是720x1280。  
 【备要】 
 
 	
@@ -206,9 +204,6 @@ CVZK3966-32-320-compress.gif   26M
 
 [FFmpeg总结（十）用ffmpeg进行在视频中加水印图、加gif图](http://blog.csdn.net/hejjunlin/article/details/71104027)
 
-### gif导出序列帧 ###
-
-
 ### ffmpeg 旋转方向 ###
 
 代码1：无效.  
@@ -228,7 +223,7 @@ CVZK3966-32-320-compress.gif   26M
 	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=2,transpose=2" -y  CVZK3966-cut-90-0.mp4   
 	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=3,transpose=3" -y  CVZK3966-cut-90-0.mp4  
 
-### 作品页检查器 ###
+### 检查器 ###
 目的： 用来检查过往项目的网页材料准备。是否完成。 
 x=未完成，1=已经完成
 ![一个检查器](https://i.imgur.com/aX3hyY8.png) 
@@ -239,8 +234,6 @@ FlashDevelop 4.6.4.1 for .net2.0
 使用sharex上传图片。  
 
 
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ### 备忘录 ###
 ## win7 命令行 ##
