@@ -17,15 +17,30 @@ VideoSplitterBat.py
 调用
 VideoSplitter loader.exe
 
-注意：
+注意1：
 处理后文件名有变化：  
 CVZK3966.MP4 ->
-CVZK3966.m4v
+CVZK3966.m4v  
+
+注意2：
+长的视频可以。  
+过短的视频不行，必须Adobe Premier
+
+	Automatic encoder selection failed for output stream #0:1. Default encoder for format 3gp (codec amr_nb) is probably disabled. Please choose an encoder manually.
+	Error selecting an encoder for stream 0:1
+
+在iphone6用手机录屏。
+在mac使用iMovie转视频，
+会在左右2边填充黑色。
+
+mac转视频 长度和宽度相反
 
 # 2 裁剪区域
 【版本】ffmpeg version 3.4 Copyright (c) 2000-2017 the FFmpeg developers
   built with gcc 7.2.0 (GCC)
 
+
+【】苹果6的录屏尺寸是720x1280。转小：640x1138
 【备要】 
 
 	
@@ -55,6 +70,58 @@ CVZK3966.m4v
 > crop=width:height:x:y 
 > x:y 指定裁剪的左上角位置，默认值为 (in_w-out_w)/2 和 (in_h-out_h)/2，即输出视频为原视频的中央区域  
 
+报错2： 
+
+如果是用iMovie来裁剪的，则本来的录屏时候的640x1136变成了
+
+报错：
+
+	[Parsed_crop_0 @ 0000000002c55d40] Invalid too big or non positive size for widt
+	h '640' or height '1138'
+	[Parsed_crop_0 @ 0000000002c55d40] Failed to configure input pad on Parsed_crop_
+	0
+	Error reinitializing filters!
+	Failed to inject frame into filter network: Invalid argument
+	Error while processing the decoded data for stream #0:0
+
+
+安装会声会影报错：
+
+	Windows Installer
+	The feature you are trying to use is on a network resource that is unavailable.
+	
+	Click OK to try again, or enter an alternate path to a folder containing the installation package 'vc_red.msi' in the box below.
+	
+	c:\01ecb6d29e7f1caed63c\
+
+安装vc_red.msi报错：
+
+	Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148
+	Error 1311.Source file not found: E:\n\sys\pack3\video\vc_red.cab.  Verify that the file exists and that you can access it.
+
+	&Retry Cancel
+
+
++vc_red.cab后，安装报错：
+	
+	Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.4148
+
+	Error 1334.The file 'ul_catalog.30729.4148.Microsoft_VC90_OpenMP_x86.QFE' cannot be installed because the file cannot be found in cabinet file 'vc_red.cab'. This could indicate a network error, an error reading from the CD-ROM, or a problem with this pac
+
+
+安装后报错：c:\90d7f034697c37ba38\
+	
+	Windows Installer
+	无法访问您试图使用的功能所在的网络位置。
+	单击“确定”重试，或在下面的框中输入包含安装程序包“vc_red.msi”的文件夹的路径。
+	使用源(&U):
+	c:\90d7f034697c37ba38\
+
+
+vc_red.msi是什么？
+这些文件是vc2008再发行组件包安装时产生的临时文件,但这个软件却因为bug问题而错误的将临时文件放到了f盘更目录(本应该是temp目录并会被自动删除的,并且这个bug是微软已知的bug)
+可删除，ME以前删除没发现有什么影响！！
+	
 ## 2 mp4转gif 
 【版本】ffmpeg version 3.4 Copyright (c) 2000-2017 the FFmpeg developers
   built with gcc 7.2.0 (GCC)
@@ -120,6 +187,12 @@ CVZK3966-32-320-compress.gif   26M
 [FFmpeg总结（十）用ffmpeg进行在视频中加水印图、加gif图](http://blog.csdn.net/hejjunlin/article/details/71104027)
 
 ### gif导出序列帧 ###
+
+
+### 一个检查器 ###
+用来检查是否完成  
+x=未完成，1=已经完成
+![一个检查器](https://i.imgur.com/aX3hyY8.png)
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

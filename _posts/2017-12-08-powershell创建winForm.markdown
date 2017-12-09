@@ -8,6 +8,18 @@ tags: powershell
 
 # powershell创建winForm #
 
+
+
+
+
+[svg](http://www.sarasoueidan.com/blog/svgo-tools/)
+
+[w3cplus](https://www.w3cplus.com/svg/svg-tips-for-designers.html)
+
+
+
+
+
 [PowerShell 在线图形设计器，可以快速地创建代码](http://www.poshgui.com/) 
 
 
@@ -86,12 +98,14 @@ https://github.com/masters274/Posh_Repo/tree/8ae45da25bc425b18aff1924ac7396a3d34
 * 
 * pdf
 * http://m.jb51.net/books/209514.html
+* [Powershell: edit a ListViewItem](https://social.technet.microsoft.com/Forums/scriptcenter/en-US/43ba26cf-e27b-4c4c-8b46-c0d21cb5104a/powershell-edit-a-listviewitem?forum=ITCG)
+* [Windows PowerShell in 24 Hours, Sams Teach Yourself - Timothy L. Warner - Google 鍥句功](https://books.google.com/books?id=apztCAAAQBAJ&pg=PT291&lpg=PT291&dq=Add+ItemClick+powershell&source=bl&ots=1ND4pF3Wfh&sig=009o1GHBBZzVjCUExcvlHNKUfp4&hl=zh-CN&sa=X&ved=0ahUKEwijhsGJwfvXAhVFKGMKHYexCfUQ6AEISjAE#v=onepage&q=Add%20ItemClick%20powershell&f=false)
 * [Building Forms with PowerShell – Part 1 (The Form)](https://blogs.technet.microsoft.com/stephap/2012/04/23/building-forms-with-powershell-part-1-the-form/)
 * [Dealing with Powershell Inputs via Basic Windows Form](https://www.codeproject.com/Articles/799161/Dealing-with-Powershell-Inputs-via-Basic-Windows-F)
-* [使用Windows PowerShell创建WinForm程序-代码之家](http://www.daima234.com/8/14236.html)
-* [在powershell函数中，非模态窗体创建_winforms_帮酷编程问答](https://ask.helplib.com/.net/post_3798940)
+* [使用Windows PowerShell创建WinForm程序-代码之家](http://www.daima234.com/8/14236.html) 
 * 
 * building forms with powershell part 3 
+* good
 * [Building Forms with PowerShell – Part 1 (The Form) – Something About Scripting](https://blogs.technet.microsoft.com/stephap/2012/04/23/building-forms-with-powershell-part-1-the-form/)
 * [Building a UI using WPF and PowerShell, Part 2 -- Microsoft Certified Professional Magazine Online](https://mcpmag.com/articles/2016/05/05/wpf-and-powershell-part-2.aspx)
 * [FormBorderStyle Enumeration (System.Windows.Forms)](https://msdn.microsoft.com/en-us/library/hw8kes41.aspx)
@@ -99,3 +113,26 @@ https://github.com/masters274/Posh_Repo/tree/8ae45da25bc425b18aff1924ac7396a3d34
 * [Building a PowerShell GUI (Part 3) - TechGenix](http://techgenix.com/building-powershell-gui-part3/)
 * [PowerShell GUI with HTML - Part 3 – Tiberriver256](http://tiberriver256.github.io/powershell/gui/html/PowerShell-HTML-GUI-Pt3/)
 * [Part 3 Adding Tab Controls – Create your own SQL tools with PowerShell and windows forms - JamesDataTechQ](https://jamesdatatechq.wordpress.com/2015/01/13/part-3-adding-tab-controls-create-your-own-sql-tools-with-powershell-and-windows-forms/)
+
+
+DSM(黑群晖),FreeNAS、Openfiler等免费系统
+* [开源 NAS 操作系统不完全汇总 - GetNAS中文网](http://www.getnas.com/open-source-nas)
+* [变废为宝，用旧电脑自己DIY组建 NAS 服务器 - jack_Meng - 博客园](http://www.cnblogs.com/mq0036/p/5281185.html)
+
+dell 540台式 升级内存  
+电脑型号	戴尔 Studio 540 台式电脑  (扫描时间：2016年05月22日) 
+操作系统	Windows 7 旗舰版 64位 SP1 ( DirectX 11 )  
+处理器	英特尔 酷睿2 四核 Q8200 @ 2.33GHz
+主板	戴尔 0M017G ( 英特尔 4 Series 芯片组 - ICH10R )  
+内存	6 GB ( 尔必达 DDR2 800MHz / 金士顿 DDR2 800MHz )  
+主硬盘	英特尔 SSDSC2BW120H6 ( 120 GB / 固态硬盘 )  
+显卡	ATI Radeon HD 4300/4500 Series ( 512 MB / 戴尔 )  
+显示器	XXX0180 HDTV ( 40.2 英寸  )  
+声卡	瑞昱 ALC888 @ 英特尔 ICH10  高保真音频  
+网卡	瑞昱 RTL8168/8111/8112 Gigabit Ethernet   
+* [不要Ghost和重装 两招把Win7克隆到SSD | 微型计算机官方网站 MCPlive.cn](http://www.mcplive.cn/index.php/article/index/id/11085/page/3)
+
+* C split txt file offset by bytes
+* [MongoDB中文社区 | 中文社区](http://www.mongoing.com/)
+* [window平台安装MongoDB | 菜鸟教程](http://www.runoob.com/mongodb/mongodb-window-install.html)
+* OpenCV计算机视觉编程攻略
