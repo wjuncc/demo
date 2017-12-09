@@ -189,6 +189,25 @@ CVZK3966-32-320-compress.gif   26M
 ### gif导出序列帧 ###
 
 
+### ffmpeg 旋转方向 ###
+
+代码1：无效.  
+
+	ffmpeg -i CVZK3966-cut.mp4 -metadata:s:v rotate="90" -codec copy -y  CVZK3966-cut-90.mp4
+
+代码2：注意8种写法，各不相同。
+
+	
+	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=0" -y  CVZK3966-cut-90-0.mp4  
+	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=1" -y  CVZK3966-cut-90-0.mp4  
+	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=2" -y  CVZK3966-cut-90-0.mp4  
+	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=3" -y  CVZK3966-cut-90-0.mp4  
+
+	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=0,transpose=0" -y  CVZK3966-cut-90-0.mp4  
+	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=1,transpose=1" -y  CVZK3966-cut-90-0.mp4 
+	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=2,transpose=2" -y  CVZK3966-cut-90-0.mp4   
+	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=3,transpose=3" -y  CVZK3966-cut-90-0.mp4  
+
 ### 作品页检查器 ###
 目的： 用来检查过往项目的网页材料准备。是否完成。 
 x=未完成，1=已经完成
