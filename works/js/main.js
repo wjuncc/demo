@@ -1,1 +1,1 @@
-function Main(){}Main.prototype.constructor=Main;Main.prototype.foo=function(){console.log(123)};
+function Main(){$(".grid li").mouseenter(function(){var t=$(this);var r=t.find("img");var i=r.attr("gif");if(!i){return}if(r.attr("src")!=i){r.attr("old",r.attr("src"))}r.attr("src",i)});$(".grid li").mouseleave(function(){var t=$(this);var r=t.find("img");var i=r.attr("gif");if(r.attr("old")){r.attr("src",r.attr("old"))}})}Main.prototype.constructor=Main;function foo(){new Main}

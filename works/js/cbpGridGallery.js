@@ -360,5 +360,6 @@
 
 	// add to global namespace
 	window.CBPGridGallery = CBPGridGallery;
+	window.CBPGridGallery = CBPGridGallery;
 
 })( window );

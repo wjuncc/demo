@@ -12,8 +12,10 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<script src="js/modernizr.custom.js"></script>
+		<script src="js/jquery.js"></script>
+		<script src="js/main.js"></script>
 	</head>
-	<body>
+	<body onload="foo();">
 		<div class="container">
 			<header class="clearfix">
 				<!--<span>wjun <span class="bp-icon bp-icon-about" data-content="The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration."></span></span>-->
@@ -28,14 +30,12 @@
 			<div id="grid-gallery" class="grid-gallery">
 				<section class="grid-wrap">
 					<ul class="grid">
-						<li class="grid-sizer"></li><!-- for Masonry column width -->
-
-
+						<li class="grid-sizer"></li><!-- for Masonry column width --> 
 
 
             <li>
                 <figure>
-                    <img src="img/thumb/170809__Porsche.png?r=2" alt="Porsche"/>
+                    <img src="img/thumb/170809__Porsche.png?r=2" gif="img/gif/170809__Porsche.gif" alt="Porsche"/>
                     <figcaption><h3>Porsche</h3>
                     <p>Aug. 2017</p>
                     </figcaption>
@@ -45,7 +45,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/170715__Elmore_Oil.png?r=2" alt="Elmore Oil"/>
+                    <img src="img/thumb/170715__Elmore_Oil.png?r=2" gif="img/gif/170715__Elmore_Oil.gif" alt="Elmore Oil"/>
                     <figcaption><h3>Elmore Oil</h3>
                     <p>July. 2017</p>
                     </figcaption>
@@ -55,7 +55,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/170709__Abilix_robot.jpg?r=2" alt="Abilix Robot"/>
+                    <img src="img/thumb/170709__Abilix_robot.jpg?r=2" gif="img/gif/170709__Abilix_robot.gif" alt="Abilix Robot"/>
                     <figcaption><h3>Abilix Robot</h3>
                     <p>July. 2017</p>
                     </figcaption>
@@ -65,7 +65,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/170530__Healthy_Essential.png?r=2" alt="Healthy Essential"/>
+                    <img src="img/thumb/170530__Healthy_Essential.png?r=2" gif="img/gif/170530__Healthy_Essential.gif" alt="Healthy Essential"/>
                     <figcaption><h3>Healthy Essential</h3>
                     <p>May. 2017</p>
                     </figcaption>
@@ -75,7 +75,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/170407OSIM.jpg?r=2" alt="OSIM"/>
+                    <img src="img/thumb/170407OSIM.jpg?r=2" gif="img/gif/170407OSIM.gif" alt="OSIM"/>
                     <figcaption><h3>OSIM</h3>
                     <p>Apr. 2017</p>
                     </figcaption>
@@ -85,7 +85,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/170122Life-Space_website.png?r=2" alt="Life-space Website"/>
+                    <img src="img/thumb/170122Life-Space_website.png?r=2" gif="img/gif/170122Life-Space_website.gif" alt="Life-space Website"/>
                     <figcaption><h3>Life-space Website</h3>
                     <p>Jan. 2017</p>
                     </figcaption>
@@ -95,7 +95,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/170118Life-Space_game2.jpg?r=2" alt="Life-space Game2"/>
+                    <img src="img/thumb/170118Life-Space_game2.jpg?r=2" gif="img/gif/170118Life-Space_game2.gif" alt="Life-space Game2"/>
                     <figcaption><h3>Life-space Game2</h3>
                     <p>Jan. 2017</p>
                     </figcaption>
@@ -105,7 +105,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/161228Life-Space_3d.PNG?r=2" alt="Life-space 3d"/>
+                    <img src="img/thumb/161228Life-Space_3d.PNG?r=2" gif="img/gif/161228Life-Space_3d.gif" alt="Life-space 3d"/>
                     <figcaption><h3>Life-space 3d</h3>
                     <p>Dec. 2016</p>
                     </figcaption>
@@ -115,7 +115,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/161206Life-Space_game1.jpg?r=2" alt="Life-space Game1"/>
+                    <img src="img/thumb/161206Life-Space_game1.jpg?r=2" gif="img/gif/161206Life-Space_game1.gif" alt="Life-space Game1"/>
                     <figcaption><h3>Life-space Game1</h3>
                     <p>Dec. 2016</p>
                     </figcaption>
@@ -125,7 +125,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/161103sunlight.jpg?r=2" alt="Sunlight"/>
+                    <img src="img/thumb/161103sunlight.jpg?r=2" gif="img/gif/161103sunlight.gif" alt="Sunlight"/>
                     <figcaption><h3>Sunlight</h3>
                     <p>Nov. 2016</p>
                     </figcaption>
@@ -135,7 +135,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/170718__luo.png?r=2" alt="Luo"/>
+                    <img src="img/thumb/170718__luo.png?r=2" gif="" alt="Luo"/>
                     <figcaption><h3>Luo</h3>
                     <p>July. 2017</p>
                     </figcaption>
@@ -145,7 +145,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/170323Volvo_showroom.png?r=2" alt="Volvo Showroom"/>
+                    <img src="img/thumb/170323Volvo_showroom.png?r=2" gif="" alt="Volvo Showroom"/>
                     <figcaption><h3>Volvo Showroom</h3>
                     <p>Mar. 2017</p>
                     </figcaption>
@@ -155,7 +155,7 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/161024Everbright_Ban.jpg?r=2" alt="Everbright Ban"/>
+                    <img src="img/thumb/161024Everbright_Ban.jpg?r=2" gif="" alt="Everbright Ban"/>
                     <figcaption><h3>Everbright Ban</h3>
                     <p>Oct. 2016</p>
                     </figcaption>
@@ -165,15 +165,13 @@
 
             <li>
                 <figure>
-                    <img src="img/thumb/160922wanda.jpg?r=2" alt="Wanda"/>
+                    <img src="img/thumb/160922wanda.jpg?r=2" gif="" alt="Wanda"/>
                     <figcaption><h3>Wanda</h3>
                     <p>Sept. 2016</p>
                     </figcaption>
                 </figure>
             </li>
-            
-                   
-                    
+             
                     
 					</ul>
 				</section><!-- // grid-wrap -->
