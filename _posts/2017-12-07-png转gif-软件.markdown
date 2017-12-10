@@ -89,6 +89,11 @@ css
 	background:url("../img/btn_close.png") no-repeat;
 	background-size:contain;
 
+手机端点击图片按钮时，不显示黑色的块。
+
+	cursor:pointer;
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
+
 # mp4转gif 软件 #
 
 

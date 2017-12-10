@@ -191,16 +191,22 @@
 span.nav-prev {
 	background:url("../img/btn_left.png") no-repeat;
 	background-size:contain;
+	cursor:pointer;
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
 }
 
 span.nav-next  {
 	background:url("../img/btn_right.png") no-repeat;
 	background-size:contain;
+	cursor:pointer;
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
 }
 
 span.nav-close {
 	background:url("../img/btn_close.png") no-repeat;
 	background-size:contain;
+	cursor:pointer;
+	-webkit-tap-highlight-color: rgba(255,0,0,0);
 }
 
 /* Info on arrow key navigation */
