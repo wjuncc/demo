@@ -1,6 +1,6 @@
 ---
 layout: 	post
-title: 	 	"jekyll主题 Hux 修改"
+title: 	 	"DAY4 jekyll主题修改"
 subtitle:   ""
 date:   	2017-12-06 21:17:32 +0800
 author:     "wj"
@@ -8,7 +8,8 @@ header-img: "img/post-bg.jpg"
 categories:  
 tags: 
     - jekyll 
----
+    - Hux 
+--- 
 
 ### jekyll ###
 找主题，找到
