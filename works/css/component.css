@@ -182,29 +182,21 @@
 	color: #31373a;
 }
 
-.icon:before,
-.icon:after {
-	font-family: 'fontawesome';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+.icon { 
+	width:60px;
+	height:60px;
 }
 
-span.nav-prev:before {
-	content: "\e601";
+span.nav-prev {
+	background:url("../img/btn_left.png") no-repeat;
 }
 
-span.nav-next:before  {
-	content: "\e600";
+span.nav-next  {
+	background:url("../img/btn_right.png") no-repeat;
 }
 
-span.nav-close:before {
-	content: "\e602";
+span.nav-close {
+	background:url("../img/btn_close.png") no-repeat;
 }
 
 /* Info on arrow key navigation */
