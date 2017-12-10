@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "DAY5 给 jekyll 加评论功能"
-date:   2017-12-07 21:17:32 +0800
+date:   2017-10-07 21:17:32 +0800
 categories:  
 tags: jekyll
  
