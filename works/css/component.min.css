@@ -25,7 +25,7 @@
 .slideshow nav span.nav-prev,.slideshow nav span.nav-next{top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
 .slideshow nav span.nav-next{right:0;}
 .slideshow nav span.nav-close{top:0;right:0;padding:0.5em 1em;color:#31373a;}
-.icon{width:60px;height:60px;}
+.icon{width:40px;height:40px;}
 span.nav-prev{background:url("../img/btn_left.png") no-repeat;}
 span.nav-next{background:url("../img/btn_right.png") no-repeat;}
 span.nav-close{background:url("../img/btn_close.png") no-repeat;}
