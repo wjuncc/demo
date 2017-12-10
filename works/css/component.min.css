@@ -25,10 +25,10 @@
 .slideshow nav span.nav-prev,.slideshow nav span.nav-next{top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%);}
 .slideshow nav span.nav-next{right:0;}
 .slideshow nav span.nav-close{top:0;right:0;padding:0.5em 1em;color:#31373a;}
-.icon{width:40px;height:40px;}
-span.nav-prev{background:url("../img/btn_left.png") no-repeat;}
-span.nav-next{background:url("../img/btn_right.png") no-repeat;}
-span.nav-close{background:url("../img/btn_close.png") no-repeat;}
+.icon{width:40px;height:40px;background-size:contain;}
+span.nav-prev{background:url("../img/btn_left.png") no-repeat;background-size:contain;}
+span.nav-next{background:url("../img/btn_right.png") no-repeat;background-size:contain;}
+span.nav-close{background:url("../img/btn_close.png") no-repeat;background-size:contain;}
 .info-keys{position:fixed;top:10px;left:10px;width:60px;font-size:8px;padding-top:20px;text-transform:uppercase;color:#fff;letter-spacing:1px;text-align:center;}
 .info-keys:before,.info-keys:after{position:absolute;top:0;width:16px;height:16px;border:1px solid #fff;text-align:center;line-height:14px;font-size:12px;}
 .info-keys:before{left:10px;content:"\e603";}

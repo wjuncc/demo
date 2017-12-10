@@ -82,6 +82,13 @@ tags:
 
 	
 
+css 
+
+背景图片自动撑满： 
+
+	background:url("../img/btn_close.png") no-repeat;
+	background-size:contain;
+
 # mp4转gif 软件 #
 
 

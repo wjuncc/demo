@@ -185,18 +185,22 @@
 .icon { 
 	width:40px;
 	height:40px;
+	background-size:contain;
 }
 
 span.nav-prev {
 	background:url("../img/btn_left.png") no-repeat;
+	background-size:contain;
 }
 
 span.nav-next  {
 	background:url("../img/btn_right.png") no-repeat;
+	background-size:contain;
 }
 
 span.nav-close {
 	background:url("../img/btn_close.png") no-repeat;
+	background-size:contain;
 }
 
 /* Info on arrow key navigation */
