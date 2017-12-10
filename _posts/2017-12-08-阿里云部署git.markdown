@@ -4,6 +4,8 @@ title:  "阿里云部署git"
 date:   2017-12-08 04:32:47 +0800
 categories:  
 tags: 
+    - 阿里云
+    - git
 ---
 
 # 阿里云部署git #

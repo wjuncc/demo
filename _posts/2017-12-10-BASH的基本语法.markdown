@@ -4,6 +4,8 @@ title:  "BASH 的基本语法"
 date:   2017-12-10 06:12:01 +0800
 categories:  
 tags: 
+    - BASH
+    - shell
 ---
 
 # BASH 的基本语法 #

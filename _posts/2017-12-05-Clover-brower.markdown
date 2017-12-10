@@ -2,10 +2,21 @@
 layout: post
 title:  "Clover 资源管理器"
 date:   2017-10-05 21:17:32 +0800
-categories:  
-tags: 
+categories:  public
+tags:
+    - clover 
 ---
 
+# 去掉clover的自带标签 #
+
+setup_clover@3.4.0.exe是原版  
+安装Clover v3.4.0 官方安装版及去广告绿色版  
+复制到 D:\green\Clover
+#### 参考 ####
+
+* [Clover v3.4.0 官方安装版及去广告绿色版 – zd423](http://www.zdfans.com/596.html)
+* [pan.baidu.com](https://pan.baidu.com/s/1jIknQdC)
+* [www.douban.com](https://www.douban.com/note/572947072/)
 # Clover 资源管理器 # 
 
 ### 安装 ###

@@ -1,9 +1,12 @@
 ---
 layout: post
 title:  "WTG"
-date:   2016-01-05 16:11:12 +0800
-categories: win7
-tags: wtg u盘
+date:   2016-11-05 16:11:12 +0800
+categories: public
+tags: 
+    - wtg 
+    - u盘
+
 ---
 
 # win7 WTG #

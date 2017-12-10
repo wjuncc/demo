@@ -4,6 +4,8 @@ title:  "ubuntu提交git"
 date:   2017-12-06 21:17:32 +0800
 categories:  
 tags: 
+    - ubuntu 
+    - git   
 ---
 
 # ubuntu提交git #

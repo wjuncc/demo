@@ -4,6 +4,7 @@ title:  "django教程"
 date:   2017-12-06 21:17:32 +0800
 categories:  
 tags: 
+    - django
 ---
 
 # django教程 #

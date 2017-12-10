@@ -4,6 +4,8 @@ title:  "ubuntu 本地源 svn"
 date:   2017-12-06 21:17:32 +0800
 categories:  
 tags: 
+    - ubuntu 
+    - svn   
 ---
 
 # ubuntu 本地源 svn #

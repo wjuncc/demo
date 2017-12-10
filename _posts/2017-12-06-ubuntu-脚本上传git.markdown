@@ -4,6 +4,8 @@ title:  "ubuntu 脚本上传git"
 date:   2017-12-06 21:17:32 +0800
 categories:  
 tags: 
+    - ubuntu 
+    - git   
 ---
 
 # ubuntu 脚本上传git #

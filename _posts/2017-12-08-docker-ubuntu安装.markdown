@@ -4,6 +4,8 @@ title:  "docker ubuntu安装"
 date:   2017-12-08 00:35:10 +0800
 categories:  
 tags: 
+    - docker
+    - ubuntu
 ---
 
 # docker ubuntu安装 #

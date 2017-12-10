@@ -4,6 +4,9 @@ title:  "ubuntu bash写git"
 date:   2017-12-06 21:17:32 +0800
 categories:  
 tags: 
+    - ubuntu 
+    - bash  
+    - git 
 ---
 
 ubuntu提交git 避免反复输入用户名密码

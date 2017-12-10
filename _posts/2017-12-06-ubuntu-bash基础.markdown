@@ -4,6 +4,9 @@ title:  "ubuntu bash基础"
 date:   2017-12-06 21:17:32 +0800
 categories:  
 tags: 
+    - ubuntu 
+    - bash  
+    - git 
 ---
 
 # ubuntu bash基础 #

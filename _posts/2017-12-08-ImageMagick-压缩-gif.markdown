@@ -4,6 +4,8 @@ title:  "ImageMagick 压缩 gif"
 date:   2017-12-08 00:21:23 +0800
 categories:  
 tags: 
+    - ImageMagick
+    - gif
 ---
 
 # ImageMagick 压缩 gif #

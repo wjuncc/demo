@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "Launchy -- 方便地打开电脑上的应用"
+title:  "Launchy 打开电脑应用"
 date:   2017-10-05 21:17:32 +0800
 categories:  
-tags: 
+tags:
+    - win7 
+    - system 
 ---
 
 # Launchy -- 方便地打开电脑上的应用 #

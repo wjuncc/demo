@@ -4,6 +4,7 @@ title:  "第一次运行powerShell报错"
 date:   2017-10-05 21:17:32 +0800
 categories:  
 tags: 
+    - powerShell
 ---
 
 # 无法加载文件 因为在此系统上禁止运行脚本 #

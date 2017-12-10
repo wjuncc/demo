@@ -4,6 +4,8 @@ title:  "ubuntu jekyll 安装"
 date:   2017-12-06 21:17:32 +0800
 categories:  
 tags: 
+    - ubuntu 
+    - jekyll   
 ---
 
 # ubuntu jekyll 安装 #
