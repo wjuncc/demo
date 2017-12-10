@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[blog] 3. 给 jekyll 加搜索功能"
+title:  "DAY2 给 jekyll 加搜索功能"
 date:   2017-10-05 21:17:32 +0800
 categories: jekyll update
 tags: jekyll
