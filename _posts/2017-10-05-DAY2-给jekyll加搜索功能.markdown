@@ -123,8 +123,9 @@ jekyll 添加 include head.html 没有用
 ![出来2个搜索框](https://i.imgur.com/hoyVgSJ.png)
 网页改成按2次Shift键出来搜索框。
 
-修改：E:\n\wj\blog\demo\search\js\cb-search.js
-第8行：
+修改：E:\n\wj\blog\demo\search\js\cb-search.js  
+第8行：  
+第32行：  
 
 	            if (e.keyCode == 17) {
 
@@ -135,6 +136,9 @@ jekyll 添加 include head.html 没有用
 
 keyCode == 17 // 代表Ctrl  
 keyCode == 18 // 代表Alt  
+
+测试发现，按2次Alt，时间差至少5000毫秒。原因不清楚。   
+把 if (gap < 500) { 注释掉，按一次Alt就切换搜索框的显示/隐藏。
 
 （完）
 

@@ -5,11 +5,10 @@
         var urls = new Array(); //文章地址
         $(document).keyup(function (e) {
             var time2 = new Date().getTime();
-                console.log(e.keyCode)
             if (e.keyCode == 18) {
                 var gap = time2 - time1;
-                time1 = time2;
-                if (gap < 500) {
+                time1 = time2;console.log(11,gap);
+                //if (gap < 500) {
                     if (show) {
                         $(".cb-search-tool").css("display", "none");
                         show = false;
@@ -20,7 +19,7 @@
                         $("#cb-search-content").focus();
                     }
                     time1 = 0;
-                }
+                //}
 			}else if(e.keyCode == 27){
                     $(".cb-search-tool").css("display", "none");
                     show = false;
@@ -30,10 +29,10 @@
 
  		$("#cb-search-content").keyup(function (e) {
             var time2 = new Date().getTime();
-            if (e.keyCode == 17) {
+            if (e.keyCode == 18) {
                 var gap = time2 - time1;
-                time1 = time2;
-                if (gap < 500) {
+                time1 = time2;console.log(12,gap);
+               //if (gap < 500) {
                     if (show) {
                         $(".cb-search-tool").css("display", "none");
                         show = false;
@@ -44,7 +43,7 @@
                         $("#cb-search-content").focus();
                     }
                     time1 = 0;
-                }
+               // }
             }
         });
 
