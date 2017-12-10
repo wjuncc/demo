@@ -8,6 +8,13 @@ cats:
 
 9:41 2017/11/30
 
+sublime 在代码跳转上有问题，仅仅支持标准的函数定义。即function XX(){}形式。  
+不支持对象+冒号+函数的形式。  
+而且无人去解决这个问题。  
+
+sublime对php的支持非常好。   
+对go语言支持也差一点。   
+
 在Win7 64位，同时安装sublumeText2和sublumeText3 
 
 ## 1 编译器的取舍 ##
