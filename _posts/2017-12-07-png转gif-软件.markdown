@@ -26,6 +26,26 @@ tags:
 		font-style: normal;
 	}Made with http://icomoon.io/ */
 
+报错2：
+
+	Slow network is detected. Fallback font will be used while loading: https://wjuncc.github.io/demo/works/fonts/fontawesome/fontawesome.woff?-e43dk9
+	modernizr.custom.js:4 Slow network is detected. Fallback font will be used while loading: https://wjuncc.github.io/demo/works/fonts/fontawesome/fontawesome.ttf?-e43dk9
+	index.html:1 Slow network is detected. Fallback font will be used while loading: https://wjuncc.github.io/demo/works/fonts/fontawesome/fontawesome.woff?-e43dk9
+	index.html:1 Slow network is detected. Fallback font will be used while loading: https://wjuncc.github.io/demo/works/fonts/fontawesome/fontawesome.ttf?-e43dk9
+
+
+删除com.css中的
+
+	@font-face {
+		font-family: 'fontawesome';
+		src:url('../fonts/fontawesome/fontawesome.eot?-e43dk9');
+		src:url('../fonts/fontawesome/fontawesome.eot?#iefix-e43dk9') format('embedded-opentype'),
+			url('../fonts/fontawesome/fontawesome.woff?-e43dk9') format('woff'),
+			url('../fonts/fontawesome/fontawesome.ttf?-e43dk9') format('truetype'),
+			url('../fonts/fontawesome/fontawesome.svg?-e43dk9#fontawesome') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	} /* Made with http://icomoon.io/app */
 
 # mp4转gif 软件 #
 
