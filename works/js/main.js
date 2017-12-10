@@ -1,0 +1,1 @@
+function Main(){}Main.prototype.constructor=Main;Main.prototype.foo=function(){console.log(123)};
