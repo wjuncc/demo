@@ -114,7 +114,7 @@ jekyll 添加 include head.html 没有用
 整个复制到项目文件夹下，再上传git
 
 
-### 7 修改快捷键 ###
+### 6 修改快捷键 ###
 
 这个插件的快捷键，显然是借鉴了神器listary的。
 按2次Ctrl出来搜索框。   
@@ -122,6 +122,19 @@ jekyll 添加 include head.html 没有用
 有个问题： 我按2次Ctrl出来2个搜索框。 一个网页的，一个 listary的。
 
 网页改成按2次Shift键出来搜索框。
+
+修改：E:\n\wj\blog\demo\search\js\cb-search.js
+第8行：
+
+	            if (e.keyCode == 17) {
+
+=>
+	
+	            if (e.keyCode == 18) {
+
+
+keyCode == 17 // 代表Ctrl  
+keyCode == 18 // 代表Alt  
 
 （完）
 
