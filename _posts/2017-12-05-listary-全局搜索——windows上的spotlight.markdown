@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "listary 用法"
+title:  "listary 全局搜索——windows上的spotlight"
 date:   2017-10-05 21:17:32 +0800
 categories:  
 tags:
