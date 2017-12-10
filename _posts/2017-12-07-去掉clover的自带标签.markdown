@@ -2,9 +2,9 @@
 layout: post
 title:  "去掉clover的自带标签"
 date:   2017-12-07 13:17:32 +0800
-categories:  clover
+categories:  public
 tags:
-    - jekyll 
+    - clover 
 ---
 
 # 去掉clover的自带标签 #
