@@ -32,6 +32,16 @@ tags: jekyll
 tags:  - jekyll 是推荐做法，为什么不通过？
 
 
+今天偶然发现，在线上git，支持tag加杠的写法。
+如，DAY4 修改jekyll主题 md 的写法：
+ 
+tags: 
+    - jekyll 
+    - Hux 
+	
+线上支持。
+
+
 #### 参考 ####
 
 * [使用`Jekyll`遇到的问题 · Issue #19 · mrdulin/blog · GitHub](https://github.com/mrdulin/blog/issues/19)
