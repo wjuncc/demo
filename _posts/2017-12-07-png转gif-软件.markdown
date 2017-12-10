@@ -8,6 +8,10 @@ tags:
     - iphone  
 ---
 
+报错：
+
+	index.html:1 Mixed Content: The page at 'https://wjuncc.github.io/demo/works/index.html' was loaded over HTTPS, but requested an insecure stylesheet 'http://fonts.googleapis.com/css?family=Lato:300,400,700'. This request has been blocked; the content must be served over HTTPS.
+
 # mp4转gif 软件 #
 
 
