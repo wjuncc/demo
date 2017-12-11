@@ -15,13 +15,14 @@ tags:
 
 [原文](http://web.mit.edu/music21/doc/)
 
-## •	关于 Music21   ##
+## 关于 Music21   ##
 *	什么是music21？
 *	作者, 感谢, Contributing, 和版权 
 *	music21的程序和扩展
 *	常见问题解答
 *	List of Works Found in the music21 Corpus
-## •	用户指南 ##
+
+## 用户指南 ##
 *	用户指南:目录 
 *	用户指南，第1章:安装和开始使用music21 
 *	用户指南，第2章:音符 
@@ -56,6 +57,7 @@ tags:
 *	用户指南，第90章:测试单元，基于Lilypond的非官方MusicXML
 *	Timespan Demos时间间隔的例子
 *	Inversion Demo反转的例子
+
 ## Module Reference，模块参考 ##
 ### • Installation安装 ###
 *	在MAC上安装Music21
