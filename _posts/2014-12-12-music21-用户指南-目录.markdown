@@ -1,0 +1,106 @@
+---
+layout: post
+title:  "User’s Guide: Table of Contents"
+date:   2014-12-12 06:47:43 +0800
+categories:  
+tags: 
+---
+
+# User’s Guide: Table of Contents #
+
+这个文件表明，这个网站是python、生成的，具体是哪个库，还不清楚。
+
+
+用户指南：目录
+===============================
+
+这是“用户指南”的目录，其主题将在此处列出
+链接和添加作为主题写入。
+
+用户指南将成为最终书籍的主干。
+主要研究者迈克尔·斯科特·库斯伯特（Michael Scott Cuthbert）的“music21”
+在没有咨询作者前，除了更正代码，修改拼写错误等，请不要修改它。
+
+谢谢！
+
+介绍
+
+1. _.._ ref _.._`安装\u003cusersGuide_01_installing\u003e`
+2. _.._ ref _.._`注意\u003cusersGuide_02_notes\u003e`
+3. _.._ ref _.._`音高，持续时间，注意再次\u003cusersGuide_03_pitches\u003e`
+4. _.._ ref _.._`基本流\u003cusersGuide_04_stream1\u003e`
+5. _.._ ref _.._`列表清单\u003cusersGuide_05_listsOfLists\u003e`
+6. _.._ ref _.._`嵌套流和基本层次结构\u003cusersGuide_06_stream2\u003e
+7. _.._ ref _.._`Chords \u003cusersGuide_07_chords\u003e`
+8. _.._ ref _.._`安装MusicXML读卡器和文件格式（1）\u003cusersGuide_08_installingMusicXML\u003e
+9. _.._ ref _.._`Chordify \u003cusersGuide_09_chordify\u003e`
+10. _.._ ref _.._`示例1 \u003cusersGuide_10_examples1\u003e`
+11. _.._ ref _.._`语料研究\u003cusersGuide_11_corpusSearching\u003e`
+12. _.._ ref _.._`回到基础知识_... Music21Object \u003cusersGuide_12_music21object\u003e
+13. _.._ ref _.._`More Music21Object属性和方法\u003cusersGuide_13_music21object2\u003e`
+14. _.._ ref _..``时间签名和节拍\u003cusersGuide_14_timeSignatures\u003e`
+15. _.._ ref _.._`Key Signatures and Keys \u003cusersGuide_15_key\u003e`
+16. _.._ ref _...`TinyNotation \u003cusersGuide_16_tinyNotation\u003e`
+17. _.._ ref _.._`Derivations \u003cusersGuide_17_derivations\u003e`
+18. _.._ ref _.._`间隔\u003cusersGuide_18_间隔\u003e`
+19. _.._ ref _.._`高级持续时间_.._复杂，关系和连音符\u003cusersGuide_19_duration2\u003e`
+20. _.._ ref _.._`示例2 \u003cusersGuide_20_examples2\u003e`
+21. _.._ ref _.._`流的排序和排序\u003cusersGuide_21_sorting\u003e`
+22. _.._ ref _.._`Graphing \u003cusersGuide_22_graphing\u003e`
+23. _.._ ref _.._`罗马数字分析\u003cusersGuide_23_romanNumerals\u003e`
+24. _.._ ref _.._`环境和用户设置\u003cusersGuide_24_environment\u003e`
+25. _.._ ref _.._`色调工具（1）\u003cusersGuide_25_postTonalTools1\u003e
+26. _.._ ref _.._`流迭代和过滤\u003cusersGuide_26_iterators\u003e`
+27. _.._ ref _..`Grace Note \u003cusersGuide_27_graceNotes\u003e`
+28. _.._ ref _..`Lyric Searching \u003cusersGuide_28_lyricSearcher\u003e`
+29. _.._ ref _.._`Spanners 1（Slurs）\u003cusersGuide_29_spanners\u003e`
+30. _.._ ref _.._`示例3 \u003cusersGuide_30_examples3\u003e`
+31. _.._ ref _.._`Clefs，Ties，and Beams \u003cusersGuide_31_clefs\u003e`
+32. _.._ ref _.._`语法\u003c用户指南_32_讲话\u003e`
+33. _.._ ref _.._`表达式和饰品\u003cusersGuide_33表达式\u003e`
+34.文书
+35.和弦符号
+36.酒吧和重复
+37. _.._ ref _.._`客户端和弱引用\u003cusersGuide_36_clientWeakref\u003e`
+38.布局
+39.动态和量
+40.例4
+41. _.._ ref _.._`Figured Bass \u003cusersGuide_41_figuredBass\u003e`
+42.秤
+43. _.._ ref _.._`在分数中搜索\u003cusersGuide_43_searching1\u003e`
+44. _.._ ref _.._`高级图形（轴，图和图）\u003cusersGuide_44_advancedGraphing\u003e
+45.构成算法音乐
+46. Streams 3 _.._ Manipulation _.._ inPlace和deepcopy
+47.声音领先
+48.特征提取（1）
+49. Tempo
+50.例5
+51.基本分析工具
+52.元数据对象
+53. _.._ ref _.._`高级语料库和元数据搜索\u003cusersGuide_53_advancedCorpus\u003e`
+54. _.._ ref _.._`用新格式扩展转换器\u003cusersGuide_54_extending转换器\u003e`
+55. _.._ ref _.._`高级仪表主题\u003cusersGuide_55_advancedMeter\u003e`
+56. _.._ ref _.._`分段和近似搜索\u003cusersGuide_56_searching2\u003e`
+57. _.._ ref _.._`加快music21 \u003cusersGuide_57_speed\u003e`
+
+稍后编号_.._
+
+XX。","xx.",null,null,0],["样式
+二十一。","xxi.",null,null,0],["钢琴比分
+二十二。","xxii.",null,null,0],["冻融
+二十三。","xxiii.",null,null,0],["扳手2
+二十四。 ","xxiv.",null,null,0],["Ossias，Variants和musicDiff
+二十五。","xxv.",null,null,0],["用OffsetTrees自动缩小
+二十六。 ","xxvi.",null,null,0],["TinyNotation（2）_.._展开和子类化
+二十七。","xxvii.",null,null,0],["音频搜索
+二十八。","xxviii.",null,null,0],["物种对比
+二十九。","xxix.",null,null,0],["后音调工具（2）_...高级和Xenakis筛
+XXX。","xxx.",null,null,0],["特征提取（2）
+三十一。 ","xxxi.",null,null,0],["MIDI  - 高级
+三十二。","xxxii.",null,null,0],["中世纪和文艺复兴时期的扩展
+
+
+
+#### 参考 ####
+
+* [User’s Guide: Table of Contents — music21 Documentation](http://web.mit.edu/music21/doc/usersGuide/usersGuide_99_Table_of_Contents.html)
