@@ -18,9 +18,9 @@ tags: jekyll
 
 Jekyll只允许自动化处理网站的部分内容（如把页面嵌入到模板，给导航加列表，生成feeds和站点地图等等）。
 
-学习如何将HTML网站转换成Jekyll模板，为你打开通向新世界的大门，你在选择Jekyll主题时有更多选择余地。 不是[上网搜索Jekyll主题](https://duckduckgo.com/?q=Jekyll+themes)，你可以广阔的HTML模板细细甄选，根据需要对HTML模板做Jekyll风格的快速改造，并输出。
+学习如何将HTML网站转换成Jekyll模板，为你打开通向新世界的大门，使得选择Jekyll主题时有更多选择余地。 这不是[上网搜索Jekyll主题](https://duckduckgo.com/?q=Jekyll+themes)，你可以在广阔的HTML模板细细甄选，根据需要，将对HTML模板改造成Jekyll网站。
 
-尽管网站可以具有复杂的功能和控件，但是在本教程中保持简单。
+尽管网站可以有复杂功能和控件，但本教程力求简单。
 
 ## [什么是Jekyll网站？](https://jekyllrb.com/tutorials/convert-site-to-jekyll/#what-is-a-jekyll-website)  ##
 
