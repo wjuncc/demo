@@ -118,12 +118,17 @@ index.md
 
 请检查许可证，并确保您有权复制和使用代码。
 
-将源代码复制并粘贴到名为default.html的文件中。 
-将default.html文件放在_layouts文件夹中。","Put the default.html file inside the _layouts folder.",null,null,3],["这将是您的页面和帖子的默认布局模板，即当Jekyll构建网站时，每个页面或帖子将使用此布局。
+将源代码复制并粘贴到文件 default.html。 
+将default.html文件放在_layouts文件夹中。 
+这将是您的页面和帖子的默认布局模板，
+即当Jekyll构建网站时，每个页面或帖子将使用此布局。
 
-请注意，在查找模板时，您需要模板的HTML输出。","Note that in looking for templates, you want the HTML output of the template.",null,null,3],["如果模板包含PHP标签或其他动态脚本，则需要将这些动态元素转换为HTML或Liquid。 ","If the template has PHP tags or other dynamic scripts, these dynamic elements will need to be converted to HTML or to Liquid.",null,null,3],["Liquid是Jekyll模板系统检索动态内容。
+请注意，在选择模板时，要考虑到模板是用来输出HTML的。 
+如果模板包含PHP标签或其他动态脚本语言，则需要手动修改这些元素，改为HTML或Liquid。  
+Liquid即[Jekyll模板系统](https://jekyllrb.com/docs/templates/),用来检索动态内容。
 
-在本地打开default.html到您的浏览器，以确保网站的外观和行为像在线。","Open default.html into your browser locally to ensure the site looks and behaves like it does online.",null,null,3],["您可能需要调整CSS，JS和图像路径才能使用。
+在本地打开default.html到您的浏览器，以确保网站的外观和行为像在线。 
+您可能需要调整CSS，JS和图像路径才能使用。
 
 例如，如果路径在您复制的站点上是相对的，则需要将相同的资源下载到您的Jekyll站点，或者将绝对路径用于云中的相同资产。 ","For example, if the paths were relative on the site you copied, youll need to either download the same assets into your Jekyll site or use absolute paths to the same assets in the cloud.",null,null,3],["（语法如src =“//需要一个前缀，如src =”http _.._ //在您的本地浏览器中工作。）
 
