@@ -41,7 +41,7 @@ Partner.
 Chess-like Mobile Game Development。  
 
 * 2012.4-2013.4    Baidu (China) Co., Ltd.    
-Network Products Division League.  
+Alliance Products Department.   
 Senior Product Operations Manager.  
 Operation of Produce Hong.
 
