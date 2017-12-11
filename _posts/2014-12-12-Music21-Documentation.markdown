@@ -16,13 +16,16 @@ tags:
 [原文](http://web.mit.edu/music21/doc/)
 
 ## 关于 Music21   ##
+
 *	什么是music21？
 *	作者, 感谢, Contributing, 和版权 
 *	music21的程序和扩展
 *	常见问题解答
 *	List of Works Found in the music21 Corpus
 
+
 ## 用户指南 ##
+
 *	用户指南:目录 
 *	用户指南，第1章:安装和开始使用music21 
 *	用户指南，第2章:音符 
@@ -59,7 +62,9 @@ tags:
 *	Inversion Demo反转的例子
 
 ## Module Reference，模块参考 ##
+
 ### • Installation安装 ###
+
 *	在MAC上安装Music21
 *	在Windows上安装Music21
 *	
@@ -67,6 +72,7 @@ tags:
 *	使用软件扩展Music21
 
 ### • Tutorials教程 ###
+
 *	配置环境设置
 *	图形工具包
 *	高级图形主题
@@ -74,6 +80,7 @@ tags:
 *	例子
 
 ### • Developer Reference开发者参考 ###
+
 *	测试music21
 *	记录音乐21
 *	记录模块和类
