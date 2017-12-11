@@ -10,11 +10,11 @@ tags: jekyll
 
 # 将一个HTML网站转换为Jekyll #
 
-如果你在找Jekyll主题，你不必局限于已有的Jekyll主题。
+如果你在找Jekyll主题，其实不必局限于已有的Jekyll主题。
 
 几乎任何静态HTML文件都转换成Jekyll网站，这相当容易。
 
-在很多方面，任何目前是静态网站的网站已经是Jekyll网站。   
+其实静态网站，就已经是半个Jekyll网站了。   
 
 Jekyll只允许自动化处理网站的部分内容（如把页面嵌入到模板，给导航加列表，生成feeds和站点地图等等）。
 
