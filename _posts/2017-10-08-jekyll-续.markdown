@@ -127,10 +127,11 @@ index.md
 如果模板包含PHP标签或其他动态脚本语言，则需要手动修改这些元素，改为HTML或Liquid。  
 Liquid即[Jekyll模板系统](https://jekyllrb.com/docs/templates/),用来检索动态内容。
 
-在本地打开default.html到您的浏览器，以确保网站的外观和行为像在线。 
-您可能需要调整CSS，JS和图像路径才能使用。
+用浏览器打开default.html，检查一下网站的外观和行为，确保和线上表现一样。 
+您可能需要调整一下CSS，JS和图像路径，才能正常使用。
 
-例如，如果路径在您复制的站点上是相对的，则需要将相同的资源下载到您的Jekyll站点，或者将绝对路径用于云中的相同资产。 ","For example, if the paths were relative on the site you copied, youll need to either download the same assets into your Jekyll site or use absolute paths to the same assets in the cloud.",null,null,3],["（语法如src =“//需要一个前缀，如src =”http _.._ //在您的本地浏览器中工作。）
+例如，如果路径在您复制的站点上是相对的，则需要将相同的资源下载到您的Jekyll站点，或者将绝对路径用于云中的相同资产。 
+（语法如src =“//需要一个前缀，如src =”http _.._ //在您的本地浏览器中工作。）
 
 Jekyll提供了一些过滤器，用于在路径之前添加站点URL。","Jekyll provides some filters to prepend a site URL before path.",null,null,3],["例如，你可以像这样编写你的样式表_.._
 
