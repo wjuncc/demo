@@ -202,28 +202,34 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 
 	markdown: kramdown
 
-你也可以为kramdown指定一些选项，使其更像GitHub Flavored Markdown（GFM）_...
+可以增加一些选项，看起来更像[GitHub Flavored Markdown（GFM）](https://github.github.com/gfm/):
 
-kramdown _.._
-输入_.._ GFM
-auto_ids _.._ true
-hard_wrap _.._ false
-syntax_highlighter _.._ rouge
-5.测试你的网页Permalink
+	kramdown:
+	 input: GFM
+	 auto_ids: true
+	 hard_wrap: false
+	 syntax_highlighter: rouge
 
-现在运行jekyll服务并在index.html和about.html页面之间切换。","Now run jekyll serve and toggle between your index.html and about.html pages.",null,null,3],["应该为这两个页面加载默认布局。
 
-您现在已经将您的内容提取到单独的文件中，并为页面定义了一个通用布局。
+## 5.测试你的网页Permalink ##
 
-你可以为页面定义任意数量的布局。","You could define any number of layouts you want for pages.",null,null,3],["然后只需确定要使用的特定页面的布局。","Then just identify the layout you want that particular page to use.",null,null,3],["例如 _.._
+现在。运行jekyll服务，并在index.html和about.html页面之间切换。 
+两个页面加载的，应该是默认布局。
 
----
-标题_.._示例页面
-布局_.._主页
----
-然后该页面将使用_layouts文件夹中的homepage.html模板。
+现在。页面内容导出成单个文件，而且每个页面都使用了通用布局。
 
-您甚至可以在_config.yml文件中为页面，帖子或集合设置默认的前置标签，这样您就不必在前端变量中指定布局。","You can even set default front matter tags for pages, posts, or collections in your _config.yml file so that you dont have to specify the layout in the front matter variables.",null,null,3],["无论如何，设置默认值超出了本教程的范围，我们可以重新开始工作。
+可以定义多个布局。 
+然后再针对特定页面指定布局。 例如：
+
+	---
+	title: Sample page
+	layout: homepage
+	---
+
+该页面将使用_layouts文件夹中的homepage.html模板。
+
+您甚至可以在_config.yml文件中为页面，帖子或集合设置默认的前置标签，这样您就不必在前端变量中指定布局。 
+无论如何，设置默认值超出了本教程的范围，我们可以重新开始工作。
 
 6.配置网站变量Permalink
 
