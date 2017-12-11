@@ -5,7 +5,7 @@ permalink: /about/
 
 ---
 
-**中文版/Chinese**
+**中文版 / Chinese**
 
 * 2015.1-至今    上海齐蒙广告有限公司    
 高级前端程序设计师。   
@@ -29,7 +29,7 @@ flash活动网站开发。
 
 
 
-**英文版/English**
+**英文版 / English**
 
 * 2015.1-Now    Shanghai Qi Meng Advertisement Co.,Ltd    
 Senior Front-end Programmer.   
