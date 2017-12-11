@@ -168,22 +168,26 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 
 ## 2.确定layoutPermalink的内容部分 ##
 
-在default.html中，找到页面内容的开始位置（通常在h1或h2标签处）。","In default.html, find where the page content begins (usually at h1 or h2 tags).",null,null,3],["用{{page.title}}替换这些标签内出现的标题。
+在default.html，找到页面内容的开始位置（通常在h1或h2标签处）。 
+用{{page.title}}替换这些标签内出现的标题。
 
-删除内容部分（保留所有其他_.._导航菜单，边栏，页脚等），并将其替换为{{content}}。
+删除内容部分（保留所有其他：导航菜单，边栏，页脚等），将其替换为{{content}}。
 
-在浏览器中再次检查布局，并确保您没有损坏或通过无意中删除关键的div标签或其他元素来修改它。","Check the layout again in your browser and make sure you didnt corrupt or alter it up by inadvertently removing a crucial div tag or other element.",null,null,3],["唯一的变化应该是标题和页面内容，现在已经空白或显示占位符标记。
+在浏览器中再次检查布局，并确保您没有损坏或通过无意中删除关键的div标签或其他元素。 
+唯一的变化应该是标题和页面内容，已经空白或显示占位符标记。
 
-3.创建一个前面的问题tagsPermalink几个文件
+## [3.新建2个文件,带头标签](https://jekyllrb.com/tutorials/convert-site-to-jekyll/#3-create-a-couple-of-files-with-front-matter-tags) ##
 
-在根目录下创建几个文件（index.md和about.md）。
+在根目录下创建2个文件（index.md和about.md）。
 
-在你的index.md文件中，添加一些包含标题和布局属性的前置标记，就像这个_.._
+在index.md，添加头标签，包含标题和布局属性。代码如下：
 
----
-标题_.._首页
-布局_.._默认
----
+	---
+	title: Home
+	layout: default
+	---
+	
+	Some page content here...
 
 某些网页内容在这里...
 创建另一个名为about.md的测试页面，其中包含相似的前置标签。
