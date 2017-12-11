@@ -5,7 +5,7 @@ permalink: /about/
 
 ---
 
-## 中文版本 ##
+** 中文版 **
 
 * 2015.1-至今    上海齐蒙广告有限公司    
 高级前端程序设计师。   
@@ -27,7 +27,7 @@ flash活动网站开发。
 * 2008.4-2011.4    上海欧安派广告传播有限公司  
 flash活动网站开发。  
 
-## English Version ##
+** English Version **
 
 * 2015.1-Now    Shanghai Qi Meng Advertisement Co.,Ltd    
 Senior front-end programmer.   
