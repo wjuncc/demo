@@ -130,26 +130,33 @@ Liquid即[Jekyll模板系统](https://jekyllrb.com/docs/templates/),用来检索
 用浏览器打开default.html，检查一下网站的外观和行为，确保和线上表现一样。 
 您可能需要调整一下CSS，JS和图像路径，才能正常使用。
 
-例如，如果路径在您复制的站点上是相对的，则需要将相同的资源下载到您的Jekyll站点，或者将绝对路径用于云中的相同资产。 
-（语法如src =“//需要一个前缀，如src =”http _.._ //在您的本地浏览器中工作。）
+例如，你down下来的网站代码有相对路径，你就得把资源下载到本地，放到Jekyll路径下，或者把相对路径改成绝对路径，指向网上连接。 
+（像语法如src="//需要加前缀，改成src="http://。）
 
-Jekyll提供了一些过滤器，用于在路径之前添加站点URL。","Jekyll provides some filters to prepend a site URL before path.",null,null,3],["例如，你可以像这样编写你的样式表_.._
+Jekyll提供[过滤器](https://jekyllrb.com/docs/templates/#filters)，用于在路径之前添加站点URL。 例如，像这样引用样式表:
 
-{{“/assets/style.css”或_ relative_url}}
-relative_url过滤器会将您的配置文件（例如asblog）的baseurl值预先添加到输入中。","The relative_url filter will prepend the baseurl value from your config file (asblog for instance) to the input.",null,null,3],["如果您的站点托管在子路径而不是域的根目录（例如，http_... //mysite.com/blog/），这非常有用。
+	{{ "/assets/style.css" | relative_url }}
 
-您也可以使用absolute_url过滤器。","You can also use an absolute_url filter.",null,null,3],["这个过滤器会预先输入url和baseurl的值到输入_.._
+relative_url过滤器会将配置文件（例如blog）的[baseurl](https://byparker.com/blog/2014/clearing-up-confusion-around-baseurl/)值预先添加到输入中。 
+如果您的站点托管在子路径而不是域的根目录（例如，http://mysite.com/blog/），这非常有用。
 
-{{“/assets/style.css”或__ absolute_url}}
-同样，url和baseurl都可以在你的站点配置文件中定义，就像这个_.._
+您也可以使用absolute_url过滤器。 
+这个过滤器会预先输入url和baseurl的值到输入:
 
-url _.._ http _... //mysite.com
-baseurl _.._ / blog
-输出的结果将是http_... //mysite.com/blog/assets/style.css。
+	{{ "/assets/style.css" | absolute_url }}
+
+同样，url和baseurl都可以在你的站点配置文件中定义，例如：
+
+	url: http://mysite.com
+	baseurl: /blog
+
+输出的结果是 http://mysite.com/blog/assets/style.css 。
 
 请注意，任何页面的url属性都以正斜杠（/）开头，因此在url或baseurl属性的末尾省略。
 
-你不必预先过滤器来链接这样的路径。","You dont have to prepend filters to link paths like this.",null,null,3],["你也可以使用整个网站的相对链接。","You could also use relative links across your entire site.",null,null,3],["但是，您决定编码到您的资产的路径，确保它们正确渲染。
+你不必预先过滤器来链接这样的路径。 
+你也可以使用整个网站的相对链接。 
+但是，您决定编码到您的资产的路径，确保它们正确渲染。
 
 您的本地default.html页面在您的浏览器中看起来不错吗？","Does your local default.html page look good in your browser?",null,null,3],["所有图片，样式和其他元素都能正确显示吗？","Are all images, styles, and other elements showing up correctly?",null,null,3],["如果是这样，那很好。","If so, great.",null,null,3],["继续。","Keep going.",null,null,1],["您可以将此模板用作所有页面和帖子的布局，或者根据需要创建尽可能多的模板。
 
