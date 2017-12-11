@@ -152,13 +152,17 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 
 输出的结果是 http://mysite.com/blog/assets/style.css 。
 
-请注意，任何页面的url属性都以正斜杠（/）开头，因此在url或baseurl属性的末尾省略。
+请注意，任何页面的url属性都以正斜杠（/）开头，因此在url或baseurl属性的末尾省略了/。
 
 你不必预先过滤器来链接这样的路径。 
 你也可以使用整个网站的相对链接。 
-但是，您决定编码到您的资产的路径，确保它们正确渲染。
+但是，不管用哪种方式设置路径，都要确保它们正确渲染。
 
-您的本地default.html页面在您的浏览器中看起来不错吗？","Does your local default.html page look good in your browser?",null,null,3],["所有图片，样式和其他元素都能正确显示吗？","Are all images, styles, and other elements showing up correctly?",null,null,3],["如果是这样，那很好。","If so, great.",null,null,3],["继续。","Keep going.",null,null,1],["您可以将此模板用作所有页面和帖子的布局，或者根据需要创建尽可能多的模板。
+您的本地default.html页面在您的浏览器中看起来不错吗？
+所有图片，样式和其他元素都能正确显示吗？ 
+如果是这样，那很好。 
+继续。
+您可以将此模板用作所有页面和帖子的布局，或者根据需要创建尽可能多的模板。
 
 在下一节中，您将清空布局的内容，并将其替换为占位符标签，该标签将使用您的Jekyll页面动态填充。
 
