@@ -231,7 +231,7 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 您甚至可以在_config.yml文件中为页面，帖子或集合设置默认的前置标签，这样您就不必在前端变量中指定布局。 
 无论如何，设置默认值超出了本教程的范围，我们可以重新开始工作。
 
-6.配置网站变量Permalink
+## 6.配置网站变量 ##
 
 您已经使用{{page.title}}标签配置了页面标题。","You already configured the page title using {{ page.title }} tags.",null,null,3],["但有更多的标题标签来填充。","But there are more title tags to populate.",null,null,3],["页面也有一个标题标签，出现在浏览器选项卡或窗口中。","Pages also have a title tag that appears in the browser tab or window.",null,null,3],["通常，您将网页标题放在网站标题后面。
 
@@ -468,14 +468,17 @@ url _.._ / page-3-permalink /
 
 在您为这些服务集成代码时，请注意，如果您的Jekyll站点中的页面没有前置事项标记，那么Jekyll将不会处理该页面中的任何内容。","As you integrate code for these services, note that if a page in your Jekyll site doesnt have front matter tags, Jekyll wont process any of the content in that page.",null,null,3],["当您建立您的网站时，页面将被传递到_site文件夹。
 
-如果您确实希望Jekyll处理某些页面内容（例如，填充您在站点配置文件中定义的变量），则只需在页面中添加前端标签。","If you do want Jekyll to process some page content (for example, to populate a variable that you define in your sites config file), just add front matter tags to the page.",null,null,3],["如果您不希望将任何布局应用于页面，请指定layout _.._ null，如下所示_.._
+如果您确实希望Jekyll处理某些页面内容（例如，填充您在站点配置文件中定义的变量），则只需在页面中添加前端标签。 
+如果您不希望将任何布局应用于页面，请指定layout，如下所示：
 
----
-布局_.._ null
----
-13.结束语
+	---
+	layout: null
+	---
 
-虽然网站可以实现更复杂的特性和功能，但我们已经介绍了本教程的基础知识。","Although websites can implement more sophisticated features and functionality, weve covered the basics in this tutorial.",null,null,3],["你现在有一个功能齐全的Jekyll网站。
+## 13.小结 ##
+
+虽然网站可以实现更复杂的特性和功能，但我们已经介绍了本教程的基础知识。
+你现在有一个功能齐全的Jekyll网站。
 
 要部署您的站点，请考虑使用s3_website插件使用GitHub Pages，Netlify，Amazon AWS S3，或者仅将您的文件FTP到您的Web服务器。
 
@@ -483,7 +486,7 @@ url _.._ / page-3-permalink /
 
 额外资源固定链接
 
-这里有一些关于创建Jekyll站点的其他教程_.._
+这里有一些关于创建Jekyll站点的其他教程：
 
 将一个静态网站转换为Jekyll
 建立一个Jekyll站点C第3部分_...转换静态网站到Jekyll
