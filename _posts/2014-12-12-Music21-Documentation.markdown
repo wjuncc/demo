@@ -5,10 +5,15 @@ date:   2014-12-12 06:08:54 +0800
 categories:  
 tags: 
     - music21
+    - 翻译
 
 ---
 
-# Music21 Documentation #
+# Music21 文档 #
+
+今天是2017年，较之2014年有少量不同。
+
+[原文](http://web.mit.edu/music21/doc/)
 
 ## •	关于 Music21   ##
 *	什么是music21？
