@@ -64,7 +64,7 @@ index.md
 	layout: default
 	---
 	
-	# {{ page.title }}
+	# { { page.title } }
 	
 	Content is written in [Markdown](https://learnxinyminutes.com/docs/markdown/). Plain text format allows you to focus on your **content**.
 	
@@ -99,7 +99,7 @@ index.md
 如果配置文件为空，将使用默认值来构建Jekyll站点。 
 例如，Markdown转HTML，Jekyll将自动调用[kramdown Markdown过滤器](https://rubygems.org/gems/kramdown/)，而不用明文指定。
 * Jekyll搜索带[前置标签](https://jekyllrb.com/docs/frontmatter/)（两组虚线---，如index.md）的文件并做处理（填充站点变量，渲染Liquid以及Markdown转HTML）。
-* Jekyll根据前置标签，来搜集所有页面内容，并推送到指定布局中的\{ {content} \}变量（默认）。
+* Jekyll根据前置标签，来搜集所有页面内容，并推送到指定布局中的{ {content} }变量（默认）。
 * 处理后的文件写入到_site目录的.html文件。
 
 更多请阅读[Jekyll解释器如何处理文件](https://jekyllrb.com/tutorials/orderofinterpretation/)。
@@ -135,7 +135,7 @@ Liquid即[Jekyll模板系统](https://jekyllrb.com/docs/templates/),用来检索
 
 Jekyll提供[过滤器](https://jekyllrb.com/docs/templates/#filters)，用于在路径之前添加站点URL。 例如，像这样引用样式表:
 
-	{{ "/assets/style.css" | relative_url }}
+	{ { "/assets/style.css" | relative_url } }
 
 relative_url过滤器会将配置文件（例如blog）的[baseurl](https://byparker.com/blog/2014/clearing-up-confusion-around-baseurl/)值预先添加到输入中。 
 如果您的站点托管在子路径而不是域的根目录（例如，http://mysite.com/blog/），这非常有用。
@@ -143,7 +143,7 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 您也可以使用absolute_url过滤器。 
 这个过滤器会预先输入url和baseurl的值到输入:
 
-	{{ "/assets/style.css" | absolute_url }}
+	{ { "/assets/style.css" | absolute_url } }
 
 同样，url和baseurl都可以在你的站点配置文件中定义，例如：
 
@@ -169,9 +169,9 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 ## 2.确定layoutPermalink的内容部分 ##
 
 在default.html，找到页面内容的开始位置（通常在h1或h2标签处）。 
-用{{page.title}}替换这些标签内出现的标题。
+用{ {page.title} }替换这些标签内出现的标题。
 
-删除内容部分（保留所有其他：导航菜单，边栏，页脚等），将其替换为{{content}}。
+删除内容部分（保留所有其他：导航菜单，边栏，页脚等），将其替换为{ {content} }。
 
 在浏览器中再次检查布局，并确保您没有损坏或通过无意中删除关键的div标签或其他元素。 
 唯一的变化应该是标题和页面内容，已经空白或显示占位符标记。
@@ -233,14 +233,14 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 
 ## 6.配置网站变量 ##
 
-您已经使用{{page.title}}标签配置了页面标题。","You already configured the page title using {{ page.title }} tags.",null,null,3],["但有更多的标题标签来填充。","But there are more title tags to populate.",null,null,3],["页面也有一个标题标签，出现在浏览器选项卡或窗口中。","Pages also have a title tag that appears in the browser tab or window.",null,null,3],["通常，您将网页标题放在网站标题后面。
+您已经使用{ {page.title} }标签配置了页面标题。","You already configured the page title using { { page.title } } tags.",null,null,3],["但有更多的标题标签来填充。","But there are more title tags to populate.",null,null,3],["页面也有一个标题标签，出现在浏览器选项卡或窗口中。","Pages also have a title tag that appears in the browser tab or window.",null,null,3],["通常，您将网页标题放在网站标题后面。
 
 在你的default.html布局中，找到头标下的标题标签_.._
 
 ACME网站\u003c/ title\u003e
 插入以下网站变量_.._
 
-\u003ctitle\u003e {{page.title}} _or_ {{site.title}} \u003c/ title\u003e
+\u003ctitle\u003e { {page.title} } _or_ { {site.title} } \u003c/ title\u003e
 打开_config.yml并为您的网站名称添加标题属性。
 
 标题_.._ ACME网站
@@ -275,11 +275,11 @@ ACME网站\u003c/ title\u003e
 布局_.._默认
 ---
 
-{{content}}
+{ {content} }
 \u003cul class =“myposts”\u003e
 {％for site.posts％中的帖子}
-\u003cli\u003e \u003ca href=\"{{ post.url }}\"\u003e {{post.title}} \u003c/a\u003e
-\u003cspan class =“postDate”\u003e {{post.date _or_ date _.._“％b％-d，％Y”}} \u003c/ span\u003e
+\u003cli\u003e \u003ca href=\"{ { post.url } }\"\u003e { {post.title} } \u003c/a\u003e
+\u003cspan class =“postDate”\u003e { {post.date _or_ date _.._“％b％-d，％Y”} } \u003c/ span\u003e
 \u003c/ LI\u003e
 {％endfor％}
 \u003c/ UL\u003e
@@ -289,23 +289,23 @@ ACME网站\u003c/ title\u003e
 标题_.._博客
 布局_.._家
 ---
-在这种情况下，blog.md的内容将被推送到家庭布局中的{{content}}标签。","In this case, contents of blog.md will be pushed into the {{ content }} tag in the home layout.",null,null,3],["然后，家庭布局将被推入默认布局的{{content}}标签。
+在这种情况下，blog.md的内容将被推送到家庭布局中的{ {content} }标签。","In this case, contents of blog.md will be pushed into the { { content } } tag in the home layout.",null,null,3],["然后，家庭布局将被推入默认布局的{ {content} }标签。
 
 布局如何工作固定链接
 
-当布局指定另一个布局时，这意味着第一个布局的内容将填充到第二个布局的{{content}}标记中。","When a layout specifies another layout, it means the content of the first layout will be stuffed into the {{ content }} tag of the second layout.",null,null,3],["作为一个比喻，想想俄罗斯娃娃是否适合对方。","As an analogy, think of Russian dolls that fit into each other.",null,null,3],["每个布局适合其指定的另一个布局。
+当布局指定另一个布局时，这意味着第一个布局的内容将填充到第二个布局的{ {content} }标记中。","When a layout specifies another layout, it means the content of the first layout will be stuffed into the { { content } } tag of the second layout.",null,null,3],["作为一个比喻，想想俄罗斯娃娃是否适合对方。","As an analogy, think of Russian dolls that fit into each other.",null,null,3],["每个布局适合其指定的另一个布局。
 
 下图显示了Jekyll中的布局是如何工作的
 
 Jekyll布局的概念
 
-在此示例中，指定布局_.._文档的Markdown文档document.md中的内容被推送到布局文件docs.html的{{content}}标签中。","In this example, the content from a Markdown document document.md that specifies layout _.._  docs gets pushed into the {{ content }} tag of the layout file docs.html.",null,null,3],["因为文档布局本身指定了布局_.._页面，所以来自docs.html的内容被压入布局文件page.html中的{{content}}标签。","Because the docs layout itself specifies layout _.._  page, the content from docs.html gets pushed into the {{ content }} tag in the layout file page.html.",null,null,3],["最后，因为页面布局指定了布局_.._默认值，所以page.html中的内容被推送到布局文件default.html的{{content}}标签中。
+在此示例中，指定布局_.._文档的Markdown文档document.md中的内容被推送到布局文件docs.html的{ {content} }标签中。","In this example, the content from a Markdown document document.md that specifies layout _.._  docs gets pushed into the { { content } } tag of the layout file docs.html.",null,null,3],["因为文档布局本身指定了布局_.._页面，所以来自docs.html的内容被压入布局文件page.html中的{ {content} }标签。","Because the docs layout itself specifies layout _.._  page, the content from docs.html gets pushed into the { { content } } tag in the layout file page.html.",null,null,3],["最后，因为页面布局指定了布局_.._默认值，所以page.html中的内容被推送到布局文件default.html的{ {content} }标签中。
 
 你不需要多个布局。","You dont need multiple layouts.",null,null,3],["你可以使用一个_.._默认。","You could just use one _.._  default.",null,null,3],["您可以选择如何设计您的网站。","You have options for how you design your site.",null,null,3],["一般来说，为页面定义一个布局，为帖子定义另一个布局，但是这两个布局要继承默认模板（通常定义站点的顶部和底部部分）。
 
 在您的浏览器中，转到blog.html并查看帖子列表。","In your browser, go to blog.html and see the list of posts.",null,null,3],["请注意，您不必使用此处所述的方法。","Note that you dont have to use the method described here.",null,null,3],["您可以简单地将for循环添加到任何页面，如index.md，以显示这些帖子。","You could have simply added the for loop to any page, such as index.md, to display these posts.",null,null,3],["但是，鉴于其他功能可能具有更复杂的逻辑，将逻辑存储在与经常输入内容的页面区域不同的模板中可能会有所帮助。
 
-至少，布局应该包含{{content}}，它充当要渲染的内容的接收者。
+至少，布局应该包含{ {content} }，它充当要渲染的内容的接收者。
 
 For循环固定链接
 
@@ -315,8 +315,8 @@ For循环固定链接
 
 \u003cul class =“myposts”\u003e
 {％for site.categories.podcasts限制_.._ 3％}
-\u003cli\u003e \u003ca href=\"{{ post.url }}\"\u003e {{post.title}} \u003c/a\u003e
-\u003cspan class =“postDate”\u003e {{post.date _or_ date _.._“％b％-d，％Y”}} \u003c/ span\u003e
+\u003cli\u003e \u003ca href=\"{ { post.url } }\"\u003e { {post.title} } \u003c/a\u003e
+\u003cspan class =“postDate”\u003e { {post.date _or_ date _.._“％b％-d，％Y”} } \u003c/ span\u003e
 \u003c/ LI\u003e
 {％endfor％}
 这个循环会得到最新的三个帖子，前面有一个叫做podcasts的类别。
@@ -332,7 +332,7 @@ For循环固定链接
 \u003cUL\u003e
 {％assign mypages = site.pages _or_ sort _.._“order”％}
 {％for page in mypages％}
-\u003cli\u003e \u003ca href=\"{{ page.url _or_ absolute_url }}\"\u003e {{page.title}} \u003c/a\u003e \u003c/ li\u003e
+\u003cli\u003e \u003ca href=\"{ { page.url _or_ absolute_url } }\"\u003e { {page.title} } \u003c/a\u003e \u003c/ li\u003e
 {％endfor％}
 \u003c/ UL\u003e
 这个例子假定每个页面都有一个包含标题和订单属性的前面的内容，比如_.._
@@ -363,7 +363,7 @@ url _.._ / page-3-permalink /
 
 \u003cUL\u003e
 {％为site.data.navigation％中的链接％}
-\u003cli\u003e \u003ca href=\"{{ link.url }}\"\u003e {{link.title}} \u003c/a\u003e \u003c/ li\u003e
+\u003cli\u003e \u003ca href=\"{ { link.url } }\"\u003e { {link.title} } \u003c/a\u003e \u003c/ li\u003e
 {％endfor％}
 \u003c/ UL\u003e
 如果您对导航有更复杂的要求，例如在构建文档站点时，请参阅导航的详细教程。
@@ -393,18 +393,18 @@ url _.._ / page-3-permalink /
 \u003crss version =“2.0”\u003e
 
 \u003c通道\u003e
-\u003ctitle\u003e {{site.title}} \u003c/ title\u003e
-\u003clink\u003e {{site.url}} \u003c/ link\u003e
-\u003cdescription\u003e {{site.description}} \u003c/ description\u003e
-\u003clastBuildDate\u003e {{site.time_or_date_to_rfc822}} \u003c/ lastBuildDate\u003e
+\u003ctitle\u003e { {site.title} } \u003c/ title\u003e
+\u003clink\u003e { {site.url} } \u003c/ link\u003e
+\u003cdescription\u003e { {site.description} } \u003c/ description\u003e
+\u003clastBuildDate\u003e { {site.time_or_date_to_rfc822} } \u003c/ lastBuildDate\u003e
 {％for site.posts％中的帖子}
 的\u003citem\u003e
 \u003c描述\u003e
-{{post.content _or_ escape _or_ truncate _.._'400'}}
+{ {post.content _or_ escape _or_ truncate _.._'400'} }
 \u003c/描述\u003e
-\u003cpubDate\u003e {{post.date _or_ date_to_rfc822}} \u003c/ pubDate\u003e
+\u003cpubDate\u003e { {post.date _or_ date_to_rfc822} } \u003c/ pubDate\u003e
 \u003cGUID\u003e
-{{post.url _or_ prepend _.._ site.url}}
+{ {post.url _or_ prepend _.._ site.url} }
 \u003c/ GUID\u003e
 \u003c/项目\u003e
 {％endfor％}
@@ -416,7 +416,7 @@ url _.._ / page-3-permalink /
 
 在您的default.html布局中，查找头中RSS或Atom提要的引用，并将其替换为对刚刚创建的文件的引用。","In your default.html layout, look for a reference to the RSS or Atom feed in your header, and replace it with a reference to the file you just created.",null,null,3],["例如 _.._
 
-\u003clink rel =“alternate”type =“application / rss + xml”href =“{{site.url}} / feed.xml”title =“{{site.title}}”\u003e
+\u003clink rel =“alternate”type =“application / rss + xml”href =“{ {site.url} } / feed.xml”title =“{ {site.title} }”\u003e
 您还可以通过添加名为jekyll-feed的gem来自动生成帖子Feed。","You can also auto-generate your posts feed by adding a gem called jekyll-feed.",null,null,3],["这个宝石也将在GitHub页面上工作。
 
 11.添加一个sitemapPermalink
@@ -433,8 +433,8 @@ url _.._ / page-3-permalink /
 
 {％sitepage中的页面％}
 \u003cURL\u003e
-\u003cLOC\u003e {{page.url}} \u003c/ LOC\u003e
-\u003clastmod\u003e {{site.time _or_ date _.._'％Y-％m-％d'}} \u003c/ lastmod\u003e
+\u003cLOC\u003e { {page.url} } \u003c/ LOC\u003e
+\u003clastmod\u003e { {site.time _or_ date _.._'％Y-％m-％d'} } \u003c/ lastmod\u003e
 \u003c的changefreq\u003e每日\u003c/的changefreq\u003e
 \u003c优先\u003e 0.5 \u003c/优先级\u003e
 \u003c/ URL\u003e
@@ -442,8 +442,8 @@ url _.._ / page-3-permalink /
 
 {％for site.posts％中的帖子}
 \u003cURL\u003e
-\u003cLOC\u003e {{post.url}} \u003c/ LOC\u003e
-\u003clastmod\u003e {{site.time _or_ date _.._'％Y-％m-％d'}} \u003c/ lastmod\u003e
+\u003cLOC\u003e { {post.url} } \u003c/ LOC\u003e
+\u003clastmod\u003e { {site.time _or_ date _.._'％Y-％m-％d'} } \u003c/ lastmod\u003e
 \u003c的changefreq\u003e每日\u003c/的changefreq\u003e
 \u003c优先\u003e 0.5 \u003c/优先级\u003e
 \u003c/ URL\u003e
