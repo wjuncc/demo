@@ -35,37 +35,47 @@ Jekyll只允许自动化处理网站的部分内容（如把页面嵌入到模�
 	│   └── default.html
 	└── index.md
 
-在名为my_jekyll_site的文件夹或任何最适合您的文件夹中手动创建这三个文件，并将default.html放在名为_layouts的文件夹中。
+在my_jekyll_site文件夹（或你取名的文件夹中）手动创建这三个文件，并将default.html放在名为_layouts的文件夹中。
 
-$ touch _config.yml index.md default.html
-$ mkdir _layouts _and_ _and_ mv default.html _layouts
-启动您最喜欢的编辑器，并按照以下方式填充default.html和index.md文件的内容_...
+终端：
+
+	$ touch _config.yml index.md default.html
+	$ mkdir _layouts && mv default.html _layouts
+
+打开您喜欢的代码编辑器，在default.html和index.md输入如下代码：
 
 _config.yml
 
-名字_...我的Jekyll网站
-_layouts / default.html中
+	name: My Jekyll Website
 
-\u003c！DOCTYPE html\u003e
-\u003cHTML\u003e
-\u003cBODY\u003e
-{{content}}
-\u003c/ BODY\u003e
-\u003c/ HTML\u003e
+_layouts/default.html
+
+	<!DOCTYPE html>
+	<html>
+	  <body>
+	     {{ content }}
+	  </body>
+	</html>
+
 index.md
 
----
-标题_.._我的页面
-布局_.._默认
----
+	---
+	title: My page
+	layout: default
+	---
+	
+	# {{ page.title }}
+	
+	Content is written in [Markdown](https://learnxinyminutes.com/docs/markdown/). Plain text format allows you to focus on your **content**.
+	
+	内容用[Markdown]（https://www.learnxinyminutes.com/docs/markdown/）编写。 纯文本格式让你专注于**写作内容**而非结构。
 
-＃ {{ 页面标题 }}
+	<!--
+	You can use HTML elements in Markdown, such as the comment element, and they won't be affected by a markdown parser. However, if you create an HTML element in your markdown file, you cannot use markdown syntax within that element's contents.
+	您可以在Markdown中使用HTML元素，例如注释，它们不受markdown解析器的影响。
+	但是，HTML元素中不要包括markdown语法。
+	-->      
 
-内容是用[Markdown]（https://www.learnxinyminutes.com/docs/markdown/）编写的。","Content is written in [Markdown](https _.._ //learnxinyminutes.com/docs/markdown/).",null,null,3],["纯文本格式允许您专注于您的**内容**。
-
-\u003c！ - 
-您可以在Markdown中使用HTML元素，例如comment元素，它们不会受到markdown解析器的影响。","You can use HTML elements in Markdown, such as the comment element, and they won't be affected by a markdown parser.",null,null,3],["但是，如果您在标记文件中创建HTML元素，则不能在该元素的内容中使用标记语法。
- - \u003e
 现在cd到my_jekyll_site并使用内置的服务器_.._
 
 cd my_jekyll_site
