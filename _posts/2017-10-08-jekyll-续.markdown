@@ -76,33 +76,50 @@ index.md
 	但是，HTML元素中不要包括markdown语法。
 	-->      
 
-现在cd到my_jekyll_site并使用内置的服务器_.._
+现在cd到my_jekyll_site并启动内置服务器：
 
-cd my_jekyll_site
-杰基尔服务
-如果你有一个Gemfile，可以通过键入bundle exec jekyll serve来使用Bundler。
+	cd my_jekyll_site
+	jekyll serve
 
-当您为该网站提供服务时，您会看到一个预览网址，例如http _... //127.0.0.1 _.._ 4000 /（与http _.._ // localhost _.._ 4000 /相同） ","When you serve the site, you get a preview URL such as http _.._ //127.0.0.1 _.._ 4000/ (which is the same as http _.._ //localhost _.._ 4000/)",null,null,3],["。",".",null,null,0],["站点文件默认内置到_site文件夹中。
+如果你有一个Gemfile，可以来使用Bundler：
 
-这是一个最基本的功能级别的Jekyll站点。","This is a Jekyll site at the most basic functional level.",null,null,3],["这里发生了什么_.._
+	bundle exec jekyll serve 
 
-_config.yml文件包含Jekyll在处理您的网站时使用的设置。","The _config.yml file contains settings that Jekyll uses as it processes your site.",null,null,3],["一个空的配置文件将使用默认值来构建一个Jekyll站点。","An empty config file will use default values for building a Jekyll site.",null,null,3],["例如，要将Markdown转换为HTML，Jekyll将自动使用kramdown Markdown过滤器，而不需要指定它。
-Jekyll寻找具有前置标签（两组虚线，如index.md）的文件并处理文件（填充站点变量，渲染任何Liquid以及将Markdown转换为HTML）。
-Jekyll将来自所有页面和帖子的内容推送到指定布局中的{{content}}变量（默认）。
-处理后的文件被写为_site目录中的.html文件。
-您可以阅读更多关于Jekyll如何按照解释的顺序处理文件。
+当你启动网站服务时，您会看到一个预览网址，例如
 
-有了这个基本的了解如何一个Jekyll网站的作品，你几乎可以转换为Jekyll任何HTML主题。","With this basic understanding of how a Jekyll site works, you can convert almost any HTML theme for Jekyll.",null,null,3],["以下部分将带领您逐步完成教程。
+	http://127.0.0.1:4000/
 
-1.为您的默认layoutPermalink创建一个模板
+（等价于http://localhost:4000/） 
 
-找到您的HTML主题并将其保存为默认布局。","Find your HTML theme and save it as a default layout.",null,null,3],["如果您正在转换或克隆现有网站，则可以右键单击该网页并查看源代码。
+站点文件默认生成到_site文件夹中。
 
-例如，假设您要复制公司网站以创建具有相同品牌的文档网站。","For example, suppose youre cloning your company site to create a documentation site with the same branding.",null,null,3],["或者假设你有一个用HTML构建的个人网站，现在想成为一个Jekyll网站。","Or suppose you have a personal site that you built with HTML and now want to make it a Jekyll site.",null,null,3],["获取您网站的HTML源代码。
+这是一个最基本的Jekyll站点。这里发生了什么：
 
-不管网站，请检查许可证，并确保您有权复制和使用代码。
+* _config.yml文件包含Jekyll处理网站时使用的设置。  
+如果配置文件为空，将使用默认值来构建Jekyll站点。 
+例如，Markdown转HTML，Jekyll将自动调用[kramdown Markdown过滤器](https://rubygems.org/gems/kramdown/)，而不用明文指定。
+* Jekyll搜索带[前置标签](https://jekyllrb.com/docs/frontmatter/)（两组虚线---，如index.md）的文件并做处理（填充站点变量，渲染Liquid以及Markdown转HTML）。
+* Jekyll根据前置标签，来搜集所有页面内容，并推送到指定布局中的{{content}}变量（默认）。
+* 处理后的文件写入到_site目录的.html文件。
 
-将源代码复制并粘贴到名为default.html的文件中。","Copy and paste the source code into a file called default.html.",null,null,3],["将default.html文件放在_layouts文件夹中。","Put the default.html file inside the _layouts folder.",null,null,3],["这将是您的页面和帖子的默认布局模板，即当Jekyll构建网站时，每个页面或帖子将使用此布局。
+更多请阅读[Jekyll解释器如何处理文件](https://jekyllrb.com/tutorials/orderofinterpretation/)。
+
+有了对Jekyll网站如何工作的基础认识，你可以将任何HTML模板转换为Jekyll主题。
+以下部分将带领您逐步完成教程。
+
+## 1.为您的默认layoutPermalink创建模板 ##
+
+找到HTML主题并将其保存为默认布局。 
+想要转换或克隆一个网站，可以右键单击该网页并查看源代码。
+
+例如，您想用相同的结构来改造自己公司的网站。 
+或者你已经用HTML构建了个人网站，现在想改成Jekyll网站。 
+获取网站的HTML源代码。
+
+请检查许可证，并确保您有权复制和使用代码。
+
+将源代码复制并粘贴到名为default.html的文件中。 
+将default.html文件放在_layouts文件夹中。","Put the default.html file inside the _layouts folder.",null,null,3],["这将是您的页面和帖子的默认布局模板，即当Jekyll构建网站时，每个页面或帖子将使用此布局。
 
 请注意，在查找模板时，您需要模板的HTML输出。","Note that in looking for templates, you want the HTML output of the template.",null,null,3],["如果模板包含PHP标签或其他动态脚本，则需要将这些动态元素转换为HTML或Liquid。 ","If the template has PHP tags or other dynamic scripts, these dynamic elements will need to be converted to HTML or to Liquid.",null,null,3],["Liquid是Jekyll模板系统检索动态内容。
 
