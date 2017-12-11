@@ -53,7 +53,7 @@ _layouts/default.html
 	<!DOCTYPE html>
 	<html>
 	  <body>
-	     {{ content }}
+	     \{\{ content \}\}
 	  </body>
 	</html>
 
