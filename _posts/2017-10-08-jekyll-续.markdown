@@ -6,6 +6,433 @@ categories:
 tags: jekyll
 ---
 
+
+
+# 将一个HTML网站转换为Jekyll #
+
+如果你在找Jekyll主题，你不必局限于已有的Jekyll主题。
+
+几乎任何静态HTML文件都转换成Jekyll网站，这相当容易。
+
+在很多方面，任何目前是静态网站的网站已经是Jekyll网站。   
+
+Jekyll只允许自动化处理网站的部分内容（如把页面嵌入到模板，给导航加列表，生成feeds和站点地图等等）。
+
+了解如何将任何HTML网站转换成Jekyll模板将打开你的世界更多的选择Jekyll主题。 
+
+不要在网上搜索Jekyll的主题，你可以从你网站的各种HTML模板中进行选择，快速地根据需要对HTML模板进行Jekyllize化，并用Jekyll构建输出。
+
+尽管网站可以具有复杂的功能和控件，但是在本教程中保持简单。
+
+什么是Jekyll网站？永久链接
+
+首先，让我们从基础知识入手。","First, lets start with a grounding in the basics.",null,null,3],["将Jekyll网站剥离到一个非常基本的级别将有助于澄清在一个Jekyll网站发生的事情。","Stripping a Jekyll site down to an extremely basic level will help clarify what happens in a Jekyll site.",null,null,3],["如果你还没有安装jekyll gem，请安装它。
+
+那么从一个基本的Jekyll站点组成三个文件_.._
+
+
+_config.yml
+_layouts
+default.html中
+index.md
+在名为my_jekyll_site的文件夹或任何最适合您的文件夹中手动创建这三个文件，并将default.html放在名为_layouts的文件夹中。
+
+$ touch _config.yml index.md default.html
+$ mkdir _layouts _and_ _and_ mv default.html _layouts
+启动您最喜欢的编辑器，并按照以下方式填充default.html和index.md文件的内容_...
+
+_config.yml
+
+名字_...我的Jekyll网站
+_layouts / default.html中
+
+\u003c！DOCTYPE html\u003e
+\u003cHTML\u003e
+\u003cBODY\u003e
+{{content}}
+\u003c/ BODY\u003e
+\u003c/ HTML\u003e
+index.md
+
+---
+标题_.._我的页面
+布局_.._默认
+---
+
+＃ {{ 页面标题 }}
+
+内容是用[Markdown]（https://www.learnxinyminutes.com/docs/markdown/）编写的。","Content is written in [Markdown](https _.._ //learnxinyminutes.com/docs/markdown/).",null,null,3],["纯文本格式允许您专注于您的**内容**。
+
+\u003c！ - 
+您可以在Markdown中使用HTML元素，例如comment元素，它们不会受到markdown解析器的影响。","You can use HTML elements in Markdown, such as the comment element, and they won't be affected by a markdown parser.",null,null,3],["但是，如果您在标记文件中创建HTML元素，则不能在该元素的内容中使用标记语法。
+ - \u003e
+现在cd到my_jekyll_site并使用内置的服务器_.._
+
+cd my_jekyll_site
+杰基尔服务
+如果你有一个Gemfile，可以通过键入bundle exec jekyll serve来使用Bundler。
+
+当您为该网站提供服务时，您会看到一个预览网址，例如http _... //127.0.0.1 _.._ 4000 /（与http _.._ // localhost _.._ 4000 /相同） ","When you serve the site, you get a preview URL such as http _.._ //127.0.0.1 _.._ 4000/ (which is the same as http _.._ //localhost _.._ 4000/)",null,null,3],["。",".",null,null,0],["站点文件默认内置到_site文件夹中。
+
+这是一个最基本的功能级别的Jekyll站点。","This is a Jekyll site at the most basic functional level.",null,null,3],["这里发生了什么_.._
+
+_config.yml文件包含Jekyll在处理您的网站时使用的设置。","The _config.yml file contains settings that Jekyll uses as it processes your site.",null,null,3],["一个空的配置文件将使用默认值来构建一个Jekyll站点。","An empty config file will use default values for building a Jekyll site.",null,null,3],["例如，要将Markdown转换为HTML，Jekyll将自动使用kramdown Markdown过滤器，而不需要指定它。
+Jekyll寻找具有前置标签（两组虚线，如index.md）的文件并处理文件（填充站点变量，渲染任何Liquid以及将Markdown转换为HTML）。
+Jekyll将来自所有页面和帖子的内容推送到指定布局中的{{content}}变量（默认）。
+处理后的文件被写为_site目录中的.html文件。
+您可以阅读更多关于Jekyll如何按照解释的顺序处理文件。
+
+有了这个基本的了解如何一个Jekyll网站的作品，你几乎可以转换为Jekyll任何HTML主题。","With this basic understanding of how a Jekyll site works, you can convert almost any HTML theme for Jekyll.",null,null,3],["以下部分将带领您逐步完成教程。
+
+1.为您的默认layoutPermalink创建一个模板
+
+找到您的HTML主题并将其保存为默认布局。","Find your HTML theme and save it as a default layout.",null,null,3],["如果您正在转换或克隆现有网站，则可以右键单击该网页并查看源代码。
+
+例如，假设您要复制公司网站以创建具有相同品牌的文档网站。","For example, suppose youre cloning your company site to create a documentation site with the same branding.",null,null,3],["或者假设你有一个用HTML构建的个人网站，现在想成为一个Jekyll网站。","Or suppose you have a personal site that you built with HTML and now want to make it a Jekyll site.",null,null,3],["获取您网站的HTML源代码。
+
+不管网站，请检查许可证，并确保您有权复制和使用代码。
+
+将源代码复制并粘贴到名为default.html的文件中。","Copy and paste the source code into a file called default.html.",null,null,3],["将default.html文件放在_layouts文件夹中。","Put the default.html file inside the _layouts folder.",null,null,3],["这将是您的页面和帖子的默认布局模板，即当Jekyll构建网站时，每个页面或帖子将使用此布局。
+
+请注意，在查找模板时，您需要模板的HTML输出。","Note that in looking for templates, you want the HTML output of the template.",null,null,3],["如果模板包含PHP标签或其他动态脚本，则需要将这些动态元素转换为HTML或Liquid。 ","If the template has PHP tags or other dynamic scripts, these dynamic elements will need to be converted to HTML or to Liquid.",null,null,3],["Liquid是Jekyll模板系统检索动态内容。
+
+在本地打开default.html到您的浏览器，以确保网站的外观和行为像在线。","Open default.html into your browser locally to ensure the site looks and behaves like it does online.",null,null,3],["您可能需要调整CSS，JS和图像路径才能使用。
+
+例如，如果路径在您复制的站点上是相对的，则需要将相同的资源下载到您的Jekyll站点，或者将绝对路径用于云中的相同资产。 ","For example, if the paths were relative on the site you copied, youll need to either download the same assets into your Jekyll site or use absolute paths to the same assets in the cloud.",null,null,3],["（语法如src =“//需要一个前缀，如src =”http _.._ //在您的本地浏览器中工作。）
+
+Jekyll提供了一些过滤器，用于在路径之前添加站点URL。","Jekyll provides some filters to prepend a site URL before path.",null,null,3],["例如，你可以像这样编写你的样式表_.._
+
+{{“/assets/style.css”或_ relative_url}}
+relative_url过滤器会将您的配置文件（例如asblog）的baseurl值预先添加到输入中。","The relative_url filter will prepend the baseurl value from your config file (asblog for instance) to the input.",null,null,3],["如果您的站点托管在子路径而不是域的根目录（例如，http_... //mysite.com/blog/），这非常有用。
+
+您也可以使用absolute_url过滤器。","You can also use an absolute_url filter.",null,null,3],["这个过滤器会预先输入url和baseurl的值到输入_.._
+
+{{“/assets/style.css”或__ absolute_url}}
+同样，url和baseurl都可以在你的站点配置文件中定义，就像这个_.._
+
+url _.._ http _... //mysite.com
+baseurl _.._ / blog
+输出的结果将是http_... //mysite.com/blog/assets/style.css。
+
+请注意，任何页面的url属性都以正斜杠（/）开头，因此在url或baseurl属性的末尾省略。
+
+你不必预先过滤器来链接这样的路径。","You dont have to prepend filters to link paths like this.",null,null,3],["你也可以使用整个网站的相对链接。","You could also use relative links across your entire site.",null,null,3],["但是，您决定编码到您的资产的路径，确保它们正确渲染。
+
+您的本地default.html页面在您的浏览器中看起来不错吗？","Does your local default.html page look good in your browser?",null,null,3],["所有图片，样式和其他元素都能正确显示吗？","Are all images, styles, and other elements showing up correctly?",null,null,3],["如果是这样，那很好。","If so, great.",null,null,3],["继续。","Keep going.",null,null,1],["您可以将此模板用作所有页面和帖子的布局，或者根据需要创建尽可能多的模板。
+
+在下一节中，您将清空布局的内容，并将其替换为占位符标签，该标签将使用您的Jekyll页面动态填充。
+
+2.确定layoutPermalink的内容部分
+
+在default.html中，找到页面内容的开始位置（通常在h1或h2标签处）。","In default.html, find where the page content begins (usually at h1 or h2 tags).",null,null,3],["用{{page.title}}替换这些标签内出现的标题。
+
+删除内容部分（保留所有其他_.._导航菜单，边栏，页脚等），并将其替换为{{content}}。
+
+在浏览器中再次检查布局，并确保您没有损坏或通过无意中删除关键的div标签或其他元素来修改它。","Check the layout again in your browser and make sure you didnt corrupt or alter it up by inadvertently removing a crucial div tag or other element.",null,null,3],["唯一的变化应该是标题和页面内容，现在已经空白或显示占位符标记。
+
+3.创建一个前面的问题tagsPermalink几个文件
+
+在根目录下创建几个文件（index.md和about.md）。
+
+在你的index.md文件中，添加一些包含标题和布局属性的前置标记，就像这个_.._
+
+---
+标题_.._首页
+布局_.._默认
+---
+
+某些网页内容在这里...
+创建另一个名为about.md的测试页面，其中包含相似的前置标签。
+
+如果你没有在你的页面中指定一个布局，那么Jekyll会简单地把这个页面作为一个无风格的基本HTML页面。
+
+4.添加一个配置文件的链接
+
+在根目录中添加一个_config.yml文件。","Add a _config.yml file in your root directory.",null,null,3],["在_config.yml中，你可以选择指定你想要的降价过滤器。","In _config.yml, you can optionally specify the markdown filter you want.",null,null,3],["默认情况下，使用kramdown（不需要指定它）。","By default, kramdown is used (without the need to specify it).",null,null,3],["如果没有指定其他过滤器，则您的配置文件将自动应用以下内容作为默认设置_.._
+
+降价_.._ kramdown
+你也可以为kramdown指定一些选项，使其更像GitHub Flavored Markdown（GFM）_...
+
+kramdown _.._
+输入_.._ GFM
+auto_ids _.._ true
+hard_wrap _.._ false
+syntax_highlighter _.._ rouge
+5.测试你的网页Permalink
+
+现在运行jekyll服务并在index.html和about.html页面之间切换。","Now run jekyll serve and toggle between your index.html and about.html pages.",null,null,3],["应该为这两个页面加载默认布局。
+
+您现在已经将您的内容提取到单独的文件中，并为页面定义了一个通用布局。
+
+你可以为页面定义任意数量的布局。","You could define any number of layouts you want for pages.",null,null,3],["然后只需确定要使用的特定页面的布局。","Then just identify the layout you want that particular page to use.",null,null,3],["例如 _.._
+
+---
+标题_.._示例页面
+布局_.._主页
+---
+然后该页面将使用_layouts文件夹中的homepage.html模板。
+
+您甚至可以在_config.yml文件中为页面，帖子或集合设置默认的前置标签，这样您就不必在前端变量中指定布局。","You can even set default front matter tags for pages, posts, or collections in your _config.yml file so that you dont have to specify the layout in the front matter variables.",null,null,3],["无论如何，设置默认值超出了本教程的范围，我们可以重新开始工作。
+
+6.配置网站变量Permalink
+
+您已经使用{{page.title}}标签配置了页面标题。","You already configured the page title using {{ page.title }} tags.",null,null,3],["但有更多的标题标签来填充。","But there are more title tags to populate.",null,null,3],["页面也有一个标题标签，出现在浏览器选项卡或窗口中。","Pages also have a title tag that appears in the browser tab or window.",null,null,3],["通常，您将网页标题放在网站标题后面。
+
+在你的default.html布局中，找到头标下的标题标签_.._
+
+ACME网站\u003c/ title\u003e
+插入以下网站变量_.._
+
+\u003ctitle\u003e {{page.title}} _or_ {{site.title}} \u003c/ title\u003e
+打开_config.yml并为您的网站名称添加标题属性。
+
+标题_.._ ACME网站
+您在_config.yml文件中添加的任何属性均可通过站点名称空间访问。","Any properties you add in your _config.yml file are accessible through the site namespace.",null,null,3],["同样，页面前面的任何属性都可以通过页面名称空间访问。","Similarly, any properties in your pages front matter are accessible through the page namespace.",null,null,3],["在站点或页面之后使用点符号来访问值。
+
+用Ctrl + C停止你的Jekyll服务器并重新启动它。","Stop your Jekyll server with Ctrl + C and restart it.",null,null,3],["验证标题标签正确填充。
+
+每当你修改你的配置文件时，你必须重新启动Jekyll才能使更改生效。","Every time you modify your config file, you have to restart Jekyll for the changes to take effect.",null,null,3],["当您修改其他文件时，Jekyll在重建时会自动获取更改。
+
+如果您的站点中还有其他变量，请清洗并重复。
+
+7.在页面上显示帖子内容
+
+它通常显示主页上的帖子列表。","Its common to show a list of posts on the homepage.",null,null,3],["首先，让我们创建一些帖子，以便我们展示一些东西。
+
+在_posts文件夹中添加标准YYYY-MM-DD-title.md文章格式的文章_.._
+
+2017-01-02-my-first-post.md
+2017-01-15-my-second-post.md
+2017-02-08-my-third-post.md
+在每篇文章中，添加一些基本内容_.._
+
+---
+标题_.._我的第一篇文章
+布局_.._默认
+---
+
+一些示例内容...
+现在让我们创建一个布局来显示帖子。","Now lets create a layout that will display the posts.",null,null,3],["在_layouts中创建一个名为home.html的新文件，并添加以下逻辑_.._
+
+---
+布局_.._默认
+---
+
+{{content}}
+\u003cul class =“myposts”\u003e
+{％for site.posts％中的帖子}
+\u003cli\u003e \u003ca href=\"{{ post.url }}\"\u003e {{post.title}} \u003c/a\u003e
+\u003cspan class =“postDate”\u003e {{post.date _or_ date _.._“％b％-d，％Y”}} \u003c/ span\u003e
+\u003c/ LI\u003e
+{％endfor％}
+\u003c/ UL\u003e
+在根目录下创建一个名为blog.md的文件并指定home layout _.._
+
+---
+标题_.._博客
+布局_.._家
+---
+在这种情况下，blog.md的内容将被推送到家庭布局中的{{content}}标签。","In this case, contents of blog.md will be pushed into the {{ content }} tag in the home layout.",null,null,3],["然后，家庭布局将被推入默认布局的{{content}}标签。
+
+布局如何工作固定链接
+
+当布局指定另一个布局时，这意味着第一个布局的内容将填充到第二个布局的{{content}}标记中。","When a layout specifies another layout, it means the content of the first layout will be stuffed into the {{ content }} tag of the second layout.",null,null,3],["作为一个比喻，想想俄罗斯娃娃是否适合对方。","As an analogy, think of Russian dolls that fit into each other.",null,null,3],["每个布局适合其指定的另一个布局。
+
+下图显示了Jekyll中的布局是如何工作的
+
+Jekyll布局的概念
+
+在此示例中，指定布局_.._文档的Markdown文档document.md中的内容被推送到布局文件docs.html的{{content}}标签中。","In this example, the content from a Markdown document document.md that specifies layout _.._  docs gets pushed into the {{ content }} tag of the layout file docs.html.",null,null,3],["因为文档布局本身指定了布局_.._页面，所以来自docs.html的内容被压入布局文件page.html中的{{content}}标签。","Because the docs layout itself specifies layout _.._  page, the content from docs.html gets pushed into the {{ content }} tag in the layout file page.html.",null,null,3],["最后，因为页面布局指定了布局_.._默认值，所以page.html中的内容被推送到布局文件default.html的{{content}}标签中。
+
+你不需要多个布局。","You dont need multiple layouts.",null,null,3],["你可以使用一个_.._默认。","You could just use one _.._  default.",null,null,3],["您可以选择如何设计您的网站。","You have options for how you design your site.",null,null,3],["一般来说，为页面定义一个布局，为帖子定义另一个布局，但是这两个布局要继承默认模板（通常定义站点的顶部和底部部分）。
+
+在您的浏览器中，转到blog.html并查看帖子列表。","In your browser, go to blog.html and see the list of posts.",null,null,3],["请注意，您不必使用此处所述的方法。","Note that you dont have to use the method described here.",null,null,3],["您可以简单地将for循环添加到任何页面，如index.md，以显示这些帖子。","You could have simply added the for loop to any page, such as index.md, to display these posts.",null,null,3],["但是，鉴于其他功能可能具有更复杂的逻辑，将逻辑存储在与经常输入内容的页面区域不同的模板中可能会有所帮助。
+
+至少，布局应该包含{{content}}，它充当要渲染的内容的接收者。
+
+For循环固定链接
+
+顺便说一句，让我们暂停一下，看看for循环逻辑更紧密一点。 ","By the way, lets pause here to look at the for loop logic a little more closely.",null,null,3],["Liquid中的循环是最常用的Liquid标签之一。 ","For loops in Liquid are one of the most commonly used Liquid tags.",null,null,3],["For循环让你遍历你的Jekyll网站的内容，并建立一个结果。 ","For loops let you iterate through content in your Jekyll site and build out a result.",null,null,3],["for循环也具有某些可用的属性（如第一次或最后一次迭代），也是基于循环中的循环位置。
+
+我们只是抓了你可以用循环来检索帖子的表面。","Weve only scratched the surface of what you can do with for loops in retrieving posts.",null,null,3],["例如，如果您想要显示来自特定类别的帖子，可以通过为您的帖子前置事项添加类别属性，然后查看这些类别。","For example, if you wanted to display posts from a specific category, you could do so by adding a categories property to your posts front matter and then look in those categories.",null,null,3],["此外，您可以通过添加限制属性来限制结果的数量。","Further, you could limit the number of results by adding a limit property.",null,null,3],["下面是一个例子_.._
+
+\u003cul class =“myposts”\u003e
+{％for site.categories.podcasts限制_.._ 3％}
+\u003cli\u003e \u003ca href=\"{{ post.url }}\"\u003e {{post.title}} \u003c/a\u003e
+\u003cspan class =“postDate”\u003e {{post.date _or_ date _.._“％b％-d，％Y”}} \u003c/ span\u003e
+\u003c/ LI\u003e
+{％endfor％}
+这个循环会得到最新的三个帖子，前面有一个叫做podcasts的类别。
+
+8.配置navigationPermalink
+
+现在你已经配置了帖子，让我们配置页面导航。","Now that youve configured posts, lets configure page navigation.",null,null,3],["大多数网站在侧边栏或标题区域都有一些导航。
+
+在本教程中，假设您已经获得了一个简单的想要生成的页面列表。","In this tutorial, well assume youve got a simple list of pages you want to generate.",null,null,3],["如果您只有少数几页，则可以使用for循环遍历site.pages对象来列出它们，然后通过front matter属性对它们进行排序。
+
+确定出现页面列表的代码部分。","Identify the part of your code where the list of pages appears.",null,null,3],["通常这是一个带有各种子元素的\u003cul\u003e元素。","Usually this is a \u003cul\u003e element with various child \u003cli\u003e elements.",null,null,3],["将代码替换为以下_.._
+
+\u003cUL\u003e
+{％assign mypages = site.pages _or_ sort _.._“order”％}
+{％for page in mypages％}
+\u003cli\u003e \u003ca href=\"{{ page.url _or_ absolute_url }}\"\u003e {{page.title}} \u003c/a\u003e \u003c/ li\u003e
+{％endfor％}
+\u003c/ UL\u003e
+这个例子假定每个页面都有一个包含标题和订单属性的前面的内容，比如_.._
+
+---
+标题_.._我的页面
+订单_.._ 2
+---
+这里的订单属性将定义页面如何排序，其中1出现在列表中的第一个。
+
+您也可以迭代您在单独的数据文件中维护的页面列表。","You could also iterate through a list of pages that you maintain in a separate data file.",null,null,3],["如果您有很多页面，或者您有关于要存储的页面的其他属性，这可能会更合适。
+
+要以这种方式管理页面链接，请在您的Jekyll项目中创建一个名为_data的文件夹。","To manage page links this way, create a folder in your Jekyll project called _data.",null,null,3],["在此文件夹中，创建一个名为例如","In this folder, create a file called e.g.",null,null,3],["带有这个内容的navigation.yml _.._
+
+ -  title _.._示例页面1
+url _.._ / page-1-permalink /
+
+ - 标题_.._示例页面2
+url _.._ / page-2-permalink /
+
+ - 标题_.._示例页面3
+url _.._ / page-3-permalink /
+如果你以前从未写过任何YAML，那么你很快就会熟悉它。","If you never wrote any YAML before, youll get quickly familiar with it.",null,null,3],["看看你可以用YAML做什么。
+
+您可以根据需要为此数据文件中的每个项目存储其他属性。","You can store additional properties for each item in this data file as desired.",null,null,3],["按照您希望显示的顺序排列列表项目。
+
+要打印数据文件中的页面列表，请使用这样的代码_.._
+
+\u003cUL\u003e
+{％为site.data.navigation％中的链接％}
+\u003cli\u003e \u003ca href=\"{{ link.url }}\"\u003e {{link.title}} \u003c/a\u003e \u003c/ li\u003e
+{％endfor％}
+\u003c/ UL\u003e
+如果您对导航有更复杂的要求，例如在构建文档站点时，请参阅导航的详细教程。
+
+9.使用includesPermalink简化您的网站
+
+让我们假设你的default.html文件很庞大，很难使用。","Lets suppose your default.html file is massive and hard to work with.",null,null,3],["您可以通过将一些HTML代码放入包含文件中来分解您的布局。
+
+在根目录中添加名为_includes的文件夹。","Add a folder called _includes in your root directory.",null,null,3],["在该文件夹中，在那里添加一个名为sidebar.html的文件。
+
+从您的default.html布局中删除您的侧边栏代码，并将其插入到sidebar.html文件中。
+
+在default.html中以前存在的侧边栏代码，像这样拉入你的包含_.._
+
+{％include sidebar.html％}
+你可以打破你的主题的其他元素，如你的页眉或页脚。","You can break up other elements of your theme like this, such as your header or footer.",null,null,3],["然后，您可以将这些常用元素应用于其他布局文件。","Then you can apply these common elements to other layout files.",null,null,3],["这样你就不会有重复的代码。
+
+10. RSS feedPermalink
+
+您的Jekyll站点需要RSS提要。","Your Jekyll site needs an RSS feed.",null,null,3],["下面是基本的RSS提要语法。","Heres the basic RSS feed syntax.",null,null,3],["要在Jekyll中创建RSS文件，请在根目录下创建一个名为feed.xml的文件，并添加以下代码_.._
+
+---
+布局_.._ null
+---
+
+\u003c？xml version =“1.0”encoding =“UTF-8”？\u003e
+\u003crss version =“2.0”\u003e
+
+\u003c通道\u003e
+\u003ctitle\u003e {{site.title}} \u003c/ title\u003e
+\u003clink\u003e {{site.url}} \u003c/ link\u003e
+\u003cdescription\u003e {{site.description}} \u003c/ description\u003e
+\u003clastBuildDate\u003e {{site.time_or_date_to_rfc822}} \u003c/ lastBuildDate\u003e
+{％for site.posts％中的帖子}
+的\u003citem\u003e
+\u003c描述\u003e
+{{post.content _or_ escape _or_ truncate _.._'400'}}
+\u003c/描述\u003e
+\u003cpubDate\u003e {{post.date _or_ date_to_rfc822}} \u003c/ pubDate\u003e
+\u003cGUID\u003e
+{{post.url _or_ prepend _.._ site.url}}
+\u003c/ GUID\u003e
+\u003c/项目\u003e
+{％endfor％}
+\u003c/信道\u003e
+\u003c/ RSS\u003e
+确保您的_config.yml文件具有标题，网址和说明的属性。
+
+此代码使用for循环来查看您最近的20个帖子。","This code uses a for loop to look through your last 20 posts.",null,null,3],["来自帖子的内容被转义并被截断为使用液体过滤器的最后400个字符。
+
+在您的default.html布局中，查找头中RSS或Atom提要的引用，并将其替换为对刚刚创建的文件的引用。","In your default.html layout, look for a reference to the RSS or Atom feed in your header, and replace it with a reference to the file you just created.",null,null,3],["例如 _.._
+
+\u003clink rel =“alternate”type =“application / rss + xml”href =“{{site.url}} / feed.xml”title =“{{site.title}}”\u003e
+您还可以通过添加名为jekyll-feed的gem来自动生成帖子Feed。","You can also auto-generate your posts feed by adding a gem called jekyll-feed.",null,null,3],["这个宝石也将在GitHub页面上工作。
+
+11.添加一个sitemapPermalink
+
+最后，添加一个网站地图。","Finally, add a site map.",null,null,3],["在根目录下创建一个sitemap.xml文件并添加这个代码_.._
+
+---
+布局_.._ null
+搜索_.._排除
+---
+
+\u003c？xml version =“1.0”encoding =“UTF-8”？\u003e
+\u003curlset xmlns =“http _.. // //www.sitemaps.org/schemas/sitemap/0.9”\u003e
+
+{％sitepage中的页面％}
+\u003cURL\u003e
+\u003cLOC\u003e {{page.url}} \u003c/ LOC\u003e
+\u003clastmod\u003e {{site.time _or_ date _.._'％Y-％m-％d'}} \u003c/ lastmod\u003e
+\u003c的changefreq\u003e每日\u003c/的changefreq\u003e
+\u003c优先\u003e 0.5 \u003c/优先级\u003e
+\u003c/ URL\u003e
+{％endfor％}
+
+{％for site.posts％中的帖子}
+\u003cURL\u003e
+\u003cLOC\u003e {{post.url}} \u003c/ LOC\u003e
+\u003clastmod\u003e {{site.time _or_ date _.._'％Y-％m-％d'}} \u003c/ lastmod\u003e
+\u003c的changefreq\u003e每日\u003c/的changefreq\u003e
+\u003c优先\u003e 0.5 \u003c/优先级\u003e
+\u003c/ URL\u003e
+{％endfor％}
+
+\u003c/ urlset\u003e结束
+同样，在这里使用for循环遍历所有帖子和页面以将它们添加到站点地图。
+
+您也可以通过添加名为jekyll-sitemap的gem来自动生成您的站点地图。","You can also auto-generate your sitemap by adding a gem called jekyll-sitemap.",null,null,3],["这个宝石也将在GitHub页面上工作。
+
+12.添加外部服务Permalink
+
+对于您可能需要的其他服务（如联系表单，搜索，评论等），请查找第三方服务。","For other services you might need (such as contact forms, search, comments, and more), look for third-party services.",null,null,3],["例如，您可以使用以下_.._
+
+对于评论_.._ Disqus
+为时事通讯_... Tinyletter
+联络表格_...呜呜
+搜索_... Algolia Docsearch
+有关静态网站服务的更多详细信息，请参阅CloudCannon中的第三方列表和教程。
+
+您的Jekyll页面由HTML，CSS和JavaScript组成，几乎所有需要嵌入的代码都可以正常工作。
+
+在您为这些服务集成代码时，请注意，如果您的Jekyll站点中的页面没有前置事项标记，那么Jekyll将不会处理该页面中的任何内容。","As you integrate code for these services, note that if a page in your Jekyll site doesnt have front matter tags, Jekyll wont process any of the content in that page.",null,null,3],["当您建立您的网站时，页面将被传递到_site文件夹。
+
+如果您确实希望Jekyll处理某些页面内容（例如，填充您在站点配置文件中定义的变量），则只需在页面中添加前端标签。","If you do want Jekyll to process some page content (for example, to populate a variable that you define in your sites config file), just add front matter tags to the page.",null,null,3],["如果您不希望将任何布局应用于页面，请指定layout _.._ null，如下所示_.._
+
+---
+布局_.._ null
+---
+13.结束语
+
+虽然网站可以实现更复杂的特性和功能，但我们已经介绍了本教程的基础知识。","Although websites can implement more sophisticated features and functionality, weve covered the basics in this tutorial.",null,null,3],["你现在有一个功能齐全的Jekyll网站。
+
+要部署您的站点，请考虑使用s3_website插件使用GitHub Pages，Netlify，Amazon AWS S3，或者仅将您的文件FTP到您的Web服务器。
+
+您还可以将您的布局，包含和资产打包到Ruby gem中，并将其作为Jekyll主题。
+
+额外资源固定链接
+
+这里有一些关于创建Jekyll站点的其他教程_.._
+
+将一个静态网站转换为Jekyll
+建立一个Jekyll站点C第3部分_...转换静态网站到Jekyll
+
+[原文](https://jekyllrb.com/tutorials/convert-site-to-jekyll/)
+
 # jekyll 续 #
 
 在GIT上面放作品列表:
