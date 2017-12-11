@@ -56,22 +56,22 @@ tags:
 *	用户指南，第90章:测试单元，基于Lilypond的非官方MusicXML
 *	Timespan Demos时间间隔的例子
 *	Inversion Demo反转的例子
-## •	Module Reference，模块参考 ##
-## •	Installation安装 ##
+## Module Reference，模块参考 ##
+### • Installation安装 ###
 *	在MAC上安装Music21
 *	在Windows上安装Music21
 *	
 *	在GNU/Linux上安装Music21
 *	使用软件扩展Music21
 
-## •	Tutorials教程 ##
+### • Tutorials教程 ###
 *	配置环境设置
 *	图形工具包
 *	高级图形主题
 *	教程：在MAC上设置Finale
 *	例子
 
-## •	Developer Reference开发者参考 ##
+### • Developer Reference开发者参考 ###
 *	测试music21
 *	记录音乐21
 *	记录模块和类
