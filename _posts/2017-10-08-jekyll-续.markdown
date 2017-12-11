@@ -351,11 +351,15 @@ for循环也具有某些可用的属性（如第一次或最后一次迭代）�
 
 ## 8.配置navigation ##
 
-现在你已经配置了帖子，让我们配置页面导航。","Now that youve configured posts, lets configure page navigation.",null,null,3],["大多数网站在侧边栏或标题区域都有一些导航。
+现在你已经配置了帖子，让我们配置页面导航。
+大多数网站在侧边栏或标题区域都有一些导航。
 
-在本教程中，假设您已经获得了一个简单的想要生成的页面列表。","In this tutorial, well assume youve got a simple list of pages you want to generate.",null,null,3],["如果您只有少数几页，则可以使用for循环遍历site.pages对象来列出它们，然后通过front matter属性对它们进行排序。
+在本教程中，假设您已经获得了一个简单的想要生成的页面列表。
+如果您只有少数几页，则可以使用for循环遍历site.pages对象来列出它们，然后通过front matter属性对它们进行排序。
 
-确定出现页面列表的代码部分。","Identify the part of your code where the list of pages appears.",null,null,3],["通常这是一个带有各种子元素的\u003cul\u003e元素。","Usually this is a \u003cul\u003e element with various child \u003cli\u003e elements.",null,null,3],["将代码替换为以下_.._
+确定出现页面列表的代码部分。
+通常这是一个带有各种子元素的\u003cul\u003e元素。
+将代码替换为以下_.._
 
 \u003cUL\u003e
 {％assign mypages = site.pages _or_ sort _.._“order”％}
@@ -371,9 +375,11 @@ for循环也具有某些可用的属性（如第一次或最后一次迭代）�
 ---
 这里的订单属性将定义页面如何排序，其中1出现在列表中的第一个。
 
-您也可以迭代您在单独的数据文件中维护的页面列表。","You could also iterate through a list of pages that you maintain in a separate data file.",null,null,3],["如果您有很多页面，或者您有关于要存储的页面的其他属性，这可能会更合适。
+您也可以迭代您在单独的数据文件中维护的页面列表。
+如果您有很多页面，或者您有关于要存储的页面的其他属性，这可能会更合适。
 
-要以这种方式管理页面链接，请在您的Jekyll项目中创建一个名为_data的文件夹。","To manage page links this way, create a folder in your Jekyll project called _data.",null,null,3],["在此文件夹中，创建一个名为例如","In this folder, create a file called e.g.",null,null,3],["带有这个内容的navigation.yml _.._
+要以这种方式管理页面链接，请在您的Jekyll项目中创建一个名为_data的文件夹。
+在此文件夹中，创建一个名为例如_.._
 
  -  title _.._示例页面1
 url _.._ / page-1-permalink /
@@ -383,9 +389,11 @@ url _.._ / page-2-permalink /
 
  - 标题_.._示例页面3
 url _.._ / page-3-permalink /
-如果你以前从未写过任何YAML，那么你很快就会熟悉它。","If you never wrote any YAML before, youll get quickly familiar with it.",null,null,3],["看看你可以用YAML做什么。
+如果你以前从未写过任何YAML，那么你很快就会熟悉它。
+看看你可以用YAML做什么。
 
-您可以根据需要为此数据文件中的每个项目存储其他属性。","You can store additional properties for each item in this data file as desired.",null,null,3],["按照您希望显示的顺序排列列表项目。
+您可以根据需要为此数据文件中的每个项目存储其他属性。
+按照您希望显示的顺序排列列表项目。
 
 要打印数据文件中的页面列表，请使用这样的代码_.._
 
@@ -398,20 +406,26 @@ url _.._ / page-3-permalink /
 
 ## 9.使用includesPermalink简化您的网站 ##
 
-让我们假设你的default.html文件很庞大，很难使用。","Lets suppose your default.html file is massive and hard to work with.",null,null,3],["您可以通过将一些HTML代码放入包含文件中来分解您的布局。
+让我们假设你的default.html文件很庞大，很难使用。
+您可以通过将一些HTML代码放入包含文件中来分解您的布局。
 
-在根目录中添加名为_includes的文件夹。","Add a folder called _includes in your root directory.",null,null,3],["在该文件夹中，在那里添加一个名为sidebar.html的文件。
+在根目录中添加名为_includes的文件夹。
+在该文件夹中，在那里添加一个名为sidebar.html的文件。
 
 从您的default.html布局中删除您的侧边栏代码，并将其插入到sidebar.html文件中。
 
 在default.html中以前存在的侧边栏代码，像这样拉入你的包含_.._
 
 {％include sidebar.html％}
-你可以打破你的主题的其他元素，如你的页眉或页脚。","You can break up other elements of your theme like this, such as your header or footer.",null,null,3],["然后，您可以将这些常用元素应用于其他布局文件。","Then you can apply these common elements to other layout files.",null,null,3],["这样你就不会有重复的代码。
+你可以打破你的主题的其他元素，如你的页眉或页脚。
+然后，您可以将这些常用元素应用于其他布局文件。
+这样你就不会有重复的代码。
 
-10. RSS feedPermalink
+## 10. RSS feed  ##
 
-您的Jekyll站点需要RSS提要。","Your Jekyll site needs an RSS feed.",null,null,3],["下面是基本的RSS提要语法。","Heres the basic RSS feed syntax.",null,null,3],["要在Jekyll中创建RSS文件，请在根目录下创建一个名为feed.xml的文件，并添加以下代码_.._
+您的Jekyll站点需要RSS提要。
+下面是基本的RSS提要语法。
+要在Jekyll中创建RSS文件，请在根目录下创建一个名为feed.xml的文件，并添加以下代码_.._
 
 ---
 布局_.._ null
@@ -440,16 +454,20 @@ url _.._ / page-3-permalink /
 \u003c/ RSS\u003e
 确保您的_config.yml文件具有标题，网址和说明的属性。
 
-此代码使用for循环来查看您最近的20个帖子。","This code uses a for loop to look through your last 20 posts.",null,null,3],["来自帖子的内容被转义并被截断为使用液体过滤器的最后400个字符。
+此代码使用for循环来查看您最近的20个帖子。
+来自帖子的内容被转义并被截断为使用液体过滤器的最后400个字符。
 
-在您的default.html布局中，查找头中RSS或Atom提要的引用，并将其替换为对刚刚创建的文件的引用。","In your default.html layout, look for a reference to the RSS or Atom feed in your header, and replace it with a reference to the file you just created.",null,null,3],["例如 _.._
+在您的default.html布局中，查找头中RSS或Atom提要的引用，并将其替换为对刚刚创建的文件的引用。
+例如 _.._
 
 \u003clink rel =“alternate”type =“application / rss + xml”href =“{ {site.url} } / feed.xml”title =“{ {site.title} }”\u003e
-您还可以通过添加名为jekyll-feed的gem来自动生成帖子Feed。","You can also auto-generate your posts feed by adding a gem called jekyll-feed.",null,null,3],["这个宝石也将在GitHub页面上工作。
+您还可以通过添加名为jekyll-feed的gem来自动生成帖子Feed。
+这个宝石也将在GitHub页面上工作。
 
 11.添加一个sitemapPermalink
 
-最后，添加一个网站地图。","Finally, add a site map.",null,null,3],["在根目录下创建一个sitemap.xml文件并添加这个代码_.._
+最后，添加一个网站地图。
+在根目录下创建一个sitemap.xml文件并添加这个代码_.._
 
 ---
 布局_.._ null
@@ -480,11 +498,13 @@ url _.._ / page-3-permalink /
 \u003c/ urlset\u003e结束
 同样，在这里使用for循环遍历所有帖子和页面以将它们添加到站点地图。
 
-您也可以通过添加名为jekyll-sitemap的gem来自动生成您的站点地图。","You can also auto-generate your sitemap by adding a gem called jekyll-sitemap.",null,null,3],["这个宝石也将在GitHub页面上工作。
+您也可以通过添加名为jekyll-sitemap的gem来自动生成您的站点地图。
+这个宝石也将在GitHub页面上工作。
 
 12.添加外部服务Permalink
 
-对于您可能需要的其他服务（如联系表单，搜索，评论等），请查找第三方服务。","For other services you might need (such as contact forms, search, comments, and more), look for third-party services.",null,null,3],["例如，您可以使用以下_.._
+对于您可能需要的其他服务（如联系表单，搜索，评论等），请查找第三方服务。
+例如，您可以使用以下_.._
 
 对于评论_.._ Disqus
 为时事通讯_... Tinyletter
@@ -494,7 +514,8 @@ url _.._ / page-3-permalink /
 
 您的Jekyll页面由HTML，CSS和JavaScript组成，几乎所有需要嵌入的代码都可以正常工作。
 
-在您为这些服务集成代码时，请注意，如果您的Jekyll站点中的页面没有前置事项标记，那么Jekyll将不会处理该页面中的任何内容。","As you integrate code for these services, note that if a page in your Jekyll site doesnt have front matter tags, Jekyll wont process any of the content in that page.",null,null,3],["当您建立您的网站时，页面将被传递到_site文件夹。
+在您为这些服务集成代码时，请注意，如果您的Jekyll站点中的页面没有前置事项标记，那么Jekyll将不会处理该页面中的任何内容。
+当您建立您的网站时，页面将被传递到_site文件夹。
 
 如果您确实希望Jekyll处理某些页面内容（例如，填充您在站点配置文件中定义的变量），则只需在页面中添加前端标签。 
 如果您不希望将任何布局应用于页面，请指定layout，如下所示：
