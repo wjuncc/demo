@@ -260,7 +260,8 @@ ACME网站
 
 如果您的站点中还有其他变量，请清洗并重复。  
 
-## 7.在页面上显示帖子内容 ##   
+## 7.在页面上显示帖子内容 ##
+
 
 它通常显示主页上的帖子列表。  
 首先，让我们创建一些帖子，以便我们展示一些东西。  
@@ -300,29 +301,45 @@ ACME网站
 标题_.._博客
 布局_.._家
 ---
-在这种情况下，blog.md的内容将被推送到家庭布局中的{ {content} }标签。","In this case, contents of blog.md will be pushed into the { { content } } tag in the home layout.",null,null,3],["然后，家庭布局将被推入默认布局的{ {content} }标签。
+在这种情况下，blog.md的内容将被推送到家庭布局中的{ {content} }标签。  
+然后，家庭布局将被推入默认布局的{ {content} }标签。   
 
 ### 布局如何工作固定链接 ###
 
-当布局指定另一个布局时，这意味着第一个布局的内容将填充到第二个布局的{ {content} }标记中。","When a layout specifies another layout, it means the content of the first layout will be stuffed into the { { content } } tag of the second layout.",null,null,3],["作为一个比喻，想想俄罗斯娃娃是否适合对方。","As an analogy, think of Russian dolls that fit into each other.",null,null,3],["每个布局适合其指定的另一个布局。
+当布局指定另一个布局时，这意味着第一个布局的内容将填充到第二个布局的{ {content} }标记中。   
+每个布局适合其指定的另一个布局。
 
 下图显示了Jekyll中的布局是如何工作的
 
 ### Jekyll布局的概念 ###
 
-在此示例中，指定布局_.._文档的Markdown文档document.md中的内容被推送到布局文件docs.html的{ {content} }标签中。","In this example, the content from a Markdown document document.md that specifies layout _.._  docs gets pushed into the { { content } } tag of the layout file docs.html.",null,null,3],["因为文档布局本身指定了布局_.._页面，所以来自docs.html的内容被压入布局文件page.html中的{ {content} }标签。","Because the docs layout itself specifies layout _.._  page, the content from docs.html gets pushed into the { { content } } tag in the layout file page.html.",null,null,3],["最后，因为页面布局指定了布局_.._默认值，所以page.html中的内容被推送到布局文件default.html的{ {content} }标签中。
+在此示例中，指定布局_.._文档的Markdown文档document.md中的内容被推送到布局文件docs.html的{ {content} }标签中。   
+因为文档布局本身指定了布局_.._页面，所以来自docs.html的内容被压入布局文件page.html中的{ {content} }标签。   
+最后，因为页面布局指定了布局_.._默认值，所以page.html中的内容被推送到布局文件default.html的{ {content} }标签中。
 
-你不需要多个布局。","You dont need multiple layouts.",null,null,3],["你可以使用一个_.._默认。","You could just use one _.._  default.",null,null,3],["您可以选择如何设计您的网站。","You have options for how you design your site.",null,null,3],["一般来说，为页面定义一个布局，为帖子定义另一个布局，但是这两个布局要继承默认模板（通常定义站点的顶部和底部部分）。
+你不需要多个布局。  
+你可以使用一个默认。   
+您可以选择如何设计您的网站。  
+一般来说，为页面定义一个布局，为帖子定义另一个布局，但是这两个布局要继承默认模板（通常定义站点的顶部和底部部分）。
 
-在您的浏览器中，转到blog.html并查看帖子列表。","In your browser, go to blog.html and see the list of posts.",null,null,3],["请注意，您不必使用此处所述的方法。","Note that you dont have to use the method described here.",null,null,3],["您可以简单地将for循环添加到任何页面，如index.md，以显示这些帖子。","You could have simply added the for loop to any page, such as index.md, to display these posts.",null,null,3],["但是，鉴于其他功能可能具有更复杂的逻辑，将逻辑存储在与经常输入内容的页面区域不同的模板中可能会有所帮助。
+在您的浏览器中，转到blog.html并查看帖子列表。  
+请注意，您不必使用此处所述的方法。   
+您可以简单地将for循环添加到任何页面，如index.md，以显示这些帖子。  
+但是，鉴于其他功能可能具有更复杂的逻辑，将逻辑存储在与经常输入内容的页面区域不同的模板中可能会有所帮助。
 
 至少，布局应该包含{ {content} }，它充当要渲染的内容的接收者。
 
 For循环固定链接
 
-顺便说一句，让我们暂停一下，看看for循环逻辑更紧密一点。 ","By the way, lets pause here to look at the for loop logic a little more closely.",null,null,3],["Liquid中的循环是最常用的Liquid标签之一。 ","For loops in Liquid are one of the most commonly used Liquid tags.",null,null,3],["For循环让你遍历你的Jekyll网站的内容，并建立一个结果。 ","For loops let you iterate through content in your Jekyll site and build out a result.",null,null,3],["for循环也具有某些可用的属性（如第一次或最后一次迭代），也是基于循环中的循环位置。
+顺便说一句，让我们暂停一下，看看for循环逻辑更紧密一点。  
+Liquid中的循环是最常用的Liquid标签之一。   
+For循环让你遍历你的Jekyll网站的内容，并建立一个结果。   
+for循环也具有某些可用的属性（如第一次或最后一次迭代），也是基于循环中的循环位置。
 
-我们只是抓了你可以用循环来检索帖子的表面。","Weve only scratched the surface of what you can do with for loops in retrieving posts.",null,null,3],["例如，如果您想要显示来自特定类别的帖子，可以通过为您的帖子前置事项添加类别属性，然后查看这些类别。","For example, if you wanted to display posts from a specific category, you could do so by adding a categories property to your posts front matter and then look in those categories.",null,null,3],["此外，您可以通过添加限制属性来限制结果的数量。","Further, you could limit the number of results by adding a limit property.",null,null,3],["下面是一个例子_.._
+我们只是抓了你可以用循环来检索帖子的表面。  
+例如，如果您想要显示来自特定类别的帖子，可以通过为您的帖子前置事项添加类别属性，然后查看这些类别。  
+此外，您可以通过添加限制属性来限制结果的数量。  
+下面是一个例子_.._
 
 \u003cul class =“myposts”\u003e
 {％for site.categories.podcasts限制_.._ 3％}
