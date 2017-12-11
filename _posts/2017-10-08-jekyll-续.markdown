@@ -99,7 +99,7 @@ index.md
 如果配置文件为空，将使用默认值来构建Jekyll站点。 
 例如，Markdown转HTML，Jekyll将自动调用[kramdown Markdown过滤器](https://rubygems.org/gems/kramdown/)，而不用明文指定。
 * Jekyll搜索带[前置标签](https://jekyllrb.com/docs/frontmatter/)（两组虚线---，如index.md）的文件并做处理（填充站点变量，渲染Liquid以及Markdown转HTML）。
-* Jekyll根据前置标签，来搜集所有页面内容，并推送到指定布局中的\{\u007Bcontent\u007D\}变量（默认）。
+* Jekyll根据前置标签，来搜集所有页面内容，并推送到指定布局中的\{ {content} \}变量（默认）。
 * 处理后的文件写入到_site目录的.html文件。
 
 更多请阅读[Jekyll解释器如何处理文件](https://jekyllrb.com/tutorials/orderofinterpretation/)。
