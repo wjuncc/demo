@@ -6,7 +6,9 @@ categories:
 tags: jekyll
 ---
 
-
+是什么
+jekyll permalink: /about/
+permalink 固定链接
 
 # 将一个HTML网站转换为Jekyll #
 
