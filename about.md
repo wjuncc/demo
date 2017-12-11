@@ -27,7 +27,9 @@ flash活动网站开发。
 * 2008.4-2011.4    上海欧安派广告传播有限公司  
 flash活动网站开发。  
 
-** English Version **
+
+
+**English Version**
 
 * 2015.1-Now    Shanghai Qi Meng Advertisement Co.,Ltd    
 Senior front-end programmer.   
@@ -44,7 +46,7 @@ Launch & operation of Produce Hong.
 
 * 2011.4-2012.4   Agenda (Beijing) Co., Ltd. Shanghai Branch Consultants   
 Flash campaign & website development.   
-苹果APP开发
+Apple APP development.
 
 * 2008.4-2011.4    Shanghai OMP Advertising Communication Co., Ltd.  
 Flash campaign & website development.   
