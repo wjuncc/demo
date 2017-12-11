@@ -32,21 +32,22 @@ flash活动网站开发。
 **英文版/English**
 
 * 2015.1-Now    Shanghai Qi Meng Advertisement Co.,Ltd    
-Senior front-end programmer.   
+Senior Front-end Programmer.   
 WeChat Campaign H5.  
-Responsive website development.  
+Responsive Website Development.  
 
 * 2013.4-2015.1    Shanghai Wildhammer Digital Technology Co., Ltd.  
 Partner.  
-Chess-like mobile game development。  
+Chess-like Mobile Game Development。  
 
 * 2012.4-2013.4    Baidu (China) Co., Ltd.    
-Network Alliance Senior Product Operations Manager.  
-Launch & operation of Produce Hong.
+Network Products Division League.  
+Senior Product Operations Manager.  
+Operation of Produce Hong.
 
 * 2011.4-2012.4   Agenda (Beijing) Co., Ltd. Shanghai Branch Consultants   
-Flash campaign & website development.   
+Flash Campaign & Website Development.   
 Apple APP development.
 
 * 2008.4-2011.4    Shanghai OMP Advertising Communication Co., Ltd.  
-Flash campaign & website development.   
+Flash Campaign & Website Development.   
