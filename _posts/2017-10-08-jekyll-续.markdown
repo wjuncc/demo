@@ -158,15 +158,15 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 你也可以使用整个网站的相对链接。 
 但是，不管用哪种方式设置路径，都要确保它们正确渲染。
 
-您的本地default.html页面在您的浏览器中看起来不错吗？
+本地default.html页面在浏览器中看起来怎样？
 所有图片，样式和其他元素都能正确显示吗？ 
 如果是这样，那很好。 
 继续。
 您可以将此模板用作所有页面和帖子的布局，或者根据需要创建尽可能多的模板。
 
-在下一节中，您将清空布局的内容，并将其替换为占位符标签，该标签将使用您的Jekyll页面动态填充。
+下一节，清空布局中的内容，替换为占位符标签，占位符标签会动态填充页面内容。
 
-2.确定layoutPermalink的内容部分
+## 2.确定layoutPermalink的内容部分 ##
 
 在default.html中，找到页面内容的开始位置（通常在h1或h2标签处）。","In default.html, find where the page content begins (usually at h1 or h2 tags).",null,null,3],["用{{page.title}}替换这些标签内出现的标题。
 
