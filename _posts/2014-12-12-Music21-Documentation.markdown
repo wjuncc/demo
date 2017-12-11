@@ -61,9 +61,9 @@ tags:
 *	Timespan Demos时间间隔的例子
 *	Inversion Demo反转的例子
 
-## Module Reference，模块参考 ##
+## 模块参考 ##
 
-### • Installation安装 ###
+### • 安装 ###
 
 *	在MAC上安装Music21
 *	在Windows上安装Music21
@@ -71,7 +71,7 @@ tags:
 *	在GNU/Linux上安装Music21
 *	使用软件扩展Music21
 
-### • Tutorials教程 ###
+### • 教程 ###
 
 *	配置环境设置
 *	图形工具包
@@ -79,7 +79,7 @@ tags:
 *	教程：在MAC上设置Finale
 *	例子
 
-### • Developer Reference开发者参考 ###
+### • 开发者参考 ###
 
 *	测试music21
 *	记录音乐21
