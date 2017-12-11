@@ -46,5 +46,5 @@ Launch & operation of Produce Hong.
 Flash campaign & website development.   
 苹果APP开发
 
-* 2008.4-2011.4    Shanghai O.M.P. Advertising Communication Co., Ltd.  
+* 2008.4-2011.4    Shanghai OMP Advertising Communication Co., Ltd.  
 Flash campaign & website development.   
