@@ -178,7 +178,7 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 
 ## [3.新建2个文件,带头标签](https://jekyllrb.com/tutorials/convert-site-to-jekyll/#3-create-a-couple-of-files-with-front-matter-tags) ##
 
-在根目录下创建2个文件（index.md和about.md）。
+在根目录下新建2个文件（index.md和about.md）。
 
 在index.md，添加头标签，包含标题和布局属性。代码如下：
 
@@ -189,16 +189,19 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 	
 	Some page content here...
 
-某些网页内容在这里...
-创建另一个名为about.md的测试页面，其中包含相似的前置标签。
+新建about.md，代码内容相同。
 
-如果你没有在你的页面中指定一个布局，那么Jekyll会简单地把这个页面作为一个无风格的基本HTML页面。
+【！】如果不在页面指定布局，那么Jekyll会简单地把这个页面作为一个无风格的基础HTML页面。
 
-4.添加一个配置文件的链接
+# 4.添加配置文件 #
 
-在根目录中添加一个_config.yml文件。","Add a _config.yml file in your root directory.",null,null,3],["在_config.yml中，你可以选择指定你想要的降价过滤器。","In _config.yml, you can optionally specify the markdown filter you want.",null,null,3],["默认情况下，使用kramdown（不需要指定它）。","By default, kramdown is used (without the need to specify it).",null,null,3],["如果没有指定其他过滤器，则您的配置文件将自动应用以下内容作为默认设置_.._
+在根目录中添加一个_config.yml文件。 
+在_config.yml，指定 markdown 过滤器。 
+默认，是kramdown（不用指定）。 
+不指定过滤器，则配置文件自动使用kramdown作为默认设置：
 
-降价_.._ kramdown
+	markdown: kramdown
+
 你也可以为kramdown指定一些选项，使其更像GitHub Flavored Markdown（GFM）_...
 
 kramdown _.._
