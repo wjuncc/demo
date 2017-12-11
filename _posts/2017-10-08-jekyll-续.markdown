@@ -233,43 +233,54 @@ relative_url过滤器会将配置文件（例如blog）的[baseurl](https://bypa
 
 ## 6.配置网站变量 ##
 
-您已经使用{ {page.title} }标签配置了页面标题。","You already configured the page title using { { page.title } } tags.",null,null,3],["但有更多的标题标签来填充。","But there are more title tags to populate.",null,null,3],["页面也有一个标题标签，出现在浏览器选项卡或窗口中。","Pages also have a title tag that appears in the browser tab or window.",null,null,3],["通常，您将网页标题放在网站标题后面。
+您已经使用{ {page.title} }标签配置了页面标题。   
+但有更多的标题标签来填充。  
+页面也有一个标题标签，出现在浏览器选项卡或窗口中。  
+通常，您将网页标题放在网站标题后面。  
 
-在你的default.html布局中，找到头标下的标题标签_.._
+在你的default.html布局中，找到头标下的标题标签：  
 
-ACME网站\u003c/ title\u003e
-插入以下网站变量_.._
+ACME网站\u003c/ title\u003e 
+插入以下网站变量：   
 
 \u003ctitle\u003e { {page.title} } _or_ { {site.title} } \u003c/ title\u003e
 打开_config.yml并为您的网站名称添加标题属性。
 
-标题_.._ ACME网站
-您在_config.yml文件中添加的任何属性均可通过站点名称空间访问。","Any properties you add in your _config.yml file are accessible through the site namespace.",null,null,3],["同样，页面前面的任何属性都可以通过页面名称空间访问。","Similarly, any properties in your pages front matter are accessible through the page namespace.",null,null,3],["在站点或页面之后使用点符号来访问值。
+标题：   
+ACME网站   
+您在_config.yml文件中添加的任何属性均可通过站点名称空间访问。    
+同样，页面前面的任何属性都可以通过页面名称空间访问。   
+在站点或页面之后使用点符号来访问值。  
 
-用Ctrl + C停止你的Jekyll服务器并重新启动它。","Stop your Jekyll server with Ctrl + C and restart it.",null,null,3],["验证标题标签正确填充。
+用Ctrl + C停止你的Jekyll服务器并重新启动它。   
+验证标题标签正确填充。   
 
-每当你修改你的配置文件时，你必须重新启动Jekyll才能使更改生效。","Every time you modify your config file, you have to restart Jekyll for the changes to take effect.",null,null,3],["当您修改其他文件时，Jekyll在重建时会自动获取更改。
+每当你修改你的配置文件时，你必须重新启动Jekyll才能使更改生效。   
+当您修改其他文件时，Jekyll在重建时会自动获取更改。   
 
-如果您的站点中还有其他变量，请清洗并重复。
+如果您的站点中还有其他变量，请清洗并重复。  
 
-7.在页面上显示帖子内容
+## 7.在页面上显示帖子内容 ##   
 
-它通常显示主页上的帖子列表。","Its common to show a list of posts on the homepage.",null,null,3],["首先，让我们创建一些帖子，以便我们展示一些东西。
+它通常显示主页上的帖子列表。  
+首先，让我们创建一些帖子，以便我们展示一些东西。  
 
-在_posts文件夹中添加标准YYYY-MM-DD-title.md文章格式的文章_.._
+在_posts文件夹中添加标准YYYY-MM-DD-title.md文章格式的文章：
 
-2017-01-02-my-first-post.md
-2017-01-15-my-second-post.md
-2017-02-08-my-third-post.md
-在每篇文章中，添加一些基本内容_.._
+	2017-01-02-my-first-post.md
+	2017-01-15-my-second-post.md
+	2017-02-08-my-third-post.md
 
----
-标题_.._我的第一篇文章
-布局_.._默认
----
+在每篇文章，添加一些基本内容：  
 
-一些示例内容...
-现在让我们创建一个布局来显示帖子。","Now lets create a layout that will display the posts.",null,null,3],["在_layouts中创建一个名为home.html的新文件，并添加以下逻辑_.._
+	---
+	标题：我的第一篇文章  
+	布局：默认  
+	---
+
+一些示例内容： 
+现在让我们创建一个布局来显示帖子。  
+在_layouts中创建一个名为home.html的新文件，并添加以下逻辑_.._
 
 ---
 布局_.._默认
@@ -291,13 +302,13 @@ ACME网站\u003c/ title\u003e
 ---
 在这种情况下，blog.md的内容将被推送到家庭布局中的{ {content} }标签。","In this case, contents of blog.md will be pushed into the { { content } } tag in the home layout.",null,null,3],["然后，家庭布局将被推入默认布局的{ {content} }标签。
 
-布局如何工作固定链接
+### 布局如何工作固定链接 ###
 
 当布局指定另一个布局时，这意味着第一个布局的内容将填充到第二个布局的{ {content} }标记中。","When a layout specifies another layout, it means the content of the first layout will be stuffed into the { { content } } tag of the second layout.",null,null,3],["作为一个比喻，想想俄罗斯娃娃是否适合对方。","As an analogy, think of Russian dolls that fit into each other.",null,null,3],["每个布局适合其指定的另一个布局。
 
 下图显示了Jekyll中的布局是如何工作的
 
-Jekyll布局的概念
+### Jekyll布局的概念 ###
 
 在此示例中，指定布局_.._文档的Markdown文档document.md中的内容被推送到布局文件docs.html的{ {content} }标签中。","In this example, the content from a Markdown document document.md that specifies layout _.._  docs gets pushed into the { { content } } tag of the layout file docs.html.",null,null,3],["因为文档布局本身指定了布局_.._页面，所以来自docs.html的内容被压入布局文件page.html中的{ {content} }标签。","Because the docs layout itself specifies layout _.._  page, the content from docs.html gets pushed into the { { content } } tag in the layout file page.html.",null,null,3],["最后，因为页面布局指定了布局_.._默认值，所以page.html中的内容被推送到布局文件default.html的{ {content} }标签中。
 
@@ -321,7 +332,7 @@ For循环固定链接
 {％endfor％}
 这个循环会得到最新的三个帖子，前面有一个叫做podcasts的类别。
 
-8.配置navigationPermalink
+## 8.配置navigation ##
 
 现在你已经配置了帖子，让我们配置页面导航。","Now that youve configured posts, lets configure page navigation.",null,null,3],["大多数网站在侧边栏或标题区域都有一些导航。
 
@@ -368,7 +379,7 @@ url _.._ / page-3-permalink /
 \u003c/ UL\u003e
 如果您对导航有更复杂的要求，例如在构建文档站点时，请参阅导航的详细教程。
 
-9.使用includesPermalink简化您的网站
+## 9.使用includesPermalink简化您的网站 ##
 
 让我们假设你的default.html文件很庞大，很难使用。","Lets suppose your default.html file is massive and hard to work with.",null,null,3],["您可以通过将一些HTML代码放入包含文件中来分解您的布局。
 
