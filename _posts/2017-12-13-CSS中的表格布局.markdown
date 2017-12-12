@@ -152,44 +152,47 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 	与表列元素一样，不会呈现表列组元素，但是该值对于定义列组中元素的显示非常有用。 
 	等价的HTML是colgroup元素。
 
-表单元格
+** 表单元格 ** 
 
-此值指定一个元素表示表中的单个单元格。 ","This value specifies that an element represents a single cell in a table.",null,null,3],["HTML元素th和td都是表格元素的例子。
-table-caption这个值定义了一个表格标题。 ","table-caption This value defines a tables caption.",null,null,3],["CSS没有定义如果多个元素具有值标题，会发生什么情况，但是它明确地警告，作者不应该在表或内联表元素中放置多个具有显示_.._标题的元素。
-您可以通过从CSS 2.1规范的附录D中给​​出的示例HTML 4.0样式表中摘录一个摘要来总结这些值的一般效果_.._
-table {display:table;}
-tr {display:table-row;}
-thead {display_.._ table-header-group;}
-tbody {display:table-row-group;}
-tfoot {display:table-footer-group;}
-col {display:table-column;}
-colgroup {display:table-column-group;}
-td，th {display:table-cell;}
-caption {display:table-caption;}
+	此值指定一个元素表示表中的单个单元格。 
+	HTML元素th和td都是表格元素的例子。
 
-在XML中，默认情况下元素没有显示语义，这些值变得非常有用。","In XML, where elements will not have display semantics by default, these values become quite useful.",null,null,3],["考虑以下标记_.._
-\u003c分数\u003e
+** table-caption ** 
+	这个值定义了一个表格标题。  
+	CSS没有定义如果多个元素具有值标题，会发生什么情况，但是它明确地警告，作者不应该在表或内联表元素中放置多个具有显示：标题的元素。
 
-\u003c头\u003e
-\u003c标签\u003e团队\u003c/标签\u003e
-\u003c标签\u003e得分\u003c/标签\u003e
+可以通过从CSS 2.1规范的附录D中给​​出的示例HTML 4.0样式表中摘录一个摘要来总结这些值的一般效果：
 
-\u003c/报头\u003e
-\u003c游戏体育=“MLB”联盟=“NL”\u003e
+	table {display: table;}
+	tr {display: table-row;}
+	thead {display: table-header-group;}
+	tbody {display: table-row-group;}
+	tfoot {display: table-footer-group;}
+	col {display: table-column;}
+	colgroup {display: table-column-group;}
+	td, th {display: table-cell;}
+	caption {display: table-caption;}
 
-\u003c团队\u003e
-\u003c名称\u003e红色\u003c/名称\u003e
-\u003c评分\u003e 8 \u003c/评分\u003e
 
-\u003c/团队\u003e
+在XML中，默认情况下元素没有显示语义，这些值变得非常有用。 
+考虑以下标记： 
 
-\u003c团队\u003e
-\u003c名称\u003e崽\u003c/名称\u003e
-\u003c评分\u003e 5 \u003c/评分\u003e
-
-\u003c/团队\u003e
-\u003c/游戏\u003e
-\u003c/分数\u003e
+	<scores>
+		<headers>
+			<label>Team</label>
+			<label>Score</label>
+		</headers>
+		<game sport="MLB" league="NL">
+			<team>
+				<name>Reds</name>
+				<score>8</score>
+			</team>
+			<team>
+				<name>Cubs</name>
+				<score>5</score>
+			</team>
+		</game>
+	</scores>
 
 这可以使用以下样式以表格的形式进行格式化_...
 分数{display_.._ table;}
