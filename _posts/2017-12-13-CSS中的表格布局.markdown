@@ -1,0 +1,103 @@
+---
+layout: post
+title:  "CSS中的表格布局"
+date:   2017-12-13 05:58:56 +0800
+categories:  
+tags: 
+---
+
+# CSS中的表格布局 #
+
+
+## 匿名表对象 ##
+
+用CSS定义表格,标记语言可能不包含足够的元素
+完全，或者作者会忘记包括所有必要的元素。 例如，考虑这个HTML:
+
+	<table>
+		<td>Name:</td>
+		<td><input type="text"></td>
+	</table>
+
+初看代码，像是定义一行2列的表格
+，但在结构上，没有定义行元素（因为tr缺失）。
+
+考虑到这种可能，CSS定义了一个插入缺失表格的机制组件作为匿名对象。
+要了解其工作原理，以缺少行的HTML为例。 
+就CSS来说，有效地发生的是一个
+在表格元素和它的descendant表格之间插入一个匿名row对象：
+
+	<table>
+		<!--匿名表格行对象开始-->
+		<td>Name:</td>
+		<td><input type="text"></td>
+		<!--匿名表格行对象结束-->
+	</table>
+
+图2给出了这个过程的图示，虚线表示插入的匿名行。
+
+图2.表格格式化中的匿名对象生成
+
+CSS表格模型中可能会出现七种不同类型的匿名对象插入。 
+这七条规则，就像继承和特殊性一样，
+试图在CSS的行为方式上强加直观感觉的机制例子。
+
+### 对象插入规则 ###
+
+1.如果元素父项不是行元素，则在单元格元素与其父元素之间插入匿名row元素。该 
+插入的对象将包含表格单元元素的所有连续的同胞。
+考虑以下样式和标记：
+
+	system {display: table;}
+	name, moons {display: table-cell;}
+
+	<system>
+		<name>Mercury</name>
+		<moons>0</moons>
+	</system>
+
+匿名row对象插入到单元格元素和system元素之间，并包含name和moons元素。
+
+即使父元素是表行组，也是如此。扩展举例来说，假定以下情况适用：
+
+system {display _.._ table;}
+星球{display_.._ table-row-group;}
+name，moons {display _.._ table-cell;}
+
+\u003c系统\u003e
+\u003c行星\u003e
+\u003c名称\u003e汞\u003c/名称\u003e
+\u003c卫星\u003e 0 \u003c/卫星\u003e
+\u003c/行星\u003e
+\u003c行星\u003e
+\u003c名称\u003e金星\u003c/名称\u003e
+\u003c卫星\u003e 0 \u003c/卫星\u003e
+\u003c/行星\u003e
+\u003c/系统\u003e
+
+在这个例子中，两组单元格将被包含在一个匿名的表格行中
+插入它们和行星元素之间的对象。
+
+2.如果表格行元素父项不是表格，内联表格或表格行表格，
+group元素，然后在它们之间插入一个匿名表格元素
+表行元素及其父元素","table-row element and its parent.",null,null,3],["插入的对象将包括所有连续的
+表格元素的兄弟。","siblings of the table-row element.",null,null,3],["考虑以下样式和标记_.._
+
+docbody {display _.._ block;}
+星球{display_.._ table-row;}
+
+\u003cdocbody\u003e
+\u003c行星\u003e
+\u003c名称\u003e汞\u003c/名称\u003e
+\u003c卫星\u003e 0 \u003c/卫星\u003e
+\u003c/行星\u003e
+\u003c行星\u003e
+\u003c名称\u003e金星\u003c/名称\u003e
+\u003c卫星\u003e 0 \u003c/卫星\u003e
+
+表格格式化_9
+
+
+#### 参考 ####
+
+* [blog.csdn.net/qq_36482772/article/details/78049851](http://blog.csdn.net/qq_36482772/article/details/78049851)
