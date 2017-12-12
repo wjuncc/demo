@@ -1,0 +1,32 @@
+---
+layout: post
+title:  "react js 实例教程"
+date:   2017-12-12 07:34:44 +0800
+categories:  
+tags: 
+---
+
+# react js 实例教程 #
+
+软件材料：
+
+* chrome， chrome可以直接渲染ES6的react，无需ES5翻译成ES6，少了一步  
+* sublimeText3， 其中的react插件，能快速出代码  
+* IDEA WebStorm  支持react的跳转
+
+
+#### 参考 ####
+
+* [React实例教程 - 前端 - 掘金](https://juejin.im/entry/57b172d71532bc0061830a10)
+* [首页 - zuojj- React实例教程](https://zuojj.github.io/react-tutorial/)
+* [React 入门实例教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2015/03/react.html)
+* [一、HTML 模板 · React 入门实例教程 · 看云](https://www.kancloud.cn/kancloud/react/67576)
+* [一看就懂的ReactJs入门教程-精华版_慕课手记](http://www.imooc.com/article/2379)
+* [React.js入门实例教程之创建hello world 的5种方式&nbsp;&nbsp;](https://teakki.com/p/57dfb224d3a7507f975e75f4)
+* [zuojj/react-tutorial: React 学习指南及实例教程](https://github.com/zuojj/react-tutorial)
+* [React 入门实例教程_w3cschool](https://www.w3cschool.cn/react_tutorial/)
+* [一看就懂的ReactJs入门教程（精华版）+React 入门实例教程](http://www.360doc.com/content/16/0104/15/1367418_525402698.shtml)
+* [javascript - react.js 项目需要，最近要学习react.js，有没有适合新手练习教程项目？ - SegmentFault](https://segmentfault.com/q/1010000006159717)
+* [React.js在线实例教程 - 构建一个简单的TODO列表应用 - 踏得网](http://wow.techbrood.com/fiddle/14557)
+* [求React.JS的项目实例视频教程_百度知道](https://zhidao.baidu.com/question/588245774591249005.html)
+* [Facebook React.js库 入门实例教程 - 相关文章](https://www.bbsmax.com/R/xl56LR8kzr/)
