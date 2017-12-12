@@ -6,7 +6,30 @@ categories:
 tags: 
 ---
 
+
+
 # CSS中的表格布局 #
+
+
+你瞥了一眼标题，想知道，表格布局？
+那不是我们总要避免的东西吗？ 
+确实如此，但本章并不是要使用表格进行布局。","Indeed so, but this chapter is not about using tables for layout.",null,null,3],["相反，它是关于表格本身由CSS布局的方式，这是一个比它首先出现的要复杂得多的事情。
+与文档布局的其余部分相比，表格是不寻常的。","Tables are unusual, compared to the rest of document layout.",null,null,3],["直到flexbox和网格出现之前，表格本身就拥有将元素大小与其他元素相关联的独特功能，例如，无论每个单独的单元格可能包含多少内容或多少内容，行中的所有单元格都具有相同的高度。","Until flexbox and grid came along, tables alone possessed the unique ability to associate element sizes with other elementsfor example, all the cells in a row have the same height, no matter how much or how little content each individual cell might contain.",null,null,3],["共享列的单元格宽度也是如此。","The same is true for the widths of cells that share a column.",null,null,3],["连接的单元格可以共享边框，即使两个单元格的边框样式非常不同。","Cells that adjoin can share a border, even if the two cells have very different border styles.",null,null,3],["而且，这些能力的消耗是以牺牲许多行为和规则为代价的，而这些行为和规则都深植于适用于表和表格的过去。
+表格格式
+在我们开始担心如何绘制单元格边界和表格大小之前，我们需要深入研究表格的基本组装方式以及表格中元素的相关方式。","Before we can start to worry about how cell borders are drawn and tables sized, we need to delve into the fundamental ways in which tables are assembled, and the ways that elements within a table are related.",null,null,3],["这被称为表格格式化，它与表格布局非常不同_.._只有格式化完成后才能进行布局。
+目视安排一张桌子
+首先要了解的是CSS如何定义表格的排列方式。","The first thing to understand is how CSS defines the arrangement of tables.",null,null,3],["虽然这些知识似乎有点基础，但它是理解如何最好地设计表格的关键。
+CSS在表格元素和内部表格元素之间作了区分。","CSS draws a distinction between table elements and internal table elements.",null,null,3],["在CSS中，内部表格元素生成具有内容，填充和边框的矩形框，但不包括边距。","In CSS, internal table elements generate rectangular boxes that have content, padding, and borders, but not margins.",null,null,3],["因此，通过给定表格单元格的边距来定义表格单元格之间的分隔是不可能的。","Therefore, it is not possible to define the separation between table cells by giving them margins.",null,null,3],["符合CSS的浏览器将忽略任何将边距应用于单元格，行或任何其他内部表格元素的尝试（除了第14页的章节中讨论的标题外）。
+有六个安排表的基本规则。","There are six basic rules for arranging tables.",null,null,3],["这些规则的基础是一个网格单元，它是绘制表格的网格线之间的一个区域。","The basis of these rules is a grid cell, which is one area between the grid lines on which a table is drawn.",null,null,3],["考虑图1，其中显示了两个表格__他们的网格单元由在表格上绘制的虚线表示。
+
+图1.网格单元格构成了表格布局的基础
+在一个简单的二乘二表（如图1所示的左表）中，网格单元对应于实际的表格单元格。","In a simple two-by-two table, such as the lefthand table shown in Figure 1, the grid cells correspond to the actual table cells.",null,null,3],["在更复杂的表格中，像图1中的右手表格一样，一些表格单元格将跨越多个网格单元格，但是请注意，每个表格单元格边缘都沿着网格单元边缘放置。
+这些网格单元在很大程度上是理论上的构造，它们不能通过文档对象模型（DOM）进行样式化或访问。","These grid cells are largely theoretical constructs, and they cannot be styled or even accessed through the Document Object Model (DOM).",null,null,3],["它们只是用来描述如何组装表格以进行造型。
+表格排列规则
+。
+每个行框包含一行单元格。","Each row box encompasses a single row of grid cells.",null,null,3],["表格中的所有行框按照它们在源文档中出现的顺序从上到下填充表格（除表格的开头和结尾处出现任何表头或表格页脚行框外，","All the row boxes in a table fill the table from top to bottom in the order they occur in the source document (with the exception of any table-header or table-footer row boxes, which come at the beginning and end of the table,",null,null,3],["分别）。","respectively).",null,null,1],["因此，表格包含与行元素（例如，tr元素）一样多的网格行。
+
+。
 
 
 ## 匿名表对象 ##
@@ -58,25 +81,25 @@ CSS表格模型中可能会出现七种不同类型的匿名对象插入。
 
 匿名row对象插入到单元格元素和system元素之间，并包含name和moons元素。
 
-即使父元素是表行组，也是如此。扩展举例来说，假定以下情况适用：
+即使父元素是表行组(table-row-group)，也是如此。扩展前面的例子，假定以下情况适用：
 
-system {display _.._ table;}
-星球{display_.._ table-row-group;}
-name，moons {display _.._ table-cell;}
+	system {display: table;}
+	planet {display: table-row-group;}
+	name, moons {display: table-cell;}
 
-\u003c系统\u003e
-\u003c行星\u003e
-\u003c名称\u003e汞\u003c/名称\u003e
-\u003c卫星\u003e 0 \u003c/卫星\u003e
-\u003c/行星\u003e
-\u003c行星\u003e
-\u003c名称\u003e金星\u003c/名称\u003e
-\u003c卫星\u003e 0 \u003c/卫星\u003e
-\u003c/行星\u003e
-\u003c/系统\u003e
+	<system>
+		<planet>
+			<name>Mercury</name>
+			<moons>0</moons>
+		</planet>
+		<planet>
+			<name>Venus</name>
+			<moons>0</moons>
+		</planet>
+	</system>
 
-在这个例子中，两组单元格将被包含在一个匿名的表格行中
-插入它们和行星元素之间的对象。
+在这个例子中，两组单元格将被包含在一个匿名的table-row中
+插入它们和planet元素之间的对象。
 
 2.如果表格行元素父项不是表格，内联表格或表格行表格，
 group元素，然后在它们之间插入一个匿名表格元素
