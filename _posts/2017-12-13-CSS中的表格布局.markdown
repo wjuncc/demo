@@ -70,10 +70,14 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 
 
 [!]CSS规范不鼓励，但不禁止表格单元和其他内部表格元素的定位。 
-例如，定位包含行跨单元的行可以通过从表中完全删除行来显着地改变表的布局，从而从其他行的布局中删除跨过的单元。
-尽管如此，在当前的浏览器中对表格元素进行定位也是非常有可能的。
-根据定义，网格单元是矩形的，但它们并不一定都是相同的大小。","By definition, grid cells are rectangular, but they do not all have to be the same size.",null,null,3],["给定网格列中的所有网格单元将具有相同的宽度，并且网格行中的所有网格单元将具有相同的高度，但是一个网格行的高度可能不同于另一个网格行的高度。","All the grid cells in a given grid column will be the same width, and all the grid cells in a grid row will be the same height, but the height of one grid row may be different than that of another grid row.",null,null,3],["类似地，网格列可以具有不同的宽度。
-考虑到这些基本规则，可能会出现一个问题_...你究竟知道哪些元素是细胞，哪些不是细胞？
+例如，想要定义合并单元行（row-spanning），可以删除全部row，这样就能改变布局，
+从而从其他行中删除合并单元行。
+尽管如此，确实可以在现行浏览器中对表格元素进行定位。
+
+根据定义，网格单元是矩形的，但它们并不一定都是相同的大小。 
+给定网格列中的所有网格单元将具有相同的宽度，并且网格行中的所有网格单元将具有相同的高度，但是一个网格行的高度可能不同于另一个网格行的高度。
+类似地，网格列可以具有不同的宽度。
+考虑到这些基本规则，可能会出现一个问题：你究竟知道哪些元素是cell，哪些不是cell？
 
 
 表显示值
