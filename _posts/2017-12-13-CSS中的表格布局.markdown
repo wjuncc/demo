@@ -102,24 +102,56 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 本文只关注表格相关值，其他（block, inline, inline-block, run-in, 和 list-item）超出了表格的范围。
 表格相关值总结如下：
 
-表
+** 表 ** 
 
-该值指定一个元素定义一个块级表。 
-因此，它定义了一个生成块框的矩形块。 
-相应的HTML元素是，毫不奇怪，表。
-直列表
+	该值指定一个元素定义一个块级表。 
+	因此，它定义了一个生成块框的矩形块。 
+	相应的HTML元素是，毫不奇怪，表。
+	直列表
 
-该值指定一个元素定义一个内联级别的表。 
-这意味着元素定义了一个生成内联框的矩形块。 
-最接近的非表格模拟是内联块的值。","The closest non-table analogue is the value inline-block.",null,null,3],["最接近的HTML元素是表格，但默认情况下，HTML表格不是内联的。
-表行
+** inline-table ** 
+	该值指定一个元素定义一个内联级别的表。 
+	这意味着元素定义了一个生成内联框的矩形块。 
+	最接近的非表格模拟是内联块的值。
+	最接近的HTML元素是表格，但默认情况下，HTML表格不是内联的。
 
-该值指定一个元素是一行表格单元格。","This value specifies that an element is a row of table cells.",null,null,3],["相应的HTML元素是tr元素。
-table-row-group此值指定一个元素对一个或多个表格行进行分组。","table-row-group This value specifies that an element groups one or more table rows.",null,null,3],["相应的HTML值是tbody。
-table-header-group这个值非常像table-row-group，不同之处在于对于可视化格式，标题行组始终显示在所有其他行和行组之前，并且在任何顶部标题之后。","table-header-group This value is very much like table-row-group, except that for visual formatting, the header row group is always displayed before all other rows and row groups, and after any top captions.",null,null,3],["在打印中，如果一个表需要打印多个页面，用户代理可能会在每个页面的顶部重复标题行（例如，Firefox会这样做）。","In print, if a table requires multiple pages to print, a user agent may repeat header rows at the top of each page (Firefox does this, for example).",null,null,3],["该规范没有定义如果将table-header-group分配给多个元素会发生什么情况。","The specification does not define what happens if you assign table-header-group to multiple elements.",null,null,3],["标题组可以包含多行。 ","A header group can contain multiple rows.",null,null,3],["HTML等价物是thead。
-table-footer-group这个值非常像table-header-group，除了页脚行组总是显示在所有其他行和行组之后，以及任何底部标题之前。","table-footer-group This value is very much like table-header-group, except that the footer row group is always displayed after all other rows and row groups, and before any bottom captions.",null,null,3],["在打印中，如果一个表格需要打印多个页面，用户代理可能会在每个页面的底部重复页脚行。","In print, if a table requires multiple pages to print, a user agent may repeat footer rows at the bottom of each page.",null,null,3],["规范没有定义如果将table-footer-group分配给多个元素会发生什么情况。","The specification does not define what happens if you assign table-footer-group to multiple elements.",null,null,3],["这相当于HTML元素tfoot。
-table-column这个值声明一个元素描述一列表格单元格。","table-column This value declares that an element describes a column of table cells.",null,null,3],["在CSS术语中，具有这个显示值的元素不是可视化的，就好像它们的值是none。","In CSS terms, elements with this display value are not visually rendered, as if they had the value none.",null,null,3],["它们的存在主要是为了帮助定义列中单元格的表示。 ","Their existence is largely for the purposes of helping to define the presentation of cells within the column.",null,null,3],["HTML等价物是col元素。
-table-column-group此值声明一个元素组合一个或多个列。","table-column-group This value declares that an element groups one or more columns.",null,null,3],["与表列元素一样，不会呈现表列组元素，但是该值对于定义列组中元素的显示非常有用。","Like table-column elements, table-column-group elements are not rendered, but the value is useful for defining presentation for elements within the column group.",null,null,3],["等价的HTML是colgroup元素。
+ ** table-row ** 
+
+该值指定一个元素是一行表格单元格。 
+相应的HTML元素是tr元素。
+
+** table-row-group **
+
+	指定一个元素对一个或多个表格行进行分组。 对应HTML的tbody。
+
+** table-header-group **
+
+	非常像table-row-group，不同之处在于对于可视化格式，标题行组始终显示在所有其他行和行组之前，并且在任何顶部标题之后。
+	在打印中，如果一个表需要打印多个页面，用户代理可能会在每个页面的顶部重复标题行（例如，Firefox会这样做）。 
+	该规范没有定义如果将table-header-group分配给多个元素会发生什么情况。
+	标题组可以包含多行。
+	对应HTM的thead。
+
+** table-footer-group **
+
+	这个值非常像table-header-group，除了页脚行组总是显示在所有其他行和行组之后，以及任何底部标题之前。
+	在打印中，如果一个表格需要打印多个页面，用户代理可能会在每个页面的底部重复页脚行。
+	规范没有定义如果将table-footer-group分配给多个元素会发生什么情况。
+	对应HTML的tfoot。
+
+** table-column ** 
+	
+	这个值声明一个元素描述一列表格单元格。 
+	在CSS术语中，具有这个显示值的元素不是可视化的，就好像它们的值是none。 
+	它们的存在主要是为了帮助定义列中单元格的表示。
+	对应HTML的col。
+
+** table-column-group ** 
+
+	此值声明一个元素组合一个或多个列。 
+	与表列元素一样，不会呈现表列组元素，但是该值对于定义列组中元素的显示非常有用。 
+	等价的HTML是colgroup元素。
+
 表单元格
 
 此值指定一个元素表示表中的单个单元格。 ","This value specifies that an element represents a single cell in a table.",null,null,3],["HTML元素th和td都是表格元素的例子。
