@@ -79,19 +79,25 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 行（grid row）中所有单元格高度相同，
 但行和行高度不等。
 列和列宽度不等。
-考虑到这些基本规则，可能会出现一个问题：你究竟知道哪些元素是cell，哪些不是cell？
+
+这会出现一个问题：究竟哪些元素是cell，哪些不是cell？
 
 
-表显示值
-在HTML中，很容易知道哪些元素是表格的一部分，因为tr和td等元素的处理内置于浏览器中。","In HTML, its easy to know which elements are parts of tables because the handling of elements like tr and td is built into browsers.",null,null,3],["另一方面，在XML中，根本无法知道哪些元素可能是表的一部分。","In XML, on the other hand, there is no way to intrinsically know which elements might be part of a table.",null,null,3],["这是一个显示值的集合发挥作用的地方。
+### 表格显示值 ###
+
+在HTML中，因为有tr和td，一眼就能看清哪些元素是表格。
+在XML中，无从知晓哪些元素可能是表。
+观察下面这些数据：
+
 显示
 
-值_.._无_或_内嵌_或_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _表_ ","Values:  none| inline| block| inline-block| list-item| run-in| table| inline-table| table-row-group| table-header-group| table-footer-group| table-row",null,null,3],["_or_ table-column-group|table-column|table-cell|table-caption|inherit
-初始值_.._内联
-适用于_.._所有元素
-继承_.._ No
-计算值_.._
-注意_... CSS2中的值已经缩水，而且由于缺乏广泛的支持而被从CSS2.1中删除了。
+值：none| inline| block| inline-block| list-item| run-in| table| inline-table| table-row-group| table-header-group| tablefooter-group| table-row| table-column-group| table-column| table-cell| table-caption| inherit
+
+初始值：inline
+适用于：所有元素
+继承：No
+计算值：
+注意：CSS2中的值已经缩水，而且由于缺乏广泛的支持而被从CSS2.1中删除了。
 
 在本文中，很好地坚持与表相关的值，因为其他（块，内联，内联块，外接和列表项）超出了表的范围。","In this text, well stick to the table-related values, as the others (block, inline, inline-block, run-in, and list-item) are beyond the scope of tables.",null,null,3],["表格相关值可以总结如下_.._
 表
@@ -99,7 +105,9 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 该值指定一个元素定义一个块级表。","This value specifies that an element defines a block-level table.",null,null,3],["因此，它定义了一个生成块框的矩形块。","Thus, it defines a rectangular block that generates a block box.",null,null,3],["相应的HTML元素是，毫不奇怪，表。
 直列表
 
-该值指定一个元素定义一个内联级别的表。","This value specifies that an element defines an inline-level table.",null,null,3],["这意味着元素定义了一个生成内联框的矩形块。","This means the element defines a rectangular block that generates an inline box.",null,null,3],["最接近的非表格模拟是内联块的值。","The closest non-table analogue is the value inline-block.",null,null,3],["最接近的HTML元素是表格，但默认情况下，HTML表格不是内联的。
+该值指定一个元素定义一个内联级别的表。 
+这意味着元素定义了一个生成内联框的矩形块。 
+最接近的非表格模拟是内联块的值。","The closest non-table analogue is the value inline-block.",null,null,3],["最接近的HTML元素是表格，但默认情况下，HTML表格不是内联的。
 表行
 
 该值指定一个元素是一行表格单元格。","This value specifies that an element is a row of table cells.",null,null,3],["相应的HTML元素是tr元素。
