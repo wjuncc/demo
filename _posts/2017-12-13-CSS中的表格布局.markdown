@@ -38,19 +38,158 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 在CSS中，内部表格元素生成具有内容，填充和边框的矩形框，但不包括边距。 
 因此，无法通过指定单元格的边距来定义表格单元格之间的间距。 
 符合CSS的浏览器将忽略任何将边距应用于单元格，行或任何其他内部表格元素的尝试（除了第14页的章节中讨论的标题外）。
+
 有六个安排表的基本规则。 
 这些规则的基础是一个网格单元，它是绘制表格的网格线之间的一个区域。
 考虑图1，其中显示了两个表格__他们的网格单元由在表格上绘制的虚线表示。
 
-图1.网格单元格构成了表格布局的基础
-在一个简单的二乘二表（如图1所示的左表）中，网格单元对应于实际的表格单元格。","In a simple two-by-two table, such as the lefthand table shown in Figure 1, the grid cells correspond to the actual table cells.",null,null,3],["在更复杂的表格中，像图1中的右手表格一样，一些表格单元格将跨越多个网格单元格，但是请注意，每个表格单元格边缘都沿着网格单元边缘放置。
-这些网格单元在很大程度上是理论上的构造，它们不能通过文档对象模型（DOM）进行样式化或访问。","These grid cells are largely theoretical constructs, and they cannot be styled or even accessed through the Document Object Model (DOM).",null,null,3],["它们只是用来描述如何组装表格以进行造型。
-表格排列规则
-。
-每个行框包含一行单元格。","Each row box encompasses a single row of grid cells.",null,null,3],["表格中的所有行框按照它们在源文档中出现的顺序从上到下填充表格（除表格的开头和结尾处出现任何表头或表格页脚行框外，","All the row boxes in a table fill the table from top to bottom in the order they occur in the source document (with the exception of any table-header or table-footer row boxes, which come at the beginning and end of the table,",null,null,3],["分别）。","respectively).",null,null,1],["因此，表格包含与行元素（例如，tr元素）一样多的网格行。
+图1. 网格单元格构成了表格布局的基础
 
-。
+在简单的2x2表格（如图1所示的左表）中，网格单元对应于实际的表格单元格。 
+在更复杂的表格中，像图1的右边表格，一些表格单元格将跨越多个网格单元格，但是请注意，每个表格单元格边缘都沿着网格单元边缘放置。
 
+这些网格单元在很大程度上是理论上的构造，它们不能通过文档对象模型（DOM）进行样式化或访问。 
+它们只是用来描述如何组装表格以进行造型。
+
+### 表格排列规则 ###
+
+* 每个行框包含一行单元格。 
+表格中的所有行框按照它们在源文档中出现的顺序从上到下填充表格（除表格的开头和结尾处出现任何表头或表格页脚行框外， 分别）。 
+因此，表格包含与行元素（例如，tr元素）一样多的网格行。
+
+* 行组框包含与其包含的行框相同的网格单元。
+
+* 列框包含一列或多列网格单元格。 
+所有列框都按照它们出现的顺序相邻放置。 
+第一个列框在左边是从左到右的语言，右边是从右到左的语言。 
+“列组”框包含与其包含的列框相同的网格单元格。
+
+* 单元格框不能超出表或行组的最后一个行框。 
+如果表结构会导致这种情况，那么必须缩小单元格，直到它适合包含它的表或行组。
+
+
+
+[!]CSS规范不鼓励，但不禁止表格单元和其他内部表格元素的定位。 
+例如，定位包含行跨单元的行可以通过从表中完全删除行来显着地改变表的布局，从而从其他行的布局中删除跨过的单元。
+尽管如此，在当前的浏览器中对表格元素进行定位也是非常有可能的。
+根据定义，网格单元是矩形的，但它们并不一定都是相同的大小。","By definition, grid cells are rectangular, but they do not all have to be the same size.",null,null,3],["给定网格列中的所有网格单元将具有相同的宽度，并且网格行中的所有网格单元将具有相同的高度，但是一个网格行的高度可能不同于另一个网格行的高度。","All the grid cells in a given grid column will be the same width, and all the grid cells in a grid row will be the same height, but the height of one grid row may be different than that of another grid row.",null,null,3],["类似地，网格列可以具有不同的宽度。
+考虑到这些基本规则，可能会出现一个问题_...你究竟知道哪些元素是细胞，哪些不是细胞？
+
+
+表显示值
+在HTML中，很容易知道哪些元素是表格的一部分，因为tr和td等元素的处理内置于浏览器中。","In HTML, its easy to know which elements are parts of tables because the handling of elements like tr and td is built into browsers.",null,null,3],["另一方面，在XML中，根本无法知道哪些元素可能是表的一部分。","In XML, on the other hand, there is no way to intrinsically know which elements might be part of a table.",null,null,3],["这是一个显示值的集合发挥作用的地方。
+显示
+
+值_.._无_或_内嵌_或_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _表_ ","Values:  none| inline| block| inline-block| list-item| run-in| table| inline-table| table-row-group| table-header-group| table-footer-group| table-row",null,null,3],["_or_ table-column-group|table-column|table-cell|table-caption|inherit
+初始值_.._内联
+适用于_.._所有元素
+继承_.._ No
+计算值_.._
+注意_... CSS2中的值已经缩水，而且由于缺乏广泛的支持而被从CSS2.1中删除了。
+
+在本文中，很好地坚持与表相关的值，因为其他（块，内联，内联块，外接和列表项）超出了表的范围。","In this text, well stick to the table-related values, as the others (block, inline, inline-block, run-in, and list-item) are beyond the scope of tables.",null,null,3],["表格相关值可以总结如下_.._
+表
+
+该值指定一个元素定义一个块级表。","This value specifies that an element defines a block-level table.",null,null,3],["因此，它定义了一个生成块框的矩形块。","Thus, it defines a rectangular block that generates a block box.",null,null,3],["相应的HTML元素是，毫不奇怪，表。
+直列表
+
+该值指定一个元素定义一个内联级别的表。","This value specifies that an element defines an inline-level table.",null,null,3],["这意味着元素定义了一个生成内联框的矩形块。","This means the element defines a rectangular block that generates an inline box.",null,null,3],["最接近的非表格模拟是内联块的值。","The closest non-table analogue is the value inline-block.",null,null,3],["最接近的HTML元素是表格，但默认情况下，HTML表格不是内联的。
+表行
+
+该值指定一个元素是一行表格单元格。","This value specifies that an element is a row of table cells.",null,null,3],["相应的HTML元素是tr元素。
+table-row-group此值指定一个元素对一个或多个表格行进行分组。","table-row-group This value specifies that an element groups one or more table rows.",null,null,3],["相应的HTML值是tbody。
+table-header-group这个值非常像table-row-group，不同之处在于对于可视化格式，标题行组始终显示在所有其他行和行组之前，并且在任何顶部标题之后。","table-header-group This value is very much like table-row-group, except that for visual formatting, the header row group is always displayed before all other rows and row groups, and after any top captions.",null,null,3],["在打印中，如果一个表需要打印多个页面，用户代理可能会在每个页面的顶部重复标题行（例如，Firefox会这样做）。","In print, if a table requires multiple pages to print, a user agent may repeat header rows at the top of each page (Firefox does this, for example).",null,null,3],["该规范没有定义如果将table-header-group分配给多个元素会发生什么情况。","The specification does not define what happens if you assign table-header-group to multiple elements.",null,null,3],["标题组可以包含多行。 ","A header group can contain multiple rows.",null,null,3],["HTML等价物是thead。
+table-footer-group这个值非常像table-header-group，除了页脚行组总是显示在所有其他行和行组之后，以及任何底部标题之前。","table-footer-group This value is very much like table-header-group, except that the footer row group is always displayed after all other rows and row groups, and before any bottom captions.",null,null,3],["在打印中，如果一个表格需要打印多个页面，用户代理可能会在每个页面的底部重复页脚行。","In print, if a table requires multiple pages to print, a user agent may repeat footer rows at the bottom of each page.",null,null,3],["规范没有定义如果将table-footer-group分配给多个元素会发生什么情况。","The specification does not define what happens if you assign table-footer-group to multiple elements.",null,null,3],["这相当于HTML元素tfoot。
+table-column这个值声明一个元素描述一列表格单元格。","table-column This value declares that an element describes a column of table cells.",null,null,3],["在CSS术语中，具有这个显示值的元素不是可视化的，就好像它们的值是none。","In CSS terms, elements with this display value are not visually rendered, as if they had the value none.",null,null,3],["它们的存在主要是为了帮助定义列中单元格的表示。 ","Their existence is largely for the purposes of helping to define the presentation of cells within the column.",null,null,3],["HTML等价物是col元素。
+table-column-group此值声明一个元素组合一个或多个列。","table-column-group This value declares that an element groups one or more columns.",null,null,3],["与表列元素一样，不会呈现表列组元素，但是该值对于定义列组中元素的显示非常有用。","Like table-column elements, table-column-group elements are not rendered, but the value is useful for defining presentation for elements within the column group.",null,null,3],["等价的HTML是colgroup元素。
+表单元格
+
+此值指定一个元素表示表中的单个单元格。 ","This value specifies that an element represents a single cell in a table.",null,null,3],["HTML元素th和td都是表格元素的例子。
+table-caption这个值定义了一个表格标题。 ","table-caption This value defines a tables caption.",null,null,3],["CSS没有定义如果多个元素具有值标题，会发生什么情况，但是它明确地警告，作者不应该在表或内联表元素中放置多个具有显示_.._标题的元素。
+您可以通过从CSS 2.1规范的附录D中给​​出的示例HTML 4.0样式表中摘录一个摘要来总结这些值的一般效果_.._
+table {display:table;}
+tr {display:table-row;}
+thead {display_.._ table-header-group;}
+tbody {display:table-row-group;}
+tfoot {display:table-footer-group;}
+col {display:table-column;}
+colgroup {display:table-column-group;}
+td，th {display:table-cell;}
+caption {display:table-caption;}
+
+在XML中，默认情况下元素没有显示语义，这些值变得非常有用。","In XML, where elements will not have display semantics by default, these values become quite useful.",null,null,3],["考虑以下标记_.._
+\u003c分数\u003e
+
+\u003c头\u003e
+\u003c标签\u003e团队\u003c/标签\u003e
+\u003c标签\u003e得分\u003c/标签\u003e
+
+\u003c/报头\u003e
+\u003c游戏体育=“MLB”联盟=“NL”\u003e
+
+\u003c团队\u003e
+\u003c名称\u003e红色\u003c/名称\u003e
+\u003c评分\u003e 8 \u003c/评分\u003e
+
+\u003c/团队\u003e
+
+\u003c团队\u003e
+\u003c名称\u003e崽\u003c/名称\u003e
+\u003c评分\u003e 5 \u003c/评分\u003e
+
+\u003c/团队\u003e
+\u003c/游戏\u003e
+\u003c/分数\u003e
+
+这可以使用以下样式以表格的形式进行格式化_...
+分数{display_.._ table;}
+标题{display_.._ table-header-group;}
+游戏{display_.._ table-row-group;}
+team {display:table-row;}
+标签，名称，分数{display_.._ table-cell;}
+
+然后，可以根据需要对各种单元格进行样式设置，例如粗体显示标签元素并将分数右对齐。
+行首位
+CSS将其表格模型定义为行首。","CSS defines its table model as row primacy.",null,null,3],["换句话说，该模型假定作者将创建标记语言，其中显式声明了行。","In other words, the model assumes that authors will create markup languages where rows are explicitly declared.",null,null,3],["另一方面，列是从单元行的布局派生的。","Columns, on the other hand, are derived from the layout of the rows of cells.",null,null,3],["因此，第一列由每行中的第一个单元格组成;","Thus, the first col-umn is made up of the first cells in each row;",null,null,3],["第二列由第二个单元组成，等等。
+行优先级不是HTML中的主要问题，其中标记语言已经是面向行的。","Row primacy is not a major issue in HTML, where the markup language is already row-oriented.",null,null,3],["在XML中，它具有更多的影响，因为它限制了作者定义表格标记的方式。","In XML, it has more of an impact because it constrains the way in which authors can define table markup.",null,null,3],["由于CSS表模型的面向行的特性，以表格布局为基础的标记语言实际上是不可能的（假设用CSS来呈现这样的文档）。
+
+列
+尽管CSS表格模型是面向行的，但列仍然在布局中起作用。","Although the CSS table model is row-oriented, columns do still play a part in layout.",null,null,3],["一个单元格可以属于上下文（行和列），即使它是从文档源中的行元素开始的。","A cell can belong to both contexts (row and column), even though it is descended from row elements in the document source.",null,null,3],["然而，在CSS中，列和列组只能接受四个不可修改的属性_... border，background，width和visibility。
+另外，这四个属性中的每一个都有特殊的规则，仅适用于上下文中_.._
+只有在属性border-collapse具有值collapse的情况下，才可以为列和列组设置边框边框。","border Borders can be set for columns and column groups only if the property border-collapse has the value collapse.",null,null,3],["在这种情况下，列和列组边框参与折叠算法，在每个单元边缘设置边框样式。 ","In such circumstances, column and column-group borders participate in the collapsing algorithm that sets the border styles at each cell edge.",null,null,3],["（请参阅第20页上的折叠单元格边界部分。）
+背景
+
+列或列组的背景仅在单元格及其行具有透明背景的单元格中可见。 ","The background of a column or column group will be visible only in cells where both the cell and its row have transparent backgrounds.",null,null,3],["（请参阅第12页的表格层。）
+width width属性定义列或列组的最小宽度。","width The width property defines the minimum width of the column or column group.",null,null,3],["列（或组）内的单元格内容可能会强制列变宽。
+可见性如果列或列组的可见性值为折叠状态，则不会呈现列（或组）中的单元格。","visibility If the value of visibility for a column or column group is collapse, then none of the cells in the column (or group) are rendered.",null,null,3],["从折叠列跨越到其他列的单元格将被剪切，从其他列跨越到隐藏列的单元格也将被剪切。","Cells that span from the collapsed column into other columns are clipped, as are cells that span from other columns into the hidden column.",null,null,3],["此外，表的总宽度减少了列将占用的宽度。","Furthermore, the overall width of the table is reduced by the width the column would have taken up.",null,null,3],["对于列或列组，将忽略隐藏以外的任何可见性值的声明。
+
+
+
+匿名表对象
+标记语言可能没有足够的元素来完整地表示表格，因为它们是在CSS中定义的，或者作者将忘记包含所有必要的元素。","There is the possibility that a markup language might not contain enough elements to fully represent tables as they are defined in CSS, or that an author will forget to include all the necessary elements.",null,null,3],["例如，考虑这个HTML _.._
+\u003c表\u003e
+
+\u003ctd\u003e名称_.._ \u003c/ td\u003e
+
+\u003ctd\u003e \u003cinput type =“text”\u003e \u003c/ td\u003e
+
+\u003c/ TABLE\u003e
+
+你可以看一下这个标记，并假定它定义了一个单行的双单元表格，但从结构上说，没有定义行的元素（因为tr缺失）。
+为了覆盖这种可能性，CSS定义了一个机制来将缺失的表组件作为匿名对象插入。","To cover such possibilities, CSS defines a mechanism for inserting missing table components as anonymous objects.",null,null,3],["有关如何工作的基本示例，让我们重新访问我们的缺少行HTML示例。","For a basic example of how this works, lets revisit our missing-row HTML example.",null,null,3],["用CSS来说，有效的做法是在表元素和下降表单元格之间插入一个匿名的表行对象_.._
+\u003c表\u003e
+
+\u003c！ - 匿名表格行对象开始 - \u003e
+
+\u003ctd\u003e名称_.._ \u003c/ td\u003e
+
+\u003ctd\u003e \u003cinput type =“text”\u003e \u003c/ td\u003e
+
+\u003c！ - 匿名表格行对象结束 - \u003e
+
+\u003c/ TABLE\u003e
+
+图2给出了这个过程的可视化表示，其中虚线表示插入的匿名表格行。
 
 ## 匿名表对象 ##
 
