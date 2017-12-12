@@ -99,11 +99,14 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 	计算值：浮动，定位和根元素的变化（参见CSS2.1，第9.7节）;其他，如指定；
 	注意：CSS2中这些值没错，但是在CSS2.1中，由于缺乏广泛的支持而删除了。
 
-在本文中，很好地坚持与表相关的值，因为其他（块，内联，内联块，外接和列表项）超出了表的范围。","In this text, well stick to the table-related values, as the others (block, inline, inline-block, run-in, and list-item) are beyond the scope of tables.",null,null,3],["表格相关值可以总结如下_.._
+本文只关注表格相关值，其他（block, inline, inline-block, run-in, 和 list-item）超出了表格的范围。
+表格相关值总结如下：
+
 表
 
 该值指定一个元素定义一个块级表。 
-因此，它定义了一个生成块框的矩形块。","Thus, it defines a rectangular block that generates a block box.",null,null,3],["相应的HTML元素是，毫不奇怪，表。
+因此，它定义了一个生成块框的矩形块。 
+相应的HTML元素是，毫不奇怪，表。
 直列表
 
 该值指定一个元素定义一个内联级别的表。 
