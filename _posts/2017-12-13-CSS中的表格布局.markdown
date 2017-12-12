@@ -194,22 +194,36 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 		</game>
 	</scores>
 
-这可以使用以下样式以表格的形式进行格式化_...
-分数{display_.._ table;}
-标题{display_.._ table-header-group;}
-游戏{display_.._ table-row-group;}
-team {display:table-row;}
-标签，名称，分数{display_.._ table-cell;}
+用以下css格式化：
+
+	scores {display: table;}
+	headers {display: table-header-group;}
+	game {display: table-row-group;}
+	team {display: table-row;}
+	label, name, score {display: table-cell;}
 
 然后，可以根据需要对各种单元格进行样式设置，例如粗体显示标签元素并将分数右对齐。
-行首位
-CSS将其表格模型定义为行首。","CSS defines its table model as row primacy.",null,null,3],["换句话说，该模型假定作者将创建标记语言，其中显式声明了行。","In other words, the model assumes that authors will create markup languages where rows are explicitly declared.",null,null,3],["另一方面，列是从单元行的布局派生的。","Columns, on the other hand, are derived from the layout of the rows of cells.",null,null,3],["因此，第一列由每行中的第一个单元格组成;","Thus, the first col-umn is made up of the first cells in each row;",null,null,3],["第二列由第二个单元组成，等等。
-行优先级不是HTML中的主要问题，其中标记语言已经是面向行的。","Row primacy is not a major issue in HTML, where the markup language is already row-oriented.",null,null,3],["在XML中，它具有更多的影响，因为它限制了作者定义表格标记的方式。","In XML, it has more of an impact because it constrains the way in which authors can define table markup.",null,null,3],["由于CSS表模型的面向行的特性，以表格布局为基础的标记语言实际上是不可能的（假设用CSS来呈现这样的文档）。
 
-列
-尽管CSS表格模型是面向行的，但列仍然在布局中起作用。","Although the CSS table model is row-oriented, columns do still play a part in layout.",null,null,3],["一个单元格可以属于上下文（行和列），即使它是从文档源中的行元素开始的。","A cell can belong to both contexts (row and column), even though it is descended from row elements in the document source.",null,null,3],["然而，在CSS中，列和列组只能接受四个不可修改的属性_... border，background，width和visibility。
+### 行首位 ###
+
+CSS将其表格模型定义为行首。
+换句话说，该模型假定作者将创建标记语言，其中显式声明了行。
+另一方面，列是从单元行的布局派生的。
+因此，第一列由每行中的第一个单元格组成;
+第二列由第二个单元组成，等等。
+行优先级不是HTML中的主要问题，其中标记语言已经是面向行的。
+在XML中，它具有更多的影响，因为它限制了作者定义表格标记的方式。
+由于CSS表模型的面向行的特性，以表格布局为基础的标记语言实际上是不可能的（假设用CSS来呈现这样的文档）。
+
+### 列 ###
+
+尽管CSS表格模型是面向行的，但列仍然在布局中起作用。 
+一个单元格可以属于上下文（行和列），即使它是从文档源中的行元素开始的。
+然而，在CSS中，列和列组只能接受四个不可修改的属性_... border，background，width和visibility。
 另外，这四个属性中的每一个都有特殊的规则，仅适用于上下文中_.._
-只有在属性border-collapse具有值collapse的情况下，才可以为列和列组设置边框边框。","border Borders can be set for columns and column groups only if the property border-collapse has the value collapse.",null,null,3],["在这种情况下，列和列组边框参与折叠算法，在每个单元边缘设置边框样式。 ","In such circumstances, column and column-group borders participate in the collapsing algorithm that sets the border styles at each cell edge.",null,null,3],["（请参阅第20页上的折叠单元格边界部分。）
+
+只有在属性border-collapse具有值collapse的情况下，才可以为列和列组设置边框边框。
+在这种情况下，列和列组边框参与折叠算法，在每个单元边缘设置边框样式。 ","In such circumstances, column and column-group borders participate in the collapsing algorithm that sets the border styles at each cell edge.",null,null,3],["（请参阅第20页上的折叠单元格边界部分。）
 背景
 
 列或列组的背景仅在单元格及其行具有透明背景的单元格中可见。 ","The background of a column or column group will be visible only in cells where both the cell and its row have transparent backgrounds.",null,null,3],["（请参阅第12页的表格层。）
