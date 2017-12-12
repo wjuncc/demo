@@ -89,15 +89,15 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 在XML中，无从知晓哪些元素可能是表。
 观察下面这些数据：
 
-显示
+	显示
 
-值：none| inline| block| inline-block| list-item| run-in| table| inline-table| table-row-group| table-header-group| tablefooter-group| table-row| table-column-group| table-column| table-cell| table-caption| inherit
-
-初始值：inline
-适用于：所有元素
-继承：No
-计算值：浮动，定位和根元素的变化（参见CSS2.1，第9.7节）;其他，如指定；
-注意：CSS2中这些值没错，但是在CSS2.1中，由于缺乏广泛的支持而删除了。
+	值：none| inline| block| inline-block| list-item| run-in| table| inline-table| table-row-group| table-header-group| tablefooter-group| table-row| table-column-group| table-column| table-cell| table-caption| inherit
+	
+	初始值：inline
+	适用于：所有元素
+	继承：No
+	计算值：浮动，定位和根元素的变化（参见CSS2.1，第9.7节）;其他，如指定；
+	注意：CSS2中这些值没错，但是在CSS2.1中，由于缺乏广泛的支持而删除了。
 
 在本文中，很好地坚持与表相关的值，因为其他（块，内联，内联块，外接和列表项）超出了表的范围。","In this text, well stick to the table-related values, as the others (block, inline, inline-block, run-in, and list-item) are beyond the scope of tables.",null,null,3],["表格相关值可以总结如下_.._
 表
