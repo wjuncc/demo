@@ -14,54 +14,56 @@ tags:
 * webpack 
 * browserify 搭配 Gulp 在补充资料中
 
-JavaScript 模组化
-随着网站开发的复杂度提升，许多现代化的网站已不是单纯的网站而已，更像是个富有互动性的网页应用程式（Web App）。为了应付现代化网页应用程式开发的需求，解决一些像是全域变数污染、低维护性等问题，JavaScript 在模组化上也有长足的发展。过去一段时间读者们或许听过像是 Webpack、Browserify、module bundlers、AMD、CommonJS、UMD、ES6 Module 等有关 JavaScript 模组化开发的专有名词或工具，在前面一个章节我们也简单介绍了关于 JavaScript 模组化的简单观念和规范介绍。若是读者对于 JavaScript 模组化开发尚不熟悉的话推荐可以参考 这篇文章 和 这篇文章 当作入门。
+### JavaScript 模组化 ###
+ 
+七日谈  
+和  
+https://medium.freecodecamp.org/javascript-modules-a-beginner-s-guide-783f7d7a5fcc#.oa2n5s5zt
 
-总的来说，使用模组化开发 JavaScript 应用程式主要有以下三种好处：
 
-提升维护性（Maintainability）
-命名空间（Namespacing）
-提供可重用性（Reusability）
-而在 React 应用程式开发上更推荐使用像是 Webpack 这样的 module bundlers 来组织我们的应用程式，但对于一般读者来说 Webpack 强大而完整的功能相对复杂。为了让读者先熟悉 React 核心观念（我们假设读者已经有使用 JavaScript 或 jQuery 的基本经验），我们将从使用 CDN 引入 <script> 的方式开始介绍：
+用 CDN 引入 <script> 的方式开始介绍：
 
-React 开发环境设置与 Webpack 入门教学 使用 CDN-based 的开发方式缺点是较难维护我们的程式码（当引入函式库一多就会有很多 <script/>）且会容易遇到版本相容性问题，不太适合开发大型应用程式，但因为简单易懂，适合教学上使用。
 
 以下是 React 官方首页的范例，以下使用 React v15.2.1：
 
 理解 React 是 Component 导向的应用程式设计
 引入 react.js、react-dom.js（react 0.14 后将 react-dom 从 react 核心分离，更符合 react 跨平台抽象化的定位）以及 babel-standalone 版 script（可以想成 babel 是翻译机，翻译浏览器看不懂的 JSX 或 ES6+ 语法成为浏览器看的懂得的 JavaScript。为了提升效率，通常我们都会在伺服器端做转译，这点在 production 环境尤为重要）
-在 <body> 撰写 React Component 要插入（mount）指定节点的地方：<div id="example"></div>
-透过 babel 进行语言翻译 React JSX 语法，babel 会将其转为浏览器看的懂得 JavaScript。其代表意义是：ReactDOM.render(欲 render 的 Component 或 HTML 元素, 欲插入的位置)。所以我们可以在浏览器上打开我们的 hello.html，就可以看到 Hello, world! 。That's it，我们第一个 React 应用程式就算完成了！
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello React!</title>
-    <!-- 以下引入 react.js, react-dom.js（react 0.14 后将 react-dom 从 react 核心分离，更符合 react 跨平台抽象化的定位）以及 babel-core browser 版 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
-  </head>
-  <body>
-    <!-- 这边的 id="example" 的 <div> 为 React Component 要插入的地方 -->
-    <div id="example"></div>
-    <!-- 以下就是包在 babel（透过进行语言翻译）中的 React JSX 语法，babel 会将其转为浏览器看的懂得 JavaScript -->
-    <script type="text/babel">
-      ReactDOM.render(
-        <h1>Hello, world!</h1>,
-        document.getElementById('example')
-      );
-    </script>
-  </body>
-</html>
+
+	在 <body> 撰写 React Component 要插入（mount）指定节点的地方：<div id="example"></div>
+
+
+
+ hello.html：
+
+	<!DOCTYPE html>
+	<html>
+	  <head>
+	    <meta charset="UTF-8" />
+	    <title>Hello React!</title>
+	    <!-- 以下引入 react.js, react-dom.js（react 0.14 后将 react-dom 从 react 核心分离，更符合 react 跨平台抽象化的定位）以及 babel-core browser 版 -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.2.1/react-dom.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+	  </head>
+	  <body>
+	    <!-- 这边的 id="example" 的 <div> 为 React Component 要插入的地方 -->
+	    <div id="example"></div>
+	    <!-- 以下就是包在 babel（透过进行语言翻译）中的 React JSX 语法，babel 会将其转为浏览器看的懂得 JavaScript -->
+	    <script type="text/babel">
+	      ReactDOM.render(
+	        <h1>Hello, world!</h1>,
+	        document.getElementById('example')
+	      );
+	    </script>
+	  </body>
+	</html>
+
+
 在浏览器浏览最后成果：
 
-React 开发环境设置与 Webpack 入门教学
+ CDN-based 有缺点。
 
-Webpack
-React 开发环境设置与 Webpack 入门教学
-
-上面我们先简单介绍了 CDN-based 的开发方式让大家先对于 React 有个基本印象，但由于 CDN-based 的开发方式有不少缺点。所以接下来的 Webpack 将会是我们接下来范例的主要使用的开发工具。
+接下来 Webpack 。
 
 Webpack 是一个模组打包工具（module bundler），以下列出 Webpack 的几项主要功能：
 
@@ -77,127 +79,137 @@ Webpack 是一个模组打包工具（module bundler），以下列出 Webpack �
 
 Webpack 中的 loader 类似于 browserify 内的 transforms，但 Webpack 在使用上比较多元，除了 JavaScript loader 外也有 CSS Style 和图片的 loader。此外，webpack-dev-server 则可以启动开发用 server，方便我们测试
 
-// 按指示初始化 NPM 设定档 package.json
-$ npm init 
-// --save-dev 是可以让你将安装套件的名称和版本资讯存放到 package.json，方便日后使用
-$ npm install --save-dev babel-core babel-eslint babel-loader babel-preset-es2015 babel-preset-react html-webpack-plugin webpack webpack-dev-server
-在根目录设定 webpack.config.js
+	// 按指示初始化 NPM 设定档 package.json
+	$ npm init 
+	// --save-dev 是可以让你将安装套件的名称和版本资讯存放到 package.json，方便日后使用
+	$ npm install --save-dev babel-core babel-eslint babel-loader babel-preset-es2015 babel-preset-react html-webpack-plugin webpack webpack-dev-server
+	在根目录设定 webpack.config.js
 
 事实上，webpack.config.js 有点类似于 gulp 中的 gulpfile.js 功用，主要是设定 webpack 的相关设定
 
-// 这边使用 HtmlWebpackPlugin，将 bundle 好的 <script> 插入到 body。${__dirname} 为 ES6 语法对应到 __dirname  
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+	// 这边使用 HtmlWebpackPlugin，将 bundle 好的 <script> 插入到 body。${__dirname} 为 ES6 语法对应到 __dirname  
+	const HtmlWebpackPlugin = require('html-webpack-plugin');
+	
+	const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
+	  template: `${__dirname}/app/index.html`,
+	  filename: 'index.html',
+	  inject: 'body',
+	});
+	
+	module.exports = {
+	  // 档案起始点从 entry 进入，因为是阵列所以也可以是多个档案
+	  entry: [
+	    './app/index.js',
+	  ],
+	  // output 是放入产生出来的结果的相关参数
+	  output: {
+	    path: `${__dirname}/dist`,
+	    filename: 'index_bundle.js',
+	  },
+	  module: {
+	  	// loaders 则是放欲使用的 loaders，在这边是使用 babel-loader 将所有 .js（这边用到正则式）相关档案（排除了 npm 安装的套件位置 node_modules）转译成浏览器可以阅读的 JavaScript。preset 则是使用的 babel 转译规则，这边使用 react、es2015。若是已经单独使用 .babelrc 作为 presets 设定的话，则可以省略 query
+	    loaders: [
+	      {
+	        test: /\.js$/,
+	        exclude: /node_modules/,
+	        loader: 'babel-loader',
+	        query: {
+	          presets: ['es2015', 'react'],
+	        },
+	      },
+	    ],
+	  },
+	  // devServer 则是 webpack-dev-server 设定
+	  devServer: {
+	    inline: true,
+	    port: 8008,
+	  },
+	  // plugins 放置所使用的外挂
+	  plugins: [HTMLWebpackPluginConfig],
+	};
 
-const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-  template: `${__dirname}/app/index.html`,
-  filename: 'index.html',
-  inject: 'body',
-});
 
-module.exports = {
-  // 档案起始点从 entry 进入，因为是阵列所以也可以是多个档案
-  entry: [
-    './app/index.js',
-  ],
-  // output 是放入产生出来的结果的相关参数
-  output: {
-    path: `${__dirname}/dist`,
-    filename: 'index_bundle.js',
-  },
-  module: {
-  	// loaders 则是放欲使用的 loaders，在这边是使用 babel-loader 将所有 .js（这边用到正则式）相关档案（排除了 npm 安装的套件位置 node_modules）转译成浏览器可以阅读的 JavaScript。preset 则是使用的 babel 转译规则，这边使用 react、es2015。若是已经单独使用 .babelrc 作为 presets 设定的话，则可以省略 query
-    loaders: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'react'],
-        },
-      },
-    ],
-  },
-  // devServer 则是 webpack-dev-server 设定
-  devServer: {
-    inline: true,
-    port: 8008,
-  },
-  // plugins 放置所使用的外挂
-  plugins: [HTMLWebpackPluginConfig],
-};
 在根目录设定 .babelrc
+	
+	{
+	  "presets": [
+	    "es2015",
+	    "react",
+	  ],
+	  "plugins": []
+	}
 
-{
-  "presets": [
-    "es2015",
-    "react",
-  ],
-  "plugins": []
-}
+
 安装 react 和 react-dom
 
-$ npm install --save react react-dom
+	npm install --save react react-dom
+
 撰写 Component（记得把 index.html 以及 index.js 放到 app 资料夹底下喔！） index.html
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>React Setup</title>
-	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-</head>
-<body>
-	<!-- 欲插入 React Component 的位置 -->
-	<div id="app"></div>
-</body>
-</html>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>React Setup</title>
+		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	</head>
+	<body>
+		<!-- 欲插入 React Component 的位置 -->
+		<div id="app"></div>
+	</body>
+	</html>
+
 index.js
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
-  render() {
-    return (
-      <div>
-        <h1>Hello, World!</h1>
-      </div>
-    );
-  }
-}
+	import React from 'react';
+	import ReactDOM from 'react-dom';
+	
+	class App extends React.Component {
+	  constructor(props) {
+	    super(props);
+	    this.state = {
+	    };
+	  }
+	  render() {
+	    return (
+	      <div>
+	        <h1>Hello, World!</h1>
+	      </div>
+	    );
+	  }
+	}
 
 ReactDOM.render(<App />, document.getElementById('app'));
 在终端机使用 webpack 进行成果展示，webpack 相关指令：
 
-webpack：会在开发模式下开始一次性的建置
-webpack -p：会建置 production 的程式码
-webpack --watch：会监听程式码的修改，当储存时有异动时会更新档案
-webpack -d：加入 source maps 档案
-webpack --progress --colors：加上处理进度与颜色
-如果不想每次都打一长串的指令码的话可以使用 package.json 中的 scripts 设定
+webpack：会在开发模式下开始一次性的建置  
+webpack -p：会建置 production 的程式码  
+webpack --watch：会监听程式码的修改，当储存时有异动时会更新档案  
+webpack -d：加入 source maps 档案  
+webpack --progress --colors：加上处理进度与颜色  
+如果不想每次都打一长串的指令码的话可以使用 package.json 中的 scripts 设定  
 
-"scripts": {
-  "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build"
-}
+	"scripts": {
+	  "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build"
+	}
+
 然后在终端机执行：
 
-$ npm run dev
+	npm run dev
+
 当我们此时我们可以打开浏览器输入 http://localhost:8008 ，就可以看到 Hello, world! 了！
 
-总结
-以上就是 React 开发环境设置与 Webpack 入门教学，看到这边的读者不妨自己动手设定开发环境，体验一下 React 开发环境的感觉，毕竟若是只有阅读文字的话很容易就会忘记喔！若你不想在环境设定上花太多时间的话，不妨参考 Facebook 开发社群推出的 create-react-app，可以快速上手，使用 Webpack、Babel、ESLint 开发 React 应用程式。接下来的章节我们将持续延伸 React/JSX/Component 的介绍。
+### 总结 ###
+
+参考 Facebook 开发社群推出的 create-react-app，可以快速上手，使用 Webpack、Babel、ESLint 开发 React 应用程式。接下来的章节我们将持续延伸 React/JSX/Component 的介绍。
 
 延伸阅读
 JavaScript 模块化七日谈
 前端模块化开发那点历史
 Webpack 中文指南
 WEBPACK DEV SERVER
-(image via srinisoundar、sitepoint、keyholesoftware、survivejs)
+
+
 #### 参考 ####
 
 * [reactjs101/webpack-dev-enviroment.md at zh-CN · carlleton/reactjs101](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch02/webpack-dev-enviroment.md)
