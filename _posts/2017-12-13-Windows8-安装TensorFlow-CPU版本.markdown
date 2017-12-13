@@ -23,7 +23,7 @@ TensorFlow是基于VC++2015开发的，
 		pip3install --upgrade tensorflow
 
  
-### 三、验证安装 ###
+### 验证 ###
 
 或者运行python3.5命令行后输入以下代码：
 
@@ -36,7 +36,7 @@ TensorFlow是基于VC++2015开发的，
 
 	Hello, TensorFlow!
  
-### 四、安装错误 ###
+### 错误 ###
 
 其中一个经常遇到的错误就是No module named "pywrap_tensorflow" 或者 “Failed toload the native TensorFlow runtime”，其产生的原因主要是安装环境不满足要求，参考如下链接解答：  
 
