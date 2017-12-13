@@ -309,7 +309,7 @@ CSS表格模型中可能会出现七种不同类型的匿名对象插入。
 
 匿名row对象插入到单元格元素和system元素之间，并包含name和moons元素。
 
-即使父元素是表行组(table-row-group)，也是如此。扩展前面的例子，假定以下情况适用：
+即使父元素是表行组(table-row-group)，也是如此。继续前面的例子：
 
 	system {display: table;}
 	planet {display: table-row-group;}
