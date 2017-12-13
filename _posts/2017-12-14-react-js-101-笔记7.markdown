@@ -23,7 +23,7 @@ tags:
 
 ## 例1 Props
 
-* 文件位置：E:\n\learn\react\101\Ch04\demo  
+文件位置：E:\n\learn\react\101\Ch04\demo  
 为了方便没有用webpacket, 用的是。   
 index.html要加上browser.min.js引用, 
 ```html
