@@ -175,8 +175,8 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 	caption {display: table-caption;}
 
 
-在XML中，默认情况下元素没有显示语义，这些值变得非常有用。 
-考虑以下标记： 
+XML元素没有语义。XML如下： 
+
 
 	<scores>
 		<headers>
@@ -195,7 +195,7 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 		</game>
 	</scores>
 
-用以下css格式化：
+css如下：
 
 	scores {display: table;}
 	headers {display: table-header-group;}
