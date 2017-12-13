@@ -48,12 +48,13 @@ tags:
 	 npm update
 
 ### 结果 ###
+运行：
 
 	npm start
 
 输出：
 
-	webpack: Compiled successfully. 
+> webpack: Compiled successfully. 
 
 本地访问地址是 http://localhost:8008
 
