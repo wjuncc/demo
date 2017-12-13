@@ -10,17 +10,21 @@ tags:
 
 * 环境：win7 x64
 * 软件：按2次Ctrl 搜索 ： sublime js exe
-* 文件位置：E:\n\learn\react\101\Ch04\demo   
-注意，直接访问
-file:///E:/learn/react/101/Ch04/demo/index.html会报错：
-![1](https://i.imgur.com/Ur3TMHC.png)
-需要apache等各种本地http服务器，访问：
-http://127.0.0.1/learn/react/101/Ch04/demo/
 
 # Props、State、Refs 与表单处理
 
-本章将使用 [React 官网首页上的范例](https://facebook.github.io/react/index.html)（使用 ES6+）来更进一步说明 Props 和 State 特性及在 React 如何进行事件和表单处理。
+主要是用 [官网范例](https://facebook.github.io/react/index.html)主要讲了4个例子。分别是：
 
+*  Props - 父组件怎样传递值给子组件
+*  State - 
+*  事件 - 一个最简化的todolist的
+*  表单处理。 
+
+4个例子都很简单，只是点到为止。
+
+## Props
+
+* 文件位置：E:\n\learn\react\101\Ch04\demo  
 为了方便没有用webpacket, 用的是。   
 index.html要加上browser.min.js引用, 
 ```html
@@ -30,10 +34,7 @@ app.js引用的地方要加上 type="text/babel" 属性。
 ```html
 <script src="js/app.js" type="text/babel"></script>
 ```
-
-## Props
-
-HTML Markup：
+HTML：
 
 ```html
 <!DOCTYPE html>
@@ -83,7 +84,12 @@ HelloMessage.defaultProps = {
 
 ReactDOM.render(<HelloMessage name="Mark123" />, document.getElementById('app'));
 ```
-
+ 
+注意，直接访问
+file:///E:/learn/react/101/Ch04/demo/index.html会报错：
+![1](https://i.imgur.com/Ur3TMHC.png)
+需要apache等各种本地http服务器，访问：
+http://127.0.0.1/learn/react/101/Ch04/demo/
 ![1](https://i.imgur.com/zWuykPV.png)
 
 
