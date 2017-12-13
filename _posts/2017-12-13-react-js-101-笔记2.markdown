@@ -14,6 +14,75 @@ tags:
 
 \WinRAR.exe
 
+Setup Mockup
+
+	injectTapEventPlugin();
+
+使用react-tap-event-plugin去监听touch / tap / click 事件，使之得到快速的响应
+
+	<MuiThemeProvider>
+
+E:\react\reactjs101\Ch09\demo\node_modules\material-ui\styles
+
+MuiThemeProvider是安装模板的一部分，并不在源代码
+
+### material-ui是什么？ ###
+Material-UI是基于Material Design设计的一套丰富的React组件。
+
+* [react js 101 笔记2](https://wjuncc.github.io/demo/2017/12/13/react-js-101-笔记2.html)
+* [Required Knowledge - Material-UI](http://www.material-ui.com/#/get-started/required-knowledge)
+* [What is Node.js Exactly? - a beginners introduction to Nodejs - YouTube - 正在播放音频](https://www.youtube.com/watch?v=pU9Q6oiQNd0)
+* [Node.js, Require and Exports](http://openmymind.net/2012/2/3/Node-Require-and-Exports/)
+* [如何评价 React 实现的前端 UI 库 material-ui？ - 知乎](https://www.zhihu.com/question/51040975)
+* [初识Material-UI - 简书](http://www.jianshu.com/p/144bd5c2f2b7)
+* [material-ui中文文档 · GitBook](https://www.gitbook.com/book/materialui-ch/material-ui_doc_chinese/details)
+* [Material-UI · GitBook](https://www.gitbook.com/book/503945930/material-ui-chinese/details)
+* [Material-UI使用小结之一](http://www.59m59s.com/blog/material-uishi-yong-xiao-jie-zhi-yi/)
+* [推荐一款非常强大的Css框架-Material UI-容休博客](https://www.iwwenbo.com/material-ui/)
+
+
+
+### Main在哪里？ ###
+import Main from './components/Main';
+
+注意写法和结构，例如：
+Main-index.js  +  Main.js
+
+index.js 里只有一行代码。写导出代码：
+
+	export { default } from './Main';
+
+Main.js在最后一行写：
+
+	export default Main;
+
+
+
+### CardHeader ###
+
+是material-ui一部分
+
+移动端支持。
+
+快速使用ReactJS的事件系统吗？当通过Cordova 运行到iOS或Android时似乎并没有采取。如果没有，是否有另一种获得相同结果的方法。我的应用程序没有双击功能，所以如果可能的话，我想要删除整个板上的延迟...
+
+
+[Can I Fastclick ReactJS running in Cordova
+](https://stackoverflow.com/questions/24335821/can-i-fastclick-reactjs-running-in-cordova/34015469#34015469)
+
+
+Cordova是贡献给Apache后的开源项目，是从PhoneGap中抽出的核心代码，是驱动PhoneGap的核心引擎。 你可以把它们的关系想象成类似于Webkit和Google Chrome的关系 。
+
+
+
+
+
+
+
+
+
+
+
 
 ### 用powershell打包文件 ###
 打包.ps1
@@ -25,5 +94,14 @@ tags:
 	    &$winrar a "$($_).rar" $_ -y -ibck
 	    Start-Sleep -Milliseconds 200
 	}
+
+
+
+
+	
+	$timestamp = Get-Date -Format 'yyyy-M-d-H-m-s'
+	$timestamp2 = Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count ([int]::MaxValue)
 #### 参考 ####
 
+[为高效工作，运用powershell winrar 、unrar等 批量压缩、解压缩rar文件](http://www.cnblogs.com/fuckcn/p/4015645.html)
+[PowerShell中使用Get-Date获取日期时间并格式化输出的例子](http://www.jb51.net/article/53282.htm)
