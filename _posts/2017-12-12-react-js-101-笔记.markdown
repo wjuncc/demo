@@ -36,7 +36,7 @@ tags:
 注意，使用源代码，源代码中的2个包需要升级，
 否则报错，错误的关键如下：
 	
->	Error: Cannot resolve module 'react/lib/EventPluginHub' in ... 
+> Error: Cannot resolve module 'react/lib/EventPluginHub' in ... 
 
 升级的办法，是修改package.json：
 
