@@ -213,8 +213,9 @@ class TodoApp extends React.Component {
 
 ReactDOM.render(<TodoApp />, document.getElementById('app'));
 ```
-常用有`onChange` `onSubmit` `onClick`等。[官网 Event System](https://facebook.github.io/react/docs/events.html)。
 ![4](https://i.imgur.com/F0IeEnV.png)
+常用有`onChange` `onSubmit` `onClick`等。[官网 Event System](https://facebook.github.io/react/docs/events.html)。
+
 ## Refs 与表单处理
 上面介绍了 props（传入后就不能修改）、state（随着使用者互动而改变）和事件处理机制后，我们将接续介绍如何在 React 中进行表单处理。同样我们使用 React 官网范例 A Component Using External Plugins 进行介绍。由于 React 可以容易整合外部的 libraries（例如：jQuery），本范例将使用 `remarkable` 结合 `ref` 属性取出 DOM Value 值（另外比较常用的作法是使用 `onChange` 事件处理方式处理表单内容），让使用者可以使用 Markdown 语法的所见即所得编辑器（editor）。
 
