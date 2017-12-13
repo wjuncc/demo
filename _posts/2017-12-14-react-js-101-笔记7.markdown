@@ -16,8 +16,8 @@ tags:
 主要是用 [官网范例](https://facebook.github.io/react/index.html)主要讲了4个例子。分别是：
 
 *  Props - 父组件怎样传递值给子组件
-*  State - 
-*  事件 - 一个最简化的todolist的
+*  State - 在状态值变化的时候，如何刷新UI
+*  事件 - 一个最简化的todolist
 *  表单处理。 
 
 4个例子都很简单，只是点到为止。
