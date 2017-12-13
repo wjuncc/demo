@@ -329,10 +329,11 @@ CSS表格模型中可能会出现七种不同类型的匿名对象插入。
 在这个例子中，两组单元格将被包含在一个匿名的table-row中
 插入它们和planet元素之间的对象。
 
-2.如果表格行元素父项不是表格，内联表格或表格行表格，
+2. 如果表格行元素父项不是表格，内联表格或表格行表格，
 group元素，然后在它们之间插入一个匿名表格元素
-表行元素及其父元素","table-row element and its parent.",null,null,3],["插入的对象将包括所有连续的
-表格元素的兄弟。","siblings of the table-row element.",null,null,3],["考虑以下样式和标记_.._
+表行元素及其父元素。
+插入的对象将包括所有连续的
+表格元素的兄弟。 考虑以下代码：
 
 docbody {display _.._ block;}
 星球{display_.._ table-row;}
