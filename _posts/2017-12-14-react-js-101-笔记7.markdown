@@ -20,6 +20,14 @@ http://127.0.0.1/learn/react/101/Ch04/demo/
 
 本章将使用 [React 官网首页上的范例](https://facebook.github.io/react/index.html)（使用 ES6+）来更进一步说明 Props 和 State 特性及在 React 如何进行事件和表单处理。
 
+为了方便没有用webpacket, 用的是。需要加上browser.min.js, 和type="text/babel" 属性。
+```html
+	<script src="js/browser.min.js"></script>
+```
+```html
+<script src="js/app.js" type="text/babel"></script>
+```
+
 ## Props
 
 HTML Markup：
