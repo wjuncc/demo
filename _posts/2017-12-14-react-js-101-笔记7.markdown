@@ -107,17 +107,22 @@ HelloMessage.defaultProps = {
  name: 'Zuck',
 }
 
-ReactDOM.render(<HelloMessage name="Mark" />, document.getElementById('app'));
+ReactDOM.render(<HelloMessage name="Mark456" />, document.getElementById('app'));
 ```
 ![3](https://i.imgur.com/g5Kgs0L.png)
 在 jsbin 上的范例：
 
 <a class="jsbin-embed" href="http://jsbin.com/wadice/embed?html,js,console,output">A Component Using External Plugins on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.39.12"></script>
 
-## State
-用 A Stateful Component 范例来讲 State。在 React Component 可以自己管理自己的内部 state，并用 `this.state` 来存取 state。当 `setState()` 方法更新了 state 后将重新呼叫 `render()` 方法，重新绘制 component 内容。以下范例是一个每 1000 毫秒（等于1秒）就会加一的累加器。由于这个范例是 Stateful Component 因此仅使用 ES6 Class Component，而不使用 Functional Component。
+## State状态值
 
-HTML Markup：
+路径：E:\n\learn\react\101\Ch04\demo3  
+官网A Stateful Component 范例。   
+用 `this.state` 存取 state。  
+一旦`setState()` 方法更新 state就调用重绘方法 `render()` ，  
+每 1000 毫秒（等于1秒）+1。用 ES6：
+
+HTML ：
 
 ```html
 <!DOCTYPE html>
