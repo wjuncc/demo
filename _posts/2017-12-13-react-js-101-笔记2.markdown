@@ -64,8 +64,19 @@ Main.js在最后一行写：
 
 ### ImmutableJS是什么 ###
 
+用来提升React的性能
 
 
+* [Immutable 详解及 React 中实践 · Issue #3 · camsong/blog](https://github.com/camsong/blog/issues/3)
+* [facebook immutable.js 意义何在，使用场景？ - 知乎](https://www.zhihu.com/question/28016223)
+* [Immutable.js 簡介 · Rhadow's Tech Note](https://rhadow.github.io/2015/05/10/flux-immutable/)
+* [Immutable.js及在React中的应用](http://zhenhua-lee.github.io/react/Immutable.html)
+* [ImmutableJS 入門教學 - 简书](http://www.jianshu.com/p/d2354ecea98a)
+* [React + Redux + Immutablejs开发总结 - 教程 - React 中文](http://react-china.org/t/react-redux-immutablejs/9948)
+* [关于immutablejs的不懂的地方，求解惑 - 求助 - React 中文](http://react-china.org/t/immutablejs/1816)
+* [ImmutableJS · 從0到100打造一個 React Native boilerplate](https://noootown.gitbooks.io/deeperience-react-native-boilerplate/content/Redux/ImmutableJS.html)
+* [React 的性能优化（一）当 PureComponent 遇上 ImmutableJS - 吴律 - 有赞技术团队](https://tech.youzan.com/purecomponent-immutablejs/)
+* [immutable-js - Immutablejs是结构共享，那么会不会出现不会被垃圾回收？？？ - SegmentFault](https://segmentfault.com/q/1010000008942972)
 
 
 
