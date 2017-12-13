@@ -39,7 +39,7 @@ ES6 不支援 `mixins` 复用其他组件的方法了。
 ### 实例： ###
 路径：E:\n\learn\react\101\Ch04\demo6  
 访问：http://127.0.0.1/learn/react/101/Ch04/demo6/   
-![6](E:\n\learn\react\101\Ch04\demo6\chrome_2017-12-14_06-39-03.png)
+![6](https://i.imgur.com/GepxENv.png)
 当一开始载入组件时第一个会触发 `console.log('constructor');`，依序执行 `componentWillMount`、`componentDidMount` ，而当点击文字触发 `handleClick()` 更新 `state` 时则会依序执行 `componentWillUpdate`、`componentDidUpdate`：  
 
 HTML：
