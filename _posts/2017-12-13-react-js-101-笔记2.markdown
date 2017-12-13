@@ -12,6 +12,18 @@ tags:
 # react js 101 笔记2 #
 [教程](https://github.com/kdchang/reactjs101/blob/master/Ch09/react-router-redux-github-finder.md)
 
+\WinRAR.exe
 
+
+### 用powershell打包文件 ###
+打包.ps1
+
+	cls;
+	$P = 'C:\Users\Patrick\Desktop\war\'
+	$winrar = 'C:\Program Files\WinRAR\WinRAR.exe'
+	Get-ChildItem -Path $p -Directory|%{
+	    &$winrar a "$($_).rar" $_ -y -ibck
+	    Start-Sleep -Milliseconds 200
+	}
 #### 参考 ####
 
