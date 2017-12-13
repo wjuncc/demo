@@ -11,89 +11,134 @@ tags:
 
 # react js 101 笔记3 #
 
-### 1. Modules ###
+## 1. Modules ##
 
 
 * [JAVASCRIPT MODULARIZATION JOURNEY
 JavaScript 模块化七日谈](http://huangxuan.me/js-module-7day/#/)
 * [使用 AMD、CommonJS 及 ES Harmony 编写模块化的 JavaScript](http://justineo.github.io/singles/writing-modular-js/)
 
-ES5 用 require() 引入模组：
+### ES5  ###
+用 require() 引入模组：
 
 	var React = require('react');
 	var MyComponent = require('./MyComponent');
 
-则映射AS：
+映射AS：
 
 	import React;
 	import MyComponent;
 
-而键值是：
+映射是：
 
+	"React","react" -> "React"
+	"MyComponent","MyComponent" -> "MyComponent"
 	
-	
-输出则是使用 module.exports：
+输出用 module.exports：
 
-module.exports = MyComponent;
-ES6+ import 用法：
+	module.exports = MyComponent;
 
-import React from 'react';
-import MyComponent from './MyComponent';
+无映射AS。应该默默添加。
+
+
+### ES6+ import 用法 ###
+
+	import React from 'react';
+	import MyComponent from './MyComponent';
+
+映射AS：
+
+	import React;
+	import MyComponent;
+
+映射是：
+
+	"React","react" -> "React"
+	"MyComponent","MyComponent" -> "MyComponent"
+
+
 输出则是使用 export default：
 
-export default class MyComponent extends React.Component {
+	export default class MyComponent extends React.Component {
+	
+	}
 
-}
-2. Classes
-在 React 中组件（Component）是组成视觉页面的基础。在 ES5 中我们使用 React.createClass() 来建立 Component，而在 ES6+ 则是用 Classes 继承 React.Component 来建立 Component。若是有写过 Java 等物件导向语言（OOP）的读者应该对于这种写法比较不陌生，不过要注意的是 JavaScript 仍是原型继承类型的物件导向程式语言，只是使用 Classes 让物件导向使用上更加直观。对于选择 class 使用上还有疑惑的读者建议可以阅读 React.createClass versus extends React.Component 这篇文章。
+无映射AS。应该默默添加。
 
-ES5 React.createClass() 用法：
+## 2. Classes ##
 
-var Photo = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <images alt={this.props.description} src={this.props.src} />
-      </div>
-      );
-  }
-});
-ReactDOM.render(<Photo />, document.getElementById('main'));
-ES6+ class 用法：
+ ES5  用 React.createClass() 来建立 Component，  
+ ES6+ 用 Classes 继承 React.Component 来建立 Component。
 
-class Photo extends React.Component {
-  render() {
-    return <images alt={this.props.description} src={this.props.src} />;
-  }
-}
-ReactDOM.render(<Photo />, document.getElementById('main'));
-在 ES5 我们会在 componentWillMount 生命周期定义希望在 render 前执行，且只会执行一次的任务：
+阅读[React.createClass versus extends React.Component](https://toddmotto.com/react-create-class-versus-component/)
 
-var Photo = React.createClass({
-  componentWillMount: function() {}
-});
-在 ES6+ 则是定义在 constructor 建构子中：
+### ES5 React.createClass() 用法： ###
 
-class Photo extends React.Component {
-  constructor(props) {
-    super(props);
-    // 原本在 componentWillMount 操作的动作可以放在这
-  }
-}
-3. Method definition
-在 ES6 中我们使用 Method 可以忽略 function 和 ,，使用上更为简洁！ES5 React.createClass() 用法：
+	var Photo = React.createClass({
+	  render: function() {
+	    return (
+	      <div>
+	        <images alt={this.props.description} src={this.props.src} />
+	      </div>
+	      );
+	  }
+	});
+	ReactDOM.render(<Photo />, document.getElementById('main'));
 
-var Photo = React.createClass({
-  handleClick: function(e) {},
-  render: function() {}
-});
-ES6+ class 用法：
 
-class Photo extends React.Component {
-  handleClick(e) {}
-  render() {}
-}
-4. Property initializers
+### ES6+ class 用法： ###
+
+	class Photo extends React.Component {
+	  render() {
+	    return <images alt={this.props.description} src={this.props.src} />;
+	  }
+	}
+	ReactDOM.render(<Photo />, document.getElementById('main'));
+
+ES5 在 componentWillMount 生命周期定义希望在 render 前执行，且只会执行一次的任务：
+
+	var Photo = React.createClass({
+	  componentWillMount: function() {}
+	});
+
+ES6+ 则是定义在 constructor 建构子中：
+
+	class Photo extends React.Component {
+	  constructor(props) {
+	    super(props);
+	    // 原本在 componentWillMount 操作的动作可以放在这
+	  }
+	}
+
+
+## 3. 方法定义 ##
+
+ES6 用 Method 可以忽略 function 和 ,，使用上更为简洁！
+
+### ES5 React.createClass() 用法： ###
+
+	var Photo = React.createClass({
+	  handleClick: function(e) {},
+	  render: function() {}
+	});
+
+### ES6+ class 用法： ###
+
+	class Photo extends React.Component {
+	  handleClick(e) {}
+	  render() {}
+	}
+
+映射AS：
+
+	public class Photo extends React.Component
+	{
+		public fucntion Photo(){}
+		public function handleClick(e:Event){}
+		public function render(){}
+	}
+
+### 4. Property initializers ###
 Component 属性值是资料传递重要的元素，在 ES5 中我们使用 propTypes 和 getDefaultProps 来定义属性（props）的预设值和型别：
 
 var Todo = React.createClass({
