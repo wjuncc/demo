@@ -294,7 +294,8 @@ ReactDOM.render(<MarkdownEditor />, document.getElementById('app'));
 ```
 
 ## 总结
-程式码敲过一遍，也可以使用像 [jsbin](http://jsbin.com/) 练习，！接下来生命周期。
+代码敲一遍，OR [jsbin](http://jsbin.com/) ！  
+接下来生命周期。
 
 ## 延伸阅读
 1. [React 官方网站](https://facebook.github.io/react/index.html)
