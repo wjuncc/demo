@@ -138,73 +138,83 @@ ES6 用 Method 可以忽略 function 和 ,，使用上更为简洁！
 		public function render(){}
 	}
 
-### 4. Property initializers ###
-Component 属性值是资料传递重要的元素，在 ES5 中我们使用 propTypes 和 getDefaultProps 来定义属性（props）的预设值和型别：
+### 4. 初始化属性 ###
 
-var Todo = React.createClass({
-  getDefaultProps: function() {
-    return {
-      checked: false,
-      maxLength: 10,
-    };
-  },
-  propTypes: {
-    checked: React.PropTypes.bool.isRequired,
-    maxLength: React.PropTypes.number.isRequired
-  },
-  render: function() {
-    return();
-  }
-});
-在 ES6+ 中我们则是参考 ES7 property initializers 使用 class 中的静态属性（static properties）来定义：
+ES5 用 propTypes 和 getDefaultProps 
+定义属性（props）的预设值和型别：
 
-class Todo extends React.Component {
-  static defaultProps = {
-    checked: false,
-    maxLength: 10,
-  }; // 注意有分号
-  static propTypes = {
-    checked: React.PropTypes.bool.isRequired,
-    maxLength: React.PropTypes.number.isRequired
-  };
-  render() {
-    return();
-  }
-}
+	var Todo = React.createClass({
+	  getDefaultProps: function() {
+	    return {
+	      checked: false,
+	      maxLength: 10,
+	    };
+	  },
+	  propTypes: {
+	    checked: React.PropTypes.bool.isRequired,
+	    maxLength: React.PropTypes.number.isRequired
+	  },
+	  render: function() {
+	    return();
+	  }
+	});
+
+ES6+  参考 ES7 property initializers 使用 class 中的静态属性（static properties）来定义：
+
+	class Todo extends React.Component {
+	  static defaultProps = {
+	    checked: false,
+	    maxLength: 10,
+	  }; // 注意有分号
+	  static propTypes = {
+	    checked: React.PropTypes.bool.isRequired,
+	    maxLength: React.PropTypes.number.isRequired
+	  };
+	  render() {
+	    return();
+	  }
+	}
+
+
 ES6+ 另外一种写法，可以留意一下，主要是看各团队喜好和规范，选择合适的方式：
 
-class Todo extends React.Component {
-    render() {
-        return (
-            <View />
-        );
-    }
-}
-Todo.defaultProps = {
-    checked: false,
-    maxLength: 10,
-};
-Todo.propTypes = {
-    checked: React.PropTypes.bool.isRequired,
-    maxLength: React.PropTypes.number.isRequired,
-};
-5. State
-在 React 中 Props 和 State 是资料流传递的重要元素，不同的是 state 可更动，可以去执行一些运算。在 ES5 中我们使用 getInitialState 去初始化 state：
+	class Todo extends React.Component {
+	    render() {
+	        return (
+	            <View />
+	        );
+	    }
+	}
+	Todo.defaultProps = {
+	    checked: false,
+	    maxLength: 10,
+	};
+	Todo.propTypes = {
+	    checked: React.PropTypes.bool.isRequired,
+	    maxLength: React.PropTypes.number.isRequired,
+	};
 
-var Todo = React.createClass({
-    getInitialState: function() {
-        return {
-            maxLength: this.props.maxLength,
-        };
-    },
-});
-在 ES6+ 中我们初始化 state 有两种写法：
 
-class Todo extends React.Component {
-    state = {
-        maxLength: this.props.maxLength,
-    }
-}
+### 5.  可变的State ###
+
+ES5 用 getInitialState 去初始化 state：
+
+	var Todo = React.createClass({
+	    getInitialState: function() {
+	        return {
+	            maxLength: this.props.maxLength,
+	        };
+	    },
+	});
+
+ES6+ 初始化 state   
+写法1：
+
+	class Todo extends React.Component {
+	    state = {
+	        maxLength: this.props.maxLength,
+	    }
+	}
 另外一种写法，使用在建构式初始化。比较推荐使用这种方式，方便做一些运算：
 
 class Todo extends React.Component {
