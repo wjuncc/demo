@@ -175,7 +175,7 @@ CSS在 ** 表格元素（table elements） ** 和  ** 内部表格元素(interna
 	caption {display: table-caption;}
 
 
-XML元素没有语义。XML如下： 
+XML标签默认不带样式。XML如下： 
 
 
 	<scores>
