@@ -17,7 +17,7 @@ tags:
 ES6 不支援 `mixins` 复用其他组件的方法了。
 
 ## 生命周期
-组件有三种状态：
+有三种状态：
 
 1. Mounting：已插入真实的 DOM
 2. Updating：正在被重新渲染
@@ -37,8 +37,9 @@ ES6 不支援 `mixins` 复用其他组件的方法了。
 	- componentWillUnmount()
 
 ### 实例： ###
-路径：E:\n\learn\react\101\Ch04\demo6
-
+路径：E:\n\learn\react\101\Ch04\demo6  
+访问：http://127.0.0.1/learn/react/101/Ch04/demo6/   
+![6](E:\n\learn\react\101\Ch04\demo6\chrome_2017-12-14_06-39-03.png)
 当一开始载入组件时第一个会触发 `console.log('constructor');`，依序执行 `componentWillMount`、`componentDidMount` ，而当点击文字触发 `handleClick()` 更新 `state` 时则会依序执行 `componentWillUpdate`、`componentDidUpdate`：  
 
 HTML：
