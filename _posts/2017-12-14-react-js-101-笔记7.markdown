@@ -89,8 +89,8 @@ ReactDOM.render(<HelloMessage name="Mark123" />, document.getElementById('app'))
 
 [React ES6 父类super()](http://cheng.logdown.com/posts/2016/03/26/683329) 。
 
-使用 Functional Component 写法：
-
+使用 Functional Component 写法：  
+文件目录：E:\n\learn\react\101\Ch04\demo2 
 ```javascript
 // Functional Component 可以视为 f(d) => UI，根据传进去的 props 绘出对应的 UI。注意这边 props 是传入函式的参数，因此取用 props 不用加 this
 const HelloMessage = (props) => (
@@ -109,7 +109,7 @@ HelloMessage.defaultProps = {
 
 ReactDOM.render(<HelloMessage name="Mark" />, document.getElementById('app'));
 ```
-
+![3](https://i.imgur.com/g5Kgs0L.png)
 在 jsbin 上的范例：
 
 <a class="jsbin-embed" href="http://jsbin.com/wadice/embed?html,js,console,output">A Component Using External Plugins on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.39.12"></script>
