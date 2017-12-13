@@ -24,6 +24,7 @@ tags:
 ## 例1 Props
 
 文件位置：E:\n\learn\react\101\Ch04\demo  
+访问地址：http://127.0.0.1/learn/react/101/Ch04/demo/
 为了方便没有用webpacket, 用的是。   
 index.html要加上browser.min.js引用, 
 ```html
@@ -121,6 +122,7 @@ ReactDOM.render(<HelloMessage name="Mark456" />, document.getElementById('app'))
 ## 例2 State状态值
 
 路径：E:\n\learn\react\101\Ch04\demo3  
+访问地址：http://127.0.0.1/learn/react/101/Ch04/demo3/
 官网： A Stateful Component 范例。   
 用 `this.state` 存取 state。  
 一旦`setState()` 方法更新 state就调用重绘方法 `render()` ，  
@@ -166,6 +168,7 @@ ReactDOM.render(<Timer />, document.getElementById('app'));
 ## 例3 事件
 
 路径：E:\n\learn\react\101\Ch04\demo4   
+访问地址：http://127.0.0.1/learn/react/101/Ch04/demo4/
 React 官网 An Application 例子。  
 只改app.js：
 
@@ -222,7 +225,9 @@ ReactDOM.render(<TodoApp />, document.getElementById('app'));
 
 ## 例4 Refs 与表单
 路径：E:\n\learn\react\101\Ch04\demo5   
+访问地址：http://127.0.0.1/learn/react/101/Ch04/demo5/
 官网范例 A Component Using External Plugins。
+![4](https://i.imgur.com/nQyjtmI.png)
 本例用 `remarkable` 结合 `ref` 属性取出 DOM Value 值（另外比较常用的作法是使用 `onChange` 事件处理方式处理表单内容）。
 除了引入 `react` 、 `react-dom` 还要用 `CDN` 方式引入 `remarkable` 这个 `Markdown` 语法 parser 套件，记得如果没有使用 Webpack 或是 browserify + babelify 等工具需要引入 `babel-standalone` 浏览器解析 ES6 语法并于引入 script 加上 type="text/babel"
 HTML：
