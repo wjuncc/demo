@@ -16,9 +16,8 @@ tags:
 
 ![React Router 资料夹结构](./images/react-router.jpg "React Router 入门实战教学")
 
-从本节开始即实战，也就是webpacket
-
-## 单页程式（single page application）
+从本节开始即实战，也就是webpacket  
+SPA = single page application     
 [react-router](https://github.com/reactjs/react-router)routing 管理。
 
 ## React Router 环境设置
