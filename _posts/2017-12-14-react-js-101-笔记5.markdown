@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "react js 101 笔记5"
+date:   2017-12-14 04:01:10 +0800
+categories:  
+tags: 
+---
+
+# react js 101 笔记5 # 
+是对[ReactJS 与 Component 设计入门介绍](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch03/reactjs-introduction.md)的笔记。
+
+#### 参考 ####
+
+* [reactjs101/reactjs-introduction.md at zh-CN · carlleton/reactjs101](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch03/reactjs-introduction.md)
