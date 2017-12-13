@@ -55,6 +55,8 @@ tags:
 
 	webpack: Compiled successfully. 
 
+访问地址是 http://localhost:8008
+
 ![截图1](https://i.imgur.com/qVrRZIx.png)
 
 ![2](https://i.imgur.com/H2o48bN.png)
