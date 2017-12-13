@@ -37,26 +37,33 @@ ES6 不支援 `mixins` 复用其他组件的方法了。
 	- componentWillUnmount()
 
 ### 实例： ###
+路径：E:\n\learn\react\101\Ch04\demo6
+
 当一开始载入组件时第一个会触发 `console.log('constructor');`，依序执行 `componentWillMount`、`componentDidMount` ，而当点击文字触发 `handleClick()` 更新 `state` 时则会依序执行 `componentWillUpdate`、`componentDidUpdate`：  
 
-HTML Markup：
+HTML：
 ```html
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <script src="https://fb.me/react-15.1.0.js"></script>
-  <script src="https://fb.me/react-dom-15.1.0.js"></script>
-  <title>Component LifeCycle</title>
+  <title>生命周期</title>
 </head>
 <body>
-  <div id="app"></div>
+<!-- 這邊方便使用 CDN 方式引入 react 、 react-dom 進行講解，實務上和實戰教學部分我們會使用 webpack -->
+<script src="js/react-15.1.0.js"></script>
+<script src="js/react-dom-15.1.0.js"></script>
+<script src="js/browser.min.js"></script>
+<script src="js/remarkable.min.js"></script>
+<script src="js/app.js" type="text/babel"></script>
+
+<div id="app"></div>
 </body>
 </html>
 ```
 
-Component 生命周期展示：
+app.js：
 
 ```javascript
 class MyComponent extends React.Component {
