@@ -10,8 +10,12 @@ tags:
 
 * 环境：win7 x64
 * 软件：按2次Ctrl 搜索 ： sublime js exe
-* 文件位置：E:\learn\react\101\Ch04\demo   
-* 
+* 文件位置：E:\n\learn\react\101\Ch04\demo   
+注意，不能访问： 
+file:///E:/learn/react/101/Ch04/demo/index.html
+要访问：
+http://127.0.0.1/learn/react/101/Ch04/demo/
+
 # Props、State、Refs 与表单处理
 
 本章将使用 [React 官网首页上的范例](https://facebook.github.io/react/index.html)（使用 ES6+）来更进一步说明 Props 和 State 特性及在 React 如何进行事件和表单处理。
@@ -29,45 +33,49 @@ HTML Markup：
   <title>A Component Using External Plugins</title>
 </head>
 <body>
-<!-- 这边方便使用 CDN 方式引入 react 、 react-dom 进行讲解，实务上和实战教学部分我们会使用 webpack -->
-<script src="https://fb.me/react-15.1.0.js"></script>
-<script src="https://fb.me/react-dom-15.1.0.js"></script>
-  <div id="app"></div>
-	<script src="./app.js"></script>
+<!-- 這邊方便使用 CDN 方式引入 react 、 react-dom 進行講解，實務上和實戰教學部分我們會使用 webpack -->
+<script src="js/react-15.1.0.js"></script>
+<script src="js/react-dom-15.1.0.js"></script>
+<script src="js/browser.min.js"></script>
+<script src="js/app.js" type="text/babel"></script>
+
+<div id="app"></div>
 </body>
 </html>
 ```
 
-app.js，使用 ES6 Class Component 写法：
+app.js，ES6 写法：
 
-```javascript
-class HelloMessage extends React.Component {
-	// 若是需要绑定 this.方法或是需要在 constructor 使用 props，定义 state，就需要 constructor。若是在其他方法（如 render）使用 this.props 则不用一定要定义 constructor
-	constructor(props) {
-		// 对于 OOP 物件导向程式设计熟悉的读者应该对于 constructor 建构子的使用不陌生，事实上它是 ES6 的语法糖，骨子里还是 prototype based 物件导向程式语言。透过 extends 可以继承 React.Component 父类别。super 方法可以呼叫继承父类别的建构子
-		super(props);
-		this.state = {}
+	```javascript 
+	class HelloMessage extends React.Component {
+		constructor(props) {
+			// 對於 OOP 物件導向程式設計熟悉的讀者應該對於 constructor 建構子的使用不陌生，事實上它是 ES6 的語法糖，骨子裡還是 portotype based 物件導向程式語言。透過 extends 可以繼承 React.Component 父類別。super 方法可以呼叫繼承父類別的建構子
+			super(props);
+			this.state = {}
+		}
+		render() {
+			return (
+				<div>Hello {this.props.name}</div>
+			)
+		}
 	}
-	// render 是唯一必须的方法，但如果是单纯 render UI 建议使用 Functional Component 写法，效能较佳且较简洁
-	render() {
-		return (
-			<div>Hello {this.props.name}</div>
-		)
+	
+	// PropTypes 驗證，若傳入的 props type 不是 string 將會顯示錯誤
+	HelloMessage.propTypes = {
+	  name: React.PropTypes.string,
 	}
-}
+	
+	// Prop 預設值，若對應 props 沒傳入值將會使用 default 值 Zuck
+	HelloMessage.defaultProps = {
+	 name: 'Zuck', 
+	}
+	
+	ReactDOM.render(<HelloMessage name="Mark123" />, document.getElementById('app'));
 
-// PropTypes 验证，若传入的 props type 不是 string 将会显示错误
-HelloMessage.propTypes = {
-  name: React.PropTypes.string,
-}
+	```
 
-// Prop 预设值，若对应 props 没传入值将会使用 default 值 Zuck
-HelloMessage.defaultProps = {
- name: 'Zuck',
-}
+![1](https://i.imgur.com/zWuykPV.png)
 
-ReactDOM.render(<HelloMessage name="Mark" />, document.getElementById('app'));
-```
 
 关于 React ES6 class constructor super() 解释可以参考 [React ES6 class constructor super()](http://cheng.logdown.com/posts/2016/03/26/683329) 。
 
