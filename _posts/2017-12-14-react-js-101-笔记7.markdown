@@ -11,9 +11,10 @@ tags:
 * 环境：win7 x64
 * 软件：按2次Ctrl 搜索 ： sublime js exe
 * 文件位置：E:\n\learn\react\101\Ch04\demo   
-注意，不能访问： 
-file:///E:/learn/react/101/Ch04/demo/index.html
-要访问：
+注意，直接访问
+file:///E:/learn/react/101/Ch04/demo/index.html会报错：
+![1](https://i.imgur.com/Ur3TMHC.png)
+需要apache等各种本地http服务器，访问：
 http://127.0.0.1/learn/react/101/Ch04/demo/
 
 # Props、State、Refs 与表单处理
@@ -84,7 +85,7 @@ ReactDOM.render(<HelloMessage name="Mark123" />, document.getElementById('app'))
 ![1](https://i.imgur.com/zWuykPV.png)
 
 
-关于 React ES6 class constructor super() 解释可以参考 [React ES6 class constructor super()](http://cheng.logdown.com/posts/2016/03/26/683329) 。
+[React ES6 父类super()](http://cheng.logdown.com/posts/2016/03/26/683329) 。
 
 使用 Functional Component 写法：
 
