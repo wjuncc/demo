@@ -10,6 +10,7 @@ tags:
 ---
 
 # react js 101 笔记3 #
+是对[附录一、React ES5、ES6+ 常见用法对照表](https://github.com/carlleton/reactjs101/tree/zh-CN/Appendix01)的笔记。
 
 ## 1. Modules ##
 
