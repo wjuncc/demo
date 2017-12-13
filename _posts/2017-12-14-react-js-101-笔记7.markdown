@@ -117,7 +117,7 @@ ReactDOM.render(<HelloMessage name="Mark456" />, document.getElementById('app'))
 ## State状态值
 
 路径：E:\n\learn\react\101\Ch04\demo3  
-官网A Stateful Component 范例。   
+官网： A Stateful Component 范例。   
 用 `this.state` 存取 state。  
 一旦`setState()` 方法更新 state就调用重绘方法 `render()` ，  
 每 1000 毫秒（等于1秒）+1。
@@ -160,7 +160,9 @@ ReactDOM.render(<Timer />, document.getElementById('app'));
 关于 Javascript this 用法可以参考 [Javascript：this用法整理](https://software.intel.com/zh-cn/blogs/2013/10/09/javascript-this)。
 
 ## 事件处理（Event Handle）
-在前面的内容我们已经学会如何使用 props 和 state，接下来我们要更进一步学习在 React 内如何进行事件处理。下列将使用 React 官网的 An Application 当做例子，实作出一个简单的 TodoApp。
+
+路径：E:\n\learn\react\101\Ch04\demo4   
+React 官网 An Application 例子，实作出一个简单的 TodoApp。
 
 HTML Markup：
 
