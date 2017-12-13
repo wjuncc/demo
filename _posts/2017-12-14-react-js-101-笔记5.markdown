@@ -37,9 +37,10 @@ tags:
 	</div>
 
 
-写组件的两种方式：
+### 写组件的两种方式： ###
 
 使用 ES6 的 Class（可以进行比较复杂的操作和组件生命周期的控制，相对于 stateless components 耗费资源）
+
 
 	//  注意组件开头第一个字母都要大写
 	class MyComponent extends React.Component {
