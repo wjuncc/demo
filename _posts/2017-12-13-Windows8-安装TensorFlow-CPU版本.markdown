@@ -6,9 +6,6 @@ categories:
 tags: 
 ---
 
-# Windows8 安装TensorFlow-CPU版本 #
-Windows下安装TensorFlow快速教程
-
 
 
 参考：https://www.tensorflow.org/install/install_windows
@@ -47,6 +44,7 @@ https://stackoverflow.com/questions/43942185/failed-to-load-the-native-tensorflo
 https://stackoverflow.com/questions/42011070/on-windows-running-import-tensorflow-generates-no-module-named-pywrap-tenso
 
 #### 参考 ####
+
 
 * [Windows下安装TensorFlow快速教程 - 豆芽菜 - CSDN博客](http://blog.csdn.net/dou3516/article/details/77836459)
 * [window 安装 tensorflow - CSDN博客](http://blog.csdn.net/hai4321/article/details/78438981)
