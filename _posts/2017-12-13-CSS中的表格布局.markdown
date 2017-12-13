@@ -203,7 +203,7 @@ css如下：
 	team {display: table-row;}
 	label, name, score {display: table-cell;}
 
-然后，可以根据需要对各种单元格进行样式设置，例如粗体显示标签元素并将分数右对齐。
+之后添加单元格样式，如标签粗体显示，分数右对齐。
 
 ### 行首位 ###
 
