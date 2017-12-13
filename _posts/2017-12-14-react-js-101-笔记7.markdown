@@ -8,7 +8,10 @@ tags:
 
 是对[Props、State、Refs 与表单处理](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch04/props-state-introduction.md)的笔记。
 
-
+* 环境：win7 x64
+* 软件：按2次Ctrl 搜索 ： sublime js exe
+* 文件位置：E:\learn\react\101\Ch04\demo   
+* 
 # Props、State、Refs 与表单处理
 
 本章将使用 [React 官网首页上的范例](https://facebook.github.io/react/index.html)（使用 ES6+）来更进一步说明 Props 和 State 特性及在 React 如何进行事件和表单处理。
