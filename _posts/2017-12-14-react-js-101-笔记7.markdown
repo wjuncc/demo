@@ -6,21 +6,19 @@ categories:
 tags: 
 ---
 
-是对[Props、State、Refs 与表单处理](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch04/props-state-introduction.md)的笔记。
+是对 [Props、State、Refs 与表单处理](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch04/props-state-introduction.md) 的笔记。
 
 * 环境：win7 x64
 * 软件：按2次Ctrl 搜索 ： sublime js exe
 
-# Props、State、Refs 与表单处理
-
-主要是用 [官网范例](https://facebook.github.io/react/index.html)主要讲了4个例子。分别是：
+本课是用 [官网范例](https://facebook.github.io/react/index.html)一共4个例子。分别是：
 
 *  Props - 父组件怎样传递值给子组件
 *  State - 在状态值变化的时候，如何刷新UI
 *  事件 - 一个最简化的todolist
 *  表单处理。 
 
-4个例子都很简单，只是点到为止。
+4个例子都很简单，只是蜻蜓点水，点到为止。
 
 ## Props
 
@@ -90,8 +88,7 @@ file:///E:/learn/react/101/Ch04/demo/index.html会报错：
 ![1](https://i.imgur.com/Ur3TMHC.png)
 需要apache等各种本地http服务器，访问：
 http://127.0.0.1/learn/react/101/Ch04/demo/
-![1](https://i.imgur.com/zWuykPV.png)
-
+![1](https://i.imgur.com/zWuykPV.png) 
 
 [React ES6 父类super()](http://cheng.logdown.com/posts/2016/03/26/683329) 。
 
