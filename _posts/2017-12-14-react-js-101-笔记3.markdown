@@ -424,33 +424,42 @@ ES6+ 用 Destructuring 这种简化方式来引入模组中的组件：
 	export default HelloWorld;
 
 
-9. Mixins
-在 ES5 中，我们可以使用 Mixins 的方式去让不同的 Component 共用相似的功能，重用我们的程式码：
+### 9. Mixins ###
 
-var PureRenderMixin = require('react-addons-pure-render-mixin');
-React.createClass({
-  mixins: [PureRenderMixin],
+用 Mixins 的方式去让不同的 Component 共用相似的功能，   
+重用我们的程式码：
 
-  render: function() {
-    return <div className={this.props.className}>foo</div>;
-  }
-});
-但由于官方不打算在 ES6+ 中继续推行 Mixins，若还是希望使用，可以参考看看第三方套件或是这个文件的用法。
+	var PureRenderMixin = require('react-addons-pure-render-mixin');
+	React.createClass({
+	  mixins: [PureRenderMixin],
+	
+	  render: function() {
+	    return <div className={this.props.className}>foo</div>;
+	  }
+	});
 
-10. Default Parameters
+
+官方不在 ES6+ 推 Mixins，若还是希望使用，看看[es6-class-mixin](https://www.npmjs.com/package/es6-class-mixin)或[Enhance.js](https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775)。
+
+### 10. Default Parameters ###
+
 以前 ES5 我们函数要使用预设值需要这样使用：
 
-var link = function (height, color) {  
-    var height = height || 50;  
-    var color = color || 'red';  
-}  
+	var link = function (height, color) {  
+	    var height = height || 50;  
+	    var color = color || 'red';  
+	}  
+
 现在 ES6+ 的函数可以支援预设值，让程式码更为简洁：
 
-var link = function(height = 50, color = 'red') {  
-  ...  
-}
-总结
-以上就是 React ES5、ES6+常见用法对照表，能看到这边的你应该已经对于 React ES5、ES6 使用上有些认识，先给自己一些掌声吧！确实从 ES6 开始，JavaScript 和以前我们看到的 JavaScript 有些不同，增加了许多新的特性，有些读者甚至会很怀疑说这真的是 JavaScript 吗？ES6 的用法对于初学者来说可能会需要写一点时间吸收，下一章我们将进到同样也是有革新性设计和有趣的 React Native，用 JavaScript 和 React 写 Native App！
+	var link = function(height = 50, color = 'red') {  
+	  ...  
+	}
+
+## 总结 ##
+ 
+
+下一章我们将进到同样也是有革新性设计和有趣的 React Native，用 JavaScript 和 React 写 Native App！
 
 延伸阅读
 React/React Native 的ES5 ES6写法对照表
