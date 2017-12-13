@@ -120,29 +120,8 @@ ReactDOM.render(<HelloMessage name="Mark456" />, document.getElementById('app'))
 官网A Stateful Component 范例。   
 用 `this.state` 存取 state。  
 一旦`setState()` 方法更新 state就调用重绘方法 `render()` ，  
-每 1000 毫秒（等于1秒）+1。用 ES6：
-
-HTML ：
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>A Component Using External Plugins</title>
-</head>
-<body>
-<script src="https://fb.me/react-15.1.0.js"></script>
-<script src="https://fb.me/react-dom-15.1.0.js"></script>
-  <div id="app"></div>
-	<script src="./app.js"></script>
-</body>
-</html>
-```
-
-app.js：
-
+每 1000 毫秒（等于1秒）+1。
+只改app.js： 
 ```javascript
 class Timer extends React.Component {
 	constructor(props) {
@@ -176,6 +155,7 @@ class Timer extends React.Component {
 
 ReactDOM.render(<Timer />, document.getElementById('app'));
 ```
+![3](https://i.imgur.com/ZlwtMo8.png)
 
 关于 Javascript this 用法可以参考 [Javascript：this用法整理](https://software.intel.com/zh-cn/blogs/2013/10/09/javascript-this)。
 
