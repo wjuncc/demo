@@ -23,123 +23,29 @@ tags:
 
 ## React Router 环境设置
 
-先透过以下指令在根目录产生 npm 设定档 `package.json` ：
 
-```
-$ npm init
-```
+因为已经有package.json，所以不用从头做起，直接：
 
-安装相关套件（包含开发环境使用的套件）：
+	npm install --save-dev
 
-```shell
-$ npm install --save react react-dom react-router
-```
+会按照package.json的配置，安装好环境。
 
-```
-$ npm install --save-dev babel-core babel-eslint babel-loader babel-preset-es2015 babel-preset-react eslint eslint-config-airbnb eslint-loader eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react webpack webpack-dev-server html-webpack-plugin
-```
+	npm start
+
+输出： webpack: Compiled successfully.
+本地访问地址是 http://localhost:8008
+
+报错：
+2个警告，1个错误：
+![ex5](https://i.imgur.com/jjQa5dL.png)
+
 
 安装好后我们可以设计一下我们的资料夹结构，首先我们在根目录建立 `src` 和 `res` 资料夹，分别放置 `script` 的 `source` 和静态资源（如：全域使用的 `.css` 和图档）。在 `components` 资料夹中我们会放置所有 `components`（个别组件资料夹中会用 `index.js` 输出组件，让引入组件更简洁），其余设定档则放置于根目录下。
 
 ![React Router 资料夹结构](./images/folder.png "React Router 资料夹结构")
 
-接下来我们先设定一下开发文档。
-
-1. 设定 Babel 的设定档： `.babelrc`
-
-	```javascript
-	{
-		"presets": [
-	  	"es2015",
-	  	"react",
-	 	],
-		"plugins": []
-	}
-
-	```
-
-2. 设定 ESLint 的设定档和规则： `.eslintrc`
-
-	```javascript
-	{
-	  "extends": "airbnb",
-	  "rules": {
-	    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-	  },
-	  "env" :{
-	    "browser": true,
-	  }
-	}
-	```
-
-3. 设定 Webpack 设定档： `webpack.config.js`
-
-	```javascript
-	// 让你可以动态插入 bundle 好的 .js 档到 .index.html
-	const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-	const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
-	  template: `${__dirname}/src/index.html`,
-	  filename: 'index.html',
-	  inject: 'body',
-	});
-	
-	// entry 为进入点，output 为进行完 eslint、babel loader 转译后的档案位置
-	module.exports = {
-	  entry: [
-	    './src/index.js',
-	  ],
-	  output: {
-	    path: `${__dirname}/dist`,
-	    filename: 'index_bundle.js',
-	  },
-	  module: {
-	    preLoaders: [
-	      {
-	        test: /\.jsx$|\.js$/,
-	        loader: 'eslint-loader',
-	        include: `${__dirname}/src`,
-	        exclude: /bundle\.js$/
-	      }
-	    ],
-	    loaders: [{
-	      test: /\.js$/,
-	      exclude: /node_modules/,
-	      loader: 'babel-loader',
-	      query: {
-	        presets: ['es2015', 'react'],
-	      },
-	    }],
-	  },
-	  // 启动开发测试用 server 设定（不能用在 production）
-	  devServer: {
-	    inline: true,
-	    port: 8008,
-	  },
-	  plugins: [HTMLWebpackPluginConfig],
-	};
-	```
-
-太好了！这样我们就完成了开发环境的设定可以开始动手实作 `React Router` 应用程式了！	
-
 ## 开始 React Routing 之旅
-
-HTML Markup：
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>ReactRouter</title>
-  <link rel="stylesheet" type="text/css" href="../res/styles/main.css">
-</head>
-<body>
-	<div id="app"></div>
-</body>
-</html>
-```
-
+ 
 以下是 `webpack.config.js` 的进入点 `src/index.js`，负责管理 `Router` 和 `render` 组件。这边我们要先详细讨论的是，为了使用 React Router 功能引入了许多 `react-router` 内部的组件。
 
 1. Router
