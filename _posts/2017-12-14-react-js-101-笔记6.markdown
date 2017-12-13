@@ -18,7 +18,8 @@ JSX 并非一种全新的语言，而是语法糖（[Syntatic Sugar](https://en.
 ## 一、使用 JSX 的好处
 
 ### 1. 提供更加语意化且易懂的标签
-由于 JSX 类似 XML 的语法，让一些非开发人员也更容易看懂，且能精确定义包含属性的树状结构。一般来说我们想做一个回馈表单，使用 HTML 写法通常会长这样：
+JSX 类似 XML 。  
+表单HTML：
 
 ```html
 <form class="messageBox">
@@ -27,13 +28,12 @@ JSX 并非一种全新的语言，而是语法糖（[Syntatic Sugar](https://en.
 </form>
 ```
 
-使用 JSX，就像 XML 语法结构一样可以自行定义标签且有开始和关闭，容易理解：
+使用 JSX：
 
 ```js
 <MessageBox />
 ```
 
-React 思路认为使用 Component 比起模版（Template）和显示逻辑（Display Logic）更能实现关注点分离的概念，而搭配 JSX 可以实现声明式 `Declarative`（注重 what to），而非命令式  `Imperative`（注重 how to）的程式撰写方式：
 
 ![Facebook 上面按赞功能](./images/fb_like.jpg)
 
