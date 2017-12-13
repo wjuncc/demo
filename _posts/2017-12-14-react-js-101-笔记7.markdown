@@ -94,7 +94,7 @@ ReactDOM.render(<HelloMessage name="Mark" />, document.getElementById('app'));
 <a class="jsbin-embed" href="http://jsbin.com/wadice/embed?html,js,console,output">A Component Using External Plugins on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.39.12"></script>
 
 ## State
-接下来我们将使用 A Stateful Component 这个范例来讲解 State 的用法。在 React Component 可以自己管理自己的内部 state，并用 `this.state` 来存取 state。当 `setState()` 方法更新了 state 后将重新呼叫 `render()` 方法，重新绘制 component 内容。以下范例是一个每 1000 毫秒（等于1秒）就会加一的累加器。由于这个范例是 Stateful Component 因此仅使用 ES6 Class Component，而不使用 Functional Component。
+用 A Stateful Component 范例来讲 State。在 React Component 可以自己管理自己的内部 state，并用 `this.state` 来存取 state。当 `setState()` 方法更新了 state 后将重新呼叫 `render()` 方法，重新绘制 component 内容。以下范例是一个每 1000 毫秒（等于1秒）就会加一的累加器。由于这个范例是 Stateful Component 因此仅使用 ES6 Class Component，而不使用 Functional Component。
 
 HTML Markup：
 
@@ -294,7 +294,7 @@ ReactDOM.render(<MarkdownEditor />, document.getElementById('app'));
 ```
 
 ## 总结
-以上透过几个 React 官网首页上的范例介绍了 Props 和 State 特性及在 React 如何进行事件和表单处理这些 React 中核心的问题，若还不熟悉的读者建议重新亲自动手照着范例中的程式码敲过一遍，也可以使用像 [jsbin](http://jsbin.com/) 这样所见即所得的工具来练习，更能熟悉相关语法和 API 喔！接下来我们将探讨 Component 的生命周期。
+程式码敲过一遍，也可以使用像 [jsbin](http://jsbin.com/) 练习，！接下来生命周期。
 
 ## 延伸阅读
 1. [React 官方网站](https://facebook.github.io/react/index.html)
