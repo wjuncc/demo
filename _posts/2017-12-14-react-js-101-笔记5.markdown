@@ -20,15 +20,17 @@ tags:
 
 <TodoApp> 组件可以包含 <TodoHeader />、<TodoList /> 子组件
 
+
+```html
 	<div>
 		<TodoHeader />
 		<TodoList />
 	</div>
-
+```
 
 <TodoList /> 组件内部长相：
 
-```
+```html
 	<div>
 		<ul>
 			<li>写程式码</li>
@@ -43,6 +45,7 @@ tags:
 ES6 的 Class（？做复杂操作和组件生命周期的控制，相对于 stateless components 耗费资源）
 
 
+```js
 	//  注意组件开头第一个字母都要大写
 	class MyComponent extends React.Component {
 		// render 是 Class based 组件唯一必须的方法（method）
@@ -56,9 +59,11 @@ ES6 的 Class（？做复杂操作和组件生命周期的控制，相对于 sta
 	// 将 <MyComponent /> 组件插入 id 为 app 的 DOM 元素中
 	ReactDOM.render(<MyComponent/>, document.getElementById('app'));
 
+```
 
 使用 Functional Component 写法（单纯地 render UI 的 stateless components，没有内部状态、没有实作物件和 ref，没有生命周期函数。若非需要控制生命周期的话建议多使用 stateless components 获得比较好的效能）
 
+```js
 	// 使用 arrow function 来设计 Functional Component 让 UI 设计更单纯（f(D) => UI），减少副作用（side effect）
 	const MyComponent = () => (
 		<div>Hello, World!</div>
@@ -67,11 +72,13 @@ ES6 的 Class（？做复杂操作和组件生命周期的控制，相对于 sta
 	// 将 <MyComponent /> 组件插入 id 为 app 的 DOM 元素中
 	ReactDOM.render(<MyComponent/>, document.getElementById('app'));
 
+```
 
 ### 用 JSX（Declarative）UI ###
  
 Declarative UI  比 Template 更易懂：
 	
+```js
 	// 使用宣告式（Declarative）UI 设计很容易可以看出这个组件的功能
 	<MailForm />
 	// <MailForm /> 内部长相
@@ -79,6 +86,7 @@ Declarative UI  比 Template 更易懂：
 		<input type="text" name="email" />
 		<button type="submit"></button>
 	</form>
+```
 
 下一章讲 JSX。
 
@@ -87,6 +95,7 @@ Declarative UI  比 Template 更易懂：
 ### Component PropType 防呆机制 ###
 在 React 设计时除了提供 props 预设值设定（Default Prop Values）外，也提供了 Prop 的验证（Validation）机制，让整个 Component 设计更加稳健：
 
+```js
 	//  注意组件开头第一个字母都要大写
 	class MyComponent extends React.Component {
 		// render 是 Class based 组件唯一必须的方法（method）
@@ -108,6 +117,8 @@ Declarative UI  比 Template 更易懂：
 	 todo: {}, 
 	 name: '', 
 	}
+
+```
 
 关于更多的 Validation 用法可以参考官方网站 的说明。
 
