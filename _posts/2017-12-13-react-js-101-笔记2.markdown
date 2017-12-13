@@ -66,7 +66,8 @@ Main.js在最后一行写：
 
 用来提升React的性能
 
-
+* [如何用React+Redux+ImmutableJS进行SPA开发](http://yunlaiwu.github.io/blog/2016/12/01/react+redux+immutablejs/)
+* [React移动web极致优化 ](https://github.com/lcxfs1991/blog/issues/8)
 * [Immutable 详解及 React 中实践 · Issue #3 · camsong/blog](https://github.com/camsong/blog/issues/3)
 * [facebook immutable.js 意义何在，使用场景？ - 知乎](https://www.zhihu.com/question/28016223)
 * [Immutable.js 簡介 · Rhadow's Tech Note](https://rhadow.github.io/2015/05/10/flux-immutable/)
@@ -77,6 +78,19 @@ Main.js在最后一行写：
 * [ImmutableJS · 從0到100打造一個 React Native boilerplate](https://noootown.gitbooks.io/deeperience-react-native-boilerplate/content/Redux/ImmutableJS.html)
 * [React 的性能优化（一）当 PureComponent 遇上 ImmutableJS - 吴律 - 有赞技术团队](https://tech.youzan.com/purecomponent-immutablejs/)
 * [immutable-js - Immutablejs是结构共享，那么会不会出现不会被垃圾回收？？？ - SegmentFault](https://segmentfault.com/q/1010000008942972)
+
+### Reducers 是什么 ###
+
+* [Reducer · GitBook](http://cn.redux.js.org/docs/basics/Reducers.html)
+* [Redux 中的 reducer 到底是什么，以及它为什么叫 reducer？ - 前端 - 掘金](https://juejin.im/entry/58ce563744d904006906bb1e)
+* [Redux中的reducer到底是什么，以及它为什么叫reducer？](https://zhuanlan.zhihu.com/p/25863768)
+* [深入浅出 - Redux · Issue #4 · berwin/Blog](https://github.com/berwin/Blog/issues/4)
+* [Redux之combineReducers(reducers)详解 - 我是紫色紫色的专栏 - CSDN博客](http://blog.csdn.net/woshizisezise/article/details/51142968)
+* [解读redux工作原理](http://zhenhua-lee.github.io/react/redux.html)
+* [[译]为什么Redux需要reducers是纯函数 - mingjiezhang](https://mingjiezhang.github.io/2017/02/11/翻译-为什么Redux需要reducers是纯函数-md/)
+* [通过小代码，学习redux之三， redux中的Reducer 和Store - 通过小代码，学习react redux - 前端乱炖](http://www.html-js.com/article/3169)
+* [Redux 核心概念 - 简书](http://www.jianshu.com/p/3334467e4b32)
+* [reducer是什么意思_reducer的翻译_音标_读音_用法_例句_爱词霸在线词典](http://www.iciba.com/reducer)
 
 
 
@@ -123,5 +137,5 @@ Cordova是贡献给Apache后的开源项目，是从PhoneGap中抽出的核心�
 	$timestamp2 = Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count ([int]::MaxValue)
 #### 参考 ####
 
-[为高效工作，运用powershell winrar 、unrar等 批量压缩、解压缩rar文件](http://www.cnblogs.com/fuckcn/p/4015645.html)
-[PowerShell中使用Get-Date获取日期时间并格式化输出的例子](http://www.jb51.net/article/53282.htm)
+* [为高效工作，运用powershell winrar 、unrar等 批量压缩、解压缩rar文件](http://www.cnblogs.com/fuckcn/p/4015645.html)
+* [PowerShell中使用Get-Date获取日期时间并格式化输出的例子](http://www.jb51.net/article/53282.htm)
