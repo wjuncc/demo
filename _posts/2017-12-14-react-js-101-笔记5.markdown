@@ -22,7 +22,7 @@ tags:
 `<TodoApp>` 组件可以包含 `<TodoHeader />`、`<TodoList />` 子组件
 
 
-```javascript
+```html
 	<div>
 		<TodoHeader />
 		<TodoList />
@@ -31,7 +31,7 @@ tags:
 
 <TodoList /> 组件内部长相：
 
-```javascript
+```html
 	<div>
 		<ul>
 			<li>写程式码</li>
