@@ -131,76 +131,21 @@ ImmutableJS是什么
 	odules\react-tap-event-plugin\src
 	 @ ./~/react-tap-event-plugin/src/injectTapEventPlugin.js 23:2-37
 	
-处理：升级下面的依赖
-
-	npm update material-ui@0.16.3
-	npm update react-tap-event-plugin@2.0.0
-
-	material-ui@0.16.3
-	react-tap-event-plugin@2.0.0
-
-修改后
+处理：升级依赖
+修改package.json：
 
     "material-ui": "^0.16.3",
-    "react-tap-event-plugin": "^2.0.0",
+    "react-tap-event-plugin": "^2.0.0", 
 
-报错：
-	PS E:\react\reactjs101\Ch09\demo> npm update
-	npm ERR! code ETARGET
-	npm ERR! notarget No matching version found for material-ui@^16.0.3
-	npm ERR! notarget In most cases you or one of your dependencies are requesting
-	npm ERR! notarget a package version that doesn't exist.
-	
-	npm ERR! A complete log of this run can be found in:
-	npm ERR!     C:\Users\Administrator\AppData\Roaming\npm-cache\_logs\2017-12-13T1
-	4_40_07_896Z-debug.log
+更新后，继续：
 
-========================
+	 npm start
 
-更新后：报错：
+输出：
  
-	
-报错： 
+	webpack: Compiled successfully. 
 
 
-
-
-	ERROR in ./~/react-tap-event-plugin/src/TapEventPlugin.js
-	Module not found: Error: Cannot resolve module 'react/lib/EventConstants' in E:\
-	Tech\WebDev\react\reactjs101-master\Ch09\react-router-redux-github-finder\node_m
-	odules\react-tap-event-plugin\src
-	 @ ./~/react-tap-event-plugin/src/TapEventPlugin.js 22:21-56
-	
-	ERROR in ./~/react-tap-event-plugin/src/TapEventPlugin.js
-	Module not found: Error: Cannot resolve module 'react/lib/EventPluginUtils' in E
-	:\Tech\WebDev\react\reactjs101-master\Ch09\react-router-redux-github-finder\node
-	_modules\react-tap-event-plugin\src
-	 @ ./~/react-tap-event-plugin/src/TapEventPlugin.js 23:23-60
-	
-	ERROR in ./~/react-tap-event-plugin/src/TapEventPlugin.js
-	Module not found: Error: Cannot resolve module 'react/lib/EventPropagators' in E
-	:\Tech\WebDev\react\reactjs101-master\Ch09\react-router-redux-github-finder\node
-	_modules\react-tap-event-plugin\src
-	 @ ./~/react-tap-event-plugin/src/TapEventPlugin.js 24:23-60
-	
-	ERROR in ./~/react-tap-event-plugin/src/TapEventPlugin.js
-	Module not found: Error: Cannot resolve module 'react/lib/SyntheticUIEvent' in E
-	:\Tech\WebDev\react\reactjs101-master\Ch09\react-router-redux-github-finder\node
-	_modules\react-tap-event-plugin\src
-	 @ ./~/react-tap-event-plugin/src/TapEventPlugin.js 25:23-60
-	
-	ERROR in ./~/react-tap-event-plugin/src/TapEventPlugin.js
-	Module not found: Error: Cannot resolve module 'react/lib/ViewportMetrics' in E:
-	\Tech\WebDev\react\reactjs101-master\Ch09\react-router-redux-github-finder\node_
-	modules\react-tap-event-plugin\src
-	 @ ./~/react-tap-event-plugin/src/TapEventPlugin.js 27:22-58
-	Child html-webpack-plugin for "index.html":
-	    chunk    {0} index.html 540 kB [rendered]
-	        [0] ./~/html-webpack-plugin/lib/loader.js!./src/index.html 605 bytes {0}
-	 [built]
-	        [1] ./~/lodash/lodash.js 540 kB {0} [built]
-	        [2] (webpack)/buildin/module.js 251 bytes {0} [built]
-	webpack: Failed to compile.
 
 
 
