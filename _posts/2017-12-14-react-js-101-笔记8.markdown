@@ -10,6 +10,7 @@ tags:
 
 * 环境：win7 x64
 * 软件：按2次Ctrl 搜索 ： sublime js exe
+下一节：`React Router`
 
 组件有2种写法：ES6 和 ES5。参考上一节第1个例子。  
    
@@ -149,8 +150,6 @@ ReactDOM.render(
 
 <a class="jsbin-embed" href="http://jsbin.com/kupusa/embed?html,js,output">点击看详细范例</a><script src="http://static.jsbin.com/js/embed.min.js?3.39.12"></script>
 
-## 总结
-以上介绍了 React Component 规格与生命周期（Life Cycle）的概念，其中生命周期的概念对于初学者来说可能会比较抽象，建议读者跟着范例动手实作。接下来我们将更进一步介绍 `React Router` 让读者感受一下单页式应用程式（single page application）的设计方式。
 
 ## 延伸阅读
 1. [Component Specs and Lifecycle](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods)
