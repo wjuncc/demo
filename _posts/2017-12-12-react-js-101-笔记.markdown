@@ -65,7 +65,9 @@ tags:
 
 #### 遗留几点问题 ####
 * 教程提到了 actions 常數。 
-注意， 源代码中，未搜到SHOW_SPINNER，常數定义。
+注意， 源代码中，未搜到SHOW_SPINNER，常數定义。  
+常量定义，位于：
+constants/actionTypes
 
 * Redux + ImmutableJS
 * Redux是什么
