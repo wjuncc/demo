@@ -79,7 +79,6 @@ HelloMessage.defaultProps = {
 }
 
 ReactDOM.render(<HelloMessage name="Mark123" />, document.getElementById('app'));
-
 ```
 
 ![1](https://i.imgur.com/zWuykPV.png)
