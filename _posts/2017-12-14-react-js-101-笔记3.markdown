@@ -215,183 +215,215 @@ ES6+ 初始化 state
 	        maxLength: this.props.maxLength,
 	    }
 	}
-另外一种写法，使用在建构式初始化。比较推荐使用这种方式，方便做一些运算：
 
-class Todo extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            maxLength: this.props.maxLength,
-        };
-    }
-}
-6. Arrow functions
+写法2：建构式初始化：
+
+	class Todo extends React.Component {
+	    constructor(props){
+	        super(props);
+	        this.state = {
+	            maxLength: this.props.maxLength,
+	        };
+	    }
+	}
+
+
+### 6. Arrow functions ###
+
 在讲 Arrow functions 之前，我们先聊聊在 React 中 this 和它所代表的 context。在 ES5 中，我们使用 React.createClass() 来建立 Component，而在 React.createClass() 下，预设帮你绑定好 method 的 this，你毋须自行绑定。所以你可以看到像是下面的例子，callback function handleButtonClick 中的 this 是指到 component 的实例（instance），而非触发事件的物件：
 
-var TodoBtn = React.createClass({
-    handleButtonClick: function(e) {
-        // 此 this 指到 component 的实例（instance），而非 button
-        this.setState({showOptionsModal: true});
-    },
-    render: function(){
-        return (
-            <div>
-                <Button onClick={this.handleButtonClick}>{this.props.label}</Button>
-            </div>
-        )
-    },
-});
-然而自动绑定这种方式反而会让人容易误解，所以在 ES6+ 推荐使用 bind 绑定 this 或使用 Arrow functions（它会绑定当前 scope 的 this context）两种方式，你可以参考下面例子：
+	var TodoBtn = React.createClass({
+	    handleButtonClick: function(e) {
+	        // 此 this 指到 component 的实例（instance），而非 button
+	        this.setState({showOptionsModal: true});
+	    },
+	    render: function(){
+	        return (
+	            <div>
+	                <Button onClick={this.handleButtonClick}>{this.props.label}</Button>
+	            </div>
+	        )
+	    },
+	});
 
-class TodoBtn extends React.Component
-{
-    handleButtonClick(e){
-        // 确认绑定 this 指到 component instance
-        this.setState({toggle: true});
-    }
-    render(){
-        // 这边可以用 this.handleButtonClick.bind(this) 手动绑定或是 Arrow functions () => {} 用法
-        return (
-            <div>
-                <Button onClick={this.handleButtonClick.bind(this)} onClick={(e)=> {this.handleButtonClick(e)} }>{this.props.label}</Button>
-            </div>
-        )
-    },
-}
+
+ES6+ 两种方式：
+1 用 bind 绑定 this      
+2 胖箭头（它会绑定当前 scope 的 this context）：
+
+	class TodoBtn extends React.Component
+	{
+	    handleButtonClick(e){
+	        // 确认绑定 this 指到 component instance
+	        this.setState({toggle: true});
+	    }
+	    render(){
+	        // 这边可以用 this.handleButtonClick.bind(this) 手动绑定或是 Arrow functions () => {} 用法
+	        return (
+	            <div>
+	                <Button onClick={this.handleButtonClick.bind(this)} onClick={(e)=> {this.handleButtonClick(e)} }>{this.props.label}</Button>
+	            </div>
+	        )
+	    },
+	}
+
 Arrow functions 虽然一开始看起来有点怪异，但其实观念很简单：一个简化的函数。函数基本上就是参数（不一定要有参数）、表达式、回传值（也可能是回传 undefined）：
 
-// Arrow functions 的一些例子
-()=>7
-e=>e+2
-()=>{
-    alert('XD');
-}
-(a,b)=>a+b
-e=>{
-    if (e == 2){
-        return 2;
-    }
-    return 100/e;
-}
+	// Arrow functions 的一些例子
+	()=>7
+	e=>e+2
+	()=>{
+	    alert('XD');
+	}
+	(a,b)=>a+b
+	e=>{
+	    if (e == 2){
+	        return 2;
+	    }
+	    return 100/e;
+	}
+
+
 不过要注意的是无论是 bind 或是 Arrow functions，每次执行回传都是指到一个新的函数，若需要再调用到这个函数，请记得先把它存起来：
 
 错误用法：
 
-class TodoBtn extends React.Component{
-    componentWillMount(){
-        Btn.addEventListener('click', this.handleButtonClick.bind(this));
-    }
-    componentDidmount(){
-        Btn.removeEventListener('click', this.handleButtonClick.bind(this));
-    }
-    onAppPaused(event){
-    }
-}
+	class TodoBtn extends React.Component{
+	    componentWillMount(){
+	        Btn.addEventListener('click', this.handleButtonClick.bind(this));
+	    }
+	    componentDidmount(){
+	        Btn.removeEventListener('click', this.handleButtonClick.bind(this));
+	    }
+	    onAppPaused(event){
+	    }
+	}
+
 正确用法：
 
-class TodoBtn extends React.Component{
-    constructor(props){
-        super(props);
-        this.handleButtonClick = this.handleButtonClick.bind(this);
-    }
-    componentWillMount(){
-        Btn.addEventListener('click', this.handleButtonClick);
-    }
-    componentDidMount(){
-        Btn.removeEventListener('click', this.handleButtonClick);
-    }
-}
+	class TodoBtn extends React.Component{
+	    constructor(props){
+	        super(props);
+	        this.handleButtonClick = this.handleButtonClick.bind(this);
+	    }
+	    componentWillMount(){
+	        Btn.addEventListener('click', this.handleButtonClick);
+	    }
+	    componentDidMount(){
+	        Btn.removeEventListener('click', this.handleButtonClick);
+	    }
+	}
+
 更多 Arrows and Lexical This 特性可以参考这个文件。
 
-7. Dynamic property names & template strings
+### 7. Dynamic property names & template strings ###
+
 以前在 ES5 我们要动态设定属性名称时，往往需要多写几行程式码才能达到目标：
 
-var Todo = React.createClass({
-  onChange: function(inputName, e) {
-    var stateToSet = {};
-    stateToSet[inputName + 'Value'] = e.target.value;
-    this.setState(stateToSet);
-  },
-});
+	var Todo = React.createClass({
+	  onChange: function(inputName, e) {
+	    var stateToSet = {};
+	    stateToSet[inputName + 'Value'] = e.target.value;
+	    this.setState(stateToSet);
+	  },
+	});
+
+
 但在 ES6+中，透过 enhancements to object literals 和 template strings 可以轻松完成动态设定属性名称的任务：
 
-class Todo extends React.Component {
-  onChange(inputName, e) {
-    this.setState({
-      [`${inputName}Value`]: e.target.value,
-    });
-  }
-}
+	class Todo extends React.Component {
+	  onChange(inputName, e) {
+	    this.setState({
+	      [`${inputName}Value`]: e.target.value,
+	    });
+	  }
+	}
+
+
 Template Strings 是一种语法糖（syntactic sugar），方便我们组织字串（这边也用上 let、const 变数和常数宣告的方式，和 var 的 function scope 不同的是它们是属于 block scope，亦即生存域存在于 {} 间）：
 
-// Interpolate variable bindings
-const name = "Bob", let = "today";
-`Hello ${name}, how are you ${time}?` \\ Hello Bob, how are you today?
-8. Destructuring & spread attributes
-在 React 的 Component 中，父组件利用 props 来传递资料到子组件是常见作法，然而我们有时会希望只传递部分资料，此时 ES6+ 中的 Destructuring 和 JSX 的 Spread Attributes ，... Spread Attributes 主要是用来迭代物件：
+	// Interpolate variable bindings
+	const name = "Bob", let = "today";
+	`Hello ${name}, how are you ${time}?` \\ Hello Bob, how are you today?
 
-class Todo extends React.Component {
-  render() {
-    var {
-      className,
-      ...others,  // ...others 包含 this.props 除了 className 外所有值。this.props = {value: 'true', title: 'header', className: 'content'}
-    } = this.props;
-    return (
-      <div className={className}>
-        <TodoList {...others} />
-        <button onClick={this.handleLoadMoreClick}>Load more</button>
-      </div>
-    );
-  }
-}
-但使用上要注意的是若是有重复的属性值则以后来覆蓋，下面的例子中若 ...this.props，有 className，则被后来的 main 所覆蓋：
+### 8. Destructuring & spread attributes ###
 
-<div {...this.props} className="main">
-  …
-</div>
+父组件用 props 来传递值给子组件。  
+如果只传递部分资料，  
+ES6+ 的 Destructuring 和 JSX 的 Spread Attributes ，... Spread Attributes 主要是用来迭代物件：
+
+	class Todo extends React.Component {
+	  render() {
+	    var {
+	      className,
+	      ...others,  // ...others 包含 this.props 除了 className 外所有值。this.props = {value: 'true', title: 'header', className: 'content'}
+	    } = this.props;
+	    return (
+	      <div className={className}>
+	        <TodoList {...others} />
+	        <button onClick={this.handleLoadMoreClick}>Load more</button>
+	      </div>
+	    );
+	  }
+	}
+
+
+注意的是若是有重复的属性值则以后来覆蓋，  
+若 ...this.props，有 className，则被后来的 main 所覆蓋：
+
+	<div {...this.props} className="main">
+	  …
+	</div>
+
+
 而 Destructuring 也可以用在简化 Module 的引入上，这边我们先用 ES5 中引入方式来看：
 
-var React = require('react-native');
-var Component = React.component;
+	var React = require('react-native');
+	var Component = React.component;
+	
+	class HelloWorld extends Component {
+	  render() {
+	    return (
+	      <View>
+	        <Text>Hello, world!</Text>
+	      </View>
+	    );
+	  }
+	}
 
-class HelloWorld extends Component {
-  render() {
-    return (
-      <View>
-        <Text>Hello, world!</Text>
-      </View>
-    );
-  }
-}
+	export default HelloWorld;
 
-export default HelloWorld;
-以下 ES5 写法：
 
-var React = require('react-native');
-var View = React.View;
-在 ES6+ 则可以直接使用 Destructuring 这种简化方式来引入模组中的组件：
+ES5 写法：
 
-// 这边等于上面的写法
-var { View } = require('react-native');
-更进一步可以使用 import 语法：
+	var React = require('react-native');
+	var View = React.View;
 
-import React, {
-  View,
-  Component,
-  Text,
-} from 'react-native';
+ES6+ 用 Destructuring 这种简化方式来引入模组中的组件：
 
-class HelloWorld extends Component {
-  render() {
-    return (
-      <View>
-        <Text>Hello, world!</Text>
-      </View>
-    );
-  }
-}
+	// 这边等于上面的写法
+	var { View } = require('react-native');
+	更进一步可以使用 import 语法：
+	
+	import React, {
+	  View,
+	  Component,
+	  Text,
+	} from 'react-native';
+	
+	class HelloWorld extends Component {
+	  render() {
+	    return (
+	      <View>
+	        <Text>Hello, world!</Text>
+	      </View>
+	    );
+	  }
+	}
+	
+	export default HelloWorld;
 
-export default HelloWorld;
+
 9. Mixins
 在 ES5 中，我们可以使用 Mixins 的方式去让不同的 Component 共用相似的功能，重用我们的程式码：
 
