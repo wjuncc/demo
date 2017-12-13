@@ -9,9 +9,8 @@ tags:
 
 ---
 
-环境：win7 x64
-软件：  
-按2次Ctrl 搜索 ： sublime js exe
+* 环境：win7 x64
+* 软件：按2次Ctrl 搜索 ： sublime js exe
 
 [教程](https://github.com/kdchang/reactjs101/blob/master/Ch09/react-router-redux-github-finder.md)
  
@@ -66,12 +65,12 @@ tags:
  
 
 #### 遗留几点问题 ####
-教程提到了 actions 常數。 
+* 教程提到了 actions 常數。 
 注意， 源代码中，未搜到SHOW_SPINNER，常數定义。
 
-Redux + ImmutableJS
-Redux是什么
-ImmutableJS是什么     
+* Redux + ImmutableJS
+* Redux是什么
+* ImmutableJS是什么     
 
 ### 软件材料 ### 
 
