@@ -4,9 +4,8 @@ title:  "CSS中的表格布局"
 date:   2017-12-13 05:58:56 +0800
 categories:  
 tags: 
+    - css
 ---
-
-
 
 # CSS中的表格布局 #
 CSS的渲染表格细节
@@ -245,7 +244,9 @@ width width属性定义列或列组的最小宽度。","width The width property
 \u003c/ TABLE\u003e
 
 你可以看一下这个标记，并假定它定义了一个单行的双单元表格，但从结构上说，没有定义行的元素（因为tr缺失）。
-为了覆盖这种可能性，CSS定义了一个机制来将缺失的表组件作为匿名对象插入。","To cover such possibilities, CSS defines a mechanism for inserting missing table components as anonymous objects.",null,null,3],["有关如何工作的基本示例，让我们重新访问我们的缺少行HTML示例。","For a basic example of how this works, lets revisit our missing-row HTML example.",null,null,3],["用CSS来说，有效的做法是在表元素和下降表单元格之间插入一个匿名的表行对象_.._
+为了覆盖这种可能性，CSS定义了一个机制来将缺失的表组件作为匿名对象插入。
+
+有关如何工作的基本示例，让我们重新访问我们的缺少行HTML示例。","For a basic example of how this works, lets revisit our missing-row HTML example.",null,null,3],["用CSS来说，有效的做法是在表元素和下降表单元格之间插入一个匿名的表行对象_.._
 \u003c表\u003e
 
 \u003c！ - 匿名表格行对象开始 - \u003e
@@ -330,7 +331,7 @@ CSS表格模型中可能会出现七种不同类型的匿名对象插入。
 插入它们和planet元素之间的对象。
 
 2. 如果表格行元素父项不是表格，内联表格或表格行表格，
-group元素，然后在它们之间插入一个匿名表格元素
+group元素，然后在它们之间插入匿名表格元素
 表行元素及其父元素。
 插入的对象将包括所有连续的
 表格元素的兄弟。 考虑以下代码：
