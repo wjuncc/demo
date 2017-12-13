@@ -41,7 +41,7 @@ JavaScript 模块化七日谈](http://huangxuan.me/js-module-7day/#/)
 无映射AS。应该默默添加。
 
 
-### ES6+ import 用法 ###
+### ES6 import 用法 ###
 
 	import React from 'react';
 	import MyComponent from './MyComponent';
@@ -86,7 +86,7 @@ JavaScript 模块化七日谈](http://huangxuan.me/js-module-7day/#/)
 	ReactDOM.render(<Photo />, document.getElementById('main'));
 
 
-### ES6+ class 用法： ###
+### ES6 class 用法： ###
 
 	class Photo extends React.Component {
 	  render() {
@@ -122,7 +122,7 @@ ES6 用 Method 可以忽略 function 和 ,，使用上更为简洁！
 	  render: function() {}
 	});
 
-### ES6+ class 用法： ###
+### ES6 class 用法： ###
 
 	class Photo extends React.Component {
 	  handleClick(e) {}
@@ -197,7 +197,7 @@ ES6+ 另外一种写法，可以留意一下，主要是看各团队喜好和规
 
 ### 5.  可变的State ###
 
-ES5 用 getInitialState 去初始化 state：
+### ES5  getInitialState 初始化 state： ###
 
 	var Todo = React.createClass({
 	    getInitialState: function() {
@@ -207,7 +207,7 @@ ES5 用 getInitialState 去初始化 state：
 	    },
 	});
 
-ES6+ 初始化 state   
+### ES6 初始化 state ###   
 写法1：
 
 	class Todo extends React.Component {
@@ -228,7 +228,7 @@ ES6+ 初始化 state
 	}
 
 
-### 6. Arrow functions ###
+### 6. 胖箭头 ###
 
 在讲 Arrow functions 之前，我们先聊聊在 React 中 this 和它所代表的 context。在 ES5 中，我们使用 React.createClass() 来建立 Component，而在 React.createClass() 下，预设帮你绑定好 method 的 this，你毋须自行绑定。所以你可以看到像是下面的例子，callback function handleButtonClick 中的 this 是指到 component 的实例（instance），而非触发事件的物件：
 
@@ -340,7 +340,7 @@ Arrow functions 虽然一开始看起来有点怪异，但其实观念很简单�
 	}
 
 
-Template Strings 是一种语法糖（syntactic sugar），方便我们组织字串（这边也用上 let、const 变数和常数宣告的方式，和 var 的 function scope 不同的是它们是属于 block scope，亦即生存域存在于 {} 间）：
+Template Strings 是语法糖（syntactic sugar），方便组织字串（这边也用上 let、const 变数和常数宣告的方式，和 var 的 function scope 不同的是它们是属于 block scope，亦即生存域存在于 {} 间）：
 
 	// Interpolate variable bindings
 	const name = "Bob", let = "today";
@@ -399,7 +399,7 @@ ES5 写法：
 	var React = require('react-native');
 	var View = React.View;
 
-ES6+ 用 Destructuring 这种简化方式来引入模组中的组件：
+ES6 用 Destructuring 这种简化方式来引入模组中的组件：
 
 	// 这边等于上面的写法
 	var { View } = require('react-native');
@@ -426,8 +426,9 @@ ES6+ 用 Destructuring 这种简化方式来引入模组中的组件：
 
 ### 9. Mixins ###
 
-用 Mixins 的方式去让不同的 Component 共用相似的功能，   
-重用我们的程式码：
+就是宏了。
+让不同 Component 共用相似功能，   
+重用代码：
 
 	var PureRenderMixin = require('react-addons-pure-render-mixin');
 	React.createClass({
@@ -441,16 +442,16 @@ ES6+ 用 Destructuring 这种简化方式来引入模组中的组件：
 
 官方不在 ES6+ 推 Mixins，若还是希望使用，看看[es6-class-mixin](https://www.npmjs.com/package/es6-class-mixin)或[Enhance.js](https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775)。
 
-### 10. Default Parameters ###
+### 10. 参数默认值 ###
 
-以前 ES5 我们函数要使用预设值需要这样使用：
+ES5 用||：
 
 	var link = function (height, color) {  
 	    var height = height || 50;  
 	    var color = color || 'red';  
 	}  
 
-现在 ES6+ 的函数可以支援预设值，让程式码更为简洁：
+ES6 ：
 
 	var link = function(height = 50, color = 'red') {  
 	  ...  
