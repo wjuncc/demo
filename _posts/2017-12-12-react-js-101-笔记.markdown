@@ -12,10 +12,9 @@ tags:
 * 环境：win7 x64
 * 软件：按2次Ctrl 搜索 ： sublime js exe
 
+## 跑通源代码 ##
 [教程](https://github.com/kdchang/reactjs101/blob/master/Ch09/react-router-redux-github-finder.md)
- 
 
-### 跑通源代码 ###
 重命名为：E:\react\reactjs101\Ch09\demo。  
 注意，不可以把node_modules文件夹直接复制到demo，报错略。   
 
