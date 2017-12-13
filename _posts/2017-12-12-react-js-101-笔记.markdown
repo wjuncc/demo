@@ -47,7 +47,7 @@ tags:
 
 	 npm update
 
-#### 运行结果 ####
+### 结果 ###
 
 	npm start
 
@@ -64,9 +64,7 @@ tags:
 ![3](https://i.imgur.com/Z8D8Zy0.png)
  
 
-
-
-#### 遗留几点问题 ####
+## 遗留几点问题 ##
 教程提到了 actions 常數。 
 注意， 源代码中，未搜到SHOW_SPINNER，常數定义。
 
