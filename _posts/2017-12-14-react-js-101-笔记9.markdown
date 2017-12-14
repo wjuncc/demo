@@ -70,8 +70,7 @@ ReactDOM.render(
 ```
 1.  `Router` 不是路由。只是容器。
 
-2.  `Route` 是路由，可以嵌套。   
-下例中，先载入通用组件`App`再载入各自组件。
+2.  `Route` 是路由，可以嵌套。 >>> 下例中，先载入通用组件`App`再载入各自组件。
 
 3.  `Router` 属性 `history`，  
 这里用 `hashHistory`，   
