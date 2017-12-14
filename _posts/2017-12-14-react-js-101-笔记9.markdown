@@ -11,10 +11,7 @@ tags:
 * 环境：win7 x64
 * 软件：按2次Ctrl 搜索 ： sublime js exe  
 下一节：
-`ImmutableJS` 在用 `React` 和 `Flux/Redux` 可以有更好的效能和避免一些副作用。
-
-# React Router 入门实战教学
-
+`ImmutableJS` 在用 `React` 和 `Flux/Redux` 可以有更好的效能和避免一些副作用。  
 ![React Router 资料夹结构](./images/react-router.jpg "React Router 入门实战教学")
 
 从本节开始即实战，也就是webpacket  
