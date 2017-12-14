@@ -71,7 +71,7 @@ import User from './components/User';
 import Contacts from './components/Contacts';
 ```
 这里的知识点：  
-虽然都是import，但可以分成2部分，  
+一眼望去，满眼的import，虽然都是import，但可以分成2部分，  
 前面3个import，是工具包，其中包括```react-router```的4个组件```{ Router, Route, hashHistory, IndexRoute }```  
 后面的众多import，都是项目文件夹下的自定义组件。   
 index.js 接下来，是xml节点块：`Router` 和 `render`。  
