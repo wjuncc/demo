@@ -56,7 +56,7 @@ Warning: Accessing PropTypes via the main React package is deprecated, and will 
 * [[译]yarn vs npm: 你需要知道的一切 - 简书](http://www.jianshu.com/p/2db9f278494a)
 * [Document](https://tangxiangmin.github.io/2017/10/29/npm与一次版本更新事故/)
 
-## 分析路由，看懂实例代码
+## 看懂实例代码
 代码位置：E:\n\learn\react\101\Ch05\demo\src\index.js  
 
 ```javascript
