@@ -17,8 +17,7 @@ tags:
 ![React Router 资料夹结构](./images/react-router.jpg "React Router 入门实战教学")
 
 从本节开始即实战，也就是webpacket  
-SPA = single page application     
-[react-router](https://github.com/reactjs/react-router)routing 管理。
+[react-router](https://github.com/reactjs/react-router)
 
 ## React Router 环境设置
 
@@ -40,9 +39,9 @@ SPA = single page application
 2个警告 是一个内容：
 Warning: Accessing PropTypes via the main React package is deprecated, and will be removed in  React v16.0. Use the latest available v15.* prop-types package from npm instead. For info on usage, compatibility, migration and more, see https://fb.me/prop-types-docs
 
+用下面代码：
+import PropTypes from 'prop-types'
 
-
-安装好后我们可以设计一下我们的资料夹结构，首先我们在根目录建立 `src` 和 `res` 资料夹，分别放置 `script` 的 `source` 和静态资源（如：全域使用的 `.css` 和图档）。在 `components` 资料夹中我们会放置所有 `components`（个别组件资料夹中会用 `index.js` 输出组件，让引入组件更简洁），其余设定档则放置于根目录下。
 
 ![React Router 资料夹结构](./images/folder.png "React Router 资料夹结构")
 
