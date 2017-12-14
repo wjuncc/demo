@@ -108,7 +108,7 @@ ReactDOM.render(
 	```
 	const history = createMemoryHistory(location)
 	```
-因为这里断掉了，再帖一遍，看的清楚：
+因为这里断掉了，再帖一遍，看的清楚：  
 ```javascript
 ReactDOM.render(
   <Router history={hashHistory}>
