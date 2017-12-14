@@ -11,12 +11,9 @@ tags:
 
 是对 [ImmutableJS 入门教学](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch06/react-immutable-introduction.md) 的笔记。
 
-# ImmutableJS 入门教学
 
 ![ImmutableJS](./images/immutable.png "ImmutableJS")
 
-## 前言
- 
 js引用类型： 
 
 ```javascript
