@@ -118,14 +118,14 @@ ReactDOM.render(
       <Route path="/repos/:name" component={Repos} />
       <Route path="/about" component={About} />
 ```
-4. `path` 对应的 URL。例如：`/repos/torvalds` 会对应到 `/repos/:name` 的位置，并将参数传入 `Repos` 组件中。由 `this.props.params.name` 取得参数。   
+4. `path`是对应 URL。例如：`/repos/torvalds` 会对应到 `/repos/:name` 的位置，并将参数传入 `Repos` 组件中。由 `this.props.params.name` 取得参数。   
 注意，查询参数 `/user?q=torvalds` 由 `this.props.location.query.q` 取。
 
 5. IndexRoute
 由于 `/` 情况下 App 组件对应的 `this.props.children` 会是 `undefinded`，所以使用 `IndexRoute` 来解决对应问题。这样当 URL 为 `/` 时将会对应到 Home 组件。不过要注意的是 `IndexRoute` 没有 path 属性。
 
 
-由于我们在 `index.js` 使用嵌套 routing，把 App 组件当做每个组件都会载入的母模版，亦即进入每个对应页面载入对应组件前都会先载入 App 组件。这样就可以让每个页面都有导览列连结可以点选，同时可以透过 `props.children` 载入对应 URL 的子组件。
+`index.js` 用嵌套路由，把 App 组件当做每个组件都会载入的母模版，亦即进入每个对应页面载入对应组件前都会先载入 App 组件。这样就可以让每个页面都有导览列连结可以点选，同时可以透过 `props.children` 载入对应 URL 的子组件。
 
 1. Link
 `Link` 组件主要用于点击后连结转换，可以想成是 `<a>` 超连结的 React 版本。若是希望当点击时候有对应的 css style，可以使用 `activeStyle`、`activeClassName` 去做设定。范例分别使用于 `index.html`使用传统 `CSS` 载入、Inline Style、外部引入 `Inline Style` 写法。
