@@ -19,8 +19,9 @@ tags:
 从本节开始即实战，也就是webpacket  
 [react-router](https://github.com/reactjs/react-router)
 
-## React Router 环境设置
+## 跑通例子
 
+目录: 
 
 因为已经有package.json，所以不用从头做起，直接：
 
@@ -31,7 +32,7 @@ tags:
 	npm start
  
 输出： webpack: Compiled successfully.
-本地访问地址是 http://localhost:8008
+本地访问地址 http://localhost:8008
 
 报错：
 2个警告，1个错误：
@@ -40,7 +41,8 @@ tags:
 Warning: Accessing PropTypes via the main React package is deprecated, and will be removed in  React v16.0. Use the latest available v15.* prop-types package from npm instead. For info on usage, compatibility, migration and more, see https://fb.me/prop-types-docs
 
 用下面代码：
-import PropTypes from 'prop-types'
+
+	import PropTypes from 'prop-types'
 
 
 ![React Router 资料夹结构](./images/folder.png "React Router 资料夹结构")
