@@ -66,12 +66,7 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={Home} />
       <Route path="/repos/:name" component={Repos} />
-      <Route path="/about" component={About} />
-      <Route path="/user" component={User} />
-      <Route path="/contacts" component={Contacts} />
-    </Route>
-  </Router>,
-  document.getElementById('app'));
+      <Route path="/about" component={About} /> 
 ```
 1.  `Router` 不是路由。只是容器。
 
