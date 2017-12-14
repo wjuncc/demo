@@ -108,7 +108,14 @@ ReactDOM.render(
 	```
 	const history = createMemoryHistory(location)
 	```
-
+```javascript
+ReactDOM.render(
+  <Router history={hashHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={Home} />
+      <Route path="/repos/:name" component={Repos} />
+      <Route path="/about" component={About} />
+```
 4. path
 `path` 是对应 URL 的规则。例如：`/repos/torvalds` 会对应到 `/repos/:name` 的位置，并将参数传入 `Repos` 组件中。由 `this.props.params.name` 取得参数。顺带一提，若为查询参数 `/user?q=torvalds` 则由 `this.props.location.query.q` 取得参数。
 
