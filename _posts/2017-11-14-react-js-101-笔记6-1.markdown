@@ -69,42 +69,53 @@ Immutable 物件操作都会回传新值。
 
 路径：E:\n\learn\react\101\Ch06\demo 
 
-  ```javascript
-  const Map= Immutable.Map;
-  
-  // 1. Map 大小
-  const map1 = Map({ a: 1 });
-  map1.size
+```javascript
+const Map= Immutable.Map;
+
+// 1. Map 大小
+const map1 = Map({ a: 1 });
+
   // => 1
+// 1. Map 大小 
+document.writeln("<br/>map1.size =",  map1.size);
+// => 1
 
-  // 2. 新增或取代 Map 元素
-  // set(key: K, value: V)
-  const map2 = map1.set('a', 7);
-  // => Map { "a": 7 }
+// 2. 新增或取代 Map 元素
+// set(key: K, value: V)
+const map2 = map1.set('a', 7);
+// => Map { "a": 7 }
+document.writeln("<br/>map2 =",  map2);
 
-  // 3. 删除元素
-  // delete(key: K)
-  const map3 = map1.delete('a');
-  // => Map {}
+// 3. 删除元素
+// delete(key: K)
+const map3 = map1.delete('a'); 
+document.writeln("<br/> map3 =",  map3);
+// => Map {}
 
-  // 4. 清除 Map 内容
-  const map4 = map1.clear();
-  // => Map {}
+// 4. 清除 Map 内容
+const map4 = map1.clear(); 
+document.writeln("<br/>map4 =",  map4);
+// => Map {}
 
-  // 5. 更新 Map 元素
-  // update(updater: (value: Map<K, V>) => Map<K, V>)
-  // update(key: K, updater: (value: V) => V)
-  // update(key: K, notSetValue: V, updater: (value: V) => V)
-  const map5 = map1.update('a', () => (7))
-  // => Map { "a": 7 }
+// 5. 更新 Map 元素
+// update(updater: (value: Map<K, V>) => Map<K, V>)
+// update(key: K, updater: (value: V) => V)
+// update(key: K, notSetValue: V, updater: (value: V) => V)
+const map5 = map1.update('a', () => (7)) 
+document.writeln("<br/>map5 =",  map5);
+// => Map { "a": 7 }
 
-  // 6. 合并 Map 
-  const map6 = Map({ b: 3 });
-  map1.merge(map6);
-  // => Map { "a": 1, "b": 3 }
-  ```
+// 6. 合并 Map 
+document.writeln("<br/>"); 
+document.writeln("<br/>map1 =",  map1);
+const map6 = Map({ b: 3 });
+map1.merge(map6);
+document.writeln("<br/>map6 =",  map6);
+// => Map { "a": 1, "b": 3 }
+document.writeln("<br/>map1.merge(map6) =",  map1.merge(map6)); 
+```
 
-2. List：有序且可以重复值，对应Array
+### 2. List 有序且可重复值，对应Array ###
 
   ```javascript
   const List= Immutable.List;
@@ -140,7 +151,7 @@ Immutable 物件操作都会回传新值。
   // => []
   ```
 
-3. Set：无序且不能重复的列表
+### 3. Set：无序且不重复的列表 ###
 
   ```javascript
   const Set= Immutable.Set;
@@ -172,7 +183,7 @@ Immutable 物件操作都会回传新值。
   // => Set { 1 }
   ```
 
-## ImmutableJS 的特性整理
+## ImmutableJS特性
 1. Persistent Data Structure
   在 `ImmutableJS` 的世界里，只要资料一被创建，就不能修改，维持 `Immutable`。就不会发生下列的状况：
 
