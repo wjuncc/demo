@@ -4,6 +4,9 @@ title:  "react js 101 笔记4-1"
 date:   2017-11-14 04:12:08 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
 是对 [Props、State、Refs 与表单处理](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch04/props-state-introduction.md) 的笔记。

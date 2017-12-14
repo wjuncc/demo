@@ -4,6 +4,9 @@ title:  "react js 101 笔记5-1"
 date:   2017-11-14 04:12:08 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
 是对 [React Router 入门实战教学](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch05/react-router-introduction.md) 的笔记。

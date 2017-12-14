@@ -4,6 +4,9 @@ title:  "react js 101 笔记4"
 date:   2017-11-14 03:49:51 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
 # react js 101 笔记4 #

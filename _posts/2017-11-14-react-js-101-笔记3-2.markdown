@@ -4,6 +4,9 @@ title:  "react js 101 笔记3-2"
 date:   2017-11-14 04:12:08 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
 # react js 101 笔记6 #

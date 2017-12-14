@@ -4,6 +4,9 @@ title:  "react js 101 笔记4-2"
 date:   2017-11-14 04:12:08 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
 是对 [React Component 规格与生命周期（Life Cycle）](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch04/react-component-life-cycle.md) 的笔记。
