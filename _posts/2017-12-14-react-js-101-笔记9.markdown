@@ -96,11 +96,10 @@ ReactDOM.render(
 
 名词解释：
 
-	- hashHistory
-	教学范例使用的，会通过 `hash` 进行对应。好处是简单易用，不用多余设定。
+	- `hashHistory` 的好处。涵盖了`history`的功能，不用多余设定。
 
-	- browserHistory
-	适用于伺服器端渲染，但需要设定伺服器端避免处理错误，这部份我们会在后面的章节详细说明。注意的是若是使用 Webpack 开发用伺服器需加上 `--history-api-fallback`
+	- `browserHistory`
+	服务器渲染，后面章节讲。要加`--history-api-fallback`
 
 	```
 	$ webpack-dev-server --inline --content-base . --history-api-fallback
