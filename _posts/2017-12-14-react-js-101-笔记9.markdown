@@ -19,19 +19,18 @@ tags:
 从本节开始即实战，也就是webpacket  
 [react-router](https://github.com/reactjs/react-router)
 
-## 跑通例子
+## 跑通实例
 
-目录: 
-
-因为已经有package.json，所以不用从头做起，直接：
+路径：E:\n\learn\react\101\Ch05\demo   
+因为已经有package.json，所以不用从头做起，直接install，会按照package.json的配置，安装好环境：
 
 	npm install --save-dev
 
-会按照package.json的配置，安装好环境。
+然后启动看效果：
 
 	npm start
  
-输出： webpack: Compiled successfully.
+输出一长串代码，最后是： webpack: Compiled successfully.  
 本地访问地址 http://localhost:8008
 
 报错：
@@ -40,9 +39,12 @@ tags:
 2个警告 是一个内容：
 Warning: Accessing PropTypes via the main React package is deprecated, and will be removed in  React v16.0. Use the latest available v15.* prop-types package from npm instead. For info on usage, compatibility, migration and more, see https://fb.me/prop-types-docs
 
-用下面代码：
+用下面代码[参考](https://github.com/gatsbyjs/gatsby/issues/1282)：
 
 	import PropTypes from 'prop-types'
+
+全局搜索
+![4](https://i.imgur.com/5b75XJH.png)
 
 
 ![React Router 资料夹结构](./images/folder.png "React Router 资料夹结构")
