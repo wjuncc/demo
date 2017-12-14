@@ -44,7 +44,6 @@ Warning: Accessing PropTypes via the main React package is deprecated, and will 
 ![4](https://i.imgur.com/5b75XJH.png)
 ![5](https://i.imgur.com/YAxkOIt.png)
 
-![React Router 资料夹结构](./images/folder.png "React Router 资料夹结构")
 #### package-lock.json 和 package.json的区别？ ####
 * [[译] 理解 NPM 5 中的 lock 文件 - 掘金](https://juejin.im/post/5943849aac502e006b84ce07)
 * [npm install 生成的package-lock.json是什么文件？有什么用？ - 知乎](https://www.zhihu.com/question/62331583)
