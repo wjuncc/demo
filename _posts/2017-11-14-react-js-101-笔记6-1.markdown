@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "react js 101 笔记6-1"
+date:   2017-11-14 21:02:31 +0800
+categories:  
+tags: 
+---
+
+是对 [ImmutableJS 入门教学](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch06/react-immutable-introduction.md) 的笔记。
+
+
+#### 参考 ####
+
+* [reactjs101/react-immutable-introduction.md at zh-CN · carlleton/reactjs101 · GitHub](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch06/react-immutable-introduction.md)
+* [React+Redux仿Web追书神器 - jianhuicode - 博客园](http://www.cnblogs.com/lmf-techniques/p/7852525.html)
