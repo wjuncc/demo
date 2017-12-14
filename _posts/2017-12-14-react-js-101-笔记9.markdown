@@ -140,7 +140,7 @@ IndexLink 主要是了处理 `index` 用途，特别注意当 child route `activ
 3. Redirect、IndexRedirect
 这边虽然没有用到，但若读者有需要使用到连结跳转的话可以参考这两个组件，用法类似于 `Route` 和 `IndexRedirect`。
 
-### App.js ###
+### 然后是App.js ###
 路径： E:\n\learn\react\101\Ch05\demo\src\components\App\App.js
 ```javascript
 import React from 'react';
