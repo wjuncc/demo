@@ -72,8 +72,8 @@ import Contacts from './components/Contacts';
 ```
 这里，分2部分，
 前面3个import，是工具包，其中包括react-router的4个组件```{ Router, Route, hashHistory, IndexRoute }```  
-第2是，import 自定义组件。
-然后是xml节点块：`Router` 和 `render`。  
+后面的众多import，都是项目文件夹下的自定义组件。   
+index.js 接下来，是xml节点块：`Router` 和 `render`。  
 ```javascript
 ReactDOM.render(
   <Router history={hashHistory}>
