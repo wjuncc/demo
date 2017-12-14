@@ -11,8 +11,12 @@ tags:
 
 是对 [ImmutableJS 入门教学](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch06/react-immutable-introduction.md) 的笔记。
 
+* 环境：win7 x64
+* 软件：按2次Ctrl 搜索 ： sublime js exe  
 [ImmutableJS](https://facebook.github.io/immutable-js/)解决了 `React` 和 `Redux` 的一些问题。
+## 实例1 ##
 
+路径：E:\n\learn\react\101\Ch06\demo     
 js引用类型： 
 
 ```javascript
