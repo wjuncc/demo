@@ -120,7 +120,7 @@ ReactDOM.render(
       <Route path="/repos/:name" component={Repos} />
       <Route path="/about" component={About} />
 ```
-4. `path`是对应 URL。例如：`/repos/torvalds` 会对应到 `/repos/:name` 的位置，并将参数传入 `Repos` 组件中。由 `this.props.params.name` 取得参数。   
+4. `path`是对应 URL。例如：`/repos/torvalds` 会对应到 `/repos/:name`， 参数传入 `Repos` 组件。 `this.props.params.name` 取得参数。   
 注意，查询参数 `/user?q=torvalds` 由 `this.props.location.query.q` 取。
 
 5. IndexRoute
@@ -161,7 +161,7 @@ App.propTypes = {
 
 export default App;
 ```
-1. `Link` 组件主要用于点击后连结转换，可以想成是 `<a>` 超连结的 React 版本。若是希望当点击时候有对应的 css style，可以使用 `activeStyle`、`activeClassName` 去做设定。范例分别使用于 `index.html`使用传统 `CSS` 载入、Inline Style、外部引入 `Inline Style` 写法。
+1. `Link` 组件用于点击后连结转换，想成是 `<a>` 超连结的 React 版本。若是希望当点击时候有对应的 css style，可以使用 `activeStyle`、`activeClassName` 去做设定。范例分别使用于 `index.html`使用传统 `CSS` 载入、Inline Style、外部引入 `Inline Style` 写法。
 
 2. IndexLink
 IndexLink 主要是了处理 `index` 用途，特别注意当 child route `actived` 时，parent route 也会 `actived`。所以我们回首页的连结使用 `<IndexLink />` 内部的 `onlyActiveOnIndex` 属性来解决这个问题。
