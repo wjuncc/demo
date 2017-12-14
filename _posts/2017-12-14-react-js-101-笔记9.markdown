@@ -92,10 +92,8 @@ ReactDOM.render(
  改变地址栏的路径`hash`（#）改变路由。  
 访问 `http://localhost:8008` 实际是 `http://localhost:8008/#/`。    
 访问 `/about` 实际是 `http://localhost:8008/#/about` ，
-对于`about`来说，这会载入 `App` 组件再载入 `About` 组件。
-
-名词解释：
-
+对于`about`来说，这会载入 `App` 组件再载入 `About` 组件。   
+名词解释： 
 	- `hashHistory` 的好处。涵盖了`history`的功能，不用多余设定。
 
 	- `browserHistory`
