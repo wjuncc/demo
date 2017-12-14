@@ -43,12 +43,20 @@ Warning: Accessing PropTypes via the main React package is deprecated, and will 
 
 	import PropTypes from 'prop-types'
 
-搜索文件夹，在
+搜索文件夹，在package-lock.json里有prop-types'：
 ![4](https://i.imgur.com/5b75XJH.png)
 ![5](https://i.imgur.com/YAxkOIt.png)
 
 ![React Router 资料夹结构](./images/folder.png "React Router 资料夹结构")
-
+#### package-lock.json 和 package.json的区别？ ####
+* [[译] 理解 NPM 5 中的 lock 文件 - 掘金](https://juejin.im/post/5943849aac502e006b84ce07)
+* [npm install 生成的package-lock.json是什么文件？有什么用？ - 知乎](https://www.zhihu.com/question/62331583)
+* [package-lock.json和npm-shrinwkrap.json 区别 · Issue #193 · billfeller/billfeller.github.io · GitHub](https://github.com/billfeller/billfeller.github.io/issues/193)
+* [说说 npm 5 的新坑 - 开发者头条](https://toutiao.io/posts/hrihhs/preview)
+* [[译]yarn vs npm: 你需要知道的一切 - 简书](http://www.jianshu.com/p/2db9f278494a)
+* [502 Bad Gateway](https://blog.gaoqixhb.com/p/5821e6fac6bf85423aa6f07b)
+* [Document](https://tangxiangmin.github.io/2017/10/29/npm与一次版本更新事故/)
+* 
 ## 开始 React Routing 之旅
  
 以下是 `webpack.config.js` 的进入点 `src/index.js`，负责管理 `Router` 和 `render` 组件。这边我们要先详细讨论的是，为了使用 React Router 功能引入了许多 `react-router` 内部的组件。
