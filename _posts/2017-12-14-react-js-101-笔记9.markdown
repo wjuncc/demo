@@ -118,50 +118,12 @@ ReactDOM.render(
       <Route path="/repos/:name" component={Repos} />
       <Route path="/about" component={About} />
 ```
-4. `path` 对应的 URL。例如：`/repos/torvalds` 会对应到 `/repos/:name` 的位置，并将参数传入 `Repos` 组件中。由 `this.props.params.name` 取得参数。顺带一提，若为查询参数 `/user?q=torvalds` 则由 `this.props.location.query.q` 取得参数。
+4. `path` 对应的 URL。例如：`/repos/torvalds` 会对应到 `/repos/:name` 的位置，并将参数传入 `Repos` 组件中。由 `this.props.params.name` 取得参数。   
+注意，查询参数 `/user?q=torvalds` 由 `this.props.location.query.q` 取。
 
 5. IndexRoute
 由于 `/` 情况下 App 组件对应的 `this.props.children` 会是 `undefinded`，所以使用 `IndexRoute` 来解决对应问题。这样当 URL 为 `/` 时将会对应到 Home 组件。不过要注意的是 `IndexRoute` 没有 path 属性。
 
-```javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, Route, hashHistory, IndexRoute } from 'react-router';
-import App from './components/App';
-import Home from './components/Home';
-import Repos from './components/Repos';
-import About from './components/About';
-import User from './components/User';
-import Contacts from './components/Contacts';
-
-ReactDOM.render(
-  <Router history={hashHistory}>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home} />
-      <Route path="/repos/:name" component={Repos} />
-      <Route path="/about" component={About} />
-      <Route path="/user" component={User} />
-      <Route path="/contacts" component={Contacts} />
-    </Route>
-  </Router>,
-  document.getElementById('app'));
-
-  /* 另外一种写法：
-	const routes = (
-	    <Route path="/" component={App}>
-	      <IndexRoute component={Home} />
-	      <Route path="/repos/:name" component={Repos} />
-	      <Route path="/about" component={About} />
-	      <Route path="/user" component={User} />
-	      <Route path="/contacts" component={Contacts} />
-	    </Route>
-	);
-
-	ReactDOM.render(
-	  <Router routes={routes} history={hashHistory} />,
-	  document.getElementById('app'));
-  */
-```
 
 由于我们在 `index.js` 使用嵌套 routing，把 App 组件当做每个组件都会载入的母模版，亦即进入每个对应页面载入对应组件前都会先载入 App 组件。这样就可以让每个页面都有导览列连结可以点选，同时可以透过 `props.children` 载入对应 URL 的子组件。
 
