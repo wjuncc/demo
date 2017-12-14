@@ -127,7 +127,8 @@ ReactDOM.render(
 
 注意，这个实例，用了嵌套路由，即`Route`下有同名子节点`Route`。嵌套的效果是：父路由所定义的App 组件会作为每个子路由的通用组件，也就是说，不管加载哪一个子路由，都会先加载父路由所定义的App组件。  
 这个App定义的是一个列表。所以，  
-实际看到的效果是，每个页面都有相同的列表，同时可以透过 `props.children` 载入对应 URL 的子组件。
+实际看到的效果是，每个页面都有相同的列表，  
+而各自不同的组件是用`props.children`属性加载的。
 
 1. Link
 `Link` 组件主要用于点击后连结转换，可以想成是 `<a>` 超连结的 React 版本。若是希望当点击时候有对应的 css style，可以使用 `activeStyle`、`activeClassName` 去做设定。范例分别使用于 `index.html`使用传统 `CSS` 载入、Inline Style、外部引入 `Inline Style` 写法。
@@ -138,8 +139,7 @@ IndexLink 主要是了处理 `index` 用途，特别注意当 child route `activ
 3. Redirect、IndexRedirect
 这边虽然没有用到，但若读者有需要使用到连结跳转的话可以参考这两个组件，用法类似于 `Route` 和 `IndexRedirect`。
 
-以下是 `src/components/App/App.js` 完整程式码：
-
+路径： E:\n\learn\react\101\Ch05\demo\src\components\App\App.js
 ```javascript
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
