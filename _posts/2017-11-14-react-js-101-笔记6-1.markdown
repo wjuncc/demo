@@ -281,3 +281,8 @@ class FooComponent extends React.Component {
 
 * [reactjs101/react-immutable-introduction.md at zh-CN · carlleton/reactjs101 · GitHub](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch06/react-immutable-introduction.md)
 * [React+Redux仿Web追书神器 - jianhuicode - 博客园](http://www.cnblogs.com/lmf-techniques/p/7852525.html)
+* [GitHub - bailicangdu/react-pxq: 一个 react + redux 的完整项目 和 个人总结](https://github.com/bailicangdu/react-pxq)
+* [React 101: Condensed – Erik Aybar – Medium](https://medium.com/@_erikaybar/one-developers-condensed-intro-to-react-68cbf078f992)
+* [jianhui1012/bookreader: 模仿Web追书神器--react+redux](https://github.com/jianhui1012/bookreader)
+* [React 101 - React Tutorials for Advanced Beginners](https://ihatetomatoes.net/get-react-101/?utm_source=rw&utm_medium=demo&utm_campaign=collapsible)
+* [React Tutorial For Beginners 2017 - YouTube - 正在播放音频](https://www.youtube.com/watch?v=OXmpxz_-pBU&list=PLkEZWD8wbltnXlfyhS5qSMTNb26utkOkI)
