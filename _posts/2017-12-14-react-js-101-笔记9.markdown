@@ -132,14 +132,6 @@ ReactDOM.render(
 实际看到的效果是，每个页面都有相同的列表，  
 而各自不同的组件是用`props.children`属性加载的。
 
-1. `Link` 组件主要用于点击后连结转换，可以想成是 `<a>` 超连结的 React 版本。若是希望当点击时候有对应的 css style，可以使用 `activeStyle`、`activeClassName` 去做设定。范例分别使用于 `index.html`使用传统 `CSS` 载入、Inline Style、外部引入 `Inline Style` 写法。
-
-2. IndexLink
-IndexLink 主要是了处理 `index` 用途，特别注意当 child route `actived` 时，parent route 也会 `actived`。所以我们回首页的连结使用 `<IndexLink />` 内部的 `onlyActiveOnIndex` 属性来解决这个问题。
-
-3. Redirect、IndexRedirect
-这边虽然没有用到，但若读者有需要使用到连结跳转的话可以参考这两个组件，用法类似于 `Route` 和 `IndexRedirect`。
-
 ### 然后是App.js ###
 路径： E:\n\learn\react\101\Ch05\demo\src\components\App\App.js
 ```javascript
@@ -169,6 +161,14 @@ App.propTypes = {
 
 export default App;
 ```
+1. `Link` 组件主要用于点击后连结转换，可以想成是 `<a>` 超连结的 React 版本。若是希望当点击时候有对应的 css style，可以使用 `activeStyle`、`activeClassName` 去做设定。范例分别使用于 `index.html`使用传统 `CSS` 载入、Inline Style、外部引入 `Inline Style` 写法。
+
+2. IndexLink
+IndexLink 主要是了处理 `index` 用途，特别注意当 child route `actived` 时，parent route 也会 `actived`。所以我们回首页的连结使用 `<IndexLink />` 内部的 `onlyActiveOnIndex` 属性来解决这个问题。
+
+3. Redirect、IndexRedirect
+这边虽然没有用到，但若读者有需要使用到连结跳转的话可以参考这两个组件，用法类似于 `Route` 和 `IndexRedirect`。
+
 
 对应的组件内部使用 Functional Component 进行 UI 渲染：
 
