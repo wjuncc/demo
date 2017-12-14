@@ -164,10 +164,10 @@ export default App;
 1. `Link` 组件用于点击后连结转换，想成是 `<a>` 超连结的 React 版本。希望当点击时候有对应的 css style，用 `activeStyle`、`activeClassName` 去做设定。范例分别使用于 `index.html`使用传统 `CSS` 载入、Inline Style、外部引入 `Inline Style` 写法。
 
 2. IndexLink
-IndexLink 主要是处理 `index` 用途，当子路由`actived` 时，父路由也会 `actived`。所以我们回首页的连结使用 `<IndexLink />` 内部的 `onlyActiveOnIndex` 属性来解决这个问题。
+IndexLink 主要是处理 `index` 用途，当子路由`actived` 时，父路由也会 `actived`。所以回首页的连结用 `<IndexLink />` 内部的 `onlyActiveOnIndex` 属性解决这个问题。
 
 3. Redirect、IndexRedirect
-这边虽然没有用到，但若读者有需要使用到连结跳转的话可以参考这两个组件，用法类似于 `Route` 和 `IndexRedirect`。
+这边没有用到，但若连结跳转，用两个组件，类似 `Route` 和 `IndexRedirect`。
 
 
 对应的组件内部使用 Functional Component 进行 UI 渲染：
