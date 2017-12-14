@@ -11,8 +11,7 @@ tags:
 
 是对 [ImmutableJS 入门教学](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch06/react-immutable-introduction.md) 的笔记。
 
-
-![ImmutableJS](./images/immutable.png "ImmutableJS")
+[ImmutableJS](https://facebook.github.io/immutable-js/)解决了 `React` 和 `Redux` 的一些问题。
 
 js引用类型： 
 
@@ -24,7 +23,6 @@ map2.a = 2
 Immutable Data 就是一旦创建，就不能再被更改的数据。
 用 Immutable Data 代替深度复制。
 
-[ImmutableJS](https://facebook.github.io/immutable-js/)解决了 `React` 和 `Redux` 的一些问题。
 ```javascript
 import Immutable from 'immutable';
 
