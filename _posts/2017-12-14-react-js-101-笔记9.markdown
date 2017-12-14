@@ -84,8 +84,7 @@ ReactDOM.render(
 
 2.  `Route` 是路由，可以嵌套。 >>> 下例中，先载入通用组件`App`再载入各自组件。
 
-3.  `Router` 属性 `history`，  
-这里用 `hashHistory`，   
+3.  `Router` 属性 `hashHistory`（实际还有一个 `history`），   
  改变地址栏的路径`hash`（#）改变路由。  
 访问 `http://www.github.com/`，
 实际看到的是 `http://www.github.com/#/`。   
