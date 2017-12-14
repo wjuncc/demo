@@ -14,6 +14,21 @@ tags:
 * 环境：win7 x64
 * 软件：按2次Ctrl 搜索 ： sublime js exe  
 
+
+
+npm WARN react-router-example@1.0.0 No description
+npm WARN react-router-example@1.0.0 No repository field.
+
+
+
+
+	ERROR in multi main
+	Module not found: Error: Cannot resolve 'file' or 'directory' ./src/index.js in E:\n\learn\react\test__webstorm
+	 @ multi main
+	Child html-webpack-plugin for "index.html":
+
+本地访问地址 http://localhost:8008  
+
 ## 跑通实例
 
 路径：E:\n\learn\react\101\Ch07\demo   
