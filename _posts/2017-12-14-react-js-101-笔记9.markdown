@@ -105,8 +105,7 @@ ReactDOM.render(
 	$ webpack-dev-server --inline --content-base . --history-api-fallback
 	```
 
-	- createMemoryHistory
-	主要用于伺服器渲染，使用上会建立一个存在记忆体的 `history` 物件，不会修改浏览器的网址位置。
+	- `createMemoryHistory` 服务器渲染，会创建类似内存的 `history`，不改浏览器地址栏。
 
 	```
 	const history = createMemoryHistory(location)
