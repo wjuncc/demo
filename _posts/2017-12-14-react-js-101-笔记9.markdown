@@ -77,9 +77,14 @@ ReactDOM.render(
 
 2.  `Route` 定义路由，和嵌套。 下例：页面先载入 `App` 组件再载入对应 URL 的组件。
 
-3. history
-`Router` 属性 `history`，  
-这里用 `hashHistory`，使用 routing 将由 `hash`（#）变化决定。例如：当使用者拜访 `http://www.github.com/`，实际看到的会是 `http://www.github.com/#/`。下列范例若是拜访了 `/about` 则会看到 `http://localhost:8008/#/about` 并载入 `App` 组件再载入 `About` 组件。
+3.  `Router` 属性 `history`，  
+这里用 `hashHistory`，   
+ 改变地址栏的路径`hash`（#）改变路由。  
+访问 `http://www.github.com/`，
+实际看到的是 `http://www.github.com/#/`。   
+访问 `/about` 
+实际看到的是 `http://localhost:8008/#/about` ，
+这会载入 `App` 组件再载入 `About` 组件。
 
 	- hashHistory
 	教学范例使用的，会通过 `hash` 进行对应。好处是简单易用，不用多余设定。
