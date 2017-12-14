@@ -32,8 +32,8 @@ tags:
 	npm start
  
 输出一长串代码，最后是： webpack: Compiled successfully.  
-本地访问地址 http://localhost:8008
-
+本地访问地址 http://localhost:8008  
+点选连结时会切换组件并改变 `actived` 状态！  
 报错：
 2个警告，1个错误：
 ![ex5](https://i.imgur.com/jjQa5dL.png)
@@ -190,8 +190,6 @@ Repos.propTypes = {
 
 export default Repos;
 ```
-
-详细的程式码读者可以参考范例资料夹，若读者跟着范例完成的话，可以在终端机上执行 `npm start`，并于浏览器 `http://localhost:8008`看到以下成果，当你点选连结时会切换对应组件并改变 `actived` 状态！
 
 ![范例成果](./images/example.png "范例成果")
 
