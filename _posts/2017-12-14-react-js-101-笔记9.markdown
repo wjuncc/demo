@@ -57,9 +57,21 @@ Warning: Accessing PropTypes via the main React package is deprecated, and will 
 * [Document](https://tangxiangmin.github.io/2017/10/29/npm与一次版本更新事故/)
 * 
 ## 分析路由，看懂实例代码
- 
-`src/index.js`，管理 `Router` 和 `render` 组件。  
-引入许多 `react-router` 内部的组件。
+代码位置：E:\n\learn\react\101\Ch05\demo\src\index.js
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import App from './components/App';
+import Home from './components/Home';
+import Repos from './components/Repos';
+import About from './components/About';
+import User from './components/User';
+import Contacts from './components/Contacts';
+```
+这里，分2部分，第1是，import 
+第2是，import 自定义组件。
+然后是xml节点块：`Router` 和 `render`。  
 ```javascript
 ReactDOM.render(
   <Router history={hashHistory}>
