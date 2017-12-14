@@ -9,8 +9,9 @@ tags:
 是对 [React Router 入门实战教学](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch05/react-router-introduction.md) 的笔记。
 
 * 环境：win7 x64
-* 软件：按2次Ctrl 搜索 ： sublime js exe
-下一节：`React Router`
+* 软件：按2次Ctrl 搜索 ： sublime js exe  
+下一节：
+`ImmutableJS` 在用 `React` 和 `Flux/Redux` 可以有更好的效能和避免一些副作用。
 
 # React Router 入门实战教学
 
@@ -195,7 +196,7 @@ export default Repos;
 ![范例成果](./images/example.png "范例成果")
 
 ## 总结
-到这边我们又一起完成了一个重要的一关，学习 `routing` 对于使用 `React` 开发复杂应用程式是非常重要的一步，接下来我们将一起学习一个相对独立的单元 `ImmutableJS`，但学习 `ImmutableJS` 可以让我们在使用 `React` 和 `Flux/Redux` 可以有更好的效能和避免一些副作用。
+略
 
 ## 延伸阅读
 1. [Leveling Up With React: React Router](https://css-tricks.com/learning-react-router/)
