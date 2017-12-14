@@ -94,6 +94,8 @@ ReactDOM.render(
 访问 `/about` 实际是 `http://localhost:8008/#/about` ，
 对于`about`来说，这会载入 `App` 组件再载入 `About` 组件。
 
+名词解释：
+
 	- hashHistory
 	教学范例使用的，会通过 `hash` 进行对应。好处是简单易用，不用多余设定。
 
