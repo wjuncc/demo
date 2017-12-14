@@ -39,6 +39,30 @@ map2.get('a'); // 2
 ```
 上面的例子，虽然操作了 `map1` 的值，但原本的 `map1` 未受影响，（例如下面的资料 `b` 即为 `map1` 所 `map2` 共享），有更好的效能表现。 
 
+elifecycle
+
+npm ERR! code ELIFECYCLE
+
+
+ 	[257] ./~/react-dom/lib/ReactDOMInvalidARIAHook.js 3.02 kB {0} [built]
+
+	ERROR in ./src/index.js
+	Module not found: Error: Cannot resolve module 'immutable' in E:\n\learn\react\101\Ch06\demo\src
+	 @ ./src/index.js 11:17-37
+
+全局安装，：
+
+	npm install immutable
+
+会自动修改本地的：
+
+  "dependencies": {
+    "immutable": "^3.8.2",
+
+
+本地访问地址 http://localhost:8008  
+
+![6](https://i.imgur.com/fLEDH3K.png)
 ## ImmutableJS 特性介绍
 ImmutableJS 提供了 7 种不可修改的资料类型：`List`、`Map`、`Stack`、`OrderedMap`、`Set`、`OrderedSet`、`Record`。若是对 Immutable 物件操作都会回传一个新值。其中比较常用的有 `List`、`Map` 和 `Set`：
 
