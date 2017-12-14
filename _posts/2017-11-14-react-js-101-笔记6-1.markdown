@@ -65,7 +65,9 @@ elifecycle
 Immutable 物件操作都会回传新值。  
 常用 `List`、`Map` 和 `Set`：
 
-1. Map：类似键值对，ES6 有原生 `Map`
+### 1. Map vs ES6原生Map ###
+
+路径：E:\n\learn\react\101\Ch06\demo 
 
   ```javascript
   const Map= Immutable.Map;
@@ -278,7 +280,7 @@ class FooComponent extends React.Component {
 ```
 
 ## 总结
-虽然 `ImmutableJS` 的引入可以带来许多好处和效能的提升但由于引入整体档案较大且较具侵入性，在引入之前可以自行评估看看是否合适于目前的专案。接下来我们将在后面的章节讲解如何将 `ImmutableJS` 和 `Redux` 整合应用到实务上的范例。 
+`ImmutableJS`  较具侵入性。后面的章节讲解如何将 `ImmutableJS` 和 `Redux` 整合应用到实务上的范例。 
 
 ## 延伸阅读
 1. [官方网站](https://facebook.github.io/immutable-js/)
