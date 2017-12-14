@@ -12,9 +12,8 @@ tags:
 * 软件：按2次Ctrl 搜索 ： sublime js exe  
 下一节：
 `ImmutableJS`在出现性能问题的时候用。  
-![React Router 资料夹结构](./images/react-router.jpg "React Router 入门实战教学")
 
-从本节开始即实战，也就是webpacket  
+本节开始是实战，也就是webpacket  
 [react-router](https://github.com/reactjs/react-router)
 
 ## 跑通实例
