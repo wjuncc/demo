@@ -1,0 +1,314 @@
+---
+layout: post
+title:  "react js 101 笔记3-2"
+date:   2017-11-14 04:12:08 +0800
+categories:  
+tags: 
+    - react
+    - 笔记
+
+---
+
+# react js 101 笔记6 #
+
+是对[JSX 简明入门教学指南](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch03/react-jsx-introduction.md)的笔记。
+
+
+JSX 并非一种全新的语言，而是语法糖（[Syntatic Sugar](https://en.wikipedia.org/wiki/Syntactic_sugar)）。
+
+和 [Angular](https://angularjs.org/) 不同
+
+## 一、使用 JSX 的好处
+
+### 1. 提供更加语意化且易懂的标签
+JSX 类似 XML 。  
+表单HTML：
+
+```html
+<form class="messageBox">
+  <textarea></textarea>
+  <button type="submit"></button>
+</form>
+```
+
+使用 JSX：
+
+```js
+<MessageBox />
+```
+
+
+![Facebook 上面按赞功能](./images/fb_like.jpg)
+
+以 Facebook 上面按赞功能来说，若是命令式 `Imperative` 写法大约会是长这样：
+
+	```js
+	
+	if(userLikes()) {
+	  if(!hasBlueLike()) {
+	    removeGrayLike();
+	    addBlueLike();
+	  }
+	} else {
+	  if(hasBlueLike()) {
+	    removeBlueLike();
+	    addGrayLike();
+	  }
+	}
+	
+	```
+
+若是声明式 `Declarative` 则是会长这样：
+
+	```js
+	if(this.state.liked) {
+	  return (<BlueLike />);
+	} else {
+	  return (<GrayLike />);
+	}
+	```
+
+看完上述说明是不是感觉 `React` 结合 `JSX` 的写法更易读易懂？事实上，当 Component 组成越来越复杂时，若使用 JSX 将可以让整个结构更加直观，可读性较高。
+
+### 2. 更加简洁
+用 JSX ：
+
+```html
+<a href="https://facebook.github.io/react/">Hello!</a>
+```
+
+不用 JSX：
+
+```js
+// React.createElement(组件/HTML标签, 组件属性，以物件表示, 子组件)
+React.createElement('a', {href: 'https://facebook.github.io/react/'}, 'Hello!')
+```
+
+### 3. 结合原生 JavaScript 语法
+JSX 是语法糖  
+下面例子就是运用 `map` 方法，轻易把 `result` 值迭代出来，产生无序清单（ul）的内容，不用再使用蹩脚的模版语言（这边有个小地方要留意的是每个 `<li>` 元素记得加上独特的 key 这边用 map function 迭代出的 index，不然会出现问题）：
+
+```js
+// const 为常数
+const lists = ['JavaScript', 'Java', 'Node', 'Python'];
+
+class HelloMessage extends React.Component {
+  render() {
+    return (
+    <ul>
+      {lists.map((result, index) => {
+        return (<li key={index}>{result}</li>);
+      })}
+    </ul>);
+  }
+}
+```
+
+## 二、JSX 用法摘要
+### 1. 环境设定与使用方式
+初步了解为何要使用 JSX 后，我们来聊聊 JSX 的用法。一般而言 JSX 通常有两种使用方式：
+
+1. 使用 [browserify](http://browserify.org/) 或 [webpack](https://webpack.github.io/) 等 [CommonJS](https://en.wikipedia.org/wiki/CommonJS) bundler 并整合 [babel](https://babeljs.io/) 预处理
+
+2. 于浏览器端做解析
+
+先用第二种方式，先让大家专注熟悉 JSX 语法使用，等到后面章节再教大家使用 bundler 的方式去做解析（可以试着把下面的原始码贴到 [JSbin](http://jsbin.com/) 的 HTML 看结果）：
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <!-- 请先于 index.html 中引入 react.js, react-dom.js 和 babel-core 的 browser.min.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.0.1/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      // 程式码写在这边！
+      ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
+```
+
+载入 JSX 方式有：
+
+- 内嵌
+
+	```html
+	<script type="text/babel">
+	  ReactDOM.render(
+	    <h1>Hello, world!</h1>,
+	    document.getElementById('example')
+	  );
+	</script>
+	```
+
+- 外部引入
+
+`<script type="text/jsx" src="main.jsx"></script>` 
+
+
+### 2. 标签用法
+Component 命名首字大写，HTML Tags 小写：
+
+	```js
+	class HelloMessage extends React.Component {
+	  render() {
+	    return (
+	      <div>
+	        <p>Hello React!</p>
+	        <MessageList />
+	      </div>
+	    );
+	  }
+	}
+	```
+
+### 3. 转换成 JavaScript 
+
+JSX 最终会转换成浏览器可以读取的 JavaScript，以下为其规则：
+
+```js
+React.createElement(
+  string/ReactClass, // 表示 HTML 元素或是 React Component
+  [object props], // 属性值，用物件表示
+  [children] // 接下来参数皆为元素子元素
+)
+```
+
+解析前（特别注意在 JSX 中使用 JavaScript 表达式时使用 `{}` 括起，如下方范例的 `text`，里面对应的是变数。若需希望放置一般文字，请加上 `''`）：
+
+```js
+var text = 'Hello React';
+<h1>{text}</h1>
+<h1>{'text'}</h1>
+```
+
+解析完后：
+
+```js
+var text = 'Hello React';
+React.createElement("h1", null, "Hello React!");
+```
+
+另外要特别要注意的是由于 JSX 最终会转成 JavaScript 且每一个 JSX 节点都对应到一个 JavaScript 函数，所以在 Component 的 `render` 方法中只能回传一个根节点（Root Nodes）。例如：若有多个 `<div>` 要 `render` 请在外面包一个 Component 或 `<div>`、`<span>` 元素。
+
+### 4. 注解
+注解也一样使用 `//` 和 `/**/` 当做注解方式：
+
+```js
+// 单行注解
+
+/*
+  多行注解
+*/
+
+var content = (
+  <List>
+      {/* 若是在子组件注解要加 {}  */}
+      <Item
+        /* 多行
+           注解
+           喔 */
+        name={window.isLoggedIn ? window.name : ''} // 单行注解
+      />
+  </List>
+);
+```
+
+### 5. 属性
+标签属性来改样式，注意 `class` 和 `for` 由于为 JavaScript 保留关键字用法，因此在 JSX 中使用 `className` 和 `htmlFor` 替代。
+
+```js
+class HelloMessage extends React.Component {
+  render() {
+    return (
+      <div className="message">
+        <p>Hello React!</p>
+      </div>
+    );
+  }
+}
+```
+
+#### Boolean 属性
+在 JSX 中预设只有属性名称但没设值为 `true`，例如以下第一个 input 标签 `disabled ` 虽然没设值，但结果和下面的 input 为相同：
+
+```html
+<input type="button" disabled />;
+<input type="button" disabled={true} />;
+```
+
+反之，若是没有属性，则预设预设为 `false`：
+
+```html
+<input type="button" />;
+<input type="button" disabled={false} />;
+```
+
+### 6. 扩展属性
+在 ES6 中使用 `...` 是迭代物件的意思，把所有物件对应的值迭代出来设定属性，注意后面设定的属性会盖掉前面相同属性：
+
+```js
+var props = {
+  style: "width:20px",
+  className: "main",
+  value: "yo",  
+}
+
+<HelloMessage  {...props} value="yo" />
+
+// 等于以下
+React.createElement("h1", React._spread({}, props, {value: "yo"}), "Hello React!");
+
+```
+
+### 7. 自定义属性
+用前缀 `data-`：
+
+```js
+<HelloMessage data-attr="xd" />
+```
+
+### 8. 显示 HTML
+为了避免安全问题，过滤掉 HTML，若需要显示的话可以使用：
+
+```html
+<div>{{_html: '<h1>Hello World!!</h1>'}}</div>
+```
+
+### 9. 样式使用
+第一个 `{}` 是 JSX 语法，第二个为 JavaScript 物件。与一般属性值用 `-` 分隔不同，为驼峰式命名写法：
+
+```js
+<HelloMessage style={{ color: '#FFFFFF', fontSize: '30px'}} />
+```
+
+### 10. 事件处理
+inline 事件的绑定来监听并处理事件（注意驼峰式），事件[参考官网](https://facebook.github.io/react/docs/events.html#supported-events)
+
+```js
+<HelloMessage onClick={this.onBtn} />
+```
+
+## 总结
+略
+
+## 延伸阅读
+1. [Imperative programming or declarative programming](http://www.puritys.me/docs-blog/article-320-Imperative-programming-or-declarative-programming.html)
+2. [JSX in Depth](https://facebook.github.io/react/docs/jsx-in-depth.html)
+3. [从零开始学 React（ReactJS 101）](https://www.gitbook.com/book/kdchang/react101/details)
+
+
+
+#### 参考 ####
+
+* [reactjs101/react-jsx-introduction.md at zh-CN · carlleton/reactjs101](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch03/react-jsx-introduction.md)

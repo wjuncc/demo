@@ -1,0 +1,309 @@
+---
+layout: post
+title:  "react js 101 笔记4-1"
+date:   2017-11-14 04:12:08 +0800
+categories:  
+tags: 
+    - react
+    - 笔记
+
+---
+
+是对 [Props、State、Refs 与表单处理](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch04/props-state-introduction.md) 的笔记。
+
+* 环境：win7 x64
+* 软件：按2次Ctrl 搜索 ： sublime js exe
+
+本课是用 [官网范例](https://facebook.github.io/react/index.html)一共4个例子。分别是：
+
+*  Props - 父组件怎样传递值给子组件
+*  State - 在状态值变化的时候，如何刷新UI
+*  事件 - 一个最简化的todolist
+*  表单处理。 
+
+4个例子都很简单，只是蜻蜓点水，点到为止。
+代码敲一遍，OR [jsbin](http://jsbin.com/) ！  
+
+## 例1 Props
+
+文件位置：E:\n\learn\react\101\Ch04\demo  
+访问地址：http://127.0.0.1/learn/react/101/Ch04/demo/
+为了方便没有用webpacket, 用的是。   
+index.html要加上browser.min.js引用, 
+```html
+<script src="js/browser.min.js"></script>
+```
+app.js引用的地方要加上 type="text/babel" 属性。
+```html
+<script src="js/app.js" type="text/babel"></script>
+```
+HTML：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>A Component Using External Plugins</title>
+</head>
+<body>
+<!-- 這邊方便使用 CDN 方式引入 react 、 react-dom 進行講解，實務上和實戰教學部分我們會使用 webpack -->
+<script src="js/react-15.1.0.js"></script>
+<script src="js/react-dom-15.1.0.js"></script>
+<script src="js/browser.min.js"></script>
+<script src="js/app.js" type="text/babel"></script>
+
+<div id="app"></div>
+</body>
+</html>
+```
+
+app.js，ES6 写法：
+
+```javascript 
+class HelloMessage extends React.Component {
+	constructor(props) {
+		// 對於 OOP 物件導向程式設計熟悉的讀者應該對於 constructor 建構子的使用不陌生，事實上它是 ES6 的語法糖，骨子裡還是 portotype based 物件導向程式語言。透過 extends 可以繼承 React.Component 父類別。super 方法可以呼叫繼承父類別的建構子
+		super(props);
+		this.state = {}
+	}
+	render() {
+		return (
+			<div>Hello {this.props.name}</div>
+		)
+	}
+}
+
+// PropTypes 驗證，若傳入的 props type 不是 string 將會顯示錯誤
+HelloMessage.propTypes = {
+  name: React.PropTypes.string,
+}
+
+// Prop 預設值，若對應 props 沒傳入值將會使用 default 值 Zuck
+HelloMessage.defaultProps = {
+ name: 'Zuck', 
+}
+
+ReactDOM.render(<HelloMessage name="Mark123" />, document.getElementById('app'));
+```
+ 
+注意，直接访问
+file:///E:/learn/react/101/Ch04/demo/index.html会报错：
+![1](https://i.imgur.com/Ur3TMHC.png)
+需要apache等各种本地http服务器，访问：
+http://127.0.0.1/learn/react/101/Ch04/demo/
+![1](https://i.imgur.com/zWuykPV.png) 
+
+[React ES6 父类super()](http://cheng.logdown.com/posts/2016/03/26/683329) 。
+
+使用 Functional Component 写法：  
+文件目录：E:\n\learn\react\101\Ch04\demo2 
+```javascript
+// Functional Component 可以视为 f(d) => UI，根据传进去的 props 绘出对应的 UI。注意这边 props 是传入函式的参数，因此取用 props 不用加 this
+const HelloMessage = (props) => (
+	<div>Hello {props.name}</div>
+);
+
+// PropTypes 验证，若传入的 props type 不是 string 将会显示错误
+HelloMessage.propTypes = {
+  name: React.PropTypes.string,
+}
+
+// Prop 预设值，若对应 props 没传入值将会使用 default 值 Zuck。用法等于 ES5 的 getDefaultProps
+HelloMessage.defaultProps = {
+ name: 'Zuck',
+}
+
+ReactDOM.render(<HelloMessage name="Mark456" />, document.getElementById('app'));
+```
+![3](https://i.imgur.com/g5Kgs0L.png)
+在 jsbin 上的范例：
+
+<a class="jsbin-embed" href="http://jsbin.com/wadice/embed?html,js,console,output">A Component Using External Plugins on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.39.12"></script>
+
+## 例2 State状态值
+
+路径：E:\n\learn\react\101\Ch04\demo3  
+访问地址：http://127.0.0.1/learn/react/101/Ch04/demo3/
+官网： A Stateful Component 范例。   
+用 `this.state` 存取 state。  
+一旦`setState()` 方法更新 state就调用重绘方法 `render()` ，  
+每 1000 毫秒（等于1秒）+1。
+只改app.js： 
+```javascript
+class Timer extends React.Component {
+	constructor(props) {
+		super(props);
+		// 与 ES5 React.createClass({}) 不同的是 component 内自定义的方法需要自行绑定 this context，或是使用 arrow function
+        this.tick = this.tick.bind(this);
+		// 初始 state，等于 ES5 中的 getInitialState
+		this.state = {
+			secondsElapsed: 0,
+		}
+	}
+	// 累加器方法，每一秒被呼叫后就会使用 setState() 更新内部 state，让 Component 重新 render
+	tick() {
+	    this.setState({secondsElapsed: this.state.secondsElapsed + 1});
+	}
+	// componentDidMount 为 component 生命周期中阶段 component 已插入节点的阶段，通常一些非同步操作都会放置在这个阶段。这便是每1秒钟会去呼叫 tick 方法
+	componentDidMount() {
+	    this.interval = setInterval(this.tick, 1000);
+	}
+	// componentWillUnmount 为 component 生命周期中 component 即将移出插入的节点的阶段。这边移除了 setInterval 效力
+	componentWillUnmount() {
+		clearInterval(this.interval);
+	}
+	// render 为 class Component 中唯一需要定义的方法，其回传 component 欲显示的内容
+	render() {
+	    return (
+	      <div>Seconds Elapsed: {this.state.secondsElapsed}</div>
+	    );
+	}
+}
+
+ReactDOM.render(<Timer />, document.getElementById('app'));
+```
+![3](https://i.imgur.com/ZlwtMo8.png)
+
+关于 Javascript this 用法可以参考 [Javascript：this用法整理](https://software.intel.com/zh-cn/blogs/2013/10/09/javascript-this)。
+
+## 例3 事件
+
+路径：E:\n\learn\react\101\Ch04\demo4   
+访问地址：http://127.0.0.1/learn/react/101/Ch04/demo4/
+React 官网 An Application 例子。  
+只改app.js：
+
+```javascript
+// TodoApp 组件中包含了显示 Todo 的 TodoList 组件，Todo 的内容透过 props 传入 TodoList 中。由于 TodoList 仅单纯 Render UI 不涉及内部 state 操作是 stateless component，所以使用 Functional Component 写法。需要特别注意的是这边我们用 map function 来迭代 Todos，需要留意的是每个迭代的元素必须要有 unique key 不然会发生错误（可以用自定义 id，或是使用 map function 的第二个参数 index）
+const TodoList = (props) => (
+	<ul>
+		{
+			props.items.map((item) => (
+				<li key={item.id}>{item.text}</li>
+			))
+		}
+	</ul>
+)
+
+// 整个 App 的主要组件，这边比较重要的是事件处理的部份，内部有
+class TodoApp extends React.Component {
+	constructor(props) {
+		super(props);
+		this.onChange = this.onChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
+		this.state = {
+			items: [],
+			text: '',
+		}
+	}
+	onChange(e) {
+    	this.setState({text: e.target.value});
+	}
+	handleSubmit(e) {
+    	e.preventDefault();
+    	const nextItems = this.state.items.concat([{text: this.state.text, id: Date.now()}]);
+    	const nextText = '';
+    	this.setState({items: nextItems, text: nextText});
+	}
+	render() {
+	    return (
+	      <div>
+	        <h3>TODO</h3>
+	        <TodoList items={this.state.items} />
+	        <form onSubmit={this.handleSubmit}>
+	          <input onChange={this.onChange} value={this.state.text} />
+	          <button>{'Add #' + (this.state.items.length + 1)}</button>
+	        </form>
+	      </div>
+	    );
+	}
+}
+
+ReactDOM.render(<TodoApp />, document.getElementById('app'));
+```
+![4](https://i.imgur.com/F0IeEnV.png)
+常用有`onChange` `onSubmit` `onClick`等。[官网 Event System](https://facebook.github.io/react/docs/events.html)。
+
+## 例4 Refs 与表单
+路径：E:\n\learn\react\101\Ch04\demo5   
+访问地址：http://127.0.0.1/learn/react/101/Ch04/demo5/
+官网范例 A Component Using External Plugins。
+![4](https://i.imgur.com/nQyjtmI.png)
+本例用 `remarkable` 结合 `ref` 属性取出 DOM Value 值（另外比较常用的作法是使用 `onChange` 事件处理方式处理表单内容）。
+除了引入 `react` 、 `react-dom` 还要用 `CDN` 方式引入 `remarkable` 这个 `Markdown` 语法 parser 套件，记得如果没有使用 Webpack 或是 browserify + babelify 等工具需要引入 `babel-standalone` 浏览器解析 ES6 语法并于引入 script 加上 type="text/babel"
+HTML：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>A Component Using External Plugins</title>
+</head>
+<body>
+<script src="https://fb.me/react-15.1.0.js"></script>
+<script src="https://fb.me/react-dom-15.1.0.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+<script src="https://cdn.jsdelivr.net/remarkable/1.6.2/remarkable.min.js"></script>
+  <div id="app"></div>
+	<script type="text/babel" src="./app.js"></script>
+</body>
+</html>
+```
+
+app.js：
+
+```javascript
+class MarkdownEditor extends React.Component {
+	constructor(props) {
+		super(props);
+		this.handleChange = this.handleChange.bind(this);
+		this.rawMarkup = this.rawMarkup.bind(this);
+		this.state = {
+			value: 'Type some *markdown* here!',
+		}
+	}
+	handleChange() {
+	    this.setState({value: this.refs.textarea.value});
+	}
+	// 将使用者输入的 Markdown 语法 parse 成 HTML 放入 DOM 中，React 通常使用 virtual DOM 作为和 DOM 沟通的中介，不建议直接由操作 DOM。故使用时的属性为 dangerouslySetInnerHTML
+	rawMarkup() {
+	    const md = new Remarkable();
+	    return { __html: md.render(this.state.value) };
+	}
+	render() {
+	    return (
+	      <div className="MarkdownEditor">
+	        <h3>Input</h3>
+	        <textarea
+	          onChange={this.handleChange}
+	          ref="textarea"
+	          defaultValue={this.state.value} />
+	        <h3>Output</h3>
+	        <div
+	          className="content"
+	          dangerouslySetInnerHTML={this.rawMarkup()}
+	        />
+	      </div>
+	    );
+	}
+} 
+ReactDOM.render(<MarkdownEditor />, document.getElementById('app'));
+```
+
+
+## 延伸阅读
+1. [React 官方网站](https://facebook.github.io/react/index.html)
+2. [Top-Level API](https://facebook.github.io/react/docs/top-level-api.html)
+3. [Javascript：this用法整理](https://software.intel.com/zh-cn/blogs/2013/10/09/javascript-this)
+
+## :door: 任意门
+| [回首页](../../../tree/zh-CN/) | [上一章：JSX 简明入门教学指南](../Ch03/react-jsx-introduction.md) | [下一章：React Component 规格与生命周期（Life Cycle）](../Ch04/react-component-life-cycle.md) |
+
+
+#### 参考 ####
+
+* [reactjs101/react-jsx-introduction.md at zh-CN · carlleton/reactjs101](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch03/react-jsx-introduction.md)

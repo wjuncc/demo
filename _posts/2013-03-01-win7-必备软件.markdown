@@ -6,26 +6,42 @@ categories: jekyll update
 cats: win7
 ---
 
-# win7 必备软件 #
+# win7+win8 必备软件 #
+
+* MarkdownPad： Markdown编辑。
+* Clover - 让资源管理器变身Chrome
+* shareX - 截图+录屏+上传一次搞定
+* Listary - 文件搜索
+* Everything 1.2.371  -  文件搜索
+* 文件内容搜索  FileLocator Pro
+* Beyond Compare：文件比较
+* VMware Workstation：虚拟机
+* diffuse：文件比较
+* WinMerge：文件比较
+* 7-Zip 压缩解压
+* 文件内容搜索与替换 Replace_Studio_7.10.exe
+* PuTTY：开源SSH客户端
+* 启动程序	Claunch 
+
+### 没试过 ###
 
 * LastPass：全平台密码管理自动同步
 * DisplayFusion：多显示器工具
-* PuTTY：开源SSH客户端
-* VMware Workstation：虚拟机
-* Evernote ：全平台笔记软件
-* MarkdownPad： Markdown编辑。
 * Paint.NET： 免费图片处理，
-* Beyond Compare：文件比较
-* WinMerge：文件比较
-* 7-Zip 压缩解压
-* 文件搜索  Everything 1.2.371  
-> 限制： 
-> 1. 磁盘分区转换为NTFS格式；
-> 2. 每次系统启动后，需用10-30秒时间；
+* Evernote ：全平台笔记软件
 
-* 文件内容搜索  FileLocator Pro
-* 启动程序	Claunch 
+### 试过但是不好用 ###
+
+* 文件管理——Total Commander  8.0β
 * 记事本 Emeditor 11 有正则。    
+
+
+
+### 备忘 ###
+* 文件搜索  Everything 1.2.371  
+> 1. 磁盘分区NTFS格式；
+> 2. 每次启动10-30秒；
+
 * Mybase 5.5资料管理工具
 【版本】Mybase 6  
 >
@@ -39,7 +55,6 @@ cats: win7
 * 抓图工具 Snagit 10.0   
 > Snagit附带的图片编辑工具Snagit Editor很好用，用它来调整一下图片比例、对图片作一下修剪、写点文字什么的非常方便。用它转存的JPG、GIF等常见格式基本不用再优化了。
 
-* Clover - 让资源管理器变身Chrome
 * 文件管理——Total Commander  8.0β
 > 1. 文件名过滤文件。  
 2. 浏览器的多标签方式浏览，    

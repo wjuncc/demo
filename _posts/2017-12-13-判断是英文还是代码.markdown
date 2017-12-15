@@ -1,0 +1,14 @@
+---
+layout: post
+title:  "判断是英文还是代码"
+date:   2017-12-13 22:19:59 +0800
+categories:  
+tags: 
+---
+
+# 判断是英文还是代码 #
+
+
+#### 参考 ####
+
+* [如何判断一个字符串是java代码还是英文单词？ - 程序园](http://www.voidcn.com/article/p-ymwsqgxn-z.html)

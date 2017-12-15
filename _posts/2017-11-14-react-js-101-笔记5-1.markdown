@@ -1,0 +1,209 @@
+---
+layout: post
+title:  "react js 101 笔记5-1"
+date:   2017-11-14 04:12:08 +0800
+categories:  
+tags: 
+    - react
+    - 笔记
+
+---
+
+是对 [React Router 入门实战教学](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch05/react-router-introduction.md) 的笔记。
+
+* 环境：win7 x64
+* 软件：按2次Ctrl 搜索 ： sublime js exe  
+下一节：
+`ImmutableJS`在出现性能问题的时候用。  
+
+本节开始是实战，也就是webpacket  
+[react-router](https://github.com/reactjs/react-router)
+
+## 跑通实例
+
+路径：E:\n\learn\react\101\Ch05\demo   
+因为已经有package.json，所以不用从头做起，直接install，会按照package.json的配置，安装好环境：
+
+	npm install --save-dev
+
+然后启动看效果：
+
+	npm start
+ 
+输出一长串代码，最后是： webpack: Compiled successfully.  
+本地访问地址 http://localhost:8008  
+点选连结时会切换组件并改变 `actived` 状态！  
+报错：
+2个警告，1个错误：
+![ex5](https://i.imgur.com/jjQa5dL.png)
+2个警告 是一个内容：
+Warning: Accessing PropTypes via the main React package is deprecated, and will be removed in  React v16.0. Use the latest available v15.* prop-types package from npm instead. For info on usage, compatibility, migration and more, see https://fb.me/prop-types-docs
+
+用下面代码[参考](https://github.com/gatsbyjs/gatsby/issues/1282)：
+
+	import PropTypes from 'prop-types'
+
+搜索文件夹，在package-lock.json里有prop-types'：
+![4](https://i.imgur.com/5b75XJH.png)
+![5](https://i.imgur.com/YAxkOIt.png)
+
+#### package-lock.json 和 package.json的区别？ ####
+* [[译] 理解 NPM 5 中的 lock 文件 - 掘金](https://juejin.im/post/5943849aac502e006b84ce07)
+* [npm install 生成的package-lock.json是什么文件？有什么用？ - 知乎](https://www.zhihu.com/question/62331583)
+* [package-lock.json和npm-shrinwkrap.json 区别 · Issue #193 · billfeller/billfeller.github.io · GitHub](https://github.com/billfeller/billfeller.github.io/issues/193)
+* [说说 npm 5 的新坑 - 开发者头条](https://toutiao.io/posts/hrihhs/preview)
+* [[译]yarn vs npm: 你需要知道的一切 - 简书](http://www.jianshu.com/p/2db9f278494a)
+* [Document](https://tangxiangmin.github.io/2017/10/29/npm与一次版本更新事故/)
+
+## 看懂实例代码
+### 首先是index.js ###
+代码位置：E:\n\learn\react\101\Ch05\demo\src\index.js  
+
+```javascript
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import App from './components/App';
+import Home from './components/Home';
+import Repos from './components/Repos';
+import About from './components/About';
+import User from './components/User';
+import Contacts from './components/Contacts';
+```
+这里的知识点：  
+一眼望去，满眼的import让我想起```望眼欲穿```，虽然都是import，但可以分成2部分，  
+前面3个import，是工具包，其中包括```react-router```的4个组件```{ Router, Route, hashHistory, IndexRoute }```  
+后面的众多import，都是项目文件夹下的自定义组件。   
+index.js 接下来，是xml节点块：`Router` 和 `render`。  
+```javascript
+ReactDOM.render(
+  <Router history={hashHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={Home} />
+      <Route path="/repos/:name" component={Repos} />
+      <Route path="/about" component={About} /> 
+```
+这里的知识点：
+1.  `Router` 不是路由。只是容器。
+
+2.  `Route` 是路由，可以嵌套。 >>> 下例中，先载入通用组件`App`再载入各自组件。
+
+3.  `Router` 属性 `hashHistory`（实际还有一个 `history`），   
+ 改变地址栏的路径`hash`（#）改变路由。  
+访问 `http://localhost:8008` 实际是 `http://localhost:8008/#/`。    
+访问 `/about` 实际是 `http://localhost:8008/#/about` ，
+对于`about`来说，这会载入 `App` 组件再载入 `About` 组件。   
+实例中没有用到的知识点： 
+	- `hashHistory` 的好处。涵盖了`history`的功能，不用多余设定。
+
+	- `browserHistory`
+	服务器渲染，后面章节讲。要加`--history-api-fallback`
+
+	```
+	$ webpack-dev-server --inline --content-base . --history-api-fallback
+	```
+
+	- `createMemoryHistory` 服务器渲染，会创建类似内存的 `history`，不改浏览器地址栏。
+
+	```
+	const history = createMemoryHistory(location)
+	```
+因为这里断掉了，再帖一遍，看的清楚：  
+
+```javascript
+ReactDOM.render(
+  <Router history={hashHistory}>
+    <Route path="/" component={App}>
+      <IndexRoute component={Home} />
+      <Route path="/repos/:name" component={Repos} />
+      <Route path="/about" component={About} />
+```
+4. `path`是对应 URL。例如：`/repos/torvalds` 会对应到 `/repos/:name`， 参数传入 `Repos` 组件。 `this.props.params.name` 取得参数。   
+注意，查询参数 `/user?q=torvalds` 由 `this.props.location.query.q` 取。
+
+5. IndexRoute
+由于 `/` 情况下 App 组件对应的 `this.props.children` 会是 `undefinded`，所以使用 `IndexRoute` 来解决对应问题。这样当 URL 为 `/` 时将会对应到 Home 组件。不过要注意的是 `IndexRoute` 没有 path 属性。
+
+
+注意，这个实例，用了嵌套路由，即`Route`下有同名子节点`Route`。嵌套的效果是：父路由所定义的App 组件会作为每个子路由的通用组件，也就是说，不管加载哪一个子路由，都会先加载父路由所定义的App组件。  
+这个App定义的是一个列表。所以，  
+实际看到的效果是，每个页面都有相同的列表，  
+而各自不同的组件是用`props.children`属性加载的。
+
+### 然后是App.js ###
+路径： E:\n\learn\react\101\Ch05\demo\src\components\App\App.js
+```javascript
+import React from 'react';
+import { Link, IndexLink } from 'react-router';
+import styles from './appStyles';
+import NavLink from '../NavLink';
+
+const App = (props) => (
+  <div>
+    <h1>React Router Tutorial</h1>
+    <ul>
+      <li><IndexLink to="/" activeClassName="active">Home</IndexLink></li>
+      <li><Link to="/about" activeStyle={{ color: 'green' }}>About</Link></li>
+      <li><Link to="/repos/react-router" activeStyle={styles.active}>Repos</Link></li>
+      <li><Link to="/user" activeClassName="active">User</Link></li>
+      <li><NavLink to="/contacts">Contacts</NavLink></li>
+    </ul>
+    <!-- 我们将 App 组件当做每个组件都会载入的母模版，因此可以透过 children 载入对应 URL 的子组件 -->
+    {props.children}
+  </div>
+);
+
+App.propTypes = {
+  children: React.PropTypes.object,
+};
+
+export default App;
+```
+1. `Link` 组件用于点击后连结转换，想成是 `<a>` 超连结的 React 版本。希望当点击时候有对应的 css style，用 `activeStyle`、`activeClassName` 去做设定。范例分别使用于 `index.html`使用传统 `CSS` 载入、Inline Style、外部引入 `Inline Style` 写法。
+
+2. IndexLink
+IndexLink 主要是处理 `index` 用途，当子路由`actived` 时，父路由也会 `actived`。所以回首页的连结用 `<IndexLink />` 内部的 `onlyActiveOnIndex` 属性解决这个问题。
+
+3. Redirect、IndexRedirect
+这边没有用到，但若连结跳转，用两个组件，类似 `Route` 和 `IndexRedirect`。
+
+
+对应的组件内部使用 Functional Component 进行 UI 渲染：
+
+以下是 `src/components/Repos/Repos.js` 完整程式码：
+
+```javascript
+import React from 'react';
+
+const Repos = (props) => (
+  <div>
+    <h3>Repos</h3>
+    <h5>{props.params.name}</h5>
+  </div>
+);
+
+Repos.propTypes = {
+  params: React.PropTypes.object,
+};
+
+export default Repos;
+```
+
+![范例成果](./images/example.png "范例成果")
+
+## 总结
+略
+
+## 延伸阅读
+1. [Leveling Up With React: React Router](https://css-tricks.com/learning-react-router/)
+2. [Programmatically navigate using react router](http://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router)
+3. [React Router 使用教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html)
+4. [React Router 中文文档](https://react-guide.github.io/react-router-cn/index.html)
+5. [React Router Tutorial](https://github.com/reactjs/react-router-tutorial)
+
+（iamge via [seanamarasinghe](http://seanamarasinghe.com/wp-content/uploads/2016/01/react-router-1050x360.jpg)）
+
+## 任意门
+| [回首页](../../../tree/zh-CN/) | [上一章：React Component 规格与生命周期（Life Cycle）](../Ch04/react-component-life-cycle.md) | [下一章：ImmutableJS 入门教学](../Ch06/react-immutable-introduction.md) |
+
+| [勘误、提问或许愿](https://github.com/kdchang/reactjs101/issues) |

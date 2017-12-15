@@ -1,0 +1,481 @@
+---
+layout: post
+title:  "react js 101 笔记3"
+date:   2017-11-14 03:02:16 +0800
+categories:  
+tags: 
+    - react
+    - 笔记
+
+---
+
+# react js 101 笔记3 #
+是对[附录一、React ES5、ES6+ 常见用法对照表](https://github.com/carlleton/reactjs101/tree/zh-CN/Appendix01)的笔记。
+
+## 1. Modules ##
+
+
+* [JAVASCRIPT MODULARIZATION JOURNEY
+JavaScript 模块化七日谈](http://huangxuan.me/js-module-7day/#/)
+* [使用 AMD、CommonJS 及 ES Harmony 编写模块化的 JavaScript](http://justineo.github.io/singles/writing-modular-js/)
+
+### ES5  ###
+用 require() 引入模组：
+
+	var React = require('react');
+	var MyComponent = require('./MyComponent');
+
+映射AS：
+
+	import React;
+	import MyComponent;
+
+映射是：
+
+	"React","react" -> "React"
+	"MyComponent","MyComponent" -> "MyComponent"
+	
+输出用 module.exports：
+
+	module.exports = MyComponent;
+
+无映射AS。应该默默添加。
+
+
+### ES6 import 用法 ###
+
+	import React from 'react';
+	import MyComponent from './MyComponent';
+
+映射AS：
+
+	import React;
+	import MyComponent;
+
+映射是：
+
+	"React","react" -> "React"
+	"MyComponent","MyComponent" -> "MyComponent"
+
+
+输出则是使用 export default：
+
+	export default class MyComponent extends React.Component {
+	
+	}
+
+无映射AS。应该默默添加。
+
+## 2. Classes ##
+
+ ES5  用 React.createClass() 来建立 Component，  
+ ES6+ 用 Classes 继承 React.Component 来建立 Component。
+
+阅读[React.createClass versus extends React.Component](https://toddmotto.com/react-create-class-versus-component/)
+
+### ES5 React.createClass() 用法： ###
+
+	var Photo = React.createClass({
+	  render: function() {
+	    return (
+	      <div>
+	        <images alt={this.props.description} src={this.props.src} />
+	      </div>
+	      );
+	  }
+	});
+	ReactDOM.render(<Photo />, document.getElementById('main'));
+
+
+### ES6 class 用法： ###
+
+	class Photo extends React.Component {
+	  render() {
+	    return <images alt={this.props.description} src={this.props.src} />;
+	  }
+	}
+	ReactDOM.render(<Photo />, document.getElementById('main'));
+
+ES5 在 componentWillMount 生命周期定义希望在 render 前执行，且只会执行一次的任务：
+
+	var Photo = React.createClass({
+	  componentWillMount: function() {}
+	});
+
+ES6+ 则是定义在 constructor 建构子中：
+
+	class Photo extends React.Component {
+	  constructor(props) {
+	    super(props);
+	    // 原本在 componentWillMount 操作的动作可以放在这
+	  }
+	}
+
+
+## 3. 方法定义 ##
+
+ES6 用 Method 可以忽略 function 和 ,，使用上更为简洁！
+
+### ES5 React.createClass() 用法： ###
+
+	var Photo = React.createClass({
+	  handleClick: function(e) {},
+	  render: function() {}
+	});
+
+### ES6 class 用法： ###
+
+	class Photo extends React.Component {
+	  handleClick(e) {}
+	  render() {}
+	}
+
+映射AS：
+
+	public class Photo extends React.Component
+	{
+		public fucntion Photo(){}
+		public function handleClick(e:Event){}
+		public function render(){}
+	}
+
+### 4. 初始化属性 ###
+
+ES5 用 propTypes 和 getDefaultProps 
+定义属性（props）的预设值和型别：
+
+	var Todo = React.createClass({
+	  getDefaultProps: function() {
+	    return {
+	      checked: false,
+	      maxLength: 10,
+	    };
+	  },
+	  propTypes: {
+	    checked: React.PropTypes.bool.isRequired,
+	    maxLength: React.PropTypes.number.isRequired
+	  },
+	  render: function() {
+	    return();
+	  }
+	});
+
+ES6+  参考 ES7 property initializers 使用 class 中的静态属性（static properties）来定义：
+
+	class Todo extends React.Component {
+	  static defaultProps = {
+	    checked: false,
+	    maxLength: 10,
+	  }; // 注意有分号
+	  static propTypes = {
+	    checked: React.PropTypes.bool.isRequired,
+	    maxLength: React.PropTypes.number.isRequired
+	  };
+	  render() {
+	    return();
+	  }
+	}
+
+
+ES6+ 另外一种写法，可以留意一下，主要是看各团队喜好和规范，选择合适的方式：
+
+	class Todo extends React.Component {
+	    render() {
+	        return (
+	            <View />
+	        );
+	    }
+	}
+	Todo.defaultProps = {
+	    checked: false,
+	    maxLength: 10,
+	};
+	Todo.propTypes = {
+	    checked: React.PropTypes.bool.isRequired,
+	    maxLength: React.PropTypes.number.isRequired,
+	};
+
+
+### 5.  可变的State ###
+
+### ES5  getInitialState 初始化 state： ###
+
+	var Todo = React.createClass({
+	    getInitialState: function() {
+	        return {
+	            maxLength: this.props.maxLength,
+	        };
+	    },
+	});
+
+### ES6 初始化 state ###   
+写法1：
+
+	class Todo extends React.Component {
+	    state = {
+	        maxLength: this.props.maxLength,
+	    }
+	}
+
+写法2：建构式初始化：
+
+	class Todo extends React.Component {
+	    constructor(props){
+	        super(props);
+	        this.state = {
+	            maxLength: this.props.maxLength,
+	        };
+	    }
+	}
+
+
+### 6. 胖箭头 ###
+
+在讲 Arrow functions 之前，我们先聊聊在 React 中 this 和它所代表的 context。在 ES5 中，我们使用 React.createClass() 来建立 Component，而在 React.createClass() 下，预设帮你绑定好 method 的 this，你毋须自行绑定。所以你可以看到像是下面的例子，callback function handleButtonClick 中的 this 是指到 component 的实例（instance），而非触发事件的物件：
+
+	var TodoBtn = React.createClass({
+	    handleButtonClick: function(e) {
+	        // 此 this 指到 component 的实例（instance），而非 button
+	        this.setState({showOptionsModal: true});
+	    },
+	    render: function(){
+	        return (
+	            <div>
+	                <Button onClick={this.handleButtonClick}>{this.props.label}</Button>
+	            </div>
+	        )
+	    },
+	});
+
+
+ES6+ 两种方式：
+1 用 bind 绑定 this      
+2 胖箭头（它会绑定当前 scope 的 this context）：
+
+	class TodoBtn extends React.Component
+	{
+	    handleButtonClick(e){
+	        // 确认绑定 this 指到 component instance
+	        this.setState({toggle: true});
+	    }
+	    render(){
+	        // 这边可以用 this.handleButtonClick.bind(this) 手动绑定或是 Arrow functions () => {} 用法
+	        return (
+	            <div>
+	                <Button onClick={this.handleButtonClick.bind(this)} onClick={(e)=> {this.handleButtonClick(e)} }>{this.props.label}</Button>
+	            </div>
+	        )
+	    },
+	}
+
+Arrow functions 虽然一开始看起来有点怪异，但其实观念很简单：一个简化的函数。函数基本上就是参数（不一定要有参数）、表达式、回传值（也可能是回传 undefined）：
+
+	// Arrow functions 的一些例子
+	()=>7
+	e=>e+2
+	()=>{
+	    alert('XD');
+	}
+	(a,b)=>a+b
+	e=>{
+	    if (e == 2){
+	        return 2;
+	    }
+	    return 100/e;
+	}
+
+
+不过要注意的是无论是 bind 或是 Arrow functions，每次执行回传都是指到一个新的函数，若需要再调用到这个函数，请记得先把它存起来：
+
+错误用法：
+
+	class TodoBtn extends React.Component{
+	    componentWillMount(){
+	        Btn.addEventListener('click', this.handleButtonClick.bind(this));
+	    }
+	    componentDidmount(){
+	        Btn.removeEventListener('click', this.handleButtonClick.bind(this));
+	    }
+	    onAppPaused(event){
+	    }
+	}
+
+正确用法：
+
+	class TodoBtn extends React.Component{
+	    constructor(props){
+	        super(props);
+	        this.handleButtonClick = this.handleButtonClick.bind(this);
+	    }
+	    componentWillMount(){
+	        Btn.addEventListener('click', this.handleButtonClick);
+	    }
+	    componentDidMount(){
+	        Btn.removeEventListener('click', this.handleButtonClick);
+	    }
+	}
+
+更多 Arrows and Lexical This 特性可以参考这个文件。
+
+### 7. Dynamic property names & template strings ###
+
+以前在 ES5 我们要动态设定属性名称时，往往需要多写几行程式码才能达到目标：
+
+	var Todo = React.createClass({
+	  onChange: function(inputName, e) {
+	    var stateToSet = {};
+	    stateToSet[inputName + 'Value'] = e.target.value;
+	    this.setState(stateToSet);
+	  },
+	});
+
+
+但在 ES6+中，透过 enhancements to object literals 和 template strings 可以轻松完成动态设定属性名称的任务：
+
+	class Todo extends React.Component {
+	  onChange(inputName, e) {
+	    this.setState({
+	      [`${inputName}Value`]: e.target.value,
+	    });
+	  }
+	}
+
+
+Template Strings 是语法糖（syntactic sugar），方便组织字串（这边也用上 let、const 变数和常数宣告的方式，和 var 的 function scope 不同的是它们是属于 block scope，亦即生存域存在于 {} 间）：
+
+	// Interpolate variable bindings
+	const name = "Bob", let = "today";
+	`Hello ${name}, how are you ${time}?` \\ Hello Bob, how are you today?
+
+### 8. Destructuring & spread attributes ###
+
+父组件用 props 来传递值给子组件。  
+如果只传递部分资料，  
+ES6+ 的 Destructuring 和 JSX 的 Spread Attributes ，... Spread Attributes 主要是用来迭代物件：
+
+	class Todo extends React.Component {
+	  render() {
+	    var {
+	      className,
+	      ...others,  // ...others 包含 this.props 除了 className 外所有值。this.props = {value: 'true', title: 'header', className: 'content'}
+	    } = this.props;
+	    return (
+	      <div className={className}>
+	        <TodoList {...others} />
+	        <button onClick={this.handleLoadMoreClick}>Load more</button>
+	      </div>
+	    );
+	  }
+	}
+
+
+注意的是若是有重复的属性值则以后来覆蓋，  
+若 ...this.props，有 className，则被后来的 main 所覆蓋：
+
+	<div {...this.props} className="main">
+	  …
+	</div>
+
+
+而 Destructuring 也可以用在简化 Module 的引入上，这边我们先用 ES5 中引入方式来看：
+
+	var React = require('react-native');
+	var Component = React.component;
+	
+	class HelloWorld extends Component {
+	  render() {
+	    return (
+	      <View>
+	        <Text>Hello, world!</Text>
+	      </View>
+	    );
+	  }
+	}
+
+	export default HelloWorld;
+
+
+ES5 写法：
+
+	var React = require('react-native');
+	var View = React.View;
+
+ES6 用 Destructuring 这种简化方式来引入模组中的组件：
+
+	// 这边等于上面的写法
+	var { View } = require('react-native');
+	更进一步可以使用 import 语法：
+	
+	import React, {
+	  View,
+	  Component,
+	  Text,
+	} from 'react-native';
+	
+	class HelloWorld extends Component {
+	  render() {
+	    return (
+	      <View>
+	        <Text>Hello, world!</Text>
+	      </View>
+	    );
+	  }
+	}
+	
+	export default HelloWorld;
+
+
+### 9. Mixins ###
+
+就是宏了。
+让不同 Component 共用相似功能，   
+重用代码：
+
+	var PureRenderMixin = require('react-addons-pure-render-mixin');
+	React.createClass({
+	  mixins: [PureRenderMixin],
+	
+	  render: function() {
+	    return <div className={this.props.className}>foo</div>;
+	  }
+	});
+
+
+官方不在 ES6+ 推 Mixins，若还是希望使用，看看[es6-class-mixin](https://www.npmjs.com/package/es6-class-mixin)或[Enhance.js](https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775)。
+
+### 10. 参数默认值 ###
+
+ES5 用||：
+
+	var link = function (height, color) {  
+	    var height = height || 50;  
+	    var color = color || 'red';  
+	}  
+
+ES6 ：
+
+	var link = function(height = 50, color = 'red') {  
+	  ...  
+	}
+
+## 总结 ##
+ 
+
+下一章我们将进到同样也是有革新性设计和有趣的 React Native，用 JavaScript 和 React 写 Native App！
+
+延伸阅读
+React/React Native 的ES5 ES6写法对照表
+React on ES6+
+react native 中es6语法解析
+Learn ES2015
+ECMAScript 6入门
+React官方网站
+React INTRO TO REACT.JS
+React.createClass versus extends React.Component
+react-native-coding-style
+Airbnb React/JSX Style Guide
+ECMAScript 6入门
+
+#### 参考 ####
+
+* [reactjs101/Appendix01 at zh-CN · carlleton/reactjs101](https://github.com/carlleton/reactjs101/tree/zh-CN/Appendix01)

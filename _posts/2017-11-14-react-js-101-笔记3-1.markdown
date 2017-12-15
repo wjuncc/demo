@@ -1,0 +1,168 @@
+---
+layout: post
+title:  "react js 101 笔记3-1"
+date:   2017-11-14 04:01:10 +0800
+categories:  
+tags: 
+    - react
+    - 笔记
+
+---
+
+# react js 101 笔记5 # 
+是对[ReactJS 与 Component 设计入门介绍](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch03/reactjs-introduction.md)的笔记。
+
+
+* 用 JSX（Declarative）UI 
+* 使用 Virtual DOM
+* Component PropType 防呆机制
+* Component 就像个状态机（State Machine），而且也有生命周期（Life Cycle）
+* 一律重绘（Always Redraw）和单向资料流（Unidirectional Data Flow）
+* 在 JavaScript 里写 CSS：Inline Style
+
+
+
+`<TodoApp>` 组件可以包含 `<TodoHeader />`、`<TodoList />` 子组件
+
+
+```html
+	<div>
+		<TodoHeader />
+		<TodoList />
+	</div>
+```
+
+<TodoList /> 组件内部长相：
+
+```html
+	<div>
+		<ul>
+			<li>写程式码</li>
+			<li>哄妹子</li>
+			<li>买书</li>
+		</ul>
+	</div>
+```
+
+### 写组件 两种方式： ###
+
+ES6 的 Class（？做复杂操作和组件生命周期的控制，相对于 stateless components 耗费资源）
+
+
+```javascript
+	//  注意组件开头第一个字母都要大写
+	class MyComponent extends React.Component {
+		// render 是 Class based 组件唯一必须的方法（method）
+		render() {
+			return (
+				<div>Hello, World!</div>
+			);
+		}
+	}
+
+	// 将 <MyComponent /> 组件插入 id 为 app 的 DOM 元素中
+	ReactDOM.render(<MyComponent/>, document.getElementById('app'));
+
+```
+
+使用 Functional Component 写法（单纯地 render UI 的 stateless components，没有内部状态、没有实作物件和 ref，没有生命周期函数。若非需要控制生命周期的话建议多使用 stateless components 获得比较好的效能）
+
+```javascript
+	// 使用 arrow function 来设计 Functional Component 让 UI 设计更单纯（f(D) => UI），减少副作用（side effect）
+	const MyComponent = () => (
+		<div>Hello, World!</div>
+	);
+	
+	// 将 <MyComponent /> 组件插入 id 为 app 的 DOM 元素中
+	ReactDOM.render(<MyComponent/>, document.getElementById('app'));
+
+```
+
+### 用 JSX（Declarative）UI ###
+ 
+Declarative UI  比 Template 更易懂：
+	
+```javascript
+	// 使用宣告式（Declarative）UI 设计很容易可以看出这个组件的功能
+	<MailForm />
+	// <MailForm /> 内部长相
+	<form>
+		<input type="text" name="email" />
+		<button type="submit"></button>
+	</form>
+```
+
+下一章讲 JSX。
+
+###  Virtual DOM ### 
+
+### Component PropType 防呆机制 ###
+在 React 设计时除了提供 props 预设值设定（Default Prop Values）外，也提供了 Prop 的验证（Validation）机制，让整个 Component 设计更加稳健：
+
+```javascript
+	//  注意组件开头第一个字母都要大写
+	class MyComponent extends React.Component {
+		// render 是 Class based 组件唯一必须的方法（method）
+		render() {
+			return (
+				<div>Hello, World!</div>
+			);
+		}
+	}
+
+	// PropTypes 验证，若传入的 props type 不符合将会显示错误
+	MyComponent.propTypes = {
+	  todo: React.PropTypes.object,
+	  name: React.PropTypes.string,
+	}
+	
+	// Prop 预设值，若对应 props 没传入值将会使用 default 值
+	MyComponent.defaultProps = {
+	 todo: {}, 
+	 name: '', 
+	}
+
+```
+
+关于更多的 Validation 用法可以参考官方网站 的说明。
+
+### Component 状态机（State Machine），生命周期（Life Cycle） ###
+生命周期下一章。
+
+### 一律重绘（Always Redraw）和单向资料流（Unidirectional Data Flow） ###
+props 不能更改，
+state 透过 setState() 方法进行修改。 
+
+会重绘UI。 
+
+用 forceUpdate() 去强迫重绘 Component。
+
+而 React 透过整合 Flux 或 Flux-like（例如：Redux）可以更具体实现单向资料流（Unidirectional Data Flow），让资料流的管理更为清晰。
+
+在 JavaScript 里写 CSS：Inline Style
+在 React Component 中 CSS 使用 Inline Style 写法，全都封装在 JavaScript 当中：
+
+```javascript
+	const divStyle = {
+	  color: 'red',
+	  backgroundImage: 'url(' + imgUrl + ')',
+	};
+
+	ReactDOM.render(<div style={divStyle}>Hello World!</div>, document.getElementById('app'));
+
+```
+
+### 总结 ###
+讲JSX
+
+延伸阅读
+React 入门实例教程
+React Demystified
+Top-Level API
+ES6 Classes Component
+
+
+
+#### 参考 ####
+
+* [reactjs101/reactjs-introduction.md at zh-CN · carlleton/reactjs101](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch03/reactjs-introduction.md)

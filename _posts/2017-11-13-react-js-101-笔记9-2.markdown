@@ -1,0 +1,140 @@
+---
+layout: post
+title:  "react js 101 笔记9-2"
+date:   2017-11-13 23:13:50 +0800
+categories: 
+tags: 
+    - react
+    - 笔记
+
+---
+
+[教程](https://github.com/kdchang/reactjs101/blob/master/Ch09/react-router-redux-github-finder.md)
+
+\WinRAR.exe
+
+Setup Mockup
+
+	injectTapEventPlugin();
+
+使用react-tap-event-plugin去监听touch / tap / click 事件，使之得到快速的响应
+
+	<MuiThemeProvider>
+
+E:\react\reactjs101\Ch09\demo\node_modules\material-ui\styles
+
+MuiThemeProvider是安装模板的一部分，并不在源代码
+
+### material-ui是什么？ ###
+Material-UI是基于Material Design设计的一套丰富的React组件。
+
+* [react js 101 笔记2](https://wjuncc.github.io/demo/2017/12/13/react-js-101-笔记2.html)
+* [Required Knowledge - Material-UI](http://www.material-ui.com/#/get-started/required-knowledge)
+* [What is Node.js Exactly? - a beginners introduction to Nodejs - YouTube - 正在播放音频](https://www.youtube.com/watch?v=pU9Q6oiQNd0)
+* [Node.js, Require and Exports](http://openmymind.net/2012/2/3/Node-Require-and-Exports/)
+* [如何评价 React 实现的前端 UI 库 material-ui？ - 知乎](https://www.zhihu.com/question/51040975)
+* [初识Material-UI - 简书](http://www.jianshu.com/p/144bd5c2f2b7)
+* [material-ui中文文档 · GitBook](https://www.gitbook.com/book/materialui-ch/material-ui_doc_chinese/details)
+* [Material-UI · GitBook](https://www.gitbook.com/book/503945930/material-ui-chinese/details)
+* [Material-UI使用小结之一](http://www.59m59s.com/blog/material-uishi-yong-xiao-jie-zhi-yi/)
+* [推荐一款非常强大的Css框架-Material UI-容休博客](https://www.iwwenbo.com/material-ui/)
+
+
+
+### Main在哪里？ ###
+import Main from './components/Main';
+
+注意写法和结构，例如：
+Main-index.js  +  Main.js
+
+index.js 里只有一行代码。写导出代码：
+
+	export { default } from './Main';
+
+Main.js在最后一行写：
+
+	export default Main;
+
+
+
+### CardHeader ###
+
+是material-ui一部分
+
+### ImmutableJS是什么 ###
+
+用来提升React的性能
+
+* [如何用React+Redux+ImmutableJS进行SPA开发](http://yunlaiwu.github.io/blog/2016/12/01/react+redux+immutablejs/)
+* [React移动web极致优化 ](https://github.com/lcxfs1991/blog/issues/8)
+* [Immutable 详解及 React 中实践 · Issue #3 · camsong/blog](https://github.com/camsong/blog/issues/3)
+* [facebook immutable.js 意义何在，使用场景？ - 知乎](https://www.zhihu.com/question/28016223)
+* [Immutable.js 簡介 · Rhadow's Tech Note](https://rhadow.github.io/2015/05/10/flux-immutable/)
+* [Immutable.js及在React中的应用](http://zhenhua-lee.github.io/react/Immutable.html)
+* [ImmutableJS 入門教學 - 简书](http://www.jianshu.com/p/d2354ecea98a)
+* [React + Redux + Immutablejs开发总结 - 教程 - React 中文](http://react-china.org/t/react-redux-immutablejs/9948)
+* [关于immutablejs的不懂的地方，求解惑 - 求助 - React 中文](http://react-china.org/t/immutablejs/1816)
+* [ImmutableJS · 從0到100打造一個 React Native boilerplate](https://noootown.gitbooks.io/deeperience-react-native-boilerplate/content/Redux/ImmutableJS.html)
+* [React 的性能优化（一）当 PureComponent 遇上 ImmutableJS - 吴律 - 有赞技术团队](https://tech.youzan.com/purecomponent-immutablejs/)
+* [immutable-js - Immutablejs是结构共享，那么会不会出现不会被垃圾回收？？？ - SegmentFault](https://segmentfault.com/q/1010000008942972)
+
+### Reducers 是什么 ###
+
+* [Reducer · GitBook](http://cn.redux.js.org/docs/basics/Reducers.html)
+* [Redux 中的 reducer 到底是什么，以及它为什么叫 reducer？ - 前端 - 掘金](https://juejin.im/entry/58ce563744d904006906bb1e)
+* [Redux中的reducer到底是什么，以及它为什么叫reducer？](https://zhuanlan.zhihu.com/p/25863768)
+* [深入浅出 - Redux · Issue #4 · berwin/Blog](https://github.com/berwin/Blog/issues/4)
+* [Redux之combineReducers(reducers)详解 - 我是紫色紫色的专栏 - CSDN博客](http://blog.csdn.net/woshizisezise/article/details/51142968)
+* [解读redux工作原理](http://zhenhua-lee.github.io/react/redux.html)
+* [[译]为什么Redux需要reducers是纯函数 - mingjiezhang](https://mingjiezhang.github.io/2017/02/11/翻译-为什么Redux需要reducers是纯函数-md/)
+* [通过小代码，学习redux之三， redux中的Reducer 和Store - 通过小代码，学习react redux - 前端乱炖](http://www.html-js.com/article/3169)
+* [Redux 核心概念 - 简书](http://www.jianshu.com/p/3334467e4b32)
+* [reducer是什么意思_reducer的翻译_音标_读音_用法_例句_爱词霸在线词典](http://www.iciba.com/reducer)
+
+
+
+
+
+移动端支持。
+
+快速使用ReactJS的事件系统吗？当通过Cordova 运行到iOS或Android时似乎并没有采取。如果没有，是否有另一种获得相同结果的方法。我的应用程序没有双击功能，所以如果可能的话，我想要删除整个板上的延迟...
+
+
+[Can I Fastclick ReactJS running in Cordova
+](https://stackoverflow.com/questions/24335821/can-i-fastclick-reactjs-running-in-cordova/34015469#34015469)
+
+
+Cordova是贡献给Apache后的开源项目，是从PhoneGap中抽出的核心代码，是驱动PhoneGap的核心引擎。 你可以把它们的关系想象成类似于Webkit和Google Chrome的关系 。
+
+
+
+
+
+
+
+
+
+
+
+
+### 用powershell打包文件 ###
+打包.ps1
+
+	cls;
+	$P = 'C:\Users\Patrick\Desktop\war\'
+	$winrar = 'C:\Program Files\WinRAR\WinRAR.exe'
+	Get-ChildItem -Path $p -Directory|%{
+	    &$winrar a "$($_).rar" $_ -y -ibck
+	    Start-Sleep -Milliseconds 200
+	}
+
+
+
+
+	
+	$timestamp = Get-Date -Format 'yyyy-M-d-H-m-s'
+	$timestamp2 = Get-Random -InputObject 1, 2, 3, 5, 8, 13 -Count ([int]::MaxValue)
+#### 参考 ####
+
+* [为高效工作，运用powershell winrar 、unrar等 批量压缩、解压缩rar文件](http://www.cnblogs.com/fuckcn/p/4015645.html)
+* [PowerShell中使用Get-Date获取日期时间并格式化输出的例子](http://www.jb51.net/article/53282.htm)

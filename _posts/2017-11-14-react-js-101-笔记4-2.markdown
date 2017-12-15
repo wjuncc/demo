@@ -1,0 +1,170 @@
+---
+layout: post
+title:  "react js 101 笔记4-2"
+date:   2017-11-14 04:12:08 +0800
+categories:  
+tags: 
+    - react
+    - 笔记
+
+---
+
+是对 [React Component 规格与生命周期（Life Cycle）](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch04/react-component-life-cycle.md) 的笔记。
+
+* 环境：win7 x64
+* 软件：按2次Ctrl 搜索 ： sublime js exe
+下一节：`React Router`
+
+组件有2种写法：ES6 和 ES5。参考上一节第1个例子。  
+   
+[!]在 ES6 Class 中 `render()` 是唯一必要的方法（但要注意的是请保持 `render()` 的纯粹，不要在里面进行 `state` 修改或是使用非同步方法和浏览器互动，若需非同步互动请于 `componentDidMount()` 操作），而 Functional Component 目前允许 `return null` 值。 
+ES6 不支援 `mixins` 复用其他组件的方法了。
+
+## 生命周期
+有三种状态：
+
+1. Mounting：已插入真实的 DOM
+2. Updating：正在被重新渲染
+3. Unmounting：已移出真实的 DOM
+
+对应三种方法：
+
+1. Mounting
+	- componentWillMount()
+	- componentDidMount()
+2. Updating
+	- componentWillReceiveProps(object nextProps)：已载入组件收到新的参数时呼叫
+	- shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时呼叫，起始不会呼叫除非呼叫 forceUpdate()
+	- componentWillUpdate(object nextProps, object nextState)
+	- componentDidUpdate(object prevProps, object prevState)
+3. Unmounting
+	- componentWillUnmount()
+
+### 实例： ###
+路径：E:\n\learn\react\101\Ch04\demo6  
+访问：http://127.0.0.1/learn/react/101/Ch04/demo6/   
+![6](https://i.imgur.com/GepxENv.png)
+当一开始载入组件时第一个会触发 `console.log('constructor');`，依序执行 `componentWillMount`、`componentDidMount` ，而当点击文字触发 `handleClick()` 更新 `state` 时则会依序执行 `componentWillUpdate`、`componentDidUpdate`：  
+
+HTML略。  
+app.js：
+
+```javascript
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log('constructor');
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {
+      name: 'Mark',
+    }
+  }
+  handleClick() {
+    this.setState({'name': 'Zuck'});
+  }
+  componentWillMount() {
+    console.log('componentWillMount');
+  }
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
+  componentWillReceiveProps() {
+    console.log('componentWillReceiveProps');
+  }
+  componentWillUpdate() {
+    console.log('componentWillUpdate');
+  }
+  componentDidUpdate() {
+    console.log('componentDidUpdate');
+  }
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+  render() {
+    return (
+      <div onClick={this.handleClick}>Hi, {this.state.name}</div>
+    );
+  }
+}
+
+ReactDOM.render(<MyComponent />, document.getElementById('app'));
+```
+
+<a class="jsbin-embed" href="http://jsbin.com/yokebo/embed?html,js,console,output">点击看详细范例</a><script src="http://static.jsbin.com/js/embed.min.js?3.39.12"></script>
+
+![React Component 规格与生命周期](./images/react-lifecycle.png)
+
+其中特殊处理的函数 `shouldComponentUpdate`，目前预设 `return true`。若你想要优化效能可以自己编写判断方式，若采用 `immutable` 可以使用 `nextProps === this.props` 比对是否有变动：
+
+```javascript
+shouldComponentUpdate(nextProps, nextState) {
+  return nextProps.id !== this.props.id;
+}
+```
+
+## 例2 Ajax 
+路径：E:\n\learn\react\101\Ch04\demo7  
+访问：http://127.0.0.1/learn/react/101/Ch04/demo7/  
+![7](https://i.imgur.com/6jy0n7p.png)
+若有需要进行 Ajax 非同步处理，请在 `componentDidMount` 进行处理。以下透过 `jQuery` 执行 `Ajax` 取得 `Github API`　资料当做范例：
+
+HTML略。  
+只改app.js
+
+```javascript
+class UserGithub extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          username: '',
+          githubtUrl: '',
+          avatarUrl: '',
+        }
+    }
+    componentDidMount() {
+        $.get(this.props.source, (result) => {
+            console.log(result);
+            const data = result;
+            if (data) {
+              this.setState({
+                    username: data.name,
+                    githubtUrl: data.html_url,
+                    avatarUrl: data.avatar_url
+              });
+            }
+        });
+    }
+    render() {
+        return (
+          <div>
+            <h3>{this.state.username}</h3>
+            <img src={this.state.avatarUrl} />
+            <a href={this.state.githubtUrl}>Github Link</a>.
+          </div>
+        );
+    }
+}
+
+ReactDOM.render(
+  <UserGithub source="https://api.github.com/users/torvalds" />,
+  document.getElementById('app')
+);
+```
+
+<a class="jsbin-embed" href="http://jsbin.com/kupusa/embed?html,js,output">点击看详细范例</a><script src="http://static.jsbin.com/js/embed.min.js?3.39.12"></script>
+
+
+## 延伸阅读
+1. [Component Specs and Lifecycle](https://facebook.github.io/react/docs/component-specs.html#lifecycle-methods)
+
+（image via [react-lifecycle](http://imgh.us/react-lifecycle.svg)）
+
+## :door: 任意门
+| [回首页](../../../tree/zh-CN/) | [上一章：Props、State、Refs 与表单处理](../Ch04/props-state-introduction.md) | [下一章：React Router 入门实战教学](../Ch05/react-router-introduction.md) |
+
+| [勘误、提问或许愿](https://github.com/kdchang/reactjs101/issues) |
+
+
+#### 参考 ####
+
+* [reactjs101/react-jsx-introduction.md at zh-CN · carlleton/reactjs101](https://github.com/carlleton/reactjs101/blob/zh-CN/Ch03/react-jsx-introduction.md)

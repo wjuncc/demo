@@ -1,28 +1,79 @@
 ---
 layout: post
-title:  "react js 实例教程"
-date:   2017-12-12 07:34:44 +0800
+title:  "react js 101 笔记9-1"
+date:   2017-11-12 07:34:44 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
+* 环境：win7 x64
+* 软件：按2次Ctrl 搜索 ： sublime js exe
 
-
+## 跑通源代码 ##
 [教程](https://github.com/kdchang/reactjs101/blob/master/Ch09/react-router-redux-github-finder.md)
 
-安装命令行
+重命名为：E:\react\reactjs101\Ch09\demo。  
+注意，不可以把node_modules文件夹直接复制到demo，报错略。   
+
+### 安装包 ###
+	
+#### 安装脚本1 ####
 
 	npm install --save react react-dom redux react-redux react-router immutable redux-immutable redux-actions whatwg-fetch redux-thunk material-ui react-tap-event-plugin
 
+
+#### 安装脚本2 #### 
+
 	npm install --save-dev babel-core babel-eslint babel-loader babel-preset-es2015 babel-preset-react babel-preset-stage-1 eslint eslint-config-airbnb eslint-loader eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react html-webpack-plugin webpack webpack-dev-server redux-logger
 
-actions 常數
+#### 纠正版本错误 ####
+  
+注意，使用源代码，源代码中的2个包需要升级，
+否则报错，错误的关键如下：
+	
+> Error: Cannot resolve module 'react/lib/EventPluginHub' in ... 
 
+升级的办法，是修改package.json：
 
+    "material-ui": "^0.16.3",
+    "react-tap-event-plugin": "^2.0.0", 
 
+再执行：
 
+	 npm update
 
-软件材料：
+### 结果 ###
+运行：
+
+	npm start
+
+输出：
+
+> webpack: Compiled successfully. 
+
+本地访问地址是 http://localhost:8008
+
+![截图1](https://i.imgur.com/qVrRZIx.png)
+
+![2](https://i.imgur.com/H2o48bN.png)
+
+![3](https://i.imgur.com/Z8D8Zy0.png)
+ 
+
+#### 遗留几点问题 ####
+* 教程提到了 actions 常數。 
+注意， 源代码中，未搜到SHOW_SPINNER，常數定义。  
+常量定义，位于：
+constants/actionTypes
+
+* Redux + ImmutableJS
+* Redux是什么
+* ImmutableJS是什么     
+
+### 软件材料 ### 
 
 * chrome， chrome可以直接渲染ES6的react，无需ES5翻译成ES6，少了一步  
 * sublimeText3， 其中的react插件，能快速出代码  
