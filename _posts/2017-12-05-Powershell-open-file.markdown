@@ -7,6 +7,7 @@ tags:
     - Powershell
 ---
 
+
 ## Powershell使用指定程序打开文件 ## 
 
 #### 设置系统时间 ####
@@ -85,6 +86,22 @@ tags:
 ### 复制文件 ###
 
 	Copy-Item c:/scripts c:/Test –recurse
+
+
+
+### cmd ###
+
+
+打开淘客助手.bat
+
+	start explorer http://www.iqiyi.com
+
+
+打开爱奇艺.bat
+
+	start explorer http://www.taokezhushou.com
+
+
 
 ###### 参考 ######
 
