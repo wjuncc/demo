@@ -6,10 +6,16 @@ categories:
 tags: 
 ---
 
-
+win8
 
 参考：https://www.tensorflow.org/install/install_windows
  
+
+安装文件：  
+C:\Python35\Lib\site-packages\wj35
+
+
+
 ## 环境 ##
  
 TensorFlow是基于VC++2015开发的，  
@@ -20,7 +26,7 @@ TensorFlow是基于VC++2015开发的，
 1. 下载安装Python 3.5.x 64-bit，要注意版本3.5.x。
 2. 打开windows的命令行窗口，安装CPU版本输入
 
-		pip3install --upgrade tensorflow
+		pip3 install --upgrade tensorflow
 
  
 ### 三、验证安装 ###
@@ -35,6 +41,9 @@ TensorFlow是基于VC++2015开发的，
 输出hello字符串，则安装成功。
 
 	Hello, TensorFlow!
+
+
+
  
 ### 四、安装错误 ###
 
