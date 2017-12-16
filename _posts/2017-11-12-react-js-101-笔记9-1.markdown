@@ -12,6 +12,26 @@ tags:
 * 环境：win7 x64
 * 软件：按2次Ctrl 搜索 ： sublime js exe
 
+
+项目测试 
+
+打开 powershell 窗口, 执行命令行：
+	
+
+	cd  E:\n\learn\react\101\Ch04\proj1
+	npm start 
+
+编辑器  webstorm 
+
+css 行内样式
+
+写法：
+
+
+
+
+
+E:\n\learn\react\101\Ch04\proj1
 ## 跑通源代码 ##
 [教程](https://github.com/kdchang/reactjs101/blob/master/Ch09/react-router-redux-github-finder.md)
 
