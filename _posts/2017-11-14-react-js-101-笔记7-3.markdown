@@ -19,15 +19,34 @@ tags:
 npm WARN react-router-example@1.0.0 No description
 npm WARN react-router-example@1.0.0 No repository field.
 
+menu
 
-
+E:\n\jim\170715__Elmore_Oil\v66\bin
 
 	ERROR in multi main
 	Module not found: Error: Cannot resolve 'file' or 'directory' ./src/index.js in E:\n\learn\react\test__webstorm
 	 @ multi main
 	Child html-webpack-plugin for "index.html":
 
+
+
+
+
+	ERROR in ./src/components/About/About.js
+	Module build failed: SyntaxError: E:/n/learn/react/test__webstorm/src/components/About/About.js: Unexpected token (12:8)
+
+### webpack ${__dirname} 是什么 ###
+
+### webpack  找不到 导出文件 ###
+
+发布路径改成index_bundle_xxx.js后找不到。。
+webpack : 无法将“webpack”项识别为 cmdlet、函数、
+
+	npm install -g webpack
+
 本地访问地址 http://localhost:8008  
+
+	webpack -p
 
 ## 跑通实例
 
