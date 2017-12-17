@@ -23,12 +23,67 @@ tags:
 
 编辑器  webstorm 
 
-css 行内样式
-
-写法：
 
 
+## css行内样式 ##
 
+声明：
+	
+	
+    let style1 = {
+        position: "relative",
+        float:"left",
+        left: "5%",
+        width: "45%"
+    }
+
+使用：   
+
+    <img style={style1} src="/img/bg_images_img1.jpg" alt=""/>
+
+
+## css外部文件 ##
+
+声明：
+
+
+报错：
+
+	style.css 	Module parse failed:
+	You may need an appropriate loader to handle this file type.
+修改配置：
+css
+
+之后报错：
+	
+	ERROR in ./src/components/Menu/Menu.js
+	Module not found: Error: Cannot resolve module 'style-loader' in E:\n\learn\react\101\Ch04\proj1\src\components\Menu
+ @ ./src/components/Menu/Menu.js 13:0-22
+Child html-webpack-plugin for "index.html":
+
+
+	ERROR in ./src/components/Menu/Menu.js
+	Module not found: Error: Cannot resolve module 'style' in E:\n\learn\react\101\Ch04\proj1\src\components\Menu
+ 	@ ./src/components/Menu/Menu.js 13:0-22
+	Child html-webpack-plugin for "index.html":
+
+安装css加载器：
+	
+	npm install style-loader --save
+
+[](https://stackoverflow.com/questions/35171288/error-cannot-resolve-module-style-loader)
+
+	npm install css-loader --save
+
+继续报错：
+
+	ERROR in ./src/components/Menu/Menu.js
+	Module not found: Error: Cannot resolve module 'css-loader' in E:\n\learn\react\101\Ch04\proj1\src\components\Menu
+	 @ ./src/components/Menu/Menu.js 13:0-22
+Child html-webpack-plugin for "index.html":
+
+
+使用：   
 
 
 E:\n\learn\react\101\Ch04\proj1
