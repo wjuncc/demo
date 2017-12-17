@@ -12,13 +12,24 @@ tags:
 * 环境：win7 x64
 * 软件：按2次Ctrl 搜索 ： sublime js exe
 
-本文是对翻版项目的记录。先姑且这样吧，我也找不到什么有实际意义的项目上手了。      
+文件
+
+本文是对翻版项目的记录。
+
+先姑且这样吧，我也找不到什么有实际意义的项目上手了。      
 像react只适合像多UI操作，例如问答星，邮箱，自定义制作微信h5，百度统计。这样的强交互操作上。  
 非常不适合之前的网站项目。因为网站多半是展示类型的，一次渲染成功，顶多是加个加载条。  
 不是切换隐藏UI。
 
 	
-	Error: Cannot resolve module 'style-loader'
+基本上，只要套用之前的项目的原始的css和div。 
+
+1. 拆分原始的div和css代码成各个模块。
+2. 考虑css和js的加载
+3. 考虑进度条
+4. 
+
+	
 
 
 
@@ -80,7 +91,7 @@ Child html-webpack-plugin for "index.html":
 	
 	npm install style-loader --save
 
-[123](https://stackoverflow.com/questions/35171288/error-cannot-resolve-module-style-loader)
+[Error: Cannot resolve module 'style-loader'](https://stackoverflow.com/questions/35171288/error-cannot-resolve-module-style-loader)
 
 	npm install css-loader --save
 
