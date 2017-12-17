@@ -15,7 +15,7 @@ tags:
 
 * 用 JSX（Declarative）UI 
 * 使用 Virtual DOM
-* Component PropType 防呆机制
+* Component PropType 防死页面机制
 * Component 就像个状态机（State Machine），而且也有生命周期（Life Cycle）
 * 一律重绘（Always Redraw）和单向资料流（Unidirectional Data Flow）
 * 在 JavaScript 里写 CSS：Inline Style
