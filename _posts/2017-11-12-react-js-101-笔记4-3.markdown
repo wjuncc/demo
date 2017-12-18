@@ -181,9 +181,14 @@ Child html-webpack-plugin for "index.html":
   
 #### 参考 ####
 
+* [React 使用ES6+语法时 事件绑定疑惑](https://segmentfault.com/q/1010000003763076)
+
 * [预言党](psychics.co.uk)  
 * 入侵脑细胞》
 * [死亡幻觉](http://www.iqiyi.com/v_19rr86r024.html)
 * [睁开你的双眼](http://www.iqiyi.com/w_19rvfxbwll.html)
 * [穆赫兰道](http://www.iqiyi.com/w_19ruglwi6l.html)
+* [瓦莱莉和她的奇迹一周](http://www.iqiyi.com/w_19ruglwi6l.html)
+* 砂制时镜下的疗养院
+* [回忆中的玛妮]()
 
