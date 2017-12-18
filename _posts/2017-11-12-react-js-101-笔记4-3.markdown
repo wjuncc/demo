@@ -124,7 +124,8 @@ Child html-webpack-plugin for "index.html":
 
 
 使用：   
-循环的写法：
+### 循环的写法 ###
+
 
 	
     render() {
@@ -140,6 +141,25 @@ Child html-webpack-plugin for "index.html":
                 </ul>
             </div>
         )
+
+
+### onClick  react  es6 ###
+	
+	constructor(props) {
+	    super(props);
+	    this._handleClick = this._handleClick.bind(this)
+	}
+	_handleClick(e) {
+	    console.log(this);
+	}
+	render() {
+	    return (
+	        <div>
+	            <h1 onClick={this._handleClick}>点击</h1>
+	        </div>
+	    );
+	}
+
 
 ### 备忘录： ###
 #### react故事1 ####
@@ -160,3 +180,10 @@ Child html-webpack-plugin for "index.html":
 
   
 #### 参考 ####
+
+* [预言党](psychics.co.uk)  
+* 入侵脑细胞》
+* [死亡幻觉](http://www.iqiyi.com/v_19rr86r024.html)
+* [睁开你的双眼](http://www.iqiyi.com/w_19rvfxbwll.html)
+* [穆赫兰道](http://www.iqiyi.com/w_19ruglwi6l.html)
+
