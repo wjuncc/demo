@@ -339,30 +339,22 @@ Sourabh库马尔
 相信我，我试过几乎所有可用的解决方案。 
 到目前为止我已经试过:
 
-ReactCSSTransitionGroup :  Based upon the RTG only.
 ReactCSSTransitionGroup :仅基于RTG。
-But Im not a fan of the coupling that it introduces between CSS and JS.
-但我不是介于CSS和JS之间的耦合的粉丝。
+但它不是我的菜：介于CSS和JS之间的耦合。
 
-React Motion :  I really liked this one but this doesnt work well when you are trying to build complex sequential animations.
-React Motion :我真的很喜欢这个，但是当你试图构建复杂的顺序动画的时候，这个效果并不好。
-Besides doesnt offer to add unmount animations.
-除了不提供添加卸载动画。
+React Motion :我真的很喜欢这个，但是当你试图构建复杂的顺序动画的时候，效果不好。
+此外也没有卸载动画的API。
 
-Velocity-React and React-GSAP-Enhancer :  These are proxy props HOCs which apply forced updates to your components.
-Velocity-React和React-GSAP-Enhancer :这些代理道具HOC将强制更新应用到组件。
-Things tend to get a little clumsy and ugly at times when it interferes into your components lifecycle.
-有时干扰到组件的生命周期时，事情往往会变得笨拙和丑陋。
+Velocity-React和React-GSAP-Enhancer :要给组件强加代理属性HOC。
+这会干扰到组件的生命周期，事情会变得笨拙和丑陋。
 
-I found the last two options good initially, until I realized that they are suitable for staggered motion using delays but for big complex animations, they just dont make the cut.
-我发现最后两个选择最好，直到我意识到，他们适合使用延迟交错运动，但对于大型复杂的动画，他们只是不作出裁员。
+我发现最后两个选择，直到我意识到，他们只适合用在延迟转场动画上，但对于大型复杂的动画，他们做不到（they just dont make the cut）。
 
-Then I started working on RTG and I loved the flexibility that it offered through the lifecycle hooks.
 然后我开始研究RTG，我喜欢它通过生命周期钩子提供的灵活性。
-I could use my favorite tools like GSAP, Velocity or Anime to build super smooth animations.
-我可以使用我喜欢的工具，如GSAP，速度或动漫建立超级流畅的动画。
-And it makes total sense to have it in a production environment.
-在生产环境中使用它总是有意义的。
+
+我可以使用我喜欢的工具，如GSAP，Velocity或Anime制作超级流畅的动画。
+
+使用它，对于生产环境很有意义。
 
 I used to shy away initially from using other JavaScript tools with React because of the whole virtual DOM flow, until recently when I realized that in order to get things function perfectly on a production scale, Ill have to adjust with certain trade offs.
 因为整个虚拟DOM流程，我最初从使用React来避免使用其他JavaScript工具，直到最近当我意识到为了在生产规模上完美地实现功能时，我必须进行一些权衡调整。
