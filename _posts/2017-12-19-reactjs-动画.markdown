@@ -7,8 +7,16 @@ tags:
 ---
 
 # reactjs 动画 #
+### ReactCSSTransitionGroup ###
+据说有bug
 
 
+### 解决特定问题的动画 ###
+列表排列动画
+特定问题的解决
+* [React.js 数字渐变动画 - 计数器 - 踏得网](http://wow.techbrood.com/fiddle/14457)
+
+* [react-flip-move](https://github.com/joshwcomeau/react-flip-move)
 #### 参考 ####
 
 * [wjun.cc](https://wjuncc.github.io/demo/)
@@ -20,10 +28,26 @@ tags:
 * [ReactJS学习笔记八：动画 - CSDN博客](http://blog.csdn.net/lihongxun945/article/details/46778723)
 * [react中你们都是通过什么方式实现动画的？ - 知乎](https://www.zhihu.com/question/40746239)
 * [React怎么做动画啊？ - 未分类 - React 中文](http://react-china.org/t/react/12831)
+* [蚂蚁金服体验技术部-motion.ant](https://motion.ant.design/language/basic)
+* [ant-motion-dva-cli-example](https://github.com/ant-motion/ant-motion-dva-cli-example)
+* 视频看不了
 * [React 动画效果实现-极客学院](http://www.jikexueyuan.com/course/1589.html)
-* [React.js 数字渐变动画 - 计数器 - 踏得网](http://wow.techbrood.com/fiddle/14457)
-* [in Reactjs动画替换：如何在添加内容fade淡出之前等待淡出？_javascript_帮酷编程问答](https://ask.helplib.com/javascript/post_9068170)
-* [React.js: 非CSS动画_javascript_帮酷编程问答](https://ask.helplib.com/javascript/post_1157072)
+* 
+* react动画插件
+* [react.animate](https://github.com/pleasetrythisathome/react.animate)
+* 
+* 使用CSS切换来制作动画
 * [ReactJS - Animations - 简单教程 - 简单编程](http://www.joymvp.com/2017/08/12/reactjs-basic-react-animations.html)
+
+
+* 一些探讨
 * [javascript – 什么是react.js友好的方式来动画列表重排序？ - 代码日志](https://codeday.me/bug/20171121/99173.html)
+* [React.js: 非CSS动画_javascript_帮酷编程问答](https://ask.helplib.com/javascript/post_1157072)
+* 
+* 内置动画不好用
 * [React.js開發入門教學(10)-動畫特效 - Leo's Blog](https://linmasahiro.github.io/2017/04/09/20170409_2/index.html)
+* 
+* react更加低级的动画 ReactTransitionGroup
+* [in Reactjs动画替换：如何在添加内容fade淡出之前等待淡出？_javascript_帮酷编程问答](https://ask.helplib.com/javascript/post_9068170)
+* [react-css-transition-replace](https://github.com/marnusw/react-css-transition-replace)
+* 
