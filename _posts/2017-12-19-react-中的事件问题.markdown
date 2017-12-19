@@ -31,10 +31,6 @@ tags:
         var a = e.target.getAttribute("data-href2"); 
         window.myObject.started.dispatch("jump",a);
     }
-    onStarted(param1, param2){
-        //alert(param1 + "123");
-        console.log(this,param2);
-    }
 	
 在Door1.js写接收事件：
 
@@ -44,7 +40,12 @@ tags:
 	        this.state = {value: '0'}
 	        this.onStarted = this.onStarted.bind(this);
 	        window.myObject.started.add(this.onStarted);
-    }
+	    }
+	    onStarted(param1, param2){
+	        this.state.value = param1;
+	        this.state.url = param2; 
+	        this.forceUpdate();
+	    }
 
 
 正确输出：
