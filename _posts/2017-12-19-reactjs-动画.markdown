@@ -13,6 +13,465 @@ tags:
 
 ReactTransitionGroup 教程
 
+----------------------------
+
+TimelineMax / attrPlugin不能与React配合使用
+
+5月4日发布
+
+你好 -   
+我在做React程序，一直在获取attr :但无济于事。   
+我只想改变对象的位置。  
+手动设置x和y值。  
+可能与虚拟DOM有关，但不肯定。  
+有没有人遇到过这个问题，或者做到了？
+
+
+
+代码，在componentDidMount（）:
+
+	setTimeout（（）=> {
+	var tl = new TimelineMax（）
+	const right_arm = findDOMNode（this.refs.right_arm）
+	tl.to（right_arm，2，{attr : {d :“M 286,61 485,61”}}，1）
+	}，2000）
+
+提前致谢！
+
+----------------------------
+
+5月4日发布
+
+你完全可以在React中使用GSAP。
+没问题。  
+但是，对没有全部代码的项目，做debug有点困难。  
+你可以在codepen中放一个简化的测试用例，以便我们看到究竟发生了什么？     
+你有什么错误吗？     
+在开发工具中观看时，“d”信息是否会发生变化？  
+你使用的是什么版本的GSAP？   
+一定要确保最新版本（1.19.1）    
+
+
+
+猜测是你的“d”字符串没有匹配的数值。   
+如果是这样的话，您需要使用MorphSVGPlugin（Club GreenSock的会员权益 - 即使点数变化很大，它也允许您在任何“d”数据之间变形）。 [http://greensock.com/club/](http://greensock.com/club/)
+
+
+
+我相信React可以运行GSAP.给我更多信息。
+
+快乐Tween！
+
+----------------------------
+像2
+5月4日发布  
+感谢回复！    
+我怎样才能把GSAP导入到Codepen？  
+
+----------------------------
+blitz2061  
+5月4日发布  
+超简单的：  
+只需打开pen设置（pen settings），并在JavaScript区域，有一个“快速添加”下拉列表中有GreenSock TweenMax。
+或者您可以从我们的下载覆盖中复制CDN网址
+
+GSAP功能于codepen.png
+
+像1一样
+
+使用GreenSock
+使用GreenSock
+4,955个赞（超级英雄）
+11,454个职位
+举报帖子
+5月4日发布
+感谢您的快速回复！
+顶级的支持 - 特别是对于非客户（可能会很快！），
+
+这是一个工作的codepen。
+我不使用FindDOMNode来定位裁判，而是根据ID来定位SVG元素。
+我不知道如何将FindDOMNode引入codepen（愿意学习！）。
+
+
+
+这里的工作非常好，但是在我的应用程序中没有工作。
+我也提供了我的组件以供参考（剥去了很多不必要的元素）。
+不工作，只是复制粘贴作业。
+
+
+
+最终，我想完成两件事:
+
+
+
+1）让动画工作
+
+2）使用FindDOMNode来定位参考。
+
+
+
+让我知道任何问题！
+
+
+
+blitz2061
+blitz2061
+0喜欢（新手）
+6个职位
+举报帖子
+5月4日发布
+也:我的控制台错误代码是:
+
+
+
+bundle.js : 43未捕获无法补间空目标
+
+blitz2061
+blitz2061
+0喜欢（新手）
+6个职位
+举报帖子
+5月4日发布
+多一个文件 -  https_... //codepen.io/anon/pen/aWLdva
+
+
+
+这是使用FindDOMNodes  - 而我没有收到错误消息 - 但动画不起作用。
+
+blitz2061
+blitz2061
+0喜欢（新手）
+6个职位
+举报帖子
+5月5日发布
+由于我不是一个React人，所以我无法为findDOMNodes提供很多帮助，而你的示例codepen完全没有功能（看起来像你刚刚粘贴到JS面板的ES6代码，并留下一切空白） 
+，但这里有一个快速的叉子，显示x和填充动画:
+
+https_... //codepen.io/GreenSock/pen/a9b521fc21c068c3affa71f81cb92eff/?editors=1010
+
+
+
+有一件事要注意的是，如果你要补间一个属性（在这种情况下是“填充”），它必须实际存在并填充在元素上。
+否则，GSAP不知道什么是补间的值。
+
+
+
+这有帮助吗？
+
+像1一样
+
+使用GreenSock
+使用GreenSock
+4,955个赞（超级英雄）
+11,454个职位
+举报帖子
+5月5日发布
+嘿杰克 - 
+
+
+
+感谢您的反馈。
+我已经做了大量的研究，并在整个过程中学到了一大堆东西 - 但是attrPlugin仍然没有完成，所有的东西在Codepen和React应用程序之间保持一致。
+也许这是节点模块的问题？
+
+blitz2061
+blitz2061
+0喜欢（新手）
+6个职位
+举报帖子
+5月5日发布
+这可能有助于验证...
+
+
+
+就在你的补间之前，你可以console.log（）元素的属性值在那个点？
+有效吗？
+例如 :
+
+var target = findDOMNode（this.refs.right_basket）;
+的console.log（target.getAttribute（ “填充”））; 
+//是否报告一种颜色？
+TweenMax.to（target，2，{attr : {fill :“red”}}）;
+你正在加载TweenMax，对不对？
+那里面有AttrPlugin，但是如果你只加载TweenLite和TimelineLite，例如，它将不能补间属性，因为AttrPlugin没有加载。
+我完全猜测在这里:）
+
+
+使用GreenSock
+使用GreenSock
+4,955个赞（超级英雄）
+11,454个职位
+举报帖子
+5月7日发布
+嗨，
+
+
+
+我正在通过论坛中的新功能，并遇到这个帖子，我想我会提供一些关于使用GSAP和React的提示。
+
+
+
+首先以下是一个大的NO-NO :
+
+在2017年5月5日凌晨2点33分，blitz2061说:
+我不使用FindDOMNode来定位裁判，而是根据ID来定位SVG元素。
+我不知道如何将FindDOMNode引入codepen（愿意学习！）。
+
+在使用React时，切勿使用常规选择器。
+这是因为组件稍后可能会更新并重新呈现。
+在这种情况下，id可能改变，甚至一个具有特定ID的DOM节点不能被再次渲染，那么你得到不能补间一个null目标错误。
+这也是多伊尔的主人，但是我们会原谅他的罪过，因为他给了我们GSAP : -D。
+要获得一个特定的元素，只需使用this.refs，它指向在DOM中呈现的节点。
+
+
+
+
+
+
+最后没有必要在JSX上使用括号表示法。
+请记住，组件的引用是一个对象，所以你可以传递一个字符串给它，React将在代码中查找这个ref属性，并将任何字符串传递给对象:
+
+
+
+渲染（）{
+返回<div ref =“myDiv”> </ div>;
+}
+
+/ /然后React做到这一点（这当然是非常简单的
+component.refs [“myDiv”] = nodeObject;
+
+//所以你可以访问你的节点
+this.refs.myDiv;
+
+
+所以一个真正的GSAP代码可以是这样的:
+
+
+
+componentDidMount（）{
+const target = this.refs.targetGroup;
+TweenLite.to（target，1，{}）;
+}
+
+渲染（）{
+返回（
+<svg xmlns =“http _.. // //www.w3.org/2000/svg”id =“svg2”version =“1.1”viewBox =“0 -10 573 367”height =“367px”width =“573px 
+“>
+<g ref ='targetGroup'>
+// svg代码或组件在这里
+</ g>的
+</ SVG>
+）;
+}
+
+
+至于属性插件部分，杰克已经工作了，所以不需要进入。
+
+
+
+快乐的补间！
+
+像5
+
+罗德里戈
+罗德里戈
+1,848个赞（超级英雄）
+有1,553个帖子
+举报帖子
+5月8日发布
+感谢您的帮助，罗德里戈！
+
+坚持和捍卫你在排行榜上的位置:）
+
+
+
+希望一切安好！
+
+
+
+卡尔
+
+
+
+
+
+像2
+
+卡尔
+卡尔
+6,941个赞（超级英雄）
+8,319个帖子
+举报帖子
+5月8日发布
+感谢您的澄清，罗德里戈。
+我很好奇 - 有没有一种“反应方式”来抓取多个元素？
+例如，“refs”听起来像DOM中的基本“id”，但是如果有人有25个列表元素，他们想要喂入到staggerTo（）？
+在非React的世界里，你可以简单地给每个类应用一个类，并且定位“.myClass”，但是你如何在React中做到这一点？
+如果你不得不做[this.refs.e1，this.refs.e2，this.refs.e3，...]
+
+像1一样
+
+使用GreenSock
+使用GreenSock
+4,955个赞（超级英雄）
+11,454个职位
+举报帖子
+5月8日发布
+为了更好地理解React，请看这篇文章。
+简而言之，React只不过是递归调用document.createElement（“someElement”）;
+
+
+
+
+
+
+像2
+
+OSUblake
+OSUblake
+6,038个赞（超级英雄）
+3,072个帖子
+举报帖子
+5月8日发布
+OSUblake在2017年5月8日下午6点47分表示:
+React只不过是递归调用document.createElement（“someElement”）;
+
+
+
+Bingo !!!，这是理解它的关键。
+像往常一样@OSUblake把钉子锁了，他把它打在脑袋里！ 
+_... -D
+
+
+
+在2017年5月8日下午1点39分，GreenSock说:
+我很好奇 - 有没有一个“反应的方式”来抓多个eleme
+
+
+
+@GreenSock，好吧，这有点棘手。
+首先，使用React数据时，通常以JSON文件或对象符号的形式传递。
+所以通常共享一些共同的东西（比如一个特定的类）的元素被存储在数组中:
+
+
+
+const els = [
+{name :“Jack”，Ocupation :“GSAP硕士”}，
+{名字_...“卡尔”，职业空缺:“极客大使”}，
+{name :“Blake”，Ocupation :“Superstar Moderator and JS wikipedia”}，
+{名字_...“乔纳森”，职业:“超级明星版主和浏览器 - 怪癖参考”}，
+{名称:“点”，职业:“超级明星主持人和SVG主谋”}
+]。
+
+
+当把这个添加到虚拟DOM，你可以使用地图数组助手:
+
+
+
+渲染（）{
+<div className =“staff-wrapper”>
+{els.map（（element，index）=> {
+返回<div className =“staff-card”ref = {element.name}> </ div>;
+}）;}
+</ DIV>
+}
+
+
+现在，当它们全部选中时，通常我们使用querySelectorAll或getElementsByClassName。
+我对这个方法的规格并不是很熟悉，但是我可以假设它们涉及遍历DOM树寻找匹配参数的元素。
+在这种情况下，我们手动为每个元素设置ref名称，所以我们完全控制了代码的这个方面，所以我们可以再循环我们的集合，使用for或for循环来匹配ref名称，甚至
+使用map方法得到一个新的数组___
+
+
+
+//为每个元素创建一个动画
+els.forEach（（E，I）=> {
+TweenLite.to（e，1，{rotation : 360}）;
+}）;
+
+//创建一个交错动画
+const targets = els.map（（e，i）=> {
+this.refs [e.name];
+}）;
+
+TweenMax.staggerTo（targets，1，{rotation : 360}，0.1）;
+
+
+下面是我使用修饰符插件为React应用制作的一个选取框的示例，这只是一个简单的原型，因为我被一些愚蠢的NDA绑定了完整的代码: mellow :。
+
+
+
+这只是React和CSS :
+
+
+
+
+这使用PIXI，只是一个实验，看看是否有更好的表现，因为真实的东西使用图像和文字:
+
+
+那么，就是这样，希望这有助于弄清这个问题和React有关的其他问题。
+
+
+
+最后但并非最不重要的@Carl，感谢哥们，总是很高兴回家。
+事情进展顺利，仍然没有很多空闲时间，但希望有一天我会回来的全职。
+当我发表一个答案或一个线程，每个人都欢迎我的时候，我感觉自己很好，
+
+
+
+快乐的补间！
+
+像2
+
+罗德里戈
+罗德里戈
+1,848个赞（超级英雄）
+有1,553个帖子
+创建一个帐户或登录评论
+您需要成为会员才能发表评论
+
+创建一个帐户
+在我们的社区注册一个新帐户。
+这很容易！
+
+注册一个新帐户登录
+已经有一个帐户？
+在这里登录。
+
+现在登录
+转到主题列表
+GSAP
+
+最近浏览0位会员
+没有注册用户查看此页面。
+
+主页HTML5 / JS GSAP TimelineMax / attrPlugin不能与React配合使用
+我每天都越来越惊讶，很高兴我决定拿到营业执照。
+LilaQ
+
+
+
+
+
+
+
+
+
+
+
+
+注册我们的通讯
+获取GreenSock产品的最新更新，独家优惠以及更多信息。
+
+
+您的电子邮件地址
+注册
+您的信息将始终保密。
+
+只有少数公司每天都依赖绿色产品。
+
+
+
 * [react.js - 能否在React里使用JQuery里的fadeIn,fadeOut等方法控制组件？ - SegmentFault](https://segmentfault.com/q/1010000004094563)
 * [在react里面使用jquery插件 - 个人文章 - SegmentFault](https://segmentfault.com/a/1190000011133781)
 * [React使用jquery方式动态获取数据 - 前端艺术者 - 博客园](http://www.cnblogs.com/kuailingmin/p/4607143.html)
