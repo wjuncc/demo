@@ -506,533 +506,107 @@ Animated.decay（this.state.anim，{velocity}）。start（）;
 }
 });
 }）;
-Animation Chaining
-动画链接
+
+### 动画链接 Animation Chaining ###
+
 The target for an animation is usually a number but sometimes it is convenient to use another value as a target.
 动画的目标通常是一个数字，但有时使用另一个值作为目标是很方便的。
 This way, the first value will track the second.
 这样，第一个值将跟踪第二个。
 Using a spring animation, we can get a nice trailing effect.
 使用弹簧动画，我们可以得到一个不错的尾随效果。
-
-Reset
-重启
-Drag
-拖动
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-var anims = [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(0));
-var anims = [0，1，2，3，4] .map（（_，i）=> new Animated.Value（0））;
-Animated.spring(anims[0], {toValue :  anims[1]}).start();
-Animated.spring（anims [0]，{toValue : anims [1]}）。start（）;
-Animated.spring(anims[1], {toValue :  anims[2]}).start();
-Animated.spring（anims [1]，{toValue : anims [2]}）。start（）;
-Animated.spring(anims[2], {toValue :  anims[3]}).start();
-Animated.spring（anims [2]，{toValue : anims [3]}）。start（）;
-Animated.spring(anims[3], {toValue :  anims[4]}).start();
-Animated.spring（anims [3]，{toValue : anims [4]}）。start（）;
-return {
-返回{
-anime : anime,
-动漫:动漫，
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<div>
-<DIV>
-{this.state.anims.map((anim, i) =>
-{this.state.anims.map（（anim，i）=>
-<Animated.div
-<Animated.div
-style={{left :  anim}}
-style = {{left : anim}}
-className="circle"
-类名=“圆”
-{...(i === 4 & & Horizontal Pan(anime, {
-{...（i === 4 & & Horizo​​ntal Pan（anime，{
-onEnd :  this.handleEnd
-onEnd _... this.handleEnd
-}))}>
-}））}>
-{i === 4  &  &  'Drag'}
-{i === 4 & &'Drag'}
-</Animated.div>
-</Animated.div>
-)}
-）}
-</div>
-</ DIV>
-);
-）;
-},
-}，
-handleEnd :  function({velocity}) {
-handleEnd : function（{velocity}）{
-Animated.decay(this.state.anims[4], {velocity}).start();
-Animated.decay（this.state.anims [4]，{velocity}）。start（）;
-}
-}
-});
-}）;
-addListener
-的addListener
-As I said earlier, if you track a spring
-正如我刚才所说，如果你跟踪一个春天
-
-Reset
-重启
-Drag
-拖动
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-var anims = [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(i * 100));
-var anims = [0，1，2，3，4] .map（（_，i）=> new Animated.Value（i * 100））;
-anims[0].addListener(this.handleChange);
-anims [0] .addListener（this.handleChange）;
-return {
-返回{
-selected :  null,
-选中: null，
-anime : anime,
-动漫:动漫，
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<div>
-<DIV>
-{this.state.anims.map((anim, i) =>
-{this.state.anims.map（（anim，i）=>
-<Animated.div
-<Animated.div
-style={{
-风格= {{
-left :  anim,
-左: anim，
-opacity :  i === 0  |  |  i === this.state.selected ?
-opacity : i === 0 | | i === this.state.selected？ 
-1  :  0.5
-1 : 0.5
-}}
-}}
-className="circle"
-类名=“圆”
-{...(i === 0  &  &  HorizontalPan(anim, { onEnd :  this.handleEnd }))}>
-{...（i === 0 & &Horizo​​ntalPan（anim，{onEnd : this.handleEnd}））}>
-{i === 0  &  &  'Drag'}
-{i === 0 & &'Drag'}
-{i === this.state.selected  &  &  'Selected!'}
-{i === this.state.selected & &'Selected！'}
-</Animated.div>
-</Animated.div>
-)}
-）}
-</div>
-</ DIV>
-);
-）;
-},
-}，
-handleChange :  function({value}) {
-handleChange :函数（{value}）{
-var selected = null;
-var selected = null;
-this.state.anims.forEach((_, i) => {
-this.state.anims.forEach（（_，i）=> {
-selected = i;
-选择=我;
-}
-}
-});
-}）;
-if (selected !== this.state.selected) {
-if（selected！== this.state.selected）{
-this.select(selected)
-this.select（选择）的
-}
-}
-},
-}，
-select(selected) {
-选择（选择）{
-this.setState({selected}, () => {
-this.setState（{selected}，（）=> {
-this.state.anims.forEach((anim, i) => {
-this.state.anims.forEach（（anim，i）=> {
-if (i === 0) { return;
-if（i === 0）{return; 
-}
-}
-if (selected === i) {
-如果（选择===我）{
-Animated.spring(anim, {toValue :  this.state.anims[0]}).start();
-Animated.spring（anim，{toValue : this.state.anims [0]}）。start（）;
-} else {
-} else {
-Animated.spring(anim, {toValue :  i * 100}).start();
-Animated.spring（anim，{toValue : i * 100}）。start（）;
-}
-}
-});
-}）;
-});
-}）;
-},
-}，
-handleEnd() {
-handleEnd（）{
-this.select(null);
-this.select（NULL）;
-Animated.spring(this.state.anims[0], {toValue :  0}).start();
-Animated.spring（this.state.anims [0]，{toValue : 0}）。start（）;
-}
-}
-});
-}）;
-Animated.sequence
-Animated.sequence
-It is very common to animate
-动画是非常普遍的
-
-Reset
-重启
-Click
-点击
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anims :  [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(0.2)),
-anims : [0，1，2，3，4] .map（（_，i）=> new Animated.Value（0.2）），
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<div>
-<DIV>
-{this.state.anims.map((anim, i) =>
-{this.state.anims.map（（anim，i）=>
-<Animated.div
-<Animated.div
-style={{opacity :  anim, position :  'relative'}}
-style = {{opacity : anim，position :'relative'}}
-className="circle"
-类名=“圆”
-onClick={i === 0  &  &  this.handleClick}>
-onClick = {i === 0 & & this.handleClick}>
-{i === 0  &  &  'Click'}
-{i === 0 & &'Click'}
-</Animated.div>
-</Animated.div>
-)}
-）}
-</div>
-</ DIV>
-);
-）;
-},
-}，
-handleClick :  function() {
-handleClick : function（）{
-this.state.anims.forEach(anim => { anim.setValue(0.2); });
-this.state.anims.forEach（anim => {anim.setValue（0.2）;}）;
-Animated.sequence(
-Animated.sequence（
-this.state.anims.map(anim => Animated.spring(anim, { toValue :  1 }))
-this.state.anims.map（anim => Animated.spring（anim，{toValue : 1}））
-).start();
-）。开始（）;
-},
-}，
-});
-}）;
-Reset
-重启
-Click
-点击
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anims :  [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(0.2)),
-anims : [0，1，2，3，4] .map（（_，i）=> new Animated.Value（0.2）），
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<div>
-<DIV>
-{this.state.anims.map((anim, i) =>
-{this.state.anims.map（（anim，i）=>
-<Animated.div
-<Animated.div
-style={{opacity :  anim, position :  'relative'}}
-style = {{opacity : anim，position :'relative'}}
-className="circle"
-类名=“圆”
-onClick={i === 0  &  &  this.handleClick}>
-onClick = {i === 0 & & this.handleClick}>
-{i === 0  &  &  'Click'}
-{i === 0 & &'Click'}
-</Animated.div>
-</Animated.div>
-)}
-）}
-</div>
-</ DIV>
-);
-）;
-},
-}，
-handleClick :  function() {
-handleClick : function（）{
-this.state.anims.forEach(anim => { anim.setValue(0.2); });
-this.state.anims.forEach（anim => {anim.setValue（0.2）;}）;
-Animated.stagger(
-Animated.stagger（
-100,
-100，
-this.state.anims.map(anim => Animated.spring(anim, { toValue :  1 }))
-this.state.anims.map（anim => Animated.spring（anim，{toValue : 1}））
-).start();
-）。开始（）;
-},
-}，
-});
-}）;
-Reset
-重启
-Click
-点击
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anims :  [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(0.2)),
-anims : [0，1，2，3，4] .map（（_，i）=> new Animated.Value（0.2）），
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<div>
-<DIV>
-{this.state.anims.map((anim, i) =>
-{this.state.anims.map（（anim，i）=>
-<Animated.div
-<Animated.div
-style={{opacity :  anim, position :  'relative'}}
-style = {{opacity : anim，position :'relative'}}
-className="circle"
-类名=“圆”
-onClick={i === 0  &  &  this.handleClick}>
-onClick = {i === 0 & & this.handleClick}>
-{i === 0  &  &  'Click'}
-{i === 0 & &'Click'}
-</Animated.div>
-</Animated.div>
-)}
-）}
-</div>
-</ DIV>
-);
-）;
-},
-}，
-handleClick :  function() {
-handleClick : function（）{
-this.state.anims.forEach(anim => { anim.setValue(0.2); });
-this.state.anims.forEach（anim => {anim.setValue（0.2）;}）;
-Animated.sequence([
-Animated.sequence（[
-Animated.parallel(
-Animated.parallel（
-this.state.anims.map(anim => Animated.spring(anim, { toValue :  1 }))
-this.state.anims.map（anim => Animated.spring（anim，{toValue _.. 1）））
-),
-）
-Animated.stagger(
-Animated.stagger（
-100,
-100，
-this.state.anims.map(anim => Animated.spring(anim, { toValue :  0.2 }))
-this.state.anims.map（anim => Animated.spring（anim，{toValue : 0.2}））
-),
-）
-]).start();
-]）。开始（）;
-},
-}，
-});
-}）;
-ResetClick
-ResetClick
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anim :  new Animated.Value(0),
-anim : new Animated.Value（0），
-};
-};
-},
-}，
-handleClick :  function() {
-handleClick : function（）{
-var rec = () => {
-var rec =（）=> {
-Animated.sequence([
-Animated.sequence（[
-Animated.timing(this.state.anim, {toValue :  -1, duration :  150}),
-Animated.timing（this.state.anim，{toValue : -1，duration : 150}），
-Animated.timing(this.state.anim, {toValue :  1, duration :  150}),
-Animated.timing（this.state.anim，{toValue : 1，duration : 150}），
-]).start(rec);
-。]）开始（REC）;
-};
-};
-rec();
-REC（）;
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<Animated.div
-<Animated.div
-style={{
-风格= {{
-left :  this.state.anim.interpolate({
-left : this.state.anim.interpolate（{
-inputRange :  [-1, -0.5, 0.5, 1],
-inputRange : [-1，-0.5，0.5，1]，
-outputRange :  [0, 5, 0, 5]
-outputRange : [0，5，0，5]
-}),
-}），
-transform : [
-转变 :  [
-{rotate :  this.state.anim.interpolate({
-{rotate : this.state.anim.interpolate（{
-inputRange :  [-1, 1],
-inputRange : [-1,1]，
-outputRange :  ['-10deg', '10deg']
-outputRange : ['-10deg'，'10deg']
-})}
-}）}
-]
-]
-}}
-}}
-className="circle"
-类名=“圆”
-onClick={this.handleClick}>
-的onClick = {this.handleClick}>
-Click
-点击
-</Animated.div>
-</Animated.div>
-);
-）;
-},
-}，
-});
-}）;
-Reset
-重启
-H-Scroll
-H-滚动
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anim :  new Animated.Value(0)
-anim : new Animated.Value（0）
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<div
-<DIV
-style={{overflow :  'scroll', height :  60}}
-style = {{overflow :'scroll'，height : 60}}
-onScroll={Animated.event([
-onScroll = {Animated.event（[
-{target :  {scrollLeft :  this.state.anim}}
-{target : {scrollLeft : this.state.anim}}
-])}>
-]）}>
-<div style={{width :  1000, height :  1}} />
-<div style = {{width : 1000，height : 1}} />
-{[0, 1, 2, 3, 4].map(i =>
-{[0，1，2，3，4] .map（i =>
-<Animated.div
-<Animated.div
-style={{
-风格= {{
-left :  this.state.anim.interpolate({
-left : this.state.anim.interpolate（{
-inputRange :  [0, 1],
-inputRange : [0，1]，
-}),
-}），
-pointerEvents :  'none',
-pointerEvents :'none'，
-}}
-}}
-className="circle">
-类名=“圆”>
-{i === 4  &  &  'H-Scroll'}
-{i === 4 & &'H-Scroll'}
-</Animated.div>
-</Animated.div>
-)}
-）}
-</div>
-</ DIV>
-);
-）;
-},
-}，
-});
-}）;
 	
+	React.createClass({
+	  getInitialState: function() {
+	    var anims = [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(0));
+	    Animated.spring(anims[0], {toValue: anims[1]}).start();
+	    Animated.spring(anims[1], {toValue: anims[2]}).start();
+	    Animated.spring(anims[2], {toValue: anims[3]}).start();
+	    Animated.spring(anims[3], {toValue: anims[4]}).start();
+	    return {
+	      anims: anims,
+	    };
+	  },
+	  render: function() {
+	    return (
+	      <div>
+	        {this.state.anims.map((anim, i) =>
+	          <Animated.div
+	            style={{left: anim}}
+	            className="circle"
+	            {...(i === 4 && HorizontalPan(anim, {
+	              onEnd: this.handleEnd
+	            }))}>
+	            {i === 4 && 'Drag'}
+	          </Animated.div>
+	        )}
+	      </div>
+	    );
+	  },
+	  handleEnd: function({velocity}) {
+	    Animated.decay(this.state.anims[4], {velocity}).start();
+	  }
+	});
+
+### addListener ### 
+
+正如前面所讲，如果你跟踪spring
+	
+	React.createClass({
+	  getInitialState: function() {
+	    var anims = [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(i * 100));
+	    anims[0].addListener(this.handleChange);
+	    return {
+	      selected: null,
+	      anims: anims,
+	    };
+	  },
+	  render: function() {
+	    return (
+	      <div>
+	        {this.state.anims.map((anim, i) =>
+	          <Animated.div
+	            style={{
+	              left: anim,
+	              opacity: i === 0 || i === this.state.selected ? 1 : 0.5
+	            }}
+	            className="circle"
+	            {...(i === 0 && HorizontalPan(anim, { onEnd: this.handleEnd }))}>
+	            {i === 0 && 'Drag'}
+	            {i === this.state.selected && 'Selected!'}
+	          </Animated.div>
+	        )}
+	      </div>
+	    );
+	  },
+	  handleChange: function({value}) {
+	    var selected = null;
+	    this.state.anims.forEach((_, i) => {
+	      if (i !== 0 && i * 100 - 50 < value && value <= i * 100 + 50) {
+	        selected = i;
+	      }
+	    });
+	    if (selected !== this.state.selected) {
+	      this.select(selected)
+	    }
+	  },
+	  select(selected) {
+	    this.setState({selected}, () => {
+	      this.state.anims.forEach((anim, i) => {
+	        if (i === 0) { return; }
+	        if (selected === i) {
+	          Animated.spring(anim, {toValue: this.state.anims[0]}).start();
+	        } else {
+	          Animated.spring(anim, {toValue: i * 100}).start();          
+	        }
+	      });
+	    });
+	  },
+	  handleEnd() {
+	    this.select(null);
+	    Animated.spring(this.state.anims[0], {toValue: 0}).start();
+	  }
+	});
+
+### Animated.sequence ### 
+对动画来说，频率很普遍的
