@@ -163,6 +163,53 @@ Child html-webpack-plugin for "index.html":
 
 ### React访问组件子节点 ###
 
+	this.props.children
+
+React在ES6的实现中去掉了getInitialState这个hook函数,规定state在construc.
+
+	class exampleComponent extends React.Component {
+	    constructor(props) {
+	        super(props);
+	        this.state = {example: 'example'}
+	    }
+	
+	}
+
+
+
+
+* [React访问组件子节点](http://blog.csdn.net/you23hai45/article/details/52706148)
+
+### react组件之间传值 ###
+
+Class GlobalBroadcaster es6 react
+
+如果直接写，会报错：
+
+
+	globalBroadcaster is not defined  react
+
+	/static/termite_js/app/common/GlobalBroadcaster.js"
+
+Class GlobalBroadcaster es6 react
+
+需要安装：
+
+	npm install signals	
+
+
+* [没有任何嵌套关系的组件之间传值](http://blog.csdn.net/limm33/article/details/50942863)
+* [How to communicate between ReactJS components](https://www.ctheu.com/2015/02/12/how-to-communicate-between-react-components/)
+* [Comparison between different Observer Pattern implementations](https://github.com/millermedeiros/js-signals/wiki/Comparison-between-different-Observer-Pattern-implementations)
+* [](http://www.imooc.com/topic/reactnative?mc_marking=d3afbaad984272d451079d2a8d447738&mc_channel=bdqdkj)
+
+
+### 位置 ###
+
+C:\Program Files\JetBrains\WebStorm 2017.1.4\plugins\JavaScriptLanguage\lib\JavaScriptLanguage.jar!\com\intellij\lang\javascript\index\predefined
+
+* [如何编辑idea中的声明JS](http://cache.baiducontent.com/c?m=9f65cb4a8c8507ed19fa950d100b96204a05d93e788090412189d65f93130a1c187ba0fc7063565f8e993d7a00aa4f59e1f736702a587cf1cc96d61185ac925e74de7067671cf004458358e996067ad620e602a8f944b6adf044c0f2818d9415088b44050cdbb1ca1d5703ca19b74871b4e7c416510846aded4621ac192c7acf7d17a202a4a0646145dfb1880710823dd1110690de22b14e4ae657f75e4a641fe20aa609217863bc1a60ac116a13939b4ae05b6e4153e813e3aec0c6fc4ffdcbeb41c0a98ffc6ec420bd87acee70322e01a670f9f8e8e52a653515d9bdc917b46aefbafbba3dfe13a6075dca0c2b707ccf1b8385fe40f31201a8a13fa077797e3f0bafa4738e62711f6ffb624da61eb062b6ff614aacb2cecc&p=8764840585cc43f22abd9b7d0c10cb&newp=882a9644d09412a05ab5d53c495d85231610db2151d6d5156b82c825d7331b001c3bbfb423241b0fd4c2786d01a44a59eef2347433012ba3dda5c91d9fb4c57479df&user=baidu&fm=sc&query=plugins%5CJavaScriptLanguage%5Clib%5CJavaScriptLanguage%2Ejar%21%5Ccom%5Cintellij%5Clang%5Cjavascript%5Cindex%5Cpredefined&qid=ede4f5070002234b&p1=1)
+
 ### 备忘录： ###
 #### react故事1 ####
 
