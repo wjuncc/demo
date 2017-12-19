@@ -16,6 +16,519 @@ ReactTransitionGroup 教程
 
 
 ### SVG的例子 ###
+
+* [论坛2015年](https://greensock.com/forums/topic/12093-react-and-gsap/)
+* [Animations with ReactTransitionGroup](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)
+* [2016年-Wrote an article that demos how to use GSAP with React](https://greensock.com/forums/topic/13970-wrote-an-article-that-demos-how-to-use-gsap-with-react/)
+* [youtube-](https://www.youtube.com/watch?v=UTFExS3IW5Q)
+* [Reusing ReactTransitionGroup animations with Higher-order Components](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)
+
+
+写了一篇演示如何使用GSAP和React的文章
+By garnwraly, March 16, 2016 in GSAP
+由garnwraly，2016年3月16日在GSAP
+
+---------------------------------------
+
+2016年3月16日发布
+
+很长一段时间GSAP用户，大约半年前开始使用，发现复杂动画一直是react被忽视的话题。 
+我的一个同事确信，react没有任何东西允许js动画（他们把文档埋在页面的下方）  
+
+---------------------------------------
+
+2016年3月16日发布
+您好，欢迎来到GreenSock论坛， 
+我对React并不是很熟悉，但是能够说明方向非常清晰，写得很好。
+我相信这会有所帮助。 
+Best, 
+Carl 
+
+---------------------------------------
+
+Carl 
+2016年3月16日发布
+尼斯写下garnwraly，谢谢:）
+
+---------------------------------------
+Jonathan 
+2016年3月17日发布 
+
+感谢您的文章，因为有人决定坚持Angular（等待angular 2）或转移到react，这篇文章绝对我帮助。
+我希望你会写更多关于这个话题的文章。 
+
+---------------------------------------
+2016年3月17日发布 
+您将使用什么标准来决定使用像React或Angular和直接JS / CSS / HTML这样的项目？
+
+Thanks.
+谢谢。
+
+---------------------------------------
+2016年3月17日发布
+Hi, all.
+大家好。
+
+谢谢，@ garnwraly。
+你的文章很棒。
+I do not know if I am missing something, but I want to use GSAP not only when the component is about to be rendered in the page but also after that.
+我不知道我是否错过了一些东西，但是我想不仅在组件即将在页面中渲染时，而且在此之后使用GSAP。
+
+
+
+My particular need is something like this :  imagine a slider component that changes its current visible slide by a menu.
+我的特殊需求是这样的_...设想一个滑块组件，通过菜单改变其当前可见的幻灯片。
+The slider component and its children are already rendered on the page.
+滑块组件及其子项已经在页面上呈现。
+The user clicks a button in the menu and I want my "MainSlider" controller animate its children to right or left until the correct slider be visible.
+用户单击菜单中的一个按钮，我希望我的“MainSlider”控制器向右或向左动画其子项，直到正确的滑块可见。
+The communication between the menu component and the "slider" controller is already done.
+菜单组件和“滑块”控制器之间的通信已经完成。
+But what I do not know is how to fire and animate the children component to move/animate themselves.
+但是我不知道的是如何激发儿童组件的动画和动画。
+
+
+
+So, what I want is something like this..
+所以，我想要的是这样的..
+
+//================ PorfolioSliderManager component
+// ================ PorfolioSliderManager组件
+
+var PortfolioSliderManager = React.createClass({
+var PortfolioSliderManager = React.createClass（{
+
+// ....
+// ...
+goNextPage :  function(pageIdx) {
+goNextPage : function（pageIdx）{
+console.log(
+的console.log（
+"animateTo", pageIdx,
+“animateTo”，pageIdx，
+"go out", this.currentItem.props.data.idx,
+“出去”，this.currentItem.props.data.idx，
+);
+）;
+this.currentItem.animateOut();
+this.currentItem.animateOut（）;
+this.currentItem.animateIn();
+this.currentItem.animateIn（）;
+},
+}，
+
+render :  function() {
+render : function（）{
+// Todo :  could be a loader animation or so...
+// Todo :可能是一个加载程序动画或...
+if (!this.state  |  |  !this.state.jobs) return <div></div>;
+if（！this.state | |！this.state.jobs）return <div> </ div>;
+
+var _this = this;
+var _this = this;
+var TransitionGroup = React.addons.TransitionGroup;
+var TransitionGroup = React.addons.TransitionGroup;
+return (
+返回（
+<div className="portfolio-resume-holder full-screen">
+<div className =“portfolio-resume-holder full-screen”>
+{
+{
+this.state.jobs.map(function(result, idx) {
+this.state.jobs.map（function（result，idx）{
+result.idx = idx;
+result.idx = idx;
+return (
+返回（
+<TransitionGroup key={result.id} ref={reff}>
+<TransitionGroup key = {result.id} ref = {reff}>
+{<PortfolioSliderItem data={result}/>}
+{<PortfolioSliderItem data = {result} />}
+</TransitionGroup>
+</ TransitionGroup>
+);
+）;
+})
+}）
+}
+}
+</div>
+</ DIV>
+);
+）;
+}
+}
+
+
+//================ PortfolioSliderItem class :
+// ================ PortfolioSliderItem类:
+PortfolioSliderItem = React.createClass({
+PortfolioSliderItem = React.createClass（{
+
+// When this is the correct children to be shown, animate into the screen :
+//当这是正确的孩子被显示，在屏幕上生成动画:
+animateIn :  function(callback) {
+animateIn : function（callback）{
+// here the code to animate the element
+//这里是动画元素的代码
+var el = React.findDOMNode(this);
+var el = React.findDOMNode（this）;
+TweenMax.fromTo(el, 0.6, {y :  -1000}, {y :  0 , onComplete :  callback});
+TweenMax.fromTo（el，0.6，{y : -1000}，{y : 0，onComplete : callback}）;
+},
+}，
+
+//....
+// ....
+render :  function() {
+render : function（）{
+return(
+返回（
+<div className="portfolio-resume-item full-screen" ref="screen">
+<div className =“portfolio-resume-item full-screen”ref =“screen”>
+<FullBackgroundComponent bgImage={this.props.data.bgImage} />
+<FullBackgroundComponent bgImage = {this.props.data.bgImage} />
+<h2>{this.props.data.name}</h2>
+<H2> {this.props.data.name} </ H2>
+<p>{this.props.data.desc}</p>
+<P> {this.props.data.desc} </ P>
+</div>
+</ DIV>
+);
+）;
+},
+}，
+
+Well..
+好..
+
+For me it should be simple with pure JS.
+对我来说，纯JS应该很简单。
+Just like this js slider :  http : //www.slidesjs.com/
+就像这个js滑块: http : //www.slidesjs.com/
+
+
+
+Do you think it Is possible with GSAP and ReactJS?
+你认为GSAP和ReactJS有可能吗？
+
+
+
+Thank you for your help.
+感谢您的帮助。
+
+
+
+
+
+pedro paulo almeida
+佩德罗保罗阿尔梅达
+pedro paulo almeida
+佩德罗保罗阿尔梅达
+1 Likes (Newbie)
+1个赞（菜鸟）
+3 posts
+3个职位
+Report post
+举报帖子
+Posted March 18, 2016
+2016年3月18日发布
+On 2016/3/18 at 12 : 22 AM, pixeldroid said :
+在2016/3/18上午12点至22点，pixeldroid表示:
+What criterion would you use to decide to use something like React or Angular vs. straight JS/CSS/HTML for a project?
+您将使用什么标准来决定使用像React或Angular和直接JS / CSS / HTML这样的项目？
+
+Thanks.
+谢谢。
+
+
+
+Complexity (including, but not limited to, degree of interactivity, amount of content, how much of the content is dynamic)
+复杂性（包括但不限于交互程度，内容数量，内容的多少是动态的）
+
+It's somewhat analogous to the dewey decimal system and organizing books.
+这有点类似于杜威十进制和组织书籍。
+
+If you have 2 shelves of books it'd be overkill.
+如果你有2本书的书架，这将是矫枉过正。
+If you have 100 shelves of books then you probably should.
+如果你有100架书，那么你可能应该。 
+10 shelves?
+10架？
+Judgement call.
+判决电话。
+
+Like  1
+像1一样
+garnwraly
+garnwraly
+garnwraly
+garnwraly
+7 Likes (Newbie)
+7个赞（菜鸟）
+4 posts
+4个职位
+Report post
+举报帖子
+Posted March 18, 2016
+2016年3月18日发布
+On 2016/3/18 at 1 : 54 AM, pedropauloalmeida said :
+在2016/3/18上午1点54分，pedropauloalmeida说:
+Hi, all.
+大家好。
+
+
+
+Thank you, @garnwraly.
+谢谢，@ garnwraly。
+Your article is great.
+你的文章很棒。
+I do not know if I am missing something, but I want to use GSAP not only when the component is about to be rendered in the page but also after that.
+我不知道我是否错过了一些东西，但是我想不仅在组件即将在页面中渲染时，而且在此之后使用GSAP。
+
+
+
+My particular need is something like this :  imagine a slider component that changes its current visible slide by a menu.
+我的特殊需求是这样的_...设想一个滑块组件，通过菜单改变其当前可见的幻灯片。
+The slider component and its children are already rendered on the page.
+滑块组件及其子项已经在页面上呈现。
+The user clicks a button in the menu and I want my "MainSlider" controller animate its children to right or left until the correct slider be visible.
+用户单击菜单中的一个按钮，我希望我的“MainSlider”控制器向右或向左动画其子项，直到正确的滑块可见。
+The communication between the menu component and the "slider" controller is already done.
+菜单组件和“滑块”控制器之间的通信已经完成。
+But what I do not know is how to fire and animate the children component to move/animate themselves.
+但是我不知道的是如何激发儿童组件的动画和动画。
+
+
+
+So, what I want is something like this..
+所以，我想要的是这样的..
+
+//================ PorfolioSliderManager component
+// ================ PorfolioSliderManager组件
+
+var PortfolioSliderManager = React.createClass({
+var PortfolioSliderManager = React.createClass（{
+
+// ....
+// ...
+goNextPage :  function(pageIdx) {
+goNextPage : function（pageIdx）{
+console.log(
+的console.log（
+"animateTo", pageIdx,
+“animateTo”，pageIdx，
+"go out", this.currentItem.props.data.idx,
+“出去”，this.currentItem.props.data.idx，
+);
+）;
+this.currentItem.animateOut();
+this.currentItem.animateOut（）;
+this.currentItem.animateIn();
+this.currentItem.animateIn（）;
+},
+}，
+
+render :  function() {
+render : function（）{
+// Todo :  could be a loader animation or so...
+// Todo :可能是一个加载程序动画或...
+if (!this.state  |  |  !this.state.jobs) return <div></div>;
+if（！this.state | |！this.state.jobs）return <div> </ div>;
+
+var _this = this;
+var _this = this;
+var TransitionGroup = React.addons.TransitionGroup;
+var TransitionGroup = React.addons.TransitionGroup;
+return (
+返回（
+<div className="portfolio-resume-holder full-screen">
+<div className =“portfolio-resume-holder full-screen”>
+{
+{
+this.state.jobs.map(function(result, idx) {
+this.state.jobs.map（function（result，idx）{
+result.idx = idx;
+result.idx = idx;
+return (
+返回（
+<TransitionGroup key={result.id} ref={reff}>
+<TransitionGroup key = {result.id} ref = {reff}>
+{<PortfolioSliderItem data={result}/>}
+{<PortfolioSliderItem data = {result} />}
+</TransitionGroup>
+</ TransitionGroup>
+);
+）;
+})
+}）
+}
+}
+</div>
+</ DIV>
+);
+）;
+}
+}
+
+
+//================ PortfolioSliderItem class :
+// ================ PortfolioSliderItem类:
+PortfolioSliderItem = React.createClass({
+PortfolioSliderItem = React.createClass（{
+
+// When this is the correct children to be shown, animate into the screen :
+//当这是正确的孩子被显示，在屏幕上生成动画:
+animateIn :  function(callback) {
+animateIn : function（callback）{
+// here the code to animate the element
+//这里是动画元素的代码
+var el = React.findDOMNode(this);
+var el = React.findDOMNode（this）;
+TweenMax.fromTo(el, 0.6, {y :  -1000}, {y :  0 , onComplete :  callback});
+TweenMax.fromTo（el，0.6，{y : -1000}，{y : 0，onComplete : callback}）;
+},
+}，
+
+//....
+// ....
+render :  function() {
+render : function（）{
+return(
+返回（
+<div className="portfolio-resume-item full-screen" ref="screen">
+<div className =“portfolio-resume-item full-screen”ref =“screen”>
+<FullBackgroundComponent bgImage={this.props.data.bgImage} />
+<FullBackgroundComponent bgImage = {this.props.data.bgImage} />
+<h2>{this.props.data.name}</h2>
+<H2> {this.props.data.name} </ H2>
+<p>{this.props.data.desc}</p>
+<P> {this.props.data.desc} </ P>
+</div>
+</ DIV>
+);
+）;
+},
+}，
+
+Well..
+好..
+
+For me it should be simple with pure JS.
+对我来说，纯JS应该很简单。
+Just like this js slider :  http : //www.slidesjs.com/
+就像这个js滑块: http : //www.slidesjs.com/
+
+
+
+Do you think it Is possible with GSAP and ReactJS?
+你认为GSAP和ReactJS有可能吗？
+
+
+
+Thank you for your help.
+感谢您的帮助。
+
+
+
+
+
+Definitely possible to do with GSAP and React, although I would not use ReactTransitionGroup if you want the slides in between to be visible
+GSAP和React绝对有可能，尽管我不会使用ReactTransitionGroup，如果你希望中间的幻灯片是可见的
+
+
+
+Here's a solution for if the slides all have the same dimensions :
+这里有一个解决方案，如果幻灯片都具有相同的尺寸:
+
+
+
+Each slide would need to know its own index and the slider's currently selected index (passed down as props)
+每张幻灯片都需要知道自己的索引和滑块的当前选定索引（作为道具传递）
+
+Based on that information it would be able to calculate the position it _should_ be in
+根据这些信息，它将能够计算它应该在的位置
+
+When the currently selected index changes (componentWillReceiveProps), each item would animate itself from its current position to the calculated target position
+当当前选择的索引改变（componentWillReceiveProps）时，每个项目将自身从其当前位置动画到计算出的目标位置
+
+
+
+Let me know if that works  : )
+让我知道这是否有效:）
+
+garnwraly
+garnwraly
+garnwraly
+garnwraly
+7 Likes (Newbie)
+7个赞（菜鸟）
+4 posts
+4个职位
+Report post
+举报帖子
+Posted March 18, 2016
+2016年3月18日发布
+On 2016/3/18 at 11 : 30 AM, garnwraly said :
+在2016/3/18上午11点30分，garnwraly说:
+Complexity (including, but not limited to, degree of interactivity, amount of content, how much of the content is dynamic)
+复杂性（包括但不限于交互程度，内容数量，内容的多少是动态的）
+
+It's somewhat analogous to the dewey decimal system and organizing books.
+这有点类似于杜威十进制和组织书籍。
+
+If you have 2 shelves of books it'd be overkill.
+如果你有2本书的书架，这将是矫枉过正。
+If you have 100 shelves of books then you probably should.
+如果你有100架书，那么你可能应该。 
+10 shelves?
+10架？
+Judgement call.
+判决电话。
+
+Given a large project, are you suggesting that the more interactivity and dynamic content, the more useful React would be?
+给定一个大型项目，你是否建议交互性和动态内容越多，React会更有用？
+
+Thanks for the reply.
+谢谢回复。
+
+pixeldroid
+pixeldroid
+pixeldroid
+pixeldroid
+19 Likes (Newbie)
+19个赞（菜鸟）
+74 posts
+74个职位
+Report post
+举报帖子
+Posted March 18, 2016
+2016年3月18日发布
+On 2016/3/18 at 12 : 08 PM, pixeldroid said :
+在2016/3/18 12:10 PM，pixeldroid说:
+Given a large project, are you suggesting that the more interactivity and dynamic content, the more useful React would be?
+给定一个大型项目，你是否建议交互性和动态内容越多，React会更有用？
+
+Thanks for the reply.
+谢谢回复。
+
+
+
+Yes, but don't limit the test to those, there are probably more that I missed  :  )
+是的，但不要把测试限制在那些，可能更多的是我错过了:）
+
+The main metric I would go by is complexity, in whatever form it may take
+我所要做的主要标准是复杂性，无论采用何种形式
+
+The more complex a project is, the greater the need for good organization of logic and abstractions to avoid creating an unmaintainable mess
+项目越复杂，对逻辑和抽象的良好组织的需求越大，以避免造成不可维护的混乱
+
+React and other frameworks provide good organization systems and abstractions (I am also quite fond of Angular and Vue   : ) )
+React和其他框架提供了良好的组织系统和抽象（我也非常喜欢Angular和Vue :））
+
+
+### SVG的例子 ###
+
 ----------------------------
 
 TimelineMax / attrPlugin不能与React配合使用
