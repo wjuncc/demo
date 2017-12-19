@@ -197,6 +197,17 @@ Class GlobalBroadcaster es6 react
 
 	npm install signals	
 
+	npm install signals --save-dev
+
+写法：
+
+	globalBroadcaster.subscribe('myCustomEventTypeString', handler);
+	globalBroadcaster.publish('myCustomEventTypeString', param1, param2, ...);
+	globalBroadcaster.unsubscribe('myCustomEventTypeString', handler);
+
+这个写法和SiteEvt完全一样。
+
+
 
 * [没有任何嵌套关系的组件之间传值](http://blog.csdn.net/limm33/article/details/50942863)
 * [How to communicate between ReactJS components](https://www.ctheu.com/2015/02/12/how-to-communicate-between-react-components/)
