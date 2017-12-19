@@ -23,13 +23,17 @@ tags:
 * [React.js 动画 - 陈三](https://zfanw.com/blog/react-js-animation.html)
 * [React动画实践 - AlloyTeam](http://www.alloyteam.com/2016/01/react-animation-practice/)
 * [React动画的几种实现方式 - 不挑食的程序员 - SegmentFault](https://segmentfault.com/a/1190000007388260)
-* [ReactJS动画 - vue教程](http://www.vue5.com/reactjs/reactjs_animations.html)
-* [ReactJS动画](http://tutorialspoint.howtolib.com/reactjs/reactjs_animations.htm)
-* [ReactJS学习笔记八：动画 - CSDN博客](http://blog.csdn.net/lihongxun945/article/details/46778723)
+* 
+*  react-addons-transition-group可以用TweenLite
+*   : 根据 animation hook 来实现动画，动画的具体实现方式可以使用 jQuery，css3 或者其他动画库如 gsap  
 * [react中你们都是通过什么方式实现动画的？ - 知乎](https://www.zhihu.com/question/40746239)
+* [collie](http://jindo.dev.naver.com/collie/)
 * [React怎么做动画啊？ - 未分类 - React 中文](http://react-china.org/t/react/12831)
+* 
+* 一整个整体方案，
 * [蚂蚁金服体验技术部-motion.ant](https://motion.ant.design/language/basic)
 * [ant-motion-dva-cli-example](https://github.com/ant-motion/ant-motion-dva-cli-example)
+* 一个师范例子[react-redux](https://github.com/meibin08/react-redux)
 * 视频看不了
 * [React 动画效果实现-极客学院](http://www.jikexueyuan.com/course/1589.html)
 * 
@@ -46,6 +50,10 @@ tags:
 * 
 * 内置动画不好用
 * [React.js開發入門教學(10)-動畫特效 - Leo's Blog](https://linmasahiro.github.io/2017/04/09/20170409_2/index.html)
+* [ReactJS学习笔记八：动画 - CSDN博客](http://blog.csdn.net/lihongxun945/article/details/46778723)
+* react-addons-css-transition-group
+* [ReactJS动画 - vue教程](http://www.vue5.com/reactjs/reactjs_animations.html)
+* [ReactJS动画](http://tutorialspoint.howtolib.com/reactjs/reactjs_animations.htm)
 * 
 * react更加低级的动画 ReactTransitionGroup
 * [in Reactjs动画替换：如何在添加内容fade淡出之前等待淡出？_javascript_帮酷编程问答](https://ask.helplib.com/javascript/post_9068170)
