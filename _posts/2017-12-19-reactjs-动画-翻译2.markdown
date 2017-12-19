@@ -34,7 +34,7 @@ Animated包含React声明，在背后使用原始DOM操作而不是通常的diff
 在style属性中使用，把它当做一个普通的css属性。
 只有animated组件（例如Animated.div等）才能理解它。
 
-	'''
+```
 	React.createClass({
 	  getInitialState: function() {
 	    return {
@@ -50,7 +50,7 @@ Animated包含React声明，在背后使用原始DOM操作而不是通常的diff
 	    );
 	  },
 	});
-	'''
+```
 
 ### 设定值 setValue ###
 用在render()内。
@@ -61,7 +61,7 @@ Animated包含React声明，在背后使用原始DOM操作而不是通常的diff
 Animated.div组件在渲染时跟踪接收到的动画值。
 这样，一旦值发生变化，就直接更新特定样式属性，而不用重新渲染整个组件。
 
-		
+```	
 	React.createClass({
 	  getInitialState: function() {
 	    return {
@@ -82,7 +82,7 @@ Animated.div组件在渲染时跟踪接收到的动画值。
 	    this.state.anim.setValue(400);
 	  },
 	});
-
+```
 ### Animated.timing ###
 
 了解了系统的工作原理，现在让我们试一试！
@@ -103,7 +103,7 @@ You need to stop the current animation, grab the current value and restart an an
 您需要停止当前的动画，抓住当前值并从那里重新开始动画。
 As this is pretty tedious to do manually, Animated will do that automatically for you.
 由于手动操作非常繁琐，动画会自动为您执行。
-
+```
 	React.createClass({
 	  getInitialState: function() {
 	    return {
@@ -124,7 +124,7 @@ As this is pretty tedious to do manually, Animated will do that automatically fo
 	    Animated.timing(this.state.anim, {toValue: 400}).start();
 	  },
 	});
-
+```
 
 ### Animated.spring ###
 
@@ -135,63 +135,46 @@ As this is pretty tedious to do manually, Animated will do that automatically fo
 
 想象一下，您将弹簧附加到目标值，将其拉伸至当前值并释放。 spring的运动模式与此相同。
 
-It turns out that this model is useful in a very wide range of animations.
-事实证明，这个模型在非常广泛的动画中是有用的。
-I highly recommend you to always start with a spring animation instead of a timing animation.
-我强烈建议你总是从春季动画开始，而不是时间动画。
-It will make your interface feels much better.
+事实证明，这个模型在大部分动画都管用。
+强烈建议你总是从弹性动画开始，而不是时间轴动画。 
 它会让你的界面感觉好多了。
+```javascript
+	React.createClass({
+	  getInitialState: function() {
+	    return {
+	      anim: new Animated.Value(0)
+	    };
+	  },
+	  render: function() {
+	    return (
+	      <div>
+	        <button onClick={() => this.handleClick(-1)}>&lt;</button>
+	        <Animated.div
+	          style={{
+	            transform: [
+	              {rotate: this.state.anim.interpolate({
+	                inputRange: [0, 4],
+	                outputRange: ['0deg', '360deg']
+	              })},
+	            ],
+	            position: 'relative'
+	          }}
+	          className="circle"
+	        />
+	        <button onClick={() => this.handleClick(+1)}>&gt;</button>
+	      </div>
+	    );
+	  },
+	  handleClick: function(delta) {
+	    this.state.anim.stopAnimation(value => {
+	      Animated.spring(this.state.anim, {
+	        toValue: Math.round(value) + delta
+	      }).start();
+	    });
+	  },
+	});
+```
 
-ResetPress
-ResetPress
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anim :  new Animated.Value(1),
-anim : new Animated.Value（1），
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<Animated.div
-<Animated.div
-style={{transform : [{scale __ this.state.animal}]}}
-style = {{transform : [{scale __ this.state.animal}]}}
-className="circle"
-类名=“圆”
-onMouseDown={this.handleMouseDown}
-onmousedown事件= {this.handleMouseDown}
-onMouseUp={this.handleMouseUp}>
-onMouseUp = {this.handleMouseUp}>
-Press
-按
-</Animated.div>
-</Animated.div>
-);
-）;
-},
-}，
-handleMouseDown :  function() {
-handleMouseDown : function（）{
-Animated.spring(this.state.anim, { toValue :  0.8 }).start();
-Animated.spring（this.state.anim，{toValue : 0.8}）。start（）;
-},
-}，
-handleMouseUp :  function() {
-handleMouseUp : function（）{
-Animated.spring(this.state.anim, { toValue :  1 }).start();
-Animated.spring（this.state.anim，{toValue : 1}）。start（）;
-},
-}，
-});
-}）;
 ### interpolate ### 
 在同一个动画中同时改变多个属性，很常见。
 一般是给每个属性启动一个单独的动画。
@@ -211,7 +194,7 @@ But for the rotation, we need to convert [0 ;
 0deg。
 This is where interpolate() comes handy.
 这是interpolate（）方便的地方。
-
+```
 	React.createClass({
 	  getInitialState: function() {
 	    return {
@@ -244,9 +227,9 @@ This is where interpolate() comes handy.
 	    Animated.spring(this.state.anim, {toValue: 0}).start();
 	  }
 	});
-
+```
 ### stopAnimation ###
-stopAnimation
+
 The reason why we can get away with not calling render() and instead modify the DOM directly on updates is because the animated values are opaque.
 之所以我们可以避免不调用render（），而是直接在更新上修改DOM，是因为动画值是不透明的。
 In render, you cannot know the current value, which prevents you from being able to modify the structure of the DOM.
@@ -265,77 +248,44 @@ We cannot know the value synchronously so we give it via a callback in stopAnima
 我们不能同步知道这个值，所以我们通过stopAnimation中的回调来给它赋值。
 It will not suffer from beign out of sync since the animation is no longer running.
 由于动画不再运行，它不会受到不同步的影响。
-
-Reset
-重启
-<>
-<>
+``` 
 React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anim :  new Animated.Value(0)
-anim : new Animated.Value（0）
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<div>
-<DIV>
-<button onClick={() => this.handleClick(-1)}> & lt;</button>
-<button onClick = {（）=> this.handleClick（-1）}> & lt; </ button>
-<Animated.div
-<Animated.div
-style={{
-风格= {{
-transform : [
-转变 :  [
-{rotate :  this.state.anim.interpolate({
-{rotate : this.state.anim.interpolate（{
-inputRange :  [0, 4],
-inputRange : [0，4]，
-outputRange :  ['0deg', '360deg']
-outputRange : ['0deg'，'360deg']
-})},
-}）}，
-],
-]
-position :  'relative'
-位置:“相对”
-}}
-}}
-className="circle"
-类名=“圆”
-/>
-/>
-</div>
-</ DIV>
-);
-）;
-},
-}，
-handleClick :  function(delta) {
-handleClick :函数（delta）{
-this.state.anim.stopAnimation(value => {
-this.state.anim.stopAnimation（value => {
-Animated.spring(this.state.animal, {
-Animated.spring（this.state.animal，{
-}).start();
-}）。开始（）;
+  getInitialState: function() {
+    return {
+      anim: new Animated.Value(0)
+    };
+  },
+  render: function() {
+    return (
+      <div>
+        <button onClick={() => this.handleClick(-1)}>&lt;</button>
+        <Animated.div
+          style={{
+            transform: [
+              {rotate: this.state.anim.interpolate({
+                inputRange: [0, 4],
+                outputRange: ['0deg', '360deg']
+              })},
+            ],
+            position: 'relative'
+          }}
+          className="circle"
+        />
+        <button onClick={() => this.handleClick(+1)}>&gt;</button>
+      </div>
+    );
+  },
+  handleClick: function(delta) {
+    this.state.anim.stopAnimation(value => {
+      Animated.spring(this.state.anim, {
+        toValue: Math.round(value) + delta
+      }).start();
+    });
+  },
 });
-}）;
-},
-}，
-});
-}）;
-Gesture-based Animations
-基于手势的动画
+```
+
+### 基于手势的动画 ###
 Most animations libraries only deal with time-based animations.
 大多数动画库只处理基于时间的动画。
 But, as we move to mobile, a lot of animations are also gesture driven.
@@ -372,42 +322,8 @@ It takes an Animated.Value as first argument and returns the event handlers requ
 We just have to bind this value to the left attribute and we're good to go.
 我们只需要把这个值绑定到左边的属性上，我们就可以走了。
 
-ResetDrag
-ResetDrag
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anim :  new Animated.Value(0),
-anim : new Animated.Value（0），
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<Animated.div
-<Animated.div
-style={{left : this.state.animal}}
-style = {{left : this.state.animal}}
-className="circle"
-类名=“圆”
-{...Horizontal Pan(this.state.animal)}>
-{...水平平移（this.state.animal）}>
-Drag
-拖动
-</Animated.div>
-</Animated.div>
-);
-）;
-},
-}，
-});
-}）;
+```
+```
 
 
 ### Animated.decay ###
@@ -422,6 +338,7 @@ All it needs is two values :  the current velocity and a deceleration coefficien
 It is implemented by Animated.decay.
 它由Animated.decay实现。
 
+```
 	React.createClass({
 	  getInitialState: function() {
 	    return {
@@ -444,6 +361,7 @@ It is implemented by Animated.decay.
 	    Animated.decay(this.state.anim, {velocity}).start();
 	  }
 	});
+```
 
 ### 动画链接 Animation Chaining ###
 
@@ -451,6 +369,7 @@ It is implemented by Animated.decay.
 这样，第一个值将跟踪第二个。 
 使用弹簧动画，可以得到一个不错的尾随效果。
 	
+```
 	React.createClass({
 	  getInitialState: function() {
 	    var anims = [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(0));
@@ -482,11 +401,13 @@ It is implemented by Animated.decay.
 	    Animated.decay(this.state.anims[4], {velocity}).start();
 	  }
 	});
+```
 
 ### addListener ### 
 
 正如前面所讲，如果你跟踪弹簧动画：
 	
+```
 	React.createClass({
 	  getInitialState: function() {
 	    var anims = [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(i * 100));
@@ -542,6 +463,10 @@ It is implemented by Animated.decay.
 	    Animated.spring(this.state.anims[0], {toValue: 0}).start();
 	  }
 	});
+```
 
 ### Animated.sequence ### 
 对动画来说，频率很普遍的
+
+```
+```
