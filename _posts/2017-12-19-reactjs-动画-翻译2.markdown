@@ -20,114 +20,71 @@ tags:
 中文翻译()
 英文()
 下面是对他的补充：
-[animatedjs](http://animatedjs.github.io/interactive-docs/)
+[animatedjs英文](http://animatedjs.github.io/interactive-docs/)
 
-Animated
-动画
-Animations have for a long time been a weak point of the React ecosystem.
-动画长期以来一直是React生态系统的薄弱环节。
-The Animated library aims at solving this problem.
-动画库旨在解决这个问题。
-It embraces the declarative aspect of React and obtains performance by using raw DOM manipulation behind the scenes instead of the usual diff.
-它包含React的声明性方面，通过在幕后使用原始DOM操作而不是通常的diff来获得性能。
+### Animated ###
 
-Animated.Value
-Animated.Value
-The basic building block of this library is Animated.Value.
-这个库的基本构建块是Animated.Value。
-This is a variable that's going to drive the animation.
-这是一个将驱动动画的变量。
-You use it like a normal value in style attribute.
-你在style属性中使用它就像一个正常的值。
-Only animated components such as Animated.div will understand it.
-只有Animated.div等动画组件才能理解它。
+动画长一直都是React的弱项。
+Animated库就是为了解决这个问题。
+Animated包含React声明，在背后使用原始DOM操作而不是通常的diff来获得性能。
 
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-};
-};
-},
-}，
-return (
-返回（
-<Animated.div
-<Animated.div
-style={{left : this.state.animal}}
-style = {{left : this.state.animal}}
-className="circle"
-类名=“圆”
-/>
-/>
-);
-）;
-},
-}，
-});
-}）;
-setValue
-设定值
-As you can see, the value is being used inside of render() as you would expect.
-正如你所看到的那样，这个值正在被render（）所使用。
-However, you don't call setState() in order to update the value.
-但是，您不要调用setState（）以更新值。
-Instead, you can call setValue() directly on the value itself.
-相反，您可以直接在值本身上调用setValue（）。
-We are using a form of data binding.
-我们正在使用一种数据绑定的形式。
+### Animated.Value ###
+基础是Animated.Value。 
+这个变量用来将驱动动画。
+在style属性中使用，把它当做一个普通的css属性。
+只有animated组件（例如Animated.div等）才能理解它。
 
-The Animated.div component when rendered tracks which animated values it received.
-Animated.div组件在渲染轨道时收到动画值。
-This way, whenever that value changes, we don't need to re-render the entire component, we can directly update the specific style attribute that changed.
-这样，只要该值发生变化，我们就不需要重新渲染整个组件，我们可以直接更新所更改的特定样式属性。
+	'''
+	React.createClass({
+	  getInitialState: function() {
+	    return {
+	      anim: new Animated.Value(100),
+	    };
+	  },
+	  render: function() {
+	    return (
+	      <Animated.div
+	        style={{left: this.state.anim}}
+	        className="circle"
+	      />
+	    );
+	  },
+	});
+	'''
 
-ResetClick
-ResetClick
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anim :  new Animated.Value(0),
-anim : new Animated.Value（0），
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<Animated.div
-<Animated.div
-style={{left : this.state.animal}}
-style = {{left : this.state.animal}}
-className="circle"
-类名=“圆”
-onClick={this.handleClick}>
-的onClick = {this.handleClick}>
-Click
-点击
-</Animated.div>
-</Animated.div>
-);
-）;
-},
-}，
-handleClick :  function() {
-handleClick : function（）{
-this.state.anim.setValue(400);
-this.state.anim.setValue（400）;
-},
-}，
-});
-}）;
-Animated.timing
-Animated.timing
+### 设定值 setValue ###
+用在render()内。
+但是，不必为了更新值，去调用setState() 。 
+直接在值本身调用setValue() 。
+因为使用了数据绑定的形式。
+
+Animated.div组件在渲染时跟踪接收到的动画值。
+这样，一旦值发生变化，就直接更新特定样式属性，而不用重新渲染整个组件。
+
+		
+	React.createClass({
+	  getInitialState: function() {
+	    return {
+	      anim: new Animated.Value(0),
+	    };
+	  },
+	  render: function() {
+	    return (
+	      <Animated.div
+	        style={{left: this.state.anim}}
+	        className="circle"
+	        onClick={this.handleClick}>
+	        Click
+	      </Animated.div>
+	    );
+	  },
+	  handleClick: function() {
+	    this.state.anim.setValue(400);
+	  },
+	});
+
+	Animated.timing
+	Animated.timing
 Now that we understand how the system works, let's play with some animations!
 现在我们了解了系统的工作原理，让我们玩一些动画！
 The hello world of animations is to move the element somewhere else.
