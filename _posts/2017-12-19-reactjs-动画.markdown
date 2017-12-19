@@ -20,7 +20,22 @@ BodySock是Bodymovin的React包装器组件，它使用GreenSocks TweenLite为Bo
 * [lottie Demo](https://chenqingspring.github.io/react-lottie/?selectedKind=Lottie%20Animation%20View&selectedStory=with%20control&full=0&down=1&left=1&panelRight=0&downPanel=kadirahq%2Fstorybook-addon-actions%2Factions-panel)
 * [bodymovin](https://www.npmjs.com/package/bodymovin)
 * [看起来很厉害的svg动画](https://codepen.io/airnan/pen/RazwzX)
-
+* [MagicCube/movie-board: Re-design and implement Douban Movie with React and Redux.](https://github.com/MagicCube/movie-board)
+* [chenglou/react-motion: A spring that solves your animation problems.](https://github.com/chenglou/react-motion)
+* [Chat Heads](http://chenglou.github.io/react-motion/demos/demo1-chat-heads/)
+* [Grid of Balls](http://chenglou.github.io/react-motion/demos/demo2-draggable-balls/)
+* [RedoMVC](http://chenglou.github.io/react-motion/demos/demo3-todomvc-list-transition/)
+* [How Many Demos Do You Need](http://chenglou.github.io/react-motion/demos/demo4-photo-gallery/)
+* [Choose your weapon](http://chenglou.github.io/react-motion/demos/demo5-spring-parameters-chooser/)
+* [Ripples](http://chenglou.github.io/react-motion/demos/demo7-water-ripples/)
+* [Framer cards](http://chenglou.github.io/react-motion/demos/demo8-draggable-list/)
+* [Gallery of third party React Motion demos · chenglou/react-motion Wiki](https://github.com/chenglou/react-motion/wiki/Gallery-of-third-party-React-Motion-demos)
+* [React Deck](https://therewillbecode.github.io/react-poker/)
+* [maisano/react-router-transition: painless transitions built for react-router, powered by react-motion](https://github.com/maisano/react-router-transition)
+* [nkbt/react-collapse: Component-wrapper for collapse animation with react-motion for elements with variable (and dynamic) height](https://github.com/nkbt/react-collapse)
+* [hugozap.neocities.org - 网络错误](https://hugozap.neocities.org/x99/)
+* [Orbit](https://mac-s-g.github.io/js-playground/orbit/)
+* 
 ### 解决特定问题的动画 ###
 列表排列动画
 特定问题的解决
