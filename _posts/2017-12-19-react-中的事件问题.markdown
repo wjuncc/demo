@@ -48,6 +48,7 @@ tags:
 
 
 正确输出：
+
 	Door1 {props: {…}, context: {…}, refs: {…}, updater: {…}, state: {…}, …} "about.html"
 	index_bundle_xxx.js:35977 target=== about.html 
 
