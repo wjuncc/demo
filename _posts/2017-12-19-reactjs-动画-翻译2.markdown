@@ -192,19 +192,12 @@ Animated.spring（this.state.anim，{toValue : 1}）。start（）;
 }，
 });
 }）;
-interpolate
-插
-It is very common to animate multiple attributes during the same animation.
-在同一个动画中动画多个属性是非常常见的。
-The usual way to implement it is to start a separate animation for each of the attribute.
-通常的实现方法是为每个属性启动一个单独的动画。
-The downside is that you now have to manage a different state per attribute which is not ideal.
-缺点是你现在必须管理不同的状态每个属性是不理想的。
-
-With Animated, you can use a single state variable and render it in multiple attributes.
-通过动画，您可以使用单个状态变量并将其呈现为多个属性。
-When the value is updated, all the places will reflect the change.
-当价值更新时，所有的地方都会反映这个变化。
+### interpolate ### 
+在同一个动画中同时改变多个属性，很常见。
+一般是给每个属性启动一个单独的动画。
+缺点是你现在必须管理不同的状态每个属性，所以说是不理想的。
+通过动画，您可以使用单个状态变量并将其改变为多个属性。 
+当价值更新时，所有地方都会变化。
 
 In the following example, we're going to model the animation with a variable where 1 means fully visible and 0 means fully hidden.
 在下面的例子中，我们将用一个变量对动画进行建模，其中1表示完全可见，0表示完全隐藏。
@@ -219,73 +212,40 @@ But for the rotation, we need to convert [0 ;
 This is where interpolate() comes handy.
 这是interpolate（）方便的地方。
 
-ResetClick
-ResetClick
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anim :  new Animated.Value(1),
-anim : new Animated.Value（1），
-};
-};
-},
-}，
-componentWillMount :  function() {
-componentWillMount : function（）{
-this.interpolate = this.state.anim.interpolate({
-this.interpolate = this.state.anim.interpolate（{
-inputRange :  [0, 1],
-inputRange : [0，1]，
-outputRange :  ['260deg', '0deg']
-outputRange : ['260deg'，'0deg']
-});
-}）;
-this.interpolate.addListener(v => console.log(v));
-this.interpolate.addListener（v => console.log（v））;
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<Animated.div
-<Animated.div
-style={{
-风格= {{
-transform : [
-转变 :  [
-{rotate :  this.interpolate},
-{rotate : this.interpolate}，
-{scale : this.state.animal},
-{scale : this.state.animal}，
-]
-]
-}}
-}}
-className="circle"
-类名=“圆”
-onClick={this.handleClick}>
-的onClick = {this.handleClick}>
-Click
-点击
-</Animated.div>
-</Animated.div>
-);
-）;
-},
-}，
-handleClick :  function() {
-handleClick : function（）{
-Animated.spring(this.state.anim, {toValue :  0}).start();
-Animated.spring（this.state.anim，{toValue : 0}）。start（）;
-}
-}
-});
-}）;
-stopAnimation
+	React.createClass({
+	  getInitialState: function() {
+	    return {
+	      anim: new Animated.Value(1),
+	    };
+	  },
+	  componentWillMount: function() {
+	    this.interpolate = this.state.anim.interpolate({
+	      inputRange: [0, 1],
+	      outputRange: ['260deg', '0deg']
+	    });
+	    this.interpolate.addListener(v => console.log(v));
+	  },
+	  render: function() {
+	    return (
+	      <Animated.div
+	        style={{
+	          transform: [
+	            {rotate: this.interpolate},
+	            {scale: this.state.anim},
+	          ]
+	        }}
+	        className="circle"
+	        onClick={this.handleClick}>
+	        Click
+	      </Animated.div>
+	    );
+	  },
+	  handleClick: function() {
+	    Animated.spring(this.state.anim, {toValue: 0}).start();
+	  }
+	});
+
+### stopAnimation ###
 stopAnimation
 The reason why we can get away with not calling render() and instead modify the DOM directly on updates is because the animated values are opaque.
 之所以我们可以避免不调用render（），而是直接在更新上修改DOM，是因为动画值是不透明的。
@@ -448,8 +408,10 @@ Drag
 }，
 });
 }）;
-Animated.decay
-Animated.decay
+
+
+### Animated.decay ###
+
 One of the big breakthrough of the iPhone is the fact that when you release the finger while scrolling, it will not abruptly stop but instead keep going for some time.
 iPhone的重大突破之一就是当你在滚动的时候松开手指，它不会突然停下来，而是继续前进一段时间。
 
@@ -460,61 +422,34 @@ All it needs is two values :  the current velocity and a deceleration coefficien
 It is implemented by Animated.decay.
 它由Animated.decay实现。
 
-ResetThrow
-ResetThrow
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anim :  new Animated.Value(0),
-anim : new Animated.Value（0），
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<Animated.div
-<Animated.div
-style={{left : this.state.animal}}
-style = {{left : this.state.animal}}
-className="circle"
-类名=“圆”
-{...Horizontal Pan(this.state.animal, {
-{...水平平移（this.state.animal，{
-onEnd :  this.handleEnd
-onEnd _... this.handleEnd
-})}>
-}）}>
-Throw
-扔
-</Animated.div>
-</Animated.div>
-);
-）;
-},
-}，
-handleEnd :  function({velocity}) {
-handleEnd : function（{velocity}）{
-Animated.decay(this.state.anim, {velocity}).start();
-Animated.decay（this.state.anim，{velocity}）。start（）;
-}
-}
-});
-}）;
+	React.createClass({
+	  getInitialState: function() {
+	    return {
+	      anim: new Animated.Value(0),
+	    };
+	  },
+	  render: function() {
+	    return (
+	      <Animated.div
+	        style={{left: this.state.anim}}
+	        className="circle"
+	        {...HorizontalPan(this.state.anim, {
+	          onEnd: this.handleEnd
+	        })}>
+	        Throw
+	      </Animated.div>
+	    );
+	  },
+	  handleEnd: function({velocity}) {
+	    Animated.decay(this.state.anim, {velocity}).start();
+	  }
+	});
 
 ### 动画链接 Animation Chaining ###
 
-The target for an animation is usually a number but sometimes it is convenient to use another value as a target.
-动画的目标通常是一个数字，但有时使用另一个值作为目标是很方便的。
-This way, the first value will track the second.
-这样，第一个值将跟踪第二个。
-Using a spring animation, we can get a nice trailing effect.
-使用弹簧动画，我们可以得到一个不错的尾随效果。
+动画的目标通常是数字，但有时使用另一个值作为目标很方便。
+这样，第一个值将跟踪第二个。 
+使用弹簧动画，可以得到一个不错的尾随效果。
 	
 	React.createClass({
 	  getInitialState: function() {
@@ -550,7 +485,7 @@ Using a spring animation, we can get a nice trailing effect.
 
 ### addListener ### 
 
-正如前面所讲，如果你跟踪spring
+正如前面所讲，如果你跟踪弹簧动画：
 	
 	React.createClass({
 	  getInitialState: function() {
