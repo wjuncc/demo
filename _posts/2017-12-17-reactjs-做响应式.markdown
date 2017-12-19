@@ -8,6 +8,9 @@ tags:
 
 # reactjs 做响应式 #
 
+React 团队使用的是： js-signals 
+
+
 
 #### 参考 ####
 

@@ -17,7 +17,7 @@ tags:
 
 文件
 
-本文是拿之前的一个实际项目，改成react的记录。
+本文是拿之前的真实项目，改成react的记录。
 
 先姑且这样吧，我也找不到什么有实际意义的项目上手了。      
 像react只适合像多UI操作，例如问答星，QQ邮箱，自定义微信h5，百度统计。这样的强交互操作上。  
@@ -173,48 +173,13 @@ React在ES6的实现中去掉了getInitialState这个hook函数,规定state在co
 	        this.state = {example: 'example'}
 	    }
 	
-	}
-
-
+	} 
 
 
 * [React访问组件子节点](http://blog.csdn.net/you23hai45/article/details/52706148)
 
-### react组件之间传值 ###
-
-#### Class GlobalBroadcaster es6 react ####
-
-如果直接写，会报错：
 
 
-	globalBroadcaster is not defined  react
-
-	/static/termite_js/app/common/GlobalBroadcaster.js"
-
-Class GlobalBroadcaster es6 react
-
-需要安装：
-
-	npm install signals	
-
-	npm install signals --save-dev
-
-写法：
-
-	globalBroadcaster.subscribe('myCustomEventTypeString', handler);
-	globalBroadcaster.publish('myCustomEventTypeString', param1, param2, ...);
-	globalBroadcaster.unsubscribe('myCustomEventTypeString', handler);
-
-这个写法和SiteEvt完全一样。
-
-报错：
-
-	Uncaught TypeError: _signals2.default.subscribe is not a function
-
-* [没有任何嵌套关系的组件之间传值](http://blog.csdn.net/limm33/article/details/50942863)
-* [How to communicate between ReactJS components](https://www.ctheu.com/2015/02/12/how-to-communicate-between-react-components/)
-* [Comparison between different Observer Pattern implementations](https://github.com/millermedeiros/js-signals/wiki/Comparison-between-different-Observer-Pattern-implementations)
-* [](http://www.imooc.com/topic/reactnative?mc_marking=d3afbaad984272d451079d2a8d447738&mc_channel=bdqdkj)
 
 #### react-signals ####
 第2个通信组件是：

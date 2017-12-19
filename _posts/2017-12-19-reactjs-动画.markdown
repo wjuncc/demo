@@ -7,8 +7,12 @@ tags:
 ---
 
 # reactjs 动画 #
+
 ReactTransitionGroup，在2017年已经过时。
 ReactCSSTransitionGroup 只适合简单的动画，例如列表。对于复杂动画无能为力。 据说有bug
+
+	npm install --save react-transition-group
+	npm install --save-dev react-transition-group
 
 第3方的组件：有
 BodySock是Bodymovin的React包装器组件，它使用GreenSocks TweenLite为Bodymovin时间轴设置动画。

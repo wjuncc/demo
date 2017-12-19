@@ -1,0 +1,74 @@
+---
+layout: post
+title:  "react 中的事件问题"
+date:   2017-12-19 23:33:52 +0800
+categories:  
+tags: 
+---
+
+### react组件之间传值 ###
+	
+安装：
+
+	npm install signals
+	npm install -save-dev signals  
+	npm install signals --save-dev 
+
+### 解决 ###
+
+正确输出：
+	Door1 {props: {…}, context: {…}, refs: {…}, updater: {…}, state: {…}, …} "about.html"
+	index_bundle_xxx.js:35977 target=== about.html 
+
+
+### 其他可能解决方案 ###
+
+* Reflux可能是解决问题的方剂，但是在开始的时候不要陷入沼泽。   
+* [PubSubJS](https://github.com/mroderick/PubSubJS)
+
+### 错误1 ###
+GlobalBroadcaster。   
+这个类似于SiteEvt的API。看似很容易。    
+现在看，更像是
+一个神奇的传说。  
+网上很多地方都是相同复制的翻译内容，搜索github。 GlobalBroadcaster在java中很受欢迎，而js没有代码调用 GlobalBroadcaster。  
+实际测试发现 GlobalBroadcaster 行不通，至少说，有版本问题，代码：
+	
+	globalBroadcaster.publish
+
+编译后的bundle.js。代码变成  
+
+ 	_signals2.default.subscribe。 
+
+这个_signals2没有定义。   
+证明这个写法是无效的。应该避免：
+详细的记录如下：
+
+按要求，在初始化写：
+
+	import globalBroadcaster from 'signals'
+
+在发送的地方写：
+	
+	globalBroadcaster.publish("open");
+
+则报错：
+
+	Uncaught TypeError: _signals2.default.subscribe is not a function
+
+
+#### 更多资料 ####
+写法：
+
+	globalBroadcaster.subscribe('myCustomEventTypeString', handler);
+	globalBroadcaster.publish('myCustomEventTypeString', param1, param2, ...);
+	globalBroadcaster.unsubscribe('myCustomEventTypeString', handler);
+
+
+#### 参考 ####
+
+* [[React Native]组件之间通信](http://www.jianshu.com/p/9b0d5a3d0518)
+* [没有任何嵌套关系的组件之间传值](http://blog.csdn.net/limm33/article/details/50942863)
+* [How to communicate between ReactJS components](https://www.ctheu.com/2015/02/12/how-to-communicate-between-react-components/)
+* [Comparison between different Observer Pattern implementations](https://github.com/millermedeiros/js-signals/wiki/Comparison-between-different-Observer-Pattern-implementations)
+* [](http://www.imooc.com/topic/reactnative?mc_marking=d3afbaad984272d451079d2a8d447738&mc_channel=bdqdkj)
