@@ -4,6 +4,9 @@ title:  "react 中的事件问题"
 date:   2017-12-19 23:33:52 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
 ### react组件之间传值 ###

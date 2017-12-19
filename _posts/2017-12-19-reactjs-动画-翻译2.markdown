@@ -4,6 +4,9 @@ title:  "reactjs 动画 翻译2"
 date:   2017-12-19 21:26:49 +0800
 categories:  
 tags: 
+    - react
+    - 翻译
+
 ---
 
 
@@ -17,9 +20,9 @@ tags:
 	import * as Animated from "animated/lib/targets/react-dom";     
 
 有问题的地方是用了一个animatedjs，这个很冷门，也只能用在很少量的动画上。   
-中文翻译()
-英文()
-下面是对他的补充：
+[中文翻译](http://animatedjs.github.io/interactive-docs/)
+[英文](http://animatedjs.github.io/interactive-docs/)
+下面是对他的补充，是类Animated的翻译：
 [animatedjs英文](http://animatedjs.github.io/interactive-docs/)
 
 ### Animated ###
@@ -34,22 +37,22 @@ Animated包含React声明，在背后使用原始DOM操作而不是通常的diff
 在style属性中使用，把它当做一个普通的css属性。
 只有animated组件（例如Animated.div等）才能理解它。
 
-```
-	React.createClass({
-	  getInitialState: function() {
-	    return {
-	      anim: new Animated.Value(100),
-	    };
-	  },
-	  render: function() {
-	    return (
-	      <Animated.div
-	        style={{left: this.state.anim}}
-	        className="circle"
-	      />
-	    );
-	  },
-	});
+```javascript
+React.createClass({
+  getInitialState: function() {
+    return {
+      anim: new Animated.Value(100),
+    };
+  },
+  render: function() {
+    return (
+      <Animated.div
+        style={{left: this.state.anim}}
+        className="circle"
+      />
+    );
+  },
+});
 ```
 
 ### 设定值 setValue ###
@@ -61,27 +64,27 @@ Animated包含React声明，在背后使用原始DOM操作而不是通常的diff
 Animated.div组件在渲染时跟踪接收到的动画值。
 这样，一旦值发生变化，就直接更新特定样式属性，而不用重新渲染整个组件。
 
-```	
-	React.createClass({
-	  getInitialState: function() {
-	    return {
-	      anim: new Animated.Value(0),
-	    };
-	  },
-	  render: function() {
-	    return (
-	      <Animated.div
-	        style={{left: this.state.anim}}
-	        className="circle"
-	        onClick={this.handleClick}>
-	        Click
-	      </Animated.div>
-	    );
-	  },
-	  handleClick: function() {
-	    this.state.anim.setValue(400);
-	  },
-	});
+```javascript
+React.createClass({
+  getInitialState: function() {
+    return {
+      anim: new Animated.Value(0),
+    };
+  },
+  render: function() {
+    return (
+      <Animated.div
+        style={{left: this.state.anim}}
+        className="circle"
+        onClick={this.handleClick}>
+        Click
+      </Animated.div>
+    );
+  },
+  handleClick: function() {
+    this.state.anim.setValue(400);
+  },
+});
 ```
 ### Animated.timing ###
 
@@ -103,7 +106,7 @@ You need to stop the current animation, grab the current value and restart an an
 您需要停止当前的动画，抓住当前值并从那里重新开始动画。
 As this is pretty tedious to do manually, Animated will do that automatically for you.
 由于手动操作非常繁琐，动画会自动为您执行。
-```
+```javascript
 	React.createClass({
 	  getInitialState: function() {
 	    return {
@@ -194,7 +197,7 @@ But for the rotation, we need to convert [0 ;
 0deg。
 This is where interpolate() comes handy.
 这是interpolate（）方便的地方。
-```
+```javascript
 	React.createClass({
 	  getInitialState: function() {
 	    return {
@@ -248,7 +251,7 @@ We cannot know the value synchronously so we give it via a callback in stopAnima
 我们不能同步知道这个值，所以我们通过stopAnimation中的回调来给它赋值。
 It will not suffer from beign out of sync since the animation is no longer running.
 由于动画不再运行，它不会受到不同步的影响。
-``` 
+```javascript
 React.createClass({
   getInitialState: function() {
     return {
@@ -321,7 +324,7 @@ It takes an Animated.Value as first argument and returns the event handlers requ
 We just have to bind this value to the left attribute and we're good to go.
 我们只需要把这个值绑定到左边的属性上，我们就可以走了。
 
-```
+```javascript
 React.createClass({
   getInitialState: function() {
     return {
@@ -354,7 +357,7 @@ All it needs is two values :  the current velocity and a deceleration coefficien
 It is implemented by Animated.decay.
 它由Animated.decay实现。
 
-```
+```javascript
 	React.createClass({
 	  getInitialState: function() {
 	    return {
@@ -385,7 +388,7 @@ It is implemented by Animated.decay.
 这样，第一个值将跟踪第二个。 
 使用弹簧动画，可以得到一个不错的尾随效果。
 	
-```
+```javascript
 	React.createClass({
 	  getInitialState: function() {
 	    var anims = [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(0));
@@ -423,7 +426,7 @@ It is implemented by Animated.decay.
 
 正如前面所讲，如果你跟踪弹簧动画：
 	
-```
+```javascript
 	React.createClass({
 	  getInitialState: function() {
 	    var anims = [0, 1, 2, 3, 4].map((_, i) => new Animated.Value(i * 100));
@@ -484,5 +487,6 @@ It is implemented by Animated.decay.
 ### Animated.sequence ### 
 对动画来说，频率很普遍的
 
-```
+```javascript
+aaa
 ```
