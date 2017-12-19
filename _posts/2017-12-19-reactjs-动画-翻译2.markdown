@@ -83,137 +83,57 @@ Animated.div组件在渲染时跟踪接收到的动画值。
 	  },
 	});
 
-	Animated.timing
-	Animated.timing
-Now that we understand how the system works, let's play with some animations!
-现在我们了解了系统的工作原理，让我们玩一些动画！
-The hello world of animations is to move the element somewhere else.
-动画的hello世界是将元素移动到其他地方。
-To do that, we're going to animate the value from the current value 0 to the value 400.
-要做到这一点，我们将动画从当前值0到值400的值。
+### Animated.timing ###
+
+了解了系统的工作原理，现在让我们试一试！
+动画的hello world，把元素移到其他地方。
+为此，把动画当前值从0变到400。
 
 On every frame (via requestAnimationFrame), the timing animation is going to figure out the new value based on the current time, update the animated value which in turn is going to update the corresponding DOM node.
 在每一帧（通过requestAnimationFrame），定时动画将根据当前时间计算新值，更新动画值，然后更新相应的DOM节点。
 
-ResetClick
-ResetClick
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anim :  new Animated.Value(0),
-anim : new Animated.Value（0），
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<Animated.div
-<Animated.div
-style={{left : this.state.animal}}
-style = {{left : this.state.animal}}
-className="circle"
-类名=“圆”
-onClick={this.handleClick}>
-的onClick = {this.handleClick}>
-Click
-点击
-</Animated.div>
-</Animated.div>
-);
-）;
-},
-}，
-handleClick :  function() {
-handleClick : function（）{
-Animated.timing(this.state.anim, {toValue :  400}).start();
-Animated.timing（this.state.anim，{toValue : 400}）。start（）;
-},
-}，
-});
-}）;
-Interrupt Animations
-中断动画
-As a developer, the mental model is that most animations are fire and forget.
-作为一名开发者，心智模式是大多数动画是火和忘记。
-When the user presses the button, you want it to shrink to 80% and when she releases, you want it to go back to 100%.
-当用户按下按钮时，你希望它缩小到80％，当她释放时，你希望它回到100％。
 
-There are multiple challenges to implement this correctly.
-正确实施这个有多重的挑战。
+
+### 中断动画 ###
+作为开发者，模式是动画开火和遗忘。
+当用户按下按钮时，按钮缩小到80％，释放按钮时，回到100％。
+
+正确实现有多重的挑战。
 You need to stop the current animation, grab the current value and restart an animation from there.
 您需要停止当前的动画，抓住当前值并从那里重新开始动画。
 As this is pretty tedious to do manually, Animated will do that automatically for you.
 由于手动操作非常繁琐，动画会自动为您执行。
 
-ResetPress
-ResetPress
-React.createClass({
-React.createClass（{
-getInitialState :  function() {
-getInitialState : function（）{
-return {
-返回{
-anim :  new Animated.Value(1),
-anim : new Animated.Value（1），
-};
-};
-},
-}，
-render :  function() {
-render : function（）{
-return (
-返回（
-<Animated.div
-<Animated.div
-style={{transform : [{scale __ this.state.animal}]}}
-style = {{transform : [{scale __ this.state.animal}]}}
-className="circle"
-类名=“圆”
-onMouseDown={this.handleMouseDown}
-onmousedown事件= {this.handleMouseDown}
-onMouseUp={this.handleMouseUp}>
-onMouseUp = {this.handleMouseUp}>
-Press
-按
-</Animated.div>
-</Animated.div>
-);
-）;
-},
-}，
-handleMouseDown :  function() {
-handleMouseDown : function（）{
-Animated.timing(this.state.anim, { toValue :  0.8 }).start();
-Animated.timing（this.state.anim，{toValue : 0.8}）。start（）;
-},
-}，
-handleMouseUp :  function() {
-handleMouseUp : function（）{
-Animated.timing(this.state.anim, { toValue :  1 }).start();
-animated.timing（this.state.anim，{toValue : 1}）。start（）;
-},
-}，
-});
-}）;
-Animated.spring
-Animated.spring
-Unfortunately, the timing animation doesn't feel good.
-不幸的是，时机动画感觉不好。
-The main reason is that no matter how far you are in the animation, it will trigger a new one with always the same duration.
-主要原因是，无论你在动画中有多远，都会触发一个持续时间相同的新动画。
+	React.createClass({
+	  getInitialState: function() {
+	    return {
+	      anim: new Animated.Value(0),
+	    };
+	  },
+	  render: function() {
+	    return (
+	      <Animated.div
+	        style={{left: this.state.anim}}
+	        className="circle"
+	        onClick={this.handleClick}>
+	        Click
+	      </Animated.div>
+	    );
+	  },
+	  handleClick: function() {
+	    Animated.timing(this.state.anim, {toValue: 400}).start();
+	  },
+	});
 
-The commonly used solution for this problem is to use the equation of a real-world spring.
-这个问题的常用解决方案是使用现实世界的春天的方程。
-Imagine that you attach a spring to the target value, stretch it to the current value and let it go.
-想象一下，您将弹簧附加到目标值，将其拉伸至当前值并释放。
-The spring movement is going to be the same as the update.
-春季运动将与更新相同。
+
+### Animated.spring ###
+
+不幸的是，动画的时机感觉不好。
+主要原因是，无论动画距离有多远，动画的持续时间一样。
+
+这个问题的常用解决方案，是使用现实世界的spring方程。
+
+想象一下，您将弹簧附加到目标值，将其拉伸至当前值并释放。 spring的运动模式与此相同。
 
 It turns out that this model is useful in a very wide range of animations.
 事实证明，这个模型在非常广泛的动画中是有用的。
