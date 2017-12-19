@@ -302,8 +302,7 @@ The same value can be updated either from a time-based animation or a gesture-ba
 Because we use this intermediate representation for the animation, we can keep the same rendering as output.
 因为我们使用这个中间表示的动画，我们可以保持与输出相同的渲染。
 
-HorizontalPan
-Horizo​​ntalPan
+#### HorizontalPan ####
 The code needed to drag elements around is very messy with the DOM APIs.
 拖动元素所需的代码与DOM API非常混乱。
 On mousedown, you need to register a mousemove listener on window otherwise you may drop touches if you move too fast.
@@ -323,6 +322,23 @@ We just have to bind this value to the left attribute and we're good to go.
 我们只需要把这个值绑定到左边的属性上，我们就可以走了。
 
 ```
+React.createClass({
+  getInitialState: function() {
+    return {
+      anim: new Animated.Value(0),
+    };
+  },
+  render: function() {
+    return (
+      <Animated.div
+        style={{left: this.state.anim}}
+        className="circle"
+        {...HorizontalPan(this.state.anim)}>
+        Drag
+      </Animated.div>
+    );
+  },
+});
 ```
 
 
