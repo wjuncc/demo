@@ -57,7 +57,7 @@ GlobalBroadcaster。
 	Uncaught TypeError: _signals2.default.subscribe is not a function
 
 
-#### 更多资料 ####
+###### 更多资料 ######
 写法：
 
 	globalBroadcaster.subscribe('myCustomEventTypeString', handler);
