@@ -13,6 +13,9 @@ tags:
 
 ReactTransitionGroup 教程
 
+
+
+### SVG的例子 ###
 ----------------------------
 
 TimelineMax / attrPlugin不能与React配合使用
@@ -42,9 +45,9 @@ TimelineMax / attrPlugin不能与React配合使用
 
 5月4日发布
 
-你完全可以在React中使用GSAP。
+可以在React中使用GSAP。
 没问题。  
-但是，对没有全部代码的项目，做debug有点困难。  
+但是，没有全部代码的项目，做debug有点困难。  
 你可以在codepen中放一个简化的测试用例，以便我们看到究竟发生了什么？     
 你有什么错误吗？     
 在开发工具中观看时，“d”信息是否会发生变化？  
@@ -53,37 +56,27 @@ TimelineMax / attrPlugin不能与React配合使用
 
 
 
-猜测是你的“d”字符串没有匹配的数值。   
-如果是这样的话，您需要使用MorphSVGPlugin（Club GreenSock的会员权益 - 即使点数变化很大，它也允许您在任何“d”数据之间变形）。 [http://greensock.com/club/](http://greensock.com/club/)
+估计是“d”字符串没有匹配的数值。   
+如果是这样，要使用MorphSVGPlugin（Club GreenSock的特点 - 即使点数变化很大，它也允许您在任何“d”数据之间变形）。 [http://greensock.com/club/](http://greensock.com/club/)   
 
-
-
-我相信React可以运行GSAP.给我更多信息。
-
-快乐Tween！
-
+React可以运行GSAP.要给我更多信息。 
 ----------------------------
 像2
-5月4日发布  
-感谢回复！    
+5月4日发布   
+
 我怎样才能把GSAP导入到Codepen？  
 
 ----------------------------
 blitz2061  
 5月4日发布  
-超简单的：  
-只需打开pen设置（pen settings），并在JavaScript区域，有一个“快速添加”下拉列表中有GreenSock TweenMax。
-或者您可以从我们的下载覆盖中复制CDN网址
+
+超简单：  
+打开pen设置（pen settings），并在JavaScript区域，“快速添加”下拉列表中有GreenSock TweenMax。
+或者从我们的下载覆盖复制CDN网址
 
 GSAP功能于codepen.png
 
-像1一样
-
-使用GreenSock
-使用GreenSock
-4,955个赞（超级英雄）
-11,454个职位
-举报帖子
+----------------------------
 5月4日发布
 感谢您的快速回复！
 顶级的支持 - 特别是对于非客户（可能会很快！），
@@ -100,9 +93,7 @@ GSAP功能于codepen.png
 
 
 
-最终，我想完成两件事:
-
-
+最终，我想完成两件事: 
 
 1）让动画工作
 
@@ -112,13 +103,8 @@ GSAP功能于codepen.png
 
 让我知道任何问题！
 
+----------------------------
 
-
-blitz2061
-blitz2061
-0喜欢（新手）
-6个职位
-举报帖子
 5月4日发布
 也:我的控制台错误代码是:
 
@@ -126,11 +112,7 @@ blitz2061
 
 bundle.js : 43未捕获无法补间空目标
 
-blitz2061
-blitz2061
-0喜欢（新手）
-6个职位
-举报帖子
+----------------------------
 5月4日发布
 多一个文件 -  https_... //codepen.io/anon/pen/aWLdva
 
@@ -138,18 +120,12 @@ blitz2061
 
 这是使用FindDOMNodes  - 而我没有收到错误消息 - 但动画不起作用。
 
-blitz2061
-blitz2061
-0喜欢（新手）
-6个职位
-举报帖子
+---------------------------- 
 5月5日发布
-由于我不是一个React人，所以我无法为findDOMNodes提供很多帮助，而你的示例codepen完全没有功能（看起来像你刚刚粘贴到JS面板的ES6代码，并留下一切空白） 
+我对React不熟，所以无法为findDOMNodes提供很多帮助，而你的示例codepen完全没有功能（看起来像你刚刚粘贴到JS面板的ES6代码，并留下一切空白） 
 ，但这里有一个快速的叉子，显示x和填充动画:
 
 https_... //codepen.io/GreenSock/pen/a9b521fc21c068c3affa71f81cb92eff/?editors=1010
-
-
 
 有一件事要注意的是，如果你要补间一个属性（在这种情况下是“填充”），它必须实际存在并填充在元素上。
 否则，GSAP不知道什么是补间的值。
@@ -158,13 +134,7 @@ https_... //codepen.io/GreenSock/pen/a9b521fc21c068c3affa71f81cb92eff/?editors=1
 
 这有帮助吗？
 
-像1一样
-
-使用GreenSock
-使用GreenSock
-4,955个赞（超级英雄）
-11,454个职位
-举报帖子
+---------------------------- 
 5月5日发布
 嘿杰克 - 
 
@@ -174,15 +144,9 @@ https_... //codepen.io/GreenSock/pen/a9b521fc21c068c3affa71f81cb92eff/?editors=1
 我已经做了大量的研究，并在整个过程中学到了一大堆东西 - 但是attrPlugin仍然没有完成，所有的东西在Codepen和React应用程序之间保持一致。
 也许这是节点模块的问题？
 
-blitz2061
-blitz2061
-0喜欢（新手）
-6个职位
-举报帖子
+---------------------------- 
 5月5日发布
-这可能有助于验证...
-
-
+这可能有助于验证... 
 
 就在你的补间之前，你可以console.log（）元素的属性值在那个点？
 有效吗？
@@ -271,13 +235,8 @@ TweenLite.to（target，1，{}）;
 
 快乐的补间！
 
-像5
-
-罗德里戈
-罗德里戈
-1,848个赞（超级英雄）
-有1,553个帖子
-举报帖子
+---------------------------- 
+罗德里戈 
 5月8日发布
 感谢您的帮助，罗德里戈！
 
@@ -293,29 +252,17 @@ TweenLite.to（target，1，{}）;
 
 
 
-
-
-像2
-
-卡尔
-卡尔
-6,941个赞（超级英雄）
-8,319个帖子
-举报帖子
+---------------------------- 
+卡尔 
 5月8日发布
+
 感谢您的澄清，罗德里戈。
 我很好奇 - 有没有一种“反应方式”来抓取多个元素？
 例如，“refs”听起来像DOM中的基本“id”，但是如果有人有25个列表元素，他们想要喂入到staggerTo（）？
 在非React的世界里，你可以简单地给每个类应用一个类，并且定位“.myClass”，但是你如何在React中做到这一点？
 如果你不得不做[this.refs.e1，this.refs.e2，this.refs.e3，...]
 
-像1一样
-
-使用GreenSock
-使用GreenSock
-4,955个赞（超级英雄）
-11,454个职位
-举报帖子
+---------------------------- 
 5月8日发布
 为了更好地理解React，请看这篇文章。
 简而言之，React只不过是递归调用document.createElement（“someElement”）;
@@ -324,14 +271,7 @@ TweenLite.to（target，1，{}）;
 
 
 
-
-像2
-
-OSUblake
-OSUblake
-6,038个赞（超级英雄）
-3,072个帖子
-举报帖子
+---------------------------- 
 5月8日发布
 OSUblake在2017年5月8日下午6点47分表示:
 React只不过是递归调用document.createElement（“someElement”）;
@@ -420,56 +360,12 @@ TweenMax.staggerTo（targets，1，{rotation : 360}，0.1）;
 
 
 快乐的补间！
-
-像2
-
-罗德里戈
-罗德里戈
-1,848个赞（超级英雄）
-有1,553个帖子
-创建一个帐户或登录评论
-您需要成为会员才能发表评论
-
-创建一个帐户
-在我们的社区注册一个新帐户。
-这很容易！
-
-注册一个新帐户登录
-已经有一个帐户？
-在这里登录。
-
-现在登录
-转到主题列表
-GSAP
-
-最近浏览0位会员
-没有注册用户查看此页面。
-
+ 
+---------------------------- 
+  
 主页HTML5 / JS GSAP TimelineMax / attrPlugin不能与React配合使用
 我每天都越来越惊讶，很高兴我决定拿到营业执照。
-LilaQ
-
-
-
-
-
-
-
-
-
-
-
-
-注册我们的通讯
-获取GreenSock产品的最新更新，独家优惠以及更多信息。
-
-
-您的电子邮件地址
-注册
-您的信息将始终保密。
-
-只有少数公司每天都依赖绿色产品。
-
+LilaQ 
 
 
 * [react.js - 能否在React里使用JQuery里的fadeIn,fadeOut等方法控制组件？ - SegmentFault](https://segmentfault.com/q/1010000004094563)
