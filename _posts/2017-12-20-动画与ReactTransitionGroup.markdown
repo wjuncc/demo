@@ -120,353 +120,261 @@ render(<Page/>, document.querySelector('#container'));
 
 下面是使用ReactTransitionGroup的简单动画案例！
 
+接下来几个部分讲， 高级重用动画组件，路由器集成，协调嵌套转场动画。
 
-The next few parts will be on reusing animations via higher-order components, integrating with react-router, and coordinating nested transitions.
-接下来的几个部分将通过高级组件重用动画，与反应路由器集成，并协调嵌套转换。
+你读了这么多，也喜欢调试Javascript的干货(quick and dirty skill)??，给我发tweet@CheapSteak :）
 
-If you've read this far then you might also like Quick and dirty tricks for debugging Javascript ??, and tweet at me @CheapSteak : )
-如果你已经阅读了这么多，那么你可能也喜欢用于调试Javascript的快速和肮脏的技巧??，并发微博在我@CheapSteak :）
-
-You may also be interested in react-transition-group-plus, a drop-in replacement for ReactTransitionGroup that allows interruptible transitions and specifying transition order.
-您可能还对react-transition-group-plus感兴趣，ReactTransitionGroup允许可中断的转换并指定转换顺序。
-See a comparative demo here.
-在这里看到一个比较演示。
+您可能还对react-transition-group-plus感兴趣，用来代替ReactTransitionGroup，可中断转场，并指定转场顺序。看[demo](http://cheapsteak.github.io/react-transition-group-plus/)。
 
 Thanks to @hare_ben and @jephuff for proofreading and feedback
 感谢@hare_ben和@jephuff的校对和反馈
 
-Sign up for my newsletter to receive new articles in your inbox.
-注册我的通讯，在您的收件箱中收到新的文章。
-ReactJavaScriptAnimationNPM
+注册我的newsletter，订阅邮箱新文章。
 ReactJavaScriptAnimationNPM
 One clap, two clap, three clap, forty?
 一个拍手，两个拍手，三个拍手，四十个？
-By clapping more or less, you can signal to us which stories really stand out.
 通过或多或少的鼓掌，您可以向我们表明哪些故事真正脱颖而出。
+   
+----------------------------------------
 
+### 留言板 ### 
 
-340
-340
-12
-12
-Follow
-跟随
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
-常王
-Pragmatic Perfectionist ?
-务实的完美主义者？ 
-Frontend Architect at OICR ?
-OICR的前端架构师？ 
-Director of Business Solutions at Appify
-Appify商业解决方案总监
+Chang Wang（作者）   
+八月二十七日 
 
-Follow
-跟随
-Appify
-Appify
-Appify
-Appify
-Tech articles and tutorials
-技术文章和教程
+谢谢，设法得到它与一些tweeks工作。 
+如果是用Node，安装gsap插件使用TweenMax功能。 
+下面是我的代码:
 
-More from Chang Wang
-更多来自昌王
-You dont need to know Dependency Injection
-你不需要知道依赖注入
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
-常王
+```
+import React from 'react';
+import { TweenMax } from 'gsap';
 
-849
-849
+export default class Box extends React.Component {
 
-Related reads
-相关阅读
-The next big industry to face digital disruption will be our nations
-面对数字中断的下一个大行业将是我们的国家
-Go to the profile of Kaspar Korjus
-转到Kaspar Korjus的个人资料
-Kaspar Korjus
-卡斯帕Korjus
+  componentWillEnter(callback) {
+    const el = this.container;
+    TweenMax.fromTo(el, 0.3, { y: 100, opacity: 0 }, { y: 0, opacity: 1, onComplete: callback });
+  }
 
-1.2K
-1.2K
+  componentWillLeave(callback) {
+    const el = this.container;
+    TweenMax.fromTo(el, 0.3, { y: 0, opacity: 1 }, { y: -100, opacity: 0, onComplete: callback });
+  }
 
-Responses
-回应
-Write a response
-写一个答复
-Applause from Chang Wang (author)
-张望掌声（作者）
-Go to the profile of Sjors van Heuveln
-转到Sjors van Heuveln的个人资料
-Sjors van Heuveln
-Sjors van Heuveln
-Aug 27
-八月二十七日
-Thanks, managed to get it working with some tweeks.
-谢谢，设法得到它与一些tweeks工作。
-For people working with Node, install the gsap package for use of TweenMax function.
-对于使用Node的人员，安装gsap软件包以使用TweenMax功能。
+  render() {
+	 return (
+      <div className="box" ref={c => this.container = c} />
+    );
+  }
+}
+```
 
-Heres my version of the code :
-下面是我的代码版本:
+Box.jsx 
+```
+import React from 'react';
+import { TransitionGroup } from 'react-transition-group';
+import Box from './Box';
 
-Read more
-阅读更多
+export default class Page extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      shouldShowBox: true,
+    };
+    this.toggleBox = this.toggleBox.bind(this);
+  }
 
-30
-三十
+  toggleBox() {
+    this.setState({
+      shouldShowBox: !this.state.shouldShowBox,
+    });
+  }
+  render() {
+    return (
+      <div className="page">
+        <TransitionGroup>
+          { this.state.shouldShowBox && <Box />}
+        </TransitionGroup>
+        <button className="toggle-btn" onClick={this.toggleBox}>toggle</button>
+      </div>
+    );
+  }
+}
+```
 
-Applause from Chang Wang (author)
-张望掌声（作者）
-Go to the profile of Spencer Carnage
-转到斯宾塞大屠杀的配置文件
-Spencer Carnage
-斯宾塞大屠杀
-May 21, 2016
-2016年5月21日
-The blog post about React Animations that I have been searching a day and a half for.
-关于React Animations的博客文章，我一直在寻找一天半。
-Thank you so much.
+Page.jsx
+```
+.page {
+  height: 100%;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: #3498DB;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 80px;
+}
+```
+#### 3 ####
+2016年5月21日  
+这篇blog是讲React Animations的，我找了一天半才找到。
 非常感谢。
-This really clears things up.
-这真的清除了事情。
+讲的很清楚。
+  
+#### 4 ####
+Amanda Koster  
+阿曼达科斯特  
+八月二十九日   
+谢谢！ 
+非常靠谱，我学到了Tweens！
 
 
-9
-9
-
-Applause from Chang Wang (author)
-张望掌声（作者）
-Go to the profile of Amanda Koster
-转到阿曼达科斯特的个人资料
-Amanda Koster
-阿曼达科斯特
-Aug 29
-八月二十九日
-Thank you!
-谢谢！
-This totally worked and I learned about Tweens!
-这完全奏效，我学到了Tweens！
-
-
-5
-五
-
-Applause from Chang Wang (author)
-张望掌声（作者）
-Go to the profile of Joshua Ellis
-转到Joshua Ellis的个人资料
-Joshua Ellis
-约书亚·埃利斯
-Sep 1
-9月1日
-THANK YOU!
-谢谢！
-Finally got my animation running.
-最后让我的动画运行。
-Here is a link to ReactTransitionGroup docs for those of you who need it (like me) :  here
-这里是一个链接到ReactTransitionGroup文档的人谁需要它（像我）:在这里
+#### 5 #### 
+Joshua Ellis  
+约书亚·埃利斯   
+9月1日   
+谢谢！ 
+让我的动画最终跑起来。
+这是[ReactTransitionGroup文档链接](https://github.com/reactjs/react-transition-group/tree/v1-stable),有谁会需要它
 
 Also note the import to get it working is :
-另外请注意，导入工作是:
+另外请注意，导入的写法是:
 
-import TransitionGroup from react-transition-group/TransitionGroup;
-从react-transition-group / TransitionGroup导入TransitionGroup;
+	import TransitionGroup from react-transition-group/TransitionGroup;
 
-9
-9
-
-Conversation with Chang Wang.
-与张望的对话。
-Go to the profile of Ae
-转到Ae的个人资料
-Ae
-阂
-Mar 16, 2016
-2016年3月16日
-
-Try React F1
-尝试反应F1
+#### 9 ####
+2016年3月16日   
+试试react f1  
+ 
+Mar 16, 2016  
+2016年3月16日   
+ReactTransitionGroup不依赖于this.props.style，而是直接操纵DOM react-f1也是一样），因此动画的性能不会被虚拟dom放慢）
 
 
-1 response
-1回应
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
-常王
-Mar 16, 2016
-2016年3月16日
-ReactTransitionGroup does not rely on this.props.style but rather directly manipulates the DOM react-f1 does the same), hence the animation performance is not slowed down by virtualdom  : )
-ReactTransitionGroup不依赖于this.props.style，而是直接操纵DOM react-f1），因此动画的性能不会被虚拟的_ __放慢）
-
-
-1
-1
-
-Conversation with Chang Wang.
-与张望的对话。
-Go to the profile of Jeremy Marc
-转到Jeremy Marc的个人资料
-Jeremy Marc
-杰里米·马克
-Aug 30
-8月30日
-Hey Chang, thank you for your article.
-嘿张，谢谢你的文章。
-I have a question regarding react ;
-我有一个关于反应的问题;
-what if you want your animation to start when the component is visible (block animation for example).
-如果您希望在组件可见时启动动画（例如阻止动画）。
-Whats the best way to handle that?
+Jeremy Marc  
+杰里米·马克   
+8月30日  
+谢谢你的文章。
+关于react，我有一个问题;
+当组件可见时（例如阻止动画）如何启动动画。
 什么是处理这个最好的方法？
-Thanks!
 谢谢！
 
 
-1 response
-1回应
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
-常王
-Aug 30
+
 8月30日
-Hi Jeremy.
 嗨，杰里米
-Depends on the kind of animation you have in mind.
-取决于你想要的那种动画。
-If its a 2-part animation??one where the component becomes visible (eg fade or slide in), the other where some animation occurs after it becomes visible (eg performs a spin) then I would put both inside the componentWillAppear/componentWillEnter in
-如果它是一个由两部分组成的动画，一个组件变得可见（例如淡入或滑入），另一个动画在其变为可见（例如执行旋转）之后出现，那么我将把这两个组件放在componentWillAppear / componentWillEnter中
+取决于你想要的哪种动画。  
+如果它是两个组件组成的动画，其中一个可见（例如淡入或滑入），另一个动画在其变为可见（例如执行旋转 spin）之后出现，那么我把这两个组件放在componentWillAppear / componentWillEnter中
 sequence
 序列
 
-
-1
-1
-1 response
-1回应
-Go to the profile of Jeremy Marc
-转到Jeremy Marc的个人资料
-Jeremy Marc
-杰里米·马克
-Aug 31
-八月三十一日
-So, each component has to be wrapped with react-transition-group right?
+Jeremy Marc  
+杰里米·马克  
+八月三十一日  
 那么，每个组件都必须包含react-transition-group对吗？
-What about performances in this case?
-在这种情况下表演呢？
-Thanks!
+在这种情况下如何调用呢？
 谢谢！
 
-
-1 response
-1回应
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
-常王
-Aug 31
 八月三十一日
-Im sorry I think I might have misunderstood, having trouble visualizing the problem, would you mind creating a codepen/fiddle/sandbox?
-对不起，我想我可能会误解，难以想象的问题，你会介意创建一个codepen /小提琴/沙箱？ 
+对不起，我想我可能误解，要想解决问题，你最好先创建一个codepen/fiddle/sandbox？ 
 : )
-:）
 
-edit :  Oh I think I know what you mean now.
-编辑:哦，我想我知道你的意思了。
-If the component only animates on appearing then you might not need React Transition Group, try triggering the animation in componentDidMount
-如果组件只在显示时动画，那么你可能不需要React Transition Group，尝试在componentDidMount中触发动画
+编辑:哦，我想我明白你的意思了。
+如果组件只在显示时有动画，那么你可能不需要React Transition Group，试试在componentDidMount中触发动画
 
+------------------------------------
 
-10
-10
-1 response
-1回应
-Conversation between Chang Wang and Sourabh Kumar.
 Chang Wang和Sourabh Kumar的对话。
-Go to the profile of Sourabh Kumar
-转到Sourabh Kumar的个人资料
-Sourabh Kumar
-Sourabh库马尔
-Aug 3
+8月3日  
+
+对于React动画。我找了有段时间了，而ReactTransitionGroup似乎很接近了的。
+
+但是有一件事值得我注意。
+
+我们通过生命周期钩子所做的动画，都对实际的DOM节点进行操作，而不是对虚拟DOM进行操作。
+
+而且我们知道React并不知道render方法之外发生的变化。
+这意味着React将无法解释我们的动画做出的变化和它的反应（双关）(pun unintended) ，就好像它们根本不存在一样。
+
+你有什么想法？
+
+------------------------------------
+
 8月3日
-Hi Chang Wang ,
-您好张泓，
+感谢评论！
 
-Great post first of all!
-伟大的职位首先！
-I myself have been exploring different ways to do animations in React for sometime now and ReactTransitionGroup seems to have come quite close to what Im looking for.
-我自己一直在探索不同的方法来动画React一段时间，而ReactTransitionGroup似乎已经非常接近我所寻找的。
+这当然要权衡一下。 
+只要动画所操作的DOM属性，和组件state而更新的DOM属性，不重叠，这就不是问题。
 
-But theres one thing that concerns me.
-但是有一件事关注我。
-The animations that we do through the lifecycle
-我们在整个生命周期中所做的动画
+但是，如果你的rander函数为某个元素指定特定的值，例如，基于一个变化的状态的transform属性，同时，这个状态在DOM属性被直接从生命周期钩子中的方法操作的同时改变，那么会有一些跳跃和怪异的行为。
 
-Read more
-阅读更多
+由于RTG只适用于入口entrance和出口exit动画（当你的组件的内部状态不应该改变时），这应该很少会引发问题，但一定要记住？
 
-1 response
-1回应
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
-常王
-Aug 3
-8月3日
-Hi Sourabh,
-嗨Sourabh，
 
-Thanks for the comment!
-感谢您的评论！
+------------------------------------
+Sourabh Kumar  
+Sourabh库马尔   
+8月3日   
+谢谢你抽出时间写回复，Chang！
 
-Theres certainly a tradeoff here.
-这里当然是一个权衡。
-As long as the DOM attributes youre manipulating dont overlap with DOM attributes that would be updated due to component state changes, this isnt a concern.
-只要您操作的DOM属性不会与由于组件状态更改而更新的DOM属性重叠，这不是一个问题。
+我同意。 
 
-Read more
-阅读更多
-
-1 response
-1回应
-Go to the profile of Sourabh Kumar
-转到Sourabh Kumar的个人资料
-Sourabh Kumar
-Sourabh库马尔
-Aug 3
-8月3日
-Thanks for taking out time and writing back, Chang!
-谢谢你抽出时间写回来，张！
-
-I agree with you.
-我赞同你。
-This seems to be a trade off that one can live with.
-这似乎是一个可以与之共存的折衷。
-And trust me, Im saying that after trying out almost every solution thats available out there.
-相信我，我试过几乎所有可用的解决方案。
-So far Ive tried :
+这似乎是一个可以与之共存的折衷。 
+相信我，我试过几乎所有可用的解决方案。 
 到目前为止我已经试过:
 
-Read more
-阅读更多
+ReactCSSTransitionGroup :  Based upon the RTG only.
+ReactCSSTransitionGroup :仅基于RTG。
+But Im not a fan of the coupling that it introduces between CSS and JS.
+但我不是介于CSS和JS之间的耦合的粉丝。
 
-1
-1
+React Motion :  I really liked this one but this doesnt work well when you are trying to build complex sequential animations.
+React Motion :我真的很喜欢这个，但是当你试图构建复杂的顺序动画的时候，这个效果并不好。
+Besides doesnt offer to add unmount animations.
+除了不提供添加卸载动画。
 
-Conversation with Chang Wang.
-与张望的对话。
-Go to the profile of shaggy
-转到毛茸茸的个人资料
+Velocity-React and React-GSAP-Enhancer :  These are proxy props HOCs which apply forced updates to your components.
+Velocity-React和React-GSAP-Enhancer :这些代理道具HOC将强制更新应用到组件。
+Things tend to get a little clumsy and ugly at times when it interferes into your components lifecycle.
+有时干扰到组件的生命周期时，事情往往会变得笨拙和丑陋。
+
+I found the last two options good initially, until I realized that they are suitable for staggered motion using delays but for big complex animations, they just dont make the cut.
+我发现最后两个选择最好，直到我意识到，他们适合使用延迟交错运动，但对于大型复杂的动画，他们只是不作出裁员。
+
+Then I started working on RTG and I loved the flexibility that it offered through the lifecycle hooks.
+然后我开始研究RTG，我喜欢它通过生命周期钩子提供的灵活性。
+I could use my favorite tools like GSAP, Velocity or Anime to build super smooth animations.
+我可以使用我喜欢的工具，如GSAP，速度或动漫建立超级流畅的动画。
+And it makes total sense to have it in a production environment.
+在生产环境中使用它总是有意义的。
+
+I used to shy away initially from using other JavaScript tools with React because of the whole virtual DOM flow, until recently when I realized that in order to get things function perfectly on a production scale, Ill have to adjust with certain trade offs.
+因为整个虚拟DOM流程，我最初从使用React来避免使用其他JavaScript工具，直到最近当我意识到为了在生产规模上完美地实现功能时，我必须进行一些权衡调整。
+At least till the time we figure out how to do all this through virtual DOM.
+至少在这个时候，我们想通过虚拟DOM来做到这一点。 
+??
+??
+
+----------------------------
+
 shaggy
 毛茸茸
-Nov 16, 2016
 2016年11月16日
 This is really thought provoking, Im new to HOC stuff.
 这真的是令人兴奋的，我新HOC的东西。
