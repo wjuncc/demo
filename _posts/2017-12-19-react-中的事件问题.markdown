@@ -16,6 +16,37 @@ tags:
 
 ### 解决 ###
 
+
+在index.js初始化： 
+
+	const signals = require('signals'); 
+	var myObject = {
+	    started : new signals.Signal()
+	};
+	window.myObject = myObject; 
+
+在Nav1.js的点击事件中写发送事件： 
+	
+    handleSaveClicked (e){
+        var a = e.target.getAttribute("data-href2"); 
+        window.myObject.started.dispatch("jump",a);
+    }
+    onStarted(param1, param2){
+        //alert(param1 + "123");
+        console.log(this,param2);
+    }
+	
+在Door1.js写接收事件：
+
+	export default class Door1 extends Component {
+	    constructor() {
+	        super();
+	        this.state = {value: '0'}
+	        this.onStarted = this.onStarted.bind(this);
+	        window.myObject.started.add(this.onStarted);
+    }
+
+
 正确输出：
 	Door1 {props: {…}, context: {…}, refs: {…}, updater: {…}, state: {…}, …} "about.html"
 	index_bundle_xxx.js:35977 target=== about.html 
@@ -26,7 +57,7 @@ tags:
 * Reflux可能是解决问题的方剂，但是在开始的时候不要陷入沼泽。   
 * [PubSubJS](https://github.com/mroderick/PubSubJS)
 
-### 错误1 ###
+### 备忘录 ###
 GlobalBroadcaster。   
 这个类似于SiteEvt的API。看似很容易。    
 现在看，更像是
@@ -51,6 +82,13 @@ GlobalBroadcaster。
 在发送的地方写：
 	
 	globalBroadcaster.publish("open");
+
+在接收的地方写：
+
+    constructor() {
+        super();
+    	globalBroadcaster.subscribe("open", function() { alert("click!"); });
+	}
 
 则报错：
 
