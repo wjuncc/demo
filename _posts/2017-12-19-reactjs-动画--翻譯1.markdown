@@ -1,0 +1,201 @@
+---
+layout: post
+title:  "reactjs 动画 翻译1"
+date:   2017-12-19 21:26:49 +0800
+categories:  
+tags: 
+---
+
+# reactjs 动画 #
+
+ReactTransitionGroup 教程
+
+### React Transition Group ###
+
+在GitHub上
+
+	npm install --save react-transition-group 
+ 
+### 关于 ###
+
+React 有一个 Transition Group 组件来简化组件进入和离开时的动画代码。
+
+该库有低级的<TransitionGroup>组件，但多数时候用高级<CSSTransitionGroup>组件，因此本教程讲<CSSTransitionGroup>
+
+当组件卸载（unmounts）时，它仍然会在DOM中呈现，直到离开动画结束。
+
+### 怎样做？ ###
+
+<CSSTransitionGroup> keeps track of the elements are passed to it through its children prop.
+<CSSTransitionGroup>跟踪通过其子项目传递给它的元素。
+Each element is tracked through its key prop.
+每个元素都通过其关键支柱进行跟踪。
+
+	const AnimatedComponent = () => (
+	const AnimatedComponent =（）=>（
+	<CSSTransitionGroup>
+	<CSSTransitionGroup>
+	<Item key="one">One</Item>
+	<Item key =“one”> One </ Item>
+	<Item key="two" >Two</Item>
+	<Item key =“two”> Two </ Item>
+	</CSSTransitionGroup>
+	</ CSSTransitionGroup>
+	)
+	）
+	// knownKeys = ['one', 'two']
+	// knownKeys = ['one'，'two']
+
+在它的state中，<CSSTransitionGroup>维护它的所有子组件列表。
+Whenever the <CSSTransitionGroup> updates, it compares the keys of its new children prop to the ones stored in state.
+每当<CSSTransitionGroup>更新时，它都会比较新的子项目和存储在状态中的项目。
+Doing this, it creates two arrays :  one which contains entering elements (their key was not in the existing element list) and one which contains leaving elements (their key was not in the new children elements).
+这样做，它会创建两个包含输入元素（其键不在新元素列表中）的数组和一个包含离开元素（它们的键不在新子元素中）的数组。
+
+const AnimatedComponent = () => (
+const AnimatedComponent =（）=>（
+<CSSTransitionGroup>
+<CSSTransitionGroup>
+<Item key="one">One</Item>
+<Item key =“one”> One </ Item>
+<Item key="three">Three</Item>
+<Item key =“three”> Three </ Item>
+</CSSTransitionGroup>
+</ CSSTransitionGroup>
+)
+）
+// knownKeys = ['one', 'two']
+// knownKeys = ['one'，'two']
+// updateKeys = ['one', 'three']
+// updateKeys = ['one'，'three']
+// enteringKeys = ['three']
+// enteredKeys = ['three']
+// leavingKeys = ['two']
+// leavingKeys = ['two']
+Instead of rendering its children prop, the <CSSTransitionGroup> renders all of the elements that it has stored in its state.
+<CSSTransitionGroup>不是呈现其子项道具，而是呈现其存储在其状态中的所有元素。
+Each element is actually first passed to a childFactory prop function, which allows you to wrap the elements in another components.
+每个元素实际上首先传递给一个childFactory prop函数，它允许你将元素包装在另一个组件中。 
+The <CSSTransitionGroup> wraps each of its children elements in a CSSTransitionGroupChild.
+<CSSTransitionGroup>将其每个子元素封装在一个CSSTransitionGroupChild中。
+
+For each element that is entering, its componentWillEnter method is called (if it has one).
+对于每个输入的元素，它的componentWillEnter方法被调用（如果有的话）。 
+CSSTransitionGroupChild has a componentWillEnter method that will add a class to the rendered element that indicates that it is entering.
+CSSTransitionGroupChild有一个componentWillEnter方法，它将向渲染的元素添加一个类，指示它正在进入。
+Similarly, each leaving element will call its componentWillLeave method, which adds a class indicating that the rendered element is leaving.
+类似地，每个离开元素将调用其componentWillLeave方法，该方法添加一个类，指示呈现的元素正在离开。
+The full class that is passed to them will be based on the name of the transition, which is set as a prop of the <CSSTransitionGroup>
+传递给它们的完整类将基于过渡的名称，该过渡的名称被设置为<CSSTransitionGroup>
+'''javascript
+const AnimatedComponent = () => (
+const AnimatedComponent =（）=>（
+<CSSTransitionGroup
+<CSSTransitionGroup
+transitionName='fade'
+transitionName = '淡入'
+>
+>
+<Item key="one" />
+<Item key =“one”/>
+<Item key="three" />
+<Item key =“three”/>
+</CSSTransitionGroup>
+</ CSSTransitionGroup>
+)
+）
+// assuming Item renders a div, the following will be rendered :
+//假设Item呈现一个div，下面将呈现:
+// <div>One</div>
+// <div>一个</ div>
+// <div class="example-leave">Two</div>
+// <div class =“example-leave”> Two </ div>
+// <div class="example-enter">Three</div>
+// <div class =“example-enter”> Three </ div>
+'''
+On the next animation frame, each entering and leaving element will also be given an "active" class based on their action.
+在下一个动画框架中，每个进入和离开元素也将根据他们的动作被赋予“主动”类。
+Delaying until the next animation frame will ensure that the starting CSS values are applied to the element before beginning the transition.
+延迟到下一个动画帧将确保在开始转换之前将CSS起始值应用于元素。
+
+'''javascript
+	// <div class="example-leave example-leave-active">Two</div>
+	// <div class =“example-leave example-leave-active”>两个</ div>
+	// <div class="example-enter example-enter-active">Three</div>
+	// <div class =“example-enter example-enter-active”> Three </ div>
+	Props
+	道具
+	The <CSSTransitionGroup> can take a number of props to configure the animating of entering and leaving nodes.
+	<CSSTransitionGroup>可以使用一些道具来配置进入和离开节点的动画。
+	Also, previously unmentioned, you can animate "appearing" nodes.
+	此外，以前未提及的，你可以动画“出现”节点。
+	These are the children that are rendered when the <CSSTransitionGroup> is mounted.
+	这些是在安装<CSSTransitionGroup>时呈现的子项。
+	
+	<CSSTransitionGroup
+	<CSSTransitionGroup
+	// the name of the transition will be used as part of
+	//过渡的名称将被用作一部分
+	// the class used to describe the transition
+	//用于描述转换的类
+	// with the name of "fade", an entering element will
+	//以“淡入淡出”的名字，一个输入元素将会
+	// be given the class of "fade-enter"
+	//被赋予“淡入”类
+	transitionName='fade'
+	transitionName = '淡入'
+	// alternatively, you can specify the class for each
+	//或者，您可以为每个类指定类
+	// transition type
+	//过渡类型
+	transitionName={{
+	transitionName = {{
+	enter :  'hello',
+	输入:'你好'，
+	enterActive :  'hello-world',
+	enterActive :'hello-world'，
+	leave :  'goodbye',
+	离开_...“再见”
+	...
+	...
+	appearActive :  'whoa'
+	出现活跃_...'whoa'
+	}}
+	}}
+	// pass a boolean to specify whether a transition
+	//传递一个布尔值来指定是否转换
+	// should be used.
+	//应该被使用。
+	Below are the default values.
+	以下是默认值。
+	transitionAppear={false}
+	transitionAppear = {FALSE}
+	transitionEnter={true}
+	transitionEnter = {TRUE}
+	transitionLeave={true}
+	transitionLeave = {TRUE}
+	// Specify the length of the transition.
+	//指定转换的长度。
+	The transition
+	过渡
+	// classes will be removed after the duration (in ms)
+	//持续时间之后，类将被删除（以毫秒为单位）
+	transitionEnterTimeout={1000}
+	transitionEnterTimeout = {1000}
+	transitionLeaveTimeout={500}
+	transitionLeaveTimeout = {500}
+	transitionEnterTimeout={250}
+	transitionEnterTimeout = {250}
+	>
+	>
+	</CSSTransitionGroup>
+	</ CSSTransitionGroup>
+'''
+
+### 一个小例子 ###
+
+下面是一个示例应用程序，当他们离开时，淡入淡出元素。
+在codepen看。
+
+
+
