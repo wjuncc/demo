@@ -108,7 +108,7 @@ render(<Page/>, document.querySelector('#container'));
 </html>
 ```
 
-原文：  
+**原文：**  
 先把动画放在一边。 从简单页面开始，这个页面只有一个div，显示在ShowBox标识。  
 
 ```javascript
@@ -199,7 +199,7 @@ render(<Page/>, document.querySelector('#container'));
 
 
 
-原文：  
+**原文：**  
 安装[react-addons-transition-group](https://www.npmjs.com/package/react-addons-transition-group)
 	
 
@@ -319,7 +319,7 @@ render(<Page/>, document.querySelector('#container'));
 ```
 
 
-原文：    
+**原文：**    
 为了TransitionGroup节点中的组件具有灵活性，能用于不同动画，TransitionGroup节点本身不定义动画，而是放到子组件中，在添加子组件，和删除子组件的钩子函数中，写动画代码。
 
 一般只会用到这两个生命周期的钩子 - 
