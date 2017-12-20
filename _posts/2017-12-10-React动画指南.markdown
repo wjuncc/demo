@@ -94,6 +94,7 @@ class Page extends React.Component {
 
 render(<Page/>, document.querySelector('#container'));
 ```
+index.html  
 
 ```html
 <!doctype html>
