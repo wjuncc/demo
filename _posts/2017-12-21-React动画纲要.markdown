@@ -11,7 +11,7 @@ tags:
 但我要的是RTG，也就是 ReactTransitionGroup。  
 
 #### 有3篇文章讲了RTG ####
-关于RTG，有2篇讲的比较深：
+关于RTG，有2篇讲的比较深，位于第一梯队：
 
 * [Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)，已经做了翻译和实战，所证此言不虚。  
 * [React学习之扩展动画（三十）--CSS,ps,DOM,Group,ReactCSSTransitionGroup,组件,动画,ReactTransitionGroup](http://www.bijishequ.com/detail/395468?p=70) 有23处讲RTG。  
