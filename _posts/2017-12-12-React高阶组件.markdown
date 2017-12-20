@@ -42,40 +42,1304 @@ tags:
 ### 什么是高阶组件？ ###
 
 其实高阶组件只是一个React组件包含另一个React组件。
-which is basically a class factory (yes, a class factory!), that has the following signature in haskell inspired pseudocode
-这个模式一般是作为函数来实现的，这个函数基本上是一个类工厂（是的，一个类工厂！），它在haskell启发的伪代码
+这个模式一般是作为函数来实现的，这个函数基本上是一个类工厂（是的，一个类工厂！），下面是用haskell形式写的伪代码：
 
 **题外话：**  
 Haskell是什么？  
 > Haskell（发音为/ˈhæskəl/）是一种标准化的，通用的纯函數程式語言，有非限定性语义和强静态类型。 ... 在Haskell中，“函数是第一類物件”。 作为一门函數程式語言，主要控制结构是函数。 Haskell语言是1990年在编程语言Miranda的基础上标准化的，并且以λ演算为基础发展而来。
 
-hocFactory :  :  W :  React.Component => E :  React.Component
-hocFactory : : W : React.Component => E : React.Component
-Where W (WrappedComponent) is the React.Component being wrapped and E (Enhanced Component) is the new, HOC, React.Component being returned.
-W（WrappedComponent）是被包装的React.Component，E（增强组件）是新的，HOC，React.Component被返回。
+	hocFactory:: W: React.Component => E: React.Component
 
-The wraps part of the definition is intentionally vague because it can mean one of two things :
-定义的包装部分是故意模糊的，因为它可能意味着两件事情之一:
+这里，W（WrappedComponent）指被封装的React.Component，E（指EnhancedComponent增强组件）指新的HOC，它返回React.Component。
 
-Props Proxy :  The HOC manipulates the props being passed to the WrappedComponent W,
-道具代理: HOC操作传递给WrappedComponent W的道具，
-Inheritance Inversion :  The HOC extends the WrappedComponent W.
-继承倒置: HOC扩展了WrappedComponent W.
-We will explore this two patterns in more detail.
+注意，定义中的“包装”部分，特意模糊了语义，因为它有两种可能:
+
+Props Proxy（Props 代理） :   
+HOC对传给 WrappedComponent W的Props做了操作，  
+
+Inheritance Inversion （继承颠倒）:   
+HOC会继承WrappedComponent W.
 我们将更详细地探讨这两种模式。
 
-What can I do with HOCs?
-我可以用HOC做什么？
-At a high level HOC enables you to :
-在高层次HOC使您可以:
+### 我可以用HOC做什么？ ###
+使用高阶HOC，你可以:
 
-Code reuse, logic and bootstrap abstraction
-代码重用，逻辑和bootstrap抽象
+* 复用代码，抽象逻辑，抽象bootstrap
+
+* 劫持Render （Render Hijacking）
+
+* 抽象state 和控制state（State abstraction and manipulation）
+
+* 控制Props  （Props manipulation）
+
+下面会很快讲到这些内容，但首先讲HOC的实现方式，因为实现方式，决定了使用HOC有哪些可能，又有哪些限制。
+
+### HOC工厂实现 ###
+
+这一节讲React实现HOC，有两种方式： Props Proxy（PP）和Inheritance Inversion（II）。
+
+虽然实现方式不同，但是都能操作WrappedComponent。
+
+### Props 代理 ###
+Props代理（PP）是通过以下方式实现的：
+
+```javascript
+function ppHOC(WrappedComponent) {
+  return class PP extends React.Component {
+    render() {
+      return <WrappedComponent {...this.props}/>
+    }
+  }
+}
+```
+
+The important part here is that the render method of the HOC returns a React Element of the type of the WrappedComponent.
+这里的重要部分是HOC的render方法返回WrappedComponent类型的React元素。
+We also pass through the props that the HOC receives, hence the name Props Proxy.
+我们也通过了HOC收到的道具，所以叫做Props Proxy。
+
+NOTE :
+注意 :
+
+<WrappedComponent {...this.props}/>
+<WrappedComponent {... this.props} />
+// is equivalent to
+//相当于
+React.createElement(WrappedComponent, this.props, null)
+React.createElement（WrappedComponent，this.props，null）
+They both create a React Element that describes what React should render in its reconciliation process, if you want to know more about React Elements vs Components see this post by Dan Abramov and see the docs to read more about the reconciliation process.
+他们都创建了React元素来描述React应该在对账过程中呈现的内容，如果您想了解更多有关React元素与组件的信息，请参阅Dan Abramov的这篇文章，并参阅文档以了解更多有关对账流程的内容。
+
+What can be done with Props Proxy?
+用Props Proxy可以做什么？
+
+Manipulating props
+操作道具
+Accessing the instance via Refs
+通过Refs访问实例
+Abstracting State
+抽象国家
+Wrapping the WrappedComponent with other elements
+用其他元素包装WrappedComponent
+Manipulating props
+操作道具
+
+You can read, add, edit and remove the props that are being passed to the WrappedComponent.
+您可以阅读，添加，编辑和删除传递给WrappedComponent的道具。
+
+Be careful with deleting or editing important props, you should probably namespace your Higher Order props not to break the WrappedComponent.
+小心删除或编辑重要的道具，你应该命名空间你的高阶道具不要打破WrappedComponent。
+
+Example :  Adding new props.
+示例:添加新的道具。
+The apps current logged in user will be available in the WrappedComponent via this.props.user
+当前登录用户的应用程序将通过this.props.user在WrappedComponent中可用
+
+
+Accessing the instance via Refs
+通过Refs访问实例
+
+You can access this (the instance of the WrappedComponent) with a ref, but you will need a full initial normal render process of the WrappedComponent for the ref to be calculated, that means that you need to return the WrappedComponent element from the HOC render method
+你可以用ref来访问这个（WrappedComponent的实例），但是需要一个完整的WrappedComponent的初始正常渲染过程来计算ref，这意味着你需要从HOC渲染方法返回WrappedComponent元素
+, let React do its reconciliation process and just then you will have a ref to the WrappedComponent instance.
+让React执行它的调整过程，然后你将有一个WrappedComponent实例的引用。
+
+Example :  In the following example we explore how to access instance methods and the instance itself of the WrappedComponent via refs
+例子:在下面的例子中，我们探讨如何通过引用来访问WrappedComponent的实例方法和实例本身
+
+
+When the WrappedComponent is rendered the ref callback will be executed, and then you will have a reference to the WrappedComponents instance.
+当WrappedComponent呈现时，ref回调将被执行，然后你将有一个对WrappedComponents实例的引用。
+This can be used for reading/adding instance props and to call instance methods.
+这可以用于读取/添加实例道具和调用实例方法。
+
+State abstraction
+国家抽象
+
+You can abstract state by providing props and callbacks to the WrappedComponent, very similar to how smart components will deal with dumb components.
+您可以通过向WrappedComponent提供道具和回调来抽象状态，这与智能组件处理哑元的方式非常类似。
+See dumb and smart components for more information.
+看到愚蠢和聪明的组件了解更多信息。
+
+Example :  In the following State Abstraction example we naively abstract the value and onChange handler of the name input field.
+示例:在下面的状态抽象示例中，我们天真地抽象名称输入字段的值和onChange处理程序。
+I say naively because this isnt very general but you got to see the point.
+我天真地说，因为这不是很一般，但你必须看到这一点。
+
+
+You would use it like this :
+你会这样使用它:
+
+
+The input will be a controlled input automagically.
+输入将是一个自动控制的输入。
+
+For a more general two way data bindings HOC see this link
+对于一个更一般的双向数据绑定HOC看到这个链接
+Wrapping the WrappedComponent with other elements
+用其他元素包装WrappedComponent
+
+You can wrap the WrappedComponent with other components and elements for styling, layout or other purposes.
+您可以将WrappedComponent与其他组件和元素一起包装以进行样式，布局或其他目的。
+Some basic usages can be accomplished by regular Parent Components (see Appendix B) but you have more flexibility with HOCs as described previously.
+一些基本的用法可以通过定期的父组件来完成（见附录B），但是如前所述，您可以更灵活地使用HOC。
+
+Example :  Wrapping for styling purposes
+例子:包装样式的目的
+
+
+Inheritance Inversion
+继承反转
+Inheritance Inversion (II) is implemented trivially like this :
+继承反转（II）这样简单地实现:
+
+
+As you can see, the returned HOC class (Enhancer) extends the WrappedComponent.
+正如你所看到的，返回的HOC类（Enhancer）扩展了WrappedComponent。
+It is called Inheritance Inversion because instead of the WrappedComponent extending some Enhancer class, it is passively extended by the Enhancer.
+它被称为继承反转，因为不是扩展一些增强器类的WrappedComponent，而是由增强器被动扩展。
+In this way the relationship between them seems inverse.
+这样他们之间的关系似乎反过来。
+
+Inheritance Inversion allows the HOC to have access to the WrappedComponent instance via this, which means it has access to the state, props, component lifecycle hooks and the render method.
+继承反转允许HOC通过这个访问WrappedComponent实例，这意味着它可以访问状态，道具，组件生命周期钩子和渲染方法。
+
+I won't go into much detail about what you can do with lifecycle hooks because its not HOC specific but React specific.
+我不会详细讨论你可以用生命周期钩子做什么，因为它不是HOC特定的，但是反应是特定的。
+But note that with II you can create new lifecycle hooks for the WrappedComponent.
+但请注意，使用II，您可以为WrappedComponent创建新的生命周期挂钩。
+Remember to always call super.[lifecycleHook] so you don't break the WrappedComponent
+记得总是调用super。[lifecycleHook]，这样就不会破坏WrappedComponent
+
+Reconciliation process
+调节过程
+
+Before diving in lets summarize some theory.
+在潜水之前让我们总结一些理论。
+
+React Elements describe what is going to be rendered when React runs its reconciliation process.
+React元素描述React运行其对帐过程时将要呈现的内容。
+
+React Elements can be of two types :  String and Function.
+React元素可以是两种类型:字符串和函数。
+The String Type React Elements (STRE) represent DOM nodes and the Function Type React Elements (FTRE) represent Components created by extending React.Component.
+字符串类型React元素（STRE）表示DOM节点，而功能类型React元素（FTRE）表示通过扩展React.Component创建的组件。
+For more about Elements and Components read this post.
+有关元素和组件的更多信息请阅读这篇文章。
+
+FTRE will be resolved to a full STRE tree in Reacts reconciliation process (the end result will be always DOM elements).
+FTRE将在Reacts协调过程中解析为完整的STRE树（最终结果将始终为DOM元素）。
+
+This is very important and it means that Inheritance Inversion High Order Components dont have a guaranty of having the full children tree resolved.
+这是非常重要的，这意味着继承颠倒高顺序组件没有解决完整的子树的保证。
+
+Inheritance Inversion High Order Components dont have a guaranty of having the full children tree resolved.
+继承颠倒高顺序组件没有解决完整的子树的保证。
+This is will prove important when studying Render Hijacking.
+研究渲染劫持这将是非常重要的。
+
+What can you do with Inheritance Inversion?
+你可以做什么与继承颠倒？
+
 Render Hijacking
 呈现劫持
-State abstraction and manipulation
-国家抽象和操纵
+Manipulating state
+操纵状态
+Render Hijacking
+呈现劫持
 
+It is called Render Highjacking because the HOC takes control of the render output of the WrappedComponent and can do all sorts of stuff with it.
+它被称为Render Highjacking，因为HOC控制了WrappedComponent的渲染输出，并且可以用它做各种各样的事情。
+
+In Render Highjacking you can :
+在渲染劫持你可以:
+
+Read, add, edit, remove props in any of the React Elements outputted by render
+阅读，添加，编辑，删除渲染输出的任何React Elements中的道具
+Read, and modify the React Elements tree outputted by render
+读取和修改渲染输出的React Elements树
+Conditionally display the elements tree
+有条件地显示元素树
+Wrapping the elements tree for styling purposes (as shown in Props Proxy)
+包装元素树为样式目的（如Props代理中所示）
+*render refers to the WrappedComponent.render method
+* render是指WrappedComponent.render方法
+
+You cannot edit or create props of the WrappedComponent instance, because a React Component cannot edit the props it receives, but you can change the props of the elements that are outputted from the render method.
+你不能编辑或创建WrappedComponent实例的道具，因为React Component不能编辑它收到的道具，但是你可以改变从渲染方法输出的元素的道具。
+Just as we studied before, II HOCs don't have a guaranty of having the full children tree resolved, which implies some limits to the Render Highjacking technique.
+就像我们以前学习过的那样，II HOCs没有解决完整子树的担保，这就意味着对Render Highjacking技术有一些限制。
+The rule of thumb is that with Render Highjacking you will be able to manipulate the elements tree that the WrappedComponent render method outputs no more no less.
+经验法则是，使用Render Highjacking，您将能够操纵WrappedComponent呈现方法输出的元素树不会更少。
+If that elements tree includes a Function Type React Component then you won't be able to manipulate that Components children.
+如果该元素树包含一个函数类型反应组件，那么您将无法操作该组件子项。 
+(They are deferred by Reacts reconciliation process until it actually renders to the screen.)
+（它们被反应和解过程推迟，直到它实际呈现在屏幕上。）
+
+Example 1 :  Conditional rendering.
+示例1 :条件呈现。
+This HOC will render exactly what the WrappedComponent would render unless this.props.loggedIn is not true.
+这个HOC将完全呈现WrappedComponent将呈现的内容，除非this.props.loggedIn不正确。 
+(Assuming the HOC will receive the loggedIn prop)
+（假设HOC将收到登录的道具）
+
+
+Example 2 :  Modifying the React Elements tree outputted by render.
+示例2 :修改由render输出的React Elements树。
+
+
+In this example, if the rendered output of the WrappedComponent has an input as its top level element then we change the value to may the force be with you.
+在这个例子中，如果WrappedComponent的呈现的输出有一个输入作为它的顶层元素，那么我们改变这个值到可能的力量。
+
+You can do all sorts of stuff in here, you can traverse the entire elements tree and change props of any element in the tree.
+你可以在这里做各种各样的东西，你可以遍历整个元素树并改变树中任何元素的道具。
+This is exactly how Radium does its business (More on Radium in Case Studies).
+镭正是如此做它的事务（更多在镭在案件研究）。
+
+NOTE :  You cannot Render Highjack with Props Proxy.
+注意:你不能用Props Proxy来渲染Highjack。
+While it is possible to access the render method via WrappedComponent.prototype.render, you will need to mock the WrappedComponent instance and its props, and potentially handle the component lifecycle yourself, instead of relying on React doing it.
+虽然可以通过WrappedComponent.prototype.render访问渲染方法，但是您需要模拟WrappedComponent实例及其道具，并且可能自己处理组件生命周期，而不是依靠React来完成。
+In my experiments it isnt worth it and if you want to do Render Highjacking you should be using Inheritance Inversion instead of Props Proxy.
+在我的实验中，这是不值得的，如果你想做渲染劫持，你应该使用继承反转，而不是Props代理。
+Remember that React handles component instances internally and your only way of dealing with instances is via this or by refs.
+请记住，React在内部处理组件实例，处理实例的唯一方法是通过这个或通过参考。
+Manipulating state
+操纵状态
+
+The HOC can read, edit and delete state of the WrappedComponent instance, and you can also add more state if you need to.
+HOC可以读取，编辑和删除WrappedComponent实例的状态，如果需要的话也可以添加更多的状态。
+Remember that you are messing with the state of the WrappedComponent which can lead to you breaking things.
+请记住，你正在搞乱WrappedComponent的状态，这会导致你破坏事物。
+Mostly the HOC should be limited to read or add state, and the latter should be namespaced not to mess with the WrappedComponents state.
+大多数情况下，HOC应该被限制为读取或者添加状态，后者应该被命名为不会与WrappedComponents状态混淆。
+
+Example :  Debugging by accessing WrappedComponents props and state
+示例:通过访问WrappedComponents道具和状态进行调试
+
+
+This HOC wrapps the WrappedComponent with other elements, and also displays the WrappedComponents instance props and state.
+这个HOC用其他元素包装WrappedComponent，并显示WrappedComponents实例的道具和状态。 
+The JSON.stringify trick was taught to me by Ryan Florence and Michael Jackson.
+JSON.stringify把戏是由Ryan Florence和Michael Jackson教给我的。
+You can see a full working implementation of the debugger here.
+您可以在这里看到调试器的完整工作实现。
+
+Naming
+命名
+When wrapping a component with an HOC you lose the original WrappedComponents name which might impact you when developing and debugging.
+当用HOC包装一个组件时，你会失去原来的WrappedComponents名字，这在开发和调试的时候会影响到你。
+
+What people usually do is to customize the HOCs name by taking the WrappedComponents name and prepending something.
+人们通常会做的是通过采用WrappedComponents名称和预先考虑的东西来自定义HOC名称。
+The following is taken from React-Redux.
+以下内容来自React-Redux。
+
+HOC.displayName = `HOC(${getDisplayName(WrappedComponent)})`
+HOC.displayName =`HOC（$ {getDisplayName（WrappedComponent）}）`
+//or
+//要么
+class HOC extends ... {
+HOC类扩展... {
+static displayName = `HOC(${getDisplayName(WrappedComponent)})`
+static displayName =`HOC（$ {getDisplayName（WrappedComponent）}）`
+...
+...
+}
+}
+The getDisplayName function is defined as follows :
+getDisplayName函数定义如下:
+
+function getDisplayName(WrappedComponent) {
+函数getDisplayName（WrappedComponent）{
+return WrappedComponent.displayName  |  |
+返回WrappedComponent.displayName | |
+WrappedComponent.name  |  |
+WrappedComponent.name | |
+Component
+零件
+}
+}
+You actually don't need to rewrite it yourself because recompose lib already provides this function.
+你实际上不需要自己重写它，因为重组库已经提供了这个功能。
+
+Case Studies
+实例探究
+React-Redux
+反应 - 终极版
+
+React-Redux is the official Redux bindings for React.
+React-Redux是React的官方Redux绑定。
+One of the functions it provides is connect which handles all the bootstrap necessary for listening to the store and cleaning up afterwards.
+它提供的功能之一是连接，它处理所有的聆听商店和清理后所需的bootstrap。
+This is achieved by a Props Proxy implementation.
+这是通过Props代理实现来实现的。
+
+If you have ever worked with pure Flux you know that any React Component that is connected to one or more stores needs a lot of bootstrapping for adding and removing stores listeners and selecting the parts of the state they need.
+如果您曾经使用过纯Flux，那么您知道连接到一个或多个商店的任何React组件需要大量的引导来添加和删除商店监听器并选择他们需要的状态部分。
+So React-Redux implementation is pretty good because it abstract all this bootstrap.
+所以React-Redux的实现是非常好的，因为它抽象了所有这些引导。
+Basically, you dont need to write it yourself anymore!
+基本上，你不需要自己写了！
+
+Radium
+镭
+
+Radium is a library that enhances the capability of inline styles by enabling CSS pseudo selectors inside inline-styles.
+Radium是一个通过在内联样式中启用CSS伪选择器来增强内联样式功能的库。
+Why inline styles are good for you is subject of another discussion, but a lot of people are starting to do it and libs like radium really step up the game.
+为什么内联样式对你有好处是另一个讨论的主题，但是很多人开始这样做，像镭之类的库真的提高了游戏速度。
+If you want to know more about inline styles start by this presentation by Vjeux
+如果您想了解更多关于内联样式的信息，请参阅Vjeux的演示文稿
+
+So, how does Radium enables inline CSS pseudo selectors like hover?
+那么，Radium如何使内联的CSS伪选择器像悬停？
+It implements an Inheritance Inversion pattern to use Render Highjacking in order to inject proper event listeners (new props) to simulate CSS pseudo selectors like hover.
+它实现了一个继承反转模式来使用Render Highjacking来注入适当的事件监听器（新的道具）来模拟CSS伪选择器如悬停。
+The event listeners are injected as handlers for React Elements props.
+事件侦听器被注入为React Elements道具的处理程序。
+This requires Radium to read all the Elements tree outputted by the WrappedComponents render method and whenever it finds an element with a style prop, it adds event listeners props.
+这需要Radium读取WrappedComponents渲染方法输出的所有元素树，并且每当它找到具有样式prop的元素时，就会添加事件侦听器props。
+Simply put, Radium modifies the props of the Elements tree (what Radium actually does is a little bit more complicated but you get the point)
+简而言之，Radium修改了元素树的道具（Radium实际上做的有点复杂，但你明白了）
+
+Radium exposes a really simple API.
+镭暴露一个非常简单的API。
+Pretty impressive considering all the work it performs without the user even noticing.
+考虑到所有的工作，没有用户甚至不知不觉中令人印象深刻。
+This gives a glimpse of the power of HOC.
+这让我们看到了HOC的力量。
+
+Appendix A :  HOC and parameters
+附录A : HOC和参数
+The following content is optional and you may skip it.
+以下内容是可选的，您可以跳过它。
+Sometimes is useful to use parameters on your HOCs.
+有时在您的HOC上使用参数很有用。
+This is implicit in all examples above and should be pretty natural to intermediate Javascript developers, but just for the sake of making the post exhaustive let's cover it real quick.
+这在上面的所有示例中都是隐含的，对于中间Javascript开发人员来说应该是很自然的，但是为了使文章详尽无遗，让我们快速地介绍它。
+
+Example :  HOC parameters with a trivial Props Proxy.
+例子: HOC参数与一个平凡的Props代理。
+The important thing is the HOCFactoryFactory function.
+重要的是HOCFactoryFactory函数。
+
+
+You can use it like this :
+你可以像这样使用:
+
+HOCFactoryFactory(params)(WrappedComponent)
+HOCFactoryFactory（PARAMS）（WrappedComponent）
+//or
+//要么
+@HOCFatoryFactory(params)
+@HOCFatoryFactory（PARAMS）
+class WrappedComponent extends React.Component{}
+class WrappedComponent extends React.Component {}
+Appendix B :  Difference with Parent Components
+附录B __与父组件的差异
+The following content is optional and you may skip it.
+以下内容是可选的，您可以跳过它。
+Parent Components are just React Components that have some children.
+父组件只是React组件有一些孩子。 
+React has APIs for accessing and manipulating a components children.
+React具有访问和操作组件子项的API。
+
+Example :  Parent Components accessing its children.
+示例:访问其子项的父组件。
+
+
+Now we will review what Parent Components can and cannot do in contrast of HOCs plus some important details :
+现在我们将回顾一下家长组件可以做什么和不可以做什么与HOCs相比，还有一些重要的细节_...
+
+Render Highjacking (as seen in Inheritance Inversion)
+渲染劫持（如在继承反演中所见）
+Manipulate inner props (as seen in Inheritance Inversion)
+操纵内部道具（如继承反转所示）
+Abstract state.
+摘要状态。
+But has its drawbacks.
+但有其缺点。
+You wont be able to access the state of the Parent Component from outside it unless you explicitly create hooks for it.
+除非明确地为其创建钩子，否则无法从外部访问父组件的状态。
+This makes its usefulness restricted.
+这使其有用性受到限制。
+Wrapp with new React Elements.
+用新的React元素包装。
+This might be the single use case where Parent Components feel more ergonomic than HOC.
+这可能是父组件感觉比HOC更符合人体工程学的单一用例。 
+HOCs can do this too.
+HOC也可以做到这一点。
+Children manipulation has some gotchas.
+儿童操纵有一些陷阱。
+For example if children don't got a single root element (more than one first level children), then you need to add an extra element to wrap all children, which might be a little bit cumbersome to your markup.
+例如，如果孩子没有一个根元素（一个以上的一级孩子），那么你需要添加一个额外的元素来包装所有的孩子，这可能是有点麻烦的标记。
+In HOCs a single top level children root is guarantied by React/JSX constraints.
+在HOC中，一个顶层的子级根由React / JSX限制来保证。
+Parent Components can be used freely in an Elements tree, they are not restricted to once per Component class as HOCs are.
+父组件可以在元素树中自由使用，它们不像HOC那样每个Component类限制一次。
+Generally, if you can do it with Parent Components you should because its much less hacky than HOCs, but as the list above states they are less flexible than HOCs.
+一般来说，如果你可以用Parent Components做到这一点，那么你应该这样做，因为它比HOC少得多，但是正如上面的列表所述，它们比HOC更不灵活。
+
+Closing Words
+闭幕词
+I hope that after reading this post you know a little more about React HOCs.
+我希望在阅读这篇文章之后，您对React HOC有更多的了解。
+They are highly expressive and have proven to be pretty good in different libraries.
+他们具有很强的表达能力，在不同的图书馆里被证明是相当不错的。
+
+React has brought a lot of innovation and people running projects like Radium, React-Redux, React-Router, among others, are pretty good proofs of that.
+React带来了很多创新，而运行Radium，React-Redux，React-Router等项目的人也是很好的证明。
+
+If want to contact me please follow me on twitter @franleplant.
+如果想要联系我，请在twitter @franleplant上关注我。
+
+Go to this repo to play with code Ive played with in order to experiment some of the patterns explained in this post.
+去这个回购玩代码Ive玩，以试验一些在这篇文章中解释的模式。
+
+Credits
+积分
+Credits go mostly to React-Redux, Radium, this gist by Sebastian Markb?ge and my own experimentation.
+积分主要是React-Redux，Radium，Sebastian Markb？ge的这个要点和我自己的实验。
+
+ReactJavaScriptHigh Order Component
+ReactJavaScriptHigh订单组件
+One clap, two clap, three clap, forty?
+一个拍手，两个拍手，三个拍手，四十个？
+By clapping more or less, you can signal to us which stories really stand out.
+通过或多或少的鼓掌，您可以向我们表明哪些故事真正脱颖而出。
+
+
+3.3K
+3.3K
+37
+37
+Follow
+跟随
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Engineer (with an actual Degree), JavaScript Addict and Rust rookie.
+工程师（具有实际学位），JavaScript成瘾者和铁锈新秀。
+
+Also tagged JavaScript
+也标记了JavaScript
+Whats really wrong with node_modules and why this is your fault
+node_modules有什么问题，为什么这是你的错
+Go to the profile of Mateusz Morszczyzna
+转到Mateusz Morszczyzna的个人资料
+Mateusz Morszczyzna
+Mateusz Morszczyzna
+
+2.9K
+2.9K
+
+Also tagged React
+还标记了React
+Introducing Turbo :  5x faster than Yarn  &  NPM, and runs natively in-browser ??
+引入涡轮_... 5倍比纱_和NPM快，本机运行在浏览器??
+Go to the profile of Eric Simons
+转到Eric Simons的个人资料
+Eric Simons
+埃里克西蒙斯
+
+16.5K
+16.5K
+
+Also tagged React
+还标记了React
+Frontend in 2017 :  The important parts
+2017年前端_...重要部分
+Go to the profile of Kaelan Cooter
+转到Kaelan Cooter的个人资料
+Kaelan Cooter
+凯兰·库特
+
+828
+828
+
+Responses
+回应
+Write a response
+写一个答复
+Applause from franleplant (author)
+掌声（作者）
+Go to the profile of Justin Reynard
+转到Justin Reynard的个人资料
+Justin Reynard
+贾斯汀雷纳德
+Sep 22, 2016
+2016年9月22日
+Render Hijacking
+呈现劫持
+This is the power of the redux/react/react-native paradigm!
+这是redux / react / react-native范式的力量！
+
+
+8
+8
+
+Applause from franleplant (author)
+掌声（作者）
+Go to the profile of Emil Ong
+转到Emil Ong的个人资料
+Emil Ong
+Emil Ong
+May 28, 2016
+2016年5月28日
+Great article!
+好文章！
+Im a big fan of recompose, which I see you mentioned for naming, but does much of the property transformation that you wrote about and more (for other folks that might not be familiar with it).
+我是一个重组的风扇，我看到你提到的命名，但是你写的很多属性转换和更多的（对于其他人可能不熟悉它）。
+
+Another pattern (or meta-pattern?) that might deserve mentioning here is composition of HOCs which lets folks use several of these behaviors simultaneously.
+另一种可能值得一提的模式（或元模式）是HOCs的组合，它可以让人们同时使用这些行为中的几个。
+
+
+5
+五
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of simonchan
+转到simonchan的个人资料
+simonchan
+simonchan
+Aug 8, 2016
+2016年8月8日
+Hi, its a great article.
+嗨，这是一篇很棒的文章。
+And there are something confuse me that the how to decide that a component should be treated as a HOC or a Container Component.
+而且有一点让我很困惑，那就是如何决定一个组件应该被看作HOC还是一个容器组件。
+It looks like that very similar between them.
+看起来他们之间非常相似。
+Could you give me some tips to consider the component design?
+你能给我一些技巧来考虑组件设计吗？
+wish your response, thanks?
+希望你的回复，谢谢？
+
+
+1
+1
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Sep 6, 2016
+2016年9月6日
+Thats a very good question.
+这是一个非常好的问题。
+The post talks about capabilities about HOCs techniques and Parent components, those are very good guidelines to chose your abstraction.
+这篇文章讨论了有关HOC技术和Parent组件的功能，这些是选择抽象的非常好的指导方针。
+
+Other criteria may include :
+其他标准可能包括:
+
+Generalization.
+概括。
+Do I need to be general about the WrappedComponent?
+我是否需要对WrappedComponent进行一般化处理？
+Or am I only going to wrap a single
+或者我只打算包装一个
+Read more
+阅读更多
+
+5
+五
+
+Conversation between Mark Par and franleplant.
+Mark Par和franleplant之间的对话。
+Go to the profile of Mark Par
+转到Mark Par的个人资料
+Mark Par
+Mark Par
+May 12
+5月12日
+Thanks for the article.
+感谢您的文章。
+
+I have a scenario where I want to create an HOC that detects mouse events (e.g. mouseenter, mouseleave) when they occur on the WrappedComponent, then pass the WrappedComponent a special prop (e.g. componentIsHovered).
+我有一个场景，我想创建一个检测鼠标事件（例如mouseenter，mouseleave），当它们发生在WrappedComponent，然后通过WrappedComponent一个特殊的道具（例如componentIsHovered）的HOC。
+I got this working with the ref callback approach you lay out here, then adding
+我用你在这里摆放的ref回调方法工作，然后添加
+
+Read more
+阅读更多
+
+2
+2
+2 responses
+2个回答
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+May 20
+5月20日
+Thanks a lot for your kind words, it super encouraging to be able to help!
+非常感谢您的亲切的话语，能够帮助我们，我感到非常鼓舞！
+
+
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Alex Fedoseev
+转到Alex Fedoseev的个人资料
+Alex Fedoseev
+Alex Fedoseev
+May 27, 2016
+2016年5月27日
+Example :  Wrapping for styling purposes
+例子:包装样式的目的
+It looks more as anti-pattern to me, b/c HOC usually encapsulates logic (state management etc) and wraps SFC, which is pure view layer function.
+它看起来更像是反模式，B / C HOC通常封装逻辑（状态管理等）并包装SFC，这是纯视图层功能。
+Logic layer should not be bloated by styles, all of them should be in wrapped SFC.
+逻辑层不应该由风格臃肿，他们都应该在封装SFC。
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+May 27, 2016
+2016年5月27日
+
+Read more
+阅读更多
+
+2
+2
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Swami Kevala
+转到Swami Kevala的个人资料
+Swami Kevala
+斯瓦米·凯瓦拉
+Dec 6, 2016
+2016年12月6日
+Im using 2 composed HOCs using II pattern, like this wrapTable(sortTable(Table)), both the HOCs store some internal state.
+我使用2组合HOCs使用II模式，就像这个wrapTable（sortTable（表）），两个HOC存储一些内部状态。
+However, when I access this in the sortTable HOC it is referring to the wrapTable this, so Im not able to access this.state
+但是，当我在sorttable HOC中访问它时，它指的是这个wrapTable，所以我无法访问this.state
+
+
+2 responses
+2个回答
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Dec 18, 2016
+2016年12月18日
+There are a couple of questions to ask here :
+这里有几个问题要问
+
+Are you overwriting state attribute?
+你是否覆盖状态属性？
+When you inherit you can easily overwrite a method or an attribute.
+当你继承你可以很容易地覆盖一个方法或一个属性。
+Methods should call the super but attributes are trickier.
+方法应该调用超级，但属性更棘手。
+In the case of state you should work on the constructor
+在状态的情况下，你应该在构造函数上工作
+class WrapTableHOC ... {
+class WrapTableHOC ... {
+
+
+Read more
+阅读更多
+
+2
+2
+
+Applause from franleplant (author)
+掌声（作者）
+Go to the profile of gelefisk
+转到gelefisk的配置文件
+gelefisk
+gelefisk
+Jun 13
+六月十三日
+This was a really helpful article!
+这是一个非常有用的文章！
+Especially I found Difference with Parent Components to be something that was lacking in the official documentation.
+特别是我发现与父母成分的区别是官方文档中缺少的东西。
+I made a PR for facebook to add a note about this in the docs :  https : //github.com/facebook/react/pull/9942
+我为Facebook做了一个PR，在文档: https_... //github.com/facebook/react/pull/9942
+
+
+1
+1
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Terence Chow
+转到Terence Chow的个人资料
+Terence Chow
+周星驰
+Nov 16, 2016
+2016年11月16日
+I have followed your method for inheritance inversion and I dont understand why you cant simply do super.render(newProps) and handle newProps in the render function of your wrapped component?
+我跟着你的方法继承反转，我不明白为什么你不能简单地做super.render（newProps）和处理你的包装组件的渲染函数newProps？
+Why clone anything?
+为什么克隆什么？
+Is there any problems with my approach?
+我的方法有什么问题吗？
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Nov 21, 2016
+2016年11月21日
+its not the standard render signature so that might give some problems with compatibility with React standard.
+它不是标准的渲染签名，因此可能会给与React标准兼容性带来一些问题。
+Remember that render is a special method used by react
+请记住，渲染是反应所使用的特殊方法
+props are immutable objects so you cannot modify them so when you need to change the props of an element such as the returned by render, then you need to clone
+道具是不变的对象，所以你不能修改它们，所以当你需要改变一个元素的道具，比如渲染返回的时候，那么你需要克隆
+Read more
+阅读更多
+
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Dom Hede
+转到Dom Hede的个人资料
+Dom Hede
+Dom Hede
+Oct 6, 2016
+2016年10月6日
+Any tips on this problem would be appreciated.
+任何有关这个问题的提示将不胜感激。
+
+http : //stackoverflow.com/questions/39886189/access-prop-outside-of-class-in-react-when-calling-higher-order-component
+http_... // stackoverflow.com/questions/39886189/access-prop-outside-of-class-in-react-when-calling-higher-order-component
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Oct 8, 2016
+2016年10月8日
+Hi there!
+你好！
+Thanks for stopping by!
+感谢您的阻止！
+
+I already answered in SO but Ill repaste the answer here
+我已经回答了，但是在这里，我重申了答案
+
+///////////////////////
+///////////////////////
+
+Hi There!
+你好！
+
+TLDR :  use `ownProps` parameter
+TLDR :使用`ownProps`参数
+
+Read more
+阅读更多
+
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of wenkai
+转到文凯的档案
+wenkai
+文凯
+Jan 1
+1月1日
+Thanks you for your great article!
+感谢你的伟大的文章！ 
+It is very helpful to React developers.
+React开发人员非常有帮助。
+
+May I translate it into Chinese to let more people know it?
+我可以把它翻译成中文让更多的人知道吗？
+
+I will follow the conditions here.
+我会在这里遵守条件。
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Jan 4
+1月4日
+Sure, no problem!
+好没问题！
+Send me the link!
+把链接发给我！
+
+
+1 response
+1回应
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of jordan addison
+转到约旦addison的个人资料
+jordan addison
+约旦addison
+Aug 3, 2016
+2016年8月3日
+Great article man I have been using HOCs more and more in a my code and I feel like they can solve a TON of problems.
+伟大的文章人我一直在使用HOC越来越多的在我的代码，我觉得他们可以解决TON的问题。
+I am having some issues currently trying to test life cycle methods of an HOC returned react class with enzyme.
+我目前有一些问题正在尝试使用酶来测试HOC返回反应类的生命周期方法。
+Have you had any experience with this or testing HOCs that have life cycle methods in general?
+你有没有这方面的经验或测试一般有生命周期方法的HOC？
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Aug 5, 2016
+2016年8月5日
+No problems over here, but feel free to create a gist and share it so we can work it together.
+这里没有问题，但随意创建一个要点，分享它，所以我们可以一起工作。
+
+
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Adrien Mangeot
+转到Adrien Mangeot的个人资料
+Adrien Mangeot
+阿德里安·曼格
+Sep 11, 2016
+2016年9月11日
+Great article!
+好文章！
+I just discovered iiHOC and thought it could be interesting for some of my problems.
+我刚刚发现了iiHOC，认为这可能对我的一些问题很有意思。
+I just wonder how you deal with stateless functions in iiHOC.
+我只是想知道如何处理iiHOC中的无状态函数。
+
+I am currently having this check to know which class to extend
+我目前正在进行这项检查，以了解哪个课程要延续
+
+| const isStateless = !WrappedComponent.prototype.isReactComponent
+| const isStateless =！WrappedComponent.prototype.isReactComponent
+| const
+_或者const
+Read more
+阅读更多
+
+1
+1
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Oct 4, 2016
+2016年10月4日
+Hi there!
+你好！
+Thanks for stopping by.
+谢谢你停下来。
+
+Recompose has some helpers for that, it basically turns your stateless functional component into a class based component under the hood so you can apply HOCs to it transparently.
+重构有一些帮助，基本上把你的无状态功能组件变成一个基于类的组件，所以你可以将HOCs透明地应用到它。
+
+https : //github.com/acdlite/recompose the helper is called `toClass`
+https_... //github.com/acdlite/recompose助手被称为`toClass`
+
+
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Swami Kevala
+转到Swami Kevala的个人资料
+Swami Kevala
+斯瓦米·凯瓦拉
+Im using 2 composed HOCs using II pattern, like this wrapTable(sortTable(Table)), both the HOCs
+我使用2个组合的HOC使用II模式，就像这个wrapTable（sortTable（Table）），两个HOC
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Dec 18, 2016
+2016年12月18日
+Also note, that since this components are linked by Inheritance, there are no multiple this , theres only one!
+还要注意，由于这个组件是通过继承链接的，所以没有多个这个，只有一个！
+I suggest to dig a little bit deeper into how class hierarchies work, maybe from the free Book You Dont Know JS
+我建议深入研究一下类层次结构是如何工作的，也许从免费的书你不知道JS
+
+
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of vwa.la
+转到vwa.la的配置文件
+vwa.la
+vwa.la
+Oct 7, 2016
+2016年10月7日
+Are there any performance considerations with II HOCs?
+II HOC是否有任何性能方面的考虑？
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Oct 8, 2016
+2016年10月8日
+I dont know the exact performance implications of HOC.
+我不知道HOC的确切性能影响。
+
+If you use HOC that do not operate on every render then the penalty cost of creating an HOC is only at creation, assuming you export the augmented component so that the HOC is only executed only once.
+如果你使用的HOC不能在每个渲染上运行，那么创建一个HOC的惩罚成本只是在创建时，假设你导出了增强组件，这样HOC只能执行一次。
+
+Read more
+阅读更多
+
+1
+1
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Paul Klimashkin
+去保罗Klimashkin的个人资料
+Paul Klimashkin
+Paul Klimashkin
+Jul 21, 2016
+2016年7月21日
+In fairness iiHOC seems like not the only way to extend methods behavior.
+公平性iiHOC似乎不是扩展方法行为的唯一方法。
+Or even new school Proxy :
+甚至新的学校代理:
+Or its not fully correct assumption?
+或者它不完全正确的假设？
+
+Read more
+阅读更多
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Aug 1, 2016
+2016年8月1日
+Hi Paul Klimashkin !
+嗨Paul Klimashkin！
+Thanks for reading!
+谢谢阅读！
+I havent tested those functions but at a high level, at least, they look like they could work.
+我没有测试过这些功能，但至少在高层次，他们看起来可以工作。
+But they are not strictly HOC since they do not return a new component but the same.
+但是他们不是严格的HOC，因为他们没有返回一个新的组件，而是一样的。
+I would call them ComponentsMonkeyPatchers.
+我会称他们为ComponentsMonkeyPatchers。
+You might want to explore this pattern more and post conclusions somewhere because I
+你可能想更多的探索这个模式，并在某处发表结论，因为我
+
+Read more
+阅读更多
+
+1
+1
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of wmzy
+转到wmzy的个人资料
+wmzy
+wmzy
+Aug 17, 2016
+2016年8月17日
+Inheritance Inversion :  How to avoid Warning :  Unknown prop `xxx` on <TTT> tag.
+继承倒置:如何避免警告:在<TTT>标签上的未知的prop xxx。
+Remove this prop from the element.
+从元素中删除此道具。
+For details, see https : //fb.me/react-unknown-propThanks.
+有关详细信息，请参阅https_... //fb.me/react-unknown-propThanks。
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Sep 6, 2016
+2016年9月6日
+This is mostly related to how React handles standard DOM props and custom props.
+这主要与React如何处理标准DOM道具和自定义道具有关。
+If you are mixing Standard and Custom props in your HOC then you most likely need to filter the exact props you pass to the underlying DOM element.
+如果你在你的HOC中混合了标准和自定义道具，那么你很可能需要过滤你传递给底层DOM元素的精确道具。
+
+For example if you are using a Custom Component that renders an `input` element and you are
+例如，如果您正在使用自定义组件来呈现“输入”元素，那么您就是
+
+Read more
+阅读更多
+
+1
+1
+1 response
+1回应
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Morgan Cheng
+转到Morgan Cheng的个人档案
+Morgan Cheng
+摩根程
+Dec 30, 2016
+2016年12月30日
+In this example, if the rendered output of the WrappedComponent has an input as its top level element then we change the value to may the force be with you.
+在这个例子中，如果WrappedComponent的呈现的输出有一个输入作为它的顶层元素，那么我们改变这个值到可能的力量。
+I tried the example of React.clonetElement on result of super.render().
+我尝试了super.render（）的结果React.clonetElement的例子。
+It spits out error message like Warning :  Unknown prop `foo` on <div> tag.
+它会在<div>标签上吐出错误消息，如Warning : Unknown prop'foo`。
+I suppose the reason is that super.render() returns DOM elements instead of the customized component.
+我想是因为super.render（）返回DOM元素，而不是定制的组件。
+We cannot pass props as will to cloned elements.
+我们不能将道具按照意愿传递给克隆元素。
+This basically make this pattern hard to use.
+这基本上使这种模式很难使用。
+It
+它
+
+Read more
+阅读更多
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Jan 4
+1月4日
+TLDR :  you need to control the new props that you pass to the cloned elements.
+TLDR :你需要控制你传递给克隆元素的新道具。
+
+
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Ahmad Bamieh
+转到Ahmad Bamieh的个人资料
+Ahmad Bamieh
+艾哈迈德·巴米耶
+Oct 30, 2016
+2016年10月30日
+IIHOCs do not work with stateless components right?
+IIHOCs不适用于无状态的组件？
+or am i missing something?
+还是我错过了什么？
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Nov 21, 2016
+2016年11月21日
+Nope they dont.
+不，他们不。
+But libraries like recompose take care of that.
+但像重构这样的图书馆照顾这一点。
+
+
+1
+1
+1 response
+1回应
+Go to the profile of Vadorequest
+转到Vadorequest的配置文件
+Vadorequest
+Vadorequest
+Jan 26
+1月26日
+This could/should be mentioned, by reading your article I thought Id have to convert my stateless components into stateful components until I read this comment.
+这可能/应该提到，通过阅读你的文章，我认为Id必须将我的无状态组件转换成有状态的组件，直到我看到这个评论。
+Could you explain how youd use Recompose to do this?
+你能解释你如何使用重构来做到这一点？
+Or just link to another article/tutorial ;)
+或只是链接到另一篇文章/教程;）
+
+Thanks.
+谢谢。
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Jan 27
+1月27日
+I thank you so much for your comments, I will incorporate them soon.
+我非常感谢你的评论，我很快就会加入。
+
+
+But lets try to go deeper than that.
+但是，让我们尝试去深入。
+How would you turn a Functional Component into a Class Component?
+你如何将一个功能组件变成一个类组件？
+
+Read more
+阅读更多
+
+1
+1
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Shrey Choudhary
+转到Shrey Choudhary的个人资料
+Shrey Choudhary
+Shrey Choudhary
+Oct 6, 2016
+2016年10月6日
+Shouldn't it be
+不应该是
+render() {
+render（）{
+const props = Object.assign({}, this.props, {ref :  this.proc.bind(this)}) return <WrappedComponent {props}/> }
+const props = Object.assign（{}，this.props，{ref : this.proc.bind（this）}）return <WrappedComponent {props} />}
+in the first example of ref and ppHoc ?
+在ref和ppHoc的第一个例子中？
+
+Youre passing this.props.
+你通过this.props。 
+: /
+: /
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Oct 8, 2016
+2016年10月8日
+Thanks!
+谢谢！
+Fixed!
+固定！
+
+
+
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Harshit Kumar
+转到Harshit Kumar的个人资料
+Harshit Kumar
+Harshit库马尔
+Jan 2
+1月2日
+Hey guys, I have a doubt regarding inversion inheritance,
+嘿家伙，我有一个关于反转继承的疑问，
+Suppose I have a HOC
+假设我有一个HOC
+
+const HOC = (WrappedComponent) =>
+const HOC =（WrappedComponent）=>
+(class PP extends WrappedComponent {
+（类PP扩展WrappedComponent {
+constructor(props) {
+构造函数（道具）{
+super(props);
+超级（道具）;
+}
+}
+
+Read more
+阅读更多
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Jan 4
+1月4日
+withRouter(connect()(HOC(RBP)))
+withRouter（连接（）（HOC（RBP）））
+
+: )
+:）
+
+
+1
+1
+1 response
+1回应
+Conversation with franleplant.
+与franleplant交谈。
+Go to the profile of Ilkwon Sim
+转到Ilkwon Sim的个人资料
+Ilkwon Sim
+Ilkwon Sim
+Dec 17, 2016
+2016年12月17日
+Thank you for sharing an clean and deep explanation of React HOC.
+感谢您分享React HOC的清晰深入的解释。
+I would like to share this article by translating to Korean if you allow me to do.
+如果你允许，我想分享这篇文章，翻译成韩语。
+Can I try?
+我可以试试吗？
+
+Thanks anyway : )
+不管怎么说，还是要谢谢你  : ）
+
+
+1 response
+1回应
+Go to the profile of franleplant
+转到franleplant的个人资料
+franleplant
+franleplant
+Dec 18, 2016
+2016年12月18日
+Hi!
+嗨！
+It has already been translated to Japanese so I dont see any problems translating it.
+它已经被翻译成日文，所以我没有看到任何翻译它的问题。
+The only conditions are :
+唯一的条件是:
+
+Keep important concepts without translation :  for example Inheritance Inversion and Props Proxy.
+保留重要的概念，而不需要翻译_...例如继承反转和支持代理。
+Give me credit
+给我信用
+Send me a link!
+给我一个链接！
 #### 参考 ####
 
 * [Search and find – Medium](https://medium.com/search?q=higher-order-components) 
