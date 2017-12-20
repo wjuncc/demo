@@ -27,7 +27,7 @@ ReactCSSTransitionGroup踩在[ReactTransitionGroup](https://www.npmjs.com/packag
 ### 从简单开始 ###
 (这段是实例)  
 结果：  
-![3](https://i.imgur.com/snwM0hf.gif)  
+![3](https://i.imgur.com/LWfOAY7.gif)  
 文件： E:\n\learn\react\101\Ch04\proj2  
 执行：  
    
