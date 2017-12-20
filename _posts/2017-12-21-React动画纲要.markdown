@@ -10,7 +10,7 @@ tags:
 网上的文章，大部分是讲React CSS动画，也就是ReactCSSTransitionGroup。  
 但我要的是RTG，也就是 ReactTransitionGroup。  
 
-### 有2篇文章讲了RTG ###
+#### 有3篇文章讲了RTG ####
 关于RTG，有2篇讲的比较深：
 
 * [Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)，已经做了翻译和实战，所证此言不虚。  
