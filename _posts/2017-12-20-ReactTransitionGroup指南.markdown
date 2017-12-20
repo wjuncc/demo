@@ -27,9 +27,7 @@ ReactCSSTransitionGroup踩在[ReactTransitionGroup](https://www.npmjs.com/packag
 ### 从简单开始 ###
 (这段是实例)  
 结果：  
-![3](https://i.imgur.com/snwM0hf.gif)
-![1](https://i.imgur.com/CexHhgV.png)  
-![2](https://i.imgur.com/TY8A80b.png)
+![3](https://i.imgur.com/snwM0hf.gif)  
 文件： E:\n\learn\react\101\Ch04\proj2  
 执行：  
    
@@ -39,7 +37,7 @@ ReactCSSTransitionGroup踩在[ReactTransitionGroup](https://www.npmjs.com/packag
 代码：
 index.js
 
-```
+```javascript
 import React from 'react';
 import { render } from 'react-dom';
 
