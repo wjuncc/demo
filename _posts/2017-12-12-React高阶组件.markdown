@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React高阶组件"
+title:  "React高阶组件（译）"
 date:   2017-12-12 05:28:47 +0800
 categories:  
 tags: 
@@ -101,7 +101,7 @@ function ppHOC(WrappedComponent) {
 	// 等价于
 	React.createElement(WrappedComponent, this.props, null)
 
-这2种写法都会创建React元素，来描述React应该在一致性过程中render内容，如果您想知道更多有关React元素与组件，参阅[Dan Abramov的这篇文章](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)，参阅官方文档了解[一致性处理](https://reactjs.org/docs/reconciliation.html)。
+这2种写法都会创建React元素，来描述React应该在一致性过程中render内容，想知道更多有关React元素与组件，参阅[Dan Abramov的这篇文章](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)，还有官方文档[一致性处理](https://reactjs.org/docs/reconciliation.html)。
 
 ### 用Props Proxy可以做什么？ ###
 
