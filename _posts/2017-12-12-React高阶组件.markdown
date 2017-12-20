@@ -265,12 +265,13 @@ function iiHOC(WrappedComponent) {
 
 React元素对自身的描述，就决定了，在React运行[一致化处理](https://reactjs.org/docs/reconciliation.html)时，它会渲染什么内容。
 
-React Elements can be of two types :  String and Function.
-React元素可以是两种类型:字符串和函数。
-The String Type React Elements (STRE) represent DOM nodes and the Function Type React Elements (FTRE) represent Components created by extending React.Component.
-字符串类型React元素（STRE）表示DOM节点，而功能类型React元素（FTRE）表示通过扩展React.Component创建的组件。
+
+React元素分两种类型:字符串和函数。
+
+字符串类型的React元素（STRE）表示DOM节点，  
+而功能类型React元素（FTRE）表示通过扩展React.Component创建的组件。  
 For more about Elements and Components read this post.
-有关元素和组件的更多信息请阅读这篇文章。
+有关元素和组件的更多信息请阅读[这篇文章](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)。
 
 FTRE will be resolved to a full STRE tree in Reacts reconciliation process (the end result will be always DOM elements).
 FTRE将在Reacts协调过程中解析为完整的STRE树（最终结果将始终为DOM元素）。
