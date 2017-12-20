@@ -4,9 +4,15 @@ title:  "使用高阶组件重用ReactTransitionGroup动画"
 date:   2017-12-20 03:45:26 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
-# 使用高阶组件重用ReactTransitionGroup动画 #
+#使用HOC重用RTG动画#
+
+
+原文名字太长了，叫《使用高阶组件重用ReactTransitionGroup动画》[Reusing ReactTransitionGroup animations with Higher-order Components](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)
 
 上一讲，以一个正方形为例，讲解了在进入和离开TransitionGroup时，正方形会产生动画。
 
