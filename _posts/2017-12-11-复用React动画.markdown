@@ -28,6 +28,24 @@ tags:
 ### 提取动画 ###
 接着上一讲的Box组件实例继续。
 
+```javascript
+class Box extends React.Component {
+  componentWillEnter (callback) {
+    const el = findDOMNode(this);
+    TweenMax.fromTo(el, 0.3, {y: 100, opacity: 0}, {y: 0, opacity: 1, onComplete: callback});
+  }
+
+  componentWillLeave (callback) {
+    const el = findDOMNode(this);
+    TweenMax.fromTo(el, 0.3, {y: 0, opacity: 1}, {y: -100, opacity: 0, onComplete: callback});
+  }
+
+  render () {
+    return <div className="box"/>;
+  }
+}
+```
+
 可以将动画部分提取到名为“`fadesUp`”的高阶组件。
 
 想让组件运行动画？ 只要把组件传递给`fadesUp`，就行了。 
