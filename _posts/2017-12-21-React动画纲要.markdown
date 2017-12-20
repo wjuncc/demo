@@ -10,8 +10,10 @@ tags:
 网上的文章，大部分是讲React CSS动画，也就是ReactCSSTransitionGroup。  
 但我要的是RTG，也就是 ReactTransitionGroup。  
 
-关于RTG，有2篇讲的比较深，一个是[Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)，已经做了翻译和实战，所证此言不虚。  另一个是[React学习之扩展动画（三十）--CSS,ps,DOM,Group,ReactCSSTransitionGroup,组件,动画,ReactTransitionGroup](http://www.bijishequ.com/detail/395468?p=70) 有23处讲RTG
-
+关于RTG，有2篇讲的比较深，一个是[Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)，已经做了翻译和实战，所证此言不虚。  
+另一个是[React学习之扩展动画（三十）--CSS,ps,DOM,Group,ReactCSSTransitionGroup,组件,动画,ReactTransitionGroup](http://www.bijishequ.com/detail/395468?p=70) 有23处讲RTG。    
+另外，这篇文章虽然主要讲CSS，但是在RTG上，给了一些前面2篇没有的提示： [React动画实践 - AlloyTeam](http://www.alloyteam.com/2016/01/react-animation-practice/)   
+> 默认情况下 ReactTransitionGroup 渲染为一个 span。你可以通过提供一个 component prop 来改变这种行为. 组件不需要是一个DOM组件，它可以是任何你想要的React组件，甚至是你自己写的。
 
 #### 下面是讲ReactCSSTransitionGroup ####
 
@@ -28,7 +30,5 @@ tags:
 * [交互动画系列之三：react动画 · Issue #57 · youngwind/blog · GitHub](https://github.com/youngwind/blog/issues/57)
 * [react-css-transition实战](https://github.com/youngwind/blog/issues/61) 这2个是续集，都是讲ReactCSSTransitionGroup。
 * [ReactTransitionGroup动画原理 - Web前端 腾讯IVWeb 团队社区](https://ivweb.io/topic/586099050e2a26d26bb1c029)讲ReactCSSTransitionGroup。
-* [React动画实践 - AlloyTeam](http://www.alloyteam.com/2016/01/react-animation-practice/) 这篇讲CSS，有一点有用的部分：  
-默认情况下 ReactTransitionGroup 渲染为一个 span。你可以通过提供一个 component prop 来改变这种行为. 组件不需要是一个DOM组件，它可以是任何你想要的React组件，甚至是你自己写的。
 
 * [动画 · React入门指南 · 看云](https://www.kancloud.cn/kancloud/react-quickstart/44617)  这个好像是官网翻译   
