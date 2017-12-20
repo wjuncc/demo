@@ -783,7 +783,7 @@ ESLint是一个用来识别ECMAScript 并且按照规则给出报告的代码检
 * [使用ReactTransitionGroup实现React动画效果 · Issue #3 · luckyhalley/blog · GitHub](https://github.com/luckyhalley/blog/issues/3)  （这句话是误导）需要思考的是React改变了基于DOM操作的编程方式，由于React组件生命周期的存在，使用JavaScript直接操作DOM元素来完成动画效果在React项目中并不是一种很好的选择。（实际上，在React中除了用RTG，没有别的办法来做重度动画。）  
 （这点要注意，）ReactCSSTransitionGroup组件的灵感正是来自于AngularJS动画指令ng-animate  
 文章最后讲到了RTG，但没有实例。  
-文章最后给了[一个React动画插件链接](https://github.com/chenglou/react-motion),但从这个插件的Demo来看，** 无法定制重度动画 **。   
+文章最后给了[一个React动画插件链接](https://github.com/chenglou/react-motion),但从这个插件的Demo来看， **无法定制重度动画**。   
 
 
 * [交互动画系列之三：react动画 · Issue #57 · youngwind/blog · GitHub](https://github.com/youngwind/blog/issues/57)
