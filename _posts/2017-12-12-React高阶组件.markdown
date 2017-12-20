@@ -259,11 +259,9 @@ function iiHOC(WrappedComponent) {
 
 记得总是调用super.[lifecycleHook]，就不会破坏WrappedComponent
 
-Reconciliation process
-调节过程
+#### 一致化处理（Reconciliation process） ####
 
-Before diving in lets summarize some theory.
-在潜水之前让我们总结一些理论。
+在深入之前先讲一些概念。
 
 React Elements describe what is going to be rendered when React runs its reconciliation process.
 React元素描述React运行其对帐过程时将要呈现的内容。
