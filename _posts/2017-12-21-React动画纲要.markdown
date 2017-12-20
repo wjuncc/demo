@@ -10,11 +10,12 @@ tags:
 网上的文章，大部分是讲React CSS动画，也就是ReactCSSTransitionGroup。  
 但我要的是RTG，也就是 ReactTransitionGroup。  
 
+关于RTG，有2篇讲的比较深，一个是[Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)，已经做了翻译和实战，所证此言不虚。  另一个是[React学习之扩展动画（三十）--CSS,ps,DOM,Group,ReactCSSTransitionGroup,组件,动画,ReactTransitionGroup](http://www.bijishequ.com/detail/395468?p=70) 有23处讲RTG
 
-#### 参考 ####
+
+#### 下面是讲ReactCSSTransitionGroup ####
 
 
-* [React学习之扩展动画（三十）--CSS,ps,DOM,Group,ReactCSSTransitionGroup,组件,动画,ReactTransitionGroup](http://www.bijishequ.com/detail/395468?p=70) 有23处讲RTG
 * [动画 - React](https://react-cn.github.io/react/docs/animation.html)  文章后面讲到了RTG，也就是： 底层 API: ReactTransitionGroup
 * [React 动画 - ZhusCafe](http://zhuscat.com/2016/08/31/react-animation/) 没有实例
 * [使用ReactTransitionGroup实现React动画效果 · Issue #3 · luckyhalley/blog · GitHub](https://github.com/luckyhalley/blog/issues/3)  （这句话是误导）需要思考的是React改变了基于DOM操作的编程方式，由于React组件生命周期的存在，使用JavaScript直接操作DOM元素来完成动画效果在React项目中并不是一种很好的选择。（实际上，在React中除了用RTG，没有别的办法来做重度动画。）  
