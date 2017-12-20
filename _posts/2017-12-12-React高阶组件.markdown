@@ -263,7 +263,7 @@ function iiHOC(WrappedComponent) {
 
 在深入之前先讲一些概念。
 
-React元素描述了，在React运行[一致化处理](https://reactjs.org/docs/reconciliation.html)时，它会渲染什么内容。
+React元素对自身的描述，就决定了，在React运行[一致化处理](https://reactjs.org/docs/reconciliation.html)时，它会渲染什么内容。
 
 React Elements can be of two types :  String and Function.
 React元素可以是两种类型:字符串和函数。
