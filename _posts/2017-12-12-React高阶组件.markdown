@@ -277,23 +277,18 @@ FTRE将在Reacts[一致化处理](https://reactjs.org/docs/reconciliation.html)�
 
 这很重要，这意味着**Inheritance Inversion高阶组件不保证解析完整子树**。
 
-Inheritance Inversion High Order Components dont have a guaranty of having the full children tree resolved.
-继承颠倒高顺序组件没有解决完整的子树的保证。
-This is will prove important when studying Render Hijacking.
-研究渲染劫持这将是非常重要的。
+> Inheritance Inversion High Order Components dont have a guaranty of having the full children tree resolved.
 
-What can you do with Inheritance Inversion?
-你可以做什么与继承颠倒？
+这在学习渲染劫持（Render Highjacking）时非常重要。
 
-Render Hijacking
-呈现劫持
-Manipulating state
-操纵状态
-Render Hijacking
-呈现劫持
+### Inheritance Inversion可以做什么？ ###
 
-It is called Render Highjacking because the HOC takes control of the render output of the WrappedComponent and can do all sorts of stuff with it.
-它被称为Render Highjacking，因为HOC控制了WrappedComponent的渲染输出，并且可以用它做各种各样的事情。
+* 渲染劫持 Render Hijacking 
+* 操纵状态 Manipulating state
+
+#### 呈现劫持 Render Hijacking ####
+
+之所以加Render Highjacking，是因为HOC控制了WrappedComponent的渲染输出，并且可以用它做各种各样的事情。
 
 In Render Highjacking you can :
 在渲染劫持你可以:
