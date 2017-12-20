@@ -273,8 +273,7 @@ React元素分两种类型:字符串和函数。
 For more about Elements and Components read this post.
 有关元素和组件的更多信息请阅读[这篇文章](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)。
 
-FTRE will be resolved to a full STRE tree in Reacts reconciliation process (the end result will be always DOM elements).
-FTRE将在Reacts协调过程中解析为完整的STRE树（最终结果将始终为DOM元素）。
+FTRE将在Reacts[一致化处理](https://reactjs.org/docs/reconciliation.html)中解析为完整的STRE树（最终结果将始终为DOM元素）。
 
 This is very important and it means that Inheritance Inversion High Order Components dont have a guaranty of having the full children tree resolved.
 这是非常重要的，这意味着继承颠倒高顺序组件没有解决完整的子树的保证。
