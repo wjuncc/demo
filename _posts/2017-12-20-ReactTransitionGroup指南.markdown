@@ -144,6 +144,7 @@ index.js只改2个地方，其它都不动。
 
 1. 加了一段引用`import TransitionGroup from 'react-addons-transition-group';`
 2. 在`{ this.state.shouldShowBox && <div className="box"/>}`的外面套了`<TransitionGroup>`节点    
+
 ```javascript
 import React from 'react';
 import { render } from 'react-dom';
