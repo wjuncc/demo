@@ -92,11 +92,9 @@ function ppHOC(WrappedComponent) {
   }
 }
 ```
-
-The important part here is that the render method of the HOC returns a React Element of the type of the WrappedComponent.
-这里的重要部分是HOC的render方法返回WrappedComponent类型的React元素。
-We also pass through the props that the HOC receives, hence the name Props Proxy.
-我们也通过了HOC收到的道具，所以叫做Props Proxy。
+returns a React Element of the type of the WrappedComponent.
+这里的重点，是HOC的render方法，**返回**的是WrappedComponent类型的React元素。
+同时，还加上了HOC接收到的props，所以说这种模式叫**Props Proxy**。
 
 NOTE :
 注意 :
