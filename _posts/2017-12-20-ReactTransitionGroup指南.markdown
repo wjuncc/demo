@@ -9,13 +9,17 @@ tags:
 
 ---
 
-全文翻译自[Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286),    
-自己的理解，加在每一节之前，为了测试方便，给出了本机的绝对路径，以及操作步骤。  
-教程的重点：
+全文翻译自[Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286),   
+因为在react项目踩到地雷了，这个地雷就是“动画一直是react的弱项”。只好看了一些资料，把坑填平。     
+自己的理解，加在每一节之前，为了测试方便，给出了本机的绝对路径，以及操作步骤。    
+ 
+**本节重点**：
 
 * 正文部分的实例代码
 * 的自述，告诉各位不要躺枪填坑了，react做高大上动画只能ReactTransitionGroup+第3方动画库，所谓npm react-XXXX动画插件都是小儿科办正事要你命3000，除了淡入淡出基本没啥能耐。
 
+下一讲：  
+这一节，正方形动画是用混合的方式，这样做出来的动画不能重复使用，做一个组件就要复制一段动画代码，这个做法很挫很流氓。下一讲，把混用改成组件方式（HOC），好在多个组件中重复使用动画。 
 
 ### ReactTransitionGroup指南 ###
 (这段是废话)  
@@ -362,9 +366,9 @@ render(<Page/>, document.querySelector('#container'));
 
 下面是使用ReactTransitionGroup的简单动画案例！
 
-接下来几个部分讲， 高级重用动画组件，路由器集成，协调嵌套转场动画。
+接下来几个部分讲， [高级重用动画组件](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)，路由器集成，协调嵌套转场动画。
 
-你读了这么多，也喜欢调试Javascript的干货(quick and dirty skill)??，给我发tweet@CheapSteak :）
+你读了这么多，也喜欢调试JS 干货(quick and dirty skill)??，给我发tweet@CheapSteak :）
 
 您可能还对react-transition-group-plus感兴趣，用来代替ReactTransitionGroup，可中断转场，并指定转场顺序。看[demo](http://cheapsteak.github.io/react-transition-group-plus/)。
 

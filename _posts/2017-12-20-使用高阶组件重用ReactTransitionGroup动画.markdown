@@ -8,25 +8,18 @@ tags:
 
 # 使用高阶组件重用ReactTransitionGroup动画 #
 
-Reusing ReactTransitionGroup animations with Higher-order Components
-使用高阶组件重用ReactTransitionGroup动画
-In my previous post we went over how to make a simple box animate when it enters and leaves a TransitionGroup.
-在我之前的文章中，我们介绍了如何在进入和离开一个TransitionGroup时使一个简单的盒子变成动画。
+上一讲，以一个正方形为例，讲解了在进入和离开TransitionGroup时，正方形会产生动画。
 
-If you recall, to give components inside the TransitionGroup flexibility to have differing animations, the TransitionGroup does not define animations itself, but will call the corresponding enter or leave animation hooks on its child components when they are added or removed.
-如果您还记得，为了给TransitionGroup内部的组件提供灵活性，使其具有不同的动画，TransitionGroup本身并不定义动画，但会在添加或删除子组件时调用相应的输入或将子动画组件的动画挂钩。
+复习一下，为了让TransitionGroup内的组件更灵活，使其在不同是的阶段运行不同的动画，我们不在TransitionGroup定义动画，而是在TransitionGroup的子组件，在添加或删除子组件时，去调用相应的进入（enter）或离开（leave）的钩子函数。
 
-But there are often times when we do want several components to share the same animation, preferably without duplicating code.
-但是有时候我们经常需要几个组件共享相同的动画，最好不要复制代码。
-That can be achieved using Higher-order Components (HOC).
-这可以通过使用高阶分量（HOC）来实现。 
-(If not already familiar with HOCs, heres a good intro)
-（如果不熟悉HOC，继承人是一个很好的介绍）
 
-Extracting the animations
-提取动画
-Lets take another look at the Box component from our previous exercise
-让我们再看看我们之前练习中的Box组件
+但是，有的时候，多个组件要使用相同动画，又不希望下作的复制代码。   
+可以通过使用高阶组件（Higher-order Components ——HOC）来实现。 
+（如果不熟悉HOC，看[这里](http://efe.baidu.com/blog/mixins-are-dead-long-live-the-composition/)，[英语原文](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750)）
+
+
+### 提取动画 ###
+继续上一讲实例中的Box组件
 
 
 We can extract the parts specific to animation into a higher-order component called `fadesUp`
