@@ -9,12 +9,10 @@ tags:
 
 ---
 
-#使用HOC重用RTG动画#
-
-
-原文名字太长了，叫《使用高阶组件重用ReactTransitionGroup动画》[Reusing ReactTransitionGroup animations with Higher-order Components](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)  
+**文章标题**  
+原文名字太长了，叫《使用高阶组件重用ReactTransitionGroup动画》[Reusing ReactTransitionGroup animations with Higher-order Components](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)，好拗口。    
 然后改成，《使用HOC重用RTG动画》，太晦涩了。  
-再然后改成，《复用React动画》。好直接。
+再然后改成，《复用React动画》。天下太平。
 
 上一讲，以一个正方形为例，讲解了在进入和离开TransitionGroup时，正方形会产生动画。
 
