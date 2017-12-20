@@ -39,12 +39,15 @@ tags:
 下面是中文！ [https://zhuanlan.zhihu.com/p/24776678](https://zhuanlan.zhihu.com/p/24776678)   
 非常感谢译者！
 
-What are Higher Order Components?
-什么是高阶组件？
-A Higher Order Component is just a React Component that wraps another one.
-高阶组件只是一个包含另一个组件的React组件。
-This pattern is usually implemented as a function, which is basically a class factory (yes, a class factory!), that has the following signature in haskell inspired pseudocode
-这个模式通常是作为一个函数来实现的，这个函数基本上是一个类工厂（是的，一个类工厂！），它在haskell启发的伪代码
+### 什么是高阶组件？ ###
+
+其实高阶组件只是一个React组件包含另一个React组件。
+which is basically a class factory (yes, a class factory!), that has the following signature in haskell inspired pseudocode
+这个模式一般是作为函数来实现的，这个函数基本上是一个类工厂（是的，一个类工厂！），它在haskell启发的伪代码
+
+**题外话：**  
+Haskell是什么？  
+> Haskell（发音为/ˈhæskəl/）是一种标准化的，通用的纯函數程式語言，有非限定性语义和强静态类型。 ... 在Haskell中，“函数是第一類物件”。 作为一门函數程式語言，主要控制结构是函数。 Haskell语言是1990年在编程语言Miranda的基础上标准化的，并且以λ演算为基础发展而来。
 
 hocFactory :  :  W :  React.Component => E :  React.Component
 hocFactory : : W : React.Component => E : React.Component
