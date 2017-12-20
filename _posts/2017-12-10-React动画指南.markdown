@@ -18,7 +18,7 @@ tags:
 
 * 因为在react项目踩到地雷了，
 * 这个地雷就是“动画一直是react的弱项”。只好看了一些资料，把坑填平。
-* 考虑到一定是用TweenMax，没有第2选择，google了一下TweenMax React，在gsap官网论坛找到了[Wrote an article that demos how to use GSAP with React](https://greensock.com/forums/topic/13970-wrote-an-article-that-demos-how-to-use-gsap-with-react/),扫了一眼，感觉不错，讨论挺多的，绝不是冷门。
+* 考虑到一定是用TweenMax，没有第2选择，google了一下TweenMax React，找到了[gsap官网论坛](https://greensock.com/forums/topic/13970-wrote-an-article-that-demos-how-to-use-gsap-with-react/),顺藤摸瓜来到了[Medium](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)扫了一眼，感觉不错，讨论挺多的，绝不是冷门。
 * google了一圈没有找到[这篇英文](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)的中文翻译，为了吃透，只好做起了翻译
 * 这是react系列中的一篇半笔记半翻译的怪物。  
       
