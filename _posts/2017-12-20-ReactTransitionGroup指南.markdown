@@ -309,14 +309,14 @@ render(<Page/>, document.querySelector('#container'));
 
 
 原文：    
-为了让TransitionGroup中的组件具有不同的动画的灵活性，TransitionGroup本身并没有定义动画，而是在添加或删除子组件时，调用相应的输入或在其子组件上留下动画钩子。
+为了TransitionGroup节点中的组件具有灵活性，能用于不同动画，TransitionGroup节点本身不定义动画，而是放到子组件中，在添加子组件，和删除子组件的钩子函数中，写动画代码。
 
 一般只会用到这两个生命周期的钩子 - 
 
 * componentWillEnter(callback)
 
 调用添加到现有TransitionGroup的组件，在组件componentDidMount的时候。 
-没有调用整个TransitionGroup的初始渲染（例如，当一个页面被初始加载时），为了你要componentWillAppear
+没有调用整个TransitionGroup的初始渲染（例如，当初始页面加载时），要componentWillAppear
 
 * componentWillLeave(callback) 
 
@@ -324,7 +324,7 @@ render(<Page/>, document.querySelector('#container'));
 发生在componentWillUnmount之前，而且，只有执行了这里的回调，componentWillUnmount才会触发。
 注意，必须在动画结束后调用所提供的回调函数，否则组件将进入但不能离开，或者能离开但不能进入。
 
-有关动画生命周期钩子的详细信息，参阅[官方文档](https://reactjs.org/docs/animation.html#low-level-api-reacttransitiongroup)。
+参考[官方文档-动画生命周期钩子](https://reactjs.org/docs/animation.html#low-level-api-reacttransitiongroup)。
 
 因为ReactTransitionGroup依赖于钩子，而div并没有定义它们，所以必须首先将 <div className=box/>移动到它自己的组件中:
 
@@ -353,7 +353,7 @@ render(<Page/>, document.querySelector('#container'));
 	}
 
 
-2017年6月23日-更新:现在使用refs来引用DOM元素。
+2017年6月23日-更新:现在用refs来引用DOM元素。
 参考[Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html)  
 
 对于那些不熟悉TweenMax的人来说，下面是函数signature的fromTo :
@@ -770,6 +770,11 @@ animate.staggerFromTo(...).then(callback)
 animate.staggerFromTo（...），然后（回调）
 }
 }
+
+### 饭后甜点 ###
+#### ESLint 是什么？ ####
+ESLint是一个用来识别ECMAScript 并且按照规则给出报告的代码检测工具，使用它可以避免低级错误和统一代码的风格。 ESLint被设计为完全可配置的，主要有两种方式来配置ESLint： 在注释中配置：使用JavaScript注释直接把配置嵌入到JS文件中。
+
 
 #### 参考 ####
 
