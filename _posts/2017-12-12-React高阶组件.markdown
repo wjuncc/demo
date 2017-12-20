@@ -254,8 +254,8 @@ function iiHOC(WrappedComponent) {
 
 继承反转使得HOC通过this访问WrappedComponent实例，也就是说**它可以访问state，props，组件生命周期钩子和render方法**。
 
-I won't go into much detail about what you can do with lifecycle hooks because its not HOC specific but React specific.
-我不会详细讨论你可以用生命周期钩子做什么，因为它不是HOC特定的，但是反应是特定的。
+我不会深入讲生命周期钩子做什么，因为它不是HOC特性，而是React特性。
+
 But note that with II you can create new lifecycle hooks for the WrappedComponent.
 但请注意，使用II，您可以为WrappedComponent创建新的生命周期挂钩。
 Remember to always call super.[lifecycleHook] so you don't break the WrappedComponent
