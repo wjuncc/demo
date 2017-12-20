@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "复用React动画"
-date:   2017-12-20 03:45:26 +0800
+date:   2017-12-11 03:45:26 +0800
 categories:  
 tags: 
     - react
@@ -9,7 +9,7 @@ tags:
 
 ---
 
-**文章标题**  
+**关于标题**  
 原文名字太长了，《使用高阶组件重用ReactTransitionGroup动画》[Reusing ReactTransitionGroup animations with Higher-order Components](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)，好拗口。    
 然后改成，《使用HOC重用RTG动画》，太晦涩了。  
 再然后改成，《复用React动画》。天下太平。

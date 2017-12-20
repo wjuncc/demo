@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "ReactTransitionGroup指南"
-date:   2017-12-20 03:47:21 +0800
+title:  React动画指南"
+date:   2017-12-10 03:47:21 +0800
 categories:  
 tags: 
     - react
@@ -9,7 +9,11 @@ tags:
 
 ---
 
-全文翻译自[Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286),   
+**关于标题**：  
+原文叫《使用ReactTransitionGroup做动画》[Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286),   
+改成《ReactTransitionGroup指南》，ReactTransitionGroup是个什么鬼？  
+最后改成《React动画指南》。
+
 因为在react项目踩到地雷了，这个地雷就是“动画一直是react的弱项”。只好看了一些资料，把坑填平。这是react系列中的一篇半翻译半笔记的怪物。  
       
 **关于排版**：  
