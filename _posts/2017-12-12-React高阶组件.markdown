@@ -115,8 +115,7 @@ function ppHOC(WrappedComponent) {
 
 你可以读取，添加，编辑和删除传递给WrappedComponent的 props。
 
-Be careful with deleting or editing important props, you should probably namespace your Higher Order props not to break the WrappedComponent.
-小心删除或编辑重要的道具，你应该命名空间你的高阶道具不要打破WrappedComponent。
+对于重要的props，删除或编辑时，要小心谨慎。你应该确保以命名空间的方式处理高阶props，来避免高阶props破坏WrappedComponent。
 
 Example :  Adding new props.
 示例:添加新的道具。
