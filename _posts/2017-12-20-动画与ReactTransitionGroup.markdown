@@ -354,13 +354,11 @@ Velocity-React和React-GSAP-Enhancer :要给组件强加代理属性HOC。
 
 我可以使用我喜欢的工具，如GSAP，Velocity或Anime制作超级流畅的动画。
 
-使用它，对于生产环境很有意义。
+使用它，对于生产环境很有意义。 
 
-I used to shy away initially from using other JavaScript tools with React because of the whole virtual DOM flow, until recently when I realized that in order to get things function perfectly on a production scale, Ill have to adjust with certain trade offs.
 因为整个虚拟DOM流程，我最初从使用React来避免使用其他JavaScript工具，直到最近当我意识到为了在生产规模上完美地实现功能时，我必须进行一些权衡调整。
-At least till the time we figure out how to do all this through virtual DOM.
+
 至少在这个时候，我们想通过虚拟DOM来做到这一点。 
-??
 ??
 
 ----------------------------
@@ -368,130 +366,103 @@ At least till the time we figure out how to do all this through virtual DOM.
 shaggy
 毛茸茸
 2016年11月16日
-This is really thought provoking, Im new to HOC stuff.
-这真的是令人兴奋的，我新HOC的东西。
-But can I ask why are you using Transition group at all , you could just tween the wrapped component using componentDidMount and componentWillUnmount lifecycle hooks ?
-但是，我可以问为什么你使用Transition组，你可以使用componentDidMount和componentWillUnmount生命周期钩子补间包装的组件？
-To be honest I had trouble getting your example to work but using the react lifecycle hooks above works OK??thanks for the
-说实话，我有麻烦得到你的例子工作，但使用上面的反应生命周期钩作品OK ??谢谢你
+这真的令人兴奋，HOC对我来说是新知识。   
+但是，我可以问为什么你使用Transition group，你可以只缓动使用componentDidMount和componentWillUnmount生命周期钩子包装的组件？
+说实话，我运行你的例子，跑不起来，但使用上面的反应生命周期钩作品OK ??谢谢你
 
-Read more
-阅读更多
+说实话，我有麻烦得到你的例子工作，但使用上面的反应生命周期钩作品OK ??谢谢你的灵感。
 
-1 response
-1回应
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
+下面是我基于你的例子写的代码:
+
+```
+import React, {Component} from ‘react’
+import ReactDOM from ‘react-dom’
+import {TweenMax} from ‘gsap’
+
+export default (WrappedComponent, options = { duration: 0.9 }) => class extends Component {
+ 
+ constructor(props){
+ super(props)
+ }
+
+componentDidMount(){
+ const el = ReactDOM.findDOMNode(this);
+ TweenMax.fromTo(el, options.duration, {y: 100, opacity: 0}, {y: 0, opacity: 1});
+ }
+
+componentWillUnMount () {
+ const el = ReactDOM.findDOMNode(this);
+ TweenMax.fromTo(el, options.duration, {y: 0, opacity: 0.5}, {y: -100, opacity: 0});
+ }
+
+render () {
+ return(
+ <WrappedComponent ref=”child” {…this.props} />
+ ) 
+ }
+ }
+```
+
 常王
 Nov 17, 2016
 2016年11月17日
-Hi shaggy
 你好毛茸茸
 
-Are you sure the leave-animation in `componentWillUnmount` would run through?
-你确定`componentWillUnmount`中的离开动画会穿过吗？
-That lifecycle hook is called immediately before the component is removed from the DOM, I would assume itd immediately disappear.
-该生命周期钩子在组件从DOM中移除之前被立即调用，我会认为它立即消失。
-
-The two main benefits of using TransitionGroups lifecycle hooks is to be able to
-使用TransitionGroups生命周期钩子的两个主要好处是能够
-
-Read more
-阅读更多
+你确定`componentWillUnmount`中的离开动画会运行吗？
+该生命周期钩子在组件从DOM中移除之前被立即调用，我认为它会立即消失。
 
 
-Conversation with Chang Wang.
-与张望的对话。
-Go to the profile of ffxsam
-转到ffxsam的配置文件
-ffxsam
-ffxsam
-Sep 25, 2016
-2016年9月25日
-Since use of findDOMNode is discouraged, is there a better way today for a React component to access its own DOM node?
-由于不鼓励使用findDOMNode，现在有更好的方法让React组件访问它自己的DOM节点吗？
+使用TransitionGroups生命周期钩子的2个主要好处是能够推迟组件的卸载，直到离开动画完成，并能够为出现和输入指定不同的动画行为
 
+------------------------------------------
 
-1 response
-1回应
-Go to the profile of Chang Wang
-转到长王的档案
+Conversation with Chang Wang.   
+与张望的对话。   
+ffxsam   
+2016年9月25日   
+
+不再鼓励使用findDOMNode，现在有更好的方法让React组件访问它自己的DOM节点吗？
+
 Chang Wang
-常王
-Sep 26, 2016
 2016年9月26日
-You _could_ use refs if you prefer
-如果你愿意，你可以使用参考
+你可以用refs
+
+我不知道它是否更好，跳过组件抽象，直接与DOM节点交互，这样一来，动画不再是可重用的，因为使用ref，现在依赖于render（）方法将节点附着到特定属性
 
 
-Read more
-阅读更多
+------------------------------------------
 
-1
-1
+Conversation with Chang Wang.    
+Go to the profile of Andrew Leith    
+Andrew Leith   
+安德鲁·利思   
+2016年11月15日   
 
-Conversation with Chang Wang.
-与张望的对话。
-Go to the profile of Andrew Leith
-转到Andrew Leith的个人资料
-Andrew Leith
-安德鲁·利思
-Nov 15, 2016
-2016年11月15日
-Hi Chang,
-Hi Chang，
-
-I was toying around with this concept and just ended up putting some animations on componentDiMount.
-我正在玩这个概念，最后在componentDiMount上添加了一些动画。
-Do you see an issue with this?
+我正在玩这个，最后在componentDiMount上添加了一些动画。
 你看到这个问题吗？
-The only obvious drawback I see is I cant animate on the way out
-我看到的唯一明显的缺点是我不能在出路上进行动画制作
+我看到的唯一明显的缺点，是我不能在出路上进行动画制作
 
 
-1 response
-1回应
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
-常王
-Nov 17, 2016
-2016年11月17日
-Hi Andrew, if `componentDidMount` is sufficient for your needs (dont need to animate out, dont need to separate appears with enters) then its perfectly fine to use just that  : )
-嗨安德鲁，如果`componentDidMount`足够您的需要（不需要动画了，不需要单独出现与进入）那么它完全正确地使用只是:）
+Chang Wang  
+Nov 17, 2016  
+2016年11月17日  
+ 
+嗨安德鲁，如果`componentDidMount`足够您的需要（不需要退出动画了，不需要单独出现与进入）那么完全正确地使用:）
 
 
-1 response
-1回应
-Go to the profile of Andrew Leith
-转到Andrew Leith的个人资料
-Andrew Leith
-安德鲁·利思
-Nov 23, 2016
-2016年11月23日
-Thank you Chang.
-谢谢张
-Another question, if you dont mind.
-另一个问题，如果你不介意。
-A lot of resources (eslint being the most in my face) are telling me not to use `findDOMNode` but instead to use refs.
-很多资源（eslint是我脸上的最多）告诉我不要使用findDOMNode而是使用refs。
-This makes everything very messy as I need to explicitly put references to bits of markup so I can animate them.
-这使得一切都非常混乱，因为我需要明确地把引用标记的位，所以我可以动画他们。
-
-Do you have any point of view on this?
+Andrew Leith  
+安德鲁·利思  
+Nov 23, 2016  
+2016年11月23日   
+另一个问题，如果你不介意。  
+很多资源（如eslint）告诉我不要使用findDOMNode而是使用refs。
+这使得一切都非常混乱，因为我需要明确地把引用标记的位，所以我可以动画他们。  
 你有什么观点吗？
 
 
-1 response
-1回应
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
-常王
-Nov 25, 2016
-2016年11月25日
-Thats a good question
+Chang Wang   
+Nov 25, 2016  
+2016年11月25日    
 这是个好问题
 
 Reading through the discussion on the issue that introduced the rule, specifically the points brought up by jquense and taion, there are situations where using findDOMNode is currently unavoidable (eg animations in a HOC), at least until a standardized way to reliably pass refs down

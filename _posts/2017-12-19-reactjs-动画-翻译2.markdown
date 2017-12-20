@@ -9,10 +9,9 @@ tags:
 
 ---
 
+### animatedjs ###
 
 
-### 备忘录 ###
- 
 
 这篇文章挺好的，是一整做法，从0开始搭建一个完整的demo。事件也很新，6月25日。  此外，还提供了思路：
 如何在reactjs调用非react组件？ 
@@ -27,7 +26,7 @@ tags:
 
 ### Animated ###
 
-动画长一直都是React的弱项。
+动画一直都是React的弱项。
 Animated库就是为了解决这个问题。
 Animated包含React声明，在背后使用原始DOM操作而不是通常的diff来获得性能。
 
