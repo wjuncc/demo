@@ -10,7 +10,7 @@ tags:
 ---
 
 全文翻译自[Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286),   
-因为在react项目踩到地雷了，这个地雷就是“动画一直是react的弱项”。只好看了一些资料，把坑填平。这是react系列中的一篇翻译。  
+因为在react项目踩到地雷了，这个地雷就是“动画一直是react的弱项”。只好看了一些资料，把坑填平。这是react系列中的一篇半翻译半笔记的怪物。  
       
 **关于排版**：  
 
@@ -21,7 +21,7 @@ tags:
 **本节重点**：
 
 * 正文部分的实例代码
-* 的自述，告诉各位不要躺枪填坑了，react做高大上动画只能ReactTransitionGroup+第3方动画库，所谓npm react-XXXX动画插件都是小儿科办正事要你命3000，除了淡入淡出基本没啥能耐。
+* Sourabh Kumar的自述，告诉各位不要躺枪填坑了，react做高大上动画只能ReactTransitionGroup+第3方动画库，所谓npm react-XXXX动画插件都是小儿科办正事要你命3000，除了淡入淡出基本没啥能耐。
 
 下一讲：  
 这一节，正方形动画是用混合的方式，这样做出来的动画不能重复使用，做一个组件就要复制一段动画代码，这个做法很挫很流氓。下一讲，把混用改成组件方式（HOC），好在多个组件中重复使用动画。 
