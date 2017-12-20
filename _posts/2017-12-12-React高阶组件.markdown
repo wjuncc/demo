@@ -288,10 +288,9 @@ FTRE将在Reacts[一致化处理](https://reactjs.org/docs/reconciliation.html)�
 
 #### 呈现劫持 Render Hijacking ####
 
-之所以加Render Highjacking，是因为HOC控制了WrappedComponent的渲染输出，并且可以用它做各种各样的事情。
+之所以加Render Highjacking，是因为HOC控制了WrappedComponent的渲染输出，并且可以做各种各样的事。
 
-In Render Highjacking you can :
-在渲染劫持你可以:
+有了渲染劫持你可以:
 
 Read, add, edit, remove props in any of the React Elements outputted by render
 阅读，添加，编辑，删除渲染输出的任何React Elements中的道具
