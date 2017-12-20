@@ -9,19 +9,87 @@ tags:
 
 ---
 
-### ReactTransitionGroup指南 ###
+全文翻译自[Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286#.jfposelsa),    
+自己的理解，加在每一节之前，为了测试方便，给出了本机的绝对路径，以及操作步骤。  
+教程的重点：
 
+* 正文部分的实例代码
+* 的自述，告诉各位不要躺枪填坑了，react做高大上动画只能ReactTransitionGroup+第3方动画库，所谓npm react-XXXX动画插件都是小儿科办正事要你命3000，除了淡入淡出基本没啥能耐。
+
+
+### ReactTransitionGroup指南 ###
+(这段是废话)  
 CSS能实现动画，但复杂到一定程度，就难以维护。
 
 ReactCSSTransitionGroup踩在[ReactTransitionGroup](https://www.npmjs.com/package/react-addons-transition-group)这个巨人的肩上。 
-区别在于，ReactTransitionGroup动画是用Javascript而不是CSS编写的，另外，动画完成时有回调函数，而不是依赖于CSS转换事件。
+区别在于，ReactTransitionGroup用JS动画而非CSS动画，另外，动画完成时有回调函数，而不是CSS转换事件。
 
 ### 从简单开始 ###
-文件： E:\n\learn\react\101\Ch04\proj2
-执行：
+(这段是实例)  
+结果：  
+![1](https://i.imgur.com/CexHhgV.png)  
+文件： E:\n\learn\react\101\Ch04\proj2  
+执行：  
    
 	cd E:\n\learn\react\101\Ch04\proj2
 	npm start
+
+代码：
+index.js
+
+```
+import React from 'react';
+import { render } from 'react-dom';
+
+class Page extends React.Component {
+    constructor() {
+        super();
+        this.toggleBox = this.toggleBox.bind(this);
+		this.state = {
+			shouldShowBox: true
+		};
+    };
+
+    toggleBox(){
+        this.setState({
+            shouldShowBox: !this.state.shouldShowBox
+        });
+    };
+
+    render () {
+        return <div className="page">
+
+            { this.state.shouldShowBox && <div className="box"/>}
+
+			<button
+				className="toggle-btn"
+				onClick={this.toggleBox}
+			>
+				toggle
+			</button>
+		</div>;
+    }
+}
+
+render(<Page/>, document.querySelector('#container'));
+```
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+```
 
 原文：  
 先把动画放在一边。 从简单页面开始，这个页面只有一个div，显示在ShowBox标识。  
