@@ -50,19 +50,21 @@ Haskell是什么？
 
 	hocFactory:: W: React.Component => E: React.Component
 
-这里，W（WrappedComponent）指被封装的React.Component，E（指EnhancedComponent增强组件）指新的HOC，它返回React.Component。
+这里，  
+W（WrappedComponent）指被封装的React.Component，  
+E（指EnhancedComponent增强组件）指新的HOC，它返回React.Component。
 
 注意，定义中的“包装”部分，特意模糊了语义，因为它有两种可能:
 
-Props Proxy（Props 代理） :   
+* Props Proxy（Props 代理） :   
 HOC对传给 WrappedComponent W的Props做了操作，  
 
-Inheritance Inversion （继承颠倒）:   
+* Inheritance Inversion （继承颠倒）:   
 HOC会继承WrappedComponent W.
 我们将更详细地探讨这两种模式。
 
 ### 我可以用HOC做什么？ ###
-使用高阶HOC，你可以:
+使用高阶HOC，可以:
 
 * 复用代码，抽象逻辑，抽象bootstrap
 
