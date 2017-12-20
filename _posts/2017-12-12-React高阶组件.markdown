@@ -1,0 +1,88 @@
+---
+layout: post
+title:  "React高阶组件"
+date:   2017-12-12 05:28:47 +0800
+categories:  
+tags: 
+---
+
+# React高阶组件 #
+原文 [React Higher Order Components in depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)
+
+
+## 概述 ##
+
+本文的读者是使用HOC模式的高级用户。
+
+如果你是React的新手，你应该先阅读[Reacts Docs](https://reactjs.org/docs/hello-world.html)。
+
+高阶组件是一个很棒的模式，已经被好几个React库证明了非常有价值。
+
+本文，将详细解释HOC是什么，可以用他们做什么和他们的限制，以及如何运用。
+
+附录，收录了我认为那些并非HOC学习的核心部分，但又需要了解的内容。
+
+本文，力图详尽的讲解HOC，如果你发现我还有哪些内容没有讲到，请告诉我，我会修改。
+
+这篇文章假设你已经有了ES6的知识。
+
+让我们开始！
+
+2016年8月更新   
+我们已经翻译成日文了！   
+[http://postd.cc/react-higher-order-components-in-depth/](http://postd.cc/react-higher-order-components-in-depth/)
+感谢大家的关注！
+
+2017年1月更新  
+已经翻译成韩语了！   
+[https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4](https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4)    
+下面是中文！ [https://zhuanlan.zhihu.com/p/24776678](https://zhuanlan.zhihu.com/p/24776678)   
+非常感谢译者！
+
+What are Higher Order Components?
+什么是高阶组件？
+A Higher Order Component is just a React Component that wraps another one.
+高阶组件只是一个包含另一个组件的React组件。
+This pattern is usually implemented as a function, which is basically a class factory (yes, a class factory!), that has the following signature in haskell inspired pseudocode
+这个模式通常是作为一个函数来实现的，这个函数基本上是一个类工厂（是的，一个类工厂！），它在haskell启发的伪代码
+
+hocFactory :  :  W :  React.Component => E :  React.Component
+hocFactory : : W : React.Component => E : React.Component
+Where W (WrappedComponent) is the React.Component being wrapped and E (Enhanced Component) is the new, HOC, React.Component being returned.
+W（WrappedComponent）是被包装的React.Component，E（增强组件）是新的，HOC，React.Component被返回。
+
+The wraps part of the definition is intentionally vague because it can mean one of two things :
+定义的包装部分是故意模糊的，因为它可能意味着两件事情之一:
+
+Props Proxy :  The HOC manipulates the props being passed to the WrappedComponent W,
+道具代理: HOC操作传递给WrappedComponent W的道具，
+Inheritance Inversion :  The HOC extends the WrappedComponent W.
+继承倒置: HOC扩展了WrappedComponent W.
+We will explore this two patterns in more detail.
+我们将更详细地探讨这两种模式。
+
+What can I do with HOCs?
+我可以用HOC做什么？
+At a high level HOC enables you to :
+在高层次HOC使您可以:
+
+Code reuse, logic and bootstrap abstraction
+代码重用，逻辑和bootstrap抽象
+Render Hijacking
+呈现劫持
+State abstraction and manipulation
+国家抽象和操纵
+
+#### 参考 ####
+
+* [Search and find – Medium](https://medium.com/search?q=higher-order-components) 
+* [深入理解 React 高阶组件](https://zhuanlan.zhihu.com/p/24776678)
+* [高阶组件 - React](https://discountry.github.io/react/docs/higher-order-components.html)
+* [React 高阶组件(HOC)入门指南 · Issue #4 · MrErHu/blog · GitHub](https://github.com/MrErHu/blog/issues/4)
+* [React 高阶组件浅析 - HYPERS 前端团队博客](http://blog.hypers.io/2017/08/24/react-hoc-simple-analysis/)
+* [深入理解 React 高阶组件 - 简书](http://www.jianshu.com/p/0aae7d4d9bc1)
+* [高阶组件（Higher-Order Components） - React.js 小书](http://huziketang.com/books/react/lesson28)
+* [React高阶组件（译） - 腾讯Web前端 IMWeb 团队社区 - blog - 团队博客](http://imweb.io/topic/5907038a2739bbed32f60dad)
+* [React进阶——使用高阶组件（Higher-order Components）优化你的代码 - kpaxqin - SegmentFault](https://segmentfault.com/a/1190000004598113)
+* [高阶组件 - React 中文文档](http://www.css88.com/react/docs/higher-order-components.html)
+* [学习React的高阶组件](http://www.59m59s.com/blog/xue-xi-reactde-gao-jie-zu-jian/)
