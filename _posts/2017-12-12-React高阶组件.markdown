@@ -111,20 +111,19 @@ function ppHOC(WrappedComponent) {
 * 通过Refs访问实例（Accessing the instance via Refs） 
 * 抽象State（Abstracting State）
 * 用其他元素包装WrappedComponent（Wrapping the WrappedComponent with other elements）
-* 操作道具（Manipulating props）
+
+#### 操作props（Manipulating props） ####
 
 你可以读取，添加，编辑和删除传递给WrappedComponent的 props。
 
-对于重要的props，删除或编辑时，要小心谨慎。你应该确保以命名空间的方式处理高阶props，来避免高阶props破坏WrappedComponent。
+对于重要的props，删除或编辑时，要小心谨慎。你应该确保以命名空间的方式处理高阶props，来避免高阶props会破坏WrappedComponent。
 
-Example :  Adding new props.
-示例:添加新的道具。
+示例:添加新的props。
 The apps current logged in user will be available in the WrappedComponent via this.props.user
 当前登录用户的应用程序将通过this.props.user在WrappedComponent中可用
 
 
-Accessing the instance via Refs
-通过Refs访问实例
+#### 通过Refs访问实例 ####
 
 You can access this (the instance of the WrappedComponent) with a ref, but you will need a full initial normal render process of the WrappedComponent for the ref to be calculated, that means that you need to return the WrappedComponent element from the HOC render method
 你可以用ref来访问这个（WrappedComponent的实例），但是需要一个完整的WrappedComponent的初始正常渲染过程来计算ref，这意味着你需要从HOC渲染方法返回WrappedComponent元素
