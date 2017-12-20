@@ -99,6 +99,7 @@ render(<Page/>, document.querySelector('#container'));
 
 原文：  
 先把动画放在一边。 从简单页面开始，这个页面只有一个div，显示在ShowBox标识。  
+
 ```javascript
 import React from 'react';
 import { render } from 'react-dom';
@@ -218,6 +219,95 @@ render(<Page/>, document.querySelector('#container'));
 // ...
 ```
 
+
+### Step3 ###
+
+![3](https://i.imgur.com/QJj8ZPZ.gif)
+
+代码：  
+index.html
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="src/TweenMax.js"></script>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            background-color: brown;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+```
+
+```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import TransitionGroup from 'react-addons-transition-group';
+
+class Box extends React.Component {
+    componentWillEnter (callback) {
+        const el = this.container;
+        TweenMax.fromTo(el, 0.3, {y: 100, opacity: 0}, {y: 0, opacity: 1, onComplete: callback});
+    }
+
+    componentWillLeave (callback) {
+        const el = this.container;
+        TweenMax.fromTo(el, 0.3, {y: 0, opacity: 1}, {y: -100, opacity: 0, onComplete: callback});
+    }
+
+    render () {
+        return <div className="box" ref={c => this.container = c}/>;
+    }
+}
+
+class Page extends React.Component {
+    constructor() {
+        super();
+        this.toggleBox = this.toggleBox.bind(this);
+		this.state = {
+			shouldShowBox: true
+		};
+    };
+
+    toggleBox(){
+        this.setState({
+            shouldShowBox: !this.state.shouldShowBox
+        });
+    };
+
+    render () {
+        return <div className="page">
+            <TransitionGroup>
+                { this.state.shouldShowBox && <Box/>}
+            </TransitionGroup>
+
+			<button
+				className="toggle-btn"
+				onClick={this.toggleBox}
+			>
+				toggle
+			</button>
+		</div>;
+    }
+}
+
+render(<Page/>, document.querySelector('#container'));
+```
+
+
+原文：    
 为了让TransitionGroup中的组件具有不同的动画的灵活性，TransitionGroup本身并没有定义动画，而是在添加或删除子组件时，调用相应的输入或在其子组件上留下动画钩子。
 
 一般只会用到这两个生命周期的钩子 - 
@@ -244,6 +334,23 @@ render(<Page/>, document.querySelector('#container'));
 	}
 
 然后添加动画生命周期的钩子中。这样一来，就可以使用GSAP TweenMax做动画了。
+
+	class Box extends React.Component {
+	  componentWillEnter (callback) {
+	    const el = this.container;
+	    TweenMax.fromTo(el, 0.3, {y: 100, opacity: 0}, {y: 0, opacity: 1, onComplete: callback});
+	  }
+	
+	  componentWillLeave (callback) {
+	    const el = this.container;
+	    TweenMax.fromTo(el, 0.3, {y: 0, opacity: 1}, {y: -100, opacity: 0, onComplete: callback});
+	  }
+	
+	  render () {
+	    return <div className="box" ref={c => this.container = c}/>;
+	  }
+	}
+
 
 2017年6月23日-更新:现在使用refs来引用DOM元素。
 参考[Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html)  
