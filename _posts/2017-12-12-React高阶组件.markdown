@@ -216,7 +216,7 @@ class Example extends React.Component {
 #### 用其他元素包装WrappedComponent ####
 
 为了包装样式，布局，等等其他目的，可以用WrappedComponent与其他组件和元素一起。
-一些基本需求，可以通过定期的父组件来完成（见附录B），但是如前所述，可以更灵活地使用HOC。
+一些基本需求，可以通过定期的父组件来完成（见附录B），但是正如前面讲的，可以更灵活地使用HOC，来达到效果。
 
 实例:包装样式
 
@@ -248,16 +248,11 @@ function iiHOC(WrappedComponent) {
 }
 ```
 
-正如你所看到的，返回的HOC类（Enhancer）扩展了WrappedComponent。
+正如你看到的，返回的HOC类（Enhancer）**继承**了WrappedComponent。   
 
+之所以叫继承反转，因为不是WrappedComponent继承了Enhancer类，而是反过来（**inverse**），Enhancer继承了WrappedComponent。   
 
-It is called Inheritance Inversion because instead of the WrappedComponent extending some Enhancer class, it is passively extended by the Enhancer.
-它被称为继承反转，因为不是扩展一些增强器类的WrappedComponent，而是由增强器被动扩展。
-In this way the relationship between them seems inverse.
-这样他们之间的关系似乎反过来。
-
-Inheritance Inversion allows the HOC to have access to the WrappedComponent instance via this, which means it has access to the state, props, component lifecycle hooks and the render method.
-继承反转允许HOC通过这个访问WrappedComponent实例，这意味着它可以访问状态，道具，组件生命周期钩子和渲染方法。
+继承反转使得HOC通过this访问WrappedComponent实例，也就是说**它可以访问state，props，组件生命周期钩子和render方法**。
 
 I won't go into much detail about what you can do with lifecycle hooks because its not HOC specific but React specific.
 我不会详细讨论你可以用生命周期钩子做什么，因为它不是HOC特定的，但是反应是特定的。
