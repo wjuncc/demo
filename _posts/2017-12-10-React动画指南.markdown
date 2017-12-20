@@ -14,6 +14,7 @@ tags:
 改成《ReactTransitionGroup指南》，ReactTransitionGroup是个什么鬼？  
 最后改成《React动画指南》。
 
+**给我一个理由**：  
 因为在react项目踩到地雷了，这个地雷就是“动画一直是react的弱项”。只好看了一些资料，把坑填平。这是react系列中的一篇半翻译半笔记的怪物。  
       
 **关于排版**：  
