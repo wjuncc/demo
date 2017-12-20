@@ -37,7 +37,7 @@ tags:
 * 下一节，把混用改成组件方式（HOC），好在多个组件中重复使用动画。 
 
 **开张大吉请吃鸡。**
-### ReactTransitionGroup指南 ###
+### 使用ReactTransitionGroup来制作React动画 ###
 (这段是废话)  
 CSS能实现动画，但复杂到一定程度，就难以维护。
 
