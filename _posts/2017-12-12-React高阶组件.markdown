@@ -211,28 +211,46 @@ class Example extends React.Component {
 
 这个输入框将会自动成为[受控的input](https://reactjs.org/docs/forms.html)。
 
-> 更多双向数据绑定HOC看[这个链接](https://github.com/franleplant/react-hoc-examples/blob/master/pp_state.js)
+> 更多常用的双向数据绑定HOC看[这个链接](https://github.com/franleplant/react-hoc-examples/blob/master/pp_state.js)
 
-Wrapping the WrappedComponent with other elements
-用其他元素包装WrappedComponent
+#### 用其他元素包装WrappedComponent ####
 
-You can wrap the WrappedComponent with other components and elements for styling, layout or other purposes.
-您可以将WrappedComponent与其他组件和元素一起包装以进行样式，布局或其他目的。
-Some basic usages can be accomplished by regular Parent Components (see Appendix B) but you have more flexibility with HOCs as described previously.
-一些基本的用法可以通过定期的父组件来完成（见附录B），但是如前所述，您可以更灵活地使用HOC。
+为了包装样式，布局，等等其他目的，可以用WrappedComponent与其他组件和元素一起。
+一些基本需求，可以通过定期的父组件来完成（见附录B），但是如前所述，可以更灵活地使用HOC。
 
-Example :  Wrapping for styling purposes
-例子:包装样式的目的
+实例:包装样式
 
+```
+function ppHOC(WrappedComponent) {
+  return class PP extends React.Component {
+    render() {
+      return (
+        <div style={{display: 'block'}}>
+          <WrappedComponent {...this.props}/>
+        </div>
+      )
+    }
+  }
+}
+```
 
-Inheritance Inversion
-继承反转
-Inheritance Inversion (II) is implemented trivially like this :
-继承反转（II）这样简单地实现:
+### 继承反转（Inheritance Inversion） ###
 
+下面是继承反转（II）的简单实现:
 
-As you can see, the returned HOC class (Enhancer) extends the WrappedComponent.
+```javascript
+function iiHOC(WrappedComponent) {
+  return class Enhancer extends WrappedComponent {
+    render() {
+      return super.render()
+    }
+  }
+}
+```
+
 正如你所看到的，返回的HOC类（Enhancer）扩展了WrappedComponent。
+
+
 It is called Inheritance Inversion because instead of the WrappedComponent extending some Enhancer class, it is passively extended by the Enhancer.
 它被称为继承反转，因为不是扩展一些增强器类的WrappedComponent，而是由增强器被动扩展。
 In this way the relationship between them seems inverse.
