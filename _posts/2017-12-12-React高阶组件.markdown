@@ -275,8 +275,7 @@ For more about Elements and Components read this post.
 
 FTRE将在Reacts[一致化处理](https://reactjs.org/docs/reconciliation.html)中解析为完整的STRE树（最终结果将始终为DOM元素）。
 
-This is very important and it means that Inheritance Inversion High Order Components dont have a guaranty of having the full children tree resolved.
-这是非常重要的，这意味着继承颠倒高顺序组件没有解决完整的子树的保证。
+这很重要，这意味着**Inheritance Inversion高阶组件不保证解析完整子树**。
 
 Inheritance Inversion High Order Components dont have a guaranty of having the full children tree resolved.
 继承颠倒高顺序组件没有解决完整的子树的保证。
