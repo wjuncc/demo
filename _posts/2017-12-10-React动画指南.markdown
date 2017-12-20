@@ -398,20 +398,13 @@ render(<Page/>, document.querySelector('#container'));
 
 下面是使用ReactTransitionGroup的简单动画案例！
 
-接下来几个部分讲， [高级重用动画组件](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)，路由器集成，协调嵌套转场动画。
+接下来讲， [复用React动画](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)，路由器集成，协调嵌套转场动画。
 
 你读了这么多，也喜欢调试JS 干货(quick and dirty skill)??，给我发tweet@CheapSteak :）
 
-您可能还对react-transition-group-plus感兴趣，用来代替ReactTransitionGroup，可中断转场，并指定转场顺序。看[demo](http://cheapsteak.github.io/react-transition-group-plus/)。
+react-transition-group-plus，用来代替ReactTransitionGroup，可中断转场，并指定转场顺序。看[demo](http://cheapsteak.github.io/react-transition-group-plus/)。
 
-Thanks to @hare_ben and @jephuff for proofreading and feedback
-感谢@hare_ben和@jephuff的校对和反馈
-
-注册我的newsletter，订阅邮箱新文章。
-ReactJavaScriptAnimationNPM
-One clap, two clap, three clap, forty?
-一个拍手，两个拍手，三个拍手，四十个？
-通过或多或少的鼓掌，您可以向我们表明哪些故事真正脱颖而出。
+感谢@hare_ben和@jephuff的校对和反馈 
    
 ----------------------------------------
 
