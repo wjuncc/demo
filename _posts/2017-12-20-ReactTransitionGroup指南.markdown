@@ -10,7 +10,9 @@ tags:
 ---
 
 全文翻译自[Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286),   
-因为在react项目踩到地雷了，这个地雷就是“动画一直是react的弱项”。只好看了一些资料，把坑填平。     
+因为在react项目踩到地雷了，这个地雷就是“动画一直是react的弱项”。只好看了一些资料，把坑填平。这是react系列中的一篇翻译。  
+      
+**关于排版**：  
 自己的理解，加在每一节之前，为了测试方便，给出了本机的绝对路径，以及操作步骤。    
  
 **本节重点**：
