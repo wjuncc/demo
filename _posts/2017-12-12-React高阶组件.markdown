@@ -286,22 +286,19 @@ FTRE将在Reacts[一致化处理](https://reactjs.org/docs/reconciliation.html)�
 * 渲染劫持 Render Hijacking 
 * 操纵状态 Manipulating state
 
-#### 呈现劫持 Render Hijacking ####
+#### 渲染劫持 Render Hijacking ####
 
 之所以加Render Highjacking，是因为HOC控制了WrappedComponent的渲染输出，并且可以做各种各样的事。
 
 有了渲染劫持你可以:
 
-Read, add, edit, remove props in any of the React Elements outputted by render
-阅读，添加，编辑，删除渲染输出的任何React Elements中的道具
-Read, and modify the React Elements tree outputted by render
-读取和修改渲染输出的React Elements树
-Conditionally display the elements tree
-有条件地显示元素树
-Wrapping the elements tree for styling purposes (as shown in Props Proxy)
-包装元素树为样式目的（如Props代理中所示）
+* 读取，添加，编辑，删除渲染输出的任何React Elements中的props
+* 读取和修改渲染输出的React Elements树
+* 有条件地显示元素树
+* 为了样式（类似Props代理的例子），封装元素树
+
 *render refers to the WrappedComponent.render method
-* render是指WrappedComponent.render方法
+注意，render是指WrappedComponent.render方法
 
 You cannot edit or create props of the WrappedComponent instance, because a React Component cannot edit the props it receives, but you can change the props of the elements that are outputted from the render method.
 你不能编辑或创建WrappedComponent实例的道具，因为React Component不能编辑它收到的道具，但是你可以改变从渲染方法输出的元素的道具。
