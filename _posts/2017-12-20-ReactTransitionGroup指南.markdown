@@ -250,6 +250,7 @@ index.html
 </body>
 </html>
 ```
+index.js  
 
 ```javascript
 import React from 'react';
