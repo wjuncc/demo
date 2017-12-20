@@ -13,7 +13,7 @@ tags:
 #### 小结 ####
 在参考完所有资料之后，得到了下面这些认识：
 
-* react动画有2大阵营：CSS和CTG。CSS代表着从angular的ng-animate母系孕育而来，符合虚拟dom精神拥抱FE新世界的天使哈里路亚一方，而CTG代表着甘当刽子手手撕虚拟dom的还我原始dom本能无耻动效的邪恶魔鬼撒旦一方。
+* react动画有2大阵营：CSS和CTG。CSS代表着从angular的ng-animate母系孕育而来，符合虚拟dom精神拥抱FE新世界的天使哈里路亚一方，而CTG代表着为了填补客户老板无耻动效，甘当刽子手手撕虚拟dom还我本能原始dom的邪恶魔鬼撒旦一方。
 * react的弱动画，比如CMS后台管理中的list淡入淡出，菜单淡入淡出，这些，用CSS做。（也就是ReactCSSTransitionGroup）
 * react的重度动画，比如逼格三部曲当上总经理，出任CEO,迎娶白富美，走向人生巅峰。用CTG做。（也就是ReactTransitionGroup）
 
