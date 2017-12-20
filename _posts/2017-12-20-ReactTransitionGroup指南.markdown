@@ -34,7 +34,7 @@ ReactCSSTransitionGroup踩在[ReactTransitionGroup](https://www.npmjs.com/packag
 	cd E:\n\learn\react\101\Ch04\proj2
 	npm start
 
-代码：
+代码：  
 index.js
 
 ```javascript
@@ -139,9 +139,11 @@ render(<Page/>, document.querySelector('#container'));
 
 	npm install react-addons-transition-group -save-dev
 
-代码：  注意，只是在`{ this.state.shouldShowBox && <div className="box"/>}`的外面套了`<TransitionGroup>`节点
-index.js
+代码：  
+index.js有2个修改  
 
+1. 加了一段引用`import TransitionGroup from 'react-addons-transition-group';`
+2. 在`{ this.state.shouldShowBox && <div className="box"/>}`的外面套了`<TransitionGroup>`节点    
 ```javascript
 import React from 'react';
 import { render } from 'react-dom';
