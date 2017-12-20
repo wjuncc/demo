@@ -48,9 +48,38 @@ class Box extends React.Component {
 
 可以将动画部分提取到名为“`fadesUp`”的高阶组件。
 
+```javascript
+function fadesUp (Component) {
+  return class FadesUp extends React.Component {
+    componentWillEnter (callback) {
+      const el = findDOMNode(this);
+      TweenMax.fromTo(el, 0.3, {y: 100, opacity: 0}, {y: 0, opacity: 1, onComplete: callback});
+    }
+
+    componentWillLeave (callback) {
+      const el = findDOMNode(this);
+      TweenMax.fromTo(el, 0.3, {y: 0, opacity: 1}, {y: -100, opacity: 0, onComplete: callback});
+    }
+
+    render () {
+      return <Component ref="child" {...this.props} />;
+    }
+  }
+}
+```
+
+
 想让组件运行动画？ 只要把组件传递给`fadesUp`，就行了。 
 
 下面是正方形的样子。
+
+```javascript
+const Box = fadesUp(class extends React.Component {
+  render () {
+    return <div className="box"/>;
+  }
+});
+```
 
 或者，如果启用了装饰器（参考通过Babel 6使用ES7装饰器）
 
