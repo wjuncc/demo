@@ -295,7 +295,7 @@ FTRE将在Reacts[一致化处理](https://reactjs.org/docs/reconciliation.html)�
 * 读取，添加，编辑，删除渲染输出的任何React Elements中的props
 * 读取和修改渲染输出的React Elements树
 * 有条件地显示元素树
-* 为了样式（类似Props代理的例子），封装元素树
+* （类似Props代理的例子），把样式封装到元素树
 
 注意，render是指WrappedComponent.render方法
 
