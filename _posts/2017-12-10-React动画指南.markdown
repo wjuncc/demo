@@ -392,7 +392,7 @@ render(<Page/>, document.querySelector('#container'));
 2017年6月23日-更新:现在用refs来引用DOM元素。
 参考[Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html)  
 
-对于那些不熟悉TweenMax的人来说，下面是函数signature的fromTo :
+对于不熟悉TweenMax的人来说，下面是TweenMax的fromTo函数定义 :
 
 	TweenMax.fromTo( target : Object, duration : Number, fromVars : Object, toVars : Object ) : TweenMax 
 
