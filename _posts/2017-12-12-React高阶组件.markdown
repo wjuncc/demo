@@ -6,7 +6,6 @@ categories:
 tags: 
 ---
 
-# React高阶组件 #
 原文 [React Higher Order Components in depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)
 
 
@@ -107,16 +106,12 @@ function ppHOC(WrappedComponent) {
 
 ### 用Props Proxy可以做什么？ ###
 
-Manipulating props
-操作道具
-Accessing the instance via Refs
-通过Refs访问实例
-Abstracting State
-抽象国家
-Wrapping the WrappedComponent with other elements
-用其他元素包装WrappedComponent
-Manipulating props
-操作道具
+
+* 操作props Manipulating props ）
+* 通过Refs访问实例（Accessing the instance via Refs） 
+* 抽象State（Abstracting State）
+* 用其他元素包装WrappedComponent（Wrapping the WrappedComponent with other elements）
+* 操作道具（Manipulating props）
 
 You can read, add, edit and remove the props that are being passed to the WrappedComponent.
 您可以阅读，添加，编辑和删除传递给WrappedComponent的道具。
