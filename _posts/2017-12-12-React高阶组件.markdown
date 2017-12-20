@@ -113,8 +113,7 @@ function ppHOC(WrappedComponent) {
 * 用其他元素包装WrappedComponent（Wrapping the WrappedComponent with other elements）
 * 操作道具（Manipulating props）
 
-You can read, add, edit and remove the props that are being passed to the WrappedComponent.
-您可以阅读，添加，编辑和删除传递给WrappedComponent的道具。
+你可以读取，添加，编辑和删除传递给WrappedComponent的 props。
 
 Be careful with deleting or editing important props, you should probably namespace your Higher Order props not to break the WrappedComponent.
 小心删除或编辑重要的道具，你应该命名空间你的高阶道具不要打破WrappedComponent。
