@@ -38,6 +38,7 @@ ReactCSSTransitionGroup踩在[ReactTransitionGroup](https://www.npmjs.com/packag
 
 ### 从简单开始 ###
 (这段是实例)  
+**笔记：**  
 结果：  
 ![3](https://i.imgur.com/LWfOAY7.gif)  
 文件： E:\n\learn\react\101\Ch04\proj2  
@@ -148,6 +149,7 @@ render(<Page/>, document.querySelector('#container'));
 当shouldShowBox为true时，.box是可见的，为false时，则不可见。
 
 ### 添加ReactTransitionGroup ###
+**笔记：**  
 操作：
 
 	npm install react-addons-transition-group -save-dev
@@ -234,6 +236,8 @@ render(<Page/>, document.querySelector('#container'));
 
 ### Step3 ###
 
+**笔记：**  
+结果：  
 ![3](https://i.imgur.com/QJj8ZPZ.gif)
 
 代码：  
