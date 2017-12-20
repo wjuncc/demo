@@ -10,7 +10,7 @@ tags:
 ---
 
 **关于标题**：  
-原名 [Animations with ReactTransitionGroup – Appify – Medium medium.com](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286),   
+原名 [Animations with ReactTransitionGroup](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286),   
 意即《使用ReactTransitionGroup做动画》，   
 改成《ReactTransitionGroup指南》，  
 你看这2个，ReactTransitionGroup什么鬼？长长长得像坨屎，不好吃啊。不能雅俗共赏言简意赅？     
