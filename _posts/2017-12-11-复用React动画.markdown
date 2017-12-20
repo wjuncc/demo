@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "复用React动画"
+title:  "复用React动画（译）"
 date:   2017-12-11 03:45:26 +0800
 categories:  
 tags: 
@@ -8,6 +8,8 @@ tags:
     - 笔记
 
 ---
+
+Mar 14, 2016
 
 **关于标题**  
 原文名字太长了，《使用高阶组件重用ReactTransitionGroup动画》[Reusing ReactTransitionGroup animations with Higher-order Components](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)，好拗口。    
@@ -81,61 +83,216 @@ const Box = fadesUp(class extends React.Component {
 });
 ```
 
-或者，如果启用了装饰器（参考通过Babel 6使用ES7装饰器）
+或者，如果启用了装饰器（参考[通过Babel 6使用ES7装饰器](http://technologyadvice.github.io/es7-decorators-babel6/)）
+
+```javascript
+@fadesUp
+class Box extends React.Component {
+  render () {
+    return <div className="box"/>;
+  }
+}
+```
+
+下面我们画一个圆形，并运行相同的动画
+
+```javascript
+@fadesUp
+class Circle extends React.Component {
+  render () {
+    return <div className="circle"/>;
+  }
+}
+```
+
+够简单吧？
 
 
-Lets make a circle and give it the same animation
-让一个圆圈，并给它相同的动画
+### 传递选项 ###
 
 
-Simple right?
-简单的权利？
+假设动画默认0.3秒，但是正方形的时间为0.8秒。
+这么干：
 
-Passing Options
-通过选项
-Say we want to have animations take 0.3 seconds by default, but set the duration for Boxs animations take 0.8s.
-假设我们希望动画默认需要0.3秒，但是将动画的持续时间设置为0.8秒。
+```javascript
+@fadesUp({duration: 0.8})
+class Box extends React.Component {
+  render () {
+    return <div className="box"/>;
+  }
+}
 
-This is what we want to be able to do :
-这是我们希望能够做到的
+@fadesUp
+class Circle extends React.Component {
+  render () {
+    return <div className="circle"/>;
+  }
+}
+```
 
+必须修改之前的`fadesUp`来接收可选的`选项options`，但由于装饰器的工作方式，它不像添加可选的第二个参数那么简单。
 
-Well have to modify our previous `fadesUp` to receive optional `options`, but due to the way that decorators work, its not quite as easy as adding an optional second parameter.
-那么必须修改我们以前的`fadesUp`来接收可选的`options`，但由于装饰器的工作方式，它不像添加可选的第二个参数那么简单。
+下面显示如何修改`fadesUp` HOC :
 
-Heres how well have to modify the `fadesUp` HOC :
-如何修改`fadesUp` HOC :
+```
+function makeFadesUp(Component, options = { duration: 0.3 }) {
+  return class FadesUp extends React.Component {
+    componentWillEnter (callback) {
+      const el = findDOMNode(this);
+      TweenMax.fromTo(el, options.duration, {y: 100, opacity: 0}, {y: 0, opacity: 1, onComplete: callback});
+    }
 
+    componentWillLeave (callback) {
+      const el = findDOMNode(this);
+      TweenMax.fromTo(el, options.duration, {y: 0, opacity: 1}, {y: -100, opacity: 0, onComplete: callback});
+    }
 
-`fadesUp` now checks to see whether the type of the first argument received is a `function`, which would be when no options were passed and we assume we received a React class (es6 classes have typeof === function), so we
+    render () {
+      return <Component ref="child" {...this.props} />;
+    }
+  }
+}
+
+function fadesUp (Component) {
+  return typeof arguments[0] === 'function'
+    ? makeFadesUp(arguments[0])
+    : Component => makeFadesUp(Component, arguments[0]);
+}
+```
+
 `fadesUp`现在检查收到的第一个参数的类型是否是一个`function`，当没有选项被传递时，我们假设我们收到了一个React类（es6类有typeof ===函数），所以我们
-immediately enhance it.
-马上加强吧。
-If it did not receive a function, it assumes it received `options`, and returns a partially applied function that when next invoked will enhance the component passed to invoke it using the previously received `options`.
-如果它没有收到一个函数，它会假定它收到了`options`，并且返回一个部分应用的函数，当下一次被调用时将会增强传递的组件以使用之前接收到的`options`来调用它。
+马上加强吧。 
+如果它没有收到函数，它会认为它收到`options`，并返回一个部分应用的函数，当下一次被调用时将会增强传递的组件以使用之前接收到的`options`来调用它。
 
-It might be easier to understand why `fadesUp` had to be written the way it was after seeing how the HOC would be used without ES7 decorators :
-可能更容易理解为什么`fadesUp`必须按照看到如何在没有ES7装饰器的情况下使用HOC的方式来书写:
+下面是HOC`fadesUp`不用ES7装饰器的写法，可能更容易理解:
+
+```
+const Box = fadesUp({duration: 0.8})(class extends React.Component {
+  render () {
+    return <div className="box"/>;
+  }
+});
+
+const Circle = fadesUp(class extends React.Component {
+  render () {
+    return <div className="circle"/>;
+  }
+});
+```
 
 
-Heres what it looks like put together :
-下面是什么看起来放在一起:
+最终[在线demo](https://codepen.io/cheapsteak/pen/RaGKOZ?editors=0010):
+可以更进一步调试。
 
 
-You could take this even further and pass all the animation options as part of the options.
-您可以更进一步，并通过所有动画选项作为选项的一部分。
-
-
-The next parts will be on integrating with react-router and coordinating nested animations.
 接下来的部分将集成反应路由器和协调嵌套动画。
 
-More on Higher-order Components :
-更多关于高阶元件:
-Structuring React Applications :  Higher-Order Components
+关于高阶元件的更多文章:
+[构建React程序:高阶元件](http://jamesknelson.com/structuring-react-applications-higher-order-components/)
 构建React应用程序:高阶组件
 
-Follow Chang Wang on Twitter
 在Twitter上关注Chang Wang
+
+
+### 留言板 ###
+#### 1 ####
+Eddy Hernandez  
+埃迪·埃尔南德斯  
+Mar 28, 2016  
+2016年3月28日  
+这真的帮助我理解了TransitionGroup。 
+谢谢！
+ 
+#### 2 ####
+Ben Bissonnette   
+Apr 22  
+4月22日
+You ever get this working with React Router v4 ?
+你开始写下一篇文章React路由v4吗？ 
+
+Chang Wang    
+Apr 22    
+4月22日   
+还没有做，确定他们的API稳定了？ 
+
+
+unlitechc  
+Feb 20  
+2月20日
+Your previous post help me build a pull to refresh  &  load-more list.
+你以前的帖子帮我，建立拉刷新和加载更多列表。
+Thanks.
+谢谢。
+
+Ive read your post several times and try to make a simple decorator, but I find when I code
+我几次读你的帖子，并尝试做一个简单的装饰，但我发现当我编码
+
+export function fadeInOut(Component){}
+导出函数fadeInOut（Component）{}
+
+and
+和
+
+Read more
+阅读更多
+
+1 response
+1回应
+Go to the profile of Chang Wang
+转到长王的档案
+Chang Wang
+常王
+Feb 21
+2月21日
+Hi, any luck trying to fork the pen in the example?
+嗨，试图在示例中分叉笔的运气？
+
+http : //codepen.io/cheapsteak/pen/aNmpaz
+http _... //codepen.io/cheapsteak/pen/aNmpaz
+
+
+
+Conversation with Chang Wang.
+与张望的对话。
+Go to the profile of tadeouy
+转到tadeouy的个人资料
+tadeouy
+tadeouy
+Aug 18, 2016
+2016年8月18日
+Thank you for this article, its very clear and gave me insight about the way of integrating GSAP in my react app.
+感谢您阅读这篇文章，其内容非常清晰，让我深入了解GSAP在我的应用程序中的整合方式。
+
+Now Im having a hard time to make TransitionGroup work with react-router with a few nested routes.
+现在我很难使TransitionGroup与反应路由器与几个嵌套的路线工作。
+Im getting the container route being re-rendered on each route change.
+我得到的容器路线重新呈现每个路线的变化。
+Do you know if its possible?
+你知道它可能吗？
+
+Read more
+阅读更多
+
+1 response
+1回应
+Go to the profile of Chang Wang
+转到长王的档案
+Chang Wang
+常王
+Aug 19, 2016
+2016年8月19日
+Hi tadeouy, thank you for the kind words!
+嗨tadeouy，谢谢你的客气话！
+
+Im still working on the the article on router integration (to be honest Ive been procrastinating a bit), but I think I can help you with that problem  : )
+我仍然在研究有关路由器集成的文章（老实说我一直在拖延一下），但我想我可以帮你解决这个问题_...）
+
+Make sure that the `key` youre using reflects the hierarchy of your app.
+确保你使用的``键反映了你的应用程序的层次结构。
+
+
+
+
 
 #### 参考 ####
 
