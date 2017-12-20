@@ -92,24 +92,19 @@ function ppHOC(WrappedComponent) {
   }
 }
 ```
-returns a React Element of the type of the WrappedComponent.
 这里的重点，是HOC的render方法，**返回**的是WrappedComponent类型的React元素。
-同时，还加上了HOC接收到的props，所以说这种模式叫**Props Proxy**。
+返回的内容中，还加上了HOC接收到的props，所以说这种模式叫**Props Proxy**。
 
-NOTE :
 注意 :
 
-<WrappedComponent {...this.props}/>
-<WrappedComponent {... this.props} />
-// is equivalent to
-//相当于
-React.createElement(WrappedComponent, this.props, null)
-React.createElement（WrappedComponent，this.props，null）
-They both create a React Element that describes what React should render in its reconciliation process, if you want to know more about React Elements vs Components see this post by Dan Abramov and see the docs to read more about the reconciliation process.
-他们都创建了React元素来描述React应该在对账过程中呈现的内容，如果您想了解更多有关React元素与组件的信息，请参阅Dan Abramov的这篇文章，并参阅文档以了解更多有关对账流程的内容。
+	<WrappedComponent {...this.props}/>
+	// 等价于
+	React.createElement(WrappedComponent, this.props, null)
 
-What can be done with Props Proxy?
-用Props Proxy可以做什么？
+They both create a React Element that describes what React should render in its reconciliation process, if you want to know more about React Elements vs Components see this post by Dan Abramov and see the docs to read more about the reconciliation process.
+他们都创建了React元素来描述React应该在对账过程中呈现的内容，如果您想了解更多有关React元素与组件的信息，参阅[Dan Abramov的这篇文章](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)，参阅官方文档了解[一致性处理](https://reactjs.org/docs/reconciliation.html)。
+
+### 用Props Proxy可以做什么？ ###
 
 Manipulating props
 操作道具
