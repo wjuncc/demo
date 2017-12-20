@@ -778,6 +778,7 @@ ESLint是一个用来识别ECMAScript 并且按照规则给出报告的代码检
 
 #### 参考 ####
 
+* [React学习之扩展动画（三十）--CSS,ps,DOM,Group,ReactCSSTransitionGroup,组件,动画,ReactTransitionGroup](http://www.bijishequ.com/detail/395468?p=70) 有23处讲RTG
 * [动画 - React](https://react-cn.github.io/react/docs/animation.html)  文章后面讲到了RTG，也就是： 底层 API: ReactTransitionGroup
 * [React 动画 - ZhusCafe](http://zhuscat.com/2016/08/31/react-animation/) 没有实例
 * [使用ReactTransitionGroup实现React动画效果 · Issue #3 · luckyhalley/blog · GitHub](https://github.com/luckyhalley/blog/issues/3)  （这句话是误导）需要思考的是React改变了基于DOM操作的编程方式，由于React组件生命周期的存在，使用JavaScript直接操作DOM元素来完成动画效果在React项目中并不是一种很好的选择。（实际上，在React中除了用RTG，没有别的办法来做重度动画。）  
@@ -787,7 +788,9 @@ ESLint是一个用来识别ECMAScript 并且按照规则给出报告的代码检
 
 
 * [交互动画系列之三：react动画 · Issue #57 · youngwind/blog · GitHub](https://github.com/youngwind/blog/issues/57)
-* [ReactTransitionGroup动画原理 - Web前端 腾讯IVWeb 团队社区](https://ivweb.io/topic/586099050e2a26d26bb1c029)
-* [React动画实践 - AlloyTeam](http://www.alloyteam.com/2016/01/react-animation-practice/)
-* [动画 · React入门指南 · 看云](https://www.kancloud.cn/kancloud/react-quickstart/44617)
-* [React学习之扩展动画（三十）--CSS,ps,DOM,Group,ReactCSSTransitionGroup,组件,动画,ReactTransitionGroup](http://www.bijishequ.com/detail/395468?p=70)
+* [react-css-transition实战](https://github.com/youngwind/blog/issues/61) 这2个是续集，都是讲ReactCSSTransitionGroup。
+* [ReactTransitionGroup动画原理 - Web前端 腾讯IVWeb 团队社区](https://ivweb.io/topic/586099050e2a26d26bb1c029)讲ReactCSSTransitionGroup。
+* [React动画实践 - AlloyTeam](http://www.alloyteam.com/2016/01/react-animation-practice/) 这篇讲CSS，有一点有用的部分：  
+默认情况下 ReactTransitionGroup 渲染为一个 span。你可以通过提供一个 component prop 来改变这种行为. 组件不需要是一个DOM组件，它可以是任何你想要的React组件，甚至是你自己写的。
+
+* [动画 · React入门指南 · 看云](https://www.kancloud.cn/kancloud/react-quickstart/44617)  这个好像是官网翻译   
