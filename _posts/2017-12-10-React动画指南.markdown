@@ -51,7 +51,7 @@ CSS能实现动画，但复杂到一定程度，就难以维护。
 ReactCSSTransitionGroup踩在[ReactTransitionGroup](https://www.npmjs.com/package/react-addons-transition-group)这个巨人的肩上。 
 区别在于，ReactTransitionGroup用JS动画而非CSS动画，另外，动画完成时有回调函数，而不是CSS转换事件。
 
-### 从简单开始 ###
+### 第一步，从简单的切换正方形显示隐藏开始 ###
 (这段是实例)  
 **笔记：**  
 第一步的运行结果：  
@@ -164,7 +164,7 @@ render(<Page/>, document.querySelector('#container'));
 
 当shouldShowBox为true时，.box是可见的，为false时，则不可见。
 
-### 添加ReactTransitionGroup ###
+### 第二步，添加ReactTransitionGroup，实现正方形切换时淡入淡出的动画 ###
 **笔记：**  
 操作：
 
