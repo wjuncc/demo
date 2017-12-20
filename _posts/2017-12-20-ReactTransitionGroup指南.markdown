@@ -135,6 +135,56 @@ render(<Page/>, document.querySelector('#container'));
 当shouldShowBox为true时，.box是可见的，为false时，则不可见。
 
 ### 添加ReactTransitionGroup ###
+操作：
+
+	npm install react-addons-transition-group -save-dev
+
+代码：  注意，只是在`{ this.state.shouldShowBox && <div className="box"/>}`的外面套了`<TransitionGroup>`节点
+index.js
+
+```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import TransitionGroup from 'react-addons-transition-group';
+
+class Page extends React.Component {
+    constructor() {
+        super();
+        this.toggleBox = this.toggleBox.bind(this);
+		this.state = {
+			shouldShowBox: true
+		};
+    };
+
+    toggleBox(){
+        this.setState({
+            shouldShowBox: !this.state.shouldShowBox
+        });
+    };
+
+    render () {
+        return <div className="page">
+            <TransitionGroup>
+                { this.state.shouldShowBox && <div className="box"/>}
+            </TransitionGroup> 
+
+			<button
+				className="toggle-btn"
+				onClick={this.toggleBox}
+			>
+				toggle
+			</button>
+		</div>;
+    }
+}
+
+render(<Page/>, document.querySelector('#container'));
+```
+
+
+
+
+原文：  
 安装[react-addons-transition-group](https://www.npmjs.com/package/react-addons-transition-group)
 	
 
