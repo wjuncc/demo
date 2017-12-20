@@ -120,30 +120,44 @@ React.createElement(WrappedComponent, this.props, null)
 
 对于重要的props，删除或编辑时，要小心谨慎。你应该确保以命名空间的方式处理高阶props，来避免高阶props会破坏WrappedComponent。
 
-示例:添加新的props。
-The apps current logged in user will be available in the WrappedComponent via this.props.user
-当前登录用户的应用程序将通过this.props.user在WrappedComponent中可用
+示例:添加新的props。  
+下面这段程序，当前登录的用户，在WrappedComponent中通过this.props.user访问。
 
 ```javascript
+function ppHOC(WrappedComponent) {
+  return class PP extends React.Component {
+    render() {
+      const newProps = {
+        user: currentLoggedInUser
+      }
+      return <WrappedComponent {...this.props} {...newProps}/>
+    }
+  }
+}
 ```
 
-#### 通过Refs访问实例 ####
+#### 通过Refs访问组件实例 ####
+通过ref，可以访问this（WrappedComponent的实例）。但在此之前，WrappedComponent需要初始渲染，才能得到ref。也就是说，HOC的render方法必须返回WrappedComponent元素。
+让React做一致性处理，这样就得到WrappedComponent实例的引用。
 
-You can access this (the instance of the WrappedComponent) with a ref, but you will need a full initial normal render process of the WrappedComponent for the ref to be calculated, that means that you need to return the WrappedComponent element from the HOC render method
-你可以用ref来访问这个（WrappedComponent的实例），但是需要一个完整的WrappedComponent的初始正常渲染过程来计算ref，这意味着你需要从HOC渲染方法返回WrappedComponent元素
-, let React do its reconciliation process and just then you will have a ref to the WrappedComponent instance.
-让React执行它的调整过程，然后你将有一个WrappedComponent实例的引用。
-
-Example :  In the following example we explore how to access instance methods and the instance itself of the WrappedComponent via refs
-例子:在下面的例子中，我们探讨如何通过引用来访问WrappedComponent的实例方法和实例本身
+实例:下面的例子，讲通过[refs](https://reactjs.org/docs/refs-and-the-dom.html)，访问WrappedComponent的实例方法和实例本身
 
 ```javascript
+function refsHOC(WrappedComponent) {
+  return class RefsHOC extends React.Component {
+    proc(wrappedComponentInstance) {
+      wrappedComponentInstance.method()
+    }
+    
+    render() {
+      const props = Object.assign({}, this.props, {ref: this.proc.bind(this)})
+      return <WrappedComponent {...props}/>
+    }
+  }
+}
 ```
-
-When the WrappedComponent is rendered the ref callback will be executed, and then you will have a reference to the WrappedComponents instance.
-当WrappedComponent呈现时，ref回调将被执行，然后你将有一个对WrappedComponents实例的引用。
-This can be used for reading/adding instance props and to call instance methods.
-这可以用于读取/添加实例道具和调用实例方法。
+当WrappedComponent渲染时，将执行ref回调，然后你将有一个对WrappedComponents实例的引用。
+可以用来读取/添加实例props，和调用实例方法。
 
 #### 抽象State（Abstracting State） ####
 
