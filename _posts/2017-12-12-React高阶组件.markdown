@@ -264,7 +264,7 @@ function iiHOC(WrappedComponent) {
 在深入之前先讲一些概念。
 
 React Elements describe what is going to be rendered when React runs its reconciliation process.
-React元素描述React运行其对帐过程时将要呈现的内容。
+React元素描述React运行[一致化处理](https://reactjs.org/docs/reconciliation.html)时将要呈现的内容。
 
 React Elements can be of two types :  String and Function.
 React元素可以是两种类型:字符串和函数。
