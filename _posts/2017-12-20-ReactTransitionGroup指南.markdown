@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "动画与ReactTransitionGroup"
+title:  "ReactTransitionGroup指南"
 date:   2017-12-20 03:47:21 +0800
 categories:  
 tags: 
@@ -9,15 +9,22 @@ tags:
 
 ---
 
-### 何时以及如何使用ReactTransitionGroup ###
+### ReactTransitionGroup指南 ###
 
-虽然几乎所有的动画都可以在CSS中完成，但一旦达到一定的复杂程度，往往会更难维护。
+CSS能实现动画，但复杂到一定程度，就难以维护。
 
-[ReactTransitionGroup](https://www.npmjs.com/package/react-addons-transition-group)是构建ReactCSSTransitionGroup的基础API。 
-两者之间的主要区别在于，ReactTransitionGroup动画是用Javascript而不是CSS编写的，并且在动画完成时提供了一个回调，而不是依赖于CSS转换事件。
+ReactCSSTransitionGroup踩在[ReactTransitionGroup](https://www.npmjs.com/package/react-addons-transition-group)这个巨人的肩上。 
+区别在于，ReactTransitionGroup动画是用Javascript而不是CSS编写的，另外，动画完成时有回调函数，而不是依赖于CSS转换事件。
 
 ### 从简单开始 ###
-先把动画放在一边。 我们从一个简单页面开始，这个页面只有一个div，这个div是显示在ShowBox标。
+文件： E:\n\learn\react\101\Ch04\proj2
+执行：
+   
+	cd E:\n\learn\react\101\Ch04\proj2
+	npm start
+
+原文：  
+先把动画放在一边。 从简单页面开始，这个页面只有一个div，显示在ShowBox标识。  
 ```javascript
 import React from 'react';
 import { render } from 'react-dom';
