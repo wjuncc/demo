@@ -98,9 +98,11 @@ function ppHOC(WrappedComponent) {
 
 注意 :
 
-	<WrappedComponent {...this.props}/>
-	// 等价于
-	React.createElement(WrappedComponent, this.props, null)
+```javascript
+<WrappedComponent {...this.props}/>
+// 等价于
+React.createElement(WrappedComponent, this.props, null)
+```
 
 这2种写法都会创建React元素，来描述React应该在一致性过程中render内容，想知道更多有关React元素与组件，参阅[Dan Abramov的这篇文章](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)，还有官方文档[一致性处理](https://reactjs.org/docs/reconciliation.html)。
 
@@ -122,6 +124,8 @@ function ppHOC(WrappedComponent) {
 The apps current logged in user will be available in the WrappedComponent via this.props.user
 当前登录用户的应用程序将通过this.props.user在WrappedComponent中可用
 
+```javascript
+```
 
 #### 通过Refs访问实例 ####
 
@@ -133,14 +137,15 @@ You can access this (the instance of the WrappedComponent) with a ref, but you w
 Example :  In the following example we explore how to access instance methods and the instance itself of the WrappedComponent via refs
 例子:在下面的例子中，我们探讨如何通过引用来访问WrappedComponent的实例方法和实例本身
 
+```javascript
+```
 
 When the WrappedComponent is rendered the ref callback will be executed, and then you will have a reference to the WrappedComponents instance.
 当WrappedComponent呈现时，ref回调将被执行，然后你将有一个对WrappedComponents实例的引用。
 This can be used for reading/adding instance props and to call instance methods.
 这可以用于读取/添加实例道具和调用实例方法。
 
-State abstraction
-国家抽象
+#### 抽象State（Abstracting State） ####
 
 You can abstract state by providing props and callbacks to the WrappedComponent, very similar to how smart components will deal with dumb components.
 您可以通过向WrappedComponent提供道具和回调来抽象状态，这与智能组件处理哑元的方式非常类似。
