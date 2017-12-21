@@ -363,76 +363,46 @@ Apr 22
 unlitechc  
 Feb 20  
 2月20日
-Your previous post help me build a pull to refresh  &  load-more list.
-你以前的帖子帮我，建立拉刷新和加载更多列表。
-Thanks.
+你以前的帖子帮我，拉刷新和加载更多列表（a pull to refresh  &  load-more list）。  
 谢谢。
 
-Ive read your post several times and try to make a simple decorator, but I find when I code
-我几次读你的帖子，并尝试做一个简单的装饰，但我发现当我编码
+我读了几遍，试着做一个简单的装饰器，但我发现当代码
 
-export function fadeInOut(Component){}
-导出函数fadeInOut（Component）{}
+export function fadeInOut(Component){} 
 
-and
-和
+and 
 
 Read more
 阅读更多
 
-1 response
-1回应
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
-常王
-Feb 21
-2月21日
+Chang Wang  
+Feb 21  
+2月21日  
 Hi, any luck trying to fork the pen in the example?
 嗨，试图在示例中分叉笔的运气？
 
-http : //codepen.io/cheapsteak/pen/aNmpaz
-http _... //codepen.io/cheapsteak/pen/aNmpaz
+http : //codepen.io/cheapsteak/pen/aNmpaz  
 
 
+tadeouy  
+Aug 18, 2016  
+2016年8月18日  
+感谢写了这篇文章，其内容非常清晰，让我深入了解GSAP在我的程序中的整合方式。
 
-Conversation with Chang Wang.
-与张望的对话。
-Go to the profile of tadeouy
-转到tadeouy的个人资料
-tadeouy
-tadeouy
-Aug 18, 2016
-2016年8月18日
-Thank you for this article, its very clear and gave me insight about the way of integrating GSAP in my react app.
-感谢您阅读这篇文章，其内容非常清晰，让我深入了解GSAP在我的应用程序中的整合方式。
-
-Now Im having a hard time to make TransitionGroup work with react-router with a few nested routes.
-现在我很难使TransitionGroup与反应路由器与几个嵌套的路线工作。
-Im getting the container route being re-rendered on each route change.
-我得到的容器路线重新呈现每个路线的变化。
-Do you know if its possible?
+现在当我尝试用react-router嵌套路由时，发现很难和TransitionGroup整合在一起。 
+每次路由变化的时候，都会重新渲染容器路由。   
 你知道它可能吗？
 
 Read more
 阅读更多
 
-1 response
-1回应
-Go to the profile of Chang Wang
-转到长王的档案
-Chang Wang
-常王
-Aug 19, 2016
-2016年8月19日
-Hi tadeouy, thank you for the kind words!
-嗨tadeouy，谢谢你的客气话！
+Chang Wang  
+Aug 19, 2016  
+2016年8月19日   
+嗨tadeouy，谢谢你的鼓励！    
+我仍在研究路由集成的文章（老实说我一直在拖延），但我想我可以帮你解决这个问题先：）
 
-Im still working on the the article on router integration (to be honest Ive been procrastinating a bit), but I think I can help you with that problem  : )
-我仍然在研究有关路由器集成的文章（老实说我一直在拖延一下），但我想我可以帮你解决这个问题_...）
-
-Make sure that the `key` youre using reflects the hierarchy of your app.
-确保你使用的``键反映了你的应用程序的层次结构。
+确保你使用的`key`反映了你的程序的层次结构。
 
 
 
