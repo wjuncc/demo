@@ -417,18 +417,13 @@ static displayName =`HOC（$ {getDisplayName（WrappedComponent）}）`
 The getDisplayName function is defined as follows :
 getDisplayName函数定义如下:
 
-function getDisplayName(WrappedComponent) {
-函数getDisplayName（WrappedComponent）{
-return WrappedComponent.displayName  |  |
-返回WrappedComponent.displayName | |
-WrappedComponent.name  |  |
-WrappedComponent.name | |
-Component
-零件
-}
-}
-You actually don't need to rewrite it yourself because recompose lib already provides this function.
-你实际上不需要自己重写它，因为重组库已经提供了这个功能。
+	function getDisplayName(WrappedComponent) {
+	  return WrappedComponent.displayName || 
+	         WrappedComponent.name || 
+	         ‘Component’
+	}
+
+实际上你不需要自己重写它，因为重组库已经提供了这个功能。
 
 
 ### 实例学习 ###
