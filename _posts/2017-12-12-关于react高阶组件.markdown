@@ -18,7 +18,8 @@ tags:
 
 #### 翻译类 ####
 
-这篇文章在Medium有1.3K的人点赞，仅中文翻译有3篇：
+这篇文章在Medium有1.3K的人点赞，仅中文翻译有3篇：  
+Jan 13, 2016
 
 * [React Higher Order Components in depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)
 * [深入理解 React 高阶组件](https://zhuanlan.zhihu.com/p/24776678)
