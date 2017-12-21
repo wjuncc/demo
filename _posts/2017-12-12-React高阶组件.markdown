@@ -11,10 +11,8 @@ tags:
 
 ## 概述 ##
 
-本文不适合React新手，新手请移步[Reacts Docs](https://reactjs.org/docs/hello-world.html)。
-
-几个React库都表明“套”很管用。本文讲“套”是什么。能做什么，有什么限制，以及用法。
-
+本文不适合React新手，[新手请移步](https://reactjs.org/docs/hello-world.html)。  
+几个React库都表明“套”很管用。本文讲“套”是什么。能做什么，有什么限制，以及用法。   
 附录，不是“套”，但又有点关系。   
 本文，提供全“套”，如果有遗漏，告知我，我改。   
 本文，假设你有ES6知识。  
@@ -407,9 +405,9 @@ React-Redux是React的官方Redux绑定。
 
 #### [Radium](http://formidable.com/open-source/radium/) ####
 
-Radium是样式库,内联样式CSS伪选择器。
+Radium是样式库,[内联样式](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)CSS伪选择器。
 内联样式有什么好处我不想多说，但是很多人这样做，Radium库更快的解决了问题。
-内联样式参阅Vjeux的演示文稿
+内联样式参阅[Vjeux](https://medium.com/@vjeux)的[演示](https://speakerdeck.com/vjeux/react-css-in-js)
 
 So, how does Radium enables inline CSS pseudo selectors like hover?
 那么，Radium如何使内联的CSS伪选择器像悬停？
