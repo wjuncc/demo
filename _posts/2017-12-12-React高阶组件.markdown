@@ -66,7 +66,7 @@ E（EnhancedComponent外组件）返回内组件。
 
 虽然性格不同，但志趣相投，都能操作内组件。
 
-### PP ###
+### PP 属性代理 ###
 示范代码：
 
 ```javascript
@@ -219,7 +219,7 @@ function ppHOC(WrappedComponent) {
 }
 ```
 
-### 反转继承（Inheritance Inversion） ###
+### II 反转继承 ###
 
 示范代码:
 
