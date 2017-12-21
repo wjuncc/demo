@@ -16,7 +16,7 @@ tags:
 
 * [Search and find – Medium](https://medium.com/search?q=higher-order-components) 
 
-#### 翻译 ####
+#### 翻译类 ####
 
 这篇文章在Medium有1.3K的人点赞，仅中文翻译有3篇：
 
@@ -26,8 +26,8 @@ tags:
 * [学习React的高阶组件](http://www.59m59s.com/blog/xue-xi-reactde-gao-jie-zu-jian/)
 
 
-第2篇，腾讯翻译有1篇：
-
+第2篇，腾讯翻译有1篇：  
+MARCH 28, 2017
 * [Reusable State with Higher Order Components](https://daveceddia.com/extract-state-with-higher-order-components/)
 * [React高阶组件（译） - 腾讯Web前端 IMWeb 团队社区 - blog - 团队博客](http://imweb.io/topic/5907038a2739bbed32f60dad)
 
