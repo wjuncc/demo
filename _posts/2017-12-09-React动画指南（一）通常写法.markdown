@@ -22,6 +22,16 @@ tags:
 * google了一圈没找到中文翻译，为了吃透，做翻译   
 * [在github搜索 TweenMax componentWillEnter findDOMNode](https://github.com/search?q=TweenMax+componentWillEnter+findDOMNode&type=Code&utf8=%E2%9C%93) ,能发现很多线索。  
  
+* [不乏味的react做的blog](http://www.benjanes.com/)[git](https://github.com/benjanes/benjanes.github.io/tree/fbc3de355a69ae98e51b3d94c13f58bb11aa95a1)
+* [一个快速建站的用到了缓动](https://github.com/acomito/personal-site)[Meteor ](https://themeteorchef.com/base/introduction)
+* [React-动画](http://pinggod.com/2016/React-动画/)
+
+	cd E:\n\learn\react\ReactUI\v0
+	npm install
+	npm start
+	
+	 C:\Users\Administrator\AppData\Roaming\npm-cache\_logs\2017-12-21T23_20_20_842Z-debug.log
+
 **本节重点**：
 
 * 正文部分的实例代码  
