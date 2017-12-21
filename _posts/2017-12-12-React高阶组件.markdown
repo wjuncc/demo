@@ -394,12 +394,9 @@ JSON.stringify 这个套路是[Ryan Florence](https://twitter.com/ryanflorence)�
 
 #### 命名 ####
 
-When wrapping a component with an HOC you lose the original WrappedComponents name which might impact you when developing and debugging.
-当用HOC包装一个组件时，你会失去原来的WrappedComponents名字，这在开发和调试的时候会影响到你。
+当用HOC包装组件时，你会失去原来的WrappedComponents名字，这在开发和调试的时候会影响到你。
 
-What people usually do is to customize the HOCs name by taking the WrappedComponents name and prepending something.
-人们通常会做的是通过采用WrappedComponents名称和预先考虑的东西来自定义HOC名称。
-The following is taken from React-Redux.
+通常是通过采用WrappedComponents名称和预先考虑的东西来自定义HOC名称。
 以下内容来自React-Redux。
 
 	HOC.displayName = `HOC(${getDisplayName(WrappedComponent)})`
