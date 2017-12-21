@@ -299,33 +299,55 @@ FTRE将在Reacts[一致化处理](https://reactjs.org/docs/reconciliation.html)�
 
 注意，render是指WrappedComponent.render方法
 
-You cannot edit or create props of the WrappedComponent instance, because a React Component cannot edit the props it receives, but you can change the props of the elements that are outputted from the render method.
 
-> 你不能编辑或创建WrappedComponent实例的道具，因为React Component不能编辑它收到的道具，但是你可以改变从渲染方法输出的元素的道具。
-Just as we studied before, II HOCs don't have a guaranty of having the full children tree resolved, which implies some limits to the Render Highjacking technique.
-就像我们以前学习过的那样，II HOCs没有解决完整子树的担保，这就意味着对Render Highjacking技术有一些限制。
-The rule of thumb is that with Render Highjacking you will be able to manipulate the elements tree that the WrappedComponent render method outputs no more no less.
-经验法则是，使用Render Highjacking，您将能够操纵WrappedComponent呈现方法输出的元素树不会更少。
-If that elements tree includes a Function Type React Component then you won't be able to manipulate that Components children.
-如果该元素树包含一个函数类型反应组件，那么您将无法操作该组件子项。 
-(They are deferred by Reacts reconciliation process until it actually renders to the screen.)
-（它们被反应和解过程推迟，直到它实际呈现在屏幕上。）
+> 你不能编辑或创建WrappedComponent实例的props，因为React Component不能编辑它收到的props，但是你可以改变从渲染方法输出的元素的道具。
 
-Example 1 :  Conditional rendering.
-示例1 :条件呈现。
-This HOC will render exactly what the WrappedComponent would render unless this.props.loggedIn is not true.
-这个HOC将完全呈现WrappedComponent将呈现的内容，除非this.props.loggedIn不正确。 
-(Assuming the HOC will receive the loggedIn prop)
-（假设HOC将收到登录的道具）
+就像前面讲的，II HOCs不保证解析完整子树，这就意味着对渲染劫持技术有一些限制。
+
+根据经验，使用渲染劫持，您将能够操纵WrappedComponent的render方法返回的元素树。
+如果该元素树包含一个函数类型React组件，那么您将无法操作该子组件。 
+（Reacts的一致化过程推迟了它实际渲染在屏幕上。）
+
+实例1 :条件渲染。
+这个HOC将完全渲染 WrappedComponent将渲染的内容，除非this.props.loggedIn不是true。 
+（假设HOC收到登录的prop）
+
+```javascript
+function iiHOC(WrappedComponent) {
+  return class Enhancer extends WrappedComponent {
+    render() {
+      if (this.props.loggedIn) {
+        return super.render()
+      } else {
+        return null
+      }
+    }
+  }
+}
+```
 
 
-Example 2 :  Modifying the React Elements tree outputted by render.
-示例2 :修改由render输出的React Elements树。
-
+实例2 :修改由render返回的React Elements树。
 
 In this example, if the rendered output of the WrappedComponent has an input as its top level element then we change the value to may the force be with you.
 在这个例子中，如果WrappedComponent的呈现的输出有一个输入作为它的顶层元素，那么我们改变这个值到可能的力量。
 
+```javascript
+function iiHOC(WrappedComponent) {
+  return class Enhancer extends WrappedComponent {
+    render() {
+      const elementsTree = super.render()
+      let newProps = {};
+      if (elementsTree && elementsTree.type === 'input') {
+        newProps = {value: 'may the force be with you'}
+      }
+      const props = Object.assign({}, elementsTree.props, newProps)
+      const newElementsTree = React.cloneElement(elementsTree, props, elementsTree.props.children)
+      return newElementsTree
+    }
+  }
+}
+```
 You can do all sorts of stuff in here, you can traverse the entire elements tree and change props of any element in the tree.
 你可以在这里做各种各样的东西，你可以遍历整个元素树并改变树中任何元素的道具。
 This is exactly how Radium does its business (More on Radium in Case Studies).
