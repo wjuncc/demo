@@ -11,9 +11,9 @@ tags:
 
 ## 概述 ##
 
-本文面向使用HOC模式的高级用户。
+本文读者是带“套”人。
 
-如果你是React新手，建议去读[Reacts Docs](https://reactjs.org/docs/hello-world.html)。
+React新手，去读[Reacts Docs](https://reactjs.org/docs/hello-world.html)。
 
 高阶组件这个模式很精彩，好几个React库都证明其价值。
 
