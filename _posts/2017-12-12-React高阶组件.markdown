@@ -155,7 +155,7 @@ function refsHOC(WrappedComponent) {
 }
 ```
 当内组件渲染时，会执行ref回调，就有了内组件实例的引用。
-可以读取/添加实例props，和调用实例方法。
+可以读/增实例props，和调用实例方法。
 
 #### 提取状态（Abstracting State） ####
 
