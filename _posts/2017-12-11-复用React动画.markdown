@@ -409,7 +409,3 @@ Aug 19, 2016
 
 
 #### 参考 ####
-
-* [React高阶组件（译） - 腾讯Web前端 IMWeb 团队社区 - blog - 团队博客](http://imweb.io/topic/5907038a2739bbed32f60dad)
-* [React文档阅读--ps,DOM,js,HTML,组件,我们,props,使用,可以](http://www.bijishequ.com/detail/262287?p=70)
-* [React - 高阶组件（Higher-Order Components） · Issue #52 · tcatche/tcatche.github.io · GitHub](https://github.com/tcatche/tcatche.github.io/issues/52)
