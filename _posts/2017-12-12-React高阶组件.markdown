@@ -574,94 +574,31 @@ Parent Components can be used freely in an Elements tree, they are not restricte
 Generally, if you can do it with Parent Components you should because its much less hacky than HOCs, but as the list above states they are less flexible than HOCs.
 一般来说，如果你可以用Parent Components做到这一点，那么你应该这样做，因为它比HOC少得多，但是正如上面的列表所述，它们比HOC更不灵活。
 
-#### 小结 ####
-I hope that after reading this post you know a little more about React HOCs.
-我希望在阅读这篇文章之后，您对React HOC有更多的了解。
-They are highly expressive and have proven to be pretty good in different libraries.
-他们具有很强的表达能力，在不同的图书馆里被证明是相当不错的。
+#### 结束语 ####
+我希望在阅读这篇文章之后，你对React HOC有更多的了解。
+他表现强劲，在不同库里被证明是相当不错的。
 
-React has brought a lot of innovation and people running projects like Radium, React-Redux, React-Router, among others, are pretty good proofs of that.
-React带来了很多创新，而运行Radium，React-Redux，React-Router等项目的人也是很好的证明。
+React带来了很多创新，像Radium，React-Redux，React-Router等项目就是很好的证明。
 
-If want to contact me please follow me on twitter @franleplant.
-如果想要联系我，请在twitter @franleplant上关注我。
+想要联系我，请关注我twitter@franleplant。
 
-Go to this repo to play with code Ive played with in order to experiment some of the patterns explained in this post.
-去这个回购玩代码Ive玩，以试验一些在这篇文章中解释的模式。
+这个[仓库](https://github.com/franleplant/react-hoc-examples)写了一些代码，试验了一些在文章中出现的模式。
 
-### 积分 ###
-Credits go mostly to React-Redux, Radium, this gist by Sebastian Markb?ge and my own experimentation.
-积分主要是React-Redux，Radium，Sebastian Markb？ge的这个要点和我自己的实验。
-
-ReactJavaScriptHigh Order Component
-ReactJavaScriptHigh订单组件
-One clap, two clap, three clap, forty?
-一个拍手，两个拍手，三个拍手，四十个？
-By clapping more or less, you can signal to us which stories really stand out.
-通过或多或少的鼓掌，您可以向我们表明哪些故事真正脱颖而出。
+### 感谢 ###
+感谢React-Redux，Radium，[Sebastian Markb](https://twitter.com/sebmarkbage)的[仓库](https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775)和我自己的实验。
 
 
-3.3K
-3.3K
-37
-37
-Follow
-跟随
-Go to the profile of franleplant
-转到franleplant的个人资料
-franleplant
-franleplant
-Engineer (with an actual Degree), JavaScript Addict and Rust rookie.
-工程师（具有实际学位），JavaScript成瘾者和铁锈新秀。
+这篇文章关注人数：3.3K
+37个留言
 
-Also tagged JavaScript
-也标记了JavaScript
-Whats really wrong with node_modules and why this is your fault
-node_modules有什么问题，为什么这是你的错
-Go to the profile of Mateusz Morszczyzna
-转到Mateusz Morszczyzna的个人资料
-Mateusz Morszczyzna
-Mateusz Morszczyzna
 
-2.9K
-2.9K
+## 留言板 ##
 
-Also tagged React
-还标记了React
-Introducing Turbo :  5x faster than Yarn  &  NPM, and runs natively in-browser ??
-引入涡轮_... 5倍比纱_和NPM快，本机运行在浏览器??
-Go to the profile of Eric Simons
-转到Eric Simons的个人资料
-Eric Simons
-埃里克西蒙斯
-
-16.5K
-16.5K
-
-Also tagged React
-还标记了React
-Frontend in 2017 :  The important parts
-2017年前端_...重要部分
-Go to the profile of Kaelan Cooter
-转到Kaelan Cooter的个人资料
-Kaelan Cooter
-凯兰·库特
-
-828
-828
-
-Responses
-回应
-Write a response
-写一个答复
-Applause from franleplant (author)
-掌声（作者）
-Go to the profile of Justin Reynard
-转到Justin Reynard的个人资料
-Justin Reynard
-贾斯汀雷纳德
-Sep 22, 2016
-2016年9月22日
+-------------------------------------------    
+Justin Reynard  
+贾斯汀雷纳德  
+Sep 22, 2016  
+2016年9月22日  
 Render Hijacking
 呈现劫持
 This is the power of the redux/react/react-native paradigm!
