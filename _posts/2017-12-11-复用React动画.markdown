@@ -182,8 +182,7 @@ const Circle = fadesUp(class extends React.Component {
 ```
 
 
-最终[在线demo](https://codepen.io/cheapsteak/pen/RaGKOZ?editors=0010):
-可以更进一步调试。
+[在线demo，在线调试](https://codepen.io/cheapsteak/pen/RaGKOZ?editors=0010)。
 
 
 接下来的部分将集成反应路由器和协调嵌套动画。
