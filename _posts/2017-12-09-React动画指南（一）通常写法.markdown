@@ -61,6 +61,31 @@ ReactCSS过渡组踩在[React过渡组](https://www.npmjs.com/package/react-addo
 	npm start
 
 代码：  
+index.html  
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            background-color: brown;
+        } 
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+```
+
 index.js
 
 ```javascript
@@ -99,30 +124,7 @@ class Page extends React.Component {
 
 render(<Page/>, document.querySelector('#container'));
 ```
-index.html  
 
-```html
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        .box{
-            width:200px;
-            height:200px;
-            background-color: brown;
-        } 
-    </style>
-</head>
-<body>
-    <div id="container"></div>
-</body>
-</html>
-```
 
 **原文：**  
 先把动画放在一边。 从简单页面开始，这个页面只有一个div，显示在ShowBox标识。  
