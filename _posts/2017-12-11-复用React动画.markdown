@@ -19,7 +19,7 @@ Mar 14, 2016
 
 ## **小结**  ##
 
-* 在线Demo的代码，和教程的代码，不一样。
+* [在线Demo](https://codepen.io/cheapsteak/pen/RaGKOZ?editors=0010)的代码，和教程的代码，不一样。
 * 教程用了es7的写法，而现在普遍是es6
 * 在github搜索了一下，发现HOC+TweenMax的少之又少，看来实战中，不这么用。  
 在github搜索 TweenMax componentWillEnter findDOMNode ,  
