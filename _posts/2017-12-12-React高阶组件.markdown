@@ -349,8 +349,7 @@ function iiHOC(WrappedComponent) {
 
 可以在这里做各种各样的事，你可以遍历整个元素树并改变树中任何元素的props。
 
-This is exactly how Radium does its business (More on Radium in Case Studies).
-镭正是如此做它的事务（更多在镭在案件研究）。
+这正是[Radium](http://stack.formidable.com/radium/) 的做法（后面的案件讲了Radium）。
 
 NOTE :  You cannot Render Highjack with Props Proxy.
 注意:你不能用Props Proxy来渲染Highjack。
