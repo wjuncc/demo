@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "复用React动画（译）"
-date:   2017-12-11 03:45:26 +0800
+title:  "React动画指南（二）复用"
+date:   2017-12-12 03:45:26 +0800
 categories:  
 tags: 
     - react
