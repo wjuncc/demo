@@ -402,19 +402,13 @@ What people usually do is to customize the HOCs name by taking the WrappedCompon
 The following is taken from React-Redux.
 以下内容来自React-Redux。
 
-HOC.displayName = `HOC(${getDisplayName(WrappedComponent)})`
-HOC.displayName =`HOC（$ {getDisplayName（WrappedComponent）}）`
-//or
-//要么
-class HOC extends ... {
-HOC类扩展... {
-static displayName = `HOC(${getDisplayName(WrappedComponent)})`
-static displayName =`HOC（$ {getDisplayName（WrappedComponent）}）`
-...
-...
-}
-}
-The getDisplayName function is defined as follows :
+	HOC.displayName = `HOC(${getDisplayName(WrappedComponent)})`
+	//or
+	class HOC extends ... {
+	  static displayName = `HOC(${getDisplayName(WrappedComponent)})`
+	  ...
+	}
+
 getDisplayName函数定义如下:
 
 	function getDisplayName(WrappedComponent) {
@@ -423,7 +417,7 @@ getDisplayName函数定义如下:
 	         ‘Component’
 	}
 
-实际上你不需要自己重写它，因为重组库已经提供了这个功能。
+实际上你不需要自己重写，因为重组库提供了这个功能。
 
 
 ### 实例学习 ###
