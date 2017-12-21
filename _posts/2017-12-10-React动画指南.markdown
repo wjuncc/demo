@@ -171,6 +171,8 @@ render(<Page/>, document.querySelector('#container'));
 
 ### 第二步，添加React过渡组，在正方形切换时，实现淡入淡出的动画 ###
 **笔记：**  
+第二步的运行结果：  
+![3](https://i.imgur.com/QJj8ZPZ.gif)  
 操作：
 
 	npm install react-addons-transition-group -save-dev
@@ -181,85 +183,6 @@ index.js只改2个地方，其它都不动。
 1. 加了一段引用`import TransitionGroup from 'react-addons-transition-group';`
 2. 在`{ this.state.shouldShowBox && <div className="box"/>}`的外面套了`<TransitionGroup>`节点    
 
-```javascript
-import React from 'react';
-import { render } from 'react-dom';
-import TransitionGroup from 'react-addons-transition-group';
-
-class Page extends React.Component {
-    constructor() {
-        super();
-        this.toggleBox = this.toggleBox.bind(this);
-		this.state = {
-			shouldShowBox: true
-		};
-    };
-
-    toggleBox(){
-        this.setState({
-            shouldShowBox: !this.state.shouldShowBox
-        });
-    };
-
-    render () {
-        return <div className="page">
-            <TransitionGroup>
-                { this.state.shouldShowBox && <div className="box"/>}
-            </TransitionGroup> 
-
-			<button
-				className="toggle-btn"
-				onClick={this.toggleBox}
-			>
-				toggle
-			</button>
-		</div>;
-    }
-}
-
-render(<Page/>, document.querySelector('#container'));
-```
-
-
-
-
-**原文：**  
-安装[react-addons-transition-group](https://www.npmjs.com/package/react-addons-transition-group)
-	
-
-	npm install react-addons-transition-group
-
-然后import到文件:
-
-	import TransitionGroup from 'react-addons-transition-group';
-
-现在，将TransitionGroup添加到“Page”组件的render()中，即:
-```
-// ...
-  render () {
-    return <div className="page">
-
-      <TransitionGroup>
-        { this.state.shouldShowBox && <div className="box"/>}
-      </TransitionGroup>
-
-      <button
-        className="toggle-btn"
-        onClick={this.toggleBox}
-      >
-        toggle
-      </button>
-    </div>;
-  }
-// ...
-```
-
-
-### Step3 ###
-
-**笔记：**  
-第二步的运行结果：  
-![3](https://i.imgur.com/QJj8ZPZ.gif)
 
 代码：  
 index.html
@@ -343,6 +266,42 @@ class Page extends React.Component {
 
 render(<Page/>, document.querySelector('#container'));
 ```
+
+
+
+
+
+**原文：**  
+安装[react-addons-transition-group](https://www.npmjs.com/package/react-addons-transition-group)
+	
+
+	npm install react-addons-transition-group
+
+然后import到文件:
+
+	import TransitionGroup from 'react-addons-transition-group';
+
+现在，将TransitionGroup添加到“Page”组件的render()中，即:
+```
+// ...
+  render () {
+    return <div className="page">
+
+      <TransitionGroup>
+        { this.state.shouldShowBox && <div className="box"/>}
+      </TransitionGroup>
+
+      <button
+        className="toggle-btn"
+        onClick={this.toggleBox}
+      >
+        toggle
+      </button>
+    </div>;
+  }
+// ...
+```
+
 
 
 **原文：**    
