@@ -56,9 +56,9 @@ E（EnhancedComponent外组件）返回内组件。
 
 * 操作Props  （Props manipulation）
 
-先讲HOC的实现方式，它决定HOC有哪些用法，又有哪些限制。
+套的实现方式，决定了套有哪些用法，又有哪些限制。
 
-### HOC工厂方法的实现 ###
+### 套工厂的实现 ###
 
 实现方式有两种： Props Proxy（PP）和Inheritance Inversion（II）。
 
