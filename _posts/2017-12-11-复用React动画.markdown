@@ -29,6 +29,132 @@ Mar 14, 2016
 
 
 ### 提取动画 ###
+**笔记：**  
+运行结果：  
+![3](https://i.imgur.com/tuKRKyu.gif) 
+
+文件： E:\n\learn\react\101\Ch04\proj3  
+
+index.html
+
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="src/TweenMax.js"></script>
+    <style>
+        .box{
+            width:200px;
+            height:200px;
+            background-color: brown;
+        }
+        .circle { 
+            width:200px;
+            height:200px;
+            background-color: darkorange;
+            border-radius: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+```
+
+
+index.js
+```javascript
+import React from 'react';
+import {findDOMNode} from 'react-dom';
+import { render } from 'react-dom';
+import TransitionGroup from 'react-addons-transition-group';
+
+
+function makeFadesUp(Component, options = { duration: 0.3 }) {
+  return class FadesUp extends React.Component {
+    componentWillEnter (callback) {
+        const el = findDOMNode(this);
+        TweenMax.fromTo(el, options.duration, {y: 100, opacity: 0}, {y: 0, opacity: 1, onComplete: callback});
+    }
+    componentWillLeave (callback) {
+        const el = findDOMNode(this);
+        TweenMax.fromTo(el, options.duration, {y: 0, opacity: 1}, {y: -100, opacity: 0, onComplete: callback});
+    }
+    render () {
+        return <Component ref="child" {...this.props} />;
+    }
+  }
+}
+
+function fadesUp (Component) {
+  return typeof arguments[0] === "function"
+    ? makeFadesUp(arguments[0])
+    : Component => makeFadesUp(Component, arguments[0]);
+}
+
+const Box = fadesUp({duration: 0.8})(
+    class extends React.Component {
+    render () {
+        return <div className="box"/>;
+    }
+});
+
+const Circle = fadesUp(
+    class extends React.Component {
+    render () {
+        return <div className="circle"/>;
+    }
+});
+
+class Page extends React.Component {
+    constructor() {
+        super();
+        this.toggleBox = this.toggleBox.bind(this);
+		this.state = {
+			shouldShowBox: true,
+            shouldShowCircle: false
+		};
+    };
+
+    toggleBox(){
+        this.setState({
+            shouldShowBox: !this.state.shouldShowBox,
+            shouldShowCircle: !this.state.shouldShowCircle
+        });
+    };
+
+    render () {
+        return <div className="page">
+            <TransitionGroup>
+                { this.state.shouldShowBox && <Box/>}
+                { this.state.shouldShowCircle && <Circle/>}
+            </TransitionGroup>
+
+			<button
+				className="toggle-btn"
+				onClick={this.toggleBox}
+			>
+				toggle
+			</button>
+		</div>;
+    }
+}
+
+render(<Page/>, document.querySelector('#container'));
+```
+
+
+
+
+
+**原文：**  
+
 接着上一讲的Box组件实例继续。
 
 ```javascript
