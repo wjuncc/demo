@@ -11,7 +11,7 @@ tags:
 
 ## 概述 ##
 **笔记:**  
-（本自然段是废话）  
+（本段是废话）  
 **翻译:**  
 本文不适合React新手，[新手请移步](https://reactjs.org/docs/hello-world.html)。  
 几个React库都表明“套”很管用。本文讲“套”是什么。能做什么，有什么限制，以及用法。   
@@ -27,7 +27,7 @@ tags:
 ## 套是啥 ##
 
 **笔记:**  
-（本自然段是废话）    
+（本段是废话）    
 **翻译:**  
 就是组件套组件。俄罗斯套娃。
 是react社区搞的，形式是工厂函数，用haskell语言写的伪代码：
@@ -71,12 +71,12 @@ E（EnhancedComponent外组件）返回内组件。
 
 ### PP 属性代理 ###
 **笔记:**  
-（本段是实例）
-
+（本段是实例）  
+路径：  E:\n\learn\react\101\Ch04\proj3
 
     
 **翻译:**  
-示范代码：
+示范代码：   
 
 ```javascript
 function ppHOC(WrappedComponent) {
