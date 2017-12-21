@@ -17,15 +17,14 @@ Mar 14, 2016
 《使用HOC重用RTG动画》，太晦涩。  
 《复用React动画》。
 
-****
-在github搜索 TweenMax componentWillEnter findDOMNode ,  
-能得到很多线索。
 
-**小结** 
+## **小结**  ##
 
 * 在线Demo的代码，和教程的代码，不一样。
 * 教程用了es7的写法，而现在普遍是es6
 * 在github搜索了一下，发现HOC+TweenMax的少之又少，看来实战中，不这么用。  
+在github搜索 TweenMax componentWillEnter findDOMNode ,  
+能得到很多线索。  
 * 高阶组件，HOC，套，是一个东西，很重要。  
 HOC有2种写法，`PP`和`II`。本教程用的是`PP`，也就是属性代理。   
 但是，本教程的PP，和[`高阶教程`](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)的PP，写法完全不同。  
@@ -34,19 +33,7 @@ HOC有2种写法，`PP`和`II`。本教程用的是`PP`，也就是属性代理�
 而且，退一步讲，**即便是把内组件的引用顺利的传给生死钩，传过来的引用也是虚拟DOM，不是原始DOM。** 这有什么用？ 而TweenMax要求操作的是原始DOM。    
 所以，下面的写法，还是用本篇叫教程的写法来做的。 
 
-**前情回顾**  
-上一讲，以一个正方形为例，讲了动画的写法。
-
-上一讲讲过，为了让过渡组内的组件更灵活——不同阶段运行不同动画，不在过渡组定义动画，而是在过渡组的子组件定义动画，具体是指：添加生死钩-进入（enter），删除生死钩-离开（leave）。
-
-
-但是，有的时候，多个组件要使用相同动画，又不希望下作的复制代码。   
-可以通过使用高阶组件（Higher-order Components ——HOC）来实现。 
-（如果不熟悉HOC，看[这里](http://efe.baidu.com/blog/mixins-are-dead-long-live-the-composition/)，[英语原文](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750)）
-
-
-### 提取动画 ###
-**笔记：**  
+##**笔记：**##
 运行结果：  
 ![3](https://i.imgur.com/tuKRKyu.gif) 
 
@@ -167,7 +154,20 @@ render(<Page/>, document.querySelector('#container'));
 ```
  
 
-**原文：**  
+
+## 原文 ##
+**前情回顾**  
+上一讲，以一个正方形为例，讲了动画的写法。
+
+上一讲讲过，为了让过渡组内的组件更灵活——不同阶段运行不同动画，不在过渡组定义动画，而是在过渡组的子组件定义动画，具体是指：添加生死钩-进入（enter），删除生死钩-离开（leave）。
+
+
+但是，有的时候，多个组件要使用相同动画，又不希望下作的复制代码。   
+可以通过使用高阶组件（Higher-order Components ——HOC）来实现。 
+（如果不熟悉HOC，看[这里](http://efe.baidu.com/blog/mixins-are-dead-long-live-the-composition/)，[英语原文](https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750)）
+
+
+### 提取动画 ###
 
 接着上一讲的Box组件实例继续。
 
