@@ -20,7 +20,7 @@ tags:
 
 这篇文章在Medium有1.3K的人点赞，仅中文翻译有3篇：
 
-* [React Higher Order Components in depth](https://link.zhihu.com/?target=https%3A//medium.com/%40franleplant/react-higher-order-components-in-depth-cf9032ee6c3e%23.g1lnzrw5d)
+* [React Higher Order Components in depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)
 * [深入理解 React 高阶组件](https://zhuanlan.zhihu.com/p/24776678)
 * [深入理解 React 高阶组件 - 简书](http://www.jianshu.com/p/0aae7d4d9bc1)
 * [学习React的高阶组件](http://www.59m59s.com/blog/xue-xi-reactde-gao-jie-zu-jian/)
