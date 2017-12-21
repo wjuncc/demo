@@ -64,7 +64,7 @@ E（EnhancedComponent外组件）返回内组件。
 * Props Proxy（PP）
 * Inheritance Inversion（II）。
 
-虽然实现方式不同，但都能操作内组件。
+虽然性格不同，但志趣相投，都能操作内组件。
 
 ### PP ###
 示范代码：
