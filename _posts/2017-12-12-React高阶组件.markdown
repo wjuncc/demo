@@ -35,7 +35,7 @@ tags:
 2017年1月更新  
 已经翻译成韩语了！   
 [https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4](https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4)    
-下面是中文！ [https://zhuanlan.zhihu.com/p/24776678](https://zhuanlan.zhihu.com/p/24776678)   
+中文在这里！ [https://zhuanlan.zhihu.com/p/24776678](https://zhuanlan.zhihu.com/p/24776678)   
 非常感谢译者！
 
 ### 什么是高阶组件？ ###
@@ -439,8 +439,8 @@ React-Redux是React的官方Redux绑定。
 这是通过Props代理实现来实现的。
 
 
-如果您曾经使用过纯的Flux，那么您知道，任何连接到一个或多个store的React组件需要大量的 bootstrapping 来添加和删除stores 监听器并选择他们需要的state部分。
-所以React-Redux的实现是非常好的，因为它抽象了所有这些bootstrap。
+如果你用过纯的Flux，那么会知道，任何连接到一个或多个store的React组件需要大量的 bootstrapping 来添加和删除stores 监听器，并选择他们需要的state部分。
+所以React-Redux的实现是非常好的，因为它抽象了这些。
 基本上，你不需要自己写了！
 
 #### [Radium](http://formidable.com/open-source/radium/) ####
@@ -533,8 +533,7 @@ render((
  ), mountNode)
 ```
 
-Now we will review what Parent Components can and cannot do in contrast of HOCs plus some important details :
-现在我们将回顾一下家长组件可以做什么和不可以做什么与HOCs相比，还有一些重要的细节_...
+现在我们将回顾一下家长组件可以做什么和不可以做什么与HOCs相比，还有一些重要的细节：
 
 Render Highjacking (as seen in Inheritance Inversion)
 渲染劫持（如在继承反演中所见）
