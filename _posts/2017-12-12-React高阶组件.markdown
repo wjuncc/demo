@@ -357,30 +357,43 @@ While it is possible to access the render method via WrappedComponent.prototype.
 In my experiments it isnt worth it and if you want to do Render Highjacking you should be using Inheritance Inversion instead of Props Proxy.
 在我的实验中，这是不值得的，如果你想做渲染劫持，你应该使用继承反转，而不是Props代理。
 Remember that React handles component instances internally and your only way of dealing with instances is via this or by refs.
-请记住，React在内部处理组件实例，处理实例的唯一方法是通过这个或通过参考。
-Manipulating state
-操纵状态
-
-The HOC can read, edit and delete state of the WrappedComponent instance, and you can also add more state if you need to.
-HOC可以读取，编辑和删除WrappedComponent实例的状态，如果需要的话也可以添加更多的状态。
-Remember that you are messing with the state of the WrappedComponent which can lead to you breaking things.
-请记住，你正在搞乱WrappedComponent的状态，这会导致你破坏事物。
-Mostly the HOC should be limited to read or add state, and the latter should be namespaced not to mess with the WrappedComponents state.
-大多数情况下，HOC应该被限制为读取或者添加状态，后者应该被命名为不会与WrappedComponents状态混淆。
-
-Example :  Debugging by accessing WrappedComponents props and state
-示例:通过访问WrappedComponents道具和状态进行调试
+请记住，React在内部处理组件实例，处理实例的唯一方法是通过这个或通过参考 
 
 
-This HOC wrapps the WrappedComponent with other elements, and also displays the WrappedComponents instance props and state.
-这个HOC用其他元素包装WrappedComponent，并显示WrappedComponents实例的道具和状态。 
-The JSON.stringify trick was taught to me by Ryan Florence and Michael Jackson.
-JSON.stringify把戏是由Ryan Florence和Michael Jackson教给我的。
-You can see a full working implementation of the debugger here.
-您可以在这里看到调试器的完整工作实现。
+#### 操纵 state ####
 
-Naming
-命名
+HOC可以读取，编辑和删除WrappedComponent实例的state，如果需要的话也可以添加更多的state。
+
+请记住，这会搞乱WrappedComponent的 state，这会导致破坏。
+
+大多数情况下，应该限制HOC读取或添加state，添加state时，应该放在命名空间，避免与WrappedComponents的state混淆。
+
+示例:通过访问WrappedComponents的props and state进行调试
+
+```javascript
+export function IIHOCDEBUGGER(WrappedComponent) {
+  return class II extends WrappedComponent {
+    render() {
+      return (
+        <div>
+          <h2>HOC Debugger Component</h2>
+          <p>Props</p> <pre>{JSON.stringify(this.props, null, 2)}</pre>
+          <p>State</p><pre>{JSON.stringify(this.state, null, 2)}</pre>
+          {super.render()}
+        </div>
+      )
+    }
+  }
+}
+```
+
+这个HOC用其他元素包装WrappedComponent，并显示WrappedComponents实例的 props 和 state。 
+JSON.stringify 这个套路是[Ryan Florence](https://twitter.com/ryanflorence)和[Michael Jackson](https://twitter.com/mjackson)教我的。
+
+在[这里](https://github.com/franleplant/react-hoc-examples/blob/master/ii_debug.js)看到调试器的完整实现。
+
+#### 命名 ####
+
 When wrapping a component with an HOC you lose the original WrappedComponents name which might impact you when developing and debugging.
 当用HOC包装一个组件时，你会失去原来的WrappedComponents名字，这在开发和调试的时候会影响到你。
 
@@ -417,12 +430,10 @@ Component
 You actually don't need to rewrite it yourself because recompose lib already provides this function.
 你实际上不需要自己重写它，因为重组库已经提供了这个功能。
 
-Case Studies
-实例探究
-React-Redux
-反应 - 终极版
 
-React-Redux is the official Redux bindings for React.
+### 实例学习 ###
+#### [React-Redux](https://github.com/reactjs/react-redux) ####
+
 React-Redux是React的官方Redux绑定。
 One of the functions it provides is connect which handles all the bootstrap necessary for listening to the store and cleaning up afterwards.
 它提供的功能之一是连接，它处理所有的聆听商店和清理后所需的bootstrap。
@@ -436,9 +447,7 @@ So React-Redux implementation is pretty good because it abstract all this bootst
 Basically, you dont need to write it yourself anymore!
 基本上，你不需要自己写了！
 
-Radium
-镭
-
+#### [Radium](http://formidable.com/open-source/radium/) ####
 Radium is a library that enhances the capability of inline styles by enabling CSS pseudo selectors inside inline-styles.
 Radium是一个通过在内联样式中启用CSS伪选择器来增强内联样式功能的库。
 Why inline styles are good for you is subject of another discussion, but a lot of people are starting to do it and libs like radium really step up the game.
@@ -464,8 +473,7 @@ Pretty impressive considering all the work it performs without the user even not
 This gives a glimpse of the power of HOC.
 这让我们看到了HOC的力量。
 
-Appendix A :  HOC and parameters
-附录A : HOC和参数
+### 附录A : HOC和参数 ###
 The following content is optional and you may skip it.
 以下内容是可选的，您可以跳过它。
 Sometimes is useful to use parameters on your HOCs.
@@ -490,8 +498,9 @@ HOCFactoryFactory（PARAMS）（WrappedComponent）
 @HOCFatoryFactory（PARAMS）
 class WrappedComponent extends React.Component{}
 class WrappedComponent extends React.Component {}
-Appendix B :  Difference with Parent Components
-附录B __与父组件的差异
+
+
+### 附录B 与父组件的差异 ###
 The following content is optional and you may skip it.
 以下内容是可选的，您可以跳过它。
 Parent Components are just React Components that have some children.
@@ -535,8 +544,7 @@ Parent Components can be used freely in an Elements tree, they are not restricte
 Generally, if you can do it with Parent Components you should because its much less hacky than HOCs, but as the list above states they are less flexible than HOCs.
 一般来说，如果你可以用Parent Components做到这一点，那么你应该这样做，因为它比HOC少得多，但是正如上面的列表所述，它们比HOC更不灵活。
 
-Closing Words
-闭幕词
+#### 闭幕词 ####
 I hope that after reading this post you know a little more about React HOCs.
 我希望在阅读这篇文章之后，您对React HOC有更多的了解。
 They are highly expressive and have proven to be pretty good in different libraries.
