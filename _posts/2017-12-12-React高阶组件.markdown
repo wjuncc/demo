@@ -400,13 +400,13 @@ JSON.stringify 这个套路是[Ryan Florence](https://twitter.com/ryanflorence)�
 以下代码来自React-Redux。
 
 	HOC.displayName = `HOC(${getDisplayName(WrappedComponent)})`
-	//or
+	//或者
 	class HOC extends ... {
 	  static displayName = `HOC(${getDisplayName(WrappedComponent)})`
 	  ...
 	}
 
-getDisplayName函数定义如下:
+getDisplayName函数定义:
 
 	function getDisplayName(WrappedComponent) {
 	  return WrappedComponent.displayName || 
@@ -414,7 +414,7 @@ getDisplayName函数定义如下:
 	         ‘Component’
 	}
 
-实际上你不需要自己重写，因为重组库提供了这个功能。
+实际上你不用自己写，[recompose](https://github.com/acdlite/recompose)提供了这个函数。
 
 
 ### 实例学习 ###
