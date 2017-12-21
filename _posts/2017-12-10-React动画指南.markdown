@@ -479,11 +479,10 @@ Joshua Ellis
 约书亚·埃利斯   
 9月1日   
 谢谢！ 
-让我的动画最终跑起来。
-这是[ReactTransitionGroup文档链接](https://github.com/reactjs/react-transition-group/tree/v1-stable),有谁会需要它
+让我的动画最终跑起来。  
+谁需要[React过渡组官方文档](https://github.com/reactjs/react-transition-group/tree/v1-stable)？
 
-Also note the import to get it working is :
-另外请注意，导入的写法是:
+另，注意，导入的写法是:
 
 	import TransitionGroup from react-transition-group/TransitionGroup;
 
