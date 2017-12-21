@@ -19,9 +19,9 @@ tags:
 
 本文详解HOC是什么，能做什么，有什么限制，以及用法。
 
-附录列举了我认为非HOC核心，但又需要了解的知识。
+附录非HOC核心，但又需要了解的知识。
 
-本文，尽数HOC之风流，如果你发现还有哪些内容没有讲到，请告知我，我来改。
+本文，尽数HOC之风流，如果有遗漏，告知我，我改。
 
 这篇文章假设你有ES6知识。
 
@@ -418,8 +418,7 @@ React-Redux是React的官方Redux绑定。
 
 Radium是样式库,内联样式CSS伪选择器。
 内联样式有什么好处我不想多说，但是很多人这样做，Radium库更快的解决了问题。
-If you want to know more about inline styles start by this presentation by Vjeux
-如果您想了解更多关于内联样式的信息，请参阅Vjeux的演示文稿
+内联样式参阅Vjeux的演示文稿
 
 So, how does Radium enables inline CSS pseudo selectors like hover?
 那么，Radium如何使内联的CSS伪选择器像悬停？
