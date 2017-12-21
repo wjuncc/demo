@@ -12,14 +12,15 @@ tags:
 Mar 14, 2016
 
 **关于标题**  
-原文名字太长了，《使用高阶组件重用ReactTransitionGroup动画》[Reusing ReactTransitionGroup animations with Higher-order Components](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)，好拗口。    
-然后改成，《使用HOC重用RTG动画》，太晦涩了。  
-再然后改成，《复用React动画》。天下太平。
+原名，[Reusing ReactTransitionGroup animations with Higher-order Components](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)  
+《使用高阶组件重用ReactTransitionGroup动画》，好拗口。    
+《使用HOC重用RTG动画》，太晦涩了。  
+《复用React动画》。
 
 **前情回顾**  
 上一讲，以一个正方形为例，讲解了在进入和离开TransitionGroup时，正方形会产生动画。
 
-复习一下，为了让TransitionGroup内的组件更灵活，使其在不同是的阶段运行不同的动画，我们不在TransitionGroup定义动画，而是在TransitionGroup的子组件，在添加或删除子组件时，去调用相应的进入（enter）或离开（leave）的钩子函数。
+复习一下，为了让过渡组内的组件更灵活，使其在不同是的阶段运行不同的动画，不在过渡组定义动画，而是在过渡组的子组件，在添加或删除子组件时，去调用相应的进入（enter）或离开（leave）的钩子函数。
 
 
 但是，有的时候，多个组件要使用相同动画，又不希望下作的复制代码。   
@@ -73,7 +74,7 @@ function fadesUp (Component) {
 
 想让组件运行动画？ 只要把组件传递给`fadesUp`，就行了。 
 
-下面是正方形的样子。
+下面是正方形
 
 ```javascript
 const Box = fadesUp(class extends React.Component {

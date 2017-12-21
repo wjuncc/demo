@@ -72,8 +72,12 @@ E（EnhancedComponent外组件）返回内组件。
 ### PP 属性代理 ###
 **笔记:**  
 （本段是实例）  
-路径：  E:\n\learn\react\101\Ch04\proj3
+路径：  E:\n\learn\react\101\Ch04\proj3  
+软件： WebStorm   
+执行：  
 
+	cd E:\n\learn\react\101\Ch04\proj3
+	npm start  
     
 **翻译:**  
 示范代码：   
@@ -90,7 +94,6 @@ function ppHOC(WrappedComponent) {
 注意render方法，**返回** 传递进来的内组件。
 返回的内容中，加上了外组件的props，所以叫**PP**。
 
-注意 :
 
 ```javascript
 <WrappedComponent {...this.props}/>
