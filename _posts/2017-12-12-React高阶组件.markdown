@@ -11,21 +11,15 @@ tags:
 
 ## 概述 ##
 
-本文读者是带“套”人。
+React新手读[Reacts Docs](https://reactjs.org/docs/hello-world.html)。
 
-React新手，去读[Reacts Docs](https://reactjs.org/docs/hello-world.html)。
+几个React库都证明“套”很管用。本文讲组件“套”是什么。能做什么，有什么限制，以及用法。
 
-高阶组件这个模式很精彩，好几个React库都证明其价值。
+附录介绍非HOC核心，但又需要了解的知识。   
+本文，尽数HOC之风流，如果有遗漏，告知我，我改。   
+本文，假设你有ES6知识。  
 
-本文详解HOC是什么，能做什么，有什么限制，以及用法。
-
-附录非HOC核心，但又需要了解的知识。
-
-本文，尽数HOC之风流，如果有遗漏，告知我，我改。
-
-这篇文章假设你有ES6知识。
-
-让我们起航！
+**大吉大利请吃鸡！**
 
 2016年8月更新   
 [日文版](http://postd.cc/react-higher-order-components-in-depth/)   
