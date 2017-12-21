@@ -39,7 +39,7 @@ Haskell（发音为/ˈhæskəl/）是一种标准化的，通用的纯函數程�
 W（WrappedComponent内组件）指被套组件，  
 E（EnhancedComponent外组件）返回内组件。
 
-“套”，有两种形式:
+“套”，有两种:
 
 * Props Proxy（Props 代理） : 
 外组件套内组件，外组件操作内组件的Props，  
