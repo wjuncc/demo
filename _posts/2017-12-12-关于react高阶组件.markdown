@@ -4,25 +4,51 @@ title:  "关于react高阶组件"
 date:   2017-12-12 05:39:17 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
-# 关于react高阶组件 #
+## react的高阶组件的资料汇总 ##
 
+
+在Medium博客论坛搜索的：  
+
+* [Search and find – Medium](https://medium.com/search?q=higher-order-components) 
+
+翻译自Medium博客的：
+
+这篇文章在Medium有1.3K的人点赞，仅中文翻译有3篇：
+
+* [React Higher Order Components in depth](https://link.zhihu.com/?target=https%3A//medium.com/%40franleplant/react-higher-order-components-in-depth-cf9032ee6c3e%23.g1lnzrw5d)
+* [深入理解 React 高阶组件](https://zhuanlan.zhihu.com/p/24776678)
+* [深入理解 React 高阶组件 - 简书](http://www.jianshu.com/p/0aae7d4d9bc1)
+* [学习React的高阶组件](http://www.59m59s.com/blog/xue-xi-reactde-gao-jie-zu-jian/)
+***
+
+* [Reusable State with Higher Order Components](https://daveceddia.com/extract-state-with-higher-order-components/)
+* [React高阶组件（译） - 腾讯Web前端 IMWeb 团队社区 - blog - 团队博客](http://imweb.io/topic/5907038a2739bbed32f60dad)
+
+
+
+官方文档：
+
+* [高阶组件 - React](https://discountry.github.io/react/docs/higher-order-components.html)
+* [高阶组件 - React 中文文档](http://www.css88.com/react/docs/higher-order-components.html)
+
+其他:
+
+* [React 高阶组件浅析 - HYPERS 前端团队博客](http://blog.hypers.io/2017/08/24/react-hoc-simple-analysis/)
+* [React 高阶组件(HOC)入门指南 · Issue #4 · MrErHu/blog · GitHub](https://github.com/MrErHu/blog/issues/4)
+
+收费的：
+
+
+* [高阶组件（Higher-Order Components） - React.js 小书](http://huziketang.com/books/react/lesson28)
 
 #### 参考 ####
 
-
-* [Search and find – Medium](https://medium.com/search?q=higher-order-components) 
-* [深入理解 React 高阶组件](https://zhuanlan.zhihu.com/p/24776678)
-* [高阶组件 - React](https://discountry.github.io/react/docs/higher-order-components.html)
-* [React 高阶组件(HOC)入门指南 · Issue #4 · MrErHu/blog · GitHub](https://github.com/MrErHu/blog/issues/4)
-* [React 高阶组件浅析 - HYPERS 前端团队博客](http://blog.hypers.io/2017/08/24/react-hoc-simple-analysis/)
-* [深入理解 React 高阶组件 - 简书](http://www.jianshu.com/p/0aae7d4d9bc1)
-* [高阶组件（Higher-Order Components） - React.js 小书](http://huziketang.com/books/react/lesson28)
-* [React高阶组件（译） - 腾讯Web前端 IMWeb 团队社区 - blog - 团队博客](http://imweb.io/topic/5907038a2739bbed32f60dad)
 * [React进阶——使用高阶组件（Higher-order Components）优化你的代码 - kpaxqin - SegmentFault](https://segmentfault.com/a/1190000004598113)
-* [高阶组件 - React 中文文档](http://www.css88.com/react/docs/higher-order-components.html)
-* [学习React的高阶组件](http://www.59m59s.com/blog/xue-xi-reactde-gao-jie-zu-jian/)
 * [React高阶组件（译） - 腾讯Web前端 IMWeb 团队社区 - blog - 团队博客](http://imweb.io/topic/5907038a2739bbed32f60dad)
 * [React文档阅读--ps,DOM,js,HTML,组件,我们,props,使用,可以](http://www.bijishequ.com/detail/262287?p=70)
 * [React - 高阶组件（Higher-Order Components） · Issue #52 · tcatche/tcatche.github.io · GitHub](https://github.com/tcatche/tcatche.github.io/issues/52)

@@ -4,6 +4,9 @@ title:  "React高阶组件（译）"
 date:   2017-12-12 05:28:47 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
 原文 [React Higher Order Components in depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)
