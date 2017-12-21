@@ -417,8 +417,7 @@ React-Redux是React的官方Redux绑定。
 #### [Radium](http://formidable.com/open-source/radium/) ####
 
 Radium是样式库,内联样式CSS伪选择器。
-Why inline styles are good for you is subject of another discussion, but a lot of people are starting to do it and libs like radium really step up the game.
-为什么内联样式对你有好处是另一个讨论的主题，但是很多人开始这样做，像镭之类的库真的提高了游戏速度。
+内联样式有什么好处我不想多说，但是很多人这样做，Radium库更快的解决了问题。
 If you want to know more about inline styles start by this presentation by Vjeux
 如果您想了解更多关于内联样式的信息，请参阅Vjeux的演示文稿
 

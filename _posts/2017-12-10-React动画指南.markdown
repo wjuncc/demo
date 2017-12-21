@@ -492,7 +492,7 @@ Joshua Ellis
  
 Mar 16, 2016  
 2016年3月16日   
-ReactTransitionGroup不依赖于this.props.style，而是直接操纵DOM react-f1也是一样），因此动画的性能不会被虚拟dom放慢）
+React过渡组不依赖于this.props.style，而是直接操纵DOM react-f1也是一样），因此动画的性能不会被虚拟dom放慢）
 
 
 Jeremy Marc  
