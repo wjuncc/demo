@@ -155,7 +155,9 @@ render(<Page/>, document.querySelector('#container'));
 
 
 
-
+* 在线Demo的代码，和教程的代码，不一样。
+* 教程用了es7的写法，而现在普遍是es6
+* 在github搜索了一下，发现HOC+TweenMax的少之又少，看来实战中，不这么用。   
 
 **原文：**  
 
