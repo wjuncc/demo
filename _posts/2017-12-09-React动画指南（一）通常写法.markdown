@@ -19,14 +19,7 @@ tags:
 
 * 因为在react项目踩到地雷了，地雷就是“动画一直是react的弱项”。读资料，把坑填平。
 * 考虑到一定是用TweenMax，没有第2选择，google-> TweenMax React，找到[gsap官网论坛](https://greensock.com/forums/topic/13970-wrote-an-article-that-demos-how-to-use-gsap-with-react/)，顺藤摸瓜[Medium](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)，扫了一眼，感觉不错，讨论挺多的，不是冷门。
-* google了一圈没找到[中文翻译](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)，为了吃透，做翻译  
-      
-**关于排版**：  
-
-* 笔记放前面，翻译放后面。
-* 为了测试方便，给出绝对路径， 和完整代码es6版本（相比而言，英文原文是部分代码，而且是coffee还不能跑通）   
-* 没有直译，就我理解的本义说透，虚词介词语序删删删
-* 重点要理解的地方做了说明，不要理解的地方也做了说明
+* google了一圈没找到[中文翻译](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)，为了吃透，做翻译   
  
 **本节重点**：
 
