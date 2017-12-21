@@ -27,7 +27,8 @@ Mar 14, 2016
 * 教程用了es7的写法，而现在普遍是es6
 * 在github搜索了一下，发现HOC+TweenMax的少之又少，看来实战中，不这么用。  
 * 高阶组件，HOC，套，是一个东西，很重要。  
-HOC有2种写法，PP和II。  但是，本教程的PP，和[高阶教程](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)的PP，写法完全不同。  
+HOC有2种写法，PP和II。本教程用的是PP的写法。   
+但是，本教程的PP，和[高阶教程](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)的PP，写法完全不同。  
 主要卡在render函数，高阶教程中的函数传递可以传递子组件，但是，放在生死钩就不知道该怎么写了，而且，即便是把子组件传递给生死钩，也没有用。 那么子组件的引用是虚拟DOM，不是原始DOM，而TweenMax要求操作的是原始DOM。  
 所以，下面的写法，还是用本篇叫教程的写法来做的。 
 
