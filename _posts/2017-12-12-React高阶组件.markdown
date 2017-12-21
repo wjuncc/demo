@@ -59,26 +59,25 @@ E（指EnhancedComponent外组件）指外组件，返回内组件。
 下面细讲。
 
 ### HOC能做什么？ ###
-使用高阶HOC，可以:
 
 * 复用代码，抽象逻辑，抽象bootstrap
 
-* 劫持Render （Render Hijacking）
+* 渲染劫持 （Render Hijacking）
 
-* 抽象state 和控制state（State abstraction and manipulation）
+* 抽象state 和操作state（State abstraction and manipulation）
 
-* 控制Props  （Props manipulation）
+* 操作Props  （Props manipulation）
 
-先讲HOC的实现方式，因为实现方式，决定了使用HOC有哪些可能，又有哪些限制。
+先讲HOC的实现方式，它决定HOC有哪些用法，又有哪些限制。
 
-### HOC工厂实现 ###
+### HOC工厂方法的实现 ###
 
-这一节讲React实现HOC，有两种方式： Props Proxy（PP）和Inheritance Inversion（II）。
+实现方式有两种： Props Proxy（PP）和Inheritance Inversion（II）。
 
-虽然实现方式不同，但是都能操作WrappedComponent。
+虽然实现方式不同，但都能操作WrappedComponent。
 
-### Props 代理 ###
-Props代理（PP）是通过以下方式实现的：
+### PP ###
+示范代码：
 
 ```javascript
 function ppHOC(WrappedComponent) {
@@ -89,8 +88,8 @@ function ppHOC(WrappedComponent) {
   }
 }
 ```
-这里的重点，是HOC的render方法，**返回**的是WrappedComponent类型的React元素。
-返回的内容中，还加上了HOC接收到的props，所以说这种模式叫**Props Proxy**。
+注意render方法，**返回** 传递进来的内组件。
+返回的内容中，加上了外组件的props，所以叫**PP**。
 
 注意 :
 
@@ -100,24 +99,24 @@ function ppHOC(WrappedComponent) {
 React.createElement(WrappedComponent, this.props, null)
 ```
 
-这2种写法都会创建React元素，来描述React应该在一致性过程中render内容，想知道更多有关React元素与组件，参阅[Dan Abramov的这篇文章](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)，还有官方文档[一致性处理](https://reactjs.org/docs/reconciliation.html)。
+这2种写法，都会创建React Element，描述了React在一致性过程中要render的内容。React Element与组件，参阅[Dan Abramov的这篇文章](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)，还有官方文档[一致性处理](https://reactjs.org/docs/reconciliation.html)。
 
-### 用Props Proxy可以做什么？ ###
+### PP能做啥 ###
 
 
-* 操作props Manipulating props ）
+* 操作属性（Manipulating props ）
 * 通过Refs访问实例（Accessing the instance via Refs） 
-* 抽象State（Abstracting State）
-* 用其他元素包装WrappedComponent（Wrapping the WrappedComponent with other elements）
+* 抽象状态（Abstracting State）
+* 用其他元素包装内组件（Wrapping the WrappedComponent with other elements）
 
-#### 操作props（Manipulating props） ####
+#### 操作属性（Manipulating props） ####
 
-你可以读取，添加，编辑和删除传递给WrappedComponent的 props。
+可以读取，添加，编辑和删除传递给内组件的 props。
 
-对于重要的props，删除或编辑时，要小心谨慎。你应该确保以命名空间的方式处理高阶props，来避免高阶props会破坏WrappedComponent。
+删除，编辑重要属性时，要格外谨慎。应当加命名空间，避免外组件的props破坏内组件。
 
-示例:添加新的props。  
-下面这段程序，当前登录的用户，在WrappedComponent中通过this.props.user访问。
+示例:添加props。  
+下面代码，当前登录的用户，内组件通过this.props.user访问。
 
 ```javascript
 function ppHOC(WrappedComponent) {
@@ -134,10 +133,10 @@ function ppHOC(WrappedComponent) {
 
 #### 通过Refs访问组件实例 ####
 
-通过ref，可以访问this（WrappedComponent的实例）。但在此之前，WrappedComponent需要初始渲染，才能得到ref。也就是说，HOC的render方法必须返回WrappedComponent元素。
-让React做一致性处理，这样就得到WrappedComponent实例的引用。
+通过ref，访问this（内组件实例）。需要在内组件的render方法内执始化ref。也就是说，HOC的render方法必须返回内组件。
+利用React的一致性处理，得到内组件实例的引用。
 
-实例:下面的例子，讲通过[refs](https://reactjs.org/docs/refs-and-the-dom.html)，访问WrappedComponent的实例方法和实例本身
+例子:通过[refs](https://reactjs.org/docs/refs-and-the-dom.html)，访问内组件的实例方法和实例本身
 
 ```javascript
 function refsHOC(WrappedComponent) {
@@ -153,8 +152,8 @@ function refsHOC(WrappedComponent) {
   }
 }
 ```
-当WrappedComponent渲染时，将执行ref回调，然后你将有一个对WrappedComponents实例的引用。
-可以用来读取/添加实例props，和调用实例方法。
+当内组件渲染时，会执行ref回调，就有了内组件实例的引用。
+可以读取/添加实例props，和调用实例方法。
 
 #### 提取State（Abstracting State） ####
 
