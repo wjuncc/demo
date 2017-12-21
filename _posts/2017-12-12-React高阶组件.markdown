@@ -24,7 +24,7 @@ tags:
 2016年8月更新：[日文版](http://postd.cc/react-higher-order-components-in-depth/)   
 2017年1月更新：[韩文版](https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4)，[中文版](https://zhuanlan.zhihu.com/p/24776678)   
 
-### 组件套是啥 ###
+## 组件套是啥 ##
 
 就是组件套组件。俄罗斯套娃娃。
 是react社区搞的，形式是工厂函数，用haskell这门语言写伪代码：
