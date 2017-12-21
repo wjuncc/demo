@@ -48,11 +48,11 @@ E（EnhancedComponent外组件）返回内组件。
 
 ### “套”能做啥 ###
 
-* 复用代码，抽象逻辑，抽象bootstrap
+* 复用代码，提取逻辑，提取bootstrap
 
 * 渲染劫持 （Render Hijacking）
 
-* 抽象state 和操作state（State abstraction and manipulation）
+* 提取state 和操作state（State abstraction and manipulation）
 
 * 操作Props  （Props manipulation）
 
