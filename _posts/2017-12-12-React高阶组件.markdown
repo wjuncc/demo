@@ -435,16 +435,12 @@ You actually don't need to rewrite it yourself because recompose lib already pro
 #### [React-Redux](https://github.com/reactjs/react-redux) ####
 
 React-Redux是React的官方Redux绑定。
-One of the functions it provides is connect which handles all the bootstrap necessary for listening to the store and cleaning up afterwards.
-它提供的功能之一是连接，它处理所有的聆听商店和清理后所需的bootstrap。
-This is achieved by a Props Proxy implementation.
+它提供的功能之一是连接，它处理所有bootstrap需要监听存储和之后的清理。
 这是通过Props代理实现来实现的。
 
-If you have ever worked with pure Flux you know that any React Component that is connected to one or more stores needs a lot of bootstrapping for adding and removing stores listeners and selecting the parts of the state they need.
-如果您曾经使用过纯Flux，那么您知道连接到一个或多个商店的任何React组件需要大量的引导来添加和删除商店监听器并选择他们需要的状态部分。
-So React-Redux implementation is pretty good because it abstract all this bootstrap.
-所以React-Redux的实现是非常好的，因为它抽象了所有这些引导。
-Basically, you dont need to write it yourself anymore!
+
+如果您曾经使用过纯的Flux，那么您知道，任何连接到一个或多个store的React组件需要大量的 bootstrapping 来添加和删除stores 监听器并选择他们需要的state部分。
+所以React-Redux的实现是非常好的，因为它抽象了所有这些bootstrap。
 基本上，你不需要自己写了！
 
 #### [Radium](http://formidable.com/open-source/radium/) ####
@@ -466,24 +462,19 @@ This requires Radium to read all the Elements tree outputted by the WrappedCompo
 Simply put, Radium modifies the props of the Elements tree (what Radium actually does is a little bit more complicated but you get the point)
 简而言之，Radium修改了元素树的道具（Radium实际上做的有点复杂，但你明白了）
 
-Radium exposes a really simple API.
-镭暴露一个非常简单的API。
+Radium暴露的API非常简单。
 Pretty impressive considering all the work it performs without the user even noticing.
-考虑到所有的工作，没有用户甚至不知不觉中令人印象深刻。
-This gives a glimpse of the power of HOC.
+考虑到所有的工作，没有用户甚至不知不觉中令人印象深刻。  
 这让我们看到了HOC的力量。
 
 ### 附录A : HOC和参数 ###
-The following content is optional and you may skip it.
-以下内容是可选的，您可以跳过它。
-Sometimes is useful to use parameters on your HOCs.
-有时在您的HOC上使用参数很有用。
+
+以下内容选读，可跳过。
+有时在HOC上使用参数很有用。  
 This is implicit in all examples above and should be pretty natural to intermediate Javascript developers, but just for the sake of making the post exhaustive let's cover it real quick.
 这在上面的所有示例中都是隐含的，对于中间Javascript开发人员来说应该是很自然的，但是为了使文章详尽无遗，让我们快速地介绍它。
 
-Example :  HOC parameters with a trivial Props Proxy.
-例子: HOC参数与一个平凡的Props代理。
-The important thing is the HOCFactoryFactory function.
+例子: HOC参数与一个简化的Props代理。 
 重要的是HOCFactoryFactory函数。
 
 ```javascript
@@ -599,27 +590,16 @@ Justin Reynard
 贾斯汀雷纳德  
 Sep 22, 2016  
 2016年9月22日  
-Render Hijacking
-呈现劫持
-This is the power of the redux/react/react-native paradigm!
+渲染劫持
 这是redux / react / react-native范式的力量！
 
 
-8
-8
-
-Applause from franleplant (author)
-掌声（作者）
-Go to the profile of Emil Ong
-转到Emil Ong的个人资料
-Emil Ong
-Emil Ong
-May 28, 2016
-2016年5月28日
-Great article!
-好文章！
-Im a big fan of recompose, which I see you mentioned for naming, but does much of the property transformation that you wrote about and more (for other folks that might not be familiar with it).
-我是一个重组的风扇，我看到你提到的命名，但是你写的很多属性转换和更多的（对于其他人可能不熟悉它）。
+Emil Ong  
+May 28, 2016   
+2016年5月28日    
+好文章！   
+but does much of the property transformation that you wrote about and more (for other folks that might not be familiar with it).
+我是一个重组的爱好者，就是你提到的命名，但是你写的很多属性转换和更多的（对于其他人可能不熟悉它）。
 
 Another pattern (or meta-pattern?) that might deserve mentioning here is composition of HOCs which lets folks use several of these behaviors simultaneously.
 另一种可能值得一提的模式（或元模式）是HOCs的组合，它可以让人们同时使用这些行为中的几个。
