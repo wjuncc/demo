@@ -11,9 +11,9 @@ tags:
 
 **关于标题**：  
 原名 [Animations with ReactTransitionGroup](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286),   
-《使用ReactTransitionGroup做动画》，   
-《ReactTransitionGroup指南》，太长。     
-《React动画指南》。  
+《使用ReactTransitionGroup做动画》，X    
+《ReactTransitionGroup指南》，X 太长。       
+《React动画指南》。V  
 
 **给我一个理由**：  
 
