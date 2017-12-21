@@ -14,8 +14,12 @@ Mar 14, 2016
 **关于标题**  
 原名，[Reusing ReactTransitionGroup animations with Higher-order Components](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)  
 《使用高阶组件重用ReactTransitionGroup动画》，好拗口。    
-《使用HOC重用RTG动画》，太晦涩了。  
+《使用HOC重用RTG动画》，太晦涩。  
 《复用React动画》。
+
+****
+在github搜索 TweenMax componentWillEnter findDOMNode ,  
+能得到很多线索。
 
 **前情回顾**  
 上一讲，以一个正方形为例，讲解了在进入和离开TransitionGroup时，正方形会产生动画。
