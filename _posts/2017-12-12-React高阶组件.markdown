@@ -351,8 +351,7 @@ function iiHOC(WrappedComponent) {
 
 这正是[Radium](http://stack.formidable.com/radium/) 的做法（后面的案件讲了Radium）。
 
-NOTE :  You cannot Render Highjack with Props Proxy.
-注意:你不能用Props Proxy来渲染Highjack。
+注意:Props Proxy不能做渲染劫持。
 While it is possible to access the render method via WrappedComponent.prototype.render, you will need to mock the WrappedComponent instance and its props, and potentially handle the component lifecycle yourself, instead of relying on React doing it.
 虽然可以通过WrappedComponent.prototype.render访问渲染方法，但是您需要模拟WrappedComponent实例及其道具，并且可能自己处理组件生命周期，而不是依靠React来完成。
 In my experiments it isnt worth it and if you want to do Render Highjacking you should be using Inheritance Inversion instead of Props Proxy.
