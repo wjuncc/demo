@@ -305,7 +305,7 @@ render(<Page/>, document.querySelector('#container'));
 
 为了TransitionGroup节点中的组件具有灵活性，能用于不同动画，TransitionGroup节点本身不定义动画，而是放到子组件中，在添加子组件，和删除子组件的钩子函数中，写动画代码。
 
-一般只会用到这两个生命周期的钩子 - 
+一般用2个生死钩
 
 * componentWillEnter(callback)
 
@@ -320,7 +320,7 @@ render(<Page/>, document.querySelector('#container'));
 
 参考[官方文档-动画生命周期钩子](https://reactjs.org/docs/animation.html#low-level-api-reacttransitiongroup)。
 
-因为ReactTransitionGroup依赖于钩子，而div并没有定义它们，所以必须首先将 <div className=box/>移动到它自己的组件中:
+因为React过渡组依赖于钩子，而div并没有定义它们，所以必须首先将 <div className=box/>移动到它自己的组件中:
 
 	class Box extends React.Component {
 	  render () {
@@ -358,7 +358,7 @@ render(<Page/>, document.querySelector('#container'));
 
 接下来讲， [复用React动画](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)，路由器集成，协调嵌套转场动画。
 
-你读了这么多，也喜欢调试JS 干货(quick and dirty skill)??，给我发tweet@CheapSteak :）
+喜欢调试JS 干货(quick and dirty skill)??，给我发tweet@CheapSteak :）
 
 react-transition-group-plus，用来代替ReactTransitionGroup，可中断转场，并指定转场顺序。看[demo](http://cheapsteak.github.io/react-transition-group-plus/)。
 
