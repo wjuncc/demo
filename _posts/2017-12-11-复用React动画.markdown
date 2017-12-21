@@ -21,6 +21,12 @@ Mar 14, 2016
 在github搜索 TweenMax componentWillEnter findDOMNode ,  
 能得到很多线索。
 
+** 小结** 
+
+* 在线Demo的代码，和教程的代码，不一样。
+* 教程用了es7的写法，而现在普遍是es6
+* 在github搜索了一下，发现HOC+TweenMax的少之又少，看来实战中，不这么用。  
+
 **前情回顾**  
 上一讲，以一个正方形为例，讲解了在进入和离开TransitionGroup时，正方形会产生动画。
 
@@ -152,12 +158,7 @@ class Page extends React.Component {
 
 render(<Page/>, document.querySelector('#container'));
 ```
-
-
-
-* 在线Demo的代码，和教程的代码，不一样。
-* 教程用了es7的写法，而现在普遍是es6
-* 在github搜索了一下，发现HOC+TweenMax的少之又少，看来实战中，不这么用。   
+ 
 
 **原文：**  
 
