@@ -36,12 +36,15 @@ HOC有2种写法，`PP`和`II`。本教程用的是`PP`，也就是属性代理�
 运行结果：  
 ![3](https://i.imgur.com/tuKRKyu.gif) 
 
-文件： E:\n\learn\react\101\Ch04\proj3  
+文件：
 
-运行： 
-	
-	cd E:\n\learn\react\101\Ch04\proj3
+>    E:\n\learn\react\101\RTG\demo2 
+
+执行：  
+   
+	cd E:\n\learn\react\101\RTG\demo2
 	npm start
+
 
 index.html
 
