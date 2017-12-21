@@ -38,6 +38,11 @@ HOC有2种写法，`PP`和`II`。本教程用的是`PP`，也就是属性代理�
 
 文件： E:\n\learn\react\101\Ch04\proj3  
 
+运行： 
+	
+	cd E:\n\learn\react\101\Ch04\proj3
+	npm start
+
 index.html
 
 ```html
