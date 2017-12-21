@@ -41,10 +41,9 @@ E（EnhancedComponent外组件）返回内组件。
 
 “套”，有两种形式:
 
-* Props Proxy（Props 代理） :   
+* Props Proxy（Props 代理） : 
 外组件套内组件，外组件操作内组件的Props，  
-
-* Inheritance Inversion （继承颠倒）:   
+* Inheritance Inversion （继承颠倒）: 
 外组件继承内组件 
 
 ### “套”能做啥 ###
