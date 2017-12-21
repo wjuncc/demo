@@ -328,7 +328,6 @@ function iiHOC(WrappedComponent) {
 
 
 实例2 :修改由render返回的React Elements树。
-在这个例子中，如果WrappedComponent的render返回的有一个输入是在它的顶层元素，那么就把值改成“may the force be with you”。
 
 ```javascript
 function iiHOC(WrappedComponent) {
@@ -346,8 +345,10 @@ function iiHOC(WrappedComponent) {
   }
 }
 ```
-You can do all sorts of stuff in here, you can traverse the entire elements tree and change props of any element in the tree.
-你可以在这里做各种各样的东西，你可以遍历整个元素树并改变树中任何元素的道具。
+在这个例子中，如果WrappedComponent的render返回的有一个输入是在它的顶层元素，那么就把值改成“may the force be with you”。
+
+可以在这里做各种各样的事，你可以遍历整个元素树并改变树中任何元素的props。
+
 This is exactly how Radium does its business (More on Radium in Case Studies).
 镭正是如此做它的事务（更多在镭在案件研究）。
 
