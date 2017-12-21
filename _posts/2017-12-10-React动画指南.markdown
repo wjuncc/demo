@@ -22,7 +22,8 @@ ReactTransitionGroup什么鬼？长长长得像坨屎，不好吃啊。不能雅
 * 地雷就是“动画一直是react的弱项”。只好看了一些资料，把坑填平。
 * 考虑到一定是用TweenMax，没有第2选择，google了一下TweenMax React，找到了[gsap官网论坛](https://greensock.com/forums/topic/13970-wrote-an-article-that-demos-how-to-use-gsap-with-react/)，顺藤摸瓜来到了[Medium](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)，扫了一眼，感觉不错，讨论挺多的，绝不是冷门。
 * google了一圈没有找到[这篇英文](https://medium.com/appifycanada/animations-with-reacttransitiongroup-4972ad7da286)的中文翻译，为了吃透，只好做起了翻译
-* 这是react系列中的一篇半笔记半翻译的怪物。  
+* 这是react系列中的一篇半笔记半翻译的怪物。
+* [medium网站](https://medium.com/)像知乎或简书  
       
 **关于排版**：  
 
@@ -41,9 +42,9 @@ ReactTransitionGroup什么鬼？长长长得像坨屎，不好吃啊。不能雅
 * 下一节，把混用改成组件方式（HOC），好在多个组件中重复使用动画。 
 
 **开张大吉请吃鸡。**
-### 使用ReactTransitionGroup来制作React动画 ###
+### 使用React过渡组来制作React动画 ###
 **笔记：**  
-这个教程简单2个步骤：
+这个教程很简单，有2个步骤：
 
 1. 创建一个正方形，和一个按钮，点击按钮切换正方形的显示和隐藏。
 2. 加入代码，调整结构，增强第一步的功能：使其在点击按钮时，淡入淡出正方形。
@@ -52,8 +53,8 @@ ReactTransitionGroup什么鬼？长长长得像坨屎，不好吃啊。不能雅
 (这段是废话)  
 CSS能实现动画，但复杂到一定程度，就难以维护。
 
-ReactCSSTransitionGroup踩在[ReactTransitionGroup](https://www.npmjs.com/package/react-addons-transition-group)这个巨人的肩上。 
-区别在于，ReactTransitionGroup用JS动画而非CSS动画，另外，动画完成时有回调函数，而不是CSS转换事件。
+ReactCSS过渡组踩在[React过渡组](https://www.npmjs.com/package/react-addons-transition-group)的肩上。 
+区别在于，React过渡组用JS动画而非CSS动画，另外，动画完成时有回调函数，而不是CSS转换事件。
 
 ### 第一步，从简单的切换正方形显示隐藏开始 ###
 (这段是实例)  
@@ -168,7 +169,7 @@ render(<Page/>, document.querySelector('#container'));
 
 当shouldShowBox为true时，.box是可见的，为false时，则不可见。
 
-### 第二步，添加ReactTransitionGroup，实现正方形切换时淡入淡出的动画 ###
+### 第二步，添加React过渡组，在正方形切换时，实现淡入淡出的动画 ###
 **笔记：**  
 操作：
 
@@ -410,7 +411,6 @@ react-transition-group-plus，用来代替ReactTransitionGroup，可中断转场
 
 ### 留言板 ###
 
-([这网站](https://medium.com/)像是知乎或简书)  
 
 Chang Wang（作者）   
 八月二十七日 
