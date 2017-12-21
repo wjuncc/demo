@@ -328,9 +328,7 @@ function iiHOC(WrappedComponent) {
 
 
 实例2 :修改由render返回的React Elements树。
-
-In this example, if the rendered output of the WrappedComponent has an input as its top level element then we change the value to may the force be with you.
-在这个例子中，如果WrappedComponent的呈现的输出有一个输入作为它的顶层元素，那么我们改变这个值到可能的力量。
+在这个例子中，如果WrappedComponent的render返回的有一个输入是在它的顶层元素，那么就把值改成“may the force be with you”。
 
 ```javascript
 function iiHOC(WrappedComponent) {
