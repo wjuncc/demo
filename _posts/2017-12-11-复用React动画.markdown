@@ -15,8 +15,7 @@ Mar 14, 2016
 原名，[Reusing ReactTransitionGroup animations with Higher-order Components](https://medium.com/appifycanada/reusing-reacttransitiongroup-animations-with-higher-order-components-1e7043451f91)  
 《使用高阶组件重用ReactTransitionGroup动画》，好拗口。    
 《使用HOC重用RTG动画》，太晦涩。  
-《复用React动画》。
-
+《复用React动画》。 
 
 ## **小结**  ##
 
