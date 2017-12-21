@@ -155,13 +155,13 @@ function refsHOC(WrappedComponent) {
 当内组件渲染时，会执行ref回调，就有了内组件实例的引用。
 可以读取/添加实例props，和调用实例方法。
 
-#### 提取State（Abstracting State） ####
+#### 提取状态（Abstracting State） ####
 
-您可以通过向WrappedComponent提供props和回调来提取状态，这与smart components处理dumb components的方式类似。
+通过向内组件提供props和回调来提取状态，类似smart components处理dumb components。
 参考[Presentational and Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)。
 
-实例:在下面的状态提取示例中，我们提取输入字段的值和onChange事件。
-我说的naive，是指我们做项目不会这么干，但这能讲透我要讲的内容。
+实例:提取输入字段的值和onChange事件。  
+注意，做项目不这么写，这只是个例子。
 
 ```javascript
 function ppHOC(WrappedComponent) {
@@ -202,21 +202,20 @@ class Example extends React.Component {
     return <input name="name" {...this.props.name}/>
   }
 }
-```
+``` 
 
+输入框将会自动成为[受控的input](https://reactjs.org/docs/forms.html)。
 
-这个输入框将会自动成为[受控的input](https://reactjs.org/docs/forms.html)。
+> 更多双向数据绑定HOC->[这个链接](https://github.com/franleplant/react-hoc-examples/blob/master/pp_state.js)
 
-> 更多常用的双向数据绑定HOC看[这个链接](https://github.com/franleplant/react-hoc-examples/blob/master/pp_state.js)
+#### 用其他元素套内组件 ####
 
-#### 用其他元素包装WrappedComponent ####
-
-为了包装样式，布局，等等其他目的，可以用WrappedComponent与其他组件和元素一起。
-一些基本需求，可以通过定期的父组件来完成（见附录B），但是正如前面讲的，可以更灵活地使用HOC，来达到效果。
+为了套样式，套布局，整合内组件与其他组件。
+是的，简单需求，可以用定期的父组件来完成（见附录B），另外，灵活使用HOC，也能做到啊。
 
 实例:包装样式
 
-```
+```javascript
 function ppHOC(WrappedComponent) {
   return class PP extends React.Component {
     render() {
@@ -230,9 +229,9 @@ function ppHOC(WrappedComponent) {
 }
 ```
 
-### 继承反转（Inheritance Inversion） ###
+### 反转继承（Inheritance Inversion） ###
 
-下面是继承反转（II）的简单实现:
+示范代码:
 
 ```javascript
 function iiHOC(WrappedComponent) {
@@ -244,61 +243,55 @@ function iiHOC(WrappedComponent) {
 }
 ```
 
-正如你看到的，返回的HOC类（Enhancer）**继承**了WrappedComponent。   
+返回类**继承**内组件。   
 
-之所以叫继承反转，因为不是WrappedComponent继承了Enhancer类，而是反过来（**inverse**），Enhancer继承了WrappedComponent。   
+之所以叫反转继承，因为，不是内组件继承外组件，而是反过来（**inverse**），外组件继承内组件。   
 
-继承反转使得HOC通过this访问WrappedComponent实例，也就是说**它可以访问state，props，组件生命周期钩子和render方法**。
+继承反转使得HOC通过this访问内组件实例，也就是说**它可以访问state，props，生死钩和render方法**。
 
-我不多讲生命周期钩子做什么，因为它不是HOC特性，而是React特性。 
-但请注意，使用第II种做法，您可以为WrappedComponent创建新的生命周期钩子。
-
-记得总是调用super.[lifecycleHook]，就不会破坏WrappedComponent
+生死钩不是HOC特性，而是React特性。 
+注意，内组件可创建生死钩。   
+记得用super.[生死钩]，就不会破坏内组件。
 
 #### 一致化处理（Reconciliation process） ####
 
-在深入之前先讲一些概念。
+先讲概念。
 
-React元素对自身的描述，就决定了，在React运行[一致化处理](https://reactjs.org/docs/reconciliation.html)时，它会渲染什么内容。
+React元素对自身的描述，就决定了，在[一致化处理](https://reactjs.org/docs/reconciliation.html)时，它会渲染什么。 
 
+React元素分两种类型:字串型和函数型。
 
-React元素分两种类型:字符串和函数。
+字串型（简写STRE）表示DOM节点，  
+函数型（简写FTRE）表示组件（继承React.Component）。  
+[参考](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)。
 
-字符串类型的React元素（STRE）表示DOM节点，  
-而功能类型React元素（FTRE）表示通过扩展React.Component创建的组件。  
-For more about Elements and Components read this post.
-有关元素和组件的更多信息请阅读[这篇文章](https://reactjs.org/blog/2015/12/18/react-components-elements-and-instances.html)。
-
-FTRE将在Reacts[一致化处理](https://reactjs.org/docs/reconciliation.html)中解析为完整的STRE树（最终结果将始终为DOM元素）。
-
-这很重要，这意味着**Inheritance Inversion高阶组件不保证解析完整子树**。
+函数型[一致化处理](https://reactjs.org/docs/reconciliation.html)后解析为完整的字串型树（最终结果为DOM元素）。
+这意味着**反转继承不保证虚拟Dom解析成完整子树**。
 
 > Inheritance Inversion High Order Components dont have a guaranty of having the full children tree resolved.
 
-这在学习渲染劫持（Render Highjacking）时非常重要。
+记住这一点，对理解渲染劫持很重要。
 
-### Inheritance Inversion可以做什么？ ###
+### 反转继承能做啥 ###
 
 * 渲染劫持 Render Hijacking 
-* 操纵状态 Manipulating state
+* 操作状态 Manipulating state
 
 #### 渲染劫持 Render Hijacking ####
 
-之所以加Render Highjacking，是因为HOC控制了WrappedComponent的渲染输出，并且可以做各种各样的事。
+之所以叫渲染劫持，是因为HOC控制了内组件的渲染输出，可以做各种事：
 
-有了渲染劫持你可以:
-
-* 读取，添加，编辑，删除渲染输出的任何React Elements中的props
-* 读取和修改渲染输出的React Elements树
+* 读/增/写/删渲染输出的props
+* 读/写渲染输出的React Elements树
 * 有条件地显示元素树
-* （类似Props代理的例子），把样式封装到元素树
+* （类似Props代理），把样式封装到元素树
 
-注意，render是指WrappedComponent.render方法
+渲染指的是内组件的render方法
 
 
-> 你不能编辑或创建WrappedComponent实例的props，因为React Component不能编辑它收到的props，但是你可以改变从渲染方法输出的元素的道具。
+> 不能修改和创建内组件实例的props，因为React组件不能修改父组件的props，但可以修改渲染输出的元素的props。
 
-就像前面讲的，II HOCs不保证解析完整子树，这就意味着对渲染劫持技术有一些限制。
+因为反转继承不保证解析完整子树，所以渲染劫持有限制。
 
 根据经验，使用渲染劫持，您将能够操纵WrappedComponent的render方法返回的元素树。
 如果该元素树包含一个函数类型React组件，那么您将无法操作该子组件。 
