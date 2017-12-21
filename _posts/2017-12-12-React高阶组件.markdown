@@ -34,10 +34,10 @@ tags:
 [中文版](https://zhuanlan.zhihu.com/p/24776678)   
 感谢译者！
 
-### 什么是高阶组件？ ###
+### 什么是组件套？ ###
 
 就是组件套组件。俄罗斯套娃娃。
-不是react官方，是react社区搞的，形式是函数，就是是工厂函数，下面用haskell这门语言写伪代码：
+是react社区搞的，形式是工厂函数，用haskell这门语言写伪代码：
 
 **题外话：**  
 > Haskell是什么？  
@@ -46,19 +46,18 @@ tags:
 	hocFactory:: W: React.Component => E: React.Component
 
 这里，  
-W（WrappedComponent内组件）指被封装的组件，  
-E（指EnhancedComponent外组件）指外组件，返回内组件。
+W（WrappedComponent内组件）指被套组件，  
+E（EnhancedComponent外组件）返回内组件。
 
-注意，这里的“套”，有两种可能:
+“套”，有两种形式:
 
 * Props Proxy（Props 代理） :   
-外组件套内组件，外组件能操作内组件的Props，  
+外组件套内组件，外组件操作内组件的Props，  
 
 * Inheritance Inversion （继承颠倒）:   
-内组件套外组件，外组件继承内组件，
-下面细讲。
+外组件继承内组件 
 
-### HOC能做什么？ ###
+### “套”能做啥 ###
 
 * 复用代码，抽象逻辑，抽象bootstrap
 
@@ -113,7 +112,7 @@ React.createElement(WrappedComponent, this.props, null)
 
 可以读取，添加，编辑和删除传递给内组件的 props。
 
-删除，编辑重要属性时，要格外谨慎。应当加命名空间，避免外组件的props破坏内组件。
+删/改重要属性时，要格外谨慎。应当加命名空间，避免外组件的props破坏内组件。
 
 示例:添加props。  
 下面代码，当前登录的用户，内组件通过this.props.user访问。
@@ -293,12 +292,12 @@ React元素分两种类型:字串型和函数型。
 
 因为反转继承不保证解析完整子树，所以渲染劫持有限制。
 
-根据经验，使用渲染劫持，您将能够操纵WrappedComponent的render方法返回的元素树。
-如果该元素树包含一个函数类型React组件，那么您将无法操作该子组件。 
+经验告诉我，渲染劫持，能操作内组件的render方法返回的元素树。
+如果该元素树包含函数型组件，将无法操作该子组件。 
 （Reacts的一致化过程推迟了它实际渲染在屏幕上。）
 
 实例1 :条件渲染。
-这个HOC将完全渲染 WrappedComponent将渲染的内容，除非this.props.loggedIn不是true。 
+当this.props.loggedIn等于true，将完全渲染内组件所渲染的内容。 
 （假设HOC收到登录的prop）
 
 ```javascript
@@ -334,30 +333,27 @@ function iiHOC(WrappedComponent) {
   }
 }
 ```
-在这个例子中，如果WrappedComponent的render返回的有一个输入是在它的顶层元素，那么就把值改成“may the force be with you”。
+如果内组件的render返回输入是在它的顶层元素，那么就把值改成“may the force be with you”。
 
-可以在这里做各种各样的事，你可以遍历整个元素树并改变树中任何元素的props。
+可以在做各种事，例如遍历整个元素树并改变树中任何元素的props。
 
 这正是[Radium](http://stack.formidable.com/radium/) 的做法（后面的案件讲了Radium）。
 
 注意:Props Proxy不能做渲染劫持。
-While it is possible to access the render method via WrappedComponent.prototype.render, you will need to mock the WrappedComponent instance and its props, and potentially handle the component lifecycle yourself, instead of relying on React doing it.
-虽然可以通过WrappedComponent.prototype.render访问渲染方法，但是您需要模拟WrappedComponent实例及其道具，并且可能自己处理组件生命周期，而不是依靠React来完成。
-In my experiments it isnt worth it and if you want to do Render Highjacking you should be using Inheritance Inversion instead of Props Proxy.
-在我的实验中，这是不值得的，如果你想做渲染劫持，你应该使用继承反转，而不是Props代理。
-Remember that React handles component instances internally and your only way of dealing with instances is via this or by refs.
-请记住，React在内部处理组件实例，处理实例的唯一方法是通过这个或通过参考 
+
+虽然可以用内组件.prototype.render访问渲染方法，但要模拟内组件实例和Props，还要自己处理生死，而不是React。
+所以说不值得。做渲染劫持，用反转继承，而不是Props代理。
+请记住，React在内部处理组件实例，处理实例的唯一方法是通过this或refs 
 
 
-#### 操纵 state ####
+#### 操作state ####
 
-HOC可以读取，编辑和删除WrappedComponent实例的state，如果需要的话也可以添加更多的state。
+HOC可以读写删（也可以增）内组件实例的state。
+这会搞乱内组件。
 
-请记住，这会搞乱WrappedComponent的 state，这会导致破坏。
+大多数情况下，应限制HOC读取或添加state，增加state，应放在命名空间，避免与内组件的state混淆。
 
-大多数情况下，应该限制HOC读取或添加state，添加state时，应该放在命名空间，避免与WrappedComponents的state混淆。
-
-示例:通过访问WrappedComponents的props and state进行调试
+示例:访问内组件的props and state进行调试
 
 ```javascript
 export function IIHOCDEBUGGER(WrappedComponent) {
@@ -376,16 +372,16 @@ export function IIHOCDEBUGGER(WrappedComponent) {
 }
 ```
 
-这个HOC用其他元素包装WrappedComponent，并显示WrappedComponents实例的 props 和 state。 
-JSON.stringify 这个套路是[Ryan Florence](https://twitter.com/ryanflorence)和[Michael Jackson](https://twitter.com/mjackson)教我的。
+这个HOC用其他元素包装内组件，并显示内组件实例的 props 和 state。 
+JSON.stringify是[Ryan Florence](https://twitter.com/ryanflorence)和[Michael Jackson](https://twitter.com/mjackson)教我的。
 
-在[这里](https://github.com/franleplant/react-hoc-examples/blob/master/ii_debug.js)看到调试器的完整实现。
+[完整实现demo](https://github.com/franleplant/react-hoc-examples/blob/master/ii_debug.js)。
 
 #### 命名 ####
 
-当用HOC封装组件时，会失去原来的WrappedComponents名字，这会影响开发和调试。
+用HOC套组件，内组件会失去原名，影响开发调试。
 
-通常是在WrappedComponents组件名字前加上前缀，来自定义HOC名称。
+通常，用前缀+内组件名，定义套名。
 以下代码来自React-Redux。
 
 	HOC.displayName = `HOC(${getDisplayName(WrappedComponent)})`
@@ -419,8 +415,8 @@ React-Redux是React的官方Redux绑定。
 基本上，你不需要自己写了！
 
 #### [Radium](http://formidable.com/open-source/radium/) ####
-Radium is a library that enhances the capability of inline styles by enabling CSS pseudo selectors inside inline-styles.
-Radium是一个通过在内联样式中启用CSS伪选择器来增强内联样式功能的库。
+
+Radium是样式库,内联样式CSS伪选择器。
 Why inline styles are good for you is subject of another discussion, but a lot of people are starting to do it and libs like radium really step up the game.
 为什么内联样式对你有好处是另一个讨论的主题，但是很多人开始这样做，像镭之类的库真的提高了游戏速度。
 If you want to know more about inline styles start by this presentation by Vjeux
