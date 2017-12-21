@@ -65,7 +65,7 @@ E（EnhancedComponent外组件）返回内组件。
 有两种：
 
 * （PP）属性代理 Props Proxy
-* （II）反转继承 Inheritance Inversion。
+* （II）反向继承 Inheritance Inversion。
 
 虽然性格不同，但志趣相投，都能操作内组件。
 
