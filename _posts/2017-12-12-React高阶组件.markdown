@@ -21,12 +21,8 @@ tags:
 
 **大吉大利请吃鸡！**
 
-2016年8月更新   
-[日文版](http://postd.cc/react-higher-order-components-in-depth/)   
-2017年1月更新   
-[韩文版](https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4)    
-[中文版](https://zhuanlan.zhihu.com/p/24776678)   
-感谢译者！
+2016年8月更新：[日文版](http://postd.cc/react-higher-order-components-in-depth/)   
+2017年1月更新：[韩文版](https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4)，[中文版](https://zhuanlan.zhihu.com/p/24776678)   
 
 ### 什么是组件套？ ###
 
