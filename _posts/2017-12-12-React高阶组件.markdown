@@ -11,7 +11,7 @@ tags:
 
 ## 概述 ##
 
-本文不适合React新手，React新手应该读[Reacts Docs](https://reactjs.org/docs/hello-world.html)。
+本文不适合React新手，新手请移步[Reacts Docs](https://reactjs.org/docs/hello-world.html)。
 
 几个React库都证明“套”很管用。本文讲组件“套”是什么。能做什么，有什么限制，以及用法。
 
