@@ -22,7 +22,7 @@ Mar 14, 2016
 * [在线Demo](https://codepen.io/cheapsteak/pen/RaGKOZ?editors=0010)的代码，和教程的代码，不一样。
 * 教程用了es7的写法，而现在普遍是es6
 * 在github搜索了一下，发现HOC+TweenMax的少之又少，看来实战中，不这么用。  
-在github搜索 TweenMax componentWillEnter findDOMNode ,  
+* 在github搜索 TweenMax componentWillEnter findDOMNode ,  
 能得到很多线索。  
 * 高阶组件，HOC，套，是一个东西，很重要。  
 HOC有2种写法，`PP`和`II`。本教程用的是`PP`，也就是属性代理。   
