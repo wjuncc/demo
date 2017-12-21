@@ -11,58 +11,54 @@ tags:
 
 ## 概述 ##
 
-本文的读者是使用HOC模式的高级用户。
+本文面向使用HOC模式的高级用户。
 
-如果你是React的新手，你应该先阅读[Reacts Docs](https://reactjs.org/docs/hello-world.html)。
+如果你是React新手，建议去读[Reacts Docs](https://reactjs.org/docs/hello-world.html)。
 
-高阶组件是一个很棒的模式，已经被好几个React库证明了非常有价值。
+高阶组件这个模式很精彩，好几个React库都证明其价值。
 
-本文，将详细解释HOC是什么，可以用他们做什么和他们的限制，以及如何运用。
+本文详解HOC是什么，能做什么，有什么限制，以及用法。
 
-附录，收录了我认为那些并非HOC学习的核心部分，但又需要了解的内容。
+附录列举了我认为非HOC核心，但又需要了解的知识。
 
-本文，力图详尽的讲解HOC，如果你发现我还有哪些内容没有讲到，请告诉我，我会修改。
+本文，尽数HOC之风流，如果你发现还有哪些内容没有讲到，请告知我，我来改。
 
-这篇文章假设你已经有了ES6的知识。
+这篇文章假设你有ES6知识。
 
-让我们开始！
+让我们起航！
 
 2016年8月更新   
-我们已经翻译成日文了！   
-[http://postd.cc/react-higher-order-components-in-depth/](http://postd.cc/react-higher-order-components-in-depth/)
-感谢大家的关注！
-
-2017年1月更新  
-已经翻译成韩语了！   
-[https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4](https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4)    
-中文在这里！ [https://zhuanlan.zhihu.com/p/24776678](https://zhuanlan.zhihu.com/p/24776678)   
-非常感谢译者！
+[日文版](http://postd.cc/react-higher-order-components-in-depth/)   
+2017年1月更新   
+[韩文版](https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4)    
+[中文版](https://zhuanlan.zhihu.com/p/24776678)   
+感谢译者！
 
 ### 什么是高阶组件？ ###
 
-其实高阶组件只是一个React组件包含另一个React组件。
-这个模式一般是作为函数来实现的，这个函数基本上是一个类工厂（是的，一个类工厂！），下面是用haskell形式写的伪代码：
+就是组件套组件。俄罗斯套娃娃。
+不是react官方，是react社区搞的，形式是函数，就是是工厂函数，下面用haskell这门语言写伪代码：
 
 **题外话：**  
-Haskell是什么？  
+> Haskell是什么？  
 > Haskell（发音为/ˈhæskəl/）是一种标准化的，通用的纯函數程式語言，有非限定性语义和强静态类型。 ... 在Haskell中，“函数是第一類物件”。 作为一门函數程式語言，主要控制结构是函数。 Haskell语言是1990年在编程语言Miranda的基础上标准化的，并且以λ演算为基础发展而来。
 
 	hocFactory:: W: React.Component => E: React.Component
 
 这里，  
-W（WrappedComponent）指被封装的React.Component，  
-E（指EnhancedComponent增强组件）指新的HOC，它返回React.Component。
+W（WrappedComponent内组件）指被封装的组件，  
+E（指EnhancedComponent外组件）指外组件，返回内组件。
 
-注意，定义中的“包装”部分，特意模糊了语义，因为它有两种可能:
+注意，这里的“套”，有两种可能:
 
 * Props Proxy（Props 代理） :   
-HOC对传给 WrappedComponent W的Props做了操作，  
+外组件套内组件，外组件能操作内组件的Props，  
 
 * Inheritance Inversion （继承颠倒）:   
-HOC会继承WrappedComponent W.
-我们将更详细地探讨这两种模式。
+内组件套外组件，外组件继承内组件，
+下面细讲。
 
-### 我可以用HOC做什么？ ###
+### HOC能做什么？ ###
 使用高阶HOC，可以:
 
 * 复用代码，抽象逻辑，抽象bootstrap
@@ -73,7 +69,7 @@ HOC会继承WrappedComponent W.
 
 * 控制Props  （Props manipulation）
 
-下面会很快讲到这些内容，但首先讲HOC的实现方式，因为实现方式，决定了使用HOC有哪些可能，又有哪些限制。
+先讲HOC的实现方式，因为实现方式，决定了使用HOC有哪些可能，又有哪些限制。
 
 ### HOC工厂实现 ###
 
@@ -137,6 +133,7 @@ function ppHOC(WrappedComponent) {
 ```
 
 #### 通过Refs访问组件实例 ####
+
 通过ref，可以访问this（WrappedComponent的实例）。但在此之前，WrappedComponent需要初始渲染，才能得到ref。也就是说，HOC的render方法必须返回WrappedComponent元素。
 让React做一致性处理，这样就得到WrappedComponent实例的引用。
 
