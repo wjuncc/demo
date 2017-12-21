@@ -51,10 +51,13 @@ ReactCSS过渡组踩在[React过渡组](https://www.npmjs.com/package/react-addo
 第一步的运行结果：  
 ![3](https://i.imgur.com/LWfOAY7.gif) 
  
-文件： E:\n\learn\react\101\Ch04\proj2  
+文件：
+
+>    E:\n\learn\react\101\RTG\demo1 
+
 执行：  
    
-	cd E:\n\learn\react\101\Ch04\proj2
+	cd E:\n\learn\react\101\RTG\demo1
 	npm start
 
 代码：  
@@ -163,6 +166,17 @@ render(<Page/>, document.querySelector('#container'));
 **笔记：**  
 第二步的运行结果：  
 ![3](https://i.imgur.com/QJj8ZPZ.gif)  
+
+
+文件：
+
+>    E:\n\learn\react\101\RTG\demo1 
+
+执行：  
+   
+	cd E:\n\learn\react\101\RTG\demo1
+	npm start
+
 操作：
 
 	npm install react-addons-transition-group -save-dev
