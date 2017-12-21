@@ -486,8 +486,20 @@ Example :  HOC parameters with a trivial Props Proxy.
 The important thing is the HOCFactoryFactory function.
 重要的是HOCFactoryFactory函数。
 
+```javascript
+function HOCFactoryFactory(...params){
+  // do something with params
+  return function HOCFactory(WrappedComponent) {
+    return class HOC extends React.Component {
+      render() {
+        return <WrappedComponent {...this.props}/>
+      }
+    }
+  }
+}
+```
 
-You can use it like this :
+
 你可以像这样使用:
 
 HOCFactoryFactory(params)(WrappedComponent)
@@ -511,6 +523,24 @@ React具有访问和操作组件子项的API。
 Example :  Parent Components accessing its children.
 示例:访问其子项的父组件。
 
+```javascript
+class Parent extends React.Component {
+    render() {
+      return (
+        <div>
+          {this.props.children}
+        </div>
+      )
+    }
+  }
+}
+
+render((
+  <Parent>
+    {children}
+  </Parent>
+ ), mountNode)
+```
 
 Now we will review what Parent Components can and cannot do in contrast of HOCs plus some important details :
 现在我们将回顾一下家长组件可以做什么和不可以做什么与HOCs相比，还有一些重要的细节_...
@@ -544,7 +574,7 @@ Parent Components can be used freely in an Elements tree, they are not restricte
 Generally, if you can do it with Parent Components you should because its much less hacky than HOCs, but as the list above states they are less flexible than HOCs.
 一般来说，如果你可以用Parent Components做到这一点，那么你应该这样做，因为它比HOC少得多，但是正如上面的列表所述，它们比HOC更不灵活。
 
-#### 闭幕词 ####
+#### 小结 ####
 I hope that after reading this post you know a little more about React HOCs.
 我希望在阅读这篇文章之后，您对React HOC有更多的了解。
 They are highly expressive and have proven to be pretty good in different libraries.
@@ -559,8 +589,7 @@ If want to contact me please follow me on twitter @franleplant.
 Go to this repo to play with code Ive played with in order to experiment some of the patterns explained in this post.
 去这个回购玩代码Ive玩，以试验一些在这篇文章中解释的模式。
 
-Credits
-积分
+### 积分 ###
 Credits go mostly to React-Redux, Radium, this gist by Sebastian Markb?ge and my own experimentation.
 积分主要是React-Redux，Radium，Sebastian Markb？ge的这个要点和我自己的实验。
 
