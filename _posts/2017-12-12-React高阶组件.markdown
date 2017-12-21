@@ -24,14 +24,14 @@ tags:
 2016年8月更新：[日文版](http://postd.cc/react-higher-order-components-in-depth/)   
 2017年1月更新：[韩文版](https://www.vobour.com/book/view/XSSFQ5wBzsCLAbbo4)，[中文版](https://zhuanlan.zhihu.com/p/24776678)   
 
-## 组件套是啥 ##
+## 套是啥 ##
 
-就是组件套组件。俄罗斯套娃娃。
+就是组件套组件。俄罗斯套娃。
 是react社区搞的，形式是工厂函数，用haskell这门语言写伪代码：
 
 **题外话：**  
-> Haskell是什么？  
-> Haskell（发音为/ˈhæskəl/）是一种标准化的，通用的纯函數程式語言，有非限定性语义和强静态类型。 ... 在Haskell中，“函数是第一類物件”。 作为一门函數程式語言，主要控制结构是函数。 Haskell语言是1990年在编程语言Miranda的基础上标准化的，并且以λ演算为基础发展而来。
+Haskell是什么？  
+Haskell（发音为/ˈhæskəl/）是一种标准化的，通用的纯函數程式語言，有非限定性语义和强静态类型。 ... 在Haskell中，“函数是第一類物件”。 作为一门函數程式語言，主要控制结构是函数。 Haskell语言是1990年在编程语言Miranda的基础上标准化的，并且以λ演算为基础发展而来。
 
 	hocFactory:: W: React.Component => E: React.Component
 
