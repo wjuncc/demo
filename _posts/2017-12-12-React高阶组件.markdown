@@ -46,7 +46,7 @@ E（EnhancedComponent外组件）返回内组件。
 * Inheritance Inversion （继承颠倒）: 
 外组件继承内组件 
 
-### “套”能做啥 ###
+## 套能做啥 ##
 
 * 复用代码，提取逻辑，提取bootstrap
 
