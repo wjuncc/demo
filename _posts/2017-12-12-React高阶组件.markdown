@@ -59,7 +59,10 @@ E（EnhancedComponent外组件）返回内组件。
 
 ### 套工厂的实现 ###
 
-有两种： Props Proxy（PP）和Inheritance Inversion（II）。
+有两种：
+
+* Props Proxy（PP）
+* Inheritance Inversion（II）。
 
 虽然实现方式不同，但都能操作内组件。
 
