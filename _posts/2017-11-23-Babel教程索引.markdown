@@ -35,8 +35,8 @@ npm install babel-preset-env --save-dev
 
 simple
 
+* Mar 31,2017 [Setup React.js with Npm, Babel 6 and Webpack in under 1 hour](https://medium.com/@fastlane80/setup-react-js-with-npm-babel-6-and-webpack-in-under-1-hour-1a714f973506)
 * Jul 7, 2016 [使用 Babel CLI – Chialin Shih – Medium](https://medium.com/@chialin/使用-babel-cli-e18ee5541646)
-* [Setup React.js with Npm, Babel 6 and Webpack in under 1 hour](https://medium.com/@fastlane80/setup-react-js-with-npm-babel-6-and-webpack-in-under-1-hour-1a714f973506)
 
 
 document
