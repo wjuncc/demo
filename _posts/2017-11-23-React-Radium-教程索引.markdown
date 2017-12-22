@@ -14,7 +14,7 @@ example code form [CSS IN JS,享受JS的一切 - 木杉的博客](http://mushans
 
 ### Notes:   ###
 
-* i use es6 not es7, only es7 support decorator , so the terminal throw out an  error about @radium  when compile. so i delete @radium. 
+* i use es6 not es7, only es7 support decorator . The terminal throw out an  error about @radium  when compile. so i delete @radium. 
 * meanwhile the propType statements throw an error , so i delete this:
 
 ```javascript
