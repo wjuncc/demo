@@ -134,7 +134,6 @@ index.html
 * [在Meteor中使用Radium的方法](http://www.59m59s.com/blog/zai-meteorzhong-shi-yong-radiumde-fang-fa/)
 * [Radium - holly的博客](http://holly-juan.github.io/blog/技术/2014/09/28/radium.html)
 * [谈谈 CSS Modules](http://boke.io/tan-tan-css-modules/)
-* [CSS 模块 - 怡红院落 - SegmentFault](https://segmentfault.com/a/1190000003130731)
 * [CSS Modules 详解及 React 中实践](https://zhuanlan.zhihu.com/purerender/20495964)
 * [CSS in React - 通过示例学习最好的框架 - React开发社区 - CTOLib码库](https://java.ctolib.com/joeshub-css-in-react.html)
 * [CSS in React - 通过示例学习最好的框架 - React开发 - 教程 - CTOLib码库](https://java.ctolib.com/article/wiki/42569)
@@ -144,4 +143,5 @@ index.html
 
 overview:
 * [React处理项目中的CSS样式--React教程中文网](http://www.reactpeixun.com/reactganhuo/2017-03-19/284.html)
+*  2015年08月20日 [CSS 模块 - 怡红院落 - SegmentFault](https://segmentfault.com/a/1190000003130731)
 
