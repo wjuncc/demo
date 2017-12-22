@@ -124,6 +124,46 @@ export default class Door1 extends Component {
 ```
 
 
+Nav1.js
+
+```javascript
+import React, {Component} from 'react'
+
+
+export default class Navi1 extends Component {
+    constructor() {
+        super();
+        this.handleSaveClicked = this.handleSaveClicked.bind(this);
+    }
+
+    handleSaveClicked (e){
+        var a = e.target.getAttribute("data-href2");
+        window.myObject.started.dispatch("jump",a);
+    }
+    render() {
+        var arr = this.props.title.split(",");
+        let test ={
+            height:"123px",
+            zIndex:"127777"
+        }
+        return(
+            <div className="abs right-part close no-tw" style={test}>
+                <div className="bg70"></div>
+                <ul className="" >
+                    <li className="active"><a data-href2="product.html" onClick={this.handleSaveClicked}>我们的产品</a></li>
+                    <li><a data-href2="about.html" onClick={this.handleSaveClicked}>澳摩油的故事</a></li>
+                    <li><a data-href2="contact.html" onClick={this.handleSaveClicked}>联系我们</a></li>
+                    <li><div className="li-wxicon"><img onClick={this.handleSaveClicked} className="weixin-icon" src="images/weixin-icon.png" /></div>
+                        <div className="elmore_oil_qr_code"><img className="ptimg" src="images/qr_code.png" /></div>
+                    </li>
+                </ul>
+        </div>)
+    }
+}
+```
+
+
+
 
 
 #### 参考 ####
