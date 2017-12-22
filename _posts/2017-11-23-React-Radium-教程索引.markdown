@@ -134,7 +134,9 @@ index.html
 
 * keyframes:
 * 28 Sep 2014 [Radium - holly的博客](http://holly-juan.github.io/blog/技术/2014/09/28/radium.html)
-* [谈谈 CSS Modules](http://boke.io/tan-tan-css-modules/)
+
+* too simple：
+* 20 Aug 2015 [谈谈 CSS Modules](http://boke.io/tan-tan-css-modules/)
 * [CSS Modules 详解及 React 中实践](https://zhuanlan.zhihu.com/purerender/20495964)
 
 * Meteor+Radium
