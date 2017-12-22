@@ -1,12 +1,25 @@
 ---
 layout: post
-title:  "reactjs 做响应式"
-date:   2017-12-17 23:13:36 +0800
+title:  "react纲要"
+date:   2017-11-17 23:13:36 +0800
 categories:  
 tags: 
+    - react
+    - 笔记
+
 ---
 
-# reactjs 做响应式 #
+#### reactjs 是什么 ####
+
+React实际是空房子，前厅，房间，厕所，都有，但是怪物不同。
+
+#### React的幕后Boss ####
+英语，实例git，post，官方文档
+
+
+#### React的烟雾弹 ####
+npm安装，es6主流但混淆了es5和es7，出版物
+
 
 React 团队使用的是： js-signals 
 
