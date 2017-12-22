@@ -30,7 +30,7 @@ In previous post, i put TweenMax.js file in folder and import it directly, but i
 
 Door1.js
 
-```
+```javascript
 import React, {Component} from 'react'
 import { render } from 'react-dom';
 import TransitionGroup from 'react-addons-transition-group';
