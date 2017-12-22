@@ -12,7 +12,7 @@ tags:
 
 example code form [CSS IN JS,享受JS的一切 - 木杉的博客](http://mushanshitiancai.github.io/2016/12/21/js/CSS-IN-JS-享受JS的一切/)
 
-some note:  
+### Notes:   ###
 
 * i use es6 not es7, only es7 support decoration, so the terminal throw out an  error about @radium  when complie. so i delete @radium. 
 * meanwhile the propType statements throw an error , so i delete the propType statements.
