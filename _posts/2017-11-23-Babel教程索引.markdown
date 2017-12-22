@@ -20,12 +20,18 @@ echo '{ "presets": ["es2015"] }' > .babelrc
 
 #### Babel教程索引 ####
 
+simple
+
+* [使用 Babel CLI – Chialin Shih – Medium](https://medium.com/@chialin/使用-babel-cli-e18ee5541646)
+* [Setup React.js with Npm, Babel 6 and Webpack in under 1 hour](https://medium.com/@fastlane80/setup-react-js-with-npm-babel-6-and-webpack-in-under-1-hour-1a714f973506)
+
+
+document
+
 * [Babel](http://babeljs.io/docs/plugins/preset-es2015/)
 * [Search and find – Medium](https://medium.com/search?q=Babel%20)
 * [Misunderstanding ES6 Modules, Upgrading Babel, Tears, and a Solution](https://blog.kentcdodds.com/misunderstanding-es6-modules-upgrading-babel-tears-and-a-solution-ad2d5ab93ce0)
 * [How writing custom Babel & ESLint plugins can increase productivity & improve user experience](https://blog.kentcdodds.com/how-writing-custom-babel-and-eslint-plugins-can-increase-your-productivity-and-improve-user-fd6dd8076e26)
-* [Setup React.js with Npm, Babel 6 and Webpack in under 1 hour](https://medium.com/@fastlane80/setup-react-js-with-npm-babel-6-and-webpack-in-under-1-hour-1a714f973506)
-* [使用 Babel CLI – Chialin Shih – Medium](https://medium.com/@chialin/使用-babel-cli-e18ee5541646)
 * [Improve React performance with Babel – Doctolib Engineering – Medium](https://medium.com/doctolib-engineering/improve-react-performance-with-babel-16f1becfaa25)
 * [Setting up Flow when you’ve already got Babel in place](https://medium.freecodecamp.org/using-flow-with-babel-c04fdca8d14d)
 * [Building modular javascript applications in ES6 with React, Webpack and Babel](https://towardsdatascience.com/building-modular-javascript-applications-in-es6-with-react-webpack-and-babel-538189cd485f)
