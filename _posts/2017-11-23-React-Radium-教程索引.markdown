@@ -128,7 +128,7 @@ index.html
 
 
 
-## Reference: Index Of Radium ##
+## Reference: Index Of Radium Posts ##
 
 * PPT:
 * [Radium Intro](http://chentsulin.github.io/radium-intro/#/)
