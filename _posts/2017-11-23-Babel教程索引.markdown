@@ -1,0 +1,33 @@
+---
+layout: post
+title:  "Babel教程索引"
+date:   2017-11-23 03:38:49 +0800
+categories:  
+tags: 
+    - react 
+
+---
+
+# Babel教程索引 #
+
+
+#### 参考 ####
+
+* [Search and find – Medium](https://medium.com/search?q=Babel%20)
+* [Misunderstanding ES6 Modules, Upgrading Babel, Tears, and a Solution](https://blog.kentcdodds.com/misunderstanding-es6-modules-upgrading-babel-tears-and-a-solution-ad2d5ab93ce0)
+* [How writing custom Babel & ESLint plugins can increase productivity & improve user experience](https://blog.kentcdodds.com/how-writing-custom-babel-and-eslint-plugins-can-increase-your-productivity-and-improve-user-fd6dd8076e26)
+* [Setup React.js with Npm, Babel 6 and Webpack in under 1 hour](https://medium.com/@fastlane80/setup-react-js-with-npm-babel-6-and-webpack-in-under-1-hour-1a714f973506)
+* [使用 Babel CLI – Chialin Shih – Medium](https://medium.com/@chialin/使用-babel-cli-e18ee5541646)
+* [Improve React performance with Babel – Doctolib Engineering – Medium](https://medium.com/doctolib-engineering/improve-react-performance-with-babel-16f1becfaa25)
+* [Setting up Flow when you’ve already got Babel in place](https://medium.freecodecamp.org/using-flow-with-babel-c04fdca8d14d)
+* [Building modular javascript applications in ES6 with React, Webpack and Babel](https://towardsdatascience.com/building-modular-javascript-applications-in-es6-with-react-webpack-and-babel-538189cd485f)
+* [Setting up your React /ES6 Development environment with Webpack, Express and Babel](https://blog.hellojs.org/setting-up-your-react-es6-development-environment-with-webpack-express-and-babel-e2a53994ade)
+* [Start Using Babel 7 Beta Today! – Jeff Dolle – Medium](https://medium.com/@jdolle/babel-7-beta-instructions-aed5cf17048b)
+* [Setup React.js with Npm, Babel 6 and Webpack in under 1 hour](https://medium.com/@fastlane80/setup-react-js-with-npm-babel-6-and-webpack-in-under-1-hour-1a714f973506)
+* [Quick guide: how to update Babel 5.x -> 6.x – Serg Gospodarets – Medium](https://medium.com/@malyw/how-to-update-babel-5-x-6-x-d828c230ec53)
+* [How to Build and Publish ES6 Modules Today, with Babel and Rollup](https://medium.com/@tarkus/how-to-build-and-publish-es6-modules-today-with-babel-and-rollup-4426d9c7ca71)
+* [10 minute JavaScript: Library development in ES6 with Babel, Mocha and npm scripts](https://blog.hellojs.org/10-minute-javascript-library-development-in-es6-with-babel-mocha-and-npm-scripts-9f08b22e69c3)
+* [How to implement testing + code coverage on React with Karma, Babel, and Webpack](https://medium.com/@scbarrus/how-to-get-test-coverage-on-react-with-karma-babel-and-webpack-c9273d805063)
+* [React Tutorial 1.5: Utilizing Webpack and Babel to build a React.js App](https://tylermcginnis.com/react-js-tutorial-1-5-utilizing-webpack-and-babel-to-build-a-react-js-app/)
+* [Babel is dead! How to publish native ES modules with Node v8.5.0+](https://medium.com/@dandv/publishing-native-es-modules-with-node-v8-5-0-730736e0f612)
+* [Coding News Summary #2 — Prettier, Safari, D language, Babel, and more](https://edgecoders.com/coding-news-summary-2-prettier-safari-d-language-babel-and-more-bbcea7ce992c)
