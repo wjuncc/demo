@@ -8,7 +8,7 @@ tags:
 
 ---
 
-#  A Simple Demo Of React Radium #
+#  A Simple Demo Of React Radium Grid #
 
 example code form [Radium Grid: A React Grid System Injected With The Power Of Radium](http://formidable.com/blog/2016/06/20/radium-grid-a-react-grid-system-injected-with-the-power-of-radium/?utm_content=buffercba8a&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
 
