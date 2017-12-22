@@ -8,9 +8,13 @@ tags:
 
 ---
 
-# React Radium 测试 #
+# React Radium A Simple Demo #
 
-* es7 decoration style ， throw error, cant build， so， delete @radium, and 
+example form [CSS IN JS,享受JS的一切 - 木杉的博客](http://mushanshitiancai.github.io/2016/12/21/js/CSS-IN-JS-享受JS的一切/)
+
+some note:  
+
+* i use es6 not es7, only es7 support decoration, so the terminal throw out an  error about @radium  when complie , style ， throw error, cant build， so， delete @radium, and delete 
 
 effect:  
 ![1](https://i.imgur.com/85Oktq0.gif)
@@ -126,7 +130,6 @@ index.html
 #### 参考 ####
 
 * [Radium Intro](http://chentsulin.github.io/radium-intro/#/)
-* [CSS IN JS,享受JS的一切 - 木杉的博客](http://mushanshitiancai.github.io/2016/12/21/js/CSS-IN-JS-享受JS的一切/)
 * [在Meteor中使用Radium的方法](http://www.59m59s.com/blog/zai-meteorzhong-shi-yong-radiumde-fang-fa/)
 * [Radium - holly的博客](http://holly-juan.github.io/blog/技术/2014/09/28/radium.html)
 * [谈谈 CSS Modules](http://boke.io/tan-tan-css-modules/)
