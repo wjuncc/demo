@@ -10,6 +10,10 @@ tags:
 
 # webpack 打包 #
 
+写法1：
+
+	{"scripts":{"build":"webpack","build:api":"aglio -i docs/api/index.apib -o docs/api/index.html"}}
+
 
 #### 参考 ####
 
