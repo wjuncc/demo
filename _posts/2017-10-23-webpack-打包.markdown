@@ -8,7 +8,554 @@ tags:
 
 ---
 
+
+
+
 # webpack 打包 #
+【webpack】的基本工作流程
+重要!!!! 2016/06/17(五)更新，此webpack有最新的工作流程，請參閱!!!!!
+
+從無到有建立 webpack 設定檔（一）
+
+好吧，首先你想會想問什麼是 webpack, 依照官方網站的說明，可以用一張圖來表示它的功能：
+medium.com	
+其實我只是看著這個網站照自己的意思打出來，若你需要原文參考：
+http://christianalfoni.github.io/javascript/2014/12/13/did-you-know-webpack-and-react-is-awesome.html
+
+以下教學你會使用到：
+
+用CommonJS bundle 你的 js (在 node.js 的元件下使用)
+Sourcemapping
+轉換 JSX file.
+切割你的 相依vendor 與 app相依的js (快速bundle)
+bundle 你的樣式檔
+處理 圖片 與 字形檔
+將成品匯出production版本
+安裝 webpack 與 webpack-dev-server
+首先你需要用 npm 安裝 webpack 與 webpack-dev-server, 如果你第一次裝，可以用 -g 安裝，以便在任何地方都可以使用該指令:
+
+npm install -g webpack webpack-dev-server
+webpack 就是我們的打包工具，所以你一定要安裝。
+webpack-dev-server 可以即時產生一個 server 方便看執行結果。
+先看一下基本的工作流程
+我們的結構可能會長醬子：
+
+/project
+- /app
+-- main.jsx
+-- AppComponent.jsx
+- /build
+-- index.html
+-- bundle.js (webpack 自動產生)
+- webpack.config.js
+就像 grunt 跟 gulp 一樣，我們需要建立一個設定檔來setup, 它預設名字必須要叫 webpack.config.js，內容可能會像醬：
+
+module.exports = {
+  entry: ['./app/main.jsx'],
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  }
+};
+建議使用 package.json 來設定腳本，比方說我們可以把 webpack-dev-server 的腳本寫在裡面像這樣：
+
+{
+  "name": "my-project",
+  "version": "0.0.0",
+  "main": "app/main.jsx",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build"
+  },
+  "author": "",
+  "license": "ISC"
+}
+ps: package.json 可以用 npm init 來產生。
+
+這邊我們要注意 webpack-dev-server這個指令，當我們寫好這個檔案後只要在 terminal 執行 npm run dev，它就會執行 webpack-dev-server。而它帶的參數以下一一說明：
+
+--devtool eval: 將把 source 加到我的 code.
+--progress 與 --colors 只是反應現在程序執行到哪邊。
+而 --content-base build 將會把 build裡的 index.html 作為你的啟始網頁
+執行工作流程
+首先在我們的目錄下建立一個 build/index.html內容可能是：
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My project</title>
+</head>
+<body>
+  <script src="bundle.js"></script>
+</body>
+</html>
+當然我們也建立一個 /app/main.jsx 來確保設定檔可以讀到我們的起始檔。
+
+var AppComponent = require('./AppComponent.jsx');
+console.log('Loaded the app component');
+然後馬上來 npm run dev 看看:
+
+npm run dev
+
+可以看到它說我們的 modules 建立好，然後打開 http://localhost:8080/webpack-dev-server/
+
+就可以看到我們的網頁什麼也沒有，但console 裡卻出現了「Loaded the app component」
+
+
+打開原始碼會發現它也幫我們 minify html 了.
+
+
+而且試著改變 app/main.jsx 裡的 檔案，你會發現存檔的那一瞬間 js 也會直接執行改變後的樣子，而且網頁不會重整。
+
+
+接下來我們要安裝 React.js 並且使用 JSX 轉換器。先把 server Ctrl+c 中斷
+
+webpack loaders
+在 webpack 的轉換器都是以 xxx-loader 名稱為主，所以我們可以執行以下 terminal 來安裝 jsx-loader:
+
+npm install jsx-loader --save
+ps: --save 參數可以讓你的 package.json 記錄你安裝的套件，因為這些套件有些很大，如果你上傳到github 其實很浪費空間，更何況大家的套件都長一樣，沒必要上傳到 github, 可以建一個 .gitignore 去省略 node_modules/* 這樣在 git push 時就不會把它推進去，別人下載時也只要使用 npm install 依照 package.json 把這些相依的套件載回來，以下是安裝好 jsx-loader 後的 package.json:
+
+
+接下來我們要修改一下我們的 webpack.config.js:
+
+module.exports = {
+  entry: ['./app/main.js'],
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      { test: /\.jsx$/, loader: 'jsx-loader' }
+    ]
+  }
+};
+這邊是在說我們使用module 裡的 loaders, 並且如果在執行的過程中只要找到副檔名為 *.jsx 的檔案，就會幫我們使用 jsx-loader 來進行轉換 (jsx → js)。然後我們接下來要修改一下 AppComponet.jsx，但在修改前，我們要先安裝 react:
+
+npm install react --save
+AppComponent.jsx 內容改為:
+
+var React = require('react');
+var AppComponent = React.createClass({
+  render: function() {
+    return (
+      <h1>Hello world!</h1>
+    );
+  }
+});
+module.exports = AppComponent;
+然後 main.jsx 改成:
+
+var React = require('react');
+var AppComponent = require('./AppComponent.jsx');
+React.render(<AppComponent/>, document.body);
+然後再讓我們執行 npm run dev
+
+
+YES! 這就是我們要的 Hello world! 但是這邊有一個問題，就是我們每次對 jsx 檔有任何改變，它轉換的時間太長，明明我們只有2個檔案而已，不應該花到 100ms 左右的速度。
+
+
+處理vendors
+會發生這個原因是因為我們使用 react 的 jsx 轉換時，每次改變 jsx 檔，就需要重新 bundle 一次，但每次 bundle 都會把 require(‘react’) 一起 bundle 進來，所以我們應該把 react 獨立出變成一個 vendor ，每次 bundle 時就只要重新編譯其 有改變的部分就好。
+
+所以我們不再使用 npm 的 react, 改用 bower 來安裝 react, 首先你要先安裝 bower (如果你沒有的話)
+
+npm install bower -g
+然後用 bower init 指令幫你建立一個 bower.json
+
+bower init
+就一直enter 就對了，然後安裝 react for bower
+
+bower install react --save
+然後我們稍微再修改一下我們的 webpack.config.js:
+
+var bower_dir = __dirname + '/public/libs';
+module.exports = {
+  entry: ['./app/main.js'], 
+  // 這邊去引用 bower 裡的 react 而不用 npm 裡的 react
+  resolve :{
+    alias: {
+      'react': bower_dir + '/react/react.min.js'
+    }
+  },
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  },
+  module: { 
+    // 這邊指定 webpack 不要處理 react 這個檔案
+    noParse: [bower_dir + '/react/react.min.js'],
+    loaders: [
+      { test: /\.jsx$/, loader: 'jsx-loader' }
+    ]
+  }
+};
+未來我們可能還會再新增更多的 vendors, 所以我們可以建一個 addVendor 的 function 讓我們方法新增更多 vender。
+
+// For conveniance we create variable that holds the directory to public/libs
+var bower_dir = __dirname + '/public/libs';
+
+var config = {
+  addVendor: function (name, path) {
+    this.resolve.alias[name] = path;
+    this.module.noParse.push(new RegExp(path));
+  },
+  entry: ['./app/main.js'],
+  resolve: { alias: {} },
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  },
+  module: {
+    noParse: [],
+    loaders: [
+      { test: /\.js$/, loader: 'jsx-loader' }
+    ]
+  }
+};
+
+config.addVendor('react', bower_dir + '/react/react.min.js');
+
+module.exports = config;
+以此類推，我們也可以這樣直接使用別的套件，像是使用 bootstrap：
+
+var bower_dir = __dirname + '/public/libs';
+
+var config = {
+  addVendor: function (name, path) {
+    this.resolve.alias[name] = path;
+    this.module.noParse.push(new RegExp(path));
+  },
+  entry: ['./app/main.js'],
+  resolve: { alias: {} },
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  },
+  module: {
+    noParse: [],
+    loaders: [
+      { test: /\.js$/, loader: 'jsx-loader' }
+    ]
+  }
+};
+
+config.addVendor('bootstrap', bower_dir + '/bootstrap/bootstrap.min.js');
+config.addVendor('bootstrap.css', bower_dir + '/bootstrap/bootstrap.min.css')
+
+module.exports = config;
+雖然我執行過後它有跟我報錯 (bootstrap 需要相依 jquery)
+
+Uncaught Error: Bootstrap's JavaScript requires jQuery
+可能筆者沒寫好吧。
+
+Specifying chunks
+好，現在我們要打包我們的 app 跟 react, 這打包檔會變成一個 bundle.js 的檔案跟一個 vendors.js 檔案。這邊我們因為要使用 webpack 的打包工具，所以我們要先安裝 npm install --save webpack
+
+npm install --save webpack
+然後再修改 webpack.config.js
+
+// Add WebPack to use the included CommonsChunkPlugin
+var webpack = require('webpack');
+var bower_dir = __dirname + '/public/libs';
+
+var config = {
+   addVendor: function (name, path) {
+    this.resolve.alias[name] = path;
+    this.module.noParse.push(new RegExp('^' + name + '$'));
+  },
+  
+  // We split the entry into two specific chunks. Our app and vendors. Vendors
+  // specify that react should be part of that chunk
+  entry: {
+    app: ['./app/main.js'],
+    vendors: ['react']
+  },
+  resolve: { alias: {} },
+  
+  // We add a plugin called CommonsChunkPlugin that will take the vendors chunk
+  // and create a vendors.js file. As you can see the first argument matches the key
+  // of the entry, "vendors"
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
+  ],
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  },
+  module: {
+    noParse: [],
+    loaders: [
+      { test: /\.js$/, loader: 'jsx-loader' }
+    ]
+  }
+};
+
+config.addVendor('react', bower_dir + '/react/react.min.js');
+
+module.exports = config;
+我們一開始先 require(‘react’); 然後在 entry 指令 vendors 有 react, 並且在 plugins這邊指定把 vendors 打包成一個 vendors.js，然後我們修改一下我們的 build/index.html，加個 vendors.js
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My project</title>
+</head>
+<body>
+  <script src="vendors.js"></script> <!-- 加一下 -->
+  <script src="bundle.js"></script>
+</body>
+</html>
+重新執行 npm run dev 後，就可以在 network 看到我們已經把我們的app全打包成 bundle.js，套件全打包在 vendors.js，這意味著以後我們修改我們的 app 時，只會變動 bundle.js ，vendors 則只有在新增新套件時才會重新打包一次，增加開發速度。
+
+
+Multiple lazy loaded entries
+這一篇我不知道該怎麼翻，但總之你重新開一個新的資料夾，我們要建立一個 SPA 式的網頁。當使用者點擊 home-page 時，我們不想讓使用者下載 admin-page 的javascript 跟 css ，以下有一個簡單的範例：
+
+總之你先開一個新的資料夾，可能叫 spa好了
+
+mkdir spa
+cd spa
+mkdir build
+touch build/index.html
+touch webpack.config.js
+mkdir app
+touch app/main.jsx
+然後建立 webpack.config.js
+
+module.exports = {
+  entry: ['./app/main.jsx'],
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  },
+  module:{
+    loaders: [  
+      {test: /\.jsx$/, loader: 'jsx-loader'}
+    ]
+  }
+};
+然後我們的還是需要 npm init 一下。
+
+npm init
+安裝 react, jsx-loader, webpack
+
+npm install --save react jsx-loader webpack
+然後我們的 main.jsx 內容如下：
+
+var React = require('react');
+
+// We create a function that will lazy load modules based on the current hash
+var resolveRoute = function () {
+  
+  // If no hash or hash is '#' we lazy load the Home component
+  if (!location.hash || location.hash.length === 1) {
+    require.ensure([], function () {
+      var Home = require('./Home.js');
+      React.render(<Home />, document.getElementById('app'));
+    });
+    
+  // Or if route is #admin we lazy load that
+  } else if (location.hash === '#admin') {
+    require.ensure([], function () {
+      var Admin = require('./Admin.js');
+      React.render(<Admin />, document.getElementById('app'));
+    });
+  }
+
+};
+
+// Resolve route on hash change
+window.onhashchange = resolveRoute;
+
+// Resolve current route
+resolveRoute();
+main.jsx 主要在做路由分配動作，當location.hash 的長度是1或是沒有時，我們就導去 home-page, 但如果 location.hash 是 #admin 時，我們就導向 admin-page，然後設定 window.onhashchange 時就執行 resolveRoute 這個 function。
+
+然後 build/index.html 內容如下：
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My project</title>
+</head>
+<body>
+  <div>
+    <a href="#">Home</a>
+    <a href="#admin">Admin</a>
+  </div>
+  <div id="app"></div>
+  <script src="bundle.js"></script>
+</body>
+</html>
+Optimizing with a common chunk
+接下來我們會逐步建立 Home.jsx, Admin.jsx 這些各別的頁面，在此之前，我們一樣還是先把用到的套件打成一個包。然後先讓我們建立 home 跟 admin:
+
+touch app/Home.jsx
+touch app/Admin.jsx
+然後修改一下 webpack.config.js
+
+var webpack = require('webpack');
+module.exports = {
+
+  // We add webpack/hot/dev-server to our main entry point
+  entry: {
+    app: ['webpack/hot/dev-server', './app/main.jsx'],
+    Home: ['./app/Home.jsx'],
+    Admin: ['./app/Admin.jsx']
+  },
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {test: /\.jsx$/ , loader: 'jsx-loader'}
+    ]
+  },
+  plugins: [new webpack.optimize.CommonsChunkPlugin('common.js', 2)]
+};
+這邊的重對是 我們把 entry 改成 app, Home, Admin 三個區塊。
+app 就是程式的進入點，我們戴入了 webpack/hot/dev-server 跟 ./app/main.jsx。
+
+然後再各別定義 Home 跟 Admin, 但最重要的還是 plugins 這邊我們做了 CommonsChunkPlugin 的打包動作(把 react, webpack 打好 變成一個 common.js)
+
+打開我們的 package.json ，幫我們的 scripts 加上 dev 動作 (有個 --hot)
+
+{
+  "name": "my-project",
+  "version": "0.0.0",
+  "main": "app/main.jsx",
+  "scripts": {
+    "dev": "webpack-dev-server --devtool eval --hot --progress --colors --content-base build"
+  },
+  "author": "",
+  "license": "ISC"
+}
+然後我們增加幾個 script tag 到 build/index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My project</title>
+</head>
+<body>
+  <div>
+    <a href="#">Home</a>
+    <a href="#admin">Admin</a>
+  </div>
+  <div id="app"></div>
+  <script src="http://localhost:8080/webpack-dev-server.js"></script>
+  <script src="common.js"></script>
+  <script src="bundle.js"></script>
+</body>
+</html>
+來試試 hot swap!
+為了要讓我們的code 不必刷新就可以立即反應更改的狀況，我們需要再修改一下 main.jsx:
+
+var React = require('react');
+
+var resolveRoute = function () {
+  
+  if (!location.hash || location.hash.length === 1) {
+    require.ensure([], function () {
+      var Home = require('./Home.js');
+      React.render(Home(), document.getElementById('app'));
+    });
+    
+  } else if (location.hash === '#admin') {
+    require.ensure([], function () {
+      var Admin = require('./Admin.js');
+      React.render(Admin(), document.getElementById('app'));
+    });
+  }
+
+};
+
+window.onhashchange = resolveRoute;
+resolveRoute();
+
+// If hot swapping can be done, do it by resolving the current route
+// and render the application again
+if (module.hot) {
+  module.hot.accept(resolveRoute);
+}
+這段的重點在 最下面的 module.hot 如果被啟動，那就讓它不必刷新就可以反映更動。
+
+讀取CSS
+webpack 最屌的就是可以讓我們在 js 裡直接讀取 css。所以我們要先灌一下 style-loader 和 css-loader
+
+npm install --save style-loader css-loader
+webpack.config.js 修改一下，多一個 test .css
+
+var webpack = require('webpack');
+module.exports = {
+
+  // We add webpack/hot/dev-server to our main entry point
+  entry: {
+    app: ['webpack/hot/dev-server', './app/main.jsx'],
+    Home: ['./app/Home.jsx'],
+    Admin: ['./app/Admin.jsx']
+  },
+  output: {
+    path: './build',
+    filename: 'bundle.js'
+  },
+  module: {
+    loaders: [
+      {test: /\.jsx$/ , loader: 'jsx-loader'},
+      {test: /\.css$/ , loader: 'style-loader!css-loader'}
+    ]
+  },
+  plugins: [new webpack.optimize.CommonsChunkPlugin('common.js', 2)]
+};
+然後我們建一個 styles/main.css
+
+mkdir styles
+touch styles/main.css
+其內容為:
+
+body{
+  background-color: #ccc;
+  color: red;
+}
+然後打開 app/main.jsx 在 require(‘react’); 下面多一行:
+
+require('../styles/main.css');
+存檔，然後你就可以看到你的 頁面已經有改變了!
+
+當然如果你像我一樣有點假掰一定要用 scss 之類的工具，那麼：
+
+npm install --save sass-loader@0.4.2
+這邊要灌 0.4.2 版的 sass-loder 最新版的0.6.0 有問題。
+然後把 webpack.config.js 的 test css 修改成
+
+{test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader'}
+這邊的意思是如果我們找到 scss 檔的話我們就依序載入 style-loader, css-loader, sass-loader 去編譯醬子。
+
+當然，你的 styles/main.css 也可以改名叫 styles/main.scss，為了要驗證真的有效。我們再建一個叫 styles/layout.scss 的檔，內容是:
+
+body { color: red }
+main.scss 內容是:
+
+@import "layout";
+body{
+  background-color: #ccc;
+  h3 {
+    font-size: 40px;
+  }
+}
+然後重新執行你的 npm run dev ，M-A-G-I-C!
+
+One clap, two clap, three clap, forty?
+By clapping more or less, you can signal to us which stories really stand out.
+
+
+
 
 写法1：
 

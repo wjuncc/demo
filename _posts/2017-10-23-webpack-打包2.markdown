@@ -1,0 +1,226 @@
+---
+layout: post
+title:  "webpack 打包2"
+date:   2017-10-13 00:55:16 +0800
+categories:  
+tags: 
+    - react 
+
+---
+
+
+[從無到有建立 webpack 設定檔（一）](https://medium.com/html-test/從無到有建立-webpack-設定檔-一-42fbc76a2d37)
+
+
+#### 為什麼要使用 webpack? ####
+
+windows 使用者直接安裝 nvm installer。 
+
+### 安裝 ###
+代码：
+
+	npm install webpack -g
+
+新建文件夹 website
+代码：
+
+	mkdir website && cd website
+
+index.html
+
+```html
+<!DOCTYPE html>
+ <html lang="en">
+   <head>
+     <meta charset="UTF-8">
+     <title>Document</title>
+   </head>
+ <body>
+   <div id="content">content</div>
+ </body>
+</html>
+```
+
+运行localhost。
+
+server.js
+```javascript
+``` 
+	touch server.js
+裡面暫時先不用寫東西
+
+package.json
+
+命令行：
+
+	npm init
+
+一直 enter 下去就可以了。
+
+
+npm init 會產生 package.json
+
+package.json 負責幫我們記錄專案裡我們使用了哪些 node packages，類似一個套件索引檔。它的內容大概長這樣：
+
+
+剛開始的 package.js
+
+
+然後用 npm 來安裝套件，第一個要灌的就是node 常用的網頁伺服器 express：
+
+安裝 Express
+
+	npm install express --save-dev
+
+install 也可以簡寫成 i
+
+	npm i express --save-dev
+
+package.json 會多了一個 devDependencies 區塊：
+
+	
+
+
+多出來的 devDependencies 裡，有一個 express
+ devDependencies 裡面有一個 express,   
+如果再繼續裝，它就會繼續在 devDependencies 新增。
+
+#### 带--save-dev參數和不带參數的区别 ####
+不带 --save-dev 這個參數，不會更新 package.json，只會默默的新增 node_modules 文件夹并安装。
+
+#### 带--save-dev參數和--save參數的区别 ####
+--save-dev：用來安裝開發時用的工具
+--save：用於上線時必要的套件
+
+比方說 express 是開發時會用到的臨時伺服器，應該使用 --save-dev
+而 jquery, react ... 等，是上線必備的套件，應該使用 --save
+
+上傳github 時，不上傳套件，只上傳 package.json，然後看 package.json 裡有什麼 Dependencies(上線依賴) 與 devDependencies(開發依賴) 套件，再下載下來。  
+所以把專案 pull 到開發環境，用 npm i 安裝所有的依賴套件。
+但如果 pull 到正式環境，你會使用 npm i --production 來安裝 Dependencies(上線依賴)的套件。
+安裝專案用 webpack
+npm i --save-dev webpack
+安裝用之後你的 package.json 應該會長這樣：
+
+
+多了 webpack
+修改 server.js
+請把 server.js 修改成這樣：
+
+
+require webpack 稍後我會說明，require express 就是建立一個暫時用的伺服器，建好後設定路由「/」 會回傳 index.html 檔。然後 listen 在 3000 port, host 開在 0.0.0.0。接著到 termianl 下：
+
+node server.js
+可以看到這個畫面：
+
+
+然後打開 http://0.0.0.0:3000/ 就可以看見我們剛剛定義的 index.html 了~
+
+
+內容很空的 index.html
+特別說明：使用 0.0.0.0 這個 host 有個好處，就是你可以使用 localhost 或是 [內部ip] 來瀏覽你的專案，所以你可以打 http://localhost:3000/ 或是 http://內部ip:3000/ 來查看。
+
+內部 IP 可以從這邊來看，像我的就是 192.168.0.13，所以我們可以輸入 http://192.168.0.13:3000
+既然我們有內部ip，就意味著可以使用同個網域下的其他裝置來瀏覽你電腦裡的專案！
+安裝 webpack-dev-middleware 與webpack-hot-middleware
+webpack-dev-middleware 可以幫我們在 express 下建立 webpack-dev-server 中介層，你可以給它一些 webpack-dev-server 參數，比方說 noInfo: false, 那你在 terminal 啟動它時就不會 console.log 東西。
+
+webpack-hot-middleware 則可以幫我們免重整來更新存檔的檔案用（等下你就知道了）
+
+npm i --save-dev webpack-dev-middleware webpack-hot-middleware
+然後要更新一下 server.js
+
+
+更新的 server.js
+安裝 babel-loader 與 babel-preset-react
+因為我們會使用 ES6(下一代的JavaScript) 語法，所以我們需要安裝 babel-loader、babel-core、babel-preset-es2015、 還有 babel-preset-react(轉碼規則) , 然後在 webpack 裡幫我們轉換。
+
+npm i --save-dev babel-core babel-loader babel-preset-react babel-preset-es2015
+安裝 React
+等下我們要寫 react，所以要安裝 react 跟 react-dom
+
+npm i --save react react-dom
+建立 webpack.hot.config.js 在專案根目錄
+
+這邊有很多東西其實我也不太懂，但這邊就以我知道的說明一下：
+
+entry 屬性設定 js 的進入點，屬性為 object，每個進入點需設定來源，以本次案例來說，我的 entry 裡面有 app 進入點，它的來源有2：一是hot-middleware，另一個是等下我們要建立的 /components/app.js 。之後我們就可以使用 [publicPath]/app.js 來存取這個app進入點。
+output 屬性用來設定存取進入點的資訊，也是要打包時輸出的位置。path是設定進入點的來源base路徑，filename指的是進入點打包的後的檔名，可以使用 “bundle.js” 把所有進入點js打成一包，或是像此案例使用 “[name].js” 讓每個進入點各自一包。 publicPath 是設定<script src..>要存取它時的路徑。像以此例，我們到時就可以使用 http://localhost:3000/static/app.js 來存取它。
+module 屬性設定遇到什麼檔案時，要使用什麼 loader 去轉換它。在此例中，我們遇到 js 時，會使用 babel-loader 去讀取它，好讓webpack看得懂 es6 語法， __dirname(此專案根目錄) 裡的每個 js 都要用 babel-loader, 除了 /node_modules/ 裡的除外。
+設定.babelrc檔
+剛剛安裝的 babel-preset-es2015 跟 babel-preset-react 就在這個檔裡被使用，但老實說我並不明白為什麼要設定它們才可以跑。內容如下：
+
+
+建立 /components/app.js
+app.js 檔案內容
+其中的 ReactDOM 則是幫我們把 React 的 App Component 渲染到 #content 這個 div 的工具。而 module.hot 如果支援的話，則開啟熱渲染模式（存檔即改變，不用重整）。
+
+特別注意：如果你沒有使用 babel-loader, babel-preset-react, 這種HTML與JS混著用的檔案webpack可是不認得的。(會出錯)
+幫index.html 安插js進入點。
+
+好了，到目前為止，我們的檔已經設定的差不多了，把 node server.js 先按 ctrl + c 關掉。
+
+在 package.json 加上 scripts > start
+打開 package.json 看一下 devDependencies (開發依賴) 與 dependencies (上線依賴) 應該會像這樣，然後我們在 scripts 屬性加入一個 start 命令。
+
+所以我們之後只要輸入：
+
+npm run start
+就等同於使用
+
+node server.js
+好，接著我們啟動 npm run start, 然後看一下。
+
+果不其然出現了 app
+接著我們修改一下 /components/app.js
+
+把原本的 app 改成欸批批
+修改後的 app.js
+接著你就可以看見不在重整的情況下，它也會修改內容了！
+
+建立 Header, Content, Footer
+然後在 app.js 引用它們：
+
+存檔後看看瀏覽器：
+
+引用 header, content, footer 後的 app
+如果你修改了被 app 引用的 Header.js：
+
+header 修改成 抬頭
+被引入的 Header.js 也立即改變
+如此一來，我們就可以開始開發我們的 React 程式了~
+
+下一章會帶入 scss 進來~
+從無到有建立 webpack 設定檔（二）設定樣式
+
+如果你還沒看過第一篇，請到這邊
+medium.com	
+JavaScriptWebpackReact
+One clap, two clap, three clap, forty?
+By clapping more or less, you can signal to us which stories really stand out.
+
+
+11
+3
+Follow
+
+
+
+
+写法1：
+
+	{"scripts":{"build":"webpack","build:api":"aglio -i docs/api/index.apib -o docs/api/index.html"}}
+
+
+#### 参考 ####
+
+* [【webpack】的基本工作流程 – 進擊的 Front End‘s – Medium](https://medium.com/html-test/webpack-的基本工作流程-585f2bc952b9)
+* [zjhr/webpack-1: 简单易懂的webpack入门教程](https://github.com/zjhr/webpack-1)
+* [经典webpack入门（讲的很透彻） - Div.IO](https://div.io/topic/1752)
+* [[译] 让 Webpack 来帮你打包吧 - 前端 - 掘金](https://juejin.im/entry/5767a975df0eea0062ffe193)
+* [Webpack你的包 - 众成翻译](http://www.zcfy.cc/article/webpack-your-bags-921.html)
+* [开始使用 Webpack 2 - 众成翻译](http://www.zcfy.cc/article/getting-started-with-webpack-2-thinking-in-code-2110.html)
+* [让 Webpack 来帮你打包吧 - 达仔的博客 - Zhangjd Blog](https://blog.zhangjd.me/2016/06/19/webpack-your-bags/)
+* [[譯 + 補充] Webpack 2 學習筆記 - DEVLOG of andyyou](https://andyyou.github.io/2017/02/17/webpack-2-beginner-guide/)
+* [开发](https://doc.webpack-china.org/guides/development/)
+* [一小时包教会 —— webpack 入门指南 - vajoy - 博客园](https://www.cnblogs.com/vajoy/p/4650467.html)
