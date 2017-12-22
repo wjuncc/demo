@@ -8,7 +8,6 @@ tags:
 
 ---
 
-# Babel教程索引 #
 
 ```powershell
 $ cd yourProject
@@ -19,8 +18,9 @@ $ echo '{ "presets": ["es2015"] }' > .babelrc
 ```
 
 
-#### 参考 ####
+#### Babel教程索引 ####
 
+* [Babel](http://babeljs.io/docs/plugins/preset-es2015/)
 * [Search and find – Medium](https://medium.com/search?q=Babel%20)
 * [Misunderstanding ES6 Modules, Upgrading Babel, Tears, and a Solution](https://blog.kentcdodds.com/misunderstanding-es6-modules-upgrading-babel-tears-and-a-solution-ad2d5ab93ce0)
 * [How writing custom Babel & ESLint plugins can increase productivity & improve user experience](https://blog.kentcdodds.com/how-writing-custom-babel-and-eslint-plugins-can-increase-your-productivity-and-improve-user-fd6dd8076e26)
