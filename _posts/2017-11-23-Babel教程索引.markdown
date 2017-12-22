@@ -129,6 +129,9 @@ Use npm to install react and react-dom
 
 Replace the existing console.log statement in the index.jsx with the following content
 
+
+
+```javascript
 import React from 'react';
 import {render} from 'react-dom';
 
@@ -139,12 +142,36 @@ class App extends React.Component {
 }
 
 render(<App/>, document.getElementById('app'));
+```
+
+
 Run the following command to update the bundle file with the new changes
 
 Linux
 ./node_modules/.bin/webpack -d
 Windows
-node_modules\.bin\webpack -d
+
+	node_modules\.bin\webpack -d
+
+ERROR:
+
+```powershell
+PS E:\n\learn\react\css\demo3> node_modules\.bin\webpack -d
+Hash: 4147fb0883a0e44773ed
+Version: webpack 3.10.0
+Time: 30ms
+
+ERROR in Entry module not found: Error: Can't resolve 'babel-loader' in 'E:\n\learn
+PS E:\n\learn\react\css\demo3>
+```
+RUN:
+
+```powershell
+npm install babel-loader -save-dev
+```
+
+
+
 Open the index.html in the browser, you can see Hello React, be proud ;)
 
 Add component…
