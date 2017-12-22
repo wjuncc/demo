@@ -10,6 +10,8 @@ tags:
 
 #  A Simple Demo Of React Radium Grid #
 
+This one is not good neither for mini-site, nor back-end interface in producing enviroment, for the mini-site's css exports from the psd , and then modifty to css-module in react.On the other hand, its a better choose for back-end ui to some ui suites setting like Meteor and react-ui. 
+
 example code form [Radium Grid: A React Grid System Injected With The Power Of Radium](http://formidable.com/blog/2016/06/20/radium-grid-a-react-grid-system-injected-with-the-power-of-radium/?utm_content=buffercba8a&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
 
 * Radium Grid: 
@@ -17,6 +19,7 @@ example code form [Radium Grid: A React Grid System Injected With The Power Of R
 
 to install radium-grid, running script:
 ```powershell
+cd path-of-directory
 npm install --save radium-grid
 ```
 effect:  
