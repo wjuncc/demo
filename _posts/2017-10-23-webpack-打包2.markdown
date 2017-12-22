@@ -41,10 +41,37 @@ tags:
 
 运行：
 
+
 	npm install radium --save-dev
+	npm install transform-decorators-legacy --save-dev
 
+### 	Module build failed: SyntaxError   radium decorator ###
 
+[decorator in component breaks build](https://github.com/storybooks/storybook/issues/455)
 
+[SyntaxError using Create React App #816](https://github.com/FormidableLabs/radium/issues/816)
+
+We should probably add something to the documentation about getting started with decorators. They are an ES2017 proposal and not included in a basic Babel setup like you have with create-react-app. You can instead use the functional version export default Radium(Component);
+
+means, the app created with create-react-app, could not get the right setting of the basic Babel.
+
+and the functional version means:
+
+	Button = Radium(Button);
+
+### Module build failed: SyntaxError  propTypes  ###
+
+[`static propTypes` causing Unexpected Token errors out of the box #36](https://github.com/kriasoft/react-firebase-starter/issues/36)
+
+Do you have .babelrc file in the root of your project containing { "stage": 0 }?
+
+node run build
+
+Upgrade Babel to ^6.0.0 #150
+
+	npm install babel@6.0.0 --save-dev
+
+	npm install gulp-babel@6.0.0
 ----------------------------------------
 
 ## 原文 ##
