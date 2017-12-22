@@ -196,6 +196,17 @@ const Demo = () => {
 
 render(<Demo />, document.querySelector('#container'));
 ```
+The above example will render with the following provided defaults:
+
+* All cells in the grid are 1/3 wide for all screen sizes.
+* The grid uses a 16px fixed gutter.
+* Cell content is aligned to the top left.
+* The breakpoints use the following media queries:
+	* small: "@media only screen and (max-width: 640px)",
+	* medium: "@media only screen and (min-width: 641px) and (max-width: 1024px)",
+	* large: "@media only screen and (min-width: 1025px) and (max-width: 1440px)",
+	* xlarge: "@media only screen and (min-width: 1441px)"
+
 
 
 CSS Modules :
