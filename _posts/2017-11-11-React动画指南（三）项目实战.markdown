@@ -9,17 +9,20 @@ tags:
     - 笔记
 ---
 
-# React动画指南（三）项目实战 #
 
 ![1](https://i.imgur.com/usfOfNq.gif)
 
 
-打开powershell，操作：需要安装，如果报错。
+打开powershell，如果报错说找不到，则有必要安装。
+操作：
 
 	npm install react-addons-transition-group -save-dev
 
+官网说，但没有试过
+
 	Run npm install --save react-transition-group@1.x
 
+In previous post, i put TweenMax.js file in folder and import it directly, but it is better to use npm module of gsap in Production environment.
 或许要安装TweenMax模块
 
 	npm install --save-dev gsap
