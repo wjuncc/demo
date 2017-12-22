@@ -87,6 +87,25 @@ OR
 
 	npm install babel-preset-env --save-dev
 
+Now we need to create .babelrc file
+
+
+Windows
+Create a b.babelrc file then in CMD
+ren b.babelrc .babelrc
+
+.babelrc：
+
+	Open file and add
+	
+	{
+	  "presets" : ["es2015", "react"]
+	}
+
+
+
+
+
 
 #### Babel教程索引 ####
 
