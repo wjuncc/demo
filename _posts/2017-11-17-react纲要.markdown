@@ -9,19 +9,19 @@ tags:
 
 ---
 
-#### reactjs 是什么 ####
+#### 1 reactjs 是什么 ####
 
 React实际是空房子，前厅，房间，厕所，都有，但是怪物不同。
 
-#### React的幕后Boss ####
+#### 2 React的幕后Boss ####
 英语，实例git，post，官方文档
 
 
-#### React的烟雾弹 ####
-npm安装，es6主流但混淆了es5和es7，出版物
+#### 3 React的烟雾弹 ####
+ npm安装，es6主流但混淆了es5和es7，出版物
 
 
-#### React插件 ####
+#### 4 React插件 ####
 
 * ReactUI  
 
