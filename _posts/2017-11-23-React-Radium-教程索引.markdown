@@ -10,6 +10,28 @@ tags:
 
 # React Radium 教程 #
 
+本机地址：
+
+>    E:\n\learn\react\css\css-in-js-master\radium
+
+执行：
+
+	cd E:\n\learn\react\css\css-in-js-master\radium
+	npm install
+	
+执行：
+	
+	npm install radium  --save-dev
+
+执行：
+
+	npm run-script build
+	npm start
+
+
+"build": "webpack ./button.js bundle.js"  什么意思
+
+
 
 #### 参考 ####
 
