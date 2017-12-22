@@ -9,6 +9,7 @@ tags:
 # 好站推荐 medium #
 
 * [medium网站](https://medium.com/)像知乎或简书
+* [reddit](https://www.reddit.com/)像天涯
 
 ### 排版约定 ###  
 
