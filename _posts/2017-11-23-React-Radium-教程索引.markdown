@@ -132,7 +132,7 @@ index.html
 
 * [Radium Intro](http://chentsulin.github.io/radium-intro/#/)
 
-* keyframes:
+* about keyframes in Radium:
 * 28 Sep 2014 [Radium - holly的博客](http://holly-juan.github.io/blog/技术/2014/09/28/radium.html)
 
 * Meteor+Radium
