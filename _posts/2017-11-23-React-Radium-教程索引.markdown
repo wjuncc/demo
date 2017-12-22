@@ -207,6 +207,166 @@ The above example will render with the following provided defaults:
 	* large: "@media only screen and (min-width: 1025px) and (max-width: 1440px)",
 	* xlarge: "@media only screen and (min-width: 1441px)"
 
+local directory:
+
+cd E:\n\learn\react\css\demo4
+
+
+gif:  
+![2](https://i.imgur.com/e9bGdK4.gif)
+
+source code:
+```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import Radium from 'radium';
+import { Grid, Cell } from 'radium-grid';
+
+const { StyleRoot } = Radium;
+
+const styles = {
+    cell: {
+        boxSizing: "border-box",
+        color: "#fff",
+        fontFamily: "'微软雅黑','Helvetica Neue', Helvetica, Verdana, sans-serif",
+        background: "#ff4136",
+        marginBottom: "1rem",
+        padding: "1rem",
+        minWidth: "0px",
+        height: "150px"
+    }
+}
+
+const Demo = () => {
+    return (
+        <StyleRoot>
+            <Grid cellWidth="1/2">
+                <Cell style={[styles.cell]}>
+                    <p>1个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>2个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>3个产品</p>
+                </Cell>
+            </Grid>
+        </StyleRoot>
+    );
+};
+
+render(<Demo />, document.querySelector('#container'));
+```
+
+
+An example of setting widths and alignment per screen size for every cell in the grid:
+
+local directory:
+
+cd E:\n\learn\react\css\demo5
+
+
+gif:  
+![2](https://i.imgur.com/xHROrXp.gif)
+
+source code:
+```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import Radium from 'radium';
+import { Grid, Cell } from 'radium-grid';
+
+const { StyleRoot } = Radium;
+
+const styles = {
+    cell: {
+        boxSizing: "border-box",
+        color: "#fff",
+        fontFamily: "'微软雅黑','Helvetica Neue', Helvetica, Verdana, sans-serif",
+        background: "#ff4136",
+        marginBottom: "1rem",
+        padding: "1rem",
+        minWidth: "0px",
+        height: "150px"
+    }
+}
+
+const Demo = () => {
+    return (
+        <StyleRoot>
+            <Grid
+                smallCellWidth="1"
+                smallAlign="right"
+                smallVerticalAlign="bottom"
+                mediumCellWidth="1"
+                mediumCellAlign="right"
+                mediumCellVerticalAlign="bottom"
+            >
+                <Cell style={[styles.cell]}>
+                    <p>1个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>2个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>3个产品</p>
+                </Cell>
+            </Grid>
+        </StyleRoot>
+    );
+};
+
+render(<Demo />, document.querySelector('#container'));
+```
+
+
+
+
+
+local directory:
+
+cd E:\n\learn\react\css\demo6
+
+
+gif:  
+![2](https://i.imgur.com/e9bGdK4.gif)
+
+source code:
+```javascript
+
+```
+
+
+
+
+local directory:
+
+cd E:\n\learn\react\css\demo4
+
+
+gif:  
+![2](https://i.imgur.com/e9bGdK4.gif)
+
+source code:
+```javascript
+
+```
+
+
+
+
+local directory:
+
+cd E:\n\learn\react\css\demo4
+
+
+gif:  
+![2](https://i.imgur.com/e9bGdK4.gif)
+
+source code:
+```javascript
+
+```
 
 
 CSS Modules :
