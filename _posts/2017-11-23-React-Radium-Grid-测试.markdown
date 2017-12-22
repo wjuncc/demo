@@ -15,7 +15,7 @@ example code form [Radium Grid: A React Grid System Injected With The Power Of R
 * Radium Grid: 
 * [git](https://github.com/FormidableLabs/radium-grid)
 
-running script:
+to install radium-grid, running script:
 ```powershell
 npm install --save radium-grid
 ```
