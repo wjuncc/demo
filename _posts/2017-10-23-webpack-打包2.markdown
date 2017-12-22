@@ -11,14 +11,45 @@ tags:
 
 [從無到有建立 webpack 設定檔（一）](https://medium.com/html-test/從無到有建立-webpack-設定檔-一-42fbc76a2d37)
 
+## 笔记 ##
 
-#### 為什麼要使用 webpack? ####
+本地路径：
 
-windows 使用者直接安裝 nvm installer。 
+>    E:\n\learn\react\css\demo1
 
-### 安裝 ###
 代码：
 
+	cd E:\n\learn\react\css\demo1
+	npm init
+
+得到的：
+
+```javascript
+{
+  "name": "demo1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
+```
+
+运行：
+
+	npm install radium --save-dev
+
+
+
+----------------------------------------
+
+## 原文 ##
+安装全局插件：
+代码：
 	npm install webpack -g
 
 新建文件夹 website
