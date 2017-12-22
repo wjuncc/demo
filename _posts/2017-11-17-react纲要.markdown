@@ -24,13 +24,13 @@ React的重点不是React本身，而是怪物应该放在哪个房间，应该�
 
 ## React插件 ##
 
-* ReactUI  
+* UI  
 	Material-UI  
-* React的CSS  
+* CSS  
 	Radium  
-* React路由    
+* 路由    
 	React-Redux
-* React事件  
+* 事件  
 	React 团队使用的是： js-signals 
 
 
