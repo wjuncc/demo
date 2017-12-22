@@ -35,14 +35,10 @@ File index.js:
 
 ```javascript
 import React from 'react';
-import {findDOMNode} from 'react-dom';
 import { render } from 'react-dom';
-import TransitionGroup from 'react-addons-transition-group';
 import Radium from 'radium';
 class Button extends React.Component {
     render() {
-        // Radium扩展了React的style属性，支持传入一个数组。Radium会按顺序合并这些样式
-        // 这个特性很有用，可以根据条件合并一些即时的样式，比如结合props或者state
         return (
             <button
                 style={[
@@ -56,7 +52,7 @@ class Button extends React.Component {
 }
 
 Button = Radium(Button);
-// 样式就是普通的object
+
 var styles = {
     base: {
         color:"#dddddd",
