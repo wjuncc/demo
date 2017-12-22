@@ -8,8 +8,74 @@ tags:
 
 ---
 
-# React Radium 教程 #
+# React Radium 测试 #
 
+* es7 decoration style ， throw error, cant build， so， delete @radium, and 
+
+effect:  
+![1](https://i.imgur.com/85Oktq0.gif)
+
+es6：
+
+
+local directory:
+
+>
+
+File index.js:
+
+```javascript
+import React from 'react';
+import {findDOMNode} from 'react-dom';
+import { render } from 'react-dom';
+import TransitionGroup from 'react-addons-transition-group';
+import Radium from 'radium';
+class Button extends React.Component {
+    render() {
+        // Radium扩展了React的style属性，支持传入一个数组。Radium会按顺序合并这些样式
+        // 这个特性很有用，可以根据条件合并一些即时的样式，比如结合props或者state
+        return (
+            <button
+                style={[
+                    styles.base,
+                    styles[this.props.kind]
+                ]}>
+                {this.props.children}
+            </button>
+        );
+    }
+}
+
+Button = Radium(Button);
+// 样式就是普通的object
+var styles = {
+    base: {
+        color:"#dddddd",
+        background: '#d90005',
+        // 添加:hover伪类，是不是不能再简单了。。。
+        // 可以使用:hover, :focus, :active, or @media
+        ':hover': {
+            background: '#cdd900'
+        },
+        ':active': {
+            background: '#2472b1'
+        }
+    },
+    primary: {
+        background: '#0074D9',
+        color:"#dddddd"
+    },
+    warning: {
+        background: '#FF4136',
+        color:"#dddddd"
+    }
+};
+
+render(<Button>按钮</Button>, document.querySelector('#container'));
+```
+
+
+### FAULT ###
 本机地址：
 
 >    E:\n\learn\react\css\css-in-js-master\radium
