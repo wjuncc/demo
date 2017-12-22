@@ -10,8 +10,8 @@ tags:
 ---
 
 
-网上的文章，大部分是讲React CSS动画，也就是ReactCSSTransitionGroup。  
-但我要的是RTG，也就是 ReactTransitionGroup。  
+网上的文章，大部分是讲React CSS过渡组（ReactCSSTransitionGroup）。  
+但我要的是React过渡组（RTG=ReactTransitionGroup）。  
 
 #### 小结 ####
 在参考完所有资料之后，得到了下面这些认识：
