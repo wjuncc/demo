@@ -237,18 +237,3 @@ source code:
 
 ```
 
-
-CSS Modules :
-* 15日08月[全栈React: 第9天 样式 - web前端资讯](http://nodeing.com/article/414)
-* 2017年03月15日 [CSS Modules 入门及 React 中实践 - AlloyTeam](http://www.alloyteam.com/2017/03/getting-started-with-css-modules-and-react-in-practice/)
-* [React处理项目中的CSS样式--React教程中文网](http://www.reactpeixun.com/reactganhuo/2017-03-19/284.html)
-* 2016年1月13日[CSS Modules 详解及 React 中实践](https://zhuanlan.zhihu.com/purerender/20495964)
-*  2015年08月20日 [CSS 模块 - 怡红院落 - SegmentFault](https://segmentfault.com/a/1190000003130731)
-
-overview：
-* [React优化性能的经验教训 - 简书](https://www.jianshu.com/p/7a6072664371)
-
-just copy:
-* [CSS in React - 通过示例学习最好的框架 - React开发社区 - CTOLib码库](https://java.ctolib.com/joeshub-css-in-react.html)
-* [CSS in React - 通过示例学习最好的框架 - React开发 - 教程 - CTOLib码库](https://java.ctolib.com/article/wiki/42569)
-
