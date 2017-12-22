@@ -21,6 +21,15 @@ React实际是空房子，前厅，房间，厕所，都有，但是怪物不同
 npm安装，es6主流但混淆了es5和es7，出版物
 
 
+#### React插件 ####
+
+* ReactUI  
+
+* React的CSS  
+
+* React路由    
+Redux
+* React事件  
 React 团队使用的是： js-signals 
 
 
