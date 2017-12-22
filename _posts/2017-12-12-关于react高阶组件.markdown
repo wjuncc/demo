@@ -25,6 +25,7 @@ Jan 13, 2016
 * [深入理解 React 高阶组件](https://zhuanlan.zhihu.com/p/24776678)
 * [深入理解 React 高阶组件 - 简书](http://www.jianshu.com/p/0aae7d4d9bc1)
 * [学习React的高阶组件](http://www.59m59s.com/blog/xue-xi-reactde-gao-jie-zu-jian/)
+* [深入理解 React 高阶组件](https://qianduan.group/posts/59977ed1b963854f926add05)
 
 
 第2篇，腾讯翻译有1篇：  
