@@ -94,16 +94,118 @@ Windows
 Create a b.babelrc file then in CMD
 ren b.babelrc .babelrc
 
+Open file and add
 .babelrc：
 
-	Open file and add
 	
 	{
 	  "presets" : ["es2015", "react"]
 	}
 
 
+Now we need to tell Webpack to use the babel-loader while bundling the files, open webpack.config.js file and update it as below
 
+```javascript
+// Existing Code ....
+var config = {
+  // Existing Code ....
+  module : {
+    loaders : [
+      {
+        test : /\.jsx?/,
+        include : APP_DIR,
+        loader : 'babel-loader'
+      }
+    ]
+  }
+}
+```
+
+### Lets get some text out ###
+
+Use npm to install react and react-dom
+
+	npm i react react-dom -S
+
+Replace the existing console.log statement in the index.jsx with the following content
+
+import React from 'react';
+import {render} from 'react-dom';
+
+class App extends React.Component {
+  render () {
+    return <p> Hello React project</p>;
+  }
+}
+
+render(<App/>, document.getElementById('app'));
+Run the following command to update the bundle file with the new changes
+
+Linux
+./node_modules/.bin/webpack -d
+Windows
+node_modules\.bin\webpack -d
+Open the index.html in the browser, you can see Hello React, be proud ;)
+
+Add component…
+Create a new file AwesomeComponent.jsx and update it as below
+
+import React from 'react';
+
+class AwesomeComponent extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {likesCount : 0};
+    this.onLike = this.onLike.bind(this);
+  }
+
+  onLike () {
+    let newLikesCount = this.state.likesCount + 1;
+    this.setState({likesCount: newLikesCount});
+  }
+
+  render() {
+    return (
+      <div>
+        Likes : <span>{this.state.likesCount}</span>
+        <div><button onClick={this.onLike}>Like Me</button></div>
+      </div>
+    );
+  }
+
+}
+
+export default AwesomeComponent;
+Then include it in the index.jsx file
+
+// ...
+import AwesomeComponent from './AwesomeComponent.jsx';
+// ...
+class App extends React.Component {
+  render () {
+    return (
+      <div>
+        <p> Hello React Project</p>
+        <AwesomeComponent />
+      </div>
+    );
+  }
+}
+
+// ...
+If your Webpack is already running in watch mode or you have updated, then refresh the browser to see the AwesomeComponent in action.
+
+otherwise run
+
+Linux
+./node_modules/.bin/webpack -d --watch
+Windows
+node_modules\.bin\webpack -d --watch
+As I said in the beginning not really in depth explanations on why you should do this, but hopefully it was lightning fast and clear for you to get your first React.js project up and running.
+
+JavaScriptReactBabelWebpackNPM
+One clap, two clap, three clap, forty?
 
 
 
