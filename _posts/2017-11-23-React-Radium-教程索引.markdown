@@ -14,7 +14,8 @@ example form [CSS IN JS,享受JS的一切 - 木杉的博客](http://mushanshitia
 
 some note:  
 
-* i use es6 not es7, only es7 support decoration, so the terminal throw out an  error about @radium  when complie , style ， throw error, cant build， so， delete @radium, and delete 
+* i use es6 not es7, only es7 support decoration, so the terminal throw out an  error about @radium  when complie. so i delete @radium. 
+* meanwhile the propType statements throw an error , so i delete the propType statements.
 
 effect:  
 ![1](https://i.imgur.com/85Oktq0.gif)
