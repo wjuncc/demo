@@ -150,6 +150,53 @@ running script:
 ```powershell
 npm install --save radium-grid
 ```
+effect:  
+![1](https://i.imgur.com/uLot9qU.gif)
+
+source code:
+
+```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import Radium from 'radium';
+import { Grid, Cell } from 'radium-grid';
+
+const { StyleRoot } = Radium;
+
+const styles = {
+    cell: {
+        boxSizing: "border-box",
+        color: "#fff",
+        fontFamily: "'微软雅黑','Helvetica Neue', Helvetica, Verdana, sans-serif",
+        background: "#ff4136",
+        marginBottom: "1rem",
+        padding: "1rem",
+        minWidth: "0px",
+        height: "150px"
+    }
+}
+
+const Demo = () => {
+    return (
+        <StyleRoot>
+            <Grid>
+                <Cell style={[styles.cell]}>
+                    <p>1个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>2个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>3个产品</p>
+                </Cell>
+            </Grid>
+        </StyleRoot>
+    );
+};
+
+render(<Demo />, document.querySelector('#container'));
+```
+
 
 CSS Modules :
 * 15日08月[全栈React: 第9天 样式 - web前端资讯](http://nodeing.com/article/414)
