@@ -399,7 +399,7 @@ render(<Demo />, document.querySelector('#container'));
 ```
 
 
-
+While we recommend the default breakpoints, you can customize them:
 
 
 local directory:
