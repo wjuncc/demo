@@ -13,7 +13,7 @@ tags:
 example code form [CSS IN JS,享受JS的一切 - 木杉的博客](http://mushanshitiancai.github.io/2016/12/21/js/CSS-IN-JS-享受JS的一切/)
 
 ### Notes:   ###
-Where did the authoer get the code from? It is strange.  
+Where did the authoer get the code ? It is strange for the [radium page](https://github.com/FormidableLabs/radium/tree/master/docs/guides) using es6 not es7.
 * i use es6 not es7, only es7 support decorator . The terminal throw out an  error about @radium  when compile. so i delete @radium. 
 * meanwhile the propType statements throw an error , so i delete this:
 
