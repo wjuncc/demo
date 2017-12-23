@@ -32,7 +32,7 @@ import Radium, { Style } from 'radium'
 
 * very clear, with es6 code:
 
-effect:  
+### effect: ###  
 ![1](https://i.imgur.com/fA22lHB.png)   
 a static image without transition effect. Just render a blue button in radium-style code. 
 ### Source Code ###
