@@ -70,6 +70,7 @@ const Demo = () => {
 
 render(<Demo />, document.querySelector('#container'));
 ```
+
 The above example will render with the following provided defaults:
 
 * All cells in the grid are 1/3 wide for all screen sizes.
@@ -81,12 +82,14 @@ The above example will render with the following provided defaults:
 	* large: "@media only screen and (min-width: 1025px) and (max-width: 1440px)",
 	* xlarge: "@media only screen and (min-width: 1441px)"
 
+
+
+### demo2 ###
 local directory:
 
 cd E:\n\learn\react\css\demo4
 
 
-### demo2 ###
 gif:  
 ![2](https://i.imgur.com/e9bGdK4.gif)
 
@@ -338,7 +341,7 @@ const Demo = () => {
 render(<Demo />, document.querySelector('#container'));
 ```
 
-### demo5 ###
+### demo6 ###
 Custom gutters can use any valid CSS value string. Percentage values create fluid gutters, while all other values create fixed gutters. Example:
 
 
@@ -406,7 +409,7 @@ render(<Demo />, document.querySelector('#container'));
 ```
 
 
-### demo5 ###
+### demo7 ###
 While we recommend the default breakpoints, you can customize them:
 
 
