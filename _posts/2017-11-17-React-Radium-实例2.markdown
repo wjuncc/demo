@@ -118,7 +118,7 @@ import Radium, { Style } from 'radium'
 
 
 
-original post said:" create a fictional <Button> component. 
+original post said:" create a fictional `<Button>` component. 
 have a set of default styles, will adjust its appearance based on modifiers, and will include hover, focus, and active states." 
 
 so, without styles attribute, it have default styles.
