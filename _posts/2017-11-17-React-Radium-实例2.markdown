@@ -176,6 +176,55 @@ the original post said, "...Radium resolves nested style objects into a flat obj
 which means, radium can convert nested objects of css inline style to flat object.  it means, we can write code in nested form, and will be convert autoly to flat by radium.
 
 "...If you're not familiar with handling inline styles in React, see the React guide to the subject [here](https://reactjs.org/docs/dom-elements.html#style)."  
-maybe i need to take a look, but not now.
+maybe i should to take a look, but not right now.
 
 "...A basic style object looks like this:"
+
+```javascript
+var baseStyles = {
+  background: 'blue',
+  border: 0,
+  borderRadius: 4,
+  color: 'white',
+  padding: '1.5em'
+};
+```
+see, it's a flat object.
+
+"We usually nest styles inside a shared styles object for easy access:"
+
+```javascript
+var styles = {
+  base: {
+    background: 'blue',
+    border: 0,
+    borderRadius: 4,
+    color: 'white',
+    padding: '1.5em'
+  }
+};
+```
+see, it's a nested object.
+
+What the different between common css and radium css object? Obviously:
+
+* no comma in front of mark in common css
+* radium css object is object likes json format, ability with nested object.
+
+"Next, simply pass your styles to the `style `attribute of an element:"
+
+```javascript
+// Inside render
+return (
+  <button style={styles.base}>
+    {this.props.children}
+  </button>
+);
+```
+
+"From there, React will apply our styles to the button element. ..."  
+![1](https://i.imgur.com/zSpxpWs.gif)  
+yes, a blue button.
+
+"...This is not very exciting. In fact, React does this by default, without the extra step of using Radium. Radium becomes useful when you need to do more complex things, like handling modifiers, states, and media queries. But, even without those complex things, Radium will still merge an array of styles and automatically apply vendor prefixes for you."
+
