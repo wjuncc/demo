@@ -25,6 +25,14 @@ powershell
 cd E:\n\learn\react\proj1
 npm start
 ```
+error:
+![](https://i.imgur.com/8LxG8ra.png)  
+
+install radium and gsap:
+```powershell
+npm install radium --save-dev
+npm install gsap --save-dev
+``` 
 
 File index.js:
 
