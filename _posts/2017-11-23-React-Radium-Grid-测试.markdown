@@ -408,9 +408,56 @@ cd E:\n\learn\react\css\demo9
 
 
 gif:  
-![2]()
+![2](https://i.imgur.com/XbqLaqB.gif)
 
 source code:
 ```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import Radium from 'radium';
+import { Grid, Cell } from 'radium-grid';
 
+const { StyleRoot } = Radium;
+
+const styles = {
+    cell: {
+        boxSizing: "border-box",
+        color: "#fff",
+        fontFamily: "'微软雅黑','Helvetica Neue', Helvetica, Verdana, sans-serif",
+        background: "#ff4136",
+        marginBottom: "1rem",
+        padding: "1rem",
+        minWidth: "0px",
+        height: "150px"
+    }
+}
+const breakpoints = {
+    small: "@media only screen and (max-width: 320px)",
+    medium: "@media only screen and (min-width: 320px) and (max-width: 640px)",
+    large: "@media only screen and (min-width: 641px) and (max-width: 1024px)",
+    xlarge: "@media only screen and (min-width: 1025px)"
+}
+
+
+const Demo = () => {
+    return (
+        <StyleRoot>
+            <Grid breakpoints={breakpoints}>
+                <Cell style={[styles.cell]}>
+                    <p>1个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>2个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>3个产品</p>
+                </Cell>
+            </Grid>
+        </StyleRoot>
+    );
+};
+
+
+
+render(<Demo />, document.querySelector('#container'));
 ```
