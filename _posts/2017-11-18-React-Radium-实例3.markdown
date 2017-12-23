@@ -13,6 +13,7 @@ tags:
 
 example code form [Using Radium, radium's guide page in git](https://github.com/FormidableLabs/radium/tree/master/docs/guides)
 
+Neither foreign language nor native language, if i did not take insight into each paragraph, i cound not catch the key of knowleadge.
 
 ### Modifiers ###
 
