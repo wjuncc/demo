@@ -62,31 +62,6 @@ File index.html:
 ```
 
 ## POST ##   
-### Styling one element depending on another's state ###
-"You can query Radium's state using Radium.getState. This allows you to style or render one element based on the state of another, e.g. showing a message when a button is hovered."
-
-A strange function. We dont need to add previous code in front of return statement any more, for coding in radium. Maybe it could reduced the code of state.
-
-```javascript
-// Inside render
-return (
-  <div>
-    <button key="keyForButton" style={[styles.button]}>Hover me!</button>
-    {Radium.getState(this.state, 'keyForButton', ':hover') ? (
-      <span>{' '}Hovering!</span>
-    ) : null}
-  </div>
-);
-
-var styles = {
-  button: {
-    // Even though we don't have any special styles on the button, we need
-    // to add empty :hover styles here to tell Radium to track this element's
-    // state.
-    ':hover': {}
-  }
-};
-```
 ### Fallback values ###
 Sometimes you need to provide an additional value for a single CSS property in case the first one isn't applied successfully. Simply pass an array of values, and Radium will test them and apply the first one that works:
 
