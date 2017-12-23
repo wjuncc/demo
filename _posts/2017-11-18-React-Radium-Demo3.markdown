@@ -193,7 +193,7 @@ Let i make a little change:
 
 ### Source Code ###
 IDE: Webstorm 2017.1.4  
-![1](https://i.imgur.com/N6xJG3h.png)  
+![1](https://i.imgur.com/DJzeyrv.gif)  
 local directory below:
 powershell
 ```powershell
@@ -202,6 +202,57 @@ npm start
 ```
 
 File index.js:
+
+```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import Radium from 'radium';
+
+class Button extends React.Component {
+    constructor() {
+        super();
+        this.btnClicked = this.btnClicked.bind(this);
+        this.state = {
+            showRed:false
+        }
+    }
+    btnClicked (e){
+        console.log(this.setState);
+        this.setState({
+            showRed: !this.state.showRed
+        });
+    }
+    render() {
+        return (
+            <button onClick={this.btnClicked}
+                style={[
+                    styles.base,
+                    this.state.showRed && styles.block
+                ]}>
+                {this.props.children}
+            </button>
+        );
+    }
+}
+
+Button = Radium(Button);
+
+var styles = {
+    base: {
+        background: 'blue',
+        border: 0,
+        borderRadius: 4,
+        color: 'white',
+        padding: '1.5em'
+    },
+
+    block: {
+        background: 'red',
+        display: 'block'
+    }
+};
+render(<Button>按钮</Button>, document.querySelector('#container'));
+```
 
 
 
