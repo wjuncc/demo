@@ -8,18 +8,31 @@ tags:
 
 # react route 教程 #
 
+
+source code from [git](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/01-setting-up)
+
+
 ## Effect ##
 
 ![](https://i.imgur.com/2szdmyi.png)
 
-### powershell ###
+### source code ###
 
 ```powershell
 cd E:\n\learn\react\router\react-router-tutorial-master\lessons\01-setting-up
 npm install
 npm start
 ```
-[git](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/01-setting-up)
+
+```javascript
+import React from 'react'
+
+export default React.createClass({
+  render() {
+    return <div>Hello, React Router!</div>
+  }
+}) 
+```
 
 
 # Setting up the Project
