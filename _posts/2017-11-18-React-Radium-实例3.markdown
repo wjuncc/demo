@@ -84,10 +84,11 @@ to：
     ]}>
 ```
 For the `button` tags has only one `style` attribute to store the inline style code, there is no choice but to put all information into `style` attribute either simple css default inline style, or react style object or complex radium `styles`. In other words, we can't add new style attribute likes data-style. Remember that you are  messing with new created attribute which make trouble of html translation. Merge two attributes into one is much more complex than convert one to one.
+ 
 
-what has happened to it? We added a pair of square brackets inside the braces. we change the braces outside, and add a comma and a statement inside. This statement is the key to magic .The props of the `Button` instance in front of the bitwise operator, which means the judge statement. If the props is true, will apply the `block` css. On the other hand, if false, delete `block` setting. 
+"Radium will ignore any elements of the array that aren't objects, such as the result of this.props.block && styles.block when this.props.block is false or undefined."
 
-Radium will ignore any elements of the array that aren't objects, such as the result of this.props.block && styles.block when this.props.block is false or undefined.
+What has happened to it? Successfully we enhanced a single object to array object by  adding a pair of square brackets inside the braces.The original object becomes the first child of the array.The seconed child which follows after a comma, was composited by `Button` instance props, one bitwise operator, and `styles.block` object. The bitwise operator means the front part is a  judge statement. If the props is true, will apply the `block` css. On the other hand, if false, delete `block` setting. Thus we get the ability to add various css unit inside the array. 
 
 ### Browser States ###
 Radium supports styling for three browser states that are targeted with pseudo-selectors in normal CSS: :hover, :focus, and :active.
