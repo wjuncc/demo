@@ -18,7 +18,7 @@ example code form [Using Radium, radium's guide page in git](https://github.com/
 
 effect:  
 ![1](https://i.imgur.com/fA22lHB.png)   
-a static image without transition effect. Just setting a blue button in radium-style code.
+a static image without transition effect. Just render a blue button in radium-style code. 
 ### Source Code ###
 IDE: Webstorm 2017.1.4  
 ![1](https://i.imgur.com/N6xJG3h.png)  
@@ -206,8 +206,8 @@ return (
 );
 ```
 
-"From there, React will apply our styles to the button element. ..."  
-![1](https://i.imgur.com/zSpxpWs.gif)  
+"From there, React will apply our styles to the button element. ..."    
+![1](https://i.imgur.com/fA22lHB.png)    
 yes, a blue button.
 
 "...This is not very exciting. In fact, React does this by default, without the extra step of using Radium. "   
