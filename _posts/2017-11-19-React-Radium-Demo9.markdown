@@ -36,7 +36,37 @@ npm start
 File index.js:
 
 ```javascript 
+import React from 'react';
+import { render } from 'react-dom';
+import Radium, {StyleRoot} from 'radium';
 
+class Button extends React.Component {
+    render() {
+        return (
+            <button style={styles.button}>
+                {this.props.children}
+            </button>
+        );
+    }
+}
+Button = Radium(Button);
+
+var styles = {
+    button: {
+        background: ['rgba(255, 255, 255, .5)', '#fff']
+    }
+};
+
+class App extends React.Component {
+    render() {
+        return (
+            <StyleRoot>
+                <Button>按钮</Button>
+            </StyleRoot>
+        );
+    }
+}
+render(<App></App>, document.querySelector('#container'));
 ```
 
 File index.html:
@@ -81,5 +111,5 @@ Is equivalent to the following CSS (note that the order is reversed):
 }
 ```
 ### <Style> component ###
-Want to add a style selector within your component? Need to pass properties to the html and body elements or group selectors (e.g. h1, h2, h3) that share properties? Radium has you covered with the <Style /> component - read how to use it here.
+Want to add a style selector within your component? Need to pass properties to the html and body elements or group selectors (e.g. h1, h2, h3) that share properties? Radium has you covered with the <Style /> component - read how to use it [here](https://github.com/FormidableLabs/radium/tree/master/docs/api#style-component).
 
