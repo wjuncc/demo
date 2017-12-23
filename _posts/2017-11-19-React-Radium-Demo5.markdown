@@ -36,6 +36,7 @@ File index.js:
 ```javascript
 ```
 
+File index.html:
 ```html
 <!doctype html>
 <html lang="en">
