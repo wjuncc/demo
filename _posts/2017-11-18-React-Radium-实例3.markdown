@@ -95,6 +95,25 @@ Radium supports styling for three browser states that are targeted with pseudo-s
 
 To add styles for these states, add a special key to your style object with the additional rules:
 
+Pseudo-selectors is a special. Leave the out , let me diving into the question why we need to add quotation marks outside key? In fact , the style object's key could add quotes mark likes:
+```
+var styles = {
+  'base': {
+    'background': 'blue',
+    'border': 0,
+    'borderRadius': 4,
+    'color': 'white',
+    'padding': '1.5em',
+
+    ':hover': {
+      'backgroundColor': 'red'
+    },
+  }
+}
+```
+but as easy to write, we dont do it like that. 
+
+In css file, the compiler could read the css name with the orefix comma ,and the `@` mark. but in Javascript , those marks is special keyword , marks means the split the key and the value in key-value data liks object either json . and `@` means `decorator` in es7.That's the reason why we add the extra marks here to keep the compiler only traucr treat it as a string key of the objkect. that ;s wht we must add the quotye marks outside the wkeuy start with `@` and colon.                                                                        											
 
 ```javascript
 var styles = {
@@ -130,6 +149,7 @@ var styles = {
 Radium will merge styles for any active states when your component is rendered.
 
 ### Media queries ###
+
 Add media queries to your style objects the same way as you would add browser state modifiers like :hover. The key must start with @media, and the syntax is identical to CSS:
 
 ```javascript
@@ -166,6 +186,7 @@ IE9 supports CSS media queries, but doesn't support the matchMedia API. You'll n
 Styling multiple elements in a single component
 Radium allows you to style multiple elements in the same component. You just have to give each element that has browser state modifiers like :hover or media queries a unique key or ref attribute:
 
+```javascript
 // Inside render
 return (
   <div>
@@ -192,9 +213,11 @@ var styles = {
     }
   }
 };
+```
 Styling one element depending on another's state
 You can query Radium's state using Radium.getState. This allows you to style or render one element based on the state of another, e.g. showing a message when a button is hovered.
 
+```javascript
 // Inside render
 return (
   <div>
@@ -213,20 +236,25 @@ var styles = {
     ':hover': {}
   }
 };
-Fallback values
+```
+### Fallback values ###
 Sometimes you need to provide an additional value for a single CSS property in case the first one isn't applied successfully. Simply pass an array of values, and Radium will test them and apply the first one that works:
 
+```javascript
 var styles = {
   button: {
     background: ['rgba(255, 255, 255, .5)', '#fff']
   }
 };
+```
 Is equivalent to the following CSS (note that the order is reversed):
 
+```javascript
 .button {
   background: #fff;
   background: rgba(255, 255, 255, .5);
 }
-<Style> component
+```
+### <Style> component ###
 Want to add a style selector within your component? Need to pass properties to the html and body elements or group selectors (e.g. h1, h2, h3) that share properties? Radium has you covered with the <Style /> component - read how to use it here.
 
