@@ -118,6 +118,13 @@ import Radium, { Style } from 'radium'
 
 
 
+original post said:" create a fictional <Button> component. 
+have a set of default styles, will adjust its appearance based on modifiers, and will include hover, focus, and active states." 
+
+so, without styles attribute, it have default styles.
+
+which means, at 1st ,it just button tags and child only, not style attribute define.
+
 
 ```javascript
 class Button extends React.Component {
@@ -148,11 +155,21 @@ class Button extends React.Component {
     }
 }
 ```
+then introduce two way to convert a simple react component to Radium component in es6
 
-which means, at 1st ,it just button tags and child only, not style attribute define.
+```javascript
+class Button extends React.Component {
+  // ...
+}
+module.exports = Radium(Button);
+```
 
+```javascript
+// or
+class Button extends React.Component {
+  // ...
+}
+Button = Radium(Button);
+```
 
-said:" create a fictional <Button> component. 
-have a set of default styles, will adjust its appearance based on modifiers, and will include hover, focus, and active states." 
-
-so, without styles attribute, it have default styles.
+the original post said, "Radium resolves nested style objects into a flat object that can be applied directly to a React element. If you're not familiar with handling inline styles in React, see the React guide to the subject here. A basic style object looks like this:"
