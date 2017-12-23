@@ -95,7 +95,7 @@ Radium supports styling for three browser states that are targeted with pseudo-s
 To add styles for these states, add a special key to your style object with the additional rules:
 
 
-```
+```javascript
 var styles = {
   base: {
     background: 'blue',
@@ -131,7 +131,7 @@ Radium will merge styles for any active states when your component is rendered.
 ### Media queries ###
 Add media queries to your style objects the same way as you would add browser state modifiers like :hover. The key must start with @media, and the syntax is identical to CSS:
 
-```
+```javascript
 var style = {
   width: '25%',
 
@@ -145,6 +145,7 @@ Radium will apply the correct styles for the currently active media queries. Top
 Nested browser states
 Media query styles can also contain nested browser states:
 
+```javascript
 var style = {
   width: '25%',
 
@@ -156,6 +157,7 @@ var style = {
     }
   }
 };
+```
 Known issues with media queries
 IE9 Support
 IE9 supports CSS media queries, but doesn't support the matchMedia API. You'll need a polyfill that includes addListener.
