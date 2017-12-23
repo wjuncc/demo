@@ -10,18 +10,11 @@ tags:
 
 #  A Simple Demo Of React Radium #
 
-example code form [CSS IN JS,享受JS的一切 - 木杉的博客](http://mushanshitiancai.github.io/2016/12/21/js/CSS-IN-JS-享受JS的一切/)
+example code form [git](https://github.com/FormidableLabs/radium/tree/master/docs/guides)
 
 ### Notes:   ###
 
-* i use es6 not es7, only es7 support decorator . The terminal throw out an  error about @radium  when compile. so i delete @radium. 
-* meanwhile the propType statements throw an error , so i delete this:
-
-```javascript
-	static propTypes = {
-	kind: React.PropTypes.oneOf(['primary', 'warning']).isRequired
-	};
-```
+* very clear, with es6 code:
 
 effect:  
 ![1](https://i.imgur.com/85Oktq0.gif)
