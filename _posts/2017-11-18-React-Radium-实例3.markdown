@@ -34,8 +34,8 @@ smart? how does it do?
 </Button>
 ```
 
-Start by adding another style to your styles object:
-
+"Start by adding another style to your styles object:"
+add a new one named `block`:
 
 ```javascript
 var styles = {
@@ -53,9 +53,9 @@ var styles = {
 };
 ```
 
-------------
 "Then, include that style object in the array passed to the style attribute if the conditions match:"
 
+er, this means, the array prefare mentioned, is not the style object but the attribute. we can add a pair of square brackets inside the braces. 
 ```javascript
 // Inside render
 return (
@@ -68,7 +68,23 @@ return (
   </button>
 );
 ```
+change from：
 
+```javascript
+ <button style={styles.base}>
+```
+to：
+
+```javascript
+  <button
+    style={[
+      styles.base,
+      this.props.block && styles.block
+    ]}>
+```
+what had happened here? yes we change the braces outside, and add a comma inside, add the props of the instance in front of the  bitwise operator, which means the judge statement. If the props is true, will apply the `block` css. On the other hand, if false, delete `block` setting. 
+
+------------
 Radium will ignore any elements of the array that aren't objects, such as the result of this.props.block && styles.block when this.props.block is false or undefined.
 
 Browser States
