@@ -8,13 +8,45 @@ tags:
 
 ---
 
+#  A Simple Demo Of React Radium #
+
+
+example code form [Using Radium, radium's guide page in git](https://github.com/FormidableLabs/radium/tree/master/docs/guides)
+
+
+## Note ##
+
+## Effect ##
+
+![1](https://i.imgur.com/Lj9hQzS.png)    
+
+
+### Source Code ###
+IDE: Webstorm 2017.1.4  
+![1](https://i.imgur.com/N6xJG3h.png)  
+local directory below:
+powershell
+```powershell
+cd E:\n\learn\react\css\Radium\demo4
+npm start
+```
+
+File index.js:
+
+```javascript
+```
+
+```html
+```
+
 ### Browser States ###
 Radium supports styling for three browser states that are targeted with pseudo-selectors in normal CSS: :hover, :focus, and :active.
 
 To add styles for these states, add a special key to your style object with the additional rules:
 
 Pseudo-selectors is a special. Leave the post out, let me diving into the question why we need to add quotation marks outside key? In fact , we could add quotes mark outside keys likes:
-```
+
+```javascript
 var styles = {
   'base': {
     'background': 'blue',
@@ -81,7 +113,7 @@ var style = {
 ```
 Radium will apply the correct styles for the currently active media queries. Top level CSS rules in your media queries will be converted to CSS and rendered in an actual <style> element with !important appended instead of being applied inline so they will work with server-side rendering. Note that you must wrap your top-level component in the <StyleRoot> component to render the Radium stylesheet. Print styles will also work as normal, since they are rendered to CSS.
 
-Nested browser states
+### Nested browser states ###
 Media query styles can also contain nested browser states:
 
 ```javascript
