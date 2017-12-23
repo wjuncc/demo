@@ -55,7 +55,8 @@ var styles = {
 
 "Then, include that style object in the array passed to the style attribute if the conditions match:"
 
-er, this means, the array prefare mentioned, is not the style object but the attribute. we can add a pair of square brackets inside the braces. 
+Just as we mentioned before, the array , is not exists in `styles` object but the  `style` attribute below:
+
 ```javascript
 // Inside render
 return (
@@ -82,7 +83,9 @@ to：
       this.props.block && styles.block
     ]}>
 ```
-what has happened to it? yes we change the braces outside, and add a comma and a statement inside. This statement is the key to magic .The props of the `Button` instance in front of the bitwise operator, which means the judge statement. If the props is true, will apply the `block` css. On the other hand, if false, delete `block` setting. 
+For the `button` tags has just only one `style` attribute to present the style, so we must put all information into one attribute. We cant create new attribute, it will muss the tag-attribute nonsense .
+
+what has happened to it? We added a pair of square brackets inside the braces. we change the braces outside, and add a comma and a statement inside. This statement is the key to magic .The props of the `Button` instance in front of the bitwise operator, which means the judge statement. If the props is true, will apply the `block` css. On the other hand, if false, delete `block` setting. 
 
 ------------
 Radium will ignore any elements of the array that aren't objects, such as the result of this.props.block && styles.block when this.props.block is false or undefined.
