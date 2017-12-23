@@ -113,7 +113,7 @@ var styles = {
 ```
 but as easy to write, we dont do it like that. 
 
-In css file, the compiler could read the css name with the orefix comma ,and the `@` mark. but in Javascript , those marks is special keyword , marks means the split the key and the value in key-value data liks object either json . and `@` means `decorator` in es7.That's the reason why we add the extra marks here to keep the compiler only traucr treat it as a string key of the objkect. that ;s wht we must add the quotye marks outside the wkeuy start with `@` and colon.                                                                        											
+In css file, any words in front of open brace  could be treated as name correctly. But in Javascript file, colon marks means the split the key and the value in key-value data liks object either json, and `@` means `decorator` in es7.The quotye marks have a guaranty of having the keyname compiled correctly.                                                                          											
 
 ```javascript
 var styles = {
