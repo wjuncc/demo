@@ -101,25 +101,17 @@ index.html
 ```
 
 
-### FAULT ###
-本机地址：
+### NOTES ###
 
->    E:\n\learn\react\css\css-in-js-master\radium
+twe way to import module:
 
-执行：
+```javascript
+var Radium = require('radium');
 
-	cd E:\n\learn\react\css\css-in-js-master\radium
-	npm install
-	
-执行：
-	
-	npm install radium  --save-dev
-
-执行：
-
-	npm run-script build
-	npm start
-
-
-"build": "webpack ./button.js bundle.js"  什么意思
-
+// or
+import Radium from 'radium'
+```
+and, less usage:
+```javascript
+import Radium, { Style } from 'radium'
+```
