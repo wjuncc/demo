@@ -117,8 +117,7 @@ import Radium, { Style } from 'radium'
 ```
 
 
-create a fictional <Button> component. 
-have a set of default styles, will adjust its appearance based on modifiers, and will include hover, focus, and active states.
+
 
 ```javascript
 class Button extends React.Component {
@@ -150,4 +149,10 @@ class Button extends React.Component {
 }
 ```
 
-which means, at 1st ,it just button tags and child only, not style define.
+which means, at 1st ,it just button tags and child only, not style attribute define.
+
+
+said:" create a fictional <Button> component. 
+have a set of default styles, will adjust its appearance based on modifiers, and will include hover, focus, and active states." 
+
+so, without styles attribute, it have default styles.
