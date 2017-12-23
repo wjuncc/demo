@@ -18,7 +18,7 @@ example code form [Using Radium, radium's guide page in git](https://github.com/
 
 ## Effect ##
 
-![1](https://i.imgur.com/afu0BkZ.gif)    
+![1]()    
 
 
 ### Source Code ###
