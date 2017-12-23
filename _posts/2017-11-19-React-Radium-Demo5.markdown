@@ -24,7 +24,15 @@ example code form [Using Radium, radium's guide page in git](https://github.com/
 ### Source Code ###
 IDE: Webstorm 2017.1.4  
 ![1](https://i.imgur.com/N6xJG3h.png)  
+
+Error：
+![2](https://i.imgur.com/gcIWk81.png
+
+* [Radium - Error: please wrap your application in the StyleRoot component](https://stackoverflow.com/questions/41446835/radium-error-please-wrap-your-application-in-the-styleroot-component)
+* [Media Query crashing app ](https://github.com/FormidableLabs/radium/issues/574)
+
 local directory below:
+
 powershell
 ```powershell
 cd E:\n\learn\react\css\Radium\demo5
