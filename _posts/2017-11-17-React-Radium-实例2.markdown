@@ -226,5 +226,8 @@ return (
 ![1](https://i.imgur.com/zSpxpWs.gif)  
 yes, a blue button.
 
-"...This is not very exciting. In fact, React does this by default, without the extra step of using Radium. Radium becomes useful when you need to do more complex things, like handling modifiers, states, and media queries. But, even without those complex things, Radium will still merge an array of styles and automatically apply vendor prefixes for you."
+"...This is not very exciting. In fact, React does this by default, without the extra step of using Radium. "   
+sure, react inline css can do this.
+
+"...Radium becomes useful when you need to do more complex things, like handling modifiers, states, and media queries. But, even without those complex things, Radium will still merge an array of styles and automatically apply vendor prefixes for you."
 
