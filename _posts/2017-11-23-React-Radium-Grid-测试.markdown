@@ -332,7 +332,7 @@ const Demo = () => {
 render(<Demo />, document.querySelector('#container'));
 ```
 
-
+Custom gutters can use any valid CSS value string. Percentage values create fluid gutters, while all other values create fixed gutters. Example:
 
 
 local directory:
@@ -341,10 +341,76 @@ cd E:\n\learn\react\css\demo8
 
 
 gif:  
-![2](https://i.imgur.com/e9bGdK4.gif)
+![2](https://i.imgur.com/uzdrMyW.gif)
+
+source code:
+```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import Radium from 'radium';
+import { Grid, Cell } from 'radium-grid';
+
+const { StyleRoot } = Radium;
+
+const styles = {
+    cell: {
+        boxSizing: "border-box",
+        color: "#fff",
+        fontFamily: "'微软雅黑','Helvetica Neue', Helvetica, Verdana, sans-serif",
+        background: "#ff4136",
+        marginBottom: "1rem",
+        padding: "1rem",
+        minWidth: "0px",
+        height: "150px"
+    }
+}
+
+const Demo = () => {
+    return (
+        <StyleRoot>
+            <Grid gutter="24px">
+                <Cell style={[styles.cell]}>
+                    <p>1个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>2个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>3个产品</p>
+                </Cell>
+            </Grid>
+
+            <Grid gutter="4%">
+                <Cell style={[styles.cell]}>
+                    <p>4个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>5个产品</p>
+                </Cell>
+                <Cell style={[styles.cell]}>
+                    <p>6个产品</p>
+                </Cell>
+            </Grid>
+        </StyleRoot>
+    );
+};
+
+render(<Demo />, document.querySelector('#container'));
+```
+
+
+
+
+
+local directory:
+
+cd E:\n\learn\react\css\demo9
+
+
+gif:  
+![2]()
 
 source code:
 ```javascript
 
 ```
-

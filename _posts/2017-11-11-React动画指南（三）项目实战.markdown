@@ -26,6 +26,17 @@ In previous post, i put TweenMax.js file in folder and import it directly, but i
 或许要安装TweenMax模块
 
 	npm install --save-dev gsap
+	
+
+uninstall
+
+	npm uninstall --save-dev gsap
+	npm uninstall --save-dev signals
+	npm uninstall --save-dev react-transition-group
+
+	
+	npm uninstall --save-dev gsap signals react-transition-group
+
 
 
 Door1.js
