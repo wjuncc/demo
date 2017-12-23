@@ -22,7 +22,9 @@ to install radium-grid, running script:
 cd path-of-directory
 npm install --save radium-grid
 ```
-effect:  
+
+### demo1 ###
+gif:  
 ![1](https://i.imgur.com/uLot9qU.gif)
 
 source code:
@@ -84,6 +86,7 @@ local directory:
 cd E:\n\learn\react\css\demo4
 
 
+### demo2 ###
 gif:  
 ![2](https://i.imgur.com/e9bGdK4.gif)
 
@@ -131,6 +134,7 @@ render(<Demo />, document.querySelector('#container'));
 ```
 
 
+### demo3 ###
 An example of setting widths and alignment per screen size for every cell in the grid:
 
 local directory:
@@ -195,6 +199,7 @@ render(<Demo />, document.querySelector('#container'));
 
 
 
+### demo4 ###
 local directory:
 
 cd E:\n\learn\react\css\demo6
@@ -269,6 +274,7 @@ const Demo = () => {
 render(<Demo />, document.querySelector('#container'));
 ```
 
+### demo5 ###
 The same as above, but with different per-cell widths on small screens:
 
 
@@ -332,6 +338,7 @@ const Demo = () => {
 render(<Demo />, document.querySelector('#container'));
 ```
 
+### demo5 ###
 Custom gutters can use any valid CSS value string. Percentage values create fluid gutters, while all other values create fixed gutters. Example:
 
 
@@ -399,6 +406,7 @@ render(<Demo />, document.querySelector('#container'));
 ```
 
 
+### demo5 ###
 While we recommend the default breakpoints, you can customize them:
 
 
