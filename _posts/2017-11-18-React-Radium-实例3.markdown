@@ -87,14 +87,15 @@ For the `button` tags has only one `style` attribute to store the inline style c
 
 what has happened to it? We added a pair of square brackets inside the braces. we change the braces outside, and add a comma and a statement inside. This statement is the key to magic .The props of the `Button` instance in front of the bitwise operator, which means the judge statement. If the props is true, will apply the `block` css. On the other hand, if false, delete `block` setting. 
 
-------------
 Radium will ignore any elements of the array that aren't objects, such as the result of this.props.block && styles.block when this.props.block is false or undefined.
 
-Browser States
+### Browser States ###
 Radium supports styling for three browser states that are targeted with pseudo-selectors in normal CSS: :hover, :focus, and :active.
 
 To add styles for these states, add a special key to your style object with the additional rules:
 
+
+```
 var styles = {
   base: {
     background: 'blue',
@@ -124,11 +125,13 @@ var styles = {
     }
   },
 };
+```
 Radium will merge styles for any active states when your component is rendered.
 
-Media queries
+### Media queries ###
 Add media queries to your style objects the same way as you would add browser state modifiers like :hover. The key must start with @media, and the syntax is identical to CSS:
 
+```
 var style = {
   width: '25%',
 
@@ -136,6 +139,7 @@ var style = {
     width: '100%'
   }
 };
+```
 Radium will apply the correct styles for the currently active media queries. Top level CSS rules in your media queries will be converted to CSS and rendered in an actual <style> element with !important appended instead of being applied inline so they will work with server-side rendering. Note that you must wrap your top-level component in the <StyleRoot> component to render the Radium stylesheet. Print styles will also work as normal, since they are rendered to CSS.
 
 Nested browser states
