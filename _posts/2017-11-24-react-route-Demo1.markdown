@@ -19,7 +19,7 @@ In face this demo did not use route, it never import route statement.
 ### source code ###
 
 ```powershell
-cd E:\n\learn\react\router\react-router-tutorial-master\lessons\01-setting-up
+cd E:\n\learn\react\router\lessons\01-setting-up
 npm install
 npm start
 ```
@@ -76,6 +76,7 @@ You should see a "Hello React Router" message in the browser.
 Open up `modules/App.js` and change the text to something like "Hello
 <your name>". The browser automatically reloads with your new code.
 
+![](https://i.imgur.com/f2IYIDH.png)
 ---
 
 [Next: Rendering a Router](../02-rendering-a-route/)
