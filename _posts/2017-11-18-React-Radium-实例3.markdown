@@ -83,7 +83,7 @@ to：
       this.props.block && styles.block
     ]}>
 ```
-For the `button` tags has only one `style` attribute to store the inline style code, and it will be translate finally to inline style by react autoly.There is no choice but to put all information into `style` attribute either simple css default inline style, or react style object or complex radium `styles`. In other words, We can't add new style attribute likes data-style. Remember that you are  messing with new created attribute which make trouble of html reflection.
+For the `button` tags has only one `style` attribute to store the inline style code, and it will be translate finally to inline style by react autoly.There is no choice but to put all information into `style` attribute either simple css default inline style, or react style object or complex radium `styles`. In other words, we can't add new style attribute likes data-style. Remember that you are  messing with new created attribute which make trouble of html reflection.
 
 what has happened to it? We added a pair of square brackets inside the braces. we change the braces outside, and add a comma and a statement inside. This statement is the key to magic .The props of the `Button` instance in front of the bitwise operator, which means the judge statement. If the props is true, will apply the `block` css. On the other hand, if false, delete `block` setting. 
 
