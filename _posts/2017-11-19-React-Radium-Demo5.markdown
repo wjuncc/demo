@@ -42,6 +42,42 @@ npm start
 File index.js:
 
 ```javascript
+import React from 'react';
+import { render } from 'react-dom';
+import Radium, {StyleRoot} from 'radium';
+
+class Button extends React.Component {
+    render() {
+        return (
+            <button
+                style={[
+                    style.base
+                ]}>
+                {this.props.children}
+            </button>
+        );
+    }
+}
+Button = Radium(Button);
+
+var style = {
+    base:{
+        width: '25%',
+        '@media (min-width: 320px)': {
+            width: '100%'
+        }
+    }
+};
+class App extends React.Component {
+    render() {
+        return (
+            <StyleRoot>
+                <Button>按钮</Button>
+            </StyleRoot>
+        );
+    }
+}
+render(<App></App>, document.querySelector('#container'));
 ```
 
 File index.html:
