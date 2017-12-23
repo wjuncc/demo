@@ -35,7 +35,9 @@ npm start
 ```
 
 File index.js:
-```import React from 'react';
+
+```javascript
+import React from 'react';
 import { render } from 'react-dom';
 import Radium from 'radium';
 
