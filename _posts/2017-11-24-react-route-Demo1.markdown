@@ -4,15 +4,15 @@ title:  "react route Demo1"
 date:   2017-11-24 06:40:13 +0800
 categories:  
 tags: 
----
-
-# react route 教程 #
-
+---  
 
 source code from [git](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/01-setting-up)
 
+### Note: ###
 
-## Effect ##
+In face this demo did not use route, it never import route statement.
+
+### Effect ###
 
 ![](https://i.imgur.com/2szdmyi.png)
 
@@ -44,6 +44,8 @@ index.html
 <script src="bundle.js"></script> 
 ```
 
+
+## POST ##
 # Setting up the Project
 
 First you'll need [Node.js](https://nodejs.org) and the package manager
