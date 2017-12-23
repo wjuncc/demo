@@ -88,7 +88,7 @@ For the `button` tags has only one `style` attribute to store the inline style c
 
 "Radium will ignore any elements of the array that aren't objects, such as the result of this.props.block && styles.block when this.props.block is false or undefined."
 
-What has happened to it? Successfully we enhanced a single object to array object by  adding a pair of square brackets inside the braces.The original object becomes the first child of the array.The seconed child which follows after a comma, was composited by `Button` instance props, one bitwise operator, and `styles.block` object. The bitwise operator means the front part is a  judge statement. If `props` is true, will apply the `block` css. If false, delete `block` setting. Thus we get the ability to add unlimited css unit inside the array. 
+What has happened to it? Successfully we enhanced a single object to array object by  adding a pair of square brackets inside the braces.The original object becomes the first child of the array.The seconed child which follows after a comma, was composited by `Button` instance props, one bitwise operator, and `styles.block` object. The bitwise operator means the front part is a  judge statement. If `props` is true, will apply the `styles.block` css. If false, delete `styles.block` setting. Thus we get the ability to add unlimited css unit inside the array. 
 
 ### Browser States ###
 Radium supports styling for three browser states that are targeted with pseudo-selectors in normal CSS: :hover, :focus, and :active.
