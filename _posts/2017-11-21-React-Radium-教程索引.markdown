@@ -29,7 +29,10 @@ effect:
 ### Source Code ###
 local directory:
 
->
+```javascript
+cd E:\n\learn\react\css\Radium\demo1
+npm start
+```
 
 File index.js:
 
@@ -131,6 +134,7 @@ index.html
 ## Reference: Index Of Radium Posts ##
 
 * [git](https://github.com/FormidableLabs/radium)
+
 * PPT:
 * [Radium Intro](http://chentsulin.github.io/radium-intro/#/)
 
