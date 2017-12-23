@@ -18,13 +18,13 @@ example code form [Using Radium, radium's guide page in git](https://github.com/
 
 ## Effect ##
 
-![1](https://i.imgur.com/3zv2XCo.gif)    
+![1]()    
 
 
 ### Source Code ###
 IDE: Webstorm 2017.1.4  
 ![1](https://i.imgur.com/N6xJG3h.png)  
- 
+
 local directory below:
 
 powershell
@@ -62,27 +62,6 @@ File index.html:
 ```
 
 ## POST ## 
-#### Nested browser states ####
-Media query styles can also contain nested browser states:
-
-```javascript
-var style = {
-  width: '25%',
-
-  '@media (min-width: 320px)': {
-    width: '100%',
-
-    ':hover': {
-      background: 'white'
-    }
-  }
-};
-```
-#### Known issues with media queries ####
-##### IE9 Support #####
-"IE9 supports CSS media queries, but doesn't support the matchMedia API. You'll need a polyfill that includes addListener."
-
-ignore IE9!
 
 ### Styling multiple elements in a single component ###
 "Radium allows you to style multiple elements in the same component. You just have to give each element that has browser state modifiers like :hover or media queries a unique key or ref attribute:"
