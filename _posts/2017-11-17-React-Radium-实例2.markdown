@@ -10,7 +10,7 @@ tags:
 
 #  A Simple Demo Of React Radium #
 
-example code form [radium's guide page in git](https://github.com/FormidableLabs/radium/tree/master/docs/guides)
+example code form [Using Radium, radium's guide page in git](https://github.com/FormidableLabs/radium/tree/master/docs/guides)
 
 ### Notes:   ###
 
