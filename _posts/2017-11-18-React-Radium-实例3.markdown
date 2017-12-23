@@ -82,7 +82,7 @@ to：
       this.props.block && styles.block
     ]}>
 ```
-what had happened here? yes we change the braces outside, and add a comma inside, add the props of the instance in front of the  bitwise operator, which means the judge statement. If the props is true, will apply the `block` css. On the other hand, if false, delete `block` setting. 
+what has happened to it? yes we change the braces outside, and add a comma and a statement inside. This statement is the key to magic .The props of the `Button` instance in front of the bitwise operator, which means the judge statement. If the props is true, will apply the `block` css. On the other hand, if false, delete `block` setting. 
 
 ------------
 Radium will ignore any elements of the array that aren't objects, such as the result of this.props.block && styles.block when this.props.block is false or undefined.
