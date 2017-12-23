@@ -29,7 +29,7 @@ local directory below:
 
 powershell
 ```powershell
-cd E:\n\learn\react\css\Radium\demo8
+cd E:\n\learn\react\css\Radium\demo9
 npm start
 ```
 
