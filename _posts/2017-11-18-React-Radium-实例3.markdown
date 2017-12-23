@@ -88,7 +88,7 @@ For the `button` tags has only one `style` attribute to store the inline style c
 
 "Radium will ignore any elements of the array that aren't objects, such as the result of this.props.block && styles.block when this.props.block is false or undefined."
 
-What has happened to it? Successfully we enhanced a single object to array object by  adding a pair of square brackets inside the braces.The original object becomes the first child of the array.The seconed child which follows after a comma, was composited by `Button` instance props, one bitwise operator, and `styles.block` object. The bitwise operator means the front part is a  judge statement. If `props` is true, will apply the `styles.block` css. If false, delete `styles.block` setting. Thus we get the ability to add unlimited css unit inside the array. 
+What has happened to it? Successfully we enhanced a single object to array object by  adding a pair of square brackets inside double braces.The original object becomes the first child of the array.The seconed child which follows after a comma, was composited by `Button` instance props, one bitwise operator, and `styles.block` object. The bitwise operator means the front part is a  judge statement. If `props` is true, react will apply the `styles.block` css. If false, delete `styles.block` setting. Thus we get the ability to add unlimited css unit inside `style` attribute. 
 
 ### Browser States ###
 Radium supports styling for three browser states that are targeted with pseudo-selectors in normal CSS: :hover, :focus, and :active.
@@ -111,9 +111,9 @@ var styles = {
   }
 }
 ```
-For coding handy, we don't do it like that. We don't add quotation marks positively utils it caused error.
+For coding handy, we don't do it like that. We don't add quotation marks positively until it caused error.
 
-In css file, any words in front of open brace  could be treated as css name correctly. But javascript's rule is quite differ from css. In Javascript file, colon is a separator to depart the key and the value in key-value data likes object and json data, and `@` means `decorator` in es7. The quotation marks(eithor single quotation or double one) have a guaranty of having the key-name compiled correctly.                                                                          											
+In css file, any words in front of open brace  could be treated as css name correctly. But javascript's rule is quite differ from css. In javascript file, colon is a separator to depart the key and the value in key-value data likes object and json data, and `@` means `decorator` in es7. The quotation marks(eithor single quotation or double one) have a guaranty of having the key-name compiled correctly.   	
 
 ```javascript
 var styles = {
