@@ -173,14 +173,14 @@ For the `button` tags has only one `style` attribute to store the inline style c
 
 What has happened to it? Successfully we enhanced a single object to array object by  adding a pair of square brackets inside double braces.The original object becomes the first child of the array.The seconed child which follows after a comma, was composited by `Button` instance props, one bitwise operator, and `styles.block` object. The bitwise operator means the front part is a  judge statement. If `props` is true, react will apply the `styles.block` css. If false, delete `styles.block` setting. Thus we get the ability to add unlimited css unit inside `style` attribute. 
 
-when the code is:   
+when the `block` props code is `true`:   
 ```javascript
 render(<Button block="true">按钮</Button>, document.querySelector('#container'));
 ```
 the color is red:  
 ![1](https://i.imgur.com/Lj9hQzS.png)  
 
-when the code is:  
+when the `block` props code is `false`: 
 ```javascript
 render(<Button block="false">按钮</Button>, document.querySelector('#container'));
 ```
@@ -189,10 +189,12 @@ the color is blue:
 
 
 Let i make a little change:
+### Effect ###
+![1](https://i.imgur.com/DJzeyrv.gif)  
+Toggle the color after clicked button.
 
 ### Source Code ###
 IDE: Webstorm 2017.1.4  
-![1](https://i.imgur.com/DJzeyrv.gif)  
 local directory below:
 powershell
 ```powershell
