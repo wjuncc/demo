@@ -250,16 +250,19 @@ smart? how does it do?
 
 "...This works the same way as it does in React Native."
 
-------------
 
-```
+```javascript
 <Button
   size="large"
   block={true}>
   Cool Button!
 </Button>
+```
+
 Start by adding another style to your styles object:
 
+
+```javascript
 var styles = {
   base: {
     background: 'blue',
@@ -275,8 +278,10 @@ var styles = {
 };
 ```
 
+------------
 "Then, include that style object in the array passed to the style attribute if the conditions match:"
 
+```javascript
 // Inside render
 return (
   <button
@@ -287,6 +292,8 @@ return (
     {this.props.children}
   </button>
 );
+```
+
 Radium will ignore any elements of the array that aren't objects, such as the result of this.props.block && styles.block when this.props.block is false or undefined.
 
 Browser States
