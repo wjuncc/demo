@@ -237,15 +237,19 @@ If an apperance is same all the time, we use inline style or extra css file, but
 vendor prefixes means what?
 
 
+
+
+
+### Modifiers ###
+
+"Radium provides one shorthand for dealing with styles that are modified by your props or state...."   
+a shorthand, means the nickname, means one suits of css object code could be presented by a shortname.
+
+"... You can pass an array of style objects to the style attribute, and they will be merged together intelligently (:hover states, for instance, will merge instead of overwrite). This works the same way as it does in React Native."
+
 ------------
 
-
-
-
-
-Modifiers
-Radium provides one shorthand for dealing with styles that are modified by your props or state. You can pass an array of style objects to the style attribute, and they will be merged together intelligently (:hover states, for instance, will merge instead of overwrite). This works the same way as it does in React Native.
-
+```
 <Button
   size="large"
   block={true}>
@@ -266,7 +270,9 @@ var styles = {
     display: 'block'
   }
 };
-Then, include that style object in the array passed to the style attribute if the conditions match:
+```
+
+"Then, include that style object in the array passed to the style attribute if the conditions match:"
 
 // Inside render
 return (
