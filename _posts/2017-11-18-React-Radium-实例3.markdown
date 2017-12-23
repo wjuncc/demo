@@ -11,6 +11,9 @@ tags:
 #  A Simple Demo Of React Radium #
 
 
+example code form [Using Radium, radium's guide page in git](https://github.com/FormidableLabs/radium/tree/master/docs/guides)
+
+
 ### Modifiers ###
 
 "Radium provides one shorthand for dealing with styles that are modified by your props or state...."   
