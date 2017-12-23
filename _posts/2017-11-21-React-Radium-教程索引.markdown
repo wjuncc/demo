@@ -130,6 +130,7 @@ index.html
 
 ## Reference: Index Of Radium Posts ##
 
+* [git](https://github.com/FormidableLabs/radium)
 * PPT:
 * [Radium Intro](http://chentsulin.github.io/radium-intro/#/)
 
