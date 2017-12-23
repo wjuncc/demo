@@ -17,8 +17,8 @@ example code form [Using Radium, radium's guide page in git](https://github.com/
 * very clear, with es6 code:
 
 effect:  
-![1](https://i.imgur.com/fA22lHB.png)
-
+![1](https://i.imgur.com/fA22lHB.png)   
+a static image without transition effect.
 ### Source Code ###
 IDE: Webstorm 2017.1.4  
 ![1](https://i.imgur.com/N6xJG3h.png)  
