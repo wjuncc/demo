@@ -17,15 +17,14 @@ example code form [Using Radium, radium's guide page in git](https://github.com/
 ### Notes:   ###
 Important points:  
 
-* twe way to import module:
+* two way to import module:
 
 ```javascript
-var Radium = require('radium');
-
+var Radium = require('radium'); 
 // or
 import Radium from 'radium'
 ```
-and, less usage:
+Unusual Usage:
 ```javascript
 import Radium, { Style } from 'radium'
 ```
