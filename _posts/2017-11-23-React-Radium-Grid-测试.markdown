@@ -24,8 +24,16 @@ npm install --save radium-grid
 ```
 
 ### demo1 ###
+local directory:
+
+```powershell
+cd E:\n\learn\react\css\RadiumGrid\demo1
+npm start
+```
+
 gif:  
 ![1](https://i.imgur.com/uLot9qU.gif)
+
 
 source code:
 
@@ -87,8 +95,10 @@ The above example will render with the following provided defaults:
 ### demo2 ###
 local directory:
 
-cd E:\n\learn\react\css\demo4
-
+```powershell
+cd E:\n\learn\react\css\RadiumGrid\demo2
+npm start
+```
 
 gif:  
 ![2](https://i.imgur.com/e9bGdK4.gif)
@@ -142,7 +152,10 @@ An example of setting widths and alignment per screen size for every cell in the
 
 local directory:
 
-cd E:\n\learn\react\css\demo5
+```powershell
+cd E:\n\learn\react\css\RadiumGrid\demo3
+npm start
+```
 
 
 gif:  
@@ -205,7 +218,10 @@ render(<Demo />, document.querySelector('#container'));
 ### demo4 ###
 local directory:
 
-cd E:\n\learn\react\css\demo6
+```powershell
+cd E:\n\learn\react\css\RadiumGrid\demo4
+npm start
+```
 
 
 gif:  
@@ -283,7 +299,10 @@ The same as above, but with different per-cell widths on small screens:
 
 local directory:
 
-cd E:\n\learn\react\css\demo7
+```powershell
+cd E:\n\learn\react\css\RadiumGrid\demo5
+npm start
+```
 
 
 gif:  
@@ -347,7 +366,10 @@ Custom gutters can use any valid CSS value string. Percentage values create flui
 
 local directory:
 
-cd E:\n\learn\react\css\demo8
+```powershell
+cd E:\n\learn\react\css\RadiumGrid\demo6
+npm start
+```
 
 
 gif:  
@@ -415,7 +437,10 @@ While we recommend the default breakpoints, you can customize them:
 
 local directory:
 
-cd E:\n\learn\react\css\demo9
+```powershell
+cd E:\n\learn\react\css\RadiumGrid\demo7
+npm start
+```
 
 
 gif:  
