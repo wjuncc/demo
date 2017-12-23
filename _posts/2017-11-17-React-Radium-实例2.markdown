@@ -20,10 +20,11 @@ effect:
 ![1](https://i.imgur.com/85Oktq0.gif)
 
 ### Source Code ###
+IDE: Webstorm 2017.1.4  
 local directory:
 
 ```javascript
-cd E:\n\learn\react\css\Radium\demo1
+cd E:\n\learn\react\css\Radium\demo2
 npm start
 ```
 
