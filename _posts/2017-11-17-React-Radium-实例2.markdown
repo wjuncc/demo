@@ -115,3 +115,39 @@ and, less usage:
 ```javascript
 import Radium, { Style } from 'radium'
 ```
+
+
+create a fictional <Button> component. 
+have a set of default styles, will adjust its appearance based on modifiers, and will include hover, focus, and active states.
+
+```javascript
+class Button extends React.Component {
+  render() {
+    return (
+      <button>
+        {this.props.children}
+      </button>
+    );
+  }
+}
+```
+
+and the old code is:
+
+```javascript
+class Button extends React.Component {
+    render() {
+        return (
+            <button
+                style={[
+                    styles.base,
+                    styles[this.props.kind]
+                ]}>
+                {this.props.children}
+            </button>
+        );
+    }
+}
+```
+
+which means, at 1st ,it just button tags and child only, not style define.
