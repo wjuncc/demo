@@ -1,12 +1,19 @@
 ---
 layout: post
-title:  "react route 教程"
+title:  "react route Demo1"
 date:   2017-11-24 06:40:13 +0800
 categories:  
 tags: 
 ---
 
 # react route 教程 #
+
+## Effect ##
+
+![](https://i.imgur.com/2szdmyi.png)
+
+### powershell ###
+
 ```powershell
 cd E:\n\learn\react\router\react-router-tutorial-master\lessons\01-setting-up
 npm install
