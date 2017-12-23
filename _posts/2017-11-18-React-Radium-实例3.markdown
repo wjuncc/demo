@@ -179,11 +179,13 @@ var style = {
   }
 };
 ```
-Known issues with media queries
-IE9 Support
-IE9 supports CSS media queries, but doesn't support the matchMedia API. You'll need a polyfill that includes addListener.
+### Known issues with media queries ###
+### IE9 Support ###
+"IE9 supports CSS media queries, but doesn't support the matchMedia API. You'll need a polyfill that includes addListener."
 
-Styling multiple elements in a single component
+ignore IE9!
+
+### Styling multiple elements in a single component ###
 Radium allows you to style multiple elements in the same component. You just have to give each element that has browser state modifiers like :hover or media queries a unique key or ref attribute:
 
 ```javascript
