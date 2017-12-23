@@ -12,7 +12,23 @@ tags:
 
 example code form [Using Radium, radium's guide page in git](https://github.com/FormidableLabs/radium/tree/master/docs/guides)
 
+
+
 ### Notes:   ###
+Important points:  
+
+* twe way to import module:
+
+```javascript
+var Radium = require('radium');
+
+// or
+import Radium from 'radium'
+```
+and, less usage:
+```javascript
+import Radium, { Style } from 'radium'
+```
 
 * very clear, with es6 code:
 
@@ -85,20 +101,7 @@ index.html
 ```
 
 
-### NOTES ###
-
-twe way to import module:
-
-```javascript
-var Radium = require('radium');
-
-// or
-import Radium from 'radium'
-```
-and, less usage:
-```javascript
-import Radium, { Style } from 'radium'
-```
+### POST ###
 
 
 
