@@ -234,3 +234,5 @@ sure, react inline css can do this.
 
 "... But, even without those complex things, Radium will still merge an array of styles and automatically apply vendor prefixes for you."
 
+vendor prefixes means what?
+
