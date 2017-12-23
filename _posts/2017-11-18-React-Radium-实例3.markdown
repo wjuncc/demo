@@ -111,9 +111,9 @@ var styles = {
   }
 }
 ```
-In order to write easily, we dont do it like that. 
+For coding handy, we dont do it like that. 
 
-In css file, any words in front of open brace  could be treated as name correctly. But javascript's rule is quite differ from css. In Javascript file, colon is a separator to depart the key and the value in key-value data liks object and json data, and `@` means `decorator` in es7. The quotation marks(eithor single quotation or double one) have a guaranty of having the key-name compiled correctly.                                                                          											
+In css file, any words in front of open brace  could be treated as css name correctly. But javascript's rule is quite differ from css. In Javascript file, colon is a separator to depart the key and the value in key-value data likes object and json data, and `@` means `decorator` in es7. The quotation marks(eithor single quotation or double one) have a guaranty of having the key-name compiled correctly.                                                                          											
 
 ```javascript
 var styles = {
