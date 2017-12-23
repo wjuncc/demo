@@ -23,7 +23,7 @@ cd E:\n\learn\react\router\react-router-tutorial-master\lessons\01-setting-up
 npm install
 npm start
 ```
-
+App.js
 ```javascript
 import React from 'react'
 
@@ -34,6 +34,15 @@ export default React.createClass({
 }) 
 ```
 
+index.html
+```html 
+<!doctype html public "storage">
+<html>
+<meta charset=utf-8/>
+<title>My First React Router App</title>
+<div id=app></div>
+<script src="bundle.js"></script> 
+```
 
 # Setting up the Project
 
