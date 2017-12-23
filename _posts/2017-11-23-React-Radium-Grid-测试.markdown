@@ -269,7 +269,7 @@ const Demo = () => {
 render(<Demo />, document.querySelector('#container'));
 ```
 
-
+The same as above, but with different per-cell widths on small screens:
 
 
 local directory:
