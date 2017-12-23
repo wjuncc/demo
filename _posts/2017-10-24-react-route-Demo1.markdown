@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "react route Demo1"
-date:   2017-11-24 06:40:13 +0800
+date:   2017-10-24 06:40:13 +0800
 categories:  
 tags: 
 ---  
@@ -82,8 +82,3 @@ Open up `modules/App.js` and change the text to something like "Hello
 [Next: Rendering a Router](../02-rendering-a-route/)
 
 
-
-#### 参考 ####
-
-* [React 技术栈系列教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html)
-* [React Router 使用教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2016/05/react_router.html)
