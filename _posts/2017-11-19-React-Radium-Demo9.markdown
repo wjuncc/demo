@@ -15,6 +15,7 @@ example code form [Using Radium, radium's guide page in git](https://github.com/
 
 
 ## Note ##
+Next:[api](https://github.com/FormidableLabs/radium/tree/master/docs/api)
 
 ## Effect ##
 
