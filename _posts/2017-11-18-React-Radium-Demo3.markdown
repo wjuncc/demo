@@ -20,7 +20,7 @@ Neither foreign language nor native language, if i did not take insight into eac
 
 ## Effect ##
 
-![1](https://i.imgur.com/fA22lHB.png)   
+![1](https://i.imgur.com/Lj9hQzS.png)   
 a static image without transition effect. Just render a blue button in radium-style code. 
 
 
@@ -34,6 +34,66 @@ cd E:\n\learn\react\css\Radium\demo3
 npm start
 ```
 
+File index.js:
+```import React from 'react';
+import { render } from 'react-dom';
+import Radium from 'radium';
+
+class Button extends React.Component {
+    render() {
+        return (
+            <button
+                style={[
+                    styles.base,
+                    this.props.block && styles.block
+                ]}>
+                {this.props.children}
+            </button>
+        );
+    }
+}
+
+Button = Radium(Button);
+
+var styles = {
+    base: {
+        background: 'blue',
+        border: 0,
+        borderRadius: 4,
+        color: 'white',
+        padding: '1.5em'
+    },
+
+    block: {
+        background: 'red',
+        display: 'block'
+    }
+};
+render(<Button block="true">按钮</Button>, document.querySelector('#container'));
+```
+
+File index.html:
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button{
+            width:100px;
+            height: 29px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+```
 
 ## POST ##
 
