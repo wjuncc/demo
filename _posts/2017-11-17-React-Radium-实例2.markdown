@@ -245,7 +245,10 @@ vendor prefixes means what?
 "Radium provides one shorthand for dealing with styles that are modified by your props or state...."   
 a shorthand, means the nickname, means one suits of css object code could be presented by a shortname.
 
-"... You can pass an array of style objects to the style attribute, and they will be merged together intelligently (:hover states, for instance, will merge instead of overwrite). This works the same way as it does in React Native."
+"... You can pass an array of style objects to the style attribute, and they will be merged together intelligently (:hover states, for instance, will merge instead of overwrite). "   
+smart? how does it do?
+
+"...This works the same way as it does in React Native."
 
 ------------
 
