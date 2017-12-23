@@ -13,7 +13,30 @@ tags:
 
 example code form [Using Radium, radium's guide page in git](https://github.com/FormidableLabs/radium/tree/master/docs/guides)
 
+
+
+## Note ##
 Neither foreign language nor native language, if i did not take insight into each paragraph, i cound not catch the key of knowleadge.
+
+## Effect ##
+
+![1](https://i.imgur.com/fA22lHB.png)   
+a static image without transition effect. Just render a blue button in radium-style code. 
+
+
+### Source Code ###
+IDE: Webstorm 2017.1.4  
+![1](https://i.imgur.com/N6xJG3h.png)  
+local directory below:
+powershell
+```powershell
+cd E:\n\learn\react\css\Radium\demo3
+npm start
+```
+
+
+## POST ##
+
 
 ### Modifiers ###
 

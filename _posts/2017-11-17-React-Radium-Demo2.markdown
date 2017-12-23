@@ -34,6 +34,8 @@ import Radium, { Style } from 'radium'
 ### effect: ###  
 ![1](https://i.imgur.com/fA22lHB.png)   
 a static image without transition effect. Just render a blue button in radium-style code. 
+
+
 ### Source Code ###
 IDE: Webstorm 2017.1.4  
 ![1](https://i.imgur.com/N6xJG3h.png)  
