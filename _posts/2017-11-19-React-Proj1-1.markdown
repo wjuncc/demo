@@ -33,7 +33,8 @@ install radium and gsap:
 npm install radium --save-dev
 npm install gsap --save-dev
 ``` 
-
+Effect：
+![](https://i.imgur.com/CkFxbVp.gif)
 
 reference:
 
