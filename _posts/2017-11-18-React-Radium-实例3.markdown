@@ -83,7 +83,7 @@ to：
       this.props.block && styles.block
     ]}>
 ```
-For the `button` tags has just only one `style` attribute to present the style, so we must put all information into one attribute. In other words, We cant create new attribute, it will muss the tag-attribute nonsense .
+For the `button` tags has just only one `style` attribute to present the style, and it could be translate to inline style at the end by react autoly. We should put all information into one attribute. In other words, We cant create new attribute, it will muss the tag-attribute nonsense .
 
 what has happened to it? We added a pair of square brackets inside the braces. we change the braces outside, and add a comma and a statement inside. This statement is the key to magic .The props of the `Button` instance in front of the bitwise operator, which means the judge statement. If the props is true, will apply the `block` css. On the other hand, if false, delete `block` setting. 
 
