@@ -118,7 +118,7 @@ import Radium, { Style } from 'radium'
 
 
 
-original post said:" create a fictional `<Button>` component. 
+original post said:"... create a fictional `<Button>` component. 
 have a set of default styles, will adjust its appearance based on modifiers, and will include hover, focus, and active states." 
 
 so, without styles attribute, it have default styles.
@@ -172,7 +172,10 @@ class Button extends React.Component {
 Button = Radium(Button);
 ```
 
-the original post said, "Radium resolves nested style objects into a flat object that can be applied directly to a React element. ..."  
+the original post said, "...Radium resolves nested style objects into a flat object that can be applied directly to a React element. ..."  
 which means, radium can convert nested objects of css inline style to flat object.  it means, we can write code in nested form, and will be convert autoly to flat by radium.
 
-"...If you're not familiar with handling inline styles in React, see the React guide to the subject [here](https://reactjs.org/docs/dom-elements.html#style). A basic style object looks like this:"
+"...If you're not familiar with handling inline styles in React, see the React guide to the subject [here](https://reactjs.org/docs/dom-elements.html#style)."  
+maybe i need to take a look, but not now.
+
+"...A basic style object looks like this:"
