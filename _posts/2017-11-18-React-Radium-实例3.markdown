@@ -95,7 +95,7 @@ Radium supports styling for three browser states that are targeted with pseudo-s
 
 To add styles for these states, add a special key to your style object with the additional rules:
 
-Pseudo-selectors is a special. Leave the out , let me diving into the question why we need to add quotation marks outside key? In fact , the style object's key could add quotes mark likes:
+Pseudo-selectors is a special. Leave the post out, let me diving into the question why we need to add quotation marks outside key? In fact , we could add quotes mark outside keys likes:
 ```
 var styles = {
   'base': {
@@ -111,9 +111,9 @@ var styles = {
   }
 }
 ```
-but as easy to write, we dont do it like that. 
+In order to write easily, we dont do it like that. 
 
-In css file, any words in front of open brace  could be treated as name correctly. But in Javascript file, colon marks means the split the key and the value in key-value data liks object either json, and `@` means `decorator` in es7.The quotye marks have a guaranty of having the keyname compiled correctly.                                                                          											
+In css file, any words in front of open brace  could be treated as name correctly. But javascript's rule is quite differ from css. In Javascript file, colon is a separator to depart the key and the value in key-value data liks object and json data, and `@` means `decorator` in es7. The quotation marks(eithor single quotation or double one) have a guaranty of having the key-name compiled correctly.                                                                          											
 
 ```javascript
 var styles = {
