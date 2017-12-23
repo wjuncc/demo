@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React Radium 实例3"
+title:  "React Radium Demo3"
 date:   2017-11-18 00:00:58 +0800
 categories:  
 tags: 
@@ -186,8 +186,9 @@ var style = {
 ignore IE9!
 
 ### Styling multiple elements in a single component ###
-Radium allows you to style multiple elements in the same component. You just have to give each element that has browser state modifiers like :hover or media queries a unique key or ref attribute:
+"Radium allows you to style multiple elements in the same component. You just have to give each element that has browser state modifiers like :hover or media queries a unique key or ref attribute:"
 
+means the eact elements unlimitly.
 ```javascript
 // Inside render
 return (
@@ -216,8 +217,10 @@ var styles = {
   }
 };
 ```
-Styling one element depending on another's state
-You can query Radium's state using Radium.getState. This allows you to style or render one element based on the state of another, e.g. showing a message when a button is hovered.
+### Styling one element depending on another's state ###
+"You can query Radium's state using Radium.getState. This allows you to style or render one element based on the state of another, e.g. showing a message when a button is hovered."
+
+A strange function. We dont need to add previous code in front of return statement any more, for coding in radium. Maybe it could reduced the code of state.
 
 ```javascript
 // Inside render

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "React Radium 实例4"
-date:   2017-11-19 00:00:58 +0800
+title:  "React Radium Demo1"
+date:   2017-11-16 00:00:58 +0800
 categories:  
 tags: 
     - react 
@@ -13,7 +13,7 @@ tags:
 example code form [CSS IN JS,享受JS的一切 - 木杉的博客](http://mushanshitiancai.github.io/2016/12/21/js/CSS-IN-JS-享受JS的一切/)
 
 ### Notes:   ###
-
+Where did the authoer get the code from? It is strange.  
 * i use es6 not es7, only es7 support decorator . The terminal throw out an  error about @radium  when compile. so i delete @radium. 
 * meanwhile the propType statements throw an error , so i delete this:
 

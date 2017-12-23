@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React Radium 实例2"
+title:  "React Radium Demo2"
 date:   2017-11-17 00:00:58 +0800
 categories:  
 tags: 
