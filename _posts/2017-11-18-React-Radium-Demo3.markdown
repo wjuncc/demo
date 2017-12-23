@@ -173,8 +173,7 @@ For the `button` tags has only one `style` attribute to store the inline style c
 
 What has happened to it? Successfully we enhanced a single object to array object by  adding a pair of square brackets inside double braces.The original object becomes the first child of the array.The seconed child which follows after a comma, was composited by `Button` instance props, one bitwise operator, and `styles.block` object. The bitwise operator means the front part is a  judge statement. If `props` is true, react will apply the `styles.block` css. If false, delete `styles.block` setting. Thus we get the ability to add unlimited css unit inside `style` attribute. 
 
-when the code is:  
-
+when the code is:   
 ```javascript
 render(<Button block="true">按钮</Button>, document.querySelector('#container'));
 ```
