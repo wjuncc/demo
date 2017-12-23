@@ -230,7 +230,7 @@ yes, a blue button.
 sure, react inline css can do this.
 
 "...Radium becomes useful when you need to do more complex things, like handling modifiers, states, and media queries. "   
-If an apperance is same all the time, we use inline style or extra css file, but, if the apperance will be changed by click,or serval states of various changes, or resize browser window,we use radium.
+If an apperance is same all the time, we use inline style or extra css file, but, if the apperance will be changed by click,or serveral states caused by various changes, or resize browser window from mobile to PC, we use radium.
 
 "... But, even without those complex things, Radium will still merge an array of styles and automatically apply vendor prefixes for you."
 
