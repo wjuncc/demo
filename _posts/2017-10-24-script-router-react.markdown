@@ -10,6 +10,8 @@ tags:
 ---
 
 
+modify file name by tags in markdown files.
+
 ![](https://i.imgur.com/VQVi095.png)
 ## ACP Tools ##
 Generate bat markdown files from existed git tutorials, in order to speed up 

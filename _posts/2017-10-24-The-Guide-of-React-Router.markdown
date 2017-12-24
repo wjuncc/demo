@@ -8,14 +8,17 @@ tags:
 
 ---
 
-# Index of React Router Posts #
 
-In the course1-10 [Git Toturials](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)  we build a react app with the development environment about react-router . course11-14 is the server setting of react-router, even `Server Side Rendering with React` . 
-
-learning flow:  
+## learning flow:   ##
 
 * flux[Toturials](http://www.ruanyifeng.com/blog/2016/01/flux.html)[demo](https://github.com/ruanyf/extremely-simple-flux-demo)
 * router[]()[demo](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)
+
+
+## About React Router Posts ##
+
+In the course1-10 [Git Toturials](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)  we build a react app with the development environment about react-router . course11-14 is the server setting of react-router, even `Server Side Rendering with React` . 
+
 
 #### 参考 ####
 
