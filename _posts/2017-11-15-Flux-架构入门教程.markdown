@@ -17,7 +17,7 @@ source from [http://www.ruanyifeng.com/blog/2016/01/flux.html](http://www.ruanyi
 至少要学会：React + 前端框架：
 
 * React+Flux,
-* React+Redium
+* React+redux
 
 本教程是es5，不是es6，
 官方 [Flux 框架](https://facebook.github.io/flux/)。
@@ -47,7 +47,7 @@ npm start
 ```
 
 ![](https://i.imgur.com/PKikNph.gif)  
-Demo。
+
 
 ## 三、基本概念
 
@@ -318,7 +318,7 @@ Store 更新后（`this.addNewItemHandler()`）发出事件（`this.emitChange()
 
 ## 留言（79条） 
              
-好复杂，看一遍根本不懂   
+看一遍根本不懂   
 
 action不一定要放在controller view里，要是组件层次很深，传props会很累的，可以直接放在需要和action打交道的view里，fb的官方示例(todomcv和chat)就是这么做的    
 
@@ -336,7 +336,11 @@ var MyButton = React.createClass({
 这里的 MyButton 应该是 MyButtonController 吧？
  
 
+----------------------------------------
+### 反对意见：   ###
 Flux 的设计理念确实很棒，但是一个简单的列表就可以搞这么复杂，实在是不太利于做项目 
+
+----------------------------------------
 我表示非常不认同把Flux与MVC放在一起说，Flux完全是另外一种Pattern。 
 
 使用Angular1.x版本中，未来会接触React，加油！ 
@@ -369,12 +373,14 @@ AppDispatcher 这段回调为什么不写在store里
 我觉得，与派发器有关的逻辑，都放在AppDispatch比较好。这样，Store就不用加载AppDispatch了。 
 
 
+----------------------------------------
 阮大大，其实我觉得flux是mvc的更好的实践吧，action类似于controller的角色。
 
 第一：改了名字之后，感觉更加向ui靠拢，意为ui的动作，更加直接的指向了ui输入。另外，这样做的好处也是为每一个ui输入留下一笔记录。
 
 第二：也更加明确了action的范围，只是向model发送事件，不对model做任何直接的改变，model内部通过action发来的事件自己处理数据。这也使得model的改变有了稳定的位置，有利于控制和追踪代码。
 
+----------------------------------------
 不知道我这样的理解是否正确？  
 
 Facebook画的那个MVC的图，View和Model之间是直接互相调用的，而且这么多个View和Model才对应一个Controller，似乎跟我对MVC的理解有很大出入。
@@ -385,8 +391,6 @@ Facebook画的那个MVC的图，View和Model之间是直接互相调用的，而
 
 2. View同时依赖于Store和Dispatcher。在MVC中，Model和View的所有事件都通过Controller来中转，保证了View和Model的独立。而Flux中，View触发事件（Action）时是通过Dispatcher间接传到Store上，但取数据时又是直接访问Store。导致View需要同时依赖于Store和Dispatcher，这更像是一种倒退。
 
-就说那么多吧。限于个人水平，认识可能有许多误解，请大神帮忙指正，感激不尽~~
- 
 
  _onChange: function () {
 
@@ -493,10 +497,7 @@ createCLass方式是es5的方式，还有一种es6的方式，就是class Mybutt
  
                 
 
-写的很好，我看了两遍才看明白，我的目的不是学flux，而是redux，但学redux之前要学flux，我感到难过的是，demo我运行不了，报错，而且可能阮老师的文章写的早，写法跟现在写法不一样，不过还是理解了flux的流程，比书上讲的明白，thanks 
-
-原来我们都是stupid poeple
- 
+写的很好，我看了两遍才看明白，我的目的不是学flux，而是redux，但学redux之前要学flux，我感到难过的是，demo我运行不了，报错，而且可能阮老师的文章写的早，写法跟现在写法不一样，不过还是理解了flux的流程，比书上讲的明白，thanks  
 
 怎么看Web上的这些工具框架都想是WPF和QML的复杂抄袭版本。 
  
@@ -509,12 +510,3 @@ createCLass方式是es5的方式，还有一种es6的方式，就是class Mybutt
 
 讲的不错，不过例子感觉不够好，感觉例子可以用更简单的办法写出来，感觉这样用让flux大材小用了
  
- 
-
-第一次看的时候直接看代码硬啃，今天来复习一下的，看了一下，文章写的真心不错，这就是设计思路。
-  
-                
-
-看了两三遍，基本上有点思路了，估计还要跟着Demo写上一遍才算入门。
-  
-  
