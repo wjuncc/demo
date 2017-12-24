@@ -191,6 +191,14 @@ Dispatcher 的作用是将 Action 派发到 Store、。看作路由器，负责�
 
 官方的 [Dispatcher 实现](https://github.com/facebook/flux)输出一个类，你要写一个`AppDispatcher.js`，生成 Dispatcher 实例。
 
+```js
+// dispatcher/AppDispatcher.js
+var Dispatcher =require('flux').Dispatcher;
+module.exports =newDispatcher();
+```
+
+`AppDispatcher.register()`方法登记Action的回调函数。
+
 AppDispatcher.js:
 ```js
 var Dispatcher = require('flux').Dispatcher;
@@ -211,19 +219,6 @@ AppDispatcher.register(function (action) {
 module.exports = AppDispatcher;
 
 ```
-
-`AppDispatcher.register()`方法登记Action的回调函数。
-
->     
->     // dispatcher/AppDispatcher.js
->     var ListStore =require('../stores/ListStore');
->     
->     AppDispatcher.register(function(action){switch(action.actionType){
->         case 'ADD_NEW_ITEM':
->           ListStore.addNewItemHandler(action.text);
->           ListStore.emitChange();break;
->         default: // no op
->     }})
 
 上面代码中，Dispatcher收到`ADD_NEW_ITEM`动作，就会执行回调函数，对`ListStore`进行操作。
 
