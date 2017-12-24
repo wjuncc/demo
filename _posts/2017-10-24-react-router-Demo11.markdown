@@ -26,7 +26,7 @@ webpack-dev-server' 不是内部或外部命令，也不是可运行的程序或
 
 ### Effect ###
 
-![]()
+![](https://i.imgur.com/wnZoHtx.gif)
 
 ### source code ###
 powershell
