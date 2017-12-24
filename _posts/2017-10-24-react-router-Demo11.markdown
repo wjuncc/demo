@@ -15,7 +15,7 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 
 Nothing to do but editing server code.
 
-Must running script below after modified `package-json`:
+Must running the script below after modified `package-json`:
 ```powershell
 npm install
 ```
