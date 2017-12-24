@@ -376,210 +376,23 @@ Flux 的设计理念确实很棒，但是一个简单的列表就可以搞这么
 2016年1月15日 13:42
  | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354018)
  | [引用](#comment-text)
-
-阮一峰
-
- 说：
-                
-
-@abc，@夜幕下的猫：
-
-谢谢指出，已经改过来了。
-
-2016年1月15日 13:56
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354019)
- | [引用](#comment-text)
-
-[ArchiTech](http://lifeislikeaboat.com)
-
- 说：
-                
-
-学海无涯
-
-2016年1月15日 15:38
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354023)
- | [引用](#comment-text)
-
-钊王
-
- 说：
-                
-
-刚看了一遍没有看懂
-
-2016年1月15日 19:22
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354029)
- | [引用](#comment-text)
-
-[Xixilive](https://github.com/xixilive)
-
- 说：
-                
-
-我表示非常不认同把Flux与MVC放在一起说，Flux完全是另外一种Pattern。
-
-2016年1月15日 23:00
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354033)
- | [引用](#comment-text)
-
-必填
-
- 说：
-                
-
-刚好前两天看到有人在抱怨前端技术…… [https://medium.com/@wob/the-sad-state-of-web-development-1603a861d29f#.iuy0tz462](https://medium.com/@wob/the-sad-state-of-web-development-1603a861d29f#.iuy0tz462)
-
-你们说的我都不懂，我就看看热闹。
-
-2016年1月16日 05:17
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354039)
- | [引用](#comment-text)
-
-阮一峰
-
- 说：
-                
-
-前端现在就是黎明前的黑暗，大家各自寻找解决方案，一两年后就会清晰。
-
-2016年1月16日 10:14
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354043)
- | [引用](#comment-text)
-
-cshenger
-
- 说：
-                
-
-看了一遍大概明白Flux的设计思路了，谢谢阮老师能把教程写的如此简单易懂，理解起来倒不困难就是感觉实现一个简单的功能都这么复杂，实在有点累觉不爱啊。
-
-2016年1月16日 11:34
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354047)
- | [引用](#comment-text)
-
-[yaoelvon](http://www.cnblogs.com/yaoel)
-
- 说：
-                
+ 
+我表示非常不认同把Flux与MVC放在一起说，Flux完全是另外一种Pattern。 
 
 使用Angular1.x版本中，未来会接触React，加油！
-
-2016年1月16日 17:13
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354059)
- | [引用](#comment-text)
-
-kingguy
-
- 说：
-                
-
-楼主为什么不用ES6写呢？
-
-2016年1月17日 15:39
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354082)
- | [引用](#comment-text)
-
-Loogeek
-
- 说：
-                
-
->     引用kingguy的发言：
-> 
-> 
-> 楼主为什么不用ES6写呢？
-
-很简单，作为入门教程来讲，降低学习门槛以达到分享知识见解的目的是很重要的，很多初学者不一定接触过ES6，只是想了解下Flux，React官网教程也没有在主篇幅用Es6，只是在一些变化处写了说明，对于想用Es6写的这也不是什么问题
-
-2016年1月18日 09:43
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354092)
- | [引用](#comment-text)
-
-qzttt
-
- 说：
-                
-
-买一本书，支持一下，阮老师的书还是很好的
-
-2016年1月19日 11:15
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354143)
- | [引用](#comment-text)
-
-[Min](http://blog.sohappy.cc)
-
- 说：
-                
-
-对于入门的demo来说简单才是王道。看了你的demo，再看看官方的“[Flux TodoMVC Example](https://github.com/facebook/flux/tree/master/examples/flux-todomvc),思路渐渐清晰，非常感谢楼主分享，当初react就是看楼主的文章入门。
-
-2016年1月19日 16:08
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354161)
- | [引用](#comment-text)
-
-[迹忆](http://www.onmpw.com)
-
- 说：
-                
-
-感谢分享，思路很清晰
-
-2016年1月22日 16:31
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354251)
- | [引用](#comment-text)
-
-[edokeh](http://chaoskeh.com)
-
- 说：
+  
+官方的“[Flux TodoMVC Example](https://github.com/facebook/flux/tree/master/examples/flux-todomvc),  
                 
 
 监听 Action 的回调那段写的不对吧？应该写在 Store 里，而不是 AppDispatcher；
 
 比如官方 example 里的这一段https://github.com/facebook/flux/blob/master/examples%2Fflux-todomvc%2Fjs%2Fstores%2FTodoStore.js
 
-而且例子里如果能举一下 waitFor 的用法，更能体现 Flux 的精髓
-
-2016年1月24日 20:59
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354290)
- | [引用](#comment-text)
-
-[呃。。。](http://caichao.me/)
-
- 说：
-                
+而且例子里如果能举一下 waitFor 的用法，更能体现 Flux 的精髓 
 
 贴个一年前翻译的启发文章链接。http://caichao.me/2015-01-14-FluxForStupidPeople.html
-
-2016年1月25日 11:11
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354302)
- | [引用](#comment-text)
-
-咸鱼老弟
-
- 说：
-                
-
-多谢ruan大神的分享，之前看flux一直没看懂，现在清晰多了
-
-2016年1月25日 15:29
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354311)
- | [引用](#comment-text)
-
-[bear](http://weibo.com/flybears)
-
- 说：
-                
-
-阮老师的博客，思路清晰，赞赞赞....
-
-2016年1月25日 15:54
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354313)
- | [引用](#comment-text)
-
-tata
-
- 说：
+   
+                 
                 
 
 >     引用edokeh的发言：
@@ -592,42 +405,12 @@ tata
 > 而且例子里如果能举一下 waitFor 的用法，更能体现 Flux 的精髓
 
 同问
-AppDispatcher 这段回调为什么不写在store里
-
-        
-
-2016年1月26日 17:46
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354342)
- | [引用](#comment-text)
-
-阮一峰
-
- 说：
-                
-
+AppDispatcher 这段回调为什么不写在store里 
+         
 @edokeh，@tata：
 
-我觉得，与派发器有关的逻辑，都放在AppDispatch比较好。这样，Store就不用加载AppDispatch了。
+我觉得，与派发器有关的逻辑，都放在AppDispatch比较好。这样，Store就不用加载AppDispatch了。 
 
-2016年1月26日 19:54
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354347)
- | [引用](#comment-text)
-
-[但丁](http://5941740.cn)
-
- 说：
-                
-
-一直没能下定决心去学react，就是因为代码看起来好复杂啊，看一遍根本没看懂，代码可读性不高，看起来乱七八糟的的感觉
-
-2016年1月30日 19:38
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354393)
- | [引用](#comment-text)
-
-[黄哲霆](http://www.webuex.com)
-
- 说：
-                
 
 阮大大，其实我觉得flux是mvc的更好的实践吧，action类似于controller的角色。
 
@@ -635,51 +418,7 @@ AppDispatcher 这段回调为什么不写在store里
 
 第二：也更加明确了action的范围，只是向model发送事件，不对model做任何直接的改变，model内部通过action发来的事件自己处理数据。这也使得model的改变有了稳定的位置，有利于控制和追踪代码。
 
-不知道我这样的理解是否正确？
-
-2016年2月 3日 15:00
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354450)
- | [引用](#comment-text)
-
-james
-
- 说：
-                
-
-阮老师啥时候讲下Redux，很是期待哈。
-
-2016年2月 4日 20:04
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354470)
- | [引用](#comment-text)
-
-大名
-
- 说：
-                
-
-Flux For Stupid People
-
-2016年2月21日 17:49
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354606)
- | [引用](#comment-text)
-
-sz
-
- 说：
-                
-
-这到底是在客户端运行的，还是在node.js中运行的。
-
-现在出的东西，对于我这种菜鸟来说真的搞不懂
-
-2016年2月29日 19:36
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354700)
- | [引用](#comment-text)
-
-Ken Zhang
-
- 说：
-                
+不知道我这样的理解是否正确？  
 
 Facebook画的那个MVC的图，View和Model之间是直接互相调用的，而且这么多个View和Model才对应一个Controller，似乎跟我对MVC的理解有很大出入。
 
@@ -690,15 +429,7 @@ Facebook画的那个MVC的图，View和Model之间是直接互相调用的，而
 2. View同时依赖于Store和Dispatcher。在MVC中，Model和View的所有事件都通过Controller来中转，保证了View和Model的独立。而Flux中，View触发事件（Action）时是通过Dispatcher间接传到Store上，但取数据时又是直接访问Store。导致View需要同时依赖于Store和Dispatcher，这更像是一种倒退。
 
 就说那么多吧。限于个人水平，认识可能有许多误解，请大神帮忙指正，感激不尽~~
-
-2016年3月 1日 06:52
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354704)
- | [引用](#comment-text)
-
-bai
-
- 说：
-                
+ 
 
  _onChange: function () {
 
@@ -720,17 +451,7 @@ bai
 
  说：
                 
-
-额，一遍看下来表示完全不懂，还是多看几遍把。
-
-2016年3月 8日 23:11
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354858)
- | [引用](#comment-text)
-
-lazyou
-
- 说：
-                
+ 
 
 对flux的action dispatch表示费解， 和 PubSub一样吗？
 
