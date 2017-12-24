@@ -106,6 +106,9 @@ Now go click around and admire your clean URLs.
 Oh yeah, the catch. Click on a link and then refresh your browser. What
 happens?
 
+
+
+![](https://i.imgur.com/ontr6ra.gif)
 ```
 Cannot GET /repos
 ```
