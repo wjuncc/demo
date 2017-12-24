@@ -74,6 +74,8 @@ scripts to run the app.
 
 You should see a "Hello React Router" message in the browser.
 
+![](https://i.imgur.com/2szdmyi.png)
+
 ## Make Some Changes
 
 Open up `modules/App.js` and change the text to something like "Hello
