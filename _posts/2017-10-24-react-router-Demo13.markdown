@@ -156,6 +156,12 @@ this:
 Now when we run `NODE_ENV=production npm start` both the client and
 server bundles get created by Webpack.
 
+```powershell
+cd E:\n\learn\react\router\lessons\13-server-rendering
+SET "NODE_ENV=production"
+npm start
+```
+
 Okay, let's talk about the Router. We're going to need our routes split
 out into a module so that both the client and server entries can require
 it. Make a file at `modules/routes` and move your routes and components
