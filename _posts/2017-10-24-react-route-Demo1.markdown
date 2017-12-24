@@ -4,6 +4,9 @@ title:  "react route Demo1"
 date:   2017-10-24 06:40:13 +0800
 categories:  
 tags: 
+    - react
+    - router
+
 ---  
 
 source code from [git](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/01-setting-up)
