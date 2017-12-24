@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Tools of Leaning 1 generate markdowns files from existed git toturials"
+title:  "Tools of Leaning 1 generate markdowns files from existed git tutorials"
 date:   2017-10-24 08:42:42 +0800
 categories:  
 tags: 
@@ -12,7 +12,7 @@ tags:
 
 ![](https://i.imgur.com/VQVi095.png)
 ## ACP Tools ##
-Generate bat markdown files to speed up 
+Generate bat markdown files from existed git tutorials, in order to speed up 
 the learning process. I should modify the `demo.markdown` before running if necessarily. 
 
 software: Flash Developer 
