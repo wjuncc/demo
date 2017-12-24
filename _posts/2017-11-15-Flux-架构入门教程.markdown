@@ -609,114 +609,20 @@ helloyxw
 > _onChange那里确实会报this.setState is undefined
 
 我把Demo下载安装后能运行，但不理解setState函数在哪里定义的？
-
-2017年8月29日 09:12
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-379892)
- | [引用](#comment-text)
-
-[一网友](http://zglisten.githun.io)
-
- 说：
-                
+ 
 
 看了四五遍，终于有点眉目了！更新个数据，facebook搞的这么麻烦！不过厉害了我的峰哥，你是我心中的支柱！
-
-2017年9月18日 14:43
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-380573)
- | [引用](#comment-text)
-
-初学react的学渣
-
- 说：
+ 
                 
 
 讲的不错，不过例子感觉不够好，感觉例子可以用更简单的办法写出来，感觉这样用让flux大材小用了
-
-2017年10月11日 07:55
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-381133)
- | [引用](#comment-text)
-
-mo
-
- 说：
-                
+ 
+ 
 
 第一次看的时候直接看代码硬啃，今天来复习一下的，看了一下，文章写的真心不错，这就是设计思路。
-
-2017年10月11日 11:47
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-381154)
- | [引用](#comment-text)
-
-pageliu16
-
- 说：
+  
                 
 
 看了两三遍，基本上有点思路了，估计还要跟着Demo写上一遍才算入门。
-
-2017年10月22日 19:56
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-381561)
- | [引用](#comment-text)
-
-loycoder
-
- 说：
-                
-
->     引用mrdream的发言：
-> 
-> 
-> 好复杂，看一遍根本不懂
-
-  嗯。代码有些绕，我也是边看，边写注释的。
-
-2017年11月10日 10:55
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-382225)
- | [引用](#comment-text)
-
-## 我要发表看法
-
-您的留言
-                    （HTML标签部分可用）
-
-您的大名：
-
- «-必填
-
-电子邮件：
-
- «-必填，不公开
-
-个人网址：
-
- «-我信任你，不会填写广告链接
-
-记住个人信息？
-
-**正在发表您的评论，请稍候**
-
- «- 点击按钮
-
-[微博](http://weibo.com/ruanyf) | [推特](https://twitter.com/ruanyf) | [GitHub](https://github.com/ruanyf)
-
-2017 © [我的邮件](/contact.html) |
-
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-46829782-1', 'ruanyifeng.com');
-  ga('send', 'pageview');
-
-[http://www.bshare.cn/share](http://www.bshare.cn/share)
-bShare.addEntry({
-    title: document.getElementById("page-title").innerHTML,
-url:window.location.href
-});
-
-document.getElementById("share_button").innerHTML=document.getElementById("share_button_proto").innerHTML;
-
-
-#### 参考 ####
-
+  
+  
