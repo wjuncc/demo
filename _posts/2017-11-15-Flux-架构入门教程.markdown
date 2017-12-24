@@ -81,26 +81,73 @@ ReactDOM.render(
 );
 ```
 
-上面代码中，组件名字不是 `MyButton`，而是 `MyButtonController`。这是 React 的 [controller view](http://blog.andrewray.me/the-reactjs-controller-view-pattern/) 模式。"controller view"组件只用来保存状态，然后将其转发给子组件。`MyButtonController`的[源码](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButtonController.jsx)很简单。
+上面代码中，组件名字不是 `MyButton`，而是 `MyButtonController`。这是 React 的 [controller view](http://blog.andrewray.me/the-reactjs-controller-view-pattern/) 模式。"controller view"组件用来`保存状态`，并转发给子组件。`MyButtonController`代码：
 
->     
->     // components/MyButtonController.jsx
->     var React =require('react');var ButtonActions =require('../actions/ButtonActions');var MyButton =require('./MyButton');var MyButtonController = React.createClass({
->       createNewItem:function(event){
->         ButtonActions.addNewItem('new item');},
->     
->       render:function(){return<MyButton
->           onClick={this.createNewItem}/>;}});
->     
->     module.exports = MyButtonController;
+```js
+var React = require('react');
+var ListStore = require('../stores/ListStore');
+var ButtonActions = require('../actions/ButtonActions');
+var MyButton = require('./MyButton');
 
-上面代码中，`MyButtonController`将参数传给子组件`MyButton`。后者的[源码](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButton.jsx)甚至更简单。
+var MyButtonController = React.createClass({
+  getInitialState: function () {
+    return {
+      items: ListStore.getAll()
+    };
+  },
 
->     
->     // components/MyButton.jsx
->     var React =require('react');var MyButton =function(props){return<div><button onClick={props.onClick}>New Item</button></div>;};
->     
->     module.exports = MyButton;
+  componentDidMount: function() {
+    ListStore.addChangeListener(this._onChange);
+  },
+
+  componentWillUnmount: function() {
+    ListStore.removeChangeListener(this._onChange);
+  },
+
+  _onChange: function () {
+    this.setState({
+      items: ListStore.getAll()
+    });
+  },
+
+  createNewItem: function (event) {
+    ButtonActions.addNewItem('new item');
+  },
+
+  render: function() {
+    return <MyButton
+      items={this.state.items}
+      onClick={this.createNewItem}
+    />;
+  }
+
+});
+
+module.exports = MyButtonController;
+```
+
+
+上面代码中，`MyButtonController`将参数传给子组件`MyButton`。
+
+components/MyButton.jsx
+```js
+var React = require('react');
+
+var MyButton = function(props) {
+  var items = props.items;
+  var itemHtml = items.map(function (listItem, i) {
+    return <li key={i}>{listItem}</li>;
+  });
+
+  return <div>
+    <ul>{itemHtml}</ul>
+    <button onClick={props.onClick}>New Item</button>
+  </div>;
+};
+
+module.exports = MyButton;
+
+```
 
 上面代码中，你可以看到[`MyButton`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButton.jsx)是一个纯组件（即不含有任何状态），从而方便了测试和复用。这就是"controll view"模式的最大优点。
 
