@@ -313,43 +313,13 @@ Store 更新后（`this.addNewItemHandler()`）发出事件（`this.emitChange()
 （完）
 
 
-## 留言（79条）
-
-[mrdream](http://mrdream.xyz)
-
- 说：
+## 留言（79条） 
              
-好复杂，看一遍根本不懂
+好复杂，看一遍根本不懂   
 
-2016年1月15日 10:46
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354007)
- | [引用](#comment-text)
+action不一定要放在controller view里，要是组件层次很深，传props会很累的，可以直接放在需要和action打交道的view里，fb的官方示例(todomcv和chat)就是这么做的    
 
-workdog
-
- 说：
-                
-
-action不一定要放在controller view里，要是组件层次很深，传props会很累的，可以直接放在需要和action打交道的view里，fb的官方示例(todomcv和chat)就是这么做的
-
-2016年1月15日 11:52
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354013)
- | [引用](#comment-text)
-
-abc
-
- 说：
-                
-
-文章中 MyButtonController.jxs 的示例中的类名误写成 MyButton 了.
-
-2016年1月15日 12:25
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354015)
- | [引用](#comment-text)
-
-夜幕下的猫
-
- 说：
+文章中 MyButtonController.jxs 的示例中的类名误写成 MyButton 了. 
                 
 
 第一部分：
@@ -361,28 +331,12 @@ var MyButton = React.createClass({
 });
 
 这里的 MyButton 应该是 MyButtonController 吧？
-
-2016年1月15日 13:28
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354017)
- | [引用](#comment-text)
-
-[xenojoshua](http://xenojoshua.com)
-
- 说：
-                
-
-Flux 的设计理念确实很棒，但是一个简单的列表就可以搞这么复杂，实在是不太利于做项目
-
-2016年1月15日 13:42
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354018)
- | [引用](#comment-text)
  
+
+Flux 的设计理念确实很棒，但是一个简单的列表就可以搞这么复杂，实在是不太利于做项目 
 我表示非常不认同把Flux与MVC放在一起说，Flux完全是另外一种Pattern。 
 
-使用Angular1.x版本中，未来会接触React，加油！
-  
-官方的“[Flux TodoMVC Example](https://github.com/facebook/flux/tree/master/examples/flux-todomvc),  
-                
+使用Angular1.x版本中，未来会接触React，加油！ 
 
 监听 Action 的回调那段写的不对吧？应该写在 Store 里，而不是 AppDispatcher；
 
@@ -442,15 +396,6 @@ Facebook画的那个MVC的图，View和Model之间是直接互相调用的，而
   },
 
 这个触发后， this 对象变为了 store 对象。没有setState 方法，老师遇到这个问题没
-
-2016年3月 7日 17:57
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354811)
- | [引用](#comment-text)
-
-[可乐加糖](http://www.qcoke.com)
-
- 说：
-                
  
 
 对flux的action dispatch表示费解， 和 PubSub一样吗？
@@ -461,12 +406,7 @@ Facebook画的那个MVC的图，View和Model之间是直接互相调用的，而
 
 store变化由最顶层setState， 子组件通过 shouldComponentUpdate(nextProps, nextState) 来决定是否更新。
 
-感觉本质上应该是一样的。 
-
-2016年3月22日 20:35
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355182)
- | [引用](#comment-text)
- 
+感觉本质上应该是一样的。  
                 
 
 阮老师的这篇讲解Flux技术的文章比之于其它草草翻译官方文档的文章来说的确非常容易理解，深入浅出。仔细看了两三遍后，的确明白了这种架构数据流的过程。但是，其实还有一点不甚清楚的就是为什么要如此来处理数据流，这样有什么好处等等，关于这几点感觉文章并没有提到。因为，单纯从例子来看，反而觉得不用Flux会更简洁、方便一些。 
@@ -488,19 +428,7 @@ Radio.push(xxx)
  
  
  之前一直接触的是js和页面，对于安装的指令看不明白，现在都无法启动例子。有没有简单的教程呢？
- 
-
-
-git clone之后是不是还要npm install啊
-
-2016年8月22日 12:36
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-362914)
- | [引用](#comment-text)
-
-jdy
-
- 说：
-                
+   
 
 阮老师什么时候讲讲redux和webpack啊？
   
@@ -531,40 +459,11 @@ jdy
   
 
 学React没多久，看您这篇文章遇到一个困惑。在您的MyButtonController.jsx中，return了标签，按理说这个MyButton应该是一个组件，但是为什么在Mybutton.jsx中却没有用React.createClass去创建这个组件，而Mybutton却是一个function呢？求解惑...
-
-2016年12月 2日 10:10
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-369598)
- | [引用](#comment-text)
  
 
-同问，在MyButtonController.jsx引用了这个《MyButton /》这个标签，这个标签按说应该是一个组件，可是在MyButton.jsx却是用function去定义的这个？为什么这样，如果这样定义，他为什么可以通过标签《MyButton /》去引用？
-
-2016年12月 2日 10:17
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-369599)
- | [引用](#comment-text)
-
-liumingyuan
-
- 说：
-                
-
-为什么在启动的时候，会报错：
-
-C:\Users\myliu\WebstormProjects\lmy_developer\node_modules\open-browser-webpack-plugin\index.js:50
-
-            throw err+url;
-
-            ^
-
-Error: Command failed: C:\Windows\system32\cmd.exe /s /c "start "" "http://localhost:8080""
-
-ϵͳ�޷�ִ��ָ���ĳ�����
+同问，在MyButtonController.jsx引用了这个《MyButton /》这个标签，这个标签按说应该是一个组件，可是在MyButton.jsx却是用function去定义的这个？为什么这样，如果这样定义，他为什么可以通过标签《MyButton /》去引用？ 
 
 然后在webpack.config.js中删除插件openBrowser在启动就可以了呢？
-
-2016年12月19日 16:20
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-370594)
- | [引用](#comment-text)
  
  
 
@@ -597,17 +496,7 @@ createCLass方式是es5的方式，还有一种es6的方式，就是class Mybutt
  
 
 怎么看Web上的这些工具框架都想是WPF和QML的复杂抄袭版本。 
-
-helloyxw
-
- 说：
-                
-
->     引用tester的发言：
-> 
-> 
-> _onChange那里确实会报this.setState is undefined
-
+ 
 我把Demo下载安装后能运行，但不理解setState函数在哪里定义的？
  
 
