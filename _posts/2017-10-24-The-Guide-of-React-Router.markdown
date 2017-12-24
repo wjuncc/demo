@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "The Guide of React Router"
+title:  "React Study Plan"
 date:   2017-10-24 07:10:42 +0800
 categories:  
 tags: 
@@ -9,10 +9,15 @@ tags:
 ---
 
 
-## learning flow:   ##
+## learning flow  ##
 
-* flux[Toturials](http://www.ruanyifeng.com/blog/2016/01/flux.html)[demo](https://github.com/ruanyf/extremely-simple-flux-demo)
-* router[]()[demo](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)
+* flux
+ [Toturials](http://www.ruanyifeng.com/blog/2016/01/flux.html)
+ [demo](https://github.com/ruanyf/extremely-simple-flux-demo)
+* router
+* router
+ []()
+ [demo](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)
 
 
 ## About React Router Posts ##
