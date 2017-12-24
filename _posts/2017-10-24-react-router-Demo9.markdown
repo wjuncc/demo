@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "react route Demo9"
+title:  "react router Demo9"
 date:   2017-10-24 06:40:13 +0800
 categories:  
 tags: 
@@ -32,6 +32,11 @@ index.js
 
 ```
 
+index.css
+```css 
+
+```
+
 index.html
 ```html  
 
@@ -47,7 +52,17 @@ modules/App.js
 
 ```
 
+modules/Home.js
+```javascript 
+
+```
+
 modules/NavLink.js
+```javascript 
+
+```
+
+modules/Repo.js
 ```javascript 
 
 ```
