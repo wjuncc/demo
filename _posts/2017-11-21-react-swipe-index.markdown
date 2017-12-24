@@ -19,7 +19,7 @@ tags:
 * react-swipes
  [git](https://github.com/younth/react-swipes)
  [demo](http://younth.coding.me/mynote/demo/swipes/)
- [post](http://react-china.org/t/react-swipes/9042)    
+ [post:React-swipes—移动端卡片滑动组件](http://react-china.org/t/react-swipes/9042)    
 ![](https://i.imgur.com/ktfkjkS.gif) 
 
 ##  Nice Search Engine for React Components ##
