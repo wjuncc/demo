@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Guide of Leaning Tools 1 generate files"
+title:  "Tools of Leaning 1 generate markdowns files from existed git toturials"
 date:   2017-10-24 08:42:42 +0800
 categories:  
 tags: 
