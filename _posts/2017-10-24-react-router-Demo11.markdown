@@ -15,6 +15,15 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 
 Nothing to do but editing server code.
 
+Must running script below after modified `package-json`:
+```powershell
+npm install
+```
+otherwise the terminal will throw out an error likes:
+```powershell
+webpack-dev-server' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+```
+
 ### Effect ###
 
 ![]()
@@ -26,7 +35,17 @@ cd E:\n\learn\react\router\lessons\11-productionish-server
 npm install
 Start-Process chrome.exe http://localhost:8080/
 npm start
+npm install express if-env compression --save
+SET "NODE_ENV=production" 
+npm start
 ```
+
+
+
+
+npm install webpack-dev-server --save
+
+
 index.js
 ```javascript 
 
