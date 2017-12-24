@@ -26,7 +26,7 @@ tags:
 * [react.rocks](https://react.rocks/)
 * [20 Touch Examples with ReactJS](https://react.rocks/tag/Touch)
 
-## NOT ##
+## NOT Well For Production Environment ##
 #### can't touch until in mobile mode ####
 * react-swipe
  [npmjs](https://www.npmjs.com/package/react-swipe)
