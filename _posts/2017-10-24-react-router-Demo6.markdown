@@ -17,7 +17,7 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 
 ### Effect ###
 
-![]()
+![](https://i.imgur.com/mAY3n3S.gif)
 
 ### source code ###
 powershell
@@ -29,37 +29,130 @@ npm start
 ```
 index.js
 ```javascript 
+import React from 'react'
+import { render } from 'react-dom'
+import { Router, Route, hashHistory } from 'react-router'
+import App from './modules/App'
+import About from './modules/About'
+import Repos from './modules/Repos'
+import Repo from './modules/Repo'
 
+render((
+    <Router history={hashHistory}>
+        <Route path="/" component={App}>
+            <Route path="/repos" component={Repos}/>
+            {/* add the new route */}
+            <Route path="/repos/:userName/:repoName" component={Repo}/>
+            <Route path="/about" component={About}/>
+        </Route>
+    </Router>
+), document.getElementById('app'))
 ```
 
 index.css
 ```css 
+.active {
+  color: green;
+}
 
 ```
 
 index.html
 ```html  
+<!doctype html public="storage">
+<html>
+<meta charset=utf-8/>
+<title>My First React Router App</title>
+<link rel=stylesheet href=index.css>
+<div id=app></div>
+<script src="bundle.js"></script>
 
 ```
 
 modules/About.js
 ```javascript 
+import React from 'react'
+
+export default React.createClass({
+  render() {
+    return <div>About</div>
+  }
+})
 
 ```
 
 modules/App.js
 ```javascript 
+import React from 'react'
+import NavLink from './NavLink'
+
+export default React.createClass({
+  render() {
+    return (
+      <div>
+        <h1>React Router Tutorial</h1>
+        <ul role="nav">
+          <li><NavLink to="/about">About</NavLink></li>
+          <li><NavLink to="/repos">Repos</NavLink></li>
+        </ul>
+        {this.props.children}
+      </div>
+    )
+  }
+})
 
 ```
 
 modules/NavLink.js
 ```javascript 
+// modules/NavLink.js
+import React from 'react'
+import { Link } from 'react-router'
 
+export default React.createClass({
+  render() {
+    return <Link {...this.props} activeClassName="active"/>
+  }
+})
+
+```
+
+modules/Repo.js
+```javascript 
+import React from 'react'
+
+export default React.createClass({
+    render() {
+        return (
+            <div>
+                <h2>{this.props.params.repoName}</h2>
+            </div>
+        )
+    }
+})
 ```
 
 modules/Repos.js
 ```javascript 
+import React from 'react'
+import { Link } from 'react-router'
 
+export default React.createClass({
+    render() {
+        return (
+            <div>
+                <h2>Repos</h2>
+
+                {/* add some links */}
+                <ul>
+                    <li><Link to="/repos/reactjs/react-router">React Router</Link></li>
+                    <li><Link to="/repos/facebook/react">React</Link></li>
+                </ul>
+
+            </div>
+        )
+    }
+})
 ```
 
 
