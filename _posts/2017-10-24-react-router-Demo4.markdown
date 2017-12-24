@@ -17,7 +17,7 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 
 ### Effect ###
 
-![]()
+![](https://i.imgur.com/11jJCdz.gif)
 
 ### source code ###
 powershell
@@ -29,11 +29,81 @@ npm start
 ```
 index.js
 ```javascript 
+import React from 'react'
+import { render } from 'react-dom'
+import { Router, Route, hashHistory } from 'react-router'
+import App from './modules/App'
+import About from './modules/About'
+import Repos from './modules/Repos'
 
+render((
+    <Router history={hashHistory}>
+        <Route path="/" component={App}>
+            {/* make them children of `App` */}
+            <Route path="/repos" component={Repos}/>
+            <Route path="/about" component={About}/>
+        </Route>
+    </Router>
+), document.getElementById('app'))
 ```
 
 index.html
 ```html  
+<!doctype html public "storage">
+<html>
+<meta charset=utf-8/>
+<title>My First React Router App</title>
+<div id=app></div>
+<script src="bundle.js"></script>
+
+```
+
+About.js
+```javascript 
+import React from 'react'
+
+export default React.createClass({
+  render() {
+    return <div>About</div>
+  }
+})
+
+```
+
+
+
+App.js
+```javascript 
+import React from 'react'
+import { Link } from 'react-router'
+
+export default React.createClass({
+  render() {
+    return (
+      <div>
+        <h1>React Router Tutorial</h1>
+        <ul role="nav">
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/repos">Repos</Link></li>
+        </ul>
+      </div>
+    )
+  }
+})
+
+```
+
+
+
+Repos.js
+```javascript 
+import React from 'react'
+
+export default React.createClass({
+  render() {
+    return <div>Repos</div>
+  }
+})
 
 ```
 
@@ -46,9 +116,13 @@ The navigation we added to `App` should probably be present on every
 screen. Without React Router, we could wrap that `ul` into a
 component, say `Nav`, and render a `Nav` on every one of our screens.
 
+This means an non-routes way.
+
 This approach isn't as clean as the application grows. React Router
 provides another way to share UI like this with nested routes, a trick
 it learned from [Ember](http://emberjs.com) (/me tips hat).
+
+Ember is another FE framework.
 
 ## Nested UI and Nested URLs
 
@@ -85,6 +159,8 @@ Repos -> | repo |  Repo 1                      |
 
 React Router embraces this by letting you nest your routes, which
 automatically becomes nested UI.
+
+nested routes ->  nested UI
 
 ## Sharing Our Navigation
 
@@ -153,6 +229,9 @@ React Router is constructing your UI like this:
 ## By Small and Simple Things are Great Things Brought to Pass
 
 The best way to build large things is to stitch small things together.
+
+> The best way to build large things is to stitch small things together.
+
 
 This is the real power of React Router, every route can be developed
 (even rendered!) as an independent application. Your route configuration
