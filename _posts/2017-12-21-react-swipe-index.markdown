@@ -12,16 +12,8 @@ tags:
 
 * [React-swipes—移动端卡片滑动组件 - 分享 - React 中文](http://react-china.org/t/react-swipes/9042)
 
-#### 参考 ####
 
 
-* Swipe  
-* [git](https://github.com/thebird/swipe#swipe-api)
-* 
-* react.rocks
-* [react.rocks](https://react.rocks/)
-* [20 Touch Examples with ReactJS](https://react.rocks/tag/Touch)
-* 
 #### OK  ####
 * react-swipeable-views
  [git](https://github.com/oliviertassinari/react-swipeable-views)
@@ -31,6 +23,10 @@ tags:
  [git](https://github.com/younth/react-swipes)
  [demo](http://younth.coding.me/mynote/demo/swipes/)    
 ![](https://i.imgur.com/ktfkjkS.gif) 
+
+##  Nice Search Engine for React Components ##
+* [react.rocks](https://react.rocks/)
+* [20 Touch Examples with ReactJS](https://react.rocks/tag/Touch)
 
 ## NOT ##
 #### can't touch until in mobile mode ####
@@ -47,3 +43,6 @@ tags:
 * react-swipeable 
  [demo](https://codepen.io/hartzis/pen/oebBPp)  
 ![](https://i.imgur.com/S2a6UiF.gif) 
+
+#### Non-React  ####
+* Swipe [git](https://github.com/thebird/swipe#swipe-api)
