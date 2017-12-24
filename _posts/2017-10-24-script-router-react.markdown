@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "script router react"
+title:  "Guide of Leaning Tools 1 generate files"
 date:   2017-10-24 08:42:42 +0800
 categories:  
 tags: 
@@ -11,12 +11,12 @@ tags:
 
 
 ![](https://i.imgur.com/VQVi095.png)
+## ACP Tools ##
+Generate bat markdown files to speed up the stuyd. I should modify the `demo.markdown` before running if necessarily. 
 
-# source code #
-ACP
-
-Build.as
-
+software: Flash Developer 
+### source code ###
+Build.as 
 ```actionscript
 package  
 {
@@ -72,9 +72,4 @@ pathOUT = ur"E:/n/learn/react/router/lessons/v66/acp____/Build.py"
 }
 ```
 
-demo.markdown
-```markdown
-
-```
-#### 参考 ####
 
