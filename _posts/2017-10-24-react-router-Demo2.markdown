@@ -55,7 +55,6 @@ index.html
 <title>My First React Router App</title>
 <div id=app></div>
 <script src="bundle.js"></script>
-
 ```
 
 
