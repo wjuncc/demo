@@ -22,6 +22,17 @@ tags:
 * [react.rocks](https://react.rocks/)
 * [20 Touch Examples with ReactJS](https://react.rocks/tag/Touch)
 * 
+#### OK  ####
+* react-swipeable-views
+ [git](https://github.com/oliviertassinari/react-swipeable-views)
+ [demo](https://react-swipeable-views.com/demos/demos/)  
+![](https://i.imgur.com/90aVFml.gif)
+* react-swipes
+ [git](https://github.com/younth/react-swipes)
+ [demo](http://younth.coding.me/mynote/demo/swipes/)    
+![](https://i.imgur.com/ktfkjkS.gif) 
+
+## NOT ##
 #### can't touch until in mobile mode ####
 * react-swipe
  [npmjs](https://www.npmjs.com/package/react-swipe)
@@ -36,10 +47,3 @@ tags:
 * react-swipeable 
  [demo](https://codepen.io/hartzis/pen/oebBPp)  
 ![](https://i.imgur.com/S2a6UiF.gif) 
-#### OK  ####
-* react-swipeable-views
- [git](https://github.com/oliviertassinari/react-swipeable-views)
- [demo](https://react-swipeable-views.com/demos/demos/)  
-![](https://i.imgur.com/90aVFml.gif)
-* [younth/react-swipes: 基于React的移动端卡片滑动组件](https://github.com/younth/react-swipes)
-* [React-Swipes Example](http://younth.coding.me/mynote/demo/swipes/)
