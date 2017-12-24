@@ -89,8 +89,10 @@ great because it doesn't require any server-side configuration.
 
 
 `junk in the URL` which means `http://localhost:8080/#/?_k=7o1yis`  in address bar likes:  
-![](https://i.imgur.com/BB3O4SH.png)
+![](https://i.imgur.com/BB3O4SH.png)   
+alse name `hashHistory`.
 
+notice:`it doesn't require any server-side configuration.`
 
 
 ## Adding More Screens
