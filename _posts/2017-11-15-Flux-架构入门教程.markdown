@@ -13,14 +13,13 @@ source from [http://www.ruanyifeng.com/blog/2016/01/flux.html](http://www.ruanyi
 
 
 # Flux 架构入门教程
-
+先看 [《React入门教程》](http://www.ruanyifeng.com/blog/2015/03/react.html)。
 至少要学两样，才能满足需要：React + 前端框架。
 
 官方 [Flux 框架](https://facebook.github.io/flux/)。
 
 ![](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011501.png)
 
-阅读本文之前，我假设你已经掌握了 React 。如果还没有，可以先看我写的[《React入门教程》](http://www.ruanyifeng.com/blog/2015/03/react.html)。与以前一样，本文的目标是使用最简单的语言、最好懂的例子，让你一看就会。
 
 ## 一、Flux 是什么？
 
