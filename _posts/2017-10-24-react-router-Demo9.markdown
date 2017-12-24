@@ -13,6 +13,7 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 
 ### Note: ###
 
+Add back link to Home page.
 
 
 ### Effect ###
