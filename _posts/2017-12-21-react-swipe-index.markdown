@@ -13,9 +13,16 @@ tags:
 
 #### 参考 ####
 
+* react-swipe  
 * [react-swipe](https://www.npmjs.com/package/react-swipe)
-* [voronianski/react-swipe: Swipe.js as a React component](https://github.com/voronianski/react-swipe)
-* [thebird/Swipe: Swipe is the most accurate touch slider.](https://github.com/thebird/swipe#swipe-api)
+* [demo](http://voronianski.github.io/react-swipe/demo/)
+* [git](https://github.com/voronianski/react-swipe)
+
+* Swipe  
+* [git](https://github.com/thebird/swipe#swipe-api)
+* 
+* react.rocks
+* [react.rocks](https://react.rocks/)
 * [20 Touch Examples with ReactJS](https://react.rocks/tag/Touch)
 * [React easy swipe demo](http://react-easy-swipe.js.org/#demo)
 * [React-swipes—移动端卡片滑动组件 - 分享 - React 中文](http://react-china.org/t/react-swipes/9042)
