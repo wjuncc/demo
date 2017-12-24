@@ -4,12 +4,1421 @@ title:  "Flux 架构入门教程"
 date:   2017-11-15 05:50:16 +0800
 categories:  
 tags: 
----
+    - react 
 
-# Flux 架构入门教程 #
+---
 
 source from [http://www.ruanyifeng.com/blog/2016/01/flux.html](http://www.ruanyifeng.com/blog/2016/01/flux.html)
 
+
+
+# Flux 架构入门教程
+
+至少要学两样东西，才能基本满足需要：React + 前端框架。
+
+Facebook官方使用的是 [Flux 框架](https://facebook.github.io/flux/)。本文就介绍如何在 React 的基础上，使用 Flux 组织代码和安排内部逻辑，使得你的应用更易于开发和维护。
+
+![](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011501.png)
+
+阅读本文之前，我假设你已经掌握了 React 。如果还没有，可以先看我写的[《React入门教程》](http://www.ruanyifeng.com/blog/2015/03/react.html)。与以前一样，本文的目标是使用最简单的语言、最好懂的例子，让你一看就会。
+
+## 一、Flux 是什么？
+
+简单说，Flux 是一种架构思想，专门解决软件的结构问题。它跟[MVC 架构](http://www.ruanyifeng.com/blog/2007/11/mvc.html)是同一类东西，但是更加[简单和清晰](http://www.infoq.com/news/2014/05/facebook-mvc-flux)。
+
+Flux存在多种实现（[至少15种](https://github.com/voronianski/flux-comparison)），本文采用的是[Facebook官方实现](https://github.com/facebook/flux)。
+
+## 二、安装 Demo
+
+为了便于讲解，我写了一个[Demo](https://github.com/ruanyf/extremely-simple-flux-demo)。
+
+安装。
+
+powershell
+```powershell
+cd E:\n\learn\react
+mkdir flux\ryf
+cd flux\ryf 
+git clone https://github.com/ruanyf/extremely-simple-flux-demo.git
+cd extremely-simple-flux-demo
+npm install
+npm start
+
+```
+http://127.0.0.1:8080 。  
+![](https://i.imgur.com/PKikNph.gif)  
+Demo。
+
+## 三、基本概念
+
+讲解代码之前，你需要知道一些 Flux 的基本概念。
+
+首先，Flux将一个应用分成四个部分。
+
+> - **View**： 视图层
+> - **Action**（动作）：视图层发出的消息（比如mouseClick）
+> - **Dispatcher**（派发器）：用来接收Actions、执行回调函数
+> - **Store**（数据层）：用来存放应用的状态，一旦发生变动，就提醒Views要更新页面
+
+![](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016011503.png)
+
+Flux 的最大特点，就是数据的"单向流动"。
+
+> 1. 用户访问 View
+> 2. View 发出用户的 Action
+> 3. Dispatcher 收到 Action，要求 Store 进行相应的更新
+> 4. Store 更新后，发出一个"change"事件
+> 5. View 收到"change"事件后，更新页面
+
+上面过程中，数据总是"单向流动"，任何相邻的部分都不会发生数据的"双向流动"。这保证了流程的清晰。
+
+读到这里，你可能感到一头雾水，OK，这是正常的。接下来，我会详细讲解每一步。
+
+## 四、View（第一部分）
+
+请打开 Demo 的首页[`index.jsx`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/index.jsx) ，你会看到只加载了一个组件。
+
+>     
+>     // index.jsx
+>     var React =require('react');var ReactDOM =require('react-dom');var MyButtonController =require('./components/MyButtonController');
+>     
+>     ReactDOM.render(<MyButtonController/>,
+>       document.querySelector('#example'));
+
+上面代码中，你可能注意到了，组件的名字不是 `MyButton`，而是 `MyButtonController`。这是为什么？
+
+这里，我采用的是 React 的 [controller view](http://blog.andrewray.me/the-reactjs-controller-view-pattern/) 模式。"controller view"组件只用来保存状态，然后将其转发给子组件。`MyButtonController`的[源码](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButtonController.jsx)很简单。
+
+>     
+>     // components/MyButtonController.jsx
+>     var React =require('react');var ButtonActions =require('../actions/ButtonActions');var MyButton =require('./MyButton');var MyButtonController = React.createClass({
+>       createNewItem:function(event){
+>         ButtonActions.addNewItem('new item');},
+>     
+>       render:function(){return<MyButton
+>           onClick={this.createNewItem}/>;}});
+>     
+>     module.exports = MyButtonController;
+
+上面代码中，`MyButtonController`将参数传给子组件`MyButton`。后者的[源码](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButton.jsx)甚至更简单。
+
+>     
+>     // components/MyButton.jsx
+>     var React =require('react');var MyButton =function(props){return<div><button onClick={props.onClick}>New Item</button></div>;};
+>     
+>     module.exports = MyButton;
+
+上面代码中，你可以看到[`MyButton`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButton.jsx)是一个纯组件（即不含有任何状态），从而方便了测试和复用。这就是"controll view"模式的最大优点。
+
+`MyButton`只有一个逻辑，就是一旦用户点击，就调用[`this.createNewItem`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButtonController.jsx#L27) 方法，向Dispatcher发出一个Action。
+
+>     
+>     // components/MyButtonController.jsx
+>      // ...
+>       createNewItem:function(event){
+>         ButtonActions.addNewItem('new item');}
+
+上面代码中，调用`createNewItem`方法，会触发名为`addNewItem`的Action。
+
+## 五、Action
+
+每个Action都是一个对象，包含一个`actionType`属性（说明动作的类型）和一些其他属性（用来传递数据）。
+
+在这个Demo里面，[`ButtonActions`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/actions/ButtonActions.js) 对象用于存放所有的Action。
+
+>     
+>     // actions/ButtonActions.js
+>     var AppDispatcher =require('../dispatcher/AppDispatcher');var ButtonActions ={
+>       addNewItem:function(text){
+>         AppDispatcher.dispatch({
+>           actionType:'ADD_NEW_ITEM',
+>           text: text
+>         });},};
+
+上面代码中，`ButtonActions.addNewItem`方法使用`AppDispatcher`，把动作`ADD_NEW_ITEM`派发到Store。
+
+## 六、Dispatcher
+
+Dispatcher 的作用是将 Action 派发到 Store、。你可以把它看作一个路由器，负责在 View 和 Store 之间，建立 Action 的正确传递路线。注意，Dispatcher 只能有一个，而且是全局的。
+
+Facebook官方的 [Dispatcher 实现](https://github.com/facebook/flux)输出一个类，你要写一个[`AppDispatcher.js`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/dispatcher/AppDispatcher.js)，生成 Dispatcher 实例。
+
+>     
+>     // dispatcher/AppDispatcher.js
+>     var Dispatcher =require('flux').Dispatcher;
+>     module.exports =newDispatcher();
+
+`AppDispatcher.register()`方法用来登记各种Action的回调函数。
+
+>     
+>     // dispatcher/AppDispatcher.js
+>     var ListStore =require('../stores/ListStore');
+>     
+>     AppDispatcher.register(function(action){switch(action.actionType){
+>         case 'ADD_NEW_ITEM':
+>           ListStore.addNewItemHandler(action.text);
+>           ListStore.emitChange();break;
+>         default: // no op
+>     }})
+
+上面代码中，Dispatcher收到`ADD_NEW_ITEM`动作，就会执行回调函数，对`ListStore`进行操作。
+
+记住，Dispatcher 只用来派发 Action，不应该有其他逻辑。
+
+## 七、Store
+
+Store 保存整个应用的状态。它的角色有点像 MVC 架构之中的Model 。
+
+在我们的 Demo 中，有一个[`ListStore`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/stores/ListStore.js)，所有数据都存放在那里。
+
+>     
+>     // stores/ListStore.js
+>     var ListStore ={
+>       items:[],
+>     
+>       getAll:function(){return this.items;},
+>     
+>       addNewItemHandler:function(text){
+>         this.items.push(text);},
+>     
+>       emitChange:function(){
+>         this.emit('change');}};
+>     
+>     module.exports = ListStore;
+
+上面代码中，`ListStore.items`用来保存条目，`ListStore.getAll()`用来读取所有条目，`ListStore.emitChange()`用来发出一个"change"事件。
+
+由于 Store 需要在变动后向 View 发送"change"事件，因此它必须实现事件接口。
+
+>     
+>     // stores/ListStore.js
+>     var EventEmitter =require('events').EventEmitter;var assign =require('object-assign');var ListStore =assign({}, EventEmitter.prototype,{
+>       items:[],
+>     
+>       getAll:function(){return this.items;},
+>     
+>       addNewItemHandler:function(text){
+>         this.items.push(text);},
+>     
+>       emitChange:function(){
+>         this.emit('change');},
+>     
+>       addChangeListener:function(callback){
+>         this.on('change', callback);},
+>     
+>       removeChangeListener:function(callback){
+>         this.removeListener('change', callback);}});
+
+上面代码中，`ListStore`继承了`EventEmitter.prototype`，因此就能使用`ListStore.on()`和`ListStore.emit()`，来监听和触发事件了。
+
+Store 更新后（`this.addNewItemHandler()`）发出事件（`this.emitChange()`），表明状态已经改变。 View 监听到这个事件，就可以查询新的状态，更新页面了。
+
+## 八、View   （第二部分）
+
+现在，我们再回过头来修改 [View](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButtonController.jsx) ，让它监听 Store 的 `change` 事件。
+
+>     
+>     // components/MyButtonController.jsx
+>     var React =require('react');var ListStore =require('../stores/ListStore');var ButtonActions =require('../actions/ButtonActions');var MyButton =require('./MyButton');var MyButtonController = React.createClass({
+>       getInitialState:function(){return{
+>           items: ListStore.getAll()};},
+>     
+>       componentDidMount:function(){
+>         ListStore.addChangeListener(this._onChange);},
+>     
+>       componentWillUnmount:function(){
+>         ListStore.removeChangeListener(this._onChange);},
+>     
+>       _onChange:function(){
+>         this.setState({
+>           items: ListStore.getAll()});},
+>     
+>       createNewItem:function(event){
+>         ButtonActions.addNewItem('new item');},
+>     
+>       render:function(){return<MyButton
+>           items={this.state.items}
+>           onClick={this.createNewItem}/>;}});
+
+上面代码中，你可以看到当`MyButtonController` 发现 Store 发出 `change` 事件，就会调用 `this._onChange` 更新组件状态，从而触发重新渲染。
+
+>     
+>     // components/MyButton.jsx
+>     var React =require('react');var MyButton =function(props){var items = props.items;var itemHtml = items.map(function(listItem, i){return<li key={i}>{listItem}</li>;});return<div><ul>{itemHtml}</ul><button onClick={props.onClick}>New Item</button></div>;};
+>     
+>     module.exports = MyButton;
+
+## 九、致谢
+
+本文受到了Andrew Ray 的文章[《Flux For Stupid People》](http://blog.andrewray.me/flux-for-stupid-people/)的启发。
+
+（完）
+
+### 文档信息
+
+- 版权声明：自由转载-非商用-非衍生-保持署名（[创意共享3.0许可证](http://creativecommons.org/licenses/by-nc-nd/3.0/deed.zh)）
+- 发表日期： 2016年1月15日
+- 更多内容： [ 档案](http://www.ruanyifeng.com/blog/archives.html)  » 
+[ JavaScript](http://www.ruanyifeng.com/blog/javascript/)
+- 博客文集：[《前方的路》](http://road.ruanyifeng.com)，[《未来世界的幸存者》](http://survivor.ruanyifeng.com)
+- 社交媒体：[![](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAk1JREFUeNqsVc9rE0EU/mZ3dhPNJl2bVIk/Km09aFBE8GLvnrwJXvwLxIsgCP4Fnit6E8Gb0IMHwUsL9SSNgiAoooJIpE1Joo1h82uT7IxvxmRN3Q32kAdvdrI773vfe+/bDTu9WioDcDAda3Ja8piepQ1avCkCeny0Y+R9KenKwOmHHLvPaKn7AtVOoO8dOWDCMpg+41gMQv5FNEJACgoE8MsPNLDBhgfoutMOsJDmWLmU037C4TApciljwQ/kHoohQxV06+wMXNvE7WINuaSpvdYVKLgWnl3O4zAxU3Z1IYVGT+B5qYWV9z2kbQaT/cOwTsxOUUYF+mB5Dkmi8HG3h2q9hxsFNwRTdvQgxxnXRrMvIdkEhllis/qtiWuLDm4WZnBlPoWnXz28LHdw0uGR7m9Wu3j0qYGEubfn4UlBfXO4gTZltRNMg9w9f0i7kNFxllsBlS0x75gYfxyWTBUjT2W5CSMSPBrQuG21+hiMDS8CeCzF8eSLp13uQ3Ab1IqMFZN8tFHPmgOBF99bYP8Be1Xp6t7OJszJgKpPSiZvaj7uf2hguz2IBQuozDvFH6RDBjuK9wdQDvt0nMpW+8efGyh5UcAeZb2+UcHbnz5Jx4wdlp4yJYU3kLiQtfBwOYeLc8nIwfXtNu69q2Oz4mMxbemYOOOjKarhvq51KUjg3GwiFPIuvcNF6pnSnWK0lOEabNLgQh1aJFAhlGB9rG110B2+oyRNPc0sZbRNFltmLKDKqj4Qrm1ojzOxDz2pyPQ0P7CK4c40/wJ+CzAAGYrXsvfFXR4AAAAASUVORK5CYII=) twitter](https://twitter.com/ruanyf)，[![](data:image/png;base64,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) weibo](http://weibo.com/ruanyf)
+- Feed订阅： [![](data:image/gif;base64,R0lGODlhFAAUANU2APV1GfmrePZ8IeR5VPq2ieNkLf7p3NpFJveCJ/NoFfibVPR1IexiJfvdzuZrNfXGuOhUEueTevaFOfzIpNxDGeZZJNU6IOubifiVTfOnid1aLuZpLOFSJf/28vJtIvGcefaLSd5kNu9iFv/z6//48//t4uFfLfNkCeJNGuGNc/rCof/+/PVxEeldI/V5KeKMbu9nIvB2OvzQtNxMKfOPXP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAADYALAAAAAAUABQAAAb/QJstEjKZCsjCZsl0pIS2QWXaYsA8noVWIEAgFoNhhWNyMESi7Jbr/aZCFdRnZJAFJCwAt+vlOkwtEBk1hDUkExJ6bQJaGyYMLTQTDSOFHQF8jAseSFYiJwkuAQ2FE1xaHjBIMDAgARguJwABJIQTLJswDEgeIgSEJQQILAqVNQEiui1HHgkBhTUGCiwYtR0xLS0VJhtaEgoEBoQkGCfPNSoQY9xaCwAsCBPALgmkJA4cZN0CAAgY/PJqEIDwgVAECjM0bOAnwcAKGQJclKhRgoGDDjUeUDigkN8vQiBOfByAglSDAxw3IBCgYEU0FyJoEPpA4UGNDjMsaHDQR8EdPVYOMmQYQGHAhQgHLIRIsWAlgASsGMRBMWMGBQtYZ7yIsoBRKkhjOMxAiXJGGCEpHGxIYsSIhrcaQmy1EQQAOw==)](/feed.html)
+
+[![一灯学堂](http://www.ruanyifeng.com/blog/images/sup_yideng_201711a.jpg)](http://www.yidengxuetang.com/recruit?utm_source=ruanyifeng.com)
+
+[![优达学城](http://www.ruanyifeng.com/blog/images/sup_udacity_201711c.jpg)](https://cn.udacity.com/course/react-nanodegree--nd019-cn/?utm_source=ruanyfc&amp;utm_medium=KOL&amp;utm_campaign=react)
+
+## 相关文章
+
+- **2017.09.19: [《ES6 标准入门（第3版）》上市了！](http://www.ruanyifeng.com/blog/2017/09/es6_primer_3rd_edition.html)**
+
+                              2017年6月，TC39 委员会正式发布了《ES2017 标准》。
+
+                           
+
+- **2017.09.07: [asm.js 和 Emscripten 入门教程](http://www.ruanyifeng.com/blog/2017/09/asmjs_emscripten.html)**
+
+                              Web 技术突飞猛进，但是有一个领域一直无法突破 ---- 游戏。
+
+                           
+
+- **2017.08.09: [Koa 框架教程](http://www.ruanyifeng.com/blog/2017/08/koa.html)**
+
+                              Node 主要用在开发 Web 应用。这决定了使用 Node，往往离不开 Web 应用框架。
+
+                           
+
+- **2017.04.16: [JavaScript 内存泄漏教程](http://www.ruanyifeng.com/blog/2017/04/memory-leak.html)**
+
+                              一、什么是内存泄漏？
+
+程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。
+
+                           
+
+## 广告[（购买广告位）](/support.html)
+
+[![妙味课堂](http://www.ruanyifeng.com/blog/images/sup_miaov_201711.jpg)](http://www.miaov.com/index.php/example/exampleList?utm_source=ruanyifeng&amp;)
+
+[![腾讯课堂](http://www.ruanyifeng.com/blog/images/sup_qqke_20171202.png)](https://ke.qq.com/next/index.html?from=175763)
+
+## 留言（79条）
+
+[mrdream](http://mrdream.xyz)
+
+ 说：
+                
+
+好复杂，看一遍根本不懂
+
+2016年1月15日 10:46
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354007)
+ | [引用](#comment-text)
+
+workdog
+
+ 说：
+                
+
+action不一定要放在controller view里，要是组件层次很深，传props会很累的，可以直接放在需要和action打交道的view里，fb的官方示例(todomcv和chat)就是这么做的
+
+2016年1月15日 11:52
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354013)
+ | [引用](#comment-text)
+
+abc
+
+ 说：
+                
+
+文章中 MyButtonController.jxs 的示例中的类名误写成 MyButton 了.
+
+2016年1月15日 12:25
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354015)
+ | [引用](#comment-text)
+
+夜幕下的猫
+
+ 说：
+                
+
+第一部分：
+
+var MyButton = React.createClass({
+
+......
+
+});
+
+这里的 MyButton 应该是 MyButtonController 吧？
+
+2016年1月15日 13:28
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354017)
+ | [引用](#comment-text)
+
+[xenojoshua](http://xenojoshua.com)
+
+ 说：
+                
+
+Flux 的设计理念确实很棒，但是一个简单的列表就可以搞这么复杂，实在是不太利于做项目
+
+2016年1月15日 13:42
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354018)
+ | [引用](#comment-text)
+
+阮一峰
+
+ 说：
+                
+
+@abc，@夜幕下的猫：
+
+谢谢指出，已经改过来了。
+
+2016年1月15日 13:56
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354019)
+ | [引用](#comment-text)
+
+[ArchiTech](http://lifeislikeaboat.com)
+
+ 说：
+                
+
+学海无涯
+
+2016年1月15日 15:38
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354023)
+ | [引用](#comment-text)
+
+钊王
+
+ 说：
+                
+
+刚看了一遍没有看懂
+
+2016年1月15日 19:22
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354029)
+ | [引用](#comment-text)
+
+[Xixilive](https://github.com/xixilive)
+
+ 说：
+                
+
+我表示非常不认同把Flux与MVC放在一起说，Flux完全是另外一种Pattern。
+
+2016年1月15日 23:00
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354033)
+ | [引用](#comment-text)
+
+必填
+
+ 说：
+                
+
+刚好前两天看到有人在抱怨前端技术…… [https://medium.com/@wob/the-sad-state-of-web-development-1603a861d29f#.iuy0tz462](https://medium.com/@wob/the-sad-state-of-web-development-1603a861d29f#.iuy0tz462)
+
+你们说的我都不懂，我就看看热闹。
+
+2016年1月16日 05:17
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354039)
+ | [引用](#comment-text)
+
+阮一峰
+
+ 说：
+                
+
+前端现在就是黎明前的黑暗，大家各自寻找解决方案，一两年后就会清晰。
+
+2016年1月16日 10:14
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354043)
+ | [引用](#comment-text)
+
+cshenger
+
+ 说：
+                
+
+看了一遍大概明白Flux的设计思路了，谢谢阮老师能把教程写的如此简单易懂，理解起来倒不困难就是感觉实现一个简单的功能都这么复杂，实在有点累觉不爱啊。
+
+2016年1月16日 11:34
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354047)
+ | [引用](#comment-text)
+
+[yaoelvon](http://www.cnblogs.com/yaoel)
+
+ 说：
+                
+
+使用Angular1.x版本中，未来会接触React，加油！
+
+2016年1月16日 17:13
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354059)
+ | [引用](#comment-text)
+
+kingguy
+
+ 说：
+                
+
+楼主为什么不用ES6写呢？
+
+2016年1月17日 15:39
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354082)
+ | [引用](#comment-text)
+
+Loogeek
+
+ 说：
+                
+
+>     引用kingguy的发言：
+> 
+> 
+> 楼主为什么不用ES6写呢？
+
+很简单，作为入门教程来讲，降低学习门槛以达到分享知识见解的目的是很重要的，很多初学者不一定接触过ES6，只是想了解下Flux，React官网教程也没有在主篇幅用Es6，只是在一些变化处写了说明，对于想用Es6写的这也不是什么问题
+
+2016年1月18日 09:43
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354092)
+ | [引用](#comment-text)
+
+qzttt
+
+ 说：
+                
+
+买一本书，支持一下，阮老师的书还是很好的
+
+2016年1月19日 11:15
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354143)
+ | [引用](#comment-text)
+
+[Min](http://blog.sohappy.cc)
+
+ 说：
+                
+
+对于入门的demo来说简单才是王道。看了你的demo，再看看官方的“[Flux TodoMVC Example](https://github.com/facebook/flux/tree/master/examples/flux-todomvc),思路渐渐清晰，非常感谢楼主分享，当初react就是看楼主的文章入门。
+
+2016年1月19日 16:08
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354161)
+ | [引用](#comment-text)
+
+[迹忆](http://www.onmpw.com)
+
+ 说：
+                
+
+感谢分享，思路很清晰
+
+2016年1月22日 16:31
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354251)
+ | [引用](#comment-text)
+
+[edokeh](http://chaoskeh.com)
+
+ 说：
+                
+
+监听 Action 的回调那段写的不对吧？应该写在 Store 里，而不是 AppDispatcher；
+
+比如官方 example 里的这一段https://github.com/facebook/flux/blob/master/examples%2Fflux-todomvc%2Fjs%2Fstores%2FTodoStore.js
+
+而且例子里如果能举一下 waitFor 的用法，更能体现 Flux 的精髓
+
+2016年1月24日 20:59
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354290)
+ | [引用](#comment-text)
+
+[呃。。。](http://caichao.me/)
+
+ 说：
+                
+
+贴个一年前翻译的启发文章链接。http://caichao.me/2015-01-14-FluxForStupidPeople.html
+
+2016年1月25日 11:11
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354302)
+ | [引用](#comment-text)
+
+咸鱼老弟
+
+ 说：
+                
+
+多谢ruan大神的分享，之前看flux一直没看懂，现在清晰多了
+
+2016年1月25日 15:29
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354311)
+ | [引用](#comment-text)
+
+[bear](http://weibo.com/flybears)
+
+ 说：
+                
+
+阮老师的博客，思路清晰，赞赞赞....
+
+2016年1月25日 15:54
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354313)
+ | [引用](#comment-text)
+
+tata
+
+ 说：
+                
+
+>     引用edokeh的发言：
+> 
+> 
+> 监听 Action 的回调那段写的不对吧？应该写在 Store 里，而不是 AppDispatcher；
+> 
+> 比如官方 example 里的这一段https://github.com/facebook/flux/blob/master/examples%2Fflux-todomvc%2Fjs%2Fstores%2FTodoStore.js
+> 
+> 而且例子里如果能举一下 waitFor 的用法，更能体现 Flux 的精髓
+
+同问
+AppDispatcher 这段回调为什么不写在store里
+
+        
+
+2016年1月26日 17:46
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354342)
+ | [引用](#comment-text)
+
+阮一峰
+
+ 说：
+                
+
+@edokeh，@tata：
+
+我觉得，与派发器有关的逻辑，都放在AppDispatch比较好。这样，Store就不用加载AppDispatch了。
+
+2016年1月26日 19:54
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354347)
+ | [引用](#comment-text)
+
+[但丁](http://5941740.cn)
+
+ 说：
+                
+
+一直没能下定决心去学react，就是因为代码看起来好复杂啊，看一遍根本没看懂，代码可读性不高，看起来乱七八糟的的感觉
+
+2016年1月30日 19:38
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354393)
+ | [引用](#comment-text)
+
+[黄哲霆](http://www.webuex.com)
+
+ 说：
+                
+
+阮大大，其实我觉得flux是mvc的更好的实践吧，action类似于controller的角色。
+
+第一：改了名字之后，感觉更加向ui靠拢，意为ui的动作，更加直接的指向了ui输入。另外，这样做的好处也是为每一个ui输入留下一笔记录。
+
+第二：也更加明确了action的范围，只是向model发送事件，不对model做任何直接的改变，model内部通过action发来的事件自己处理数据。这也使得model的改变有了稳定的位置，有利于控制和追踪代码。
+
+不知道我这样的理解是否正确？
+
+2016年2月 3日 15:00
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354450)
+ | [引用](#comment-text)
+
+james
+
+ 说：
+                
+
+阮老师啥时候讲下Redux，很是期待哈。
+
+2016年2月 4日 20:04
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354470)
+ | [引用](#comment-text)
+
+大名
+
+ 说：
+                
+
+Flux For Stupid People
+
+2016年2月21日 17:49
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354606)
+ | [引用](#comment-text)
+
+sz
+
+ 说：
+                
+
+这到底是在客户端运行的，还是在node.js中运行的。
+
+现在出的东西，对于我这种菜鸟来说真的搞不懂
+
+2016年2月29日 19:36
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354700)
+ | [引用](#comment-text)
+
+Ken Zhang
+
+ 说：
+                
+
+Facebook画的那个MVC的图，View和Model之间是直接互相调用的，而且这么多个View和Model才对应一个Controller，似乎跟我对MVC的理解有很大出入。
+
+我分别用Flux和MVC各实现了一次Todo。老实说，没看出Flux的优点，反倒觉得有以下缺点：
+
+1. 规定Dispatcher为全局的单例。个人认为任何全局对象或者单例都会降低对它有依赖的类的内聚性，也会造成对View和Store单元测试上的障碍。比方说，定义一个class A，它内部调用了单例class B。首先A的接口没有体现出这种依赖，单元测试也不方便mock。其次对A的所有测试用例，都要把B的行为考虑进去。
+
+2. View同时依赖于Store和Dispatcher。在MVC中，Model和View的所有事件都通过Controller来中转，保证了View和Model的独立。而Flux中，View触发事件（Action）时是通过Dispatcher间接传到Store上，但取数据时又是直接访问Store。导致View需要同时依赖于Store和Dispatcher，这更像是一种倒退。
+
+就说那么多吧。限于个人水平，认识可能有许多误解，请大神帮忙指正，感激不尽~~
+
+2016年3月 1日 06:52
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354704)
+ | [引用](#comment-text)
+
+bai
+
+ 说：
+                
+
+ _onChange: function () {
+
+    this.setState({
+
+      items: ListStore.getAll()
+
+    });
+
+  },
+
+这个触发后， this 对象变为了 store 对象。没有setState 方法，老师遇到这个问题没
+
+2016年3月 7日 17:57
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354811)
+ | [引用](#comment-text)
+
+[可乐加糖](http://www.qcoke.com)
+
+ 说：
+                
+
+额，一遍看下来表示完全不懂，还是多看几遍把。
+
+2016年3月 8日 23:11
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-354858)
+ | [引用](#comment-text)
+
+lazyou
+
+ 说：
+                
+
+对flux的action dispatch表示费解， 和 PubSub一样吗？
+
+我直接放弃flux，用pubsub来处理。 
+
+最上层的组件（Controller）subscribe事件， 子组件（View）publish触发事件去该表store（Model）。
+
+store变化由最顶层setState， 子组件通过 shouldComponentUpdate(nextProps, nextState) 来决定是否更新。
+
+感觉本质上应该是一样的。 
+
+2016年3月22日 20:35
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355182)
+ | [引用](#comment-text)
+
+咸鱼老弟
+
+ 说：
+                
+
+之前看了一遍没看懂，看了几遍之后，再自己写写，终于搞懂了flux。不过在实际项目中，如果项目不是很大，发觉这个东西没什么用处。而且如果一个项目好几个人一起做，有些人会flux，有些不会，沟通成本其实还蛮大的
+
+2016年4月 6日 10:29
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355448)
+ | [引用](#comment-text)
+
+[front-thinking](https://github.com/front-thinking)
+
+ 说：
+                
+
+阮老师的这篇讲解Flux技术的文章比之于其它草草翻译官方文档的文章来说的确非常容易理解，深入浅出。仔细看了两三遍后，的确明白了这种架构数据流的过程。但是，其实还有一点不甚清楚的就是为什么要如此来处理数据流，这样有什么好处等等，关于这几点感觉文章并没有提到。因为，单纯从例子来看，反而觉得不用Flux会更简洁、方便一些。
+
+2016年4月12日 15:49
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355586)
+ | [引用](#comment-text)
+
+二点零
+
+ 说：
+                
+
+> > webpack-dev-server --progress
+>   0% compileevents.js:141
+>       throw er; // Unhandled 'error' event
+> 
+> 
+> npm ERR! node v4.2.4
+> 
+> npm ERR! npm  v2.14.12
+> 
+> npm ERR! code ELIFECYCLE
+> 
+> npm ERR! flux-for-stupid-people-demo@1.0.0 start: `webpack-dev-server --progress`
+> 
+> npm ERR! Exit status 1
+> 
+> npm ERR!
+> 
+> npm ERR! Failed at the flux-for-stupid-people-demo@1.0.0 start script 'webpack-dev-server --progress'.
+> 
+> npm ERR! This is most likely a problem with the flux-for-stupid-people-demo package,
+> 
+> npm ERR! not with npm itself.
+> 
+> npm ERR! Tell the author that this fails on your system:
+> 
+> npm ERR!     webpack-dev-server --progress
+> 
+> npm ERR! You can get their info via:
+> 
+> npm ERR!     npm owner ls flux-for-stupid-people-demo
+> 
+> npm ERR! There is likely additional logging output above.
+
+请问阮老师，npm start启动的时候，控制台报了以上错误，应该怎么解决呢？没有接触过webpack，问题应该很低级，实在抱歉。
+        
+
+2016年4月15日 10:58
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355673)
+ | [引用](#comment-text)
+
+阮一峰
+
+ 说：
+                
+
+@二点零：
+
+我这里是正常的，没法复现这个错误，猜不出原因啊。要不你删掉 node_modules 目录，重装一次。
+
+2016年4月16日 11:27
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355692)
+ | [引用](#comment-text)
+
+二点零
+
+ 说：
+                
+
+>     引用阮一峰的发言：
+> 
+> 
+> @二点零：
+> 
+> 我这里是正常的，没法复现这个错误，猜不出原因啊。要不你删掉 node_modules 目录，重装一次。
+
+问了你之后不久就解决了，因为之前没有了解和学习过webpack，后面专门去入门了一下。问题原因是webpack没有全局安装。感谢阮老师，学习了很多！！！
+
+2016年4月21日 11:52
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355794)
+ | [引用](#comment-text)
+
+diper
+
+ 说：
+                
+
+> webpack-dev-server --progress --port 8888
+
+                                                                     0% compile                                                                                                                          [http://localhost:8888/webpack-dev-server/](http://localhost:8888/webpack-dev-server/)
+
+webpack result is served from /
+
+content is served from D:\git\extr 95% emit
+
+npm ERR! Windows_NT 6.1.7600
+
+npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\                                                                                                                          node_modules\\npm\\bin\\npm-cli.js" "start"
+
+npm ERR! node v4.4.4
+
+npm ERR! npm  v2.15.1
+
+npm ERR! code ELIFECYCLE
+
+npm ERR! flux-for-stupid-people-demo@1.0.0 start: `webpack-dev-server --progress                                                                                                                           --port 8888`
+
+npm ERR! Exit status 3221225501
+
+npm ERR!
+
+npm ERR!     npm bugs flux-for-stupid-people-demo
+
+npm ERR!     D:\git\extremely-simple-flux-demo\npm-debug.log
+
+windows上报这个错误有没有遇到过
+
+2016年5月11日 18:22
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356179)
+ | [引用](#comment-text)
+
+189
+
+ 说：
+                
+
+请收下我的膝盖，顺便啥时候出个 redux 的教程呢？
+
+2016年5月14日 19:48
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356253)
+ | [引用](#comment-text)
+
+ruby
+
+ 说：
+                
+
+阮老师好，问个题外话，为什么执行demo的时候不能直接用webpack-dev-server来执行？而一定要用package.json中的npm start? npm start不也是执行webpack-dev-server --progress么？
+
+2016年5月20日 15:24
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356447)
+ | [引用](#comment-text)
+
+菜鸟
+
+ 说：
+                
+
+老师讲讲webpack哈
+
+2016年5月23日 15:06
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356544)
+ | [引用](#comment-text)
+
+[北去](http://beiqu.website)
+
+ 说：
+                
+
+刚开始学flux，有点看不懂，看来得多看几遍啊。哈哈
+
+2016年5月27日 13:31
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356695)
+ | [引用](#comment-text)
+
+Adam Lu
+
+ 说：
+                
+
+确实是一开始有点儿费解，头一遍完全晕掉
+
+2016年5月30日 10:54
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356835)
+ | [引用](#comment-text)
+
+普罗
+
+ 说：
+                
+
+其实我的理解 就是广播机制更细化了而已……
+
+先说说对广播机制的理解----有一个radio center，任何对象都可以订阅它
+
+如radio.on(xxx,function(){ do....})
+
+然后也可以通过它来发消息
+
+Radio.push(xxx)
+
+订阅了该消息的对象，响应的做些行为
+
+而flux就是把on和push的写法抽离到了action和dispatch里统一管理，但这种抽离不见的一定好。
+
+不知道我的理解对不对……
+
+2016年6月 1日 08:06
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356924)
+ | [引用](#comment-text)
+
+沐浴晴朗的心
+
+ 说：
+                
+
+ 之前一直接触的是js和页面，对于安装的指令看不明白，现在都无法启动例子。有没有简单的教程呢？
+
+2016年6月 2日 14:53
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-357002)
+ | [引用](#comment-text)
+
+jahon
+
+ 说：
+                
+
+@diper：
+
+没安装全局webpack. 执行npm install webpack -g
+
+2016年6月24日 19:17
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-359718)
+ | [引用](#comment-text)
+
+asdf
+
+ 说：
+                
+
+git clone之后是不是还要npm install啊
+
+2016年8月22日 12:36
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-362914)
+ | [引用](#comment-text)
+
+jdy
+
+ 说：
+                
+
+阮老师什么时候讲讲redux和webpack啊？
+
+2016年9月 7日 15:41
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-363961)
+ | [引用](#comment-text)
+
+哈哈
+
+ 说：
+                
+
+>     引用front-thinking的发言：
+> 
+> 
+> 阮老师的这篇讲解Flux技术的文章比之于其它草草翻译官方文档的文章来说的确非常容易理解，深入浅出。仔细看了两三遍后，的确明白了这种架构数据流的过程。但是，其实还有一点不甚清楚的就是为什么要如此来处理数据流，这样有什么好处等等，关于这几点感觉文章并没有提到。因为，单纯从例子来看，反而觉得不用Flux会更简洁、方便一些。
+
+组件化开发之后就明白好处了啊。细流合成江湖，公用状态方便获取等。
+
+二是数据都汇起来了方便做实时监测。
+
+2016年9月10日 10:49
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-364189)
+ | [引用](#comment-text)
+
+[Seven](http://www.cailidan.cn)
+
+ 说：
+                
+
+阮老师博客最棒的地方就是能把复杂的东西变成简单的。让大家都能读懂。感谢。
+
+2016年9月10日 16:17
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-364219)
+ | [引用](#comment-text)
+
+幽灵
+
+ 说：
+                
+
+感觉确实不如redux思路清晰，只是作为了解皆可以了。
+
+2016年9月26日 21:59
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-365219)
+ | [引用](#comment-text)
+
+kyle
+
+ 说：
+                
+
+讲的很棒，一遍就懂了。
+
+2016年10月11日 14:00
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-366128)
+ | [引用](#comment-text)
+
+[辛未六月羊](http://www.paidepaiper.top/)
+
+ 说：
+                
+
+之前用过vuex，但概念上一直有点模糊，看了阮大神的文章，感觉清晰多了。
+
+2016年10月17日 17:28
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-366503)
+ | [引用](#comment-text)
+
+码农的男人
+
+ 说：
+                
+
+在store的数据层为什么addChangeListener里面的this后面跟on而在removeChangeListener里面的this后面不是更on的？
+
+有点不理解求解中
+
+2016年10月20日 18:02
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-366751)
+ | [引用](#comment-text)
+
+wikiJane
+
+ 说：
+                
+
+请问阮老师MyButton那个组件是怎么回事？为什么是function的？import了React为什么没有用到的？
+
+2016年10月25日 16:37
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-367089)
+ | [引用](#comment-text)
+
+tylerdong
+
+ 说：
+                
+
+大神我下载了代码，在自己的机器上看，为啥没有这两个js文件（init.js，bundle.js）呢？访问报错了
+
+2016年11月 7日 17:50
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-367928)
+ | [引用](#comment-text)
+
+nortonlee
+
+ 说：
+                
+
+>     引用tylerdong的发言：
+> 
+> 
+> 大神我下载了代码，在自己的机器上看，为啥没有这两个js文件（init.js，bundle.js）呢？访问报错了
+
+webpack构建
+
+2016年11月12日 22:26
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-368268)
+ | [引用](#comment-text)
+
+LiShuxue
+
+ 说：
+                
+
+学React没多久，看您这篇文章遇到一个困惑。在您的MyButtonController.jsx中，return了标签，按理说这个MyButton应该是一个组件，但是为什么在Mybutton.jsx中却没有用React.createClass去创建这个组件，而Mybutton却是一个function呢？求解惑...
+
+2016年12月 2日 10:10
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-369598)
+ | [引用](#comment-text)
+
+LiShuxue
+
+ 说：
+                
+
+>     引用wikiJane的发言：
+> 
+> 
+> 请问阮老师MyButton那个组件是怎么回事？为什么是function的？import了React为什么没有用到的？
+
+同问，在MyButtonController.jsx引用了这个《MyButton /》这个标签，这个标签按说应该是一个组件，可是在MyButton.jsx却是用function去定义的这个？为什么这样，如果这样定义，他为什么可以通过标签《MyButton /》去引用？
+
+2016年12月 2日 10:17
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-369599)
+ | [引用](#comment-text)
+
+liumingyuan
+
+ 说：
+                
+
+为什么在启动的时候，会报错：
+
+C:\Users\myliu\WebstormProjects\lmy_developer\node_modules\open-browser-webpack-plugin\index.js:50
+
+            throw err+url;
+
+            ^
+
+Error: Command failed: C:\Windows\system32\cmd.exe /s /c "start "" "http://localhost:8080""
+
+ϵͳ�޷�ִ��ָ���ĳ�����
+
+然后在webpack.config.js中删除插件openBrowser在启动就可以了呢？
+
+2016年12月19日 16:20
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-370594)
+ | [引用](#comment-text)
+
+尊上
+
+ 说：
+                
+
+和MVC有什么不同，感觉是一样的
+
+2016年12月20日 09:36
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-370655)
+ | [引用](#comment-text)
+
+tester
+
+ 说：
+                
+
+_onChange那里确实会报this.setState is undefined
+
+2016年12月22日 21:23
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-370872)
+ | [引用](#comment-text)
+
+[caicai](http://caicaibrid.top)
+
+ 说：
+                
+
+>     引用LiShuxue的发言：
+> 
+> 
+> 同问，在MyButtonController.jsx引用了这个《MyButton /》这个标签，这个标签按说应该是一个组件，可是在MyButton.jsx却是用function去定义的这个？为什么这样，如果这样定义，他为什么可以通过标签《MyButton /》去引用？
+
+看下创建React组件的方式，有三种方式，大神用的这种叫无状态组件，
+
+createCLass方式是es5的方式，还有一种es6的方式，就是class Mybutton extends React.component{ //xxxx }
+
+2017年1月 5日 12:12
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-371621)
+ | [引用](#comment-text)
+
+小虾米
+
+ 说：
+                
+
+这个组件 如果多次使用的话  就是一个页面出现多个 不能独立开来  数据都是共享的
+
+2017年2月16日 15:41
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-372980)
+ | [引用](#comment-text)
+
+蔓蔓
+
+ 说：
+                
+
+终于把整个流程搞明白了
+
+2017年3月17日 20:47
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-374983)
+ | [引用](#comment-text)
+
+BD7IWD
+
+ 说：
+                
+
+请问“Flux 的最大特点，就是数据的"单向流动"。”上面那个流程图是什么工具画的？
+
+2017年4月22日 20:40
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-376563)
+ | [引用](#comment-text)
+
+paysage
+
+ 说：
+                
+
+还是更喜欢redux的思路多一些  不过阮老师的文章确实帮助入门不少 浅显易懂 感谢
+
+2017年5月 2日 00:45
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-376819)
+ | [引用](#comment-text)
+
+carl
+
+ 说：
+                
+
+要做一个阮老师那样的男人
+
+2017年6月27日 17:54
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-378241)
+ | [引用](#comment-text)
+
+疯的旅人
+
+ 说：
+                
+
+请问，MyButtonController.jsx中的ListStore.addChangeListener(this._onChange)，是如何保证参数_onChange函数中出现的this指向的是MyButtonController组件对象而不是window对象？
+
+2017年7月11日 11:31
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-378618)
+ | [引用](#comment-text)
+
+sunxy1990
+
+ 说：
+                
+
+写的很好，我看了两遍才看明白，我的目的不是学flux，而是redux，但学redux之前要学flux，我感到难过的是，demo我运行不了，报错，而且可能阮老师的文章写的早，写法跟现在写法不一样，不过还是理解了flux的流程，比书上讲的明白，thanks
+
+2017年8月 1日 10:56
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-379134)
+ | [引用](#comment-text)
+
+ff
+
+ 说：
+                
+
+原来我们都是stupid poeple
+
+2017年8月 8日 16:53
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-379345)
+ | [引用](#comment-text)
+
+Mailomail
+
+ 说：
+                
+
+怎么看Web上的这些工具框架都想是WPF和QML的复杂抄袭版本。
+
+2017年8月12日 17:13
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-379475)
+ | [引用](#comment-text)
+
+helloyxw
+
+ 说：
+                
+
+>     引用tester的发言：
+> 
+> 
+> _onChange那里确实会报this.setState is undefined
+
+我把Demo下载安装后能运行，但不理解setState函数在哪里定义的？
+
+2017年8月29日 09:12
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-379892)
+ | [引用](#comment-text)
+
+[一网友](http://zglisten.githun.io)
+
+ 说：
+                
+
+看了四五遍，终于有点眉目了！更新个数据，facebook搞的这么麻烦！不过厉害了我的峰哥，你是我心中的支柱！
+
+2017年9月18日 14:43
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-380573)
+ | [引用](#comment-text)
+
+初学react的学渣
+
+ 说：
+                
+
+讲的不错，不过例子感觉不够好，感觉例子可以用更简单的办法写出来，感觉这样用让flux大材小用了
+
+2017年10月11日 07:55
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-381133)
+ | [引用](#comment-text)
+
+mo
+
+ 说：
+                
+
+第一次看的时候直接看代码硬啃，今天来复习一下的，看了一下，文章写的真心不错，这就是设计思路。
+
+2017年10月11日 11:47
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-381154)
+ | [引用](#comment-text)
+
+pageliu16
+
+ 说：
+                
+
+看了两三遍，基本上有点思路了，估计还要跟着Demo写上一遍才算入门。
+
+2017年10月22日 19:56
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-381561)
+ | [引用](#comment-text)
+
+loycoder
+
+ 说：
+                
+
+>     引用mrdream的发言：
+> 
+> 
+> 好复杂，看一遍根本不懂
+
+  嗯。代码有些绕，我也是边看，边写注释的。
+
+2017年11月10日 10:55
+ | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-382225)
+ | [引用](#comment-text)
+
+## 我要发表看法
+
+您的留言
+                    （HTML标签部分可用）
+
+您的大名：
+
+ «-必填
+
+电子邮件：
+
+ «-必填，不公开
+
+个人网址：
+
+ «-我信任你，不会填写广告链接
+
+记住个人信息？
+
+**正在发表您的评论，请稍候**
+
+ «- 点击按钮
+
+[微博](http://weibo.com/ruanyf) | [推特](https://twitter.com/ruanyf) | [GitHub](https://github.com/ruanyf)
+
+2017 © [我的邮件](/contact.html) |
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46829782-1', 'ruanyifeng.com');
+  ga('send', 'pageview');
+
+[http://www.bshare.cn/share](http://www.bshare.cn/share)
+bShare.addEntry({
+    title: document.getElementById("page-title").innerHTML,
+url:window.location.href
+});
+
+document.getElementById("share_button").innerHTML=document.getElementById("share_button_proto").innerHTML;
 
 
 #### 参考 ####
