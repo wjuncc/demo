@@ -126,7 +126,7 @@ var MyButtonController = React.createClass({
 module.exports = MyButtonController;
 ```
 
-
+注意有`ButtonActions`, 
 上面代码中，`MyButtonController`将参数传给子组件`MyButton`。
 
 components/MyButton.jsx
@@ -149,16 +149,15 @@ module.exports = MyButton;
 
 ```
 
-上面代码中，你可以看到[`MyButton`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButton.jsx)是一个纯组件（即不含有任何状态），从而方便了测试和复用。这就是"controll view"模式的最大优点。
+上面代码中，`MyButton`是一个纯组件（即不含有任何状态），从而方便了测试和复用。这就是"controll view"模式的最大优点。
 
-`MyButton`只有一个逻辑，就是一旦用户点击，就调用[`this.createNewItem`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButtonController.jsx#L27) 方法，向Dispatcher发出一个Action。
-
->     
->     // components/MyButtonController.jsx
->      // ...
->       createNewItem:function(event){
->         ButtonActions.addNewItem('new item');}
-
+`MyButton`只有一个逻辑，就是一旦用户点击，就调用`this.createNewItem`方法，向Dispatcher发出一个Action。
+components/MyButtonController.jsx 
+```js
+  createNewItem: function (event) {
+    ButtonActions.addNewItem('new item');
+  },
+```
 上面代码中，调用`createNewItem`方法，会触发名为`addNewItem`的Action。
 
 ## 五、Action
