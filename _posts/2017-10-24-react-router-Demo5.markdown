@@ -87,6 +87,9 @@ And the CSS file:
 You'll need to manually refresh the browser since Webpack isn't building
 our `index.html`.
 
+
+And the actived link is green now:  
+![](https://i.imgur.com/yeXm2Zb.gif)
 ## Nav Link Wrappers
 
 Most links in your site don't need to know they are active, usually just
