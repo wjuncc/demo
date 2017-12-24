@@ -87,6 +87,12 @@ behavior the browser has natively when using real urls.  We'll change
 this to use real urls later and lose the junk, but for now, this works
 great because it doesn't require any server-side configuration.
 
+
+`junk in the URL` which means `http://localhost:8080/#/?_k=7o1yis`  in address bar likes:  
+![](https://i.imgur.com/BB3O4SH.png)
+
+
+
 ## Adding More Screens
 
 Create two new components at:
