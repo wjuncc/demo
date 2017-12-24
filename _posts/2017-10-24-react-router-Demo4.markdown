@@ -58,7 +58,7 @@ index.html
 
 ```
 
-About.js
+modules/About.js
 ```javascript 
 import React from 'react'
 
@@ -72,7 +72,7 @@ export default React.createClass({
 
 
 
-App.js
+modules/App.js
 ```javascript 
 import React from 'react'
 import { Link } from 'react-router'
@@ -86,6 +86,7 @@ export default React.createClass({
           <li><Link to="/about">About</Link></li>
           <li><Link to="/repos">Repos</Link></li>
         </ul>
+          {this.props.children}
       </div>
     )
   }
@@ -95,7 +96,7 @@ export default React.createClass({
 
 
 
-Repos.js
+modules/Repos.js
 ```javascript 
 import React from 'react'
 
