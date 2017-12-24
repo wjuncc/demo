@@ -24,16 +24,13 @@ Facebook官方使用的是 [Flux 框架](https://facebook.github.io/flux/)。本
 
 ## 一、Flux 是什么？
 
-简单说，Flux 是一种架构思想，专门解决软件的结构问题。它跟[MVC 架构](http://www.ruanyifeng.com/blog/2007/11/mvc.html)是同一类东西，但是更加[简单和清晰](http://www.infoq.com/news/2014/05/facebook-mvc-flux)。
+跟[MVC 架构](http://www.ruanyifeng.com/blog/2007/11/mvc.html)类似，但是更加[简单和清晰](http://www.infoq.com/news/2014/05/facebook-mvc-flux)。
 
-Flux存在多种实现（[至少15种](https://github.com/voronianski/flux-comparison)），本文采用的是[Facebook官方实现](https://github.com/facebook/flux)。
+Flux有[15种实现](https://github.com/voronianski/flux-comparison)，默认[Facebook官方实现](https://github.com/facebook/flux)。
 
 ## 二、安装 Demo
 
-为了便于讲解，我写了一个[Demo](https://github.com/ruanyf/extremely-simple-flux-demo)。
-
-安装。
-
+[Demo](https://github.com/ruanyf/extremely-simple-flux-demo)。  
 powershell
 ```powershell
 cd E:\n\learn\react
@@ -42,16 +39,16 @@ cd flux\ryf
 git clone https://github.com/ruanyf/extremely-simple-flux-demo.git
 cd extremely-simple-flux-demo
 npm install
+Start-Process chrome.exe http://localhost:8080/
 npm start
-
 ```
-http://127.0.0.1:8080 。  
+
 ![](https://i.imgur.com/PKikNph.gif)  
 Demo。
 
 ## 三、基本概念
 
-讲解代码之前，你需要知道一些 Flux 的基本概念。
+Flux 的基本概念。
 
 首先，Flux将一个应用分成四个部分。
 
@@ -69,10 +66,6 @@ Flux 的最大特点，就是数据的"单向流动"。
 > 3. Dispatcher 收到 Action，要求 Store 进行相应的更新
 > 4. Store 更新后，发出一个"change"事件
 > 5. View 收到"change"事件后，更新页面
-
-上面过程中，数据总是"单向流动"，任何相邻的部分都不会发生数据的"双向流动"。这保证了流程的清晰。
-
-读到这里，你可能感到一头雾水，OK，这是正常的。接下来，我会详细讲解每一步。
 
 ## 四、View（第一部分）
 
