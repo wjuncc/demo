@@ -149,9 +149,9 @@ module.exports = MyButton;
 
 ```
 
-上面代码中，`MyButton`是一个纯组件（即不含有任何状态），从而方便了测试和复用。这就是"controll view"模式的最大优点。
+上面代码中，`MyButton`是一个纯组件（即不含有任何状态），方便复用。是"controll view"优点。
 
-`MyButton`只有一个逻辑，就是一旦用户点击，就调用`this.createNewItem`方法，向Dispatcher发出一个Action。
+`MyButton`只有一个逻辑，用户点击，就调用`this.createNewItem`方法，向Dispatcher发出一个Action。
 components/MyButtonController.jsx 
 ```js
   createNewItem: function (event) {
@@ -164,31 +164,55 @@ components/MyButtonController.jsx
 
 每个Action都是一个对象，包含一个`actionType`属性（说明动作的类型）和一些其他属性（用来传递数据）。
 
-在这个Demo里面，[`ButtonActions`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/actions/ButtonActions.js) 对象用于存放所有的Action。
+在这个Demo里面，`ButtonActions` 对象用于存放所有的Action。
+```js
+var AppDispatcher = require('../dispatcher/AppDispatcher');
 
->     
->     // actions/ButtonActions.js
->     var AppDispatcher =require('../dispatcher/AppDispatcher');var ButtonActions ={
->       addNewItem:function(text){
->         AppDispatcher.dispatch({
->           actionType:'ADD_NEW_ITEM',
->           text: text
->         });},};
+var ButtonActions = {
 
-上面代码中，`ButtonActions.addNewItem`方法使用`AppDispatcher`，把动作`ADD_NEW_ITEM`派发到Store。
+  addNewItem: function (text) {
+    AppDispatcher.dispatch({
+      actionType: 'ADD_NEW_ITEM',
+      text: text
+    });
+  },
+
+};
+
+module.exports = ButtonActions;
+
+```
+
+上面 `ButtonActions.addNewItem`方法使用`AppDispatcher`，把动作`ADD_NEW_ITEM`派发到Store。
 
 ## 六、Dispatcher
 
-Dispatcher 的作用是将 Action 派发到 Store、。你可以把它看作一个路由器，负责在 View 和 Store 之间，建立 Action 的正确传递路线。注意，Dispatcher 只能有一个，而且是全局的。
+Dispatcher 的作用是将 Action 派发到 Store、。看作路由器，负责在 View 和 Store 之间，建立 Action 的正确传递路线。注意，Dispatcher 只能有一个，而且是全局的。
 
-Facebook官方的 [Dispatcher 实现](https://github.com/facebook/flux)输出一个类，你要写一个[`AppDispatcher.js`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/dispatcher/AppDispatcher.js)，生成 Dispatcher 实例。
+官方的 [Dispatcher 实现](https://github.com/facebook/flux)输出一个类，你要写一个`AppDispatcher.js`，生成 Dispatcher 实例。
 
->     
->     // dispatcher/AppDispatcher.js
->     var Dispatcher =require('flux').Dispatcher;
->     module.exports =newDispatcher();
+AppDispatcher.js:
+```js
+var Dispatcher = require('flux').Dispatcher;
+var AppDispatcher = new Dispatcher();
+var ListStore = require('../stores/ListStore');
 
-`AppDispatcher.register()`方法用来登记各种Action的回调函数。
+AppDispatcher.register(function (action) {
+  switch(action.actionType) {
+    case 'ADD_NEW_ITEM':
+      ListStore.addNewItemHandler(action.text);
+      ListStore.emitChange();
+      break;
+    default:
+      // no op
+  }
+})
+
+module.exports = AppDispatcher;
+
+```
+
+`AppDispatcher.register()`方法登记Action的回调函数。
 
 >     
 >     // dispatcher/AppDispatcher.js
