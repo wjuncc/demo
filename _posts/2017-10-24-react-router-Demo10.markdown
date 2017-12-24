@@ -13,7 +13,7 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 
 ### Note: ###
 
-What the different after STEP2?  
+What the different after STEP2? 
 
 
 ### Effect ###
