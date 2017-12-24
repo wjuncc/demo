@@ -12,7 +12,8 @@ tags:
 
 ![](https://i.imgur.com/VQVi095.png)
 ## ACP Tools ##
-Generate bat markdown files to speed up the stuyd. I should modify the `demo.markdown` before running if necessarily. 
+Generate bat markdown files to speed up 
+the learning process. I should modify the `demo.markdown` before running if necessarily. 
 
 software: Flash Developer 
 ### source code ###
