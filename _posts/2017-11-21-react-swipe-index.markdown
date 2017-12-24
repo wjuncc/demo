@@ -10,7 +10,6 @@ tags:
 
 # react swipe demo #
 
-* [React-swipes—移动端卡片滑动组件 - 分享 - React 中文](http://react-china.org/t/react-swipes/9042) 
 
 #### OK  ####
 * react-swipeable-views
@@ -19,7 +18,8 @@ tags:
 ![](https://i.imgur.com/90aVFml.gif)
 * react-swipes
  [git](https://github.com/younth/react-swipes)
- [demo](http://younth.coding.me/mynote/demo/swipes/)    
+ [demo](http://younth.coding.me/mynote/demo/swipes/)
+ [React-swipes—移动端卡片滑动组件 - 分享 - React 中文](http://react-china.org/t/react-swipes/9042)    
 ![](https://i.imgur.com/ktfkjkS.gif) 
 
 ##  Nice Search Engine for React Components ##
