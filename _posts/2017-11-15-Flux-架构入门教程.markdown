@@ -466,203 +466,11 @@ store变化由最顶层setState， 子组件通过 shouldComponentUpdate(nextPro
 2016年3月22日 20:35
  | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355182)
  | [引用](#comment-text)
-
-咸鱼老弟
-
- 说：
+ 
                 
 
-之前看了一遍没看懂，看了几遍之后，再自己写写，终于搞懂了flux。不过在实际项目中，如果项目不是很大，发觉这个东西没什么用处。而且如果一个项目好几个人一起做，有些人会flux，有些不会，沟通成本其实还蛮大的
-
-2016年4月 6日 10:29
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355448)
- | [引用](#comment-text)
-
-[front-thinking](https://github.com/front-thinking)
-
- 说：
-                
-
-阮老师的这篇讲解Flux技术的文章比之于其它草草翻译官方文档的文章来说的确非常容易理解，深入浅出。仔细看了两三遍后，的确明白了这种架构数据流的过程。但是，其实还有一点不甚清楚的就是为什么要如此来处理数据流，这样有什么好处等等，关于这几点感觉文章并没有提到。因为，单纯从例子来看，反而觉得不用Flux会更简洁、方便一些。
-
-2016年4月12日 15:49
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355586)
- | [引用](#comment-text)
-
-二点零
-
- 说：
-                
-
-> > webpack-dev-server --progress
->   0% compileevents.js:141
->       throw er; // Unhandled 'error' event
-> 
-> 
-> npm ERR! node v4.2.4
-> 
-> npm ERR! npm  v2.14.12
-> 
-> npm ERR! code ELIFECYCLE
-> 
-> npm ERR! flux-for-stupid-people-demo@1.0.0 start: `webpack-dev-server --progress`
-> 
-> npm ERR! Exit status 1
-> 
-> npm ERR!
-> 
-> npm ERR! Failed at the flux-for-stupid-people-demo@1.0.0 start script 'webpack-dev-server --progress'.
-> 
-> npm ERR! This is most likely a problem with the flux-for-stupid-people-demo package,
-> 
-> npm ERR! not with npm itself.
-> 
-> npm ERR! Tell the author that this fails on your system:
-> 
-> npm ERR!     webpack-dev-server --progress
-> 
-> npm ERR! You can get their info via:
-> 
-> npm ERR!     npm owner ls flux-for-stupid-people-demo
-> 
-> npm ERR! There is likely additional logging output above.
-
-请问阮老师，npm start启动的时候，控制台报了以上错误，应该怎么解决呢？没有接触过webpack，问题应该很低级，实在抱歉。
-        
-
-2016年4月15日 10:58
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355673)
- | [引用](#comment-text)
-
-阮一峰
-
- 说：
-                
-
-@二点零：
-
-我这里是正常的，没法复现这个错误，猜不出原因啊。要不你删掉 node_modules 目录，重装一次。
-
-2016年4月16日 11:27
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355692)
- | [引用](#comment-text)
-
-二点零
-
- 说：
-                
-
->     引用阮一峰的发言：
-> 
-> 
-> @二点零：
-> 
-> 我这里是正常的，没法复现这个错误，猜不出原因啊。要不你删掉 node_modules 目录，重装一次。
-
-问了你之后不久就解决了，因为之前没有了解和学习过webpack，后面专门去入门了一下。问题原因是webpack没有全局安装。感谢阮老师，学习了很多！！！
-
-2016年4月21日 11:52
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-355794)
- | [引用](#comment-text)
-
-diper
-
- 说：
-                
-
-> webpack-dev-server --progress --port 8888
-
-                                                                     0% compile                                                                                                                          [http://localhost:8888/webpack-dev-server/](http://localhost:8888/webpack-dev-server/)
-
-webpack result is served from /
-
-content is served from D:\git\extr 95% emit
-
-npm ERR! Windows_NT 6.1.7600
-
-npm ERR! argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\                                                                                                                          node_modules\\npm\\bin\\npm-cli.js" "start"
-
-npm ERR! node v4.4.4
-
-npm ERR! npm  v2.15.1
-
-npm ERR! code ELIFECYCLE
-
-npm ERR! flux-for-stupid-people-demo@1.0.0 start: `webpack-dev-server --progress                                                                                                                           --port 8888`
-
-npm ERR! Exit status 3221225501
-
-npm ERR!
-
-npm ERR!     npm bugs flux-for-stupid-people-demo
-
-npm ERR!     D:\git\extremely-simple-flux-demo\npm-debug.log
-
-windows上报这个错误有没有遇到过
-
-2016年5月11日 18:22
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356179)
- | [引用](#comment-text)
-
-189
-
- 说：
-                
-
-请收下我的膝盖，顺便啥时候出个 redux 的教程呢？
-
-2016年5月14日 19:48
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356253)
- | [引用](#comment-text)
-
-ruby
-
- 说：
-                
-
-阮老师好，问个题外话，为什么执行demo的时候不能直接用webpack-dev-server来执行？而一定要用package.json中的npm start? npm start不也是执行webpack-dev-server --progress么？
-
-2016年5月20日 15:24
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356447)
- | [引用](#comment-text)
-
-菜鸟
-
- 说：
-                
-
-老师讲讲webpack哈
-
-2016年5月23日 15:06
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356544)
- | [引用](#comment-text)
-
-[北去](http://beiqu.website)
-
- 说：
-                
-
-刚开始学flux，有点看不懂，看来得多看几遍啊。哈哈
-
-2016年5月27日 13:31
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356695)
- | [引用](#comment-text)
-
-Adam Lu
-
- 说：
-                
-
-确实是一开始有点儿费解，头一遍完全晕掉
-
-2016年5月30日 10:54
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356835)
- | [引用](#comment-text)
-
-普罗
-
- 说：
-                
+阮老师的这篇讲解Flux技术的文章比之于其它草草翻译官方文档的文章来说的确非常容易理解，深入浅出。仔细看了两三遍后，的确明白了这种架构数据流的过程。但是，其实还有一点不甚清楚的就是为什么要如此来处理数据流，这样有什么好处等等，关于这几点感觉文章并没有提到。因为，单纯从例子来看，反而觉得不用Flux会更简洁、方便一些。 
+  
 
 其实我的理解 就是广播机制更细化了而已……
 
@@ -677,41 +485,11 @@ Radio.push(xxx)
 订阅了该消息的对象，响应的做些行为
 
 而flux就是把on和push的写法抽离到了action和dispatch里统一管理，但这种抽离不见的一定好。
-
-不知道我的理解对不对……
-
-2016年6月 1日 08:06
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-356924)
- | [引用](#comment-text)
-
-沐浴晴朗的心
-
- 说：
-                
-
+ 
+ 
  之前一直接触的是js和页面，对于安装的指令看不明白，现在都无法启动例子。有没有简单的教程呢？
+ 
 
-2016年6月 2日 14:53
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-357002)
- | [引用](#comment-text)
-
-jahon
-
- 说：
-                
-
-@diper：
-
-没安装全局webpack. 执行npm install webpack -g
-
-2016年6月24日 19:17
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-359718)
- | [引用](#comment-text)
-
-asdf
-
- 说：
-                
 
 git clone之后是不是还要npm install啊
 
@@ -725,108 +503,32 @@ jdy
                 
 
 阮老师什么时候讲讲redux和webpack啊？
-
-2016年9月 7日 15:41
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-363961)
- | [引用](#comment-text)
-
-哈哈
-
- 说：
-                
-
->     引用front-thinking的发言：
-> 
-> 
-> 阮老师的这篇讲解Flux技术的文章比之于其它草草翻译官方文档的文章来说的确非常容易理解，深入浅出。仔细看了两三遍后，的确明白了这种架构数据流的过程。但是，其实还有一点不甚清楚的就是为什么要如此来处理数据流，这样有什么好处等等，关于这几点感觉文章并没有提到。因为，单纯从例子来看，反而觉得不用Flux会更简洁、方便一些。
+  
 
 组件化开发之后就明白好处了啊。细流合成江湖，公用状态方便获取等。
 
 二是数据都汇起来了方便做实时监测。
-
-2016年9月10日 10:49
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-364189)
- | [引用](#comment-text)
-
-[Seven](http://www.cailidan.cn)
-
- 说：
-                
-
-阮老师博客最棒的地方就是能把复杂的东西变成简单的。让大家都能读懂。感谢。
-
-2016年9月10日 16:17
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-364219)
- | [引用](#comment-text)
-
-幽灵
+   
 
  说：
                 
 
 感觉确实不如redux思路清晰，只是作为了解皆可以了。
+ 
 
-2016年9月26日 21:59
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-365219)
- | [引用](#comment-text)
-
-kyle
-
- 说：
-                
-
-讲的很棒，一遍就懂了。
-
-2016年10月11日 14:00
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-366128)
- | [引用](#comment-text)
-
-[辛未六月羊](http://www.paidepaiper.top/)
-
- 说：
-                
-
-之前用过vuex，但概念上一直有点模糊，看了阮大神的文章，感觉清晰多了。
-
-2016年10月17日 17:28
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-366503)
- | [引用](#comment-text)
-
-码农的男人
-
- 说：
+讲的很棒，一遍就懂了。 
+之前用过vuex，但概念上一直有点模糊，看了阮大神的文章，感觉清晰多了。 
                 
 
 在store的数据层为什么addChangeListener里面的this后面跟on而在removeChangeListener里面的this后面不是更on的？
-
-有点不理解求解中
-
-2016年10月20日 18:02
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-366751)
- | [引用](#comment-text)
-
-wikiJane
-
- 说：
-                
+ 
 
 请问阮老师MyButton那个组件是怎么回事？为什么是function的？import了React为什么没有用到的？
 
-2016年10月25日 16:37
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-367089)
- | [引用](#comment-text)
-
-tylerdong
-
- 说：
                 
 
 大神我下载了代码，在自己的机器上看，为啥没有这两个js文件（init.js，bundle.js）呢？访问报错了
-
-2016年11月 7日 17:50
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-367928)
- | [引用](#comment-text)
-
+ 
 nortonlee
 
  说：
