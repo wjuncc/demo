@@ -24,10 +24,22 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 ```powershell
 cd E:\n\learn\react\router\lessons\02-rendering-a-route
 npm install
+Start-Process chrome.exe http://localhost:8080/
 npm start
 ```
-App.js
+
+index.js
 ```javascript 
+import React from 'react'
+import { render } from 'react-dom'
+import App from './modules/App'
+import { Router, Route, hashHistory } from 'react-router'
+
+render((
+    <Router history={hashHistory}>
+        <Route path="/" component={App}/>
+    </Router>
+), document.getElementById('app'))
 
 ```
 
