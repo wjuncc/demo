@@ -528,43 +528,14 @@ jdy
                 
 
 大神我下载了代码，在自己的机器上看，为啥没有这两个js文件（init.js，bundle.js）呢？访问报错了
- 
-nortonlee
-
- 说：
-                
-
->     引用tylerdong的发言：
-> 
-> 
-> 大神我下载了代码，在自己的机器上看，为啥没有这两个js文件（init.js，bundle.js）呢？访问报错了
-
-webpack构建
-
-2016年11月12日 22:26
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-368268)
- | [引用](#comment-text)
-
-LiShuxue
-
- 说：
-                
+  
 
 学React没多久，看您这篇文章遇到一个困惑。在您的MyButtonController.jsx中，return了标签，按理说这个MyButton应该是一个组件，但是为什么在Mybutton.jsx中却没有用React.createClass去创建这个组件，而Mybutton却是一个function呢？求解惑...
 
 2016年12月 2日 10:10
  | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-369598)
  | [引用](#comment-text)
-
-LiShuxue
-
- 说：
-                
-
->     引用wikiJane的发言：
-> 
-> 
-> 请问阮老师MyButton那个组件是怎么回事？为什么是function的？import了React为什么没有用到的？
+ 
 
 同问，在MyButtonController.jsx引用了这个《MyButton /》这个标签，这个标签按说应该是一个组件，可是在MyButton.jsx却是用function去定义的这个？为什么这样，如果这样定义，他为什么可以通过标签《MyButton /》去引用？
 
@@ -594,145 +565,38 @@ Error: Command failed: C:\Windows\system32\cmd.exe /s /c "start "" "http://local
 2016年12月19日 16:20
  | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-370594)
  | [引用](#comment-text)
-
-尊上
-
- 说：
-                
-
-和MVC有什么不同，感觉是一样的
-
-2016年12月20日 09:36
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-370655)
- | [引用](#comment-text)
-
-tester
-
- 说：
-                
+ 
+ 
 
 _onChange那里确实会报this.setState is undefined
-
-2016年12月22日 21:23
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-370872)
- | [引用](#comment-text)
-
-[caicai](http://caicaibrid.top)
-
- 说：
-                
-
->     引用LiShuxue的发言：
-> 
-> 
+  
 > 同问，在MyButtonController.jsx引用了这个《MyButton /》这个标签，这个标签按说应该是一个组件，可是在MyButton.jsx却是用function去定义的这个？为什么这样，如果这样定义，他为什么可以通过标签《MyButton /》去引用？
 
 看下创建React组件的方式，有三种方式，大神用的这种叫无状态组件，
 
 createCLass方式是es5的方式，还有一种es6的方式，就是class Mybutton extends React.component{ //xxxx }
+  
 
-2017年1月 5日 12:12
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-371621)
- | [引用](#comment-text)
-
-小虾米
-
- 说：
+这个组件 如果多次使用的话  就是一个页面出现多个 不能独立开来  数据都是共享的 
                 
 
-这个组件 如果多次使用的话  就是一个页面出现多个 不能独立开来  数据都是共享的
-
-2017年2月16日 15:41
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-372980)
- | [引用](#comment-text)
-
-蔓蔓
-
- 说：
-                
-
-终于把整个流程搞明白了
-
-2017年3月17日 20:47
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-374983)
- | [引用](#comment-text)
-
-BD7IWD
-
- 说：
-                
-
-请问“Flux 的最大特点，就是数据的"单向流动"。”上面那个流程图是什么工具画的？
-
-2017年4月22日 20:40
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-376563)
- | [引用](#comment-text)
-
-paysage
-
- 说：
-                
+请问“Flux 的最大特点，就是数据的"单向流动"。”上面那个流程图是什么工具画的？ 
 
 还是更喜欢redux的思路多一些  不过阮老师的文章确实帮助入门不少 浅显易懂 感谢
-
-2017年5月 2日 00:45
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-376819)
- | [引用](#comment-text)
-
-carl
-
- 说：
-                
-
-要做一个阮老师那样的男人
-
-2017年6月27日 17:54
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-378241)
- | [引用](#comment-text)
-
-疯的旅人
-
- 说：
+ 
+                 
                 
 
 请问，MyButtonController.jsx中的ListStore.addChangeListener(this._onChange)，是如何保证参数_onChange函数中出现的this指向的是MyButtonController组件对象而不是window对象？
-
-2017年7月11日 11:31
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-378618)
- | [引用](#comment-text)
-
-sunxy1990
-
- 说：
+ 
                 
 
-写的很好，我看了两遍才看明白，我的目的不是学flux，而是redux，但学redux之前要学flux，我感到难过的是，demo我运行不了，报错，而且可能阮老师的文章写的早，写法跟现在写法不一样，不过还是理解了flux的流程，比书上讲的明白，thanks
-
-2017年8月 1日 10:56
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-379134)
- | [引用](#comment-text)
-
-ff
-
- 说：
-                
+写的很好，我看了两遍才看明白，我的目的不是学flux，而是redux，但学redux之前要学flux，我感到难过的是，demo我运行不了，报错，而且可能阮老师的文章写的早，写法跟现在写法不一样，不过还是理解了flux的流程，比书上讲的明白，thanks 
 
 原来我们都是stupid poeple
+ 
 
-2017年8月 8日 16:53
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-379345)
- | [引用](#comment-text)
-
-Mailomail
-
- 说：
-                
-
-怎么看Web上的这些工具框架都想是WPF和QML的复杂抄袭版本。
-
-2017年8月12日 17:13
- | [#](http://www.ruanyifeng.com/blog/2016/01/flux.html#comment-379475)
- | [引用](#comment-text)
+怎么看Web上的这些工具框架都想是WPF和QML的复杂抄袭版本。 
 
 helloyxw
 
