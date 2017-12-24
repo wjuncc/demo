@@ -84,6 +84,8 @@ talking about web servers, we might as well take it one step closer to
 the real-world. We'll also need it for server rendering in the next
 section.
 
+What meaning of `real-world`? Means `server rendering`.
+
 Webpack dev server is not a production server. Let's make a production
 server and a little environment-aware script to boot up the right server
 depending on the environment.
