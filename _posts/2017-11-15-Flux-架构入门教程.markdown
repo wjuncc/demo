@@ -318,8 +318,7 @@ Store 更新后（`this.addNewItemHandler()`）发出事件（`this.emitChange()
 [mrdream](http://mrdream.xyz)
 
  说：
-                
-
+             
 好复杂，看一遍根本不懂
 
 2016年1月15日 10:46
