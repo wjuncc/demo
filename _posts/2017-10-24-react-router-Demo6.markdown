@@ -32,6 +32,11 @@ index.js
 
 ```
 
+index.css
+```css 
+
+```
+
 index.html
 ```html  
 
