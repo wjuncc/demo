@@ -4,6 +4,10 @@ title:  "script router react"
 date:   2017-10-24 08:42:42 +0800
 categories:  
 tags: 
+    - react
+    - router
+
+
 ---
 
 # sourece code #
