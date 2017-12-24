@@ -13,7 +13,7 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 
 ### Note: ###
 
-
+Nothing to do but editing server code.
 
 ### Effect ###
 
@@ -76,6 +76,8 @@ modules/Repos.js
 ## POST ##
 
 # Production-ish Server
+
+What meaning of `Production-ish`?
 
 None of this has anything to do with React Router, but since we're
 talking about web servers, we might as well take it one step closer to
