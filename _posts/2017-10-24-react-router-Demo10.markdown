@@ -20,7 +20,7 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 ![]()
 
 ### source code ###
-
+powershell
 ```powershell
 cd E:\n\learn\react\router\lessons\10-clean-urls
 npm install

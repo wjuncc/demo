@@ -17,10 +17,10 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 
 ### Effect ###
 
-![]()
+![](https://i.imgur.com/toQ9CKt.gif)
 
 ### source code ###
-
+powershell
 ```powershell
 cd E:\n\learn\react\router\lessons\03-navigating-with-link
 npm install
