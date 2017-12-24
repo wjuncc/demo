@@ -14,7 +14,7 @@ source from [http://www.ruanyifeng.com/blog/2016/01/flux.html](http://www.ruanyi
 
 # Flux 架构入门教程
 先看 [《React入门教程》](http://www.ruanyifeng.com/blog/2015/03/react.html)。
-至少要学会：React + 前端框架：
+至少要会一种组合：
 
 * React+Flux,
 * React+redux
