@@ -17,7 +17,7 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 
 ### Effect ###
 
-![]()
+![](https://i.imgur.com/5qQjDdD.gif)
 
 ### source code ###
 powershell
@@ -81,7 +81,11 @@ While most navigation happens with `Link`, you can programmatically
 navigate around an application in response to form submissions, button
 clicks, etc.
 
+submissions means what?
+Except navigation links, there are buttons and submissions which could made links.
+
 Let's make a little form in `Repos` that programmatically navigates.
+
 
 ```js
 // modules/Repos.js
@@ -124,6 +128,8 @@ export default React.createClass({
 
 There are two ways you can do this, the first is simpler than the
 second.
+
+`potential problem`
 
 First we can use the `browserHistory` singleton that we passed into
 `Router` in `index.js` and push a new URL into the history.
