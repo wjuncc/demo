@@ -69,18 +69,19 @@ Flux 的最大特点，就是数据的"单向流动"。
 
 ## 四、View（第一部分）
 
-请打开 Demo 的首页[`index.jsx`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/index.jsx) ，你会看到只加载了一个组件。
+[`index.jsx`](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/index.jsx) ，只加载了一个组件。
+```js
+var React = require('react');
+var ReactDOM = require('react-dom');
+var MyButtonController = require('./components/MyButtonController');
 
->     
->     // index.jsx
->     var React =require('react');var ReactDOM =require('react-dom');var MyButtonController =require('./components/MyButtonController');
->     
->     ReactDOM.render(<MyButtonController/>,
->       document.querySelector('#example'));
+ReactDOM.render(
+  <MyButtonController/>,
+  document.querySelector('#example')
+);
+```
 
-上面代码中，你可能注意到了，组件的名字不是 `MyButton`，而是 `MyButtonController`。这是为什么？
-
-这里，我采用的是 React 的 [controller view](http://blog.andrewray.me/the-reactjs-controller-view-pattern/) 模式。"controller view"组件只用来保存状态，然后将其转发给子组件。`MyButtonController`的[源码](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButtonController.jsx)很简单。
+上面代码中，组件名字不是 `MyButton`，而是 `MyButtonController`。这是 React 的 [controller view](http://blog.andrewray.me/the-reactjs-controller-view-pattern/) 模式。"controller view"组件只用来保存状态，然后将其转发给子组件。`MyButtonController`的[源码](https://github.com/ruanyf/extremely-simple-flux-demo/blob/master/components/MyButtonController.jsx)很简单。
 
 >     
 >     // components/MyButtonController.jsx
