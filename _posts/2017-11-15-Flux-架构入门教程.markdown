@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Flux 架构入门教程"
+date:   2017-11-15 05:50:16 +0800
+categories:  
+tags: 
+---
+
+# Flux 架构入门教程 #
+
+source from [http://www.ruanyifeng.com/blog/2016/01/flux.html](http://www.ruanyifeng.com/blog/2016/01/flux.html)
+
+
+
+#### 参考 ####
+
