@@ -57,7 +57,7 @@ Let's see how it looks with inline styles, add `activeStyle` to your
 ```
 
 Now as you navigate, the active link is red.
-
+![](https://i.imgur.com/ozwVn8c.gif)
 ## Active Class Name
 
 You can also use an active class name instead of inline-styles.
