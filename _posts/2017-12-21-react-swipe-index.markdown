@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "react swipe index"
+title:  "the guide for react swipe"
 date:   2017-12-21 22:10:29 +0800
 categories:  
 tags: 
@@ -10,9 +10,7 @@ tags:
 
 # react swipe demo #
 
-* [React-swipes—移动端卡片滑动组件 - 分享 - React 中文](http://react-china.org/t/react-swipes/9042)
-
-
+* [React-swipes—移动端卡片滑动组件 - 分享 - React 中文](http://react-china.org/t/react-swipes/9042) 
 
 #### OK  ####
 * react-swipeable-views
