@@ -13,6 +13,7 @@ source code from [git](https://github.com/reactjs/react-router-tutorial/tree/mas
 
 ### Note: ###
 
+What the different after STEP2?  
 
 
 ### Effect ###
@@ -112,7 +113,7 @@ happens?
 ```
 Cannot GET /repos
 ```
-
+# STEP2 #
 ## Configuring Your Server
 
 Your server needs to deliver your app no matter what URL comes in,
