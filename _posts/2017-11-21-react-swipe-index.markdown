@@ -4,7 +4,7 @@ title:  "the guide for react swipe"
 date:   2017-11-21 22:10:29 +0800
 categories:  
 tags: 
-    - react 
+    - react
 
 ---
 
