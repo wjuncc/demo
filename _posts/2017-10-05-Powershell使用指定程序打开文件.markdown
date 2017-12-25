@@ -4,7 +4,8 @@ title:  "Powershell使用指定程序打开文件"
 date:   2017-10-05 21:17:32 +0800
 categories:  
 tags: 
-    - Powershell
+    - powershell
+
 ---
 
 
