@@ -1645,50 +1645,19 @@ const Counter = ({ value }) => (
 
 我自己在运行上面的代码时出现了这两个问题。
 
-2017年11月 1日 16:17
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-381877)
- | [引用](#comment-text)
-
-阮一峰
-
- 说：
-                
-
-@zj：
 
 谢谢指出，原代码确实有你说的问题，我已经改过来了。
 
-2017年11月 1日 21:00
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-381885)
- | [引用](#comment-text)
-
-[匿名](http://niming.com)
-
- 说：
                 
 
 老师 网站背景色可以换一下吗？ 或者把那个暗黄色去掉吧，效果要很好，我有强迫症，每次看着都很难受。 O(∩_∩)O
 
 /* background-color: #f5f5d5; */
 
-2017年11月 3日 15:02
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-381945)
- | [引用](#comment-text)
-
-[anLA](http://blog.csdn.net/anla_)
-
- 说：
                 
 
 入门的时候，看了好几遍您的redux系列文章，现在感觉也做过些demo及项目，打算重新系统学一遍redux基础，其中可能会引用您的博客内容～
 
-2017年11月 5日 16:04
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-382017)
- | [引用](#comment-text)
-
-一依
-
- 说：
                 
 
 “五、Reducer的拆分
@@ -1696,57 +1665,17 @@ const Counter = ({ value }) => (
 Reducer 函数负责生成 State。由于整个应用只有一个 State 对象，包含所有数据，对于大型应用来说，这个 State 必然十分庞大，导致 Reducer 函数也十分庞大。”
 
   这里应该是整个应用只有一个Store对象吧，后面的State也应该是Store吧
+       
 
-2017年11月18日 15:38
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-382451)
- | [引用](#comment-text)
-
-[fineplace](http://www.fineplace.cn)
-
- 说：
-                
-
-看了createStore的源码，在看简单实现，不能佩服更多，赞！！！
-
-2017年12月 4日 15:02
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-382970)
- | [引用](#comment-text)
-
-carry
-
- 说：
-                
+看了createStore的源码，在看简单实现，不能佩服更多，赞！！！       
 
 计数器的那个案例下载下来如何跑起来啊？
 
-2017年12月 7日 15:15
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-383068)
- | [引用](#comment-text)
-
-吴映才
-
- 说：
-                
-
 刚开始学react，对redux不了解，不知道什么时候用，多学学教程，我想，应该就能懂，谢谢阮老师。
 
-2017年12月13日 11:27
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-383187)
- | [引用](#comment-text)
-
-秦智鹏
-
- 说：
                 
 
 开题说了react有两个问题没涉及到 其中有一个代码结构，这是为什么，不是都已经做成组件化了吗，这样不算是代码结构吗
-
-2017年12月13日 13:56
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-383193)
- | [引用](#comment-text)
-
-[xiaomogu](https://home.cnblogs.com/u/lonicera/)
-
  说：
                 
 
