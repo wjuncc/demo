@@ -1401,11 +1401,6 @@ createStore简单实现，道破天机阿
 
 [杜少](http://www.takozhang.cn)
 
- 说：
-                
-
-阮老师，Action Creator这个函数，使用的场景应该是当有很多个view去触发同一种action，而不是你说的有多少种view就有多少种action，这个函数的action其实是同一种。
-
 2017年4月 7日 15:13
  | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-376008)
  | [引用](#comment-text)
@@ -1430,36 +1425,12 @@ const Counter = ({
 	 - 
 
 );
+      
 
-2017年4月26日 11:12
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-376682)
- | [引用](#comment-text)
-
-jeff
-
- 说：
-                
-
-这才是如雷贯耳，网上的文章都是shit,要想明白react-native到底怎么写，必须得看阮一峰的文章，别人的文章我看不进去
-
-2017年6月 4日 00:08
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-377654)
- | [引用](#comment-text)
-
-[ClarenceC](https://github.com/ClarenceC)
-
- 说：
-                
+这才是如雷贯耳，网上的文章都是shit,要想明白react-native到底怎么写，必须得看阮一峰的文章，别人的文章我看不进去       
 
 整条技术栈都快跟阮老师学完了........阮老师的BLOG每条都有用.
 
-2017年6月11日 10:08
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-377848)
- | [引用](#comment-text)
-
-han
-
- 说：
                 
 
 阮老师，你好，现在redux的作者都推荐了mobx，mobx相对来讲更容易上手，直观，问下是否要转到mobx还是redux使用更加便捷
@@ -1479,49 +1450,16 @@ toong
 > 有一个 Redux 莞式教程 [https://github.com/kenberkeley/redux-simple-tutorial，貌似跟博主的行文差不多。。。](https://github.com/kenberkeley/redux-simple-tutorial，貌似跟博主的行文差不多。。。)
 
 的确非常相似，但看了一下貌似是github上这个先出
-
-2017年7月 2日 15:11
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-378399)
- | [引用](#comment-text)
-
-[peng](http://pengliheng.github.io/dist)
-
- 说：
-                
+        
 
 我的哥哥，这都一年之前的文章了，我看官网redux的30个视频，愣是看到一半无法看下去看不懂，看了gitbook文章照着敲也没弄好，想找更加简单的例子便于理解，阮老师的文章对我有帮助，谢谢谢
 
-2017年8月11日 10:24
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-379443)
- | [引用](#comment-text)
-
-谭冬
-
- 说：
                 
 
 我想知道 formValues 这个方法是如何用的
 
-2017年8月16日 10:49
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-379566)
- | [引用](#comment-text)
-
-yezi
-
  说：
-                
-
-看3遍了，终于看懂了
-
-2017年8月19日 08:19
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-379644)
- | [引用](#comment-text)
-
-ang
-
- 说：
-                
-
+          
 看了两天好几个教程，头都大了，困惑在基本问题上，
 
 组件怎么绑定的action？
@@ -1536,11 +1474,6 @@ reducer怎么派发新的state给组件？
 
 新的值会依据store.subscribe(希望被更的新组件)传到组件"家门口"，同时在组件里用store.getState()方法读取【此刻别的组件不能访问这个值么？】
 
-2017年9月 1日 22:02
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-379995)
- | [引用](#comment-text)
-
-weihome
 
  说：
                 
