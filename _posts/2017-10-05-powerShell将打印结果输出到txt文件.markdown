@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "powerShell将打印结果输出到txt文件"
-date:   2017-10-05 21:17:32 +0800
+title:  "powerShell basic"
+date:   2016-10-05 21:17:32 +0800
 categories:  
 tags: 
     - powershell 
