@@ -17,6 +17,8 @@ the learning process of React.
 
 * One program to keep the file names the same with the `title` tag in jekyll markdown files.
 
+When I modify the `title` tag and `date` tag, the program will change the file names autoly.
+
 
 ![](https://i.imgur.com/VQVi095.png)
 ### 2 generate the MD files from git page ###
