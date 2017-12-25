@@ -19,21 +19,10 @@ bShare.addEntry({
 url:window.location.href
 });
 
+React没涉及。 
 
-[![珠峰培训](http://www.ruanyifeng.com/blog/images/sponsor_zhufeng5.png)](http://www.zhufengpeixun.cn/main/course/guide.html?ref=ruanyifeng.com)
-
-一年半前，我写了[《React 入门实例教程》](http://www.ruanyifeng.com/blog/2015/03/react.html)，介绍了 React 的基本用法。
-
-React 只是 DOM 的一个抽象层，并不是 Web 应用的完整解决方案。有两个方面，它没涉及。
-
-> - 代码结构
-> - 组件之间的通信
-
-对于大型的复杂应用来说，这两方面恰恰是最关键的。因此，只用 React 没法写大型应用。
-
-为了解决这个问题，2014年 Facebook 提出了 [Flux](http://www.ruanyifeng.com/blog/2016/01/flux.html) 架构的概念，引发了很多的实现。2015年，[Redux](https://github.com/reactjs/redux) 出现，将 Flux 与函数式编程结合一起，很短时间内就成为了最热门的前端架构。
-
-本文详细介绍 Redux 架构，由于内容较多，全文分成三个部分。今天是第一部分，介绍基本概念和用法。
+- 代码结构
+- 组件之间的通信 
 
 ![](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016091801.png)
 
