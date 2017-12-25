@@ -30,8 +30,14 @@ powershell 重命名文件夹
 http://localhost:8080  
 ![](https://i.imgur.com/kZbfJ6o.png)
 
-Powershell to create and make as script to reflect python file. 
-In this way that the ui-interface could be created handy and easily in 
+Create winform interface by powershell, this is much more easily than created by C# in visual studio in developing a same function. The code will be very clear without complex communication object. Also catch the valued error information in terminal instead of avoiding the complex debug system.
+The communication betweeen powershell and python file is very simple. Only one statements could input the data from python file likes:
+```powershell
+
+```
+and make as script to reflect python file. 
+In this way that the ui-interface could be created handy and easily  
+
 ## 一、局部作用域
 `class`用唯一随机名。
 
@@ -51,11 +57,12 @@ export default () => {
 
 这里的style，指向`App.css`,style.title,指向App.css中的class定义`.title {`。 
 
-将样式文件`App.css`输入到`style`对象，然后引用`style.title`代表一个`class`。
-
 demo01/components/App.css
 ```css
->     .title {color: red;}
+.title {
+  color: red;
+}
+
 ```
 
 
