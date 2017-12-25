@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React动画指南(2)复用写法"
+title:  "React 动画指南(2)复用写法"
 date:   2017-11-10 03:45:26 +0800
 categories:  
 tags: 

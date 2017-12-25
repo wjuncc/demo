@@ -1,17 +1,12 @@
 ---
 layout: post
-title:  "React Tween Backup1"
-date:   2017-12-19 21:26:49 +0800
+title:  "React 动画 参考文摘 (翻译)"
+date:   2017-11-12 21:26:49 +0800
 categories:  
 tags: 
     - react
-    - 笔记
 
 ---
-
-# reactjs 动画 #
-
-ReactTransitionGroup 教程
 
 
 

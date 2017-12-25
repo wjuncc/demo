@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React HOC (Chinese)"
+title:  "React 高阶组件 (翻译)"
 date:   2017-12-12 05:28:47 +0800
 categories:  
 tags: 

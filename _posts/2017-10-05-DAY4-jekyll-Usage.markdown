@@ -9,8 +9,7 @@ tags:
 ---
 
 
-
-### 代码中出现2个大括号的问题 ###
+## jekyll代码中显示2个大括号的问题 ##
 react的代码有2个大括号，如\{\{，应该写作\\{\\{
 错误举例：
 ```
@@ -22,7 +21,7 @@ tml: '<h1>Hello World!!</h1>'}}" in E:/n/wj/blog/demo/_posts/2017-10-14-react-js
 参考[jekyll 下文章无法显示双大括号\{\{ \}\}和\{\% \%\}的处理](http://yukapril.com/2017/03/01/jekyll-brace.html)
 
 
-### tag的问题 ###
+## tag的问题 ##
 1
 ```
 tags: wtg  u盘
@@ -76,7 +75,9 @@ tags:
 * [please support tags without need plugins to make github pages support tags · Issue #867 · jekyll/jekyll · GitHub](https://github.com/jekyll/jekyll/issues/867)
 
 
-### 时间的问题 ###
+## 时间的问题 ##
+利用这一点，能隐藏自己还不想发布的博客页面，例如，`date`标签的年份改成1000年后，这样，页面就不会出现在博客列表中。 
+ 
 jekyll根据系统时间，判断是否生成html。
 
 	date:   2017-10-05 21:17:32 +0800
@@ -87,7 +88,7 @@ jekyll根据系统时间，判断是否生成html。
 
 肯定不显示。
 
-### jekyll中文路径 ###
+## jekyll中文路径 ##
 
 <del>这个问题是jekyll2的，在jekyll3下没有了。 </del>  
 这个问题是ruby的问题，不是jekyll版本的问题。  
@@ -107,20 +108,14 @@ jekyll根据系统时间，判断是否生成html。
 1. 远程git上的jekyll支持中文。 
 2. 只是本地localhost或者192.168.1.X 有问题，
 
-解决方式：
+### 解决思路 ###
 
-1. 通过修改rb文件，来使得中文保留。
-2. 如果不保留中文，可以翻译成汉语拼音。但是一个思路，但是不实用。这样做，会造成listary或者everthing搜索不方便。
-3. 能够用中文，还是用中文好。垂直映射比水平转化要少一层壳，更利于搜索。
+1. 通过修改rb文件，来使得ruby服务器能正常访问中文路径。
+2. 把文件名翻译成汉语拼音。是一个思路，但是不实用。这样做，会造成listary或者everthing搜索不方便。
 
-测试了一下：
+能够用中文，还是用中文好。垂直映射比水平转化要少一层壳，更利于搜索。
 
-1. 本地支持中文文件名。但不支持127.0.0.1访问中文文件名。
-2. git是否支持呢？测试了一下，git支持中文文件名。
-
-下面备份解决办法：
-
-## 解决办法 ##
+### 解决办法 ###
 
 路径：
 C:\Ruby24-x64\lib\ruby\2.4.0\webrick\httpservlet
@@ -144,8 +139,8 @@ C:\Ruby24-x64\lib\ruby\2.4.0\webrick\httpservlet
 
 #### 参考 ####
 
+* [jekyll如何使用中文路径](http://blog.laofu.online/2017/08/06/jekyll-cn-path/)
 * [jekyll serve 无法本地预览 中文路径问题 解决](https://rawbin-.github.io/开发技术/2015/06/13/jekyll-serve/)
 * [Jekyll编译中文文件名的网页的本地预览问题。](http://www.oschina.net/question/1396651_132154)
-* [jekyll中文文件名本地预览问题](http://kael-aiur.com/入门指引/jekyll中文文件名本地预览问题.html)
-* [jekyll如何使用中文路径 - 付威的网络博客](http://blog.laofu.online/2017/08/06/jekyll-cn-path/)
+* [jekyll中文文件名本地预览问题](http://kael-aiur.com/入门指引/jekyll中文文件名本地预览问题.html) 
 * [jekyll支持中文解决办法 - 单客哦朋 - thxopen.com](http://www.thxopen.com/jekyll/2014/04/17/jekyll-able-gbk.html)
