@@ -492,14 +492,6 @@ redux本身很简单，麻烦的是后面用到的异步action,然后各种插�
 
 继续关注博主的这个系列
 
-2016年9月20日 09:27
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364764)
- | [引用](#comment-text)
-
-edision
-
- 说：
-                
 
 >     引用fusun的发言：
 > 
@@ -611,14 +603,6 @@ yy
 
 3.4里面的对象好像落了key
 
-2016年9月21日 20:52
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364908)
- | [引用](#comment-text)
-
-阮一峰
-
- 说：
-                
 
 @yy：这是ES6的语法，请看下面的链接
 
@@ -637,13 +621,6 @@ leeds
 
 给个推荐看的链接也行
 
-2016年9月21日 23:49
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364910)
- | [引用](#comment-text)
-
-[Alleria](http://www.cnblogs.com/wunan/)
-
- 说：
                 
 
 虽然用redux已经有一段时间了，但是只能说会用，没有捋清楚底层的用意，老师的讲解从更高的层次进行了讲解，有种豁然开朗的感觉，感谢
