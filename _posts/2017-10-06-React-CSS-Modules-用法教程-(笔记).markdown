@@ -13,7 +13,7 @@ tutorial from [CSS Modules 用法教程 - 阮一峰](http://www.ruanyifeng.com/b
 [CSS Modules](https://github.com/css-modules/css-modules) 功能单纯，仅局部作用域和模块依赖。
 
 
-## 零、安装Demo
+## 0 安装Demo
 
 [6个Demo](https://github.com/ruanyf/css-modules-demos)  
 powershell  
@@ -36,7 +36,7 @@ http://localhost:8080
 ![](https://i.imgur.com/kZbfJ6o.png)
 
 
-## 一、局部作用域
+## Demo1 局部作用域
 `class`用唯一随机名。
 
 demo01/components/App.js
@@ -125,7 +125,7 @@ npm run demo01
 ``` 
 ![](https://i.imgur.com/kZbfJ6o.png)
 
-## 二、全局作用域
+## Demo2 全局作用域
 
 全局`class`定义，不会被随机。
 ```
@@ -180,7 +180,7 @@ demo02/components/App.css
 
 ![](https://i.imgur.com/kZbfJ6o.png)
 
-## 三、定制哈希类名
+## Demo3 定制哈希类名
 
 `css-loader`默认的哈希算法是`[hash:base64]`，  
 将`.title`编译成`._3zyde4l1yATCOkgn-DBWEL`。
@@ -238,7 +238,7 @@ loader: "style-loader!css-loader?modules&localIdentName=[path][name]---[local]--
 
 ![](https://i.imgur.com/hvCpjIB.png)
 
-## 四、 Class 的组合
+## Demo4 Class 的组合
 
 选择器A继承选择器B，称为"组合"（["composition"](https://github.com/css-modules/css-modules#composition)）。
 
@@ -269,71 +269,111 @@ npm run demo04
 
 ![](https://i.imgur.com/7vGBMEF.png)
 
-## 五、输入其他模块
+## Demo5 输入其他模块
 选择器继承选择器，  
 前面讲的是同一个css文件中，选择器继承选择器。  
 下面讲的是一个css文件中的选择器，继承另一个css文件中的选择器。 也就是说，选择器可以跨越多个css文件，不受物理文件的限制。  
 
-[`another.css`](https://github.com/ruanyf/css-modules-demos/blob/master/demo05/components/another.css)
+local path：
 
->     .className {background-color: blue;}
+demo05/components/another.css
+```css
+.className {background-color: green;}
+```
 
-[`App.css`](https://github.com/ruanyf/css-modules-demos/blob/master/demo05/components/App.css)可以继承`another.css`里面的规则。
+demo05/components/App.css
+```css
+.title {
+  composes: className from './another.css';
+  color: red;
+}
+```
 
->     .title {composes: className from './another.css';color: red;}
+运行powershell,
+```
+Start-Process chrome.exe http://localhost:8080
+cd E:\n\learn\react\css\ryf
+npm run demo05
+```
+绿色的背景上的红色标题。  
 
-运行这个示例。
+![](https://i.imgur.com/NwIUL7r.png)
 
->     
->     $ npm run demo05
->     
 
-打开`http://localhost:8080`，会[看到](http://ruanyf.github.io/css-modules-demos/demo05/)蓝色的背景上有一个红色的`h1`。
+## Demo6 输入变量
 
-## 六、输入变量
+安装 PostCSS 和 [postcss-modules-values](https://github.com/css-modules/postcss-modules-values)。让 css-Module 支持使用变量  
 
-CSS Modules 支持使用变量，不过需要安装 PostCSS 和 [postcss-modules-values](https://github.com/css-modules/postcss-modules-values)。
+运行powershell,
+```powershell
+cd E:\n\learn\react\css\ryf
+npm install --save postcss-loader postcss-modules-values
+``` 
 
->     
->     $ npm install --save postcss-loader postcss-modules-values
->     
+把`postcss-loader`加入[`webpack.config.js`]demo06/webpack.config.js
+```js
+var webpack = require('webpack');
+var values = require('postcss-modules-values');
 
-把`postcss-loader`加入[`webpack.config.js`](https://github.com/ruanyf/css-modules-demos/blob/master/demo06/webpack.config.js)。
+module.exports = {
+  entry: __dirname + '/index.js',
+  output: {
+    publicPath: '/',
+    filename: './bundle.js'
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015', 'stage-0', 'react']
+        }
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader?modules!postcss-loader"
+      },
+    ]
+  },
+  postcss: [
+    values
+  ],
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: { warnings: false }
+    })
+  ]
+}; 
+``` 
 
->     var values =require('postcss-modules-values');
->     
->     module.exports ={
->       entry: __dirname +'/index.js',
->       output:{
->         publicPath:'/',
->         filename:'./bundle.js'},
->       module:{
->         loaders:[{
->             test:/\.jsx?$/,
->             exclude:/node_modules/,
->             loader:'babel',
->             query:{
->               presets:['es2015','stage-0','react']}},{
->             test:/\.css$/,
->             loader:"style-loader!css-loader?modules!postcss-loader"},]},
->       postcss:[
->         values
->       ]};
+demo06/components/colors.css 定义变量。
+```css
+@value blue: #0c77f8;
+@value red: #ff0000;
+@value green: #aaf200;
+```
 
-接着，在[`colors.css`](https://github.com/ruanyf/css-modules-demos/blob/master/demo06/components/colors.css)里面定义变量。
+demo06/components/App.css引用变量
+```css
+@value colors: "./colors.css";
+@value blue, red, green from colors;
 
->     @value blue: #0c77f8;@value red: #ff0000;@value green: #aaf200;
+.title {
+  color: red;
+  background-color: blue;
+}
+```
 
-[`App.css`](https://github.com/ruanyf/css-modules-demos/tree/master/demo06/components)可以引用这些变量。
 
->     @value colors: "./colors.css";@value blue, red, green from colors;.title {color: red;background-color: blue;}
+运行powershell,
+```powershell
+Start-Process chrome.exe http://localhost:8080
+cd E:\n\learn\react\css\ryf
+npm run demo06
+```
 
-运行这个示例。
-
->     
->     $ npm run demo06
->     
-
-打开`http://localhost:8080`，会[看到](http://ruanyf.github.io/css-modules-demos/demo06/)蓝色的背景上有一个红色的`h1`。
-
+蓝色的背景上有一个红色的`h1`。
+![](https://i.imgur.com/R3YddlN.png)
 （完）
