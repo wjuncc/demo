@@ -47,11 +47,6 @@ Tools to speed up study process.
 *  not sure [git](https://github.com/WangYihang/HTML2Markdown)     
 
 
-## About React Router Posts ##
-
-In the course1-10 [Git Toturials](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)  we build a react app with the development environment about react-router . course11-14 is the server setting of react-router, even `Server Side Rendering with React` . 
-
-
 
 
 
