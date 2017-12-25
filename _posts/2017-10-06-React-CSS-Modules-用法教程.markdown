@@ -30,7 +30,7 @@ powershell 重命名文件夹
 http://localhost:8080  
 ![](https://i.imgur.com/kZbfJ6o.png)
 
-Create winform interface by powershell, this is much more easily than created by C# in visual studio in developing a same function. The code will be very clear without complex communication object. Also catch the valued error information in terminal easily instead of avoiding the complex debug system.
+Create winform interface by powershell, this is much more easily than created by C# in visual studio in developing a same function. The code will be very clear without complex communication object. Also we will catch the valued error information in terminal easily instead of avoiding the complex debug system.
 The communication betweeen powershell and python file is very simple. Only one statements could input the data from python file likes:
 ```powershell
 
