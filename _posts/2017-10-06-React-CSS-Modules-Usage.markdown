@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React CSS Modules 用法教程"
+title:  "React CSS Modules Usage"
 date:   2017-10-06 11:32:17 +0800
 categories:  
 tags:  
@@ -25,19 +25,12 @@ cd ryftyvb
 npm install
 npm run demo01
 cd E:\n\learn\react\css\ryf
+Start-Process chrome.exe http://localhost:8080
 ```
 powershell 重命名文件夹  
 http://localhost:8080  
 ![](https://i.imgur.com/kZbfJ6o.png)
 
-Creating winform interface is an easy task and  happy experience with coding in powershell, which is  harder created in C# with visual studio in developing a same function. The code will be very clear without complex communication object. Also we will catch the error message in terminal easily instead of avoiding the complex debug system in vs.
-
-The communication betweeen powershell and python is very simple. Just only one statements likes below, could be input the data from python file:
-```powershell
-
-```
-and make as script to reflect python file. 
-In this way that the ui-interface could be created handy and easily  
 
 ## 一、局部作用域
 `class`用唯一随机名。
@@ -69,7 +62,9 @@ demo01/components/App.css
 
 
 构建工具会将类名`style.title`编译成哈希字符串。
+```js
 
+```
 >     <h1class="_3zyde4l1yATCOkgn-DBWEL">
 >       Hello World
 >     </h1>

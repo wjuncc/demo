@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "powerShell basic usage"
+title:  "powerShell Basic Usage1"
 date:   2016-10-05 21:17:32 +0800
 categories:  
 tags: 
@@ -8,17 +8,24 @@ tags:
 
 ---
 
-# powerShell将打印结果输出到txt文件 #
+
+## 本地测试时候，打开localhost ##
+例如，react案例设置的默认端口是8080
+```powershell
+Start-Process chrome.exe http://localhost:8080
+```
+
+## powerShell将打印结果输出到txt文件 ##
 
 ### cmd ###
 最简单的是
-
+```powershell
 	get-childitem c:\windows
-
+```
 改成
-	
+```powershell
 	get-childitem c:\windows > C:\Python27\Lib\site-packages\wj7\etc\blog\log.txt
-
+```
 这其实是一个cmd命令。cmd重定向。
 
 ### powerShell ###

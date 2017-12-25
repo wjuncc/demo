@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "tutorial of powershell winfrom"
-date:   2017-12-08 21:41:26 +0800
+title:  "tutorial of powershell winfrom Chinese"
+date:   2016-12-08 21:41:26 +0800
 categories:  private
 tags: powershell
 ---

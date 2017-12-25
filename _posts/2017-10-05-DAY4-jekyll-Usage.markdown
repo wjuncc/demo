@@ -1,33 +1,41 @@
 ---
 layout: post
-title:  "DAY4 jekyll 问题汇总"
+title:  "DAY4 jekyll Usage"
 date:   2017-10-05 21:17:32 +0800
 categories:  jekyll
-tags: jekyll
+tags: 
+    - jekyll
+
 ---
 
+
+
+### 代码中出现2个大括号的问题 ###
+react的代码有2个大括号，如\{\{，应该写作\\{\\{
+
+参考[jekyll 下文章无法显示双大括号\{\{ \}\}和\{\% \%\}的处理](http://yukapril.com/2017/03/01/jekyll-brace.html)
 
 
 ### tag的问题 ###
 
 1
-
-	tags: wtg  u盘
-
-通过
+```
+tags: wtg  u盘
+```
+测试通过
 
 2
-
-	tags: wtg
-	  u盘
-
-不通过
+```
+tags: wtg
+  u盘
+```
+测试不通过
 
 3
-
-	tags: - jekyll
-
-不通过
+```
+tags: - jekyll
+```
+测试不通过
 
 tags:  - jekyll 是推荐做法，为什么不通过？
 
