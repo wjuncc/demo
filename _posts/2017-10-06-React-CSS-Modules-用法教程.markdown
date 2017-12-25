@@ -20,20 +20,16 @@ tutorial from [CSS Modules 用法教程 - 阮一峰](http://www.ruanyifeng.com/b
 
 ## 零、示例库
 
-我为这个教程写了一个[示例库](https://github.com/ruanyf/css-modules-demos)，包含六个Demo。通过它们，你可以轻松学会CSS Modules。
+[示例 六个Demo](https://github.com/ruanyf/css-modules-demos)。
 
-首先，克隆示例库。
-
->     
->     $ git clone https://github.com/ruanyf/css-modules-demos.git
->     
-
-然后，安装依赖。
-
->     
->     $ cd css-modules-demos
->     $ npm install
->     
+克隆示例库。安装依赖。  
+powershell  
+```powershell
+cd 
+git clone https://github.com/ruanyf/css-modules-demos.git
+cd css-modules-demos
+npm install
+```
 
 接着，就可以运行第一个示例了。
 
