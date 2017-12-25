@@ -1,14 +1,15 @@
 ---
 layout: post
-title:  "windows powershell实战指南 pdf"
+title:  "tutorial of powershell ui"
 date:   2017-12-08 21:41:26 +0800
 categories:  private
 tags: powershell
 ---
 
 # windows powershell实战指南 pdf #
-翻译
-[原文]
+
+tutorial from [codeproject](https://www.codeproject.com/Articles/799161/Dealing-with-Powershell-Inputs-via-Basic-Windows-F)
+
 ## 目录 ##
 * 介绍
 * 选择？！
