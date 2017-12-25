@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "react route Demo6"
+title:  "react router Demo6"
 date:   2017-10-24 06:40:13 +0800
 categories:  
 tags: 

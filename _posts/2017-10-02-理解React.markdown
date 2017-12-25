@@ -1,12 +1,13 @@
 ---
 layout: post
-title:  "react纲要"
-date:   2017-10-27 23:13:36 +0800
+title:  "理解React"
+date:   2017-10-02 23:13:36 +0800
 categories:  
 tags: 
     - react 
 
 ---
+
 ## React怪谈 ##
 #### 1 React 是什么 ####
 
@@ -21,18 +22,6 @@ React的重点不是React本身，而是怪物应该放在哪个房间，应该�
 
 #### 3 React的烟雾弹 ####
  npm安装，es6主流但混淆了es5和es7，出版物
-
-
-## React插件 ##
-
-* UI  
-	Material-UI--[0](http://www.material-ui.com/#/)--[1](https://www.gitbook.com/book/503945930/material-ui-chinese/details)  
-* CSS  
-	Radium  
-* 路由    
-	React-Redux
-* 事件  
-	React 团队使用的是： js-signals 
 
 
 

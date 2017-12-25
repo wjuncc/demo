@@ -11,36 +11,43 @@ tags:
 
 ## learning flow  ##
 
+## Obligatory ##
 * flux
  [Toturials](http://www.ruanyifeng.com/blog/2016/01/flux.html)
  [demo](https://github.com/ruanyf/extremely-simple-flux-demo)
-* Redux
+* Redux 路由
 * router
  []()
  [demo](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)
+* CSS  
+	Radium  
+
+
+## Elective ##
+* 事件  
+	React 团队使用的是： js-signals 
+* UI  
+	Material-UI--[0](http://www.material-ui.com/#/)--[1](https://www.gitbook.com/book/503945930/material-ui-chinese/details)  
 
 ## Tools to speed up study process ##
 
 html2markdown
 
-* [h2m - converting HTML to Markdown](http://tinyambition.com/h2m/)
-* [baynezy/Html2Markdown: A library for converting HTML to markdown syntax in C#](https://github.com/baynezy/Html2Markdown)
-* [WangYihang/HTML2Markdown: HTML转Markdown工具](https://github.com/WangYihang/HTML2Markdown)
-* [29decibel/html2markdown: simple and flexible html to markdown converter](https://github.com/29decibel/html2markdown)
-* [html2markdown](https://www.npmjs.com/package/html2markdown)
-* [Html2Markdown Converter](http://html2markdown.bayn.es)
-* [daringfireball.net](https://daringfireball.net/projects/markdown/syntax)
-* [island205/h2m: Tool for converting HTML to Markdown, like html2markdown.](https://github.com/island205/h2m)
-* [29decibel/html2markdown: simple and flexible html to markdown converter](https://github.com/29decibel/html2markdown)
-* [29decibel/html2markdown: simple and flexible html to markdown converter](https://github.com/29decibel/html2markdown)
-* [历史记录](http://chrome://history/?q=markdown)
-* [baynezy/Html2Markdown: A library for converting HTML to markdown syntax in C#](https://github.com/baynezy/Html2Markdown)
-* [island205/h2m: Tool for converting HTML to Markdown, like html2markdown.](https://github.com/island205/h2m)
+* h2m in nodejs [git](https://github.com/island205/h2m) 
+ [online](http://tinyambition.com/h2m/)
+ [npmjs](https://www.npmjs.com/package/html2markdown)
+*  in ruby [git](https://github.com/29decibel/html2markdown) 
+  [online](http://html2markdown.bayn.es)
+*  in  C# [git](https://github.com/baynezy/Html2Markdown) 
+*  not sure [git](https://github.com/WangYihang/HTML2Markdown)     
 
 
 ## About React Router Posts ##
 
 In the course1-10 [Git Toturials](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)  we build a react app with the development environment about react-router . course11-14 is the server setting of react-router, even `Server Side Rendering with React` . 
+
+
+
 
 
 #### 参考 ####
