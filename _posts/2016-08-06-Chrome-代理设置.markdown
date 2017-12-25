@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "Chrome 代理设置"
+date:   2016-08-06 04:33:04 +0800
+categories:  
+tags:
+    - 神器
+ 
+---
+
+### Proxy SwitchyOmega 设置  ###
+只有这样，才能避免来回切换。  
+兼顾本地网页调试和Google检查资料。  
+[配置文件](https://github.com/Shadowsocks-Wiki/shadowsocks/blob/master/7-2-chrome-settings.md)
+![](https://i.imgur.com/bFKwTvK.png)
+
+
+使用SS的全局代理，则访问localhost，127.0.0.1 ，192.168.1.X 无法访问。   
+若不使用代理，则Google无法访问。
+
+### Linux 的代理非常麻烦 ###
+
+https://github.com/Shadowsocks-Wiki/shadowsocks/blob/master/6-linux-settings.md
+
+#### 参考 ####
+

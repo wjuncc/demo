@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  "用户指南：目录"
+title:  "Music21 用户指南：目录 (翻译)"
 date:   2014-12-12 06:47:43 +0800
 categories:  
 tags: 
     - music21
-    - 翻译
 
 ---
 

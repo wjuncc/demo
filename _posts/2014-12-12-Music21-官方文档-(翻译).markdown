@@ -1,11 +1,10 @@
 ---
 layout: post
-title:  "Music21 Documentation"
+title:  "Music21 官方文档 (翻译)"
 date:   2014-12-12 06:08:54 +0800
 categories:  
 tags: 
     - music21
-    - 翻译
 
 ---
 

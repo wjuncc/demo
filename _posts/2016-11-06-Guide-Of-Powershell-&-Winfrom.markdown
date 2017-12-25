@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "tutorial of powershell winfrom"
+title:  "Guide Of Powershell & Winfrom"
 date:   2016-11-06 01:35:43 +0800
 categories:  
 tags: 
