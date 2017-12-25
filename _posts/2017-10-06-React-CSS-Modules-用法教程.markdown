@@ -66,8 +66,9 @@ demo01/components/App.css
 
 CSS Modules 提供各种[插件](https://github.com/css-modules/css-modules/blob/master/docs/get-started.md)，支持不同的构建工具。本文使用的是 Webpack 的[`css-loader`](https://github.com/webpack/css-loader#css-modules)插件，因为它对 CSS Modules 的支持最好，而且很容易使用。
 
-下面是这个示例的[`webpack.config.js`](https://github.com/ruanyf/css-modules-demos/blob/master/demo01/webpack.config.js)。
-
+下面是的`webpack.config.js`。
+webpack.config.js
+```js
 >     
 >     module.exports ={
 >       entry: __dirname +'/index.js',
@@ -83,6 +84,7 @@ CSS Modules 提供各种[插件](https://github.com/css-modules/css-modules/blob
 >               presets:['es2015','stage-0','react']}},{
 >             test:/\.css$/,
 >             loader:"style-loader!css-loader?modules"},]}};
+```
 
 上面代码中，关键的一行是`style-loader!css-loader?modules`，它在`css-loader`后面加了一个查询参数`modules`，表示打开 CSS Modules 功能。
 
