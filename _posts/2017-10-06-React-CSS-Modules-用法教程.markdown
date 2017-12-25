@@ -37,7 +37,7 @@ http://localhost:8080
 ## 一、局部作用域
 用唯一的`class`的名字，不会与其他选择器重名。这就是 CSS Modules 的做法。
 
-下面是一个React组件`App.js`。
+下面是React组件`App.js`。
 demo01/components/App.js
 ```js
 ```
