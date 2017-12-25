@@ -4,6 +4,8 @@ title:  "Redux 入门教程1 基本用法"
 date:   2017-10-03 11:21:56 +0800
 categories:  
 tags: 
+    - react
+
 ---
 
 from [toturial Redux 入门教程（一）：基本用法 - 阮一峰的网络日志]()

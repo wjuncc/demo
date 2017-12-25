@@ -4,6 +4,8 @@ title:  "Redux 入门教程3 React-Redux的用法"
 date:   2017-10-05 11:21:56 +0800
 categories:  
 tags: 
+    - react
+
 ---
 
 from [toturial](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)

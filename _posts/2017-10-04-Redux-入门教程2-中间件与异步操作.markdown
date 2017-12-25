@@ -4,6 +4,8 @@ title:  "Redux 入门教程2 中间件与异步操作"
 date:   2017-10-04 11:21:56 +0800
 categories:  
 tags: 
+    - react
+
 ---
 
 from [toturial Redux 入门教程（二）：中间件与异步操作 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)
