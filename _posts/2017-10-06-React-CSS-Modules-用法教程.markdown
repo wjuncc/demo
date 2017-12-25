@@ -65,6 +65,7 @@ demo01/components/App.css
 }
 
 ```
+更多的，在radium中，style等于一个对象，title等于一个对象中的子对象。
 
 
 构建工具会将类名`style.title`编译成哈希字符串。
