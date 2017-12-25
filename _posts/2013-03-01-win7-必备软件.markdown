@@ -10,34 +10,32 @@ tags:
 
 # win7+win8 必备软件 #
 
-* MarkdownPad： Markdown编辑。
+* MarkdownPad - Markdown编辑。
 * Clover - 让资源管理器变身Chrome
 * shareX - 截图+录屏+上传一次搞定
 * Listary - 文件搜索
 * Everything 1.2.371  -  文件搜索
-* 文件内容搜索  FileLocator Pro
-* Beyond Compare：文件比较
+* FileLocator Pro - 文件内容搜索
 * VMware Workstation：虚拟机
 * diffuse：文件比较
-* WinMerge：文件比较
 * 7-Zip 压缩解压
 * 文件内容搜索与替换 Replace_Studio_7.10.exe
 * PuTTY：开源SSH客户端
 * 启动程序	Claunch 
+* <del>WinMerge：文件比较</del>
+* <del>Beyond Compare：文件比较</del>
 
 ### 没试过 ###
 
-* LastPass：全平台密码管理自动同步
-* DisplayFusion：多显示器工具
-* Paint.NET： 免费图片处理，
-* Evernote ：全平台笔记软件
+* <del>LastPass：全平台密码管理自动同步</del>
+* <del>DisplayFusion：多显示器工具</del>
+* <del>Paint.NET： 免费图片处理</del>
+* <del>Evernote ：全平台笔记软件</del>
 
-### 试过但是不好用 ###
+### 不好用 ###
 
-* 文件管理——Total Commander  8.0β
-* 记事本 Emeditor 11 有正则。    
-
-
+* <del>文件管理——Total Commander  8.0β </del>
+* <del>记事本 Emeditor 11 有正则。   </del>  
 
 ### 备忘 ###
 * 文件搜索  Everything 1.2.371  
