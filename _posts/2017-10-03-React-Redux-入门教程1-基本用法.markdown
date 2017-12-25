@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Redux 入门教程1 基本用法"
+title:  "React Redux 入门教程1 基本用法"
 date:   2017-10-03 11:21:56 +0800
 categories:  
 tags: 
