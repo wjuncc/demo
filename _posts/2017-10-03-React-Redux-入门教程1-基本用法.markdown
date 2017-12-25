@@ -404,39 +404,6 @@ Redux 的基本用法就介绍到这里，[下一次](http://www.ruanyifeng.com/
 
 （完）
 
-## 相关文章
-
-- **2017.09.19: [《ES6 标准入门（第3版）》上市了！](http://www.ruanyifeng.com/blog/2017/09/es6_primer_3rd_edition.html)**
-
-                              2017年6月，TC39 委员会正式发布了《ES2017 标准》。
-
-                           
-
-- **2017.09.07: [asm.js 和 Emscripten 入门教程](http://www.ruanyifeng.com/blog/2017/09/asmjs_emscripten.html)**
-
-                              Web 技术突飞猛进，但是有一个领域一直无法突破 ---- 游戏。
-
-                           
-
-- **2017.08.09: [Koa 框架教程](http://www.ruanyifeng.com/blog/2017/08/koa.html)**
-
-                              Node 主要用在开发 Web 应用。这决定了使用 Node，往往离不开 Web 应用框架。
-
-                           
-
-- **2017.04.16: [JavaScript 内存泄漏教程](http://www.ruanyifeng.com/blog/2017/04/memory-leak.html)**
-
-                              一、什么是内存泄漏？
-
-程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。
-
-                           
-
-## 广告[（购买广告位）](/support.html)
-
-[![妙味课堂](http://www.ruanyifeng.com/blog/images/sup_miaov_201711.jpg)](http://www.miaov.com/index.php/example/exampleList?utm_source=ruanyifeng&amp;)
-
-[![腾讯课堂](http://www.ruanyifeng.com/blog/images/sup_qqke_20171202.png)](https://ke.qq.com/next/index.html?from=175763)
 
 ## 留言（96条）
                 
