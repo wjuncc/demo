@@ -439,87 +439,16 @@ Redux 的基本用法就介绍到这里，[下一次](http://www.ruanyifeng.com/
 [![腾讯课堂](http://www.ruanyifeng.com/blog/images/sup_qqke_20171202.png)](https://ke.qq.com/next/index.html?from=175763)
 
 ## 留言（96条）
-
-[周振](http://94dreamer.com/)
-
- 说：
                 
 
 redux这一块难咬的骨头，期待阮老师的redux解读，占楼。
 
-2016年9月18日 15:15
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364705)
- | [引用](#comment-text)
-
-[楚小秋](http://clearaki.com)
-
- 说：
-                
-
-初学者，期待后续教程
-
-2016年9月18日 16:17
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364706)
- | [引用](#comment-text)
-
-yangzhou
-
- 说：
-                
 
 Redux 的工作流程图中指向Action Creators的箭头画偏了
 
-2016年9月18日 17:26
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364709)
- | [引用](#comment-text)
-
-[zhanghaiyu](https://github.com/settings/profile)
-
- 说：
-                
-
-期待阮老师后续教程 
-
-2016年9月18日 18:39
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364710)
- | [引用](#comment-text)
-
-[爱吃土豆](http://wu)
-
- 说：
-                
-
-写的非常好，不知阮老师什么时候更新后续
-
-2016年9月18日 19:38
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364711)
- | [引用](#comment-text)
-
-魔力花
-
- 说：
-                
-
-先顶再看，阮哥出品必属精品
-
-2016年9月18日 19:40
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364712)
- | [引用](#comment-text)
-
-caifree
-
- 说：
-                
 
 一直都看阮老师的博客，写得太好了。通俗易懂，简单明了，需要强大的功底。期待老师的续讲！
 
-2016年9月18日 21:34
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364714)
- | [引用](#comment-text)
-
-asdf
-
- 说：
                 
 
 个人觉得redux唯一的好处就是增加了一点代码的可维护性， 依靠强制reducer保持简单， component仅仅处理一些UI logic,  使用provider 和 connect来向component中注入state, 但这些并不会减少代码量， 而且作者特意强调的container component和presentation component， 这种区分当然是好的， 但并没有带来复用的好处，就像作者自己做的TODOMVC，里面无论是哪个component都没有复用性可言，是真正的demo oriented programming
@@ -545,48 +474,13 @@ fusun
                 
 
 reducer拆封没看懂
-
-2016年9月19日 00:51
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364719)
- | [引用](#comment-text)
-
-无恙
-
- 说：
                 
 
 不错，我昨天还在想，你什么时候出这个rudux的东西。
 
-2016年9月19日 11:12
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364723)
- | [引用](#comment-text)
-
-Shawn Zhang
-
- 说：
                 
 
-這部分還是推薦看Dan的視頻，跟他走一遍TodoList的流程，就會了解Redux解決了哪些問題。
-
-2016年9月19日 21:54
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364756)
- | [引用](#comment-text)
-
-[jon](http://www.jon23.top)
-
- 说：
-                
-
-react的一些概念还是没有吃透～～～～为自己加油，感谢阮一峰老师
-
-2016年9月19日 23:26
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-364757)
- | [引用](#comment-text)
-
-edision
-
- 说：
-                
+這部分還是推薦看Dan的視頻，跟他走一遍TodoList的流程，就會了解Redux解決了哪些問題。 
 
 redux本身很简单，麻烦的是后面用到的异步action,然后各种插件，特别是需要结合react时，redux-thunk,redux-form,react-router-redux各种插件结合用。
 
