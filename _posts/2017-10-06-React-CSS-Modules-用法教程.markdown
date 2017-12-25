@@ -12,12 +12,12 @@ tutorial from [CSS Modules 用法教程 - 阮一峰](http://www.ruanyifeng.com/b
 
 ![](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016061001.png)
 
-[CSS Modules](https://github.com/css-modules/css-modules) 功能单纯，仅仅局部作用域和模块依赖。
+[CSS Modules](https://github.com/css-modules/css-modules) 功能单纯，仅局部作用域和模块依赖。
 
 
 ## 零、示例库
 
-[示例 六个Demo](https://github.com/ruanyf/css-modules-demos)。
+[6个Demo](https://github.com/ruanyf/css-modules-demos)。
 
 克隆示例库。安装依赖。  
 powershell  
