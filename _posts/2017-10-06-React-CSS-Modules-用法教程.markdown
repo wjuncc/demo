@@ -25,19 +25,14 @@ tutorial from [CSS Modules 用法教程 - 阮一峰](http://www.ruanyifeng.com/b
 克隆示例库。安装依赖。  
 powershell  
 ```powershell
-cd 
+cd E:\n\learn\react\css
 git clone https://github.com/ruanyf/css-modules-demos.git
-cd css-modules-demos
+cd css-modules-demos 
 npm install
+npm run demo01
 ```
-
-接着，就可以运行第一个示例了。
-
->     
->     $ npm run demo01
->     
-
-打开浏览器，访问`http://localhost:8080`，查看结果。其他示例的运行方法类似。
+http://localhost:8080
+![](https://i.imgur.com/kZbfJ6o.png)
 
 ## 一、局部作用域
 
