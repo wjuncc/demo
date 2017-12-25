@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "jekyll 续"
+title:  "jekyll (Chinese)"
 date:   2017-10-08 14:22:29 +0800
 categories:  
 tags: jekyll

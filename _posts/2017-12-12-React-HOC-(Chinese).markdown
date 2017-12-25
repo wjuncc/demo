@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React高阶组件（译）"
+title:  "React HOC (Chinese)"
 date:   2017-12-12 05:28:47 +0800
 categories:  
 tags: 
@@ -225,7 +225,7 @@ function ppHOC(WrappedComponent) {
   return class PP extends React.Component {
     render() {
       return (
-        <div style={{display: 'block'}}>
+        <div style=\{\{display: 'block'\}\}>
           <WrappedComponent {...this.props}/>
         </div>
       )

@@ -12,12 +12,17 @@ tags:
 
 ### 代码中出现2个大括号的问题 ###
 react的代码有2个大括号，如\{\{，应该写作\\{\\{
-
+错误举例：
+```
+Regenerating: 1 file(s) changed at 2017-12-26 02:29:36     Liquid Warning:
+ Liquid syntax error (line 274): Expected end_of_string but found colon in "{{_h
+tml: '<h1>Hello World!!</h1>'}}" in E:/n/wj/blog/demo/_posts/2017-10-14-react-js
+-101-笔记3-2.markdown
+```
 参考[jekyll 下文章无法显示双大括号\{\{ \}\}和\{\% \%\}的处理](http://yukapril.com/2017/03/01/jekyll-brace.html)
 
 
 ### tag的问题 ###
-
 1
 ```
 tags: wtg  u盘
@@ -58,6 +63,7 @@ tags:
 	    - wtg 
 	    - u盘 
 
+
 #### 参考 ####
 
 * [使用`Jekyll`遇到的问题 · Issue #19 · mrdulin/blog · GitHub](https://github.com/mrdulin/blog/issues/19)
@@ -82,14 +88,30 @@ jekyll根据系统时间，判断是否生成html。
 肯定不显示。
 
 ### jekyll中文路径 ###
-这个问题是jekyll2的，在jekyll3下没有了。  
-了解了一下：
 
-1. git上的jekyll支持中文。
-2. 本地因为ruby编译版本的原因， jekyll不支持中文。 或者支持中文，都有可能。
-3. 可以通过修改rb文件，来使得中文保留。
-4. 如果不保留中文，可以翻译成汉语拼音。
-5. 能够用中文，还是用中文好。垂直映射比水平转化要少一层壳，更利于搜索。
+<del>这个问题是jekyll2的，在jekyll3下没有了。 </del>  
+这个问题是ruby的问题，不是jekyll版本的问题。  
+文件名是中文的，用localhost访问，有的页面404，有的页面正常。正常的页面一直正常，404的页面一直404。
+例如，第1组页面正常：
+```
+2017-11-09 React动画指南(1)常规写法
+```
+第2组页面404：
+```
+2017-11-10 React动画指南(2)复用写法
+2017-11-11 React动画指南(3)项目实战
+```
+
+这个问题，
+
+1. 远程git上的jekyll支持中文。 
+2. 只是本地localhost或者192.168.1.X 有问题，
+
+解决方式：
+
+1. 通过修改rb文件，来使得中文保留。
+2. 如果不保留中文，可以翻译成汉语拼音。但是一个思路，但是不实用。这样做，会造成listary或者everthing搜索不方便。
+3. 能够用中文，还是用中文好。垂直映射比水平转化要少一层壳，更利于搜索。
 
 测试了一下：
 
@@ -100,19 +122,24 @@ jekyll根据系统时间，判断是否生成html。
 
 ## 解决办法 ##
 
-> 修改安装目录\Ruby22-x64\lib\ruby\2.2.0\webrick\httpservlet下的filehandler.rb文件，建议先备份。
+路径：
+C:\Ruby24-x64\lib\ruby\2.4.0\webrick\httpservlet
 
-> 找到下列两处，添加一句（ + 的一行为添加部分）
+修改安装目录\Ruby22-x64\lib\ruby\2.2.0\webrick\httpservlet下的filehandler.rb文件，建议先备份。
 
-> 
+找到下列两处，添加一句（ + 的一行为添加部分）
+
+```ruby
 	path = req.path_info.dup.force_encoding(Encoding.find("filesystem"))
 	+ path.force_encoding("UTF-8") # 加入编码
+```
+```ruby
 	if trailing_pathsep?(req.path_info)
 	break if base == "/"
 	+ base.force_encoding("UTF-8") # 加入編碼
 	break unless File.directory?(File.expand_path(res.filename + base))
+```
 然后重启服务器即可jekyll clean && jekyll s
-
 
 
 #### 参考 ####

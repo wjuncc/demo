@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Babel教程索引"
+title:  "React Babel Compiler from es5 to es6"
 date:   2017-11-23 03:38:49 +0800
 categories:  
 tags: 

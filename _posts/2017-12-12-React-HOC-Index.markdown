@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "React高阶组件资料索引"
+title:  "React HOC Index"
 date:   2017-12-12 05:39:17 +0800
 categories:  
 tags: 

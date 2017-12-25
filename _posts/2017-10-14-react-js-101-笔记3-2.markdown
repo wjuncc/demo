@@ -282,7 +282,7 @@ React.createElement("h1", React._spread({}, props, {value: "yo"}), "Hello React!
 为了避免安全问题，过滤掉 HTML，若需要显示的话可以使用：
 
 ```html
-<div>{{_html: '<h1>Hello World!!</h1>'}}</div>
+<div>\{\{_html: '<h1>Hello World!!</h1>'\}\}</div>
 ```
 
 ### 9. 样式使用
