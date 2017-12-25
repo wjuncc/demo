@@ -1561,70 +1561,18 @@ laden666666
 > 
 > 我也感觉是，计数的demo感觉靠的是刷新整个Component，忽略了React本身的状态机制。这和用jQuery重新刷新整个页面本质上没什么区别。
 
-首先这个例子是redux官方例子，redux是全局状态管理，本身就是要尽量去除react的状态管理机制，实现单向数据流。其次这个例子和用jQuery重新刷新整个页面本质上确实没什么区别，因为这里主要是讲redux的，主要讲如何管理状态，而不是如何渲染dom，如果想看react和redux集成，请看react-redux，阮老师后面的教程有
-
-2017年9月 7日 14:55
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-380121)
- | [引用](#comment-text)
-
-赵四
-
- 说：
-                
+首先这个例子是redux官方例子，redux是全局状态管理，本身就是要尽量去除react的状态管理机制，实现单向数据流。其次这个例子和用jQuery重新刷新整个页面本质上确实没什么区别，因为这里主要是讲redux的，主要讲如何管理状态，而不是如何渲染dom，如果想看react和redux集成，请看react-redux，阮老师后面的教程有         
 
 说再多还不如多来点实际的demo配合一起讲解，这样明白的更快些
-
-2017年9月13日 16:33
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-380361)
- | [引用](#comment-text)
-
-trouble
-
- 说：
-                
-
-谢谢，讲的很透彻
-
-2017年9月14日 14:41
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-380407)
- | [引用](#comment-text)
-
-[一网友](http://zglisten.githun.io)
-
- 说：
                 
 
 有点不懂！
-
-2017年9月18日 16:58
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-380579)
- | [引用](#comment-text)
-
-Bond
-
- 说：
-                
+     
 
 这里描述不清晰，建议去：http://redux.js.org/docs/basics/Reducers.html
 
-2017年9月20日 16:17
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-380663)
- | [引用](#comment-text)
-
-刘东宇
-
- 说：
                 
 
-看了两遍，总算看明白了..
-
-2017年10月25日 11:58
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-381651)
- | [引用](#comment-text)
-
-zj
-
- 说：
                 
 
 const Counter = ({ value }) => (
