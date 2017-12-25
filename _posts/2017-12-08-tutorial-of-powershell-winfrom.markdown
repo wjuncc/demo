@@ -1,12 +1,11 @@
 ---
 layout: post
-title:  "tutorial of powershell ui"
+title:  "tutorial of powershell winfrom"
 date:   2017-12-08 21:41:26 +0800
 categories:  private
 tags: powershell
 ---
 
-# windows powershell实战指南 pdf #
 
 tutorial from [codeproject:Dealing with Powershell Inputs via Basic Windows Form](https://www.codeproject.com/Articles/799161/Dealing-with-Powershell-Inputs-via-Basic-Windows-F)
 
