@@ -12,11 +12,8 @@ tutorial from [CSS Modules 用法教程 - 阮一峰](http://www.ruanyifeng.com/b
 
 ![](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016061001.png)
 
-[CSS Modules](https://github.com/css-modules/css-modules) 功能很单纯，只加入了局部作用域和模块依赖，这恰恰是网页组件最急需的功能。
+[CSS Modules](https://github.com/css-modules/css-modules) 功能单纯，仅仅局部作用域和模块依赖。
 
-因此，CSS Modules 很容易学，因为它的规则少，同时又非常有用，可以保证某个组件的样式，不会影响到其他组件。
-
-![](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016061002.png)
 
 ## 零、示例库
 
