@@ -257,21 +257,6 @@ CSS Modules 支持使用变量，不过需要安装 PostCSS 和 [postcss-modules
 （完）
 
 ## 留言（45条）
-
-小俞
-
- 说：
-                
-
-阮大师真是高产
-
-2016年6月10日 11:31
- | [#](http://www.ruanyifeng.com/blog/2016/06/css_modules.html#comment-357412)
- | [引用](#comment-text)
-
-zhaozhiming
-
- 说：
                 
 
 请问css变量可以直接用这个吗？
@@ -785,98 +770,6 @@ patrick
 > 请问各位大哥大姐CSSModule转换了keyframes动画名怎么破，：global 也没用啊。
 
 同求解
-
-2017年12月14日 18:38
- | [#](http://www.ruanyifeng.com/blog/2016/06/css_modules.html#comment-383240)
- | [引用](#comment-text)
-
-## 我要发表看法
-
-您的留言
-                    （HTML标签部分可用）
-
-您的大名：
-
- «-必填
-
-电子邮件：
-
- «-必填，不公开
-
-个人网址：
-
- «-我信任你，不会填写广告链接
-
-记住个人信息？
-
-**正在发表您的评论，请稍候**
-
- «- 点击按钮
-
-[微博](http://weibo.com/ruanyf) | [推特](https://twitter.com/ruanyf) | [GitHub](https://github.com/ruanyf)
-
-2017 © [我的邮件](/contact.html) |
-
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-46829782-1', 'ruanyifeng.com');
-  ga('send', 'pageview');
-
-[http://www.bshare.cn/share](http://www.bshare.cn/share)
-bShare.addEntry({
-    title: document.getElementById("page-title").innerHTML,
-url:window.location.href
-});
-
-document.getElementById("share_button").innerHTML=document.getElementById("share_button_proto").innerHTML;
-
-X
-
-选择其他平台 >>
-分享到
-
-[分享到...](http://www.bshare.cn/intro)[X](X)
-
-[
-Facebook
-](javascript:;)
-
-[
-Twitter
-](javascript:;)
-
-[
-新浪微博
-](javascript:;)
-
-[微信](javascript:;)
-
-[腾讯微博](javascript:;)
-
-[豆瓣网](javascript:;)
-
-[饭否](javascript:;)
-
-[雪球](javascript:;)
-
-[电子邮件](javascript:;)
-
-[Google+](javascript:;)
-
-[QQ空间](javascript:;)
-
-[QQ好友](javascript:;)
-
-[Instapaper](javascript:;)
-
-[美味书签](javascript:;)
-
-更多平台... (133)
-
-[bShare](http://www.bshare.cn)
 
 #### 参考 ####
 
