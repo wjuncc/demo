@@ -8,7 +8,7 @@ tags: powershell
 
 # windows powershell实战指南 pdf #
 
-tutorial from [codeproject](https://www.codeproject.com/Articles/799161/Dealing-with-Powershell-Inputs-via-Basic-Windows-F)
+tutorial from [codeproject:Dealing with Powershell Inputs via Basic Windows Form](https://www.codeproject.com/Articles/799161/Dealing-with-Powershell-Inputs-via-Basic-Windows-F)
 
 ## 目录 ##
 * 介绍
