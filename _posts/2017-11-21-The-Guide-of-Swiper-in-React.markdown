@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "the guide for react swipe"
+title:  "The Guide of Swiper in React"
 date:   2017-11-21 22:10:29 +0800
 categories:  
 tags: 
@@ -8,7 +8,6 @@ tags:
 
 ---
 
-# react swipe demo #
 
 
 #### OK  ####
