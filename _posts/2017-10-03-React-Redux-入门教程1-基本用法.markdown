@@ -19,9 +19,6 @@ bShare.addEntry({
 url:window.location.href
 });
 
-作者： [阮一峰](http://www.ruanyifeng.com)
-
-日期： [2016年9月18日](http://www.ruanyifeng.com/blog/2016/09/)
 
 [![珠峰培训](http://www.ruanyifeng.com/blog/images/sponsor_zhufeng5.png)](http://www.zhufengpeixun.cn/main/course/guide.html?ref=ruanyifeng.com)
 
