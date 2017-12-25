@@ -21,7 +21,7 @@ tags:
 * 7-Zip 压缩解压
 * 文件内容搜索与替换 Replace_Studio_7.10.exe
 * PuTTY：开源SSH客户端
-* 启动程序	Claunch 
+* <del>启动程序	Claunch </del>
 * <del>WinMerge：文件比较</del>
 * <del>Beyond Compare：文件比较</del>
 
