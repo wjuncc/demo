@@ -3,7 +3,9 @@ layout: post
 title:  "运行powerShell"
 date:   2017-10-05 21:17:32 +0800
 categories:  
-tags: powerShell
+tags: 
+    - powershell
+
 ---
 
 # 运行powerShell #
