@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "React Redux 入门教程3 React-Redux的用法"
-date:   2017-10-05 11:21:56 +0800
+title:  "React Redux 入门教程3 React-Redux的用法 (笔记)"
+date:   2017-10-08 11:21:56 +0800
 categories:  
 tags: 
     - react

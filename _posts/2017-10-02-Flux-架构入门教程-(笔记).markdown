@@ -1,18 +1,15 @@
 ---
 layout: post
-title:  "Flux 架构入门教程"
-date:   2017-10-15 05:50:16 +0800
+title:  "Flux 架构入门教程 (笔记)"
+date:   2017-10-02 15:50:16 +0800
 categories:  
 tags: 
     - react 
 
 ---
 
-source from [http://www.ruanyifeng.com/blog/2016/01/flux.html](http://www.ruanyifeng.com/blog/2016/01/flux.html)
+source from [Flux 架构入门教程](http://www.ruanyifeng.com/blog/2016/01/flux.html)
 
-
-
-# Flux 架构入门教程
 先看 [《React入门教程》](http://www.ruanyifeng.com/blog/2015/03/react.html)。  
 做网站，至少要会一种组合：
 

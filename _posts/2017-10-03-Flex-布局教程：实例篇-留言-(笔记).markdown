@@ -1,0 +1,1405 @@
+---
+layout: post
+title:  "Flex 布局教程：实例篇 留言 (笔记)"
+date:   2017-10-03 17:12:44 +0800
+categories:  
+tags:  
+    - react
+
+---
+
+
+## 留言（99条）
+
+马甲嘎嘎
+
+ 说：
+                
+
+正想学这个，你就来了
+
+2015年7月14日 19:38
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350808)
+ | [引用](#comment-text)
+
+[drunkevil](http://drunkevil.com)
+
+ 说：
+                
+
+这个感觉好有用啊！
+
+2015年7月14日 21:16
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350810)
+ | [引用](#comment-text)
+
+[stonex](http://www.sitixi.com)
+
+ 说：
+                
+
+非常感谢，尝试使用下。看样子能简化好多东西。
+
+2015年7月15日 10:18
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350822)
+ | [引用](#comment-text)
+
+session
+
+ 说：
+                
+
+骰子应该是6点
+
+2015年7月15日 14:02
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350828)
+ | [引用](#comment-text)
+
+Cola
+
+ 说：
+                
+
+里面这“vertical-align: center;”还有用么。
+
+2015年7月15日 15:52
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350829)
+ | [引用](#comment-text)
+
+yujieyu7
+
+ 说：
+                
+
+很好，很实用
+
+2015年7月15日 16:55
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350832)
+ | [引用](#comment-text)
+
+[clover](http://clover.so)
+
+ 说：
+                
+
+太帅了！
+
+2015年7月15日 18:12
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350834)
+ | [引用](#comment-text)
+
+[chshouyu](http://chshouyu.com)
+
+ 说：
+                
+
+很好很实用
+
+2015年7月15日 19:24
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350838)
+ | [引用](#comment-text)
+
+[Cheney](http://gpio.me)
+
+ 说：
+                
+
+>     引用Cola的发言：
+> 
+> 
+> 里面这“vertical-align: center;”还有用么。
+
+vertical-align 没有 center 的值，要给也只能给 middle。反正好像也没有用到。
+
+2015年7月16日 09:58
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350851)
+ | [引用](#comment-text)
+
+msisliao
+
+ 说：
+                
+
+赞，大爱这篇示例，原先感觉非常理解不了，看完后、、嘿嘿，真的理解大半了。。非常感谢
+
+2015年7月16日 11:04
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350862)
+ | [引用](#comment-text)
+
+[张杨](http://h5shop.prg)
+
+ 说：
+                
+
+阮老师的文章就是干。
+
+2015年7月16日 11:33
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350867)
+ | [引用](#comment-text)
+
+[outlaws](http://nothing)
+
+ 说：
+                
+
+骰子这个例子很有意思，工作中很多场景都有骰子这个例子的应用。学习了~~！233333
+
+2015年7月16日 16:25
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350878)
+ | [引用](#comment-text)
+
+Cola
+
+ 说：
+                
+
+>     引用Cheney的发言：
+> 
+> 
+> vertical-align 没有 center 的值，要给也只能给 middle。反正好像也没有用到。
+
+codepen 的demo里面有这一句
+
+        
+
+2015年7月22日 10:54
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350953)
+ | [引用](#comment-text)
+
+megasu@qq.com
+
+ 说：
+                
+
+对于兼容问题该如何处理呢？
+
+2015年7月25日 14:45
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350984)
+ | [引用](#comment-text)
+
+[bolo](http://github.com/medifle)
+
+ 说：
+                
+
+关于四项目的第二个布局(四个角各一个点): 
+
+如果骰子的四个点大小变小, 
+
+flex-wrap;flex-basis:100%;
+
+的解决方案会导致下方的两个点不会对齐在左下角右下角
+
+原作者给的方案会好些:
+
+.box {
+
+  display: flex;
+
+  justify-content: space-between;
+
+}
+
+.box .column {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+}
+
+2015年7月26日 12:59
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-350995)
+ | [引用](#comment-text)
+
+[前端菜鸟](http://无)
+
+ 说：
+                
+
+display:flex现在应该是用兼容性的吧，在部分的安卓手机里面不好用，现在还在用display：box
+
+2015年7月28日 14:48
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351036)
+ | [引用](#comment-text)
+
+听雨剑主
+
+ 说：
+                
+
+有个项目就是用的display:-webkit-flex，然后使用overflow:scroll-y进行滚动，不过滚动效果远没有使用原生滚动好，不知道有没有什么其他比较好的解决方案。
+
+2015年8月 4日 16:38
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351124)
+ | [引用](#comment-text)
+
+[Jolson](http://zhujiegao.com)
+
+ 说：
+                
+
+非常感谢，最近正学习flex布局，写的很清楚。
+
+2015年8月 5日 21:01
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351145)
+ | [引用](#comment-text)
+
+[Brant](http://7brant.me)
+
+ 说：
+                
+
+非常棒的文章。以后做内容流时可以尝试使用~
+
+2015年8月 8日 21:45
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351178)
+ | [引用](#comment-text)
+
+[joker](http://joker.li)
+
+ 说：
+                
+
+CSS终于有了像样的自动布局了~
+
+2015年8月21日 14:06
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351355)
+ | [引用](#comment-text)
+
+[weager](http://rongmayisheng.com)
+
+ 说：
+                
+
+这么难懂的知识经过阮老师的讲解都变得如此简单，赞！阮老师的文笔真是厉害
+
+2015年8月23日 12:58
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351377)
+ | [引用](#comment-text)
+
+吴聊
+
+ 说：
+                
+
+纯干货 不错
+
+2015年8月26日 10:36
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351439)
+ | [引用](#comment-text)
+
+大叔
+
+ 说：
+                
+
+不错，博主这图文并茂的  杠杠的
+
+2015年9月 8日 19:46
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351619)
+ | [引用](#comment-text)
+
+小松鼠
+
+ 说：
+                
+
+写的不错，赞一个！
+
+2015年9月17日 12:10
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351730)
+ | [引用](#comment-text)
+
+davidchen
+
+ 说：
+                
+
+学习了。
+
+2015年9月18日 10:58
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351755)
+ | [引用](#comment-text)
+
+shenger
+
+ 说：
+                
+
+色子以下的网页布局部分说的很笼统啊，希望以后能再说的详细一点，谢谢啦
+
+2015年9月19日 09:58
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351784)
+ | [引用](#comment-text)
+
+dvaknheo
+
+ 说：
+                
+
+Visual Studio .Net 的布局方式， flex 能做到么
+
+如一下两者格式，都要把主内容放在第一
+
+树| 主内容
+
+树|_______
+
+树|底板
+
+树| 主内容
+
+__|_______
+
+底板
+
+2015年9月28日 10:42
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-351895)
+ | [引用](#comment-text)
+
+Zaki
+
+ 说：
+                
+
+阮老师的东西不错
+
+2015年10月21日 14:23
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-352289)
+ | [引用](#comment-text)
+
+[george.hu](http://www.blogcn.com/georgehu)
+
+ 说：
+                
+
+谢谢楼主这么详细的教程
+
+但是项目三是有点问题的，在容器上应该加上一个flex-direction:column的属性
+
+.box {
+
+  display: flex;
+
+  flex-direction:column;
+
+}
+
+.item:nth-child(2) {
+
+  align-self: center;
+
+}
+
+.item:nth-child(3) {
+
+  align-self: flex-end;
+
+}
+
+2015年10月28日 22:12
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-352417)
+ | [引用](#comment-text)
+
+fonglezen
+
+ 说：
+                
+
+>     引用前端菜鸟的发言：
+> 
+> 
+> display:flex现在应该是用兼容性的吧，在部分的安卓手机里面不好用，现在还在用display：box
+
+觉得应该与时俱进，4.0安卓的用户都占据了97%以上了吧。还有2.x的，估计也是不怎么上网不怎么用手机的用户吧。所以可以放心大胆放心用。
+
+2015年10月29日 11:00
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-352431)
+ | [引用](#comment-text)
+
+[yooly](http://9269391.github.io)
+
+ 说：
+                
+
+太神了，写得很好，通俗易懂
+
+2015年11月 4日 14:48
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-352579)
+ | [引用](#comment-text)
+
+yooly
+
+ 说：
+                
+
+骰子的布局，阮老师的从左到右排版，我学了一下，改成从上到下，哈哈，flex太好用了，http://codepen.io/anon/pen/qOywrB
+
+2015年11月 4日 15:23
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-352581)
+ | [引用](#comment-text)
+
+[phc](http://www.cong-cong.cn)
+
+ 说：
+                
+
+在骰子的布局中的第四个项目中确定能达到像图中所示的吗，如果每个项目之间没有margin值，从主轴的右边对齐那不是第一行的三个点都要靠右吗，而不是每个都有间隔
+
+我的代码设置成如下才能达到阮老师的效果
+
+display: flex;
+
+flex-wrap: wrap;
+
+flex-direction:row-reverse;
+
+justify-content:space-between;
+
+align-content:space-between;
+
+2015年11月 6日 10:08
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-352620)
+ | [引用](#comment-text)
+
+Biox
+
+ 说：
+                
+
+非常谢谢！你的文章对我很有帮助！：）
+
+2015年11月 6日 11:10
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-352623)
+ | [引用](#comment-text)
+
+[unclefeng](http://null)
+
+ 说：
+                
+
+中间那个网格布局的百分比布局，是不是少啊了很多元素。css代码和html代码对不上号啊
+
+2015年11月14日 19:39
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-352779)
+ | [引用](#comment-text)
+
+[phc](http://www.cong-cong.cn)
+
+ 说：
+                
+
+是不是
+
+justify-content: 还有等等……ie10 都不兼容的
+
+2015年11月21日 11:09
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-352868)
+ | [引用](#comment-text)
+
+[tommyfok](http://github.com/tommyfok)
+
+ 说：
+                
+
+很好用，使用之后发觉……兼容性堪忧啊，过段时间用就很好
+
+2015年12月13日 17:26
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-353267)
+ | [引用](#comment-text)
+
+之一
+
+ 说：
+                
+
+不知道阮老师对flex在安卓的微信中的各种问题有什么建议，是换掉这种布局呢还是用各种兼容方法写。有类似的兼容性的文章吗
+
+2015年12月14日 18:29
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-353280)
+ | [引用](#comment-text)
+
+小房子
+
+ 说：
+                
+
+.Grid-cell2.u-1of3 {
+
+     flex: 1 0 33.3333%;
+
+     background-color:#7CFC00;
+
+}
+
+.Grid-cell2.u-1of4 {
+
+     flex: 1 0 25%;
+
+     background-color:#E74D3C;
+
+}
+
+如果flex的放大比例都为1的话，那它的宽度在什么基础上进行变化的啊？一直没搞懂这个
+
+2016年1月26日 15:42
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-354334)
+ | [引用](#comment-text)
+
+yunxi
+
+ 说：
+                
+
+在UC浏览器下 不支持吧
+
+2016年1月30日 23:46
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-354396)
+ | [引用](#comment-text)
+
+奈何
+
+ 说：
+                
+
+请问下，第三个 圣杯布局，为什么css中要写很多个 flex：1
+
+2016年2月16日 17:45
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-354526)
+ | [引用](#comment-text)
+
+奈何
+
+ 说：
+                
+
+关于flex的2篇文章都看完了，但阮大神没有讲，flex与盒模型相比的最大优势在何处，以及为何在移动端要使用flex布局
+
+2016年2月16日 18:18
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-354527)
+ | [引用](#comment-text)
+
+响应式初学者1
+
+ 说：
+                
+
+学习了，非常详细易懂，适合入门！
+
+2016年2月17日 10:37
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-354534)
+ | [引用](#comment-text)
+
+shangga
+
+ 说：
+                
+
+flex:1的意思是什么？
+
+2016年4月 7日 16:25
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-355472)
+ | [引用](#comment-text)
+
+小静
+
+ 说：
+                
+
+非常感谢，很喜欢您的教程，发现1.3三项目少了.box{justify-content: space-between;},难道只有我一个人发现了...
+
+2016年4月10日 13:54
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-355527)
+ | [引用](#comment-text)
+
+[Helios](http://woshinannan741.com)
+
+ 说：
+                
+
+这个是不是兼容性不算太好呀，只有chrome完全支持呀
+
+2016年4月12日 21:36
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-355593)
+ | [引用](#comment-text)
+
+汤米
+
+ 说：
+                
+
+"1.4 四项目"的代码有点问题，如果设置justify-content:flex-end的话，第一行的3个元素不会那么平均的分布的，而是挤在右边，像float:right似的
+
+2016年4月22日 10:59
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-355819)
+ | [引用](#comment-text)
+
+张阳
+
+ 说：
+                
+
+单项目中第五个，水平和垂直居中，父级设置display：flex；后，子元素设置margin：auto；应该是最简单的。我是在新书css揭秘上看的。具体的原理我还不太懂。
+
+2016年5月25日 18:16
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-356620)
+ | [引用](#comment-text)
+
+Eliza
+
+ 说：
+                
+
+我只想说阮老师这篇大部分是抄的
+[https://philipwalton.github.io/solved-by-flexbox/](https://philipwalton.github.io/solved-by-flexbox/)
+
+2016年6月 7日 11:10
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-357252)
+ | [引用](#comment-text)
+
+cody
+
+ 说：
+                
+
+>     引用Eliza的发言：
+> 
+> 
+> 我只想说阮老师这篇大部分是抄的
+> [https://philipwalton.github.io/solved-by-flexbox/](https://philipwalton.github.io/solved-by-flexbox/)
+
+他自己开篇就说了= =
+
+2016年6月14日 16:00
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-358241)
+ | [引用](#comment-text)
+
+[开源无憾](http://www.oswuhan.com)
+
+ 说：
+                
+
+>     引用Eliza的发言：
+> 
+> 
+> 我只想说阮老师这篇大部分是抄的
+> [https://philipwalton.github.io/solved-by-flexbox/](https://philipwalton.github.io/solved-by-flexbox/)
+
+黑的毫无水平，按你这个思路，所有这类文章都是“抄”的CSS官方文档。
+
+2016年6月19日 12:21
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-359403)
+ | [引用](#comment-text)
+
+Ella
+
+ 说：
+                
+
+赞，筛子布局非常易懂。实际示例开发过程中非常常见，很实用。
+
+干货！很喜欢阮老师写作的风格
+
+2016年6月19日 16:08
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-359415)
+ | [引用](#comment-text)
+
+[王冬](http://无)
+
+ 说：
+                
+
+太厉害了，就连菜鸟教程的flex教程都是转自这里的。
+[http://www.runoob.com/w3cnote/flex-grammar.html](http://www.runoob.com/w3cnote/flex-grammar.html)
+
+2016年6月24日 11:53
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-359701)
+ | [引用](#comment-text)
+
+军
+
+ 说：
+                
+
+项目1.3是错的，这样写样式不能是截图上面的。
+
+flex-direction: column;justify-content: space-between; 
+
+box得加上这两条属性
+
+2016年7月 1日 11:30
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-359946)
+ | [引用](#comment-text)
+
+happyyyhy
+
+ 说：
+                
+
+膜拜大牛
+
+2016年8月 2日 15:39
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-361593)
+ | [引用](#comment-text)
+
+[tolerious](http://tobe.engineer)
+
+ 说：
+                
+
+>     引用session的发言：
+> 
+> 
+> 骰子应该是6点
+
+不不不， 阮老师的意思应该是最多可以放九点，哈哈。 
+
+2016年9月13日 10:14
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-364390)
+ | [引用](#comment-text)
+
+Wgggg
+
+ 说：
+                
+
+圣杯布局,IE11完全乱掉了
+
+2016年9月20日 13:14
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-364815)
+ | [引用](#comment-text)
+
+[韩辉](http://www.hans-leesun.com)
+
+ 说：
+                
+
+阮老师，我想问一下。flex布局中，各个item之间的间距是如何设置的呢？用margin可以做到，但是面试的时候面试官说不用margin也可以。不是很理解。我看到的flex布局都是item连接到一起的。
+
+2016年9月23日 15:22
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-365059)
+ | [引用](#comment-text)
+
+deg
+
+ 说：
+                
+
+flex布局能不能实现这样的效果：容器内的项目固定宽高，设备宽度减小，项目自动换行，换行之后内容部分整体保持水平居中，同时保持项目七的流式布局？能的话改如何实现？
+
+2016年10月29日 10:47
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-367305)
+ | [引用](#comment-text)
+
+ben
+
+ 说：
+                
+
+收获很大，感谢
+
+2016年10月29日 20:03
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-367341)
+ | [引用](#comment-text)
+
+德芙小猪
+
+ 说：
+                
+
+非常好的教程。看了受益匪浅。
+
+2016年11月 3日 09:42
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-367627)
+ | [引用](#comment-text)
+
+德芙小猪
+
+ 说：
+                
+
+全部看明白了，感觉收获很大。
+
+2016年11月 3日 10:38
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-367644)
+ | [引用](#comment-text)
+
+夏夜星空
+
+ 说：
+                
+
+厉害啊，写的很精简，没有多少废话。赞
+
+2016年11月 7日 15:53
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-367923)
+ | [引用](#comment-text)
+
+FLEX布局
+
+ 说：
+                
+
+非常给力，感谢！
+
+2016年11月28日 10:49
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-369352)
+ | [引用](#comment-text)
+
+coderfoobar
+
+ 说：
+                
+
+>     引用tolerious的发言：
+> 
+> 
+> 不不不， 阮老师的意思应该是最多可以放九点，哈哈。 
+
+那还是麻将九饼吧
+
+2016年12月15日 14:54
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-370437)
+ | [引用](#comment-text)
+
+Dreambuild2021
+
+ 说：
+                
+
+受益匪浅,豁然开朗!
+
+2016年12月21日 18:48
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-370781)
+ | [引用](#comment-text)
+
+koz
+
+ 说：
+                
+
+1.2那
+
+.box {
+
+  display: flex;
+
+}
+
+.item:nth-child(2) {
+
+  align-self: center;
+
+}
+
+这个错了，得不到图中的效果。
+
+2016年12月27日 00:08
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-371126)
+ | [引用](#comment-text)
+
+[前端爱好者](http://mmfrontend.com)
+
+ 说：
+                
+
+属性是好属性，但是兼容性还是不怎么好，IE和一票国产移动端浏览器就坑死了
+
+2017年1月10日 15:22
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-371887)
+ | [引用](#comment-text)
+
+昭
+
+ 说：
+                
+
+悬挂布局里面的基本栗子里面第三个块怎么能紧接着在第一个块的下面，而不受第二个块的高度影响
+
+2017年1月12日 18:22
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-371976)
+ | [引用](#comment-text)
+
+不再犹豫
+
+ 说：
+                
+
+flex布局怎样设置单个子项在主轴上的位置？
+
+2017年1月14日 18:47
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-372003)
+ | [引用](#comment-text)
+
+[高大磊](http://www.gaodalei.com)
+
+ 说：
+                
+
+多谢，看过最好的博客
+
+2017年2月12日 15:50
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-372781)
+ | [引用](#comment-text)
+
+刘继伟
+
+ 说：
+                
+
+感谢！非常感谢！不敢碰触的问题，在研究了一天后，就豁然开朗了。知识分享者，赞！我也会去教更多的人掌握flex技能。
+
+2017年2月19日 13:54
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-373134)
+ | [引用](#comment-text)
+
+losymear
+
+ 说：
+                
+
+圣杯布局的header,
+
+footer {
+
+  flex: 1;
+
+}
+
+大了些吧  flex:0.3这样
+
+2017年2月19日 15:03
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-373135)
+ | [引用](#comment-text)
+
+jeremy
+
+ 说：
+                
+
+看了这个，瞬间觉得 flex 要颠覆以前小心谨慎的display+float布局啊啊啊
+
+2017年2月27日 22:26
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-373562)
+ | [引用](#comment-text)
+
+33
+
+ 说：
+                
+
+flex-basis: 100%有什么用
+
+2017年3月 1日 15:43
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-373690)
+ | [引用](#comment-text)
+
+24
+
+ 说：
+                
+
+  flex: 1是什么哪个属性
+
+2017年3月 1日 15:49
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-373691)
+ | [引用](#comment-text)
+
+哈喽基地
+
+ 说：
+                
+
+>     引用不再犹豫的发言：
+> 
+> 
+> flex布局怎样设置单个子项在主轴上的位置？
+
+我也有在想呢，有时候需要将子项设置在位置，特别是需要按某个比例。
+
+2017年3月14日 10:53
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-374696)
+ | [引用](#comment-text)
+
+辣牛
+
+ 说：
+                
+
+>     引用Cola的发言：
+> 
+> 
+> 里面这“vertical-align: center;”还有用么。
+
+设为Flex布局以后，子元素的float、clear和vertical-align属性将失效。
+
+2017年3月17日 17:36
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-374974)
+ | [引用](#comment-text)
+
+赵瑞
+
+ 说：
+                
+
+一个点的时候，只设置.box {display:flex} 是不行的，因为父元素的align-items默认值为stretch，会使子元素的高度充满整个容器，而不是在左上角。所以应该还要给.box加上align-items: flex-start;
+
+2017年3月18日 21:12
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-375059)
+ | [引用](#comment-text)
+
+[webkws](http://longstep.cn)
+
+ 说：
+                
+
+.item {
+
+    flex-grow: 1;
+
+    flex-shrink: 1;
+
+    flex-basis: 0%;
+
+}
+
+flex:1  =>  1 1 0
+
+2017年4月15日 22:22
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-376348)
+ | [引用](#comment-text)
+
+季一辉
+
+ 说：
+                
+
+>     引用koz的发言：
+> 
+> 
+> 1.2那
+> 
+> .box {
+> 
+> display: flex;
+> 
+> }
+> 
+> .item:nth-child(2) {
+> 
+> align-self: center;
+> 
+> }
+> 
+> 这个错了，得不到图中的效果。
+
+2017年4月18日 13:23
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-376412)
+ | [引用](#comment-text)
+
+[王先森](http://weibo.com/17code)
+
+ 说：
+                
+
+非常实用  谢谢老师  跟着学习了一遍  让我对布局更加深入了
+
+2017年4月25日 11:55
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-376654)
+ | [引用](#comment-text)
+
+dady
+
+ 说：
+                
+
+1.5第三个少了：
+
+.row:nth-child(1){
+
+  justify-content: space-between;
+
+}
+
+2017年5月 2日 13:25
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-376830)
+ | [引用](#comment-text)
+
+捍卫者
+
+ 说：
+                
+
+谢谢，好文章，学习啦，简单易懂！
+
+2017年5月 6日 15:28
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-376897)
+ | [引用](#comment-text)
+
+[左蓝](http://mmfrontend.xin)
+
+ 说：
+                
+
+@phc：
+
+对的，我也是亲自写了一遍才感觉这里阮老师写得达不到效果
+
+2017年5月18日 14:03
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-377257)
+ | [引用](#comment-text)
+
+tinywenwen
+
+ 说：
+                
+
+flex: 0 0 25%;
+
+这是多个属性连用吗？分别是什么属性？
+
+2017年5月23日 16:29
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-377383)
+ | [引用](#comment-text)
+
+石心
+
+ 说：
+                
+
+>     引用季一辉的发言：
+> 
+> 
+> 我试了也不行，是不是作者代码没有给全
+
+2017年6月14日 17:05
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-377955)
+ | [引用](#comment-text)
+
+jmcheng
+
+ 说：
+                
+
+五、悬挂式布局 那里的效果是怎样实现的呢？感觉像瀑布流的布局
+
+2017年6月15日 11:06
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-377967)
+ | [引用](#comment-text)
+
+[HYZT](http://无)
+
+ 说：
+                
+
+阮老师的文章就是鞭辟入里，精炼而不冗杂，膜拜大神了，有些刚好有用
+
+2017年6月16日 19:41
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-378018)
+ | [引用](#comment-text)
+
+[xiaoyujia](http://meiyou)
+
+ 说：
+                
+
+色子布局中两个点的项目中的倒数第二个：一个点在正中间另一个点在左上角那个布局不对吧？
+
+    .box {
+
+      display: flex;
+
+    }
+
+    .item:nth-child(2) {
+
+      align-self: center;
+
+    }
+
+这样写并不能保证到达效果，当外层盒子的尺寸变大时候，正中间的那个点就偏离中心位置了，图例中的‘视觉居中’是色子的尺寸和点的尺寸凑巧的结果吧
+
+2017年6月16日 23:48
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-378019)
+ | [引用](#comment-text)
+
+雨枫
+
+ 说：
+                
+
+后面的例子父元素的宽度是怎么设置的？
+
+2017年6月23日 16:26
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-378152)
+ | [引用](#comment-text)
+
+雨林木风
+
+ 说：
+                
+
+初学，目前骰子项目里有的无法实现，比如二项目倒数第二个，三项目第一个，四项目第一个，九项目
+
+2017年9月13日 11:38
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-380337)
+ | [引用](#comment-text)
+
+大张伟
+
+ 说：
+                
+
+从来都是抵触写css的，自从看到flex后，才发现原来布局也挺有意思的
+
+2017年9月19日 01:30
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-380604)
+ | [引用](#comment-text)
+
+PHL
+
+ 说：
+                
+
+现在刚开始接触微信小程序，原来是做安卓的，看新程序十分蒙蔽，不懂布局，看完这个信心大增啊
+
+2017年9月21日 14:00
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-380691)
+ | [引用](#comment-text)
+
+[蛋切刀](http://www.xitieba.com)
+
+ 说：
+                
+
+1.4 四项目 第一个是错的，您那种写法写出来上面三个是挨在一起的，我修改了一下应该是
+
+.boxFlex15 {
+
+	justify-content:space-between;
+
+	flex-direction: row-reverse;
+
+}
+
+.boxFlex15 .item:last-child {
+
+	align-self: flex-end;
+
+}
+
+2017年10月19日 22:36
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-381465)
+ | [引用](#comment-text)
+
+[蛋切刀](http://www.xitieba.com)
+
+ 说：
+                
+
+2.1 基本网格布局 的代码是不是省略了很多，不可能实现缩略图的效果啊，我自己改写了一份，不知道能不能这么写
+
+.Grid {
+
+	width: 950px;
+
+	height: 460px;
+
+	background: #fff;
+
+	border: 5px solid #e0e0e0;
+
+	border-radius: 10px;
+
+	display: flex;
+
+	flex-wrap: wrap; 
+
+}
+
+.Grid-cell {	
+
+	background: #f4f4f4;
+
+	border-radius: 10px;
+
+	margin: 1.5%;
+
+}
+
+.Grid-cell:nth-child(1), 
+
+.Grid-cell:nth-child(2),
+
+.Grid-cell:nth-child(10), 
+
+.Grid-cell:nth-child(11) {
+
+	flex: 0 47%;
+
+}
+
+.Grid-cell:nth-child(3), 
+
+.Grid-cell:nth-child(4),
+
+.Grid-cell:nth-child(5) {
+
+	flex: 0 30.3%;
+
+}
+
+.Grid-cell:nth-child(6), 
+
+.Grid-cell:nth-child(7),
+
+.Grid-cell:nth-child(8),
+
+.Grid-cell:nth-child(9) {
+
+	flex: 0 22%;
+
+}
+
+2017年10月19日 23:51
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-381466)
+ | [引用](#comment-text)
+
+丽丽
+
+ 说：
+                
+
+收益匪浅，以前布局没考虑这么多
+
+2017年11月 9日 21:48
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-382207)
+ | [引用](#comment-text)
+
+[他乡之客](https://wengzhong2001.github.io/)
+
+ 说：
+                
+
+第一次留言，感谢阮老师，让我们学到了很多东西！
+
+2017年11月 9日 22:02
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-382208)
+ | [引用](#comment-text)
+
+JimY
+
+ 说：
+                
+
+三个点的那个box上少了justify-content: space-between;
+
+2017年12月 5日 16:41
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html#comment-382991)
+ | [引用](#comment-text) 
+ 
+#### 参考 ####
+

@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "React 测试框架 Mocha 实例教程"
-date:   2017-10-07 11:35:17 +0800
+title:  "React 测试框架 Mocha 实例教程 (笔记)"
+date:   2017-10-04 11:35:17 +0800
 categories:  
 tags: 
     - react

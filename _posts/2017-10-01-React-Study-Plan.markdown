@@ -8,6 +8,17 @@ tags:
 
 ---
 
+## Tools To Speed Up The Learning Process ##
+
+* h2m in nodejs [git](https://github.com/island205/h2m) 
+ [online](http://tinyambition.com/h2m/)
+ [npmjs](https://www.npmjs.com/package/html2markdown)
+*  in ruby [git](https://github.com/29decibel/html2markdown) 
+  [online](http://html2markdown.bayn.es)
+*  in  C# [git](https://github.com/baynezy/Html2Markdown) 
+*  not sure [git](https://github.com/WangYihang/HTML2Markdown)     
+
+
 ## Obligatory ##
 
 - <del>ES6 语法：[教程](http://es6.ruanyifeng.com/)</del>
@@ -16,10 +27,10 @@ tags:
 - <del>Webpack：[教程](https://github.com/ruanyf/webpack-demos)</del>
 - <del>React 项目脚手架：[代码库](https://github.com/ruanyf/react-babel-webpack-boilerplate)</del>
 - Flex 布局：[教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)，[示例](http://www.ruanyifeng.com/blog/2015/07/flex-examples.html)
-- CSS Modules：[教程](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)，[示例库](https://github.com/ruanyf/css-modules-demos)
+- <del>CSS Modules：[教程](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)，[示例库](https://github.com/ruanyf/css-modules-demos)</del>  << Simple
 - <del>React-Router：[教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html)，[示例库](https://github.com/reactjs/react-router-tutorial/tree/master/lessons)</del>
-- <del>Flux 架构：[教程 2014年](http://www.ruanyifeng.com/blog/2016/01/flux.html)，[示例库](https://github.com/ruanyf/extremely-simple-flux-demo)</del> [笔记]()
-- Redux 架构：[教程一 2015年](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)、[教程二](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)、[教程三](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html)
+- <del>Flux 架构：[教程 2014年](http://www.ruanyifeng.com/blog/2016/01/flux.html)，[示例库](https://github.com/ruanyf/extremely-simple-flux-demo)</del> [笔记]()  << Complex
+- Redux 架构：[教程一 2015年](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html)、[教程二](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_two_async_operations.html)、[教程三](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_three_react-redux.html) << Complex
 - Mocha 测试框架：[教程](http://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)，[示例库](https://github.com/ruanyf/mocha-demos)
 - Istanbul 覆盖率框架：[教程](http://www.ruanyifeng.com/blog/2015/06/istanbul.html)
 - React 单元测试：[教程](http://www.ruanyifeng.com/blog/2016/02/react-testing-tutorial.html)，[示例库](https://github.com/ruanyf/react-testing-demo)
@@ -34,18 +45,6 @@ tags:
  [gitbook](https://www.gitbook.com/book/503945930/material-ui-chinese/details)  
 * CSS  
 	Radium  
-## Tool List ##
-Tools to speed up study process.
-
-#### html2markdown ####
-
-* h2m in nodejs [git](https://github.com/island205/h2m) 
- [online](http://tinyambition.com/h2m/)
- [npmjs](https://www.npmjs.com/package/html2markdown)
-*  in ruby [git](https://github.com/29decibel/html2markdown) 
-  [online](http://html2markdown.bayn.es)
-*  in  C# [git](https://github.com/baynezy/Html2Markdown) 
-*  not sure [git](https://github.com/WangYihang/HTML2Markdown)     
 
 
 

@@ -1,0 +1,2333 @@
+---
+layout: post
+title:  "Flex 布局教程：语法篇 留言 (笔记)"
+date:   2017-10-02 10:36:15 +0800
+categories:  
+tags:  
+    - react
+
+---
+
+# Flex 布局教程：语法篇 留言 (笔记) #
+
+
+## 留言（158条）
+
+云墨雪
+
+ 说：
+                
+
+坐个沙发, ie10的普及率还有待观望啊..
+
+2015年7月10日 13:04
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350724)
+ | [引用](#comment-text)
+
+[王永起](http://wyqbailey.github.io)
+
+ 说：
+                
+
+四、容器的属性，应该是“项目的属性”吧？
+
+2015年7月10日 13:10
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350725)
+ | [引用](#comment-text)
+
+阮一峰
+
+ 说：
+                
+
+@王永起，
+
+谢谢指出，已经改正。
+
+2015年7月10日 13:19
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350726)
+ | [引用](#comment-text)
+
+一月31
+
+ 说：
+                
+
+好文章，简单明了。
+
+2015年7月10日 14:58
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350731)
+ | [引用](#comment-text)
+
+Henry
+
+ 说：
+                
+
+听说博主是搞经济出身的，居然没有一篇经济类的文章，真想问博主炒股不？
+
+2015年7月10日 15:04
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350732)
+ | [引用](#comment-text)
+
+[chshouyu](http://chshouyu.com)
+
+ 说：
+                
+
+现在介绍有点晚了吧-_-#
+
+2015年7月10日 15:08
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350734)
+ | [引用](#comment-text)
+
+[Overtrue](http://overtrue.me)
+
+ 说：
+                
+
+赞，终于在您这儿看明白了，谢谢！
+
+2015年7月10日 16:26
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350735)
+ | [引用](#comment-text)
+
+[chenjia404](http://chenjia.info)
+
+ 说：
+                
+
+谢谢分享，新的开发技术，使我们开发者越来越方便了。
+
+2015年7月10日 17:31
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350739)
+ | [引用](#comment-text)
+
+shikelong
+
+ 说：
+                
+
+flex布局除了响应不同页面之外，还有什么优点呢？
+
+2015年7月10日 18:14
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350741)
+ | [引用](#comment-text)
+
+[KevinSu](http://www.reekly.com/)
+
+ 说：
+                
+
+简单明了，配图很赞！
+
+2015年7月10日 19:24
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350742)
+ | [引用](#comment-text)
+
+[liaotonglang](http://quant67.com/)
+
+ 说：
+                
+
+看标题还以为是讲编译器，兴冲冲点进来。不过并不失望，最近做课程设计正好需要这个。博主配图好漂亮。
+
+2015年7月11日 11:31
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350753)
+ | [引用](#comment-text)
+
+[Soli](http://solicomo.com)
+
+ 说：
+                
+
+属性名字起的很别扭哈。
+
+2015年7月11日 22:48
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350762)
+ | [引用](#comment-text)
+
+imskull
+
+ 说：
+                
+
+多谢，很不错的文章，一直都用Polymer预定义的flex排版（"layout horizontal center"这样），看完才知道原来flex还有其它这些功能。
+
+2015年7月11日 23:50
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350763)
+ | [引用](#comment-text)
+
+[張旭](http://zx1986.github.io)
+
+ 说：
+                
+
+wow! 這傢伙太實用了!
+
+grid layout framework 不知道是否會重寫了
+
+2015年7月13日 14:13
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350777)
+ | [引用](#comment-text)
+
+WINE
+
+ 说：
+                
+
+长见识了
+
+2015年7月15日 09:48
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350821)
+ | [引用](#comment-text)
+
+temp
+
+ 说：
+                
+
+进了阿里，写文章不精致了。
+
+2015年7月15日 10:37
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350823)
+ | [引用](#comment-text)
+
+[大个](http://www.junqing.ren)
+
+ 说：
+                
+
+阮大神啊，flex-basis，这个属性的作用是优先级高于width的width吗？它除了设置宽度的作用还有什么用处？（宽度指的是水平方向，如果是垂直方向就是height了）。
+
+2015年7月20日 16:56
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350929)
+ | [引用](#comment-text)
+
+longfei
+
+ 说：
+                
+
+阮老师，那个item的flex-grow属性，我写了个demo
+
+CSS:
+
+body{margin:0;}
+
+ul,li{margin:0; padding:0;}
+
+li{list-style-type:none;}
+
+#list{border:2px solid gold; height:500px; display:flex; flex-direction:row;}
+
+#list li{font-family:"microsoft yahei"; font-size:50px; background:#C00; color:#fff; margin:2px; flex-grow:1;}
+
+#list li:nth-child(2){flex-grow:2;}
+
+<ul id="list">
+
+    <li>test1</li>
+
+    <li>test2</li>
+
+    <li>test3</li>
+
+</ul>
+
+结果第2个li所占的宽度并不是其它li的2倍，为什么呢？比其它两个要大，但不足2倍。
+
+2015年7月22日 11:50
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350954)
+ | [引用](#comment-text)
+
+夜幕下的猫
+
+ 说：
+                
+
+写的非常好！我用来弄我的 zhihu-daily-reader 布局了，嘿嘿！
+
+2015年7月22日 15:52
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350958)
+ | [引用](#comment-text)
+
+阮一峰
+
+ 说：
+                
+
+@longfei:
+
+flex-basis都设为0，因为flex-grow定义的是，剩余空间分配的比例关系。
+
+2015年7月22日 16:06
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-350959)
+ | [引用](#comment-text)
+
+[victor](http://www.victoryan.cn)
+
+ 说：
+                
+
+兼容性是大问题！
+
+2015年8月 6日 14:32
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-351154)
+ | [引用](#comment-text)
+
+coffce
+
+ 说：
+                
+
+Nice！看了这篇文后我写了个基于flex的栅格布局库 flex-layout
+[https://github.com/Coffcer/flex-layout](https://github.com/Coffcer/flex-layout)
+
+2015年8月17日 09:49
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-351282)
+ | [引用](#comment-text)
+
+[dubbo](http://www.dubbofeng.com)
+
+ 说：
+                
+
+有了这个以后可以真正的告别table了。
+
+2015年8月21日 07:41
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-351351)
+ | [引用](#comment-text)
+
+夜愿
+
+ 说：
+                
+
+阮老师，align-items：flex-start和align-items:flex:end 的图弄反了
+
+2015年8月26日 14:00
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-351445)
+ | [引用](#comment-text)
+
+第二梦
+
+ 说：
+                
+
+您发表的每篇文章,都是那么的善于理解,一目了然,看着很轻松并且感觉学到了知识;非常感觉,看了您的很多文章觉得不评论支持一下过意不去.
+
+2015年9月21日 01:34
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-351802)
+ | [引用](#comment-text)
+
+广州哈哥
+
+ 说：
+                
+
+阮老师，您好，我是0基础开始学习flex,今天看了你的这篇博文，发现有个地方好像你给弄反了。就是justify-content和align-items这两个属性。我试过了，其实，前者是设置项目在交叉轴上的对齐方式的，而后者是设置项目在主轴上的对齐方式的。
+
+2015年9月23日 22:10
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-351835)
+ | [引用](#comment-text)
+
+六翼
+
+ 说：
+                
+
+>     引用阮一峰的发言：
+> 
+> 
+> @longfei:
+> 
+> flex-basis都设为0，因为flex-grow定义的是，剩余空间分配的比例关系。
+
+那请问不设为0的时候它是多少呢？看您的原文里是“auto”，但这个auto是怎么计算的？
+
+2015年9月24日 09:58
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-351840)
+ | [引用](#comment-text)
+
+ixoixo
+
+ 说：
+                
+
+能不能好好解释下flex-grow  flex-shrink  flex-basis的用法，网上的各种解释感觉都不好理解
+
+2015年10月 9日 23:07
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-352065)
+ | [引用](#comment-text)
+
+年华果腹
+
+ 说：
+                
+
+想学习flex的相关知识，找了几篇文章大概看了一下，觉得都不满意，突然在google上发现文章后面带有阮老师标识的文章，于是默默把其他的几篇文章的tab都关了
+
+2015年10月30日 13:20
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-352463)
+ | [引用](#comment-text)
+
+[phc](http://www.cong-cong.cn)
+
+ 说：
+                
+
+>     引用广州哈哥的发言：
+> 
+> 
+> 阮老师，您好，我是0基础开始学习flex,今天看了你的这篇博文，发现有个地方好像你给弄反了。就是justify-content和align-items这两个属性。我试过了，其实，前者是设置项目在交叉轴上的对齐方式的，而后者是设置项目在主轴上的对齐方式的。
+
+我不知道自己理解的对不对，但是我觉得主轴的话也就是项目的排布方向，加入是水平排布，那么交叉轴即是垂直方向的，设置align-items:stretch；的话确实是在垂直方向上拉伸的，那align-itmes就是设置交叉轴的吧
+
+2015年11月 5日 17:34
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-352599)
+ | [引用](#comment-text)
+
+大海的子民
+
+ 说：
+                
+
+如果我把子元素按照固定像素来分配，是否可以（就是替换现在的float布局），还是子元素用width吗？
+
+2015年11月 5日 21:32
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-352605)
+ | [引用](#comment-text)
+
+Jasmine
+
+ 说：
+                
+
+很好用的布局，学习了！
+
+2015年11月11日 15:19
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-352717)
+ | [引用](#comment-text)
+
+[Citrus](http://zy21.xyz)
+
+ 说：
+                
+
+多次过来学习，非常感谢。
+
+2015年12月12日 12:31
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-353257)
+ | [引用](#comment-text)
+
+[professorz](http://proforz.com)
+
+ 说：
+                
+
+ flex-direction 图片顺序和文字顺序是不是不一样呀。
+
+2015年12月12日 17:35
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-353259)
+ | [引用](#comment-text)
+
+ppYoung
+
+ 说：
+                
+
+原来是css-tricks上的文章翻译过来的，为什么不做说明
+
+传送门：https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+2015年12月22日 11:37
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-353454)
+ | [引用](#comment-text)
+
+[巫婆](http://www.cnblogs.com/U-can/)
+
+ 说：
+                
+
+我每次写项目的时候也考虑过用flex布局，但是有的手机上显示不谦容。我到现在都不知道该怎么解决。
+
+2015年12月30日 17:51
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-353661)
+ | [引用](#comment-text)
+
+wcg 
+
+ 说：
+                
+
+@mixin flex(){
+
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+
+  display: -webkit-flex;     /* NEW - Chrome */
+
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+}
+
+body{
+
+  @include flex();
+
+  flex: 1;
+
+  justify-content: center;
+
+  align-items: center;
+
+  flex-direction: column;
+
+}
+
+#main{
+
+  @include flex();
+
+  height: 400px;
+
+  width: 1200px;
+
+  background-color: red;
+
+}
+
+div #main 并不会居中
+
+2015年12月31日 15:42
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-353673)
+ | [引用](#comment-text)
+
+lomin
+
+ 说：
+                
+
+想问一下，微信的内置浏览器是不是不支持这个属性啊。。我写了一个。在电脑上用chrome浏览器有用。在微信上没用了
+
+2016年1月 7日 10:04
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-353827)
+ | [引用](#comment-text)
+
+wing-kai
+
+ 说：
+                
+
+>     引用lomin的发言：
+> 
+> 
+> 想问一下，微信的内置浏览器是不是不支持这个属性啊。。我写了一个。在电脑上用chrome浏览器有用。在微信上没用了
+
+微信的话用display: box
+
+2016年1月 9日 13:01
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-353896)
+ | [引用](#comment-text)
+
+littelbowl
+
+ 说：
+                
+
+感谢科普，跟着demo学习下来很有收获。
+
+2016年1月11日 15:20
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-353929)
+ | [引用](#comment-text)
+
+小天312
+
+ 说：
+                
+
+移动端的兼容应该没有什么大问题了吧。可以在团队开发时候推广了吧？
+
+2016年1月25日 17:37
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-354315)
+ | [引用](#comment-text)
+
+Silvers · Rayleigh
+
+ 说：
+                
+
+>     引用longfei的发言：
+> 
+> 
+> 阮老师，那个item的flex-grow属性，我写了个demo
+> 
+> CSS:
+> 
+> body{margin:0;}
+> 
+> ul,li{margin:0; padding:0;}
+> 
+> li{list-style-type:none;}
+> 
+> #list{border:2px solid gold; height:500px; display:flex; flex-direction:row;}
+> 
+> #list li{font-family:"microsoft yahei"; font-size:50px; background:#C00; color:#fff; margin:2px; flex-grow:1;}
+> 
+> #list li:nth-child(2){flex-grow:2;}
+> 
+> <ul id="list">
+> 
+> <li>test1</li>
+> 
+> <li>test2</li>
+> 
+> <li>test3</li>
+> 
+> </ul>
+> 
+> 结果第2个li所占的宽度并不是其它li的2倍，为什么呢？比其它两个要大，但不足2倍。
+
+这里是你理解错了，3个 li 平分下来每个是1/3。
+
+你想实现的2个相等，1个宽度是其他2个的两倍实际上就是4个 li 平分，其中2个合并成1个，所以每个 li 是1/4，也就是#list li:nth-child(2){flex-grow:3;}
+
+2016年1月30日 16:28
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-354390)
+ | [引用](#comment-text)
+
+Silvers · Rayleigh
+
+ 说：
+                
+
+>     引用巫婆的发言：
+> 
+> 
+> 我每次写项目的时候也考虑过用flex布局，但是有的手机上显示不谦容。我到现在都不知道该怎么解决。
+
+不兼容可以用 display:box 试试看
+
+2016年1月30日 16:29
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-354391)
+ | [引用](#comment-text)
+
+村小闹
+
+ 说：
+                
+
+>     引用广州哈哥的发言：
+> 
+> 
+> 阮老师，您好，我是0基础开始学习flex,今天看了你的这篇博文，发现有个地方好像你给弄反了。就是justify-content和align-items这两个属性。我试过了，其实，前者是设置项目在交叉轴上的对齐方式的，而后者是设置项目在主轴上的对齐方式的。
+
+是你自己弄错了好吧~
+
+2016年2月 1日 15:29
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-354413)
+ | [引用](#comment-text)
+
+无双
+
+ 说：
+                
+
+[http://flexboxin5.com/](http://flexboxin5.com/)
+
+博士哥与我本科生一站
+
+2016年2月28日 16:13
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-354684)
+ | [引用](#comment-text)
+
+[jingsam](https://jingsam.github.io/)
+
+ 说：
+                
+
+3.1 节关于 flex-direction 的部分，代码和图不是一一对应的。
+
+2016年3月 3日 14:12
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-354744)
+ | [引用](#comment-text)
+
+大果子
+
+ 说：
+                
+
+我就看看能不能发表成功
+
+2016年3月 4日 10:46
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-354763)
+ | [引用](#comment-text)
+
+cc
+
+ 说：
+                
+
+flex-wrap: wrap;
+
+在微信内置浏览器中无效！
+
+2016年3月19日 12:25
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-355116)
+ | [引用](#comment-text)
+
+cc
+
+ 说：
+                
+
+>     引用cc的发言：
+> 
+> 
+> flex-wrap: wrap;
+> 
+> 在微信内置浏览器中无效！
+
+autoprefixer({browsers: ['last 10 version']})
+
+这样都无效！
+
+2016年3月19日 12:26
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-355117)
+ | [引用](#comment-text)
+
+cc
+
+ 说：
+                
+
+>     引用cc的发言：
+> 
+> 
+> 
+> 
+> autoprefixer({browsers: ['last 10 version']})
+> 
+> 这样都无效！
+
+换个写法吧，历史的倒退！shit!
+
+2016年3月19日 12:27
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-355118)
+ | [引用](#comment-text)
+
+SHUSHU
+
+ 说：
+                
+
+谢谢老师讲解，之前的一些困惑现在看明白了
+
+2016年3月25日 13:55
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-355256)
+ | [引用](#comment-text)
+
+杨继坤
+
+ 说：
+                
+
+厉害
+
+2016年4月 7日 17:03
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-355475)
+ | [引用](#comment-text)
+
+[yanhaijing](http://yanhaijing.com)
+
+ 说：
+                
+
+棒棒的
+
+2016年4月 9日 18:46
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-355517)
+ | [引用](#comment-text)
+
+[wlq](http://geakw.github.io)
+
+ 说：
+                
+
+阮老师，item翻译成项目感觉怪怪的，没有直接用item好理解点
+
+2016年4月12日 10:56
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-355570)
+ | [引用](#comment-text)
+
+麦当真
+
+ 说：
+                
+
+一峰老师，我简直不能更加感激您，也非常崇拜您。哇唔，我猜您已经将技术看作是艺术了吧！！！现在好多程序员生活都比较枯燥（我猜他们和我一样，嘻嘻）（每天都很忙，技术更新快，提升自己的技术还要完成项目），灵魂也很干涸（因为很忙，所以太少的时间感受生活，去吸取技术之外的东西来滋养我们的灵魂）。然而每次看您的博文，我就感觉自己经历了一场与艺术的邂逅，不仅学习了知识，还让我得以短暂的放松，让我的心灵经历了一次奇妙的旅行，然后再元气满满，整装继续上路。非常感谢您的分享，您无私的指引，以及心灵的关怀。
+
+2016年4月14日 11:14
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-355650)
+ | [引用](#comment-text)
+
+MZ
+
+ 说：
+                
+
+>     引用阮一峰的发言：
+> 
+> 
+> @longfei:
+> 
+> flex-basis都设为0，因为flex-grow定义的是，剩余空间分配的比例关系。
+
+flex-basis设为0，那项目的初始大小是多大？
+
+2016年4月27日 20:21
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-355930)
+ | [引用](#comment-text)
+
+善心法西斯
+
+ 说：
+                
+
+很清楚，一目了然
+
+2016年4月28日 23:58
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-355965)
+ | [引用](#comment-text)
+
+曾胜荣
+
+ 说：
+                
+
+请问flex在任何浏览器都能用吗，有没有兼容性的问题
+
+2016年5月11日 00:28
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-356167)
+ | [引用](#comment-text)
+
+赖俊杰
+
+ 说：
+                
+
+老师的文章写得总是那么易懂
+
+2016年5月13日 17:07
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-356228)
+ | [引用](#comment-text)
+
+林明哲
+
+ 说：
+                
+
+图片很好！点赞。flex在安卓原生开发上也有了支持库。https://github.com/google/flexbox-layout
+
+2016年5月16日 16:55
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-356317)
+ | [引用](#comment-text)
+
+Christopher
+
+ 说：
+                
+
+前端自学者受用了，谢谢！
+
+2016年5月16日 23:12
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-356328)
+ | [引用](#comment-text)
+
+walle
+
+ 说：
+                
+
+好的老师不仅要学会知识，还要讲得通俗易懂，阮老师就是这样的老师
+
+2016年5月19日 15:24
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-356417)
+ | [引用](#comment-text)
+
+react-native-android
+
+ 说：
+                
+
+flex-direction这个属性的默认值是row吗？这样的话是不是默认情况下，item就是横向排列了。但是。我在做的过程中发现，如果不写flex-direction属性的话，item是竖向排列的
+
+2016年5月26日 10:46
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-356630)
+ | [引用](#comment-text)
+
+laoyur
+
+ 说：
+                
+
+还是没看明白align-content跟justify-content的区别  :(
+
+2016年6月 7日 20:17
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-357332)
+ | [引用](#comment-text)
+
+落雨收柴
+
+ 说：
+                
+
+老师，怎样使用flex布局使得两个组件的一部分重叠
+
+2016年6月27日 17:39
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-359825)
+ | [引用](#comment-text)
+
+石海伟
+
+ 说：
+                
+
+>     引用longfei的发言：
+> 
+> 
+> 阮老师，那个item的flex-grow属性，我写了个demo
+> 
+> CSS:
+> 
+> body{margin:0;}
+> 
+> ul,li{margin:0; padding:0;}
+> 
+> li{list-style-type:none;}
+> 
+> #list{border:2px solid gold; height:500px; display:flex; flex-direction:row;}
+> 
+> #list li{font-family:"microsoft yahei"; font-size:50px; background:#C00; color:#fff; margin:2px; flex-grow:1;}
+> 
+> #list li:nth-child(2){flex-grow:2;}
+> 
+> <ul id="list">
+> 
+> <li>test1</li>
+> 
+> <li>test2</li>
+> 
+> <li>test3</li>
+> 
+> </ul>
+> 
+> 结果第2个li所占的宽度并不是其它li的2倍，为什么呢？比其它两个要大，但不足2倍。
+
+好像是按多余空间算的
+
+2016年6月28日 15:57
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-359862)
+ | [引用](#comment-text)
+
+两仪
+
+ 说：
+                
+
+ 玉峰老师的博客真写的通熟易懂     点赞一个
+
+2016年6月28日 23:24
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-359865)
+ | [引用](#comment-text)
+
+卓
+
+ 说：
+                
+
+>     引用石海伟的发言：
+> 
+> 
+> 好像是按多余空间算的
+
+一共有三个li元素，flex-grow:2即当前元素宽度为 父元素的2/3   并不是其他元素的两倍
+
+2016年6月29日 16:08
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-359896)
+ | [引用](#comment-text)
+
+卓
+
+ 说：
+                
+
+>     引用longfei的发言：
+> 
+> 
+> 阮老师，那个item的flex-grow属性，我写了个demo
+> 
+> CSS:
+> 
+> body{margin:0;}
+> 
+> ul,li{margin:0; padding:0;}
+> 
+> li{list-style-type:none;}
+> 
+> #list{border:2px solid gold; height:500px; display:flex; flex-direction:row;}
+> 
+> #list li{font-family:"microsoft yahei"; font-size:50px; background:#C00; color:#fff; margin:2px; flex-grow:1;}
+> 
+> #list li:nth-child(2){flex-grow:2;}
+> 
+> <ul id="list">
+> 
+> <li>test1</li>
+> 
+> <li>test2</li>
+> 
+> <li>test3</li>
+> 
+> </ul>
+> 
+> 结果第2个li所占的宽度并不是其它li的2倍，为什么呢？比其它两个要大，但不足2倍。
+
+一共有三个li元素，flex-grow:2即当前元素宽度为 父元素的2/3 并不是其他元素的两倍
+
+2016年6月29日 16:09
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-359897)
+ | [引用](#comment-text)
+
+Mr.Luo
+
+ 说：
+                
+
+默认好像是flex-wrap: wrap;
+
+2016年7月 1日 16:17
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-359991)
+ | [引用](#comment-text)
+
+卓
+
+ 说：
+                
+
+请问: 针对此属性 justify-content: space-between 3个元素为一行排列，最后多余的两个多余的元素如何让它靠左排布，事实上是左右排布了，表面看就是中间空了个元素，请看demo
+
+  1
+  2
+  3
+  4
+  5
+
+.container {width: 400px;display: flex;justify-content: space-between;flex-flow: row wrap;
+
+}
+
+span {width: 110px;background-color: #f60;border-radius: 5px;margin-top: 10px;padding: 10px;
+
+}
+
+2016年7月 5日 10:47
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-360189)
+ | [引用](#comment-text)
+
+卓
+
+ 说：
+                
+
+>     引用卓的发言：
+> 
+> 
+> 请问: 针对此属性 justify-content: space-between 3个元素为一行排列，最后多余的两个多余的元素如何让它靠左排布，事实上是左右排布了，表面看就是中间空了个元素，请看demo
+> 
+> 
+> 
+> 1
+> 
+> 2
+> 
+> 3
+> 
+> 4
+> 
+> 5
+> 
+> 
+> 
+> .container {width: 400px;display: flex;justify-content: space-between;flex-flow: row wrap;
+> 
+> }
+> 
+> span {width: 110px;background-color: #f60;border-radius: 5px;margin-top: 10px;padding: 10px;
+> 
+> }
+
+2016年7月 5日 10:49
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-360190)
+ | [引用](#comment-text)
+
+键盘侠
+
+ 说：
+                
+
+我只想说这个css3的新属性flex局势一个巨坑，谁用谁知道。安卓低端机完全不支持
+
+2016年7月 9日 17:16
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-360443)
+ | [引用](#comment-text)
+
+Yac
+
+ 说：
+                
+
+目前发现一个问题，和@卓貌似是一个问题：
+
+父元素：justify-content: space-between
+
+在每排3个元素一共5个元素情况下，第五个元素怎么实现居中？
+
+现在的效果是第1、2、3元素正常，4元素居左，5元素居右
+
+2016年7月10日 03:19
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-360450)
+ | [引用](#comment-text)
+
+肖德华
+
+ 说：
+                
+
+UC浏览器设置flex：1；盒子里面加入文字 弹性盒子会被撑开要怎么解决，其他浏览器都是正常的
+
+2016年7月10日 17:10
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-360471)
+ | [引用](#comment-text)
+
+zw
+
+ 说：
+                
+
+不得不说，看了半天外文网站， 不如看十分钟阮大师的。
+
+2016年7月13日 16:42
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-360612)
+ | [引用](#comment-text)
+
+liangwang
+
+ 说：
+                
+
+"Webkit内核的浏览器，必须加上-webkit前缀。“， 我测试了下safari和chrome，都不需要的。
+
+2016年7月14日 10:34
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-360644)
+ | [引用](#comment-text)
+
+liangwang
+
+ 说：
+                
+
+问下，支付宝是否已经有页面部署了flex的布局？ 似乎各大浏览器，除了chrome支持的都不是特别好，比如IE8就，FireFox46之前的，Safari9.1之前的都不支持
+
+2016年7月14日 10:46
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-360645)
+ | [引用](#comment-text)
+
+孟泰德
+
+ 说：
+                
+
+>     引用liangwang的发言：
+> 
+> 
+> "Webkit内核的浏览器，必须加上-webkit前缀。“， 我测试了下safari和chrome，都不需要的。
+
+在ios8及以下的版本中就需要了
+
+2016年7月19日 13:12
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-360865)
+ | [引用](#comment-text)
+
+[vec](http://vec.moe)
+
+ 说：
+                
+
+太好了，总算是弄明白了，谢谢博主！
+
+2016年8月 5日 00:18
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-361733)
+ | [引用](#comment-text)
+
+前端小菜
+
+ 说：
+                
+
+怎么用flex实现footer一直存在在屏幕下方 不随滚动消失
+
+2016年8月 5日 10:51
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-361750)
+ | [引用](#comment-text)
+
+zhishaofei3
+
+ 说：
+                
+
+>     引用Silvers · Rayleigh的发言：
+> 
+> 
+> 这里是你理解错了，3个 li 平分下来每个是1/3。
+> 
+> 你想实现的2个相等，1个宽度是其他2个的两倍实际上就是4个 li 平分，其中2个合并成1个，所以每个 li 是1/4，也就是#list li:nth-child(2){flex-grow:3;}
+
+3也不行吧？
+
+2016年8月 5日 13:11
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-361759)
+ | [引用](#comment-text)
+
+zhishaofei3
+
+ 说：
+                
+
+>     引用longfei的发言：
+> 
+> 
+> 阮老师，那个item的flex-grow属性，我写了个demo
+> 
+> CSS:
+> 
+> body{margin:0;}
+> 
+> ul,li{margin:0; padding:0;}
+> 
+> li{list-style-type:none;}
+> 
+> #list{border:2px solid gold; height:500px; display:flex; flex-direction:row;}
+> 
+> #list li{font-family:"microsoft yahei"; font-size:50px; background:#C00; color:#fff; margin:2px; flex-grow:1;}
+> 
+> #list li:nth-child(2){flex-grow:2;}
+> 
+> <ul id="list">
+> 
+> <li>test1</li>
+> 
+> <li>test2</li>
+> 
+> <li>test3</li>
+> 
+> </ul>
+> 
+> 结果第2个li所占的宽度并不是其它li的2倍，为什么呢？比其它两个要大，但不足2倍。
+
+是按剩余空间算的，因为你里面有文字，所以刨去了文字宽度，你去掉文字就好了
+
+2016年8月 5日 14:08
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-361761)
+ | [引用](#comment-text)
+
+zousjun
+
+ 说：
+                
+
+>     引用zhishaofei3的发言：
+> 
+> 
+> 是按剩余空间算的，因为你里面有文字，所以刨去了文字宽度，你去掉文字就好了
+
+这里是必须先除去每个元素实际占有的大小之后，然后按照你设置的比例来分配空间，h
+
+还有默认空间应该是flex-grow： 1，而不是flex-grow： 0；
+
+>     <ul id="list">
+>       <li>test1</li>
+>       <li>test2</li>
+>       <li>test3</li>
+>     </ul>
+>     
+
+>     body{margin:0;}
+>     	ul,li{ margin:0; padding:0;}
+>     	li{ list-style-type:none;}
+>     	#list{ border:2px solid gold; height:500px; display:flex; flex-direction:row;}
+>     	#list li {
+>     		width: 120px;
+>     	}
+>     	#list li{font-family:"microsoft yahei"; font-size:50px; background:#C00; color:#fff; margin:2px; flex-grow:1;}
+>     	#list li:nth-child(2){flex-grow:2;}
+>     	#list li:nth-child(3){
+>     		flex-grow: 0;
+>     	}
+>     
+
+你可以比较一下两段代码的不同
+
+2016年8月17日 18:27
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-362540)
+ | [引用](#comment-text)
+
+微风
+
+ 说：
+                
+
+苹果手机的IOS8系统不支持flex布局，有什么好方法吗？
+
+2016年8月25日 16:48
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-363136)
+ | [引用](#comment-text)
+
+小汤
+
+ 说：
+                
+
+不错，容易明白，大神就是大神
+
+2016年9月 9日 15:15
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-364156)
+ | [引用](#comment-text)
+
+[felbry](http://felbry.github.io)
+
+ 说：
+                
+
+今天实践过程中发现了一个理解误区，就是刚开始把justify-content误认为是指定水平对齐方式（其实针对的是主轴），而align-items是指定垂直对齐方式。而指定主轴需要用到flex-direction(默认为水平)。不过后来想想，假使指定主轴为竖直的话，那主轴和交叉轴是不是就是一样了？还有那个align-content说的是针对多根轴线，是不是就意味着如果主轴指定为column，就是主轴和交叉轴一样是一根线了，如果主轴为默认，那么当主轴和交叉轴的对齐方式一样的话，直接用一个align-content属性就ok了？
+
+2016年9月14日 15:44
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-364512)
+ | [引用](#comment-text)
+
+lavender
+
+ 说：
+                
+
+很明了，很直观，感谢博主~
+
+2016年10月 8日 14:25
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-365898)
+ | [引用](#comment-text)
+
+家兴
+
+ 说：
+                
+
+flex-direction: row | row-reverse | column | column-reverse;
+
+这部分的描述和下面的配图，容易误导一些新手哈
+
+可能会造成 row = 下图第一个 依次的顺序
+
+2016年10月10日 11:11
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-366014)
+ | [引用](#comment-text)
+
+[张宝](http://123.56.108.61)
+
+ 说：
+                
+
+“四、项目的属性”这个标题的字体小了，之前同种标题都是,应该是H2
+
+2016年10月31日 12:40
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-367470)
+ | [引用](#comment-text)
+
+cnwhy
+
+ 说：
+                
+
+在我测试中有这样的感觉,还请指正
+
+1.当主轴设置的是水平方向时(row,row-reverse)方向还和容器的dir属有关; 
+
+flex-direction 的方向是相对dir设置的方向来设置的.
+
+2.交叉轴的方向(默认和主轴换行的方向一至),flex-wrap: wrap-reverse; 会改变交叉轴的方向
+
+demo: [http://sandbox.runjs.cn/show/zkqimsj5](http://sandbox.runjs.cn/show/zkqimsj5)
+
+2016年11月 1日 18:17
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-367515)
+ | [引用](#comment-text)
+
+良心的荒野开拓者
+
+ 说：
+                
+
+>     引用phc的发言：
+> 
+> 
+> 我不知道自己理解的对不对，但是我觉得主轴的话也就是项目的排布方向，加入是水平排布，那么交叉轴即是垂直方向的，设置align-items:stretch；的话确实是在垂直方向上拉伸的，那align-itmes就是设置交叉轴的吧
+
+2016年11月11日 14:37
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-368187)
+ | [引用](#comment-text)
+
+[LeoHsia](http://www.leosam.com)
+
+ 说：
+                
+
+真的非常感谢！解决了从入行以来一直面临的垂直居中的大问题，在很多应用场景中可以实现。虽然负面性还有待发掘，真的是非常感谢博主！！！
+
+2016年12月 5日 22:45
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-369832)
+ | [引用](#comment-text)
+
+螃蟹
+
+ 说：
+                
+
+感谢阮老师无私教诲
+
+2016年12月13日 10:36
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-370287)
+ | [引用](#comment-text)
+
+Cody Constant
+
+ 说：
+                
+
+以前一直对flex模糊不清，终于决定攻破它，打开了好几篇教程，看完阮老师的后，彻底会用啦！谢谢您
+
+2016年12月17日 15:24
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-370505)
+ | [引用](#comment-text)
+
+dfb
+
+ 说：
+                
+
+我有个等高布局不懂，就是左边有一张1000多px高的图片，右边为文字区域。
+
+怎么让其当右边文字区域的高度小于浏览器高度时，左边的图片高度为浏览器高度，
+
+当右边文字区域的高度大于浏览器高度时，则左边的图片的高度为右边文字区域的高度？
+
+要求是：不用js控制，还有不能把左边的图片当背景图来使用
+
+2016年12月23日 09:51
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-370887)
+ | [引用](#comment-text)
+
+flowplay
+
+ 说：
+                
+
+flex-grow, flex-shrink,flex-basis可能不好理解，补充下，这里指的空间是主轴空间，是水平的还是垂直的，依flex-direction而定
+
+2016年12月26日 21:47
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-371122)
+ | [引用](#comment-text)
+
+[vinceok](http://vinceok.com)
+
+ 说：
+                
+
+>     引用zhishaofei3的发言：
+> 
+> 
+> 是按剩余空间算的，因为你里面有文字，所以刨去了文字宽度，你去掉文字就好了
+
+>     引用Silvers · Rayleigh的发言：
+> 
+> 
+> 这里是你理解错了，3个 li 平分下来每个是1/3。
+> 
+> 你想实现的2个相等，1个宽度是其他2个的两倍实际上就是4个 li 平分，其中2个合并成1个，所以每个 li 是1/4，也就是#list li:nth-child(2){flex-grow:3;}
+
+你说的很对，博主没有说清楚
+
+2017年1月 6日 10:40
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-371645)
+ | [引用](#comment-text)
+
+炉石不传说
+
+ 说：
+                
+
+>     引用chshouyu的发言：
+> 
+> 
+> 现在介绍有点晚了吧-_-#
+
+不晚，我就是刚刚来学习的，因为小程序出来了，学习一下布局
+
+2017年1月 9日 14:25
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-371815)
+ | [引用](#comment-text)
+
+The One
+
+ 说：
+                
+
+>     引用Silvers · Rayleigh的发言：
+> 
+> 
+> 这里是你理解错了，3个 li 平分下来每个是1/3。
+> 
+> 你想实现的2个相等，1个宽度是其他2个的两倍实际上就是4个 li 平分，其中2个合并成1个，所以每个 li 是1/4，也就是#list li:nth-child(2){flex-grow:3;}
+
+flex-grow分的是剩余的空间你要看你内容之外的空间
+
+2017年1月10日 10:44
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-371868)
+ | [引用](#comment-text)
+
+lightbee
+
+ 说：
+                
+
+>     引用广州哈哥的发言：
+> 
+> 
+> 阮老师，您好，我是0基础开始学习flex,今天看了你的这篇博文，发现有个地方好像你给弄反了。就是justify-content和align-items这两个属性。我试过了，其实，前者是设置项目在交叉轴上的对齐方式的，而后者是设置项目在主轴上的对齐方式的。
+
+没有错啊，你再试试看，或者是你理解错了吧。
+
+2017年1月26日 00:03
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-372311)
+ | [引用](#comment-text)
+
+ReedSUN
+
+ 说：
+                
+
+阮老师，在align-content属性中，您说 `align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。` 一开始我没太看明白，后来才发现这里说的应该是多行的对齐方式。我觉得在这里用行代替轴线更容易解释整个属性。
+
+2017年2月 9日 00:53
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-372583)
+ | [引用](#comment-text)
+
+Sherry
+
+ 说：
+                
+
+四、项目的属性       应该是h2标签吧，现在用的是h3标签
+
+2017年2月13日 11:04
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-372829)
+ | [引用](#comment-text)
+
+[我叫春](http://www.iamspring.cn)
+
+ 说：
+                
+
+使用align-content属性，如何定义多轴？
+
+求html代码，或者align-content的Demo
+
+2017年2月17日 09:54
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-373014)
+ | [引用](#comment-text)
+
+雨辰
+
+ 说：
+                
+
+这篇是我看到讲得最好的一篇
+
+2017年2月17日 14:44
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-373021)
+ | [引用](#comment-text)
+
+lihsai0
+
+ 说：
+                
+
+尝试了一下flex+单行省略号，发现盒子被撑开好多。
+
+2017年2月17日 22:44
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-373036)
+ | [引用](#comment-text)
+
+[艺米](http://mp.imemin.com)
+
+ 说：
+                
+
+您好，我试了一下align-content，将其设置成stretch，并不会把每行拉伸，填满容器高度。而是在每行下面留有相同高度的空白。能否确认一下？
+
+2017年2月21日 18:59
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-373244)
+ | [引用](#comment-text)
+
+[前段之路](http://asdasd)
+
+ 说：
+                
+
+非常好~讲的清楚明白
+
+2017年2月22日 11:43
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-373273)
+ | [引用](#comment-text)
+
+冬天
+
+ 说：
+                
+
+每次看到您的内容， 我嘴里默默来了一个句 阮大神~~~  
+
+2017年2月22日 14:33
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-373280)
+ | [引用](#comment-text)
+
+全栈攻城狮
+
+ 说：
+                
+
+每个例子都照着敲了一遍，真赞。敲完之后，对flex布局了解的也就差不多了。谢谢阮大神，如果不是你，我还困在MDN的文档里，犯糊涂呢。哈哈哈
+
+2017年2月22日 15:47
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-373284)
+ | [引用](#comment-text)
+
+夏目比丘
+
+ 说：
+                
+
+谢谢阮老师，您传授给我们的知识让我们收获很多
+
+2017年3月 8日 18:07
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-374224)
+ | [引用](#comment-text)
+
+youkelike
+
+ 说：
+                
+
+"多根轴线的对齐方式" 是不是指出现了多行item的情况，每行一根轴线，多行item就有多根轴线？
+
+2017年3月12日 18:04
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-374584)
+ | [引用](#comment-text)
+
+liaokai
+
+ 说：
+                
+
+浏览这篇文章就是一次赏心悦目的浏览体验，配图清爽明了，真希望我以后看到的文章都有这么好的浏览体验
+
+2017年3月27日 11:23
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-375499)
+ | [引用](#comment-text)
+
+JoKer
+
+ 说：
+                
+
+我测试加入了  align-items: flex-start;  子标签加入了align-self: flex-end; 惊人的发现 在不同的浏览器  flex-end  和flex-start 效果不一样  这要如何解决？我放在谷歌和Edege里 效果居然上下相反  
+
+2017年4月 1日 17:17
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-375792)
+ | [引用](#comment-text)
+
+[leon](http://leehao.xyz)
+
+ 说：
+                
+
+老师写的文章真的很清晰，期待您的续作。
+
+2017年4月 4日 15:53
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-375868)
+ | [引用](#comment-text)
+
+Rachel
+
+ 说：
+                
+
+老师的文章和配图很赞！
+
+2017年4月12日 16:08
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-376211)
+ | [引用](#comment-text)
+
+[王骞](https://daocaoren2008.github.io/)
+
+ 说：
+                
+
+总结的真好，条理清晰，便于理解和记忆。真是个有思想的人
+
+2017年4月14日 16:47
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-376313)
+ | [引用](#comment-text)
+
+[leon](http://blog.pyshell.cn)
+
+ 说：
+                
+
+仔细过了一遍真的很方便.
+
+2017年5月 1日 22:30
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-376818)
+ | [引用](#comment-text)
+
+牧羊人
+
+ 说：
+                
+
+有事没事就逛阮老师的博客，受益匪浅。
+
+2017年5月10日 09:04
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377001)
+ | [引用](#comment-text)
+
+[京川啟继FE](http://并没有个人网址_(:з」∠)_)
+
+ 说：
+                
+
+一讲就懂，很棒，超棒，非常棒；
+
+哪怕有些玩家吐槽进了阿里文章变得不精致了；这篇文章也远比网上泛滥的各种云里雾里的资料有用得多。
+
+感谢大大的分享√
+
+2017年5月16日 19:58
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377209)
+ | [引用](#comment-text)
+
+[JailBreak](http://vgee.cn)
+
+ 说：
+                
+
+将文章中提及的布局 全部实现了一遍，源码：
+
+[https://github.com/JailBreakC/flex-box-demo](https://github.com/JailBreakC/flex-box-demo)
+
+2017年5月23日 14:27
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377379)
+ | [引用](#comment-text)
+
+[nollyup](https://blog.plcent.com)
+
+ 说：
+                
+
+非常好的文章，详细明了
+
+2017年5月23日 17:03
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377391)
+ | [引用](#comment-text)
+
+阮一峰
+
+ 说：
+                
+
+@JailBreak：
+
+赞！ 我要把它加到教程里面。
+
+2017年5月24日 07:29
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377403)
+ | [引用](#comment-text)
+
+[Zen](http://www.huangmingxian.me)
+
+ 说：
+                
+
+我也来做点贡献，看完阮一峰老师的教学文章，临时做了个 flex 布局动态测试的 demo，支持 flex 所有的属性测试，希望能对大家有所帮助
+
+演示地址 : [https://ihuangmx.gitbooks.io/front-demo/content/zen-flex-demo.html#flex-布局在线测试](https://ihuangmx.gitbooks.io/front-demo/content/zen-flex-demo.html#flex-布局在线测试)
+
+源码：https://github.com/ihuangmx/zen-flex-online
+
+2017年5月25日 17:16
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377458)
+ | [引用](#comment-text)
+
+[JailBreak](http://vgee.cn)
+
+ 说：
+                
+
+@阮一峰：
+
+哈哈，多谢阮老师！
+
+2017年6月 1日 16:08
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377620)
+ | [引用](#comment-text)
+
+laiqi
+
+ 说：
+                
+
+阮一峰老师的教学文章真的太棒了，感谢有您，指路明灯
+
+2017年6月 1日 18:34
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377625)
+ | [引用](#comment-text)
+
+xxx
+
+ 说：
+                
+
+实现过之后发现    3.1 flex-direction属性    中的图中的效果和下面的文字描述顺序就不一致
+
+2017年6月 8日 15:13
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377762)
+ | [引用](#comment-text)
+
+柏运送
+
+ 说：
+                
+
+阮老师，flex布局，左边自适应，右边固定宽，但当页面缩小到一定比例后，左边不在自适应了，而是右边变小了，sapn的宽度好像不能一直按照70%的比例缩小下去
+
+    DOM3 event textInput
+
+        body{
+
+            padding:0;
+
+            margin:0;
+
+            font-size:0;
+
+        }
+
+        .box{
+
+            display: flex;
+
+        }
+
+        .d1{
+
+            flex:1;
+
+            border:1px solid blue;
+
+            margin-right:15px;
+
+        }
+
+        .d2{
+
+            width:300px;
+
+            border:1px solid red;
+
+            min-height:100vh;
+
+        }
+
+        .span{
+
+            display: inline-block;
+
+            width:70%;
+
+            border:1px solid red;
+
+            overflow: hidden;
+
+            white-space: nowrap;
+
+            text-overflow:ellipsis;
+
+            font-size:12px;
+
+        }
+
+        Loommodi cumque us repellendus unde veritatis? Beatae doloribus 
+
+2017年6月 8日 23:56
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377786)
+ | [引用](#comment-text)
+
+Alex Zou
+
+ 说：
+                
+
+3.1 flex-direction属性
+
+样式中 属性 和 下面示意图 中的顺序 不一致。 有阅读误导。
+
+图中顺序 对应为：
+
+flex-direction: column-reverse | column | row | row-reverse;
+
+2017年6月12日 17:51
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377905)
+ | [引用](#comment-text)
+
+小小柴
+
+ 说：
+                
+
+阮大神我发现flex-basis这个属性好像并不是主轴所占空间，如果我将主轴方向定为垂直排列flex-direction: column;再给他定义flex-basis的属性，结果我发现只有水平方向的大小在变，垂直方向无效果
+
+2017年6月14日 15:28
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377953)
+ | [引用](#comment-text)
+
+去去去
+
+ 说：
+                
+
+看完以后，加深了印象
+
+2017年6月14日 17:59
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-377960)
+ | [引用](#comment-text)
+
+老姚
+
+ 说：
+                
+
+谢谢您的教程
+
+整整两年了 即使到现在依然是非常好的react-native中文入门教程
+
+2017年7月17日 14:13
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-378734)
+ | [引用](#comment-text)
+
+Msea
+
+ 说：
+                
+
+真心感谢 阮一峰同学
+
+2017年7月26日 21:03
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-378970)
+ | [引用](#comment-text)
+
+[Lulin](https://github.com/lulinliao)
+
+ 说：
+                
+
+>     引用小小柴的发言：
+> 
+> 
+> 阮大神我发现flex-basis这个属性好像并不是主轴所占空间，如果我将主轴方向定为垂直排列flex-direction: column;再给他定义flex-basis的属性，结果我发现只有水平方向的大小在变，垂直方向无效果
+
+主轴就是水平方向的啊，垂直方向的叫做交叉轴。
+
+2017年7月27日 16:31
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-379017)
+ | [引用](#comment-text)
+
+Better
+
+ 说：
+                
+
+设为 Flex 布局以后，子元素的float属性没有失效呀。。。
+
+2017年7月31日 11:08
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-379110)
+ | [引用](#comment-text)
+
+Better
+
+ 说：
+                
+
+我自己看错了。。。[允悲]，设为 Flex 布局以后，子元素的float、clear和vertical-align属性将失效是OK的。
+
+2017年7月31日 11:13
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-379112)
+ | [引用](#comment-text)
+
+cshenger
+
+ 说：
+                
+
+我发现这个文章的亮点现在在评论区了，从15年的7月到17年的7月，整整跨了两年！！！
+
+2017年8月16日 11:09
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-379568)
+ | [引用](#comment-text)
+
+今晚打老虎
+
+ 说：
+                
+
+处于转型阶段的我，第一次看到这么详细的介绍，对于我来说就是雪中送炭啊！！！
+
+2017年9月 7日 17:26
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-380125)
+ | [引用](#comment-text)
+
+薛定谔的猫
+
+ 说：
+                
+
+>     引用cshenger的发言：
+> 
+> 
+> 我发现这个文章的亮点现在在评论区了，从15年的7月到17年的7月，整整跨了两年！！！
+
+不要大惊小怪，阮大师的文章一向如此，两年并不算多
+
+2017年9月13日 11:23
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-380335)
+ | [引用](#comment-text)
+
+korea
+
+ 说：
+                
+
+flex-direction这块配图顺序是不是还可以优化？容易误导人
+
+2017年9月18日 11:42
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-380560)
+ | [引用](#comment-text)
+
+ellen
+
+ 说：
+                
+
+vue里面使用justify-content：flex-end   无效
+
+2017年9月18日 17:40
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-380581)
+ | [引用](#comment-text)
+
+杨
+
+ 说：
+                
+
+纠正一下。当align-items : baseline的时候，子元素的vertical-align是有效的
+
+2017年9月21日 23:19
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-380715)
+ | [引用](#comment-text)
+
+薯条君与番茄酱
+
+ 说：
+                
+
+大爱 太实用的
+
+2017年9月22日 12:02
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-380729)
+ | [引用](#comment-text)
+
+一条不会发电的鳗鱼
+
+ 说：
+                
+
+>     引用longfei的发言：
+> 
+> 
+> 阮老师，那个item的flex-grow属性，我写了个demo
+> 
+> CSS:
+> 
+> body{margin:0;}
+> 
+> ul,li{margin:0; padding:0;}
+> 
+> li{list-style-type:none;}
+> 
+> #list{border:2px solid gold; height:500px; display:flex; flex-direction:row;}
+> 
+> #list li{font-family:"microsoft yahei"; font-size:50px; background:#C00; color:#fff; margin:2px; flex-grow:1;}
+> 
+> #list li:nth-child(2){flex-grow:2;}
+> 
+> <ul id="list">
+> 
+> <li>test1</li>
+> 
+> <li>test2</li>
+> 
+> <li>test3</li>
+> 
+> </ul>
+> 
+> 结果第2个li所占的宽度并不是其它li的2倍，为什么呢？比其它两个要大，但不足2倍。
+
+>     引用zhishaofei3的发言：
+> 
+> 
+> 是按剩余空间算的，因为你里面有文字，所以刨去了文字宽度，你去掉文字就好了
+
+zhishaofei3 说得对，确实是文字影响了item的宽度；
+
+如果要修改的话，考虑到 longfei的代码里面 现在只是修改了flex-grow而剩余两个用的是默认值（也就是flex-shrink:1;flex-basis:auto;）。
+
+可以根据 阮老师写的“建议优先使用flex这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。”，把代码修改成
+
+#list li{flex:1;}
+
+#list li:nth-child(2){flex:2;}
+
+这样显示出来就和没有文字的时候一样是两倍，不会因为文字影响了宽度；
+
+2017年9月26日 16:10
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-380894)
+ | [引用](#comment-text)
+
+xbup
+
+ 说：
+                
+
+想问一个问题
+
+如果我拥有一个高为500px的容器
+
+并flex-direction:row，flex-wrap:warp
+
+添加两个项目宽均为100%
+
+那么这两个项目会均分高,为什么
+
+即使我没有指定他们的高度
+
+2017年10月14日 17:43
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-381274)
+ | [引用](#comment-text)
+
+xbup
+
+ 说：
+                
+
+>     引用xbup的发言：
+> 
+> 
+> 想问一个问题
+> 
+> 如果我拥有一个高为500px的容器
+> 
+> 并flex-direction:row，flex-wrap:warp
+> 
+> 添加两个项目宽均为100%
+> 
+> 那么这两个项目会均分高,为什么
+> 
+> 即使我没有指定他们的高度
+
+经验证，flex-grow自动默认到了1
+
+2017年10月14日 18:03
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-381276)
+ | [引用](#comment-text)
+
+xbup
+
+ 说：
+                
+
+>     引用xbup的发言：
+> 
+> 
+> 经验证，flex-grow自动默认到了1
+
+即使不设置100%也会如此啊。。。。。。。。。。
+
+2017年10月14日 18:11
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-381277)
+ | [引用](#comment-text)
+
+[destiny](http://destinytaoer.cn)
+
+ 说：
+                
+
+阮老师，我做demo时，发现flex-wrap会把交叉轴的方向都改变了，垂直方向flex-start本来是顶部，变成了底部
+
+2017年10月16日 15:33
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-381332)
+ | [引用](#comment-text)
+
+nissa
+
+ 说：
+                
+
+>     引用Silvers · Rayleigh的发言：
+> 
+> 
+> 这里是你理解错了，3个 li 平分下来每个是1/3。
+> 
+> 你想实现的2个相等，1个宽度是其他2个的两倍实际上就是4个 li 平分，其中2个合并成1个，所以每个 li 是1/4，也就是#list li:nth-child(2){flex-grow:3;}
+
+这个分配还是不完全 等比1：2：3的
+
+2017年11月 9日 13:44
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-382184)
+ | [引用](#comment-text)
+
+Mr_yuan
+
+ 说：
+                
+
+css挂掉了啊。。页面变形了
+
+2017年11月14日 11:39
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-382311)
+ | [引用](#comment-text)
+
+红烧肉
+
+ 说：
+                
+
+align-content 这个东西的解释有问题，应该是多行，而不是多轴
+
+2017年11月20日 15:46
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-382524)
+ | [引用](#comment-text)
+
+上善若水2324
+
+ 说：
+                
+
+为什么不把您的文章整理成书籍呢？期待中
+
+2017年11月29日 14:42
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-382828)
+ | [引用](#comment-text)
+
+随旭东
+
+ 说：
+                
+
+flex-direction配图不走心啊
+
+2017年11月29日 15:49
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-382830)
+ | [引用](#comment-text)
+
+好人
+
+ 说：
+                
+
+居然不知道flex还有这么多属性,写的很好,虽然有人吐槽说什么进了阿里文章写得不如以前精致,不知道还要怎么精致,自己写不出来,还好意思吐槽别人的文章,有本事写个精简的,把链接发出来,不然就别指责别人,我也是长见识了
+
+2017年12月11日 15:45
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-383147)
+ | [引用](#comment-text)
+
+[文里](http://null)
+
+ 说：
+                
+
+很好，非常受用。之前看 css-tricks 的教程看得一头雾水，在这篇文章里理清了很多概念，卡住的一些问题也得到了解决。十分感谢博主。
+
+2017年12月18日 19:23
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-383315)
+ | [引用](#comment-text)
+
+断水流
+
+ 说：
+                
+
+文章写的很不错，配图很给力，简单明了。我看了很多阮老师的文章，有点不敢相信，感觉好像什么都会一样，学Python看得到教程，学前端出看得到教程，而且都还讲得挺不错。
+
+2017年12月21日 15:06
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-383426)
+ | [引用](#comment-text)
+
+EmmanuelAgui
+
+ 说：
+                
+
+>     引用小小柴的发言：
+> 
+> 
+> 阮大神我发现flex-basis这个属性好像并不是主轴所占空间，如果我将主轴方向定为垂直排列flex-direction: column;再给他定义flex-basis的属性，结果我发现只有水平方向的大小在变，垂直方向无效果
+
+flex-direction这个属性是容器container的属性，你外层容器设置flex-direction:column（此时主轴就是垂直方向）,在项目item里面设置flex-basis属性为不同值，这样主轴（即垂直方向）所占的大小就会变化。
+
+2017年12月22日 14:34
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-383472)
+ | [引用](#comment-text)
+
+hanzichi
+
+ 说：
+                
+
+也做了个直观的 demo，感谢阮老师 [https://hanzichi.github.io/2017/flex/index.html](https://hanzichi.github.io/2017/flex/index.html)
+
+2017年12月24日 14:44
+ | [#](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html#comment-383541)
+ | [引用](#comment-text)
+ 
+

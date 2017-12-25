@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "React Redux 入门教程2 中间件与异步操作"
-date:   2017-10-04 11:21:56 +0800
+title:  "React Redux 入门教程2 中间件与异步操作 (笔记)"
+date:   2017-10-08 11:21:56 +0800
 categories:  
 tags: 
     - react

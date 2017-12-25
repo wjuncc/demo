@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "React CSS Modules 用法教程 留言 (笔记)"
-date:   2017-10-06 04:05:10 +0800
+date:   2017-10-03 11:05:10 +0800
 categories: 
 tags:  
     - react
@@ -98,21 +98,13 @@ class是不是只能用驼峰的写法？能用className={style.pass-bar}的写�
 原来dva里面使用的就是这种方式，以前在css都没用到这些方法
        
 
-全局css样式表也会被处理，这个怎么解决
- 
- 
+全局css样式表也会被处理，这个怎么解决 
 
 @keyframes 怎么用:local   
                 
 
 请问引入cssmodule这个时候再引入第三方UI库就会导致第三方UI库也被改成哈希类名，但是第三方库的js却没有变，导致样式显示不出
- 
-  
-
-吃小锅米线
-
- 说：
-                
+      
 
 按照阮教授这么解释css modules的用法，我是不是可以在项目里定义一个全局的.css文件(例如app.css)，里面全部都是:global。然后在每个js里都引用一下(目的是确保统一的公共样式，以便以后要更换公共样式的时候，我只需要修改app.css就可以了)。然后在引一个属于自己的.css文件(用来编写:local的样式)。
 
