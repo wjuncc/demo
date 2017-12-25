@@ -376,4 +376,5 @@ npm run demo06
 
 蓝色的背景上有一个红色的`h1`。
 ![](https://i.imgur.com/R3YddlN.png)
+
 （完）
