@@ -31,7 +31,7 @@ cd css-modules-demos
 npm install
 npm run demo01
 ```
-http://localhost:8080
+http://localhost:8080  
 ![](https://i.imgur.com/kZbfJ6o.png)
 
 ## 一、局部作用域
