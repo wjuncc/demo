@@ -10,8 +10,6 @@ tags:
 
 tutorial from [CSS Modules 用法教程 - 阮一峰](http://www.ruanyifeng.com/blog/2016/06/css_modules.html)
 
-![](http://www.ruanyifeng.com/blogimg/asset/2016/bg2016061001.png)
-
 [CSS Modules](https://github.com/css-modules/css-modules) 功能单纯，仅局部作用域和模块依赖。
 
 
@@ -32,7 +30,6 @@ http://localhost:8080
 ## 一、局部作用域
 `class`用唯一随机名。
 
-下面是React组件`App.js`。
 demo01/components/App.js
 ```js
 ```
