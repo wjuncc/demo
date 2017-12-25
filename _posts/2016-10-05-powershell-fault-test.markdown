@@ -1,14 +1,15 @@
 ---
 layout: post
-title:  "修改U盘 gpedit.msc powershell"
-date:   2017-10-05 21:17:32 +0800
+title:  "powershell fault test"
+date:   2016-10-05 21:17:32 +0800
 categories:  
 tags:  
     - powershell   
 ---
 
-# 修改U盘 gpedit.msc powershell #
+# 没有成功 #
 
+修改U盘 gpedit.msc powershell
 
 #### 参考 ####
 
