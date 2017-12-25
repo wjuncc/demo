@@ -35,20 +35,12 @@ http://localhost:8080
 ![](https://i.imgur.com/kZbfJ6o.png)
 
 ## 一、局部作用域
+用唯一的`class`的名字，不会与其他选择器重名。这就是 CSS Modules 的做法。
 
-CSS的规则都是全局的，任何一个组件的样式规则，都对整个页面有效。
-
-产生局部作用域的唯一方法，就是使用一个独一无二的`class`的名字，不会与其他选择器重名。这就是 CSS Modules 的做法。
-
-下面是一个React组件[`App.js`](https://github.com/ruanyf/css-modules-demos/blob/master/demo01/components/App.js)。
-
->     
->     import React from 'react';
->     import style from './App.css';
->     
->     export default ()=>{return(<h1 className={style.title}>
->           Hello World
->         </h1>);};
+下面是一个React组件`App.js`。
+demo01/components/App.js
+```js
+```
 
 上面代码中，我们将样式文件[`App.css`](https://github.com/ruanyf/css-modules-demos/blob/master/demo01/components/App.css)输入到`style`对象，然后引用`style.title`代表一个`class`。
 
