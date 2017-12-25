@@ -15,11 +15,9 @@ tutorial from [CSS Modules 用法教程 - 阮一峰](http://www.ruanyifeng.com/b
 [CSS Modules](https://github.com/css-modules/css-modules) 功能单纯，仅局部作用域和模块依赖。
 
 
-## 零、示例库
+## 零、安装Demo
 
-[6个Demo](https://github.com/ruanyf/css-modules-demos)。
-
-克隆示例库。安装依赖。  
+[6个Demo](https://github.com/ruanyf/css-modules-demos)  
 powershell  
 ```powershell
 cd E:\n\learn\react\css
