@@ -8,9 +8,6 @@ tags:
 
 ---
 
-
-## learning flow  ##
-
 ## Obligatory ##
 - ES6 语法：[教程](http://es6.ruanyifeng.com/)
 - Babel：[教程](http://www.ruanyifeng.com/blog/2016/01/babel.html)
