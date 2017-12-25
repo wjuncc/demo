@@ -46,9 +46,10 @@ export default () => {
       Hello World
     </h1>
   );
-};
-
+}; 
 ```
+
+这里的style，指向`App.css`,style.title,指向App.css中的class定义`.title {`。 
 
 将样式文件`App.css`输入到`style`对象，然后引用`style.title`代表一个`class`。
 
