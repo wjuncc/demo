@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Tools of Leaning 1 generate markdowns files from existed git tutorials"
+title:  "Tools of Leaning"
 date:   2017-10-24 08:42:42 +0800
 categories:  
 tags: 
@@ -9,13 +9,19 @@ tags:
 
 ---
 
+## ACP Tools  ##
+These tools help me to speed up 
+the learning process of React.
 
-modify file name by tags in markdown files.
+### 1 keeping the same  ###
+
+* One program to keep the file names the same with the `title` tag in jekyll markdown files.
+
 
 ![](https://i.imgur.com/VQVi095.png)
-## ACP Tools ##
-Generate bat markdown files from existed git tutorials, in order to speed up 
-the learning process. I should modify the `demo.markdown` before running if necessarily. 
+### 2 generate the MD files from git page ###
+* One program to generate bat markdown files from existed git tutorials. 
+* Sometimes I should modify the `demo.markdown` before running if necessarily. 
 
 software: Flash Developer 
 ### source code ###
