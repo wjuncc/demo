@@ -42,11 +42,15 @@ demo01/components/App.js
 ```js
 ```
 
-上面代码中，我们将样式文件[`App.css`](https://github.com/ruanyf/css-modules-demos/blob/master/demo01/components/App.css)输入到`style`对象，然后引用`style.title`代表一个`class`。
+将样式文件`App.css`输入到`style`对象，然后引用`style.title`代表一个`class`。
 
+demo01/components/App.css
+```css
 >     .title {color: red;}
+```
 
-构建工具会将类名`style.title`编译成一个哈希字符串。
+
+构建工具会将类名`style.title`编译成哈希字符串。
 
 >     <h1class="_3zyde4l1yATCOkgn-DBWEL">
 >       Hello World
@@ -54,11 +58,13 @@ demo01/components/App.js
 
 `App.css`也会同时被编译。
 
+```css
 >     ._3zyde4l1yATCOkgn-DBWEL {color: red;}
+```
 
-这样一来，这个类名就变成独一无二了，只对`App`组件有效。
+类名变成独一无二，只对`App`组件有效。
 
-CSS Modules 提供各种[插件](https://github.com/css-modules/css-modules/blob/master/docs/get-started.md)，支持不同的构建工具。本文使用的是 Webpack 的[`css-loader`](https://github.com/webpack/css-loader#css-modules)插件，因为它对 CSS Modules 的支持最好，而且很容易使用。顺便说一下，如果你想学 Webpack，可以阅读我的教程[`Webpack-Demos`](https://github.com/ruanyf/webpack-demos)。
+CSS Modules 提供各种[插件](https://github.com/css-modules/css-modules/blob/master/docs/get-started.md)，支持不同的构建工具。本文使用的是 Webpack 的[`css-loader`](https://github.com/webpack/css-loader#css-modules)插件，因为它对 CSS Modules 的支持最好，而且很容易使用。
 
 下面是这个示例的[`webpack.config.js`](https://github.com/ruanyf/css-modules-demos/blob/master/demo01/webpack.config.js)。
 
