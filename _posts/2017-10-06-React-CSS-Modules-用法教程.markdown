@@ -20,18 +20,34 @@ powershell
 ```powershell
 cd E:\n\learn\react\css
 git clone https://github.com/ruanyf/css-modules-demos.git
-cd css-modules-demos 
+Rename-Item css-modules-demos ryf
+cd ryf
 npm install
 npm run demo01
+cd E:\n\learn\react\css\ryf
 ```
+powershell 重命名文件夹  
 http://localhost:8080  
 ![](https://i.imgur.com/kZbfJ6o.png)
 
+Powershell to create and make as script to reflect python file. 
+In this way that the ui-interface could be created handy and easily in 
 ## 一、局部作用域
 `class`用唯一随机名。
 
 demo01/components/App.js
 ```js
+import React from 'react';
+import style from './App.css';
+
+export default () => {
+  return (
+    <h1 className={style.title}>
+      Hello World
+    </h1>
+  );
+};
+
 ```
 
 将样式文件`App.css`输入到`style`对象，然后引用`style.title`代表一个`class`。
