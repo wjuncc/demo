@@ -256,38 +256,6 @@ CSS Modules 支持使用变量，不过需要安装 PostCSS 和 [postcss-modules
 
 （完）
 
-## 相关文章
-
-- **2017.11.15: [Bash 脚本 set 命令教程](http://www.ruanyifeng.com/blog/2017/11/bash-set.html)**
-
-                              服务器的开发和管理离不开 Bash 脚本，掌握它需要学习大量的细节。
-
-                           
-
-- **2017.11.02: [双因素认证（2FA）教程](http://www.ruanyifeng.com/blog/2017/11/2fa-tutorial.html)**
-
-                              所谓认证（authentication）就是确认用户的身份，是网站登录必不可少的步骤。
-
-                           
-
-- **2017.10.24: [CSS 框架 Bulma 教程](http://www.ruanyifeng.com/blog/2017/10/bulma.html)**
-
-                              网页样式需要大量时间开发，最省事的方法就是使用 CSS 框架。
-
-                           
-
-- **2017.10.11: [开源许可证教程](http://www.ruanyifeng.com/blog/2017/10/open-source-license-tutorial.html)**
-
-                              作为一个开发者，如果你打算开源自己的代码，千万不要忘记，选择一种开源许可证（license）。
-
-                           
-
-## 广告[（购买广告位）](/support.html)
-
-[![妙味课堂](http://www.ruanyifeng.com/blog/images/sup_miaov_201711.jpg)](http://www.miaov.com/index.php/example/exampleList?utm_source=ruanyifeng&amp;)
-
-[![腾讯课堂](http://www.ruanyifeng.com/blog/images/sup_qqke_20171202.png)](https://ke.qq.com/next/index.html?from=175763)
-
 ## 留言（45条）
 
 小俞
