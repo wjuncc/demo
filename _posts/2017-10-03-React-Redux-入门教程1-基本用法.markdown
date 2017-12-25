@@ -952,48 +952,16 @@ Grubby
 这个很简单，直接使用subscribe会把你要监听的事件添加到数组，但是这个方法本身返回值是也是一个方法（简称unSubscribe方法），执行这个unSubscribe会移除监听事件，所以作者在写这个方法时候通过filter过滤，执行的时候将之前本身已经添加进数组的事件名移除数组。
 
         
-
-2016年11月 5日 13:31
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-367819)
- | [引用](#comment-text)
-
-tingliang
-
- 说：
-                
+   
 
 其实就是Erlang的思想
-
-2016年11月 9日 16:46
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-368076)
- | [引用](#comment-text)
-
-[Banz](http://waketu.com)
-
- 说：
-                
+  
 
 很好的文章，这些目前都用上了
 
-2016年11月11日 10:28
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-368156)
- | [引用](#comment-text)
-
-HEro_Tan
-
- 说：
                 
 
 用上了，谢谢！看一遍就有很好的了解！教程行云流水！
-
-2016年11月23日 18:31
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-369013)
- | [引用](#comment-text)
-
-laden666666
-
- 说：
-                
 
 Redux 的设计思想很简单，就两句话。
 
@@ -1003,13 +971,6 @@ Redux 的设计思想很简单，就两句话。
 
 这里面的“所有的状态，保存在一个对象里面。”，也包括components 的state吗？
 
-2016年11月24日 18:37
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-369110)
- | [引用](#comment-text)
-
-shan
-
- 说：
                 
 
 const Counter = ({ value }) => (
@@ -1027,47 +988,18 @@ const Counter = ({ value }) => (
 1.value通过解构赋值，但是onIncrement和onDecrement怎么取到值？
 
 2.三个元素不是要放在一个div里面吗
-
-2016年11月28日 16:51
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-369375)
- | [引用](#comment-text)
-
-keminu
-
- 说：
-                
+       
 
 state不是应该对应每个view吗？全局只有一个store，但是可以有多个state吗？您在第五部分说全局只有一个state？
 
-2016年12月 1日 10:03
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-369527)
- | [引用](#comment-text)
-
-letxxt
-
- 说：
                 
 
 ha,看了阮老师的教程，终于把redux搞懂了
-
-2016年12月11日 12:58
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-370182)
- | [引用](#comment-text)
-
-李建文
-
- 说：
-                
+        
 
 最后一个例子，Counter组件中，传入的参数不应该是{value} ,应该是{value,onIncrement,onDecrement}吧，不然，经实测，函数总报错onIncrement和onDecrement未定义。
 
 还有一个问题，这里之所以传入一个对象，是理解为对象的解构赋值吗，这个对象与Counter组件的属性对象相对应？
-
-2016年12月14日 11:38
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-370383)
- | [引用](#comment-text)
-
-Andy
 
  说：
                 
@@ -1181,45 +1113,10 @@ function addTodo(text) {
 
 const action = addTodo('Learn Redux');
 
-2017年2月 9日 13:05
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-372615)
- | [引用](#comment-text)
-
-思密达
-
- 说：
-                
-
->     引用子龙的发言：
-> 
-> 
-> 给网站整个返回顶部的功能啊
-
 你把井号后面的字符删掉不就上去了啊
-
-2017年2月 9日 13:06
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-372616)
- | [引用](#comment-text)
-
-neko
-
- 说：
-                
-
->     引用思密达的发言：
-> 
-> 
-> 你把井号后面的字符删掉不就上去了啊
 
 一口老血
 
-2017年2月 9日 14:10
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-372623)
- | [引用](#comment-text)
-
-檀越
-
- 说：
                 
 
 const Counter = ({ value }) => (
@@ -1255,13 +1152,6 @@ const render = () => {
 
 这里面的 Counter 又是一个 什么东西？
 
-2017年2月11日 16:22
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-372736)
- | [引用](#comment-text)
-
-gaowenzhen
-
- 说：
                 
 
 阮老师好，我查看了很多地方都没发现es6里的 ...三个点的写法您有时间时帮忙补充一下这方面的知识感谢，再次从您的播客中又得到知识财富
@@ -1275,15 +1165,7 @@ const userReducer =(state={},action) => {
   return state
 
 }
-
-2017年2月17日 12:38
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-373017)
- | [引用](#comment-text)
-
-阮哥
-
- 说：
-                
+   
 
 >     引用刀尖的发言：
 > 
