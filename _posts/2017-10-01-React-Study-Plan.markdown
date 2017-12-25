@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "React Study Plan"
-date:   2017-10-24 07:10:42 +0800
+date:   2017-10-01 07:10:42 +0800
 categories:  
 tags: 
     - react
