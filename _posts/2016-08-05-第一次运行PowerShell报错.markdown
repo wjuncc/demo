@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "第一次运行PowerShell报错"
-date:   2017-10-05 21:17:32 +0800
+date:   2016-08-05 21:17:32 +0800
 categories:  
 tags: 
     - powershell

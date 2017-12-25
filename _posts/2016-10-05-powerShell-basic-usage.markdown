@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "powerShell basic"
+title:  "powerShell basic usage"
 date:   2016-10-05 21:17:32 +0800
 categories:  
 tags: 
