@@ -1321,14 +1321,6 @@ Mr.Ren
 
 这是一个ES6语法！！！！
 
-2017年2月27日 11:51
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-373509)
- | [引用](#comment-text)
-
-平凡
-
- 说：
-                
 
 import { combineReducers } from 'redux';
 
@@ -1345,37 +1337,6 @@ const chatReducer = combineReducers({
 export default todoApp;
 
 最后一行有笔误，export的不是todoApp，而应该是chatReducer
-
-2017年3月 8日 20:12
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-374228)
- | [引用](#comment-text)
-
-前端小白白
-
- 说：
-                
-
-很好，很受益，一直在看阮大神的教程
-
-2017年3月21日 11:20
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-375184)
- | [引用](#comment-text)
-
-勤劳的小叶酱
-
- 说：
-                
-
-createStore简单实现，道破天机阿
-
-2017年3月30日 15:06
- | [#](http://www.ruanyifeng.com/blog/2016/09/redux_tutorial_part_one_basic_usages.html#comment-375676)
- | [引用](#comment-text)
-
-李同钱
-
- 说：
-                
 
 我整理看了下，感觉就是一个基于订阅发布模式，这种模式，如果在每个组件中都存在大量的dispatch，对后续维护，个人觉得很难
 
