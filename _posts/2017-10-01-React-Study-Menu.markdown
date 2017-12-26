@@ -1,18 +1,12 @@
 ---
 layout: post
-title:  "React Study Plan"
+title:  "React Study Menu"
 date:   2017-10-01 07:10:42 +0800
 categories:  
 tags: 
     - react
 
 ---
-
-There are two simple ways to get the totally javscript definition at once: one is the Java JDK in android default package, the other is the virtual file in Websotrm software. 
-
-The old way which has been proved improperty, writing a web crawler to navigate the javascript doc site and extract the html page will become a swamp and bring you to the Abyss. The real difficult task is the data cleanning. Each webpages strcture is different from one another. The documents dont have a guaranty of having the full definition resolved.
-
-Maybe markdown is good document structure, but i have never found any javascript document in markdown.
 
 
 ## Tools To Speed Up The Learning Process ##
@@ -61,3 +55,4 @@ Maybe markdown is good document structure, but i have never found any javascript
 
 * [React 技术栈系列教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2016/09/react-technology-stack.html)
 * [React Router 使用教程 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2016/05/react_router.html)
+
