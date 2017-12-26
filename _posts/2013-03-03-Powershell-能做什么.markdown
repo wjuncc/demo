@@ -3,7 +3,9 @@ layout: post
 title:  "Powershell 能做什么"
 date:   2013-03-03 14:01:12 +0800
 categories: jekyll update
-cats: Powershell
+cats: 
+    - powershell
+
 ---
 
 

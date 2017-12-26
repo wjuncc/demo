@@ -2,8 +2,10 @@
 layout: post
 title:  "win7 安装 powerShell3"
 date:   2013-03-04 14:01:12 +0800
-categories: jekyll update
-cats: Powershell
+categories: 
+cats: 
+    - powershell
+
 ---
 
 # win7 安装 powerShell3 #

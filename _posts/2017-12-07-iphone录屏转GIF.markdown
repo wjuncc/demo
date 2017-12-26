@@ -3,7 +3,9 @@ layout: post
 title:  "iphone录屏转GIF"
 date:   2017-12-07 22:52:41 +0800
 categories:  public
-tags: gif ffmpeg iphone
+tags: 
+    - ffmpeg
+
 ---
 
 ## 小结 ##
@@ -222,13 +224,6 @@ CVZK3966-32-320-compress.gif   26M
 	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=1,transpose=1" -y  CVZK3966-cut-90-0.mp4 
 	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=2,transpose=2" -y  CVZK3966-cut-90-0.mp4   
 	ffmpeg -i CVZK3966-cut.mp4 -vf "transpose=3,transpose=3" -y  CVZK3966-cut-90-0.mp4  
-
-### 检查器 ###
-目的： 用来检查过往项目的网页材料准备。是否完成。 
-x=未完成，1=已经完成
-![一个检查器](https://i.imgur.com/aX3hyY8.png) 
-工具：python2.7+powershell3.0  +acp1.0   
-FlashDevelop 4.6.4.1 for .net2.0  
 
 
 使用sharex上传图片。  

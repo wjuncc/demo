@@ -15,7 +15,7 @@ win7，win8 测试通用
 * shareX - 截图+录屏+上传一次搞定
 * Listary - 文件搜索
 * Everything 1.2.371  -  文件搜索
-* FileLocator Pro - 文件内容搜索
+* FileLocator Pro  (8.2.2738.1) - 文件内容搜索
 * VMware Workstation：虚拟机
 * diffuse：文件比较
 * 7-Zip 压缩解压

@@ -17,13 +17,20 @@ Maybe markdown is good document structure, but i have never found any javascript
 
 one way to in webstorm:
 
-File -> Settings -> Languages&Frameworks -> Javascript -> Libraries，在右侧找到Download，下拉选择TypeScript community stubs，然后滚动找到node，点击Download即可。
+`File` -> `Settings` -> `Languages&Frameworks` -> `Javascript` -> `Libraries`，  
+在右侧找到Download，下拉选择 `TypeScript community stubs`，然后滚动找到`node`，点击`Download`即可。
 
 abbrev	https://github.com/DefinitelyTyped/DefinitelyTyped/raw/master/types/abbrev/
 
 node-7z	https://github.com/DefinitelyTyped/DefinitelyTyped/raw/master/types/node-7z/
 
 
+![](https://i.imgur.com/OlpIffP.gif)  
+copy the address form the `Edit Library` panel.
+```
 http_github.com_DefinitelyTyped_DefinitelyTyped_raw_master_types_node_index.d.ts	Debug
-
+```
+Replace underscore with slash:
+```
 https://github.com/DefinitelyTyped/DefinitelyTyped/raw/master/types/node/inspector.d.ts	Debug
+```
