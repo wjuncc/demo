@@ -11,6 +11,8 @@ tags:
 
 原文 [React Higher Order Components in depth](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e)
 
+## 小结 ##
+* 所谓高阶组件，HOC，就是加了个套，在这个保护层里，你能做些手脚，从外面看好像你隐藏得很好，没有人发现，就好像什么都没有发生。在里面，你尽干些偷偷摸摸的事。做了你之前想做而不能做的事情。比如，改写静态的props。
 
 ## 概述 ##
 **笔记:**  

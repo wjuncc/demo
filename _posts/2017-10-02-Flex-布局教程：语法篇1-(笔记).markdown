@@ -10,6 +10,8 @@ tags:
 
 tutorial from [2015年7月10日 Flex 布局教程：语法篇 - 阮一峰](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 
+In face , flex is not belong to react technologies, is one css skill.
+
 [blog with good transition effects](http://vgee.cn)
 
 demo from [git](https://github.com/JailBreakC/flex-box-demo)
