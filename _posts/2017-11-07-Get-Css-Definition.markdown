@@ -17,7 +17,7 @@ Effect:
 [](https://www.w3.org/TR/css-flexbox-1/)
 In Git, I found a project names [CSS Validator Testsuite]() which could be the source of Css Definition. This project was created by w3c 4 years ago.
 
-### Something maybe useful: ###
+### Something useful: ###
 
 * [tutorialspoint](https://www.tutorialspoint.com/css/css_azimuth.htm)
 * [w3schools](https://www.w3schools.com/cssref/css_ref_aural.asp)
