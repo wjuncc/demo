@@ -17,26 +17,26 @@ Effect:
 [](https://www.w3.org/TR/css-flexbox-1/)
 In Git, I found a project names [CSS Validator Testsuite]() which could be the source of Css Definition. This project was created by w3c 4 years ago.
 
-### Something useful: ###
 
-* [tutorialspoint](https://www.tutorialspoint.com/css/css_azimuth.htm)
-* [w3schools](https://www.w3schools.com/cssref/css_ref_aural.asp)
-
-Then download the project code:
+### Step1 ###
+Download the project code:
  
 ```ps
 cd E:\n\learn\css
 git clone https://github.com/w3c/css-validator-testsuite.git
 
 ```
+
+
+### Step2 ###
+
 and local directory:   
 E:\n\learn\css\css-validator-testsuite\properties\positive\background-color
 
 [search in w3c](https://github.com/search?p=2&q=org%3Aw3c+flex-direction&type=Code)
 flex-direction
 css-validator-testsuite/properties/positive/flex-direction/css3/001.css
-E:\n\learn\css\css-validator-testsuite\properties\positive
-
+`E:\n\learn\css\css-validator-testsuite\properties\positive`
 
 read the content of each text 
 
@@ -63,15 +63,16 @@ about `background-color`
 At last export all as file.
 
 ![](https://i.imgur.com/3mtOV4E.png)
-
+![](https://i.imgur.com/xjxn1By.png)   
+from `E:\n\learn\css\css-validator-testsuite\properties\positive\align-content\css3\001.css` 
+to `E:\n\learn\css\css-validator-testsuite\properties\v66\out\Valign_content.as`  
 ![](https://i.imgur.com/Uw6cKHm.png)
 
-
-In this way, I get the   
-![](https://i.imgur.com/Oss4SA4.png)
-
+## Step3 Debug ##
 But there are several mistakes :  
 ### Error from Parentheses,  Error from Quotation marks   ###
+from `E:\n\learn\css\css-validator-testsuite\properties\positive\content\css3\001.css` 
+to `E:\n\learn\css\css-validator-testsuite\properties\v66\out\Vcontent.as`
 
 Before:
 ![](https://i.imgur.com/HWW0e92.png)
@@ -84,7 +85,7 @@ After:
 #### Error from Number:   ####
 
 from `E:\n\learn\css\css-validator-testsuite\properties\positive\z-index\css21\001.css` 
-to `E:\n\learn\css\css-validator-testsuite\properties\v66\out\Vz_index.as`
+to `E:\n\learn\css\css-validator-testsuite\properties\v66_doCss\out\Vz_index.as`
 ![](https://i.imgur.com/hnERvyd.png)
 
 
@@ -96,11 +97,12 @@ After:
 
 
 
-from `E:\n\learn\css\css-validator-testsuite\properties\positive\top\css3\001.css` 
-to `E:\n\learn\css\css-validator-testsuite\properties\v66\out\Vtop.as`
 
 #### Error from Percent Sign :   ####
+from `E:\n\learn\css\css-validator-testsuite\properties\positive\top\css3\001.css`   
+to `E:\n\learn\css\css-validator-testsuite\properties\v66_doCss\out\Vtop.as`  
 Before:
 ![](https://i.imgur.com/LppHX0I.png)
 
-After:
+After:  
+![](https://i.imgur.com/m1ICRKB.png)

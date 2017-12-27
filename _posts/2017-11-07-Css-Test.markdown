@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "Css Test"
+date:   2017-11-08 14:37:49 +0800
+categories:  
+tags: 
+    - powershell
+
+---
+
+Tesify the css flow in developing enviroment.
+
+Editing and debuging the css compiler.
+
+Translate from as to css:  
+![](https://i.imgur.com/2tDxoH2.png)
+
+![](https://i.imgur.com/RzlDQy3.gif)
+
+Auto Record screen as Gif. 
+
+preparing:
+
+1. open shareX.exe, set the keyword for `record screen on window as gif`, likes `shift+c`.
+
+programming:
+
+1. active the chrome window
+2. put the chrome window as a top window.
+3. press shift+c by `autoIt` or `AutoHotkey`, active the self-defined command of shareX
+4. copy the text from system clipboard, beacause shareX set the url to system clipboard after uploaded gif.   
+![](https://i.imgur.com/PisTEej.gif)
+### Ref ###
+
+* [tutorialspoint](https://www.tutorialspoint.com/css/css_azimuth.htm)
+* [w3schools](https://www.w3schools.com/cssref/css_ref_aural.asp)
