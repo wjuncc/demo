@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Powershell Winform 指南 (实战篇)"
-date:   2017-12-07 22:52:41 +0800
+date:   2017-11-07 22:52:41 +0800
 categories:  public
 tags: 
     - powershell
@@ -17,3 +17,4 @@ path directory:
 ```
 E:\n\wj\171207_blogAuto\v66
 ```
+

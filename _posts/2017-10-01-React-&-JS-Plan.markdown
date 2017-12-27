@@ -20,17 +20,7 @@ E:\n\wj\workframe\android-20\org\w3c
 
 CSS define
 
-[search in w3c](https://github.com/search?p=2&q=org%3Aw3c+flex-direction&type=Code)
-flex-direction
-css-validator-testsuite/properties/positive/flex-direction/css3/001.css
-E:\n\learn\css\css-validator-testsuite\properties\positive
 C:\Program Files (x86)\91 Wireless\AppleAssist\
-```ps
-cd E:\n\learn\css
-git clone https://github.com/w3c/css-validator-testsuite.git
-
-```
-[](https://www.w3.org/TR/css-flexbox-1/)
 
 ### one way to in webstorm: ###
 
