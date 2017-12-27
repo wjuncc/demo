@@ -10,6 +10,10 @@ tags:
 
 ### Get Css Definition  ###
 
+Effect:
+
+![](https://i.imgur.com/J9hYl0N.gif)
+
 [](https://www.w3.org/TR/css-flexbox-1/)
 In Git, I found a project names [CSS Validator Testsuite]() which could be the source of Css Definition. This project was created by w3c 4 years ago.
 
