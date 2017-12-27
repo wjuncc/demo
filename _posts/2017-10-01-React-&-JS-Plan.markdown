@@ -14,11 +14,29 @@ The old way which has been proved improperty, writing a web crawler to navigate 
 
 Maybe markdown is good document structure, but i have never found any javascript document in markdown.
 
+directory : 
 
-one way to in webstorm:
+E:\n\wj\workframe\android-20\org\w3c
+
+CSS define
+
+[search in w3c](https://github.com/search?p=2&q=org%3Aw3c+flex-direction&type=Code)
+flex-direction
+css-validator-testsuite/properties/positive/flex-direction/css3/001.css
+E:\n\learn\css\css-validator-testsuite\properties\positive
+C:\Program Files (x86)\91 Wireless\AppleAssist\
+```ps
+cd E:\n\learn\css
+git clone https://github.com/w3c/css-validator-testsuite.git
+
+```
+[](https://www.w3.org/TR/css-flexbox-1/)
+
+### one way to in webstorm: ###
 
 `File` -> `Settings` -> `Languages&Frameworks` -> `Javascript` -> `Libraries`，  
 在右侧找到Download，下拉选择 `TypeScript community stubs`，然后滚动找到`node`，点击`Download`即可。
+
 
 abbrev	https://github.com/DefinitelyTyped/DefinitelyTyped/raw/master/types/abbrev/
 
