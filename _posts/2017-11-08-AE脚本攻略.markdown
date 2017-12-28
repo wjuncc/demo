@@ -1,0 +1,77 @@
+---
+layout: post
+title:  "AE脚本攻略"
+date:   2015-11-08 18:30:21 +0800
+categories:  
+tags:
+    - ae
+ 
+---
+
+    
+adobe premiere sdk
+Windows
+Microsoft Windows 7 64, and Visual Studio 2010 SP1
+
+# 第一章 -- 概述 #
+## 1.1 数据源 ##
+
+AE的数据源（官方的帮助文档PDF格式）有2份文档，(文件位置：BOOK\000\adobe)
+一份是讲AE内部元素，一份是讲AE界面元素
+After-Effects-CS6-Scripting-Guide.pdf   （AE内部元素，例如，合成，时间轴）
+JavaScript-Tools-Guide-CC.pdf   （AE界面元素，比如写文件，和PS交互，Socket）
+这2块内容，虽然分成2个文档，但是，在实际写代码的时候，不分彼此。
+--------------------------------------------
+
+## 1.2 版本更新 ##
+
+注意，不同的AE版本，代码有变化，
+例如，读取文件，CS4和CS5不一样，CS5换了一套写法（Adobe很讨厌，在github上可以搜索到2种写法）
+比如：
+CS4，写作
+var theFile = filePutDialog("Save the text file.", "untitled.txt", "TEXT txt");
+CS5，写作
+File.open("窗口名","*.txt") 
+这种差异，要检查AE的日志更新文档（http://www.adobe.com/devnet/aftereffects.html）
+    
+    --------------------------------------------  
+      
+## 1.3 文档的安排 ##
+
+代码文件+必要的PDF文件，做SVN，放在py/adobe文件夹下
+原始PDF文件+SDK，不做SVN，放在iBook目录下，
+
+    --------------------------------------------  
+
+##  1.4 数据源的过滤，提纯，和映射 ##
+ 
+###  1.4.1 技术选型 ###
+文档的解析，目前，使用 python的 pyQuery （简写pq）
+用python做爬虫，所用到的解析库只有2个， pyQuery 和 beautifySoup
+pyQuery 远胜于 beautifySoup， 
+ 
+###  1.4.2 现有问题和暂时解决方案 ###
+
+数据不纯，和数据结构错误。
+
+我在做《AE的帮助文档PDF》转AS数据的时候，  用Acrobat软件的导出的html文件，在2个地方出了篓子：
+1）是共性问题（所有电子书的处理都会遇到这样的问题），就是标题和页脚，
+这个我是用正则，找到字符串特征，替换字符串节点。（正则是效率最高的解决方案）
+** 但这只是解决了AE这个文档的问题，
+在遇到其他文档的时候，用这种办法，得重新判断字符串，所以说，这种做法，没有从根本上解决标题和页脚
+
+2）是个性问题（不知道在其他文档会不会发作）——文件结构错乱，（Adobe埋下的坑）
+可能是<li><p>的节点结构的原因，在PDF里面，本来是平行结构的<p>标签，导出成HTML之后，会变成多个深度嵌套的<p>标签。
+我只好在，删除所有<ul><li>节点， 幸好用了 pyQuery 来解析， 如果是 beautifySoup， 可能不好办
+  
+###  1.4.3 可能的解决方案 ###
+
+Acrobat脚本的文件解析，可能是另一种出路
+
+
+
+#### 参考 ####
+* [Premiere Pro Developer Center - Adobe Developer Connection](http://www.adobe.com/devnet/premiere/sdk/cc.html)
+* [空间: Premiere Pro SDK -Adobe Community](https://forums.adobe.com/community/premiere/sdk/content?filterID=contentstatus[published]~objecttype~objecttype[thread])
+* [Premiere Pro & After Effects插件开发调试方法 - 24K纯开源 - 博客园](http://www.cnblogs.com/csuftzzk/p/after_effects_debugging_in_visual_studio.html)
+* [Python爬虫辅助利器PyQuery模块的安装使用攻略](http://www.jb51.net/article/82955.htm)

@@ -9,37 +9,29 @@ tags:
 ---
 
 
+![](https://i.imgur.com/gBT8F6j.gif)
 
-### Error ###
-no `Set` here:  
-```powershell
-Set-Variable : 无法将参数绑定到参数“Name”，因为该参数是空值。
-+     Set $arr = python E:\n\wj\171207_blogAuto\v66_powershell\acp____\Build_power ...
-```
-Delete `Set` 
-
-
+Here are several points in developing the tool sets: 
+## Knowleadge ##
+### How to Alert Message In Powershell ###
+The code `echo 123`, cant process in the block of event-script but global scope.  
+Only `messagebox in winform can show in the block of event-script.  
 ```powershell
 addButton $Form $count $label {python $script} 
 ```
 
 ```powershell
-addButton $Form $count $label {python "$script"} 
-
+addButton $Form $count $label {python "$script"}
 ```
 
-![](https://i.imgur.com/gBT8F6j.gif)
 
+### Error ###
+no `Set` here, Delete `Set`  :  
+```powershell
+Set-Variable : 无法将参数绑定到参数“Name”，因为该参数是空值。
++     Set $arr = python E:\n\wj\171207_blogAuto\v66_powershell\acp____\Build_power ...
 ```
----------------------------
-2
----------------------------
-C:/Windows/winsxs/amd64_microsoft-windows-gpowershell-exe_31bf3856ad364e35_7.1.7601.16398_none_87d5361b437881fa/powershell_ise.exe E:/n/wj/171207_blogAuto/powershell/ex/ps_button.ps1
----------------------------
-确定   
----------------------------
 
-```
 
 ### IndexOf in Powershell ###
 
@@ -54,8 +46,7 @@ C:/Windows/winsxs/amd64_microsoft-windows-gpowershell-exe_31bf3856ad364e35_7.1.7
       "$str"
     }
 ```
-wrong:
-
+cant accomplish the task in below script:
 ```powershell
 a.  [string]$a.contains("m")
 
@@ -91,6 +82,7 @@ ps_button.ps1
 
 ### How do you pass function as a parameter in powershell ###
 
+Likely question as `How to run a dynamic function in powershell?`
 
 And in your new_btn function you probably just need to use
 ```

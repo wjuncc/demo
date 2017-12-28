@@ -13,7 +13,7 @@ tags:
 * A tool sets of markdown files to speed up the editing of markdown files.
 * Also a simple  demo to call python file in powershell
 * data defined in json file.
-* Dependent on software `MarkdownPad`
+* Dependent on software `MarkdownPad`, `Listary`
 
 
 ### Usage ###

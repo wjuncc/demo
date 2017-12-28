@@ -11,12 +11,16 @@ tags:
 
 ## 1  操作 inspect.exe ##
 
+注意：`InspectX64.exe`和`InspectX86.exe`左边有树列表窗口，`Inspect.exe`没有：
 
+`C:\Python27\Lib\site-packages\wj7\auto\Python-UIAutomation-for-Windows-master\InspectX64.exe`  
+`C:\Python27\Lib\site-packages\wj7\auto\Python-UIAutomation-for-Windows-master\InspectX86.exe`  
+`C:\Python27\Lib\site-packages\wj7\auto\pyMSAA-master\mstools\Inspect.exe`  
 使用 inspect.exe ， 设置 UI Automation 模式。   
 chrome浏览器的URL地址信息，在 Value Value 里面。  
 Inspect.exe 树结构 pyautowin
 
-在没有树形窗口，不知道为什么。 
+在没有树形，不知道为什么。 
 
 
 

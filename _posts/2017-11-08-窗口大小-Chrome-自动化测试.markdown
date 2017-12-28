@@ -1,0 +1,18 @@
+---
+layout: post
+title:  "窗口大小 Chrome 自动化测试"
+date:   2017-11-08 12:19:51 +0800
+categories:  
+tags: 
+---
+
+# 窗口大小 Chrome 自动化测试 #
+
+
+#### 参考 ####
+
+* [使用 Nightmare 进行浏览器自动化测试 - Hans Chan's Blog](http://csbun.github.io/blog/2015/11/using-nightmare/)
+* [使用 Headless Chrome 进行自动化测试](http://zqpythonic.qiniucdn.com/data/20170912170722/index.html)
+* [Web自动化之Headless Chrome测试框架集成 - 腾讯Web前端 IMWeb 团队社区 - blog - 团队博客](http://imweb.io/topic/5964d37774c638ff7c9684d4)
+* [使用 Headless Chrome 进行自动化测试 - 掘金](https://juejin.im/post/59675a786fb9a06bbb32d3b1)
+* [Python selenium —— 用chrome的Mobile emulation模拟手机浏览器测试手机网页  灰蓝](https://huilansame.github.io/huilansame.github.io/archivers/chrome-mobile-emulation-with-webdriver)
