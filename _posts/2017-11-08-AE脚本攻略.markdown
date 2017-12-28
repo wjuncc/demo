@@ -8,7 +8,9 @@ tags:
  
 ---
 
-    
+`C:\Python27\Lib\site-packages\wj7\ww2\westFront\compiler\ref\AEdoc2As.py`
+
+
 adobe premiere sdk
 Windows
 Microsoft Windows 7 64, and Visual Studio 2010 SP1
