@@ -1,0 +1,15 @@
+---
+layout: post
+title:  "II 单词索引"
+date:   2013-11-08 20:00:08 +0800
+categories:  
+tags: 
+---
+
+
+`E:\n\learn\english\v66_en_root`
+
+```
+cd E:\n\learn
+mkdir english
+```

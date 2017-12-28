@@ -10,6 +10,10 @@ tags:
 
 # Record Screen as Gif Automatically #
 
+How to deal with html?
+enum a bat of htmls and generate a list file(.txt)   
+key is the title   
+value is the relative path  
 
 preparing:
 
