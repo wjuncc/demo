@@ -1,8 +1,11 @@
 ---
 layout: post
-title:  "[批处理]获取Chrome浏览器地址栏URL"
+title:  "获取Chrome浏览器地址栏URL"
 date:   2015-02-04 20:01:32 +0800
-categories: jekyll update
+categories: 
+tags: 
+    - powershell
+
 ---
 
 
