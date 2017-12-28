@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Powershell Winform button ui - Intro"
+title:  "Markdown Tool Sets - Intro"
 date:   2017-10-05 20:16:06 +0800
 categories:  
 tags: 
@@ -13,7 +13,8 @@ tags:
 * A tool sets of markdown files to speed up the editing of markdown files.
 * Also a simple  demo to call python file in powershell
 * data defined in json file.
-* 
+* Dependent on software `MarkdownPad`
+
 
 ### Usage ###
 1. set hotkey `wj2`(or keyword else you like) in software `Listary`, set the `URL` as `E:\n\wj\171207_blogAuto\powershell\ex\ps_button.vbs`
@@ -34,12 +35,12 @@ tags:
 ![](https://i.imgur.com/WJSQxVc.png)
 ### Effect ###
 #### button2 - Create Markdown After Click Tags   ####
-Create Markdown After Click Tags in Chrome automatically, and open it in software `Markdown-Pad`  
+Create Markdown After Click Tags in Chrome automatically, and open it in software `MarkdownPad`  
 ![](https://i.imgur.com/3WIs0Kh.gif)
 
 
 #### button3 - Create Markdown After Copy Words ####
-Created a markdown file titled the words from the system clipboard you has just copied. And open it in software `Markdown-Pad` also.  
+Created a markdown file titled the words from the system clipboard you has just copied. And open it in software `MarkdownPad` also.  
 ![](https://i.imgur.com/hDhc8pm.gif)
 
 
