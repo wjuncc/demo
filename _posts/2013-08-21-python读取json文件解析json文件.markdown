@@ -1,9 +1,12 @@
 ---
 layout: post
 title:  "python读取json文件解析json文件"
-date:   2013-11-21 01:17:32 +0800
-categories: python
-cats: json 
+date:   2013-08-21 01:17:32 +0800
+categories: 
+cats: 
+    - python
+    - 
+ 
 ---
 
 ## python读取json文件解析json文件 ##

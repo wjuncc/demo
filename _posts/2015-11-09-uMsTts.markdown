@@ -1,0 +1,43 @@
+---
+layout: post
+title:  "uMsTts"
+date:   2015-11-09 10:31:47 +0800
+categories:  
+tags: 
+    - tts
+
+---
+
+
+中英文朗读者的dll不同，
+中文是`vtchisapi50.dll` ,英文是`vtengsapi50.dll`
+
+每一个朗读者的dll不同，同一个`vtengsapi50.dll`，是入口，调用不同朗读者的dll
+`C:\Program Files (x86)\VW\VT\Paul\M16-SAPI5\lib`
+vt_eng_paul16.dll
+
+调用 
+
+试听小娜TTS
+Windows7用户点这里下载所需文件
+解压以后安装对应系统版本的SpeechPlatformRuntime语音平台和MSSpeech_TTS_zh-CN_HuiHui_微软慧慧语音库-爱盲网修改版.msi
+安装完成后，解压替换文件_TTS_MS_zh-CN_HuiHui_11.0.zip，把TTS_MS_zh-CN_HuiHui_11.0.里的HuiHuiT.apm和HuiHuiT.enus.apm复制到
+C:\Program Files\Common Files\microsoft shared\Speech\Tokens\TTS_MS_zh-CN_HuiHui_11.0
+替换原有文件，替换之前先做好源文件的备份工作。此时如果没问题，微软慧慧的声音就被替换为小娜的声音了。
+如果替换后没声音，再尝试复制TTS_MS_zh-CN_HuiHui_11.0里的全部文件到
+C:\Program Files\Common Files\microsoft shared\Speech\Tokens\TTS_MS_zh-CN_HuiHui_11.0
+替换源文件。
+我从来没有在Win7上亲自测试过调用小娜语音库，如果按照上面的方法操作后出现问题，请回帖反馈。
+Windows8.1用户点这里下载所需文件
+解压以后把zh-cn文件夹里的文件全部复制到
+C:\windows\speech\engines\tts\zh-cn
+然后导入文件夹里的注册表，就能在windows8.1上调用小娜语音库了。
+64位系统运行regedit，在注册表编辑器中导入注册表。
+如果不想用Win8原来的慧慧语音，直接把文件夹里.apm文件文件名中的HON替换成HUI，然后去替换慧慧语音的文件，就能把慧慧的声音替换成小娜的。
+个人认为现在用Win8.1不如用Win10。
+windows8.1和windows7调用的小娜语音库效果比windows10上的差很多，要想查看windows10如何调用小娜语音，可以访问NVDA中文站
+
+#### 参考 ####
+
+* [Win10使用微软语音TTS正确姿势 - 程序园](http://www.voidcn.com/article/p-yykpysai-beo.html)
+* [如何使用Speech Platform SDK v10.2提供的语音包做TTS？](https://social.msdn.microsoft.com/Forums/vstudio/en-US/98835a56-868e-4b65-b9fb-be1590ed13ac/speech-platform-sdk-v102tts?forum=2212)

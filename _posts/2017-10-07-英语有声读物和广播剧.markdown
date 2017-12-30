@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "英语有声读物和广播剧"
+title:  "英语有声读物 广播剧 电子书"
 date:   2017-10-07 21:10:57 +0800
 categories:  
 tags: 
@@ -9,15 +9,26 @@ tags:
 ---
 
 
-有声书（audiobook）与广播剧（Audio drama）  
+有声书（audio book）与广播剧（Audio drama）  
 download directoy:  
 `E:\CloudMusic\电台节目`
+
+
+* Find a audio book, get the text of the book.
+* make anacycle.
+* 
 
 
 #### 参考 ####
 
 E:\n\sys\pack2\green\DramaOfTheWeek-20170803-PODPLAY5BATHROOMDramaOfTheWeekSpecial.mp3
 
+* [欢迎加入资源最多的英语群，群号码：31642512](https://www.douban.com/group/topic/94133011/)
+* [英文有声读物 希捷 4tb 硬盘出售 audible audiobook-淘宝网](https://item.taobao.com/item.htm?spm=a1z10.1-c.w4023-727521769.7.5a1c6848IYh5OG&id=560840642534)
+* [终极大杀器 克里斯蒂 阿加莎 全集 有声英文读物 全部放出 - iPad 电子书资源分享区 - 威锋论坛 - 威锋网](https://bbs.feng.com/read-htm-tid-9102572.html)
+* [有声读物的资料列表_酷兔英语](https://down.qeto.com/show_ftag/2837-0-0-1-0)
+* [百度云批量离线下载如何实现？](https://www.zhihu.com/question/37584961)
+* [47个值得推荐的免费英文有声读物下载网站-英语有声读物下载-MP3下载 - 惜墨](http://www.apple4.cn/2009/09/47-recommended-free-audio-books-websites/)
 * [Free Radio Drama Downloads, Audio Drama Stories](https://www.finalrune.com/audio-fiction-stories/)
 * [BBC Radio 4 - Drama of the Week (feat. POD PLAYS) - Downloads](http://www.bbc.co.uk/programmes/p02nrv5m/episodes/downloads)
 * [【资源】星球大战全有声作品（有声书&广播剧）](http://www.starwarschina.com/forum.php?mod=viewthread&tid=17823)
