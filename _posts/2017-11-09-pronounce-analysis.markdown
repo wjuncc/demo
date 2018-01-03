@@ -8,11 +8,14 @@ tags:
 
 ---
 
+
+
+
 Phonogram is the key to open a new world.
 
 ## Plans ##
 
-* choose one source, eg. audiobook also a novel	[`The Most Dangerous Game` (1924) ](https://en.wikipedia.org/wiki/The_Most_Dangerous_Game)
+* choose one source, eg. audiobook novel best	[`The Most Dangerous Game` (1924) ](https://en.wikipedia.org/wiki/The_Most_Dangerous_Game)
 
 and then:
 ### Plan A ### 
@@ -22,14 +25,32 @@ and then:
 * 
 
 
-感谢分享，其实要制作成mdx的话，不难，用superfan的IDMskconv.py，https://github.com/superfan89/IDMSKconv 导出数据即可，看谁有兴趣咯。
-* [IDMSKconv](https://github.com/superfan89/IDMSKconv)
+
+split letter 
+
+ODE3 (Oxford Dictionary of English ) 
+
+
+### Convert mdx Data ###
+
+* dictionary->mdx [IDMSKconv](https://github.com/superfan89/IDMSKconv)
+* mdx->txt getdict
+
 
 ### Plan B ###
 * recording system sound in English By TTS.save as mp3
 * generate a million of pronounce analysis pieces data from mp3
 * collect same type of pieces data
 * 
+
+#### Ref ####
+
+* [Vowel - Wikipedia](https://en.wikipedia.org/wiki/Vowel)
+* [英语国际音标 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/英語國際音標)
+* [clairemoorecantwell/EnglishStressStatistics: Series of tools for doing analysis of the English stress system with the CMU pronouncing dictionary](https://github.com/clairemoorecantwell/EnglishStressStatistics)
+* [Claire Moore-Cantwell (SFU)](http://clairemoorecantwell.org)
+* [The CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict)
+
 
 元音音标，指发音时不受到发音器官的阻碍发出的声音，国际音标里，元音音标共20个：
 单元音：
@@ -42,15 +63,6 @@ and then:
 /eɪ/   /aɪ/   /כɪ/   /əu/
 /au/   /eə/   /ɪə/   /uə/  
 ```
-#### Ref ####
-
-* [Vowel - Wikipedia](https://en.wikipedia.org/wiki/Vowel)
-* [英语国际音标 - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/英語國際音標)
-* [clairemoorecantwell/EnglishStressStatistics: Series of tools for doing analysis of the English stress system with the CMU pronouncing dictionary](https://github.com/clairemoorecantwell/EnglishStressStatistics)
-* [Claire Moore-Cantwell (SFU)](http://clairemoorecantwell.org)
-* [The CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict)
-
-
 
 The data structure of word `abandon`, keyword of phonogram is `phonetic`:
 ```json

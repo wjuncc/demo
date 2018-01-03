@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "英语有声读物 广播剧 电子书"
+title:  "英语有声读物 广播剧 电子书 AudioBook"
 date:   2017-10-07 21:10:57 +0800
 categories:  
 tags: 
@@ -9,6 +9,44 @@ tags:
 ---
 
 
+
+C++ kill ffmpeg.exe
+record mp3
+
+C++ 判断进程是否存在
+
+C++ 如果进程存在 关闭进程
+
+
+“lower”: 找不到标识符
+
+
+
+PROCESSENTRY32 不存在的标识
+#include <tlhelp32.h> 
+#include"tlhelp32.h"
+
+
+* [C++ 判断进程是否存在 - CSDN博客](http://blog.csdn.net/zhensoft163/article/details/7967993)
+* [关于在python中使用os.system运行批处理.bat文件_百度知道](https://zhidao.baidu.com/question/1430797217169664779.html)
+* [zhangn1985/ykdl: a video downloader focus on China mainland video sites.](https://github.com/zhangn1985/ykdl)
+* [How do I set up and use ffmpeg in Windows? - Video Production Stack Exchange](https://video.stackexchange.com/questions/20495/how-do-i-set-up-and-use-ffmpeg-in-windows)
+* [Running cmd in python (ffmpeg) - Stack Overflow](https://stackoverflow.com/questions/16748148/running-cmd-in-python-ffmpeg)
+* [Starting and stopping an ffmpeg pipeline in python - Stack Overflow](https://stackoverflow.com/questions/26024552/starting-and-stopping-an-ffmpeg-pipeline-in-python)
+* [Stop an ffmpeg process · Issue #11 · Ch00k/ffmpy](https://github.com/Ch00k/ffmpy/issues/11)
+* [Zulko/moviepy: Video editing with Python](https://github.com/Zulko/moviepy)
+* [jiaaro/pydub: Manipulate audio with a simple and easy high level interface](https://github.com/jiaaro/pydub)
+* [Python - Record MP3 - Raspberry Pi Forums](https://www.raspberrypi.org/forums/viewtopic.php?f=32&t=81777)
+* [mikeboers/PyAV: Pythonic bindings for FFmpeg.](https://github.com/mikeboers/PyAV)
+* [^c终止批处理操作吗（Y/N）-CSDN论坛](http://bbs.csdn.net/topics/390830109)
+* [rajivepandey/MP3RecorderJS: Record MP3 (and WAV) files in the browser using JavaScript and HTML](https://github.com/rajivepandey/MP3RecorderJS)
+* [Recording a mp3 stream with FFMPEG and drop-outs - Stack Overflow](https://stackoverflow.com/questions/7441686/recording-a-mp3-stream-with-ffmpeg-and-drop-outs)
+
+
+Phonetics or Phonics?
+
+100 words kids need to read by 1st Grade
+240 Vocabulary Words Kids need to read 
 有声书（audio book）与广播剧（Audio drama）  
 download directoy:  
 `E:\CloudMusic\电台节目`
@@ -18,6 +56,7 @@ download directoy:
 * make anacycle.
 * 
 
+wikiwords
 
 #### 参考 ####
 
@@ -25,6 +64,8 @@ E:\n\sys\pack2\green\DramaOfTheWeek-20170803-PODPLAY5BATHROOMDramaOfTheWeekSpeci
 
 http://www.0mjz.com/f/NB3FjYX.html
 
+* [(2 封私信 / 13 条消息)Windows 系统下有哪些好的词典推荐？推荐理由是什么？ - 知乎](https://www.zhihu.com/question/21133533)
+* [IXL - First grade math practice](https://www.ixl.com/math/grade-1)
 * [小说 (豆瓣)](https://site.douban.com/196116/widget/notes/11847351/)
 * [【M大新春巨献】Naxos版奥斯丁小说有声书全集 (2009) Jane Austen - The Complete Novels (Complete Classics)](https://site.douban.com/196116/widget/notes/11847351/note/262012136/)
 * [百度云搜索,百度云盘资源下载,百度网盘搜索,轻舟已过万重山 - 搜索资源最快最全就是轻舟网](https://www.qzhou.com.cn)
