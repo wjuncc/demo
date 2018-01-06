@@ -8,7 +8,109 @@ tags:
     
 ---
 
+### Robocopy ###
 
+
+An error was thrown when executed the `Robocopy.exe` command. Just delete the source file and reboot.
+
+错误 3 (0x00000003) 正在扫描源目录 系统找不到指定的路径。
+```
+正在等待 30 秒... 正在重试...
+2018/01/05 08:43:43 错误 3 (0x00000003) 正在扫描源目录 E:\n\wj\161217__gulp\gulp
+Test\node_modules\_gulp-clean-css@3.7.0@gulp-clean-css\node_modules\clean-css\
+系统找不到指定的路径。
+正在等待 30 秒...
+```
+
+Some posts on line jerk me around, so I need to download the source in BT searching engine.
+Download list of audio book.
+
+The native publishing had sold out, and the was too expensive.
+
+eMule下载链接[用迅雷、eMule等软件下载]
+ 阿加莎·克里斯蒂《罗杰疑案》(27回)(32Kbps)[MP3].iso	123 MB
+ 阿加莎·克里斯蒂《灯》.mp3	6 MB
+ 阿加莎·克里斯蒂《锣声再起》001.mp3	7 MB
+ 阿加莎·克里斯蒂《锣声再起》002.mp3	8 MB
+ 阿加莎·克里斯蒂《木兰花》.mp3	12 MB
+ ------------------------------------以上是中文有声书------------------------------------	0 MB
+ ------------------------------------以下是英文有声书------------------------------------	0 MB
+ [阿加莎·克里斯蒂侦探小说.无人生还].Agatha.Christie.-.Ten.Little.Indians.-.1.to.8.-.64Kbps.-.154MB.rar	154 MB
+ [阿加莎·克里斯蒂侦探小说.蓝色特快上的秘密].Agatha.Christie.-.Mystery.on.the.Blue.Train.iso	131 MB
+ [阿加莎·克里斯蒂侦探小说.人性记录].Agatha.Christie.-.Hercule.Poirot.-.Thirteen.at.Dinner.iso	31 MB
+ [阿加莎·克里斯蒂侦探小说.人性记录].Agatha.Christie.-.Hercule.Poirot.-.Lord.Edgware.Dies.iso	33 MB
+ [阿加莎·克里斯蒂侦探小说.啤酒谋杀案].Agatha.Christie.-.Five_Little_Pigs.mp3	121 MB
+ [阿加莎·克里斯蒂侦探小说.伯特伦旅馆之谜].Agatha.Christie.-.At.Bertram's.Hotel.iso	41 MB
+ [阿加莎·克里斯蒂侦探小说.加勒比海之谜].Agatha.Christie.-.A.Caribbean.Mystery.iso	51 MB
+ [阿加莎·克里斯蒂侦探小说命案目睹记].Agatha.Christie.-.4：50.From.Paddington.iso	20 MB
+ [阿加莎·克里斯蒂侦探小说.白马酒店].BBC.Audiobook.-.Agatha.Christie.-.The.Pale.Horse.iso	20 MB
+ [阿加莎·克里斯蒂侦探小说.神秘的别墅].Agatha.Christie.-.Miss.Marple.-.Sleeping.Murder.(BBC).-.(Complete).mp3	19 MB
+ [阿加莎·克里斯蒂侦探小说.复仇女神].Agatha.Christie.-.Nemesis.iso	38 MB
+ [阿加莎·克里斯蒂侦探小说.波洛圣诞探案记].Agatha.Christie.-.Hercule.Poirot's.Christmas.iso	18 MB
+ [阿加莎·克里斯蒂侦探小说.亨特小屋的秘密].Agatha.Christie.-.The.Mystery.of.Hunter's.Lodge.iso	9 MB
+ [阿加莎·克里斯蒂侦探小说.尼罗河惨案].Agatha.Christie.-.Death.on.the.Nile.iso	49 MB
+ [阿加莎·克里斯蒂侦探小说.葬礼之后].Agatha.Christie.-.After.the.Funeral.iso	19 MB
+ [阿加莎·克里斯蒂侦探小说.H庄园的一次午餐].Agatha.Christie.-.Sad.Cypress.iso	60 MB
+ [阿加莎·克里斯蒂侦探小说.底牌].BBC.Audiobook.-.Agatha.Christie.-.Cards.On.The.Table.iso	24 MB
+ [阿加莎·克里斯蒂侦探小说.神秘的西塔福特].Agatha.Christie.-.The.Sittaford.Mystery.iso	33 MB
+ [阿加莎·克里斯蒂侦探小说.神秘的西塔福特].The.Sittaford.Mystery.iso	40 MB
+ [阿加莎·克里斯蒂侦探小说.闪光的氰化物].Agatha.Christie.-.Sparkling.Cyanide.rar	172 MB
+ [阿加莎·克里斯蒂侦探小说.谢幕：波罗的最后一案].Agatha.Christie.-.Curtain-Poirots.Last.Case.mp3	21 MB
+ [阿加莎·克里斯蒂侦探小说.谢幕：波罗的最后一案].Agatha.Christie.-.Hercule.Poirot.-.Curtain.mp3	66 MB
+ [阿加莎·克里斯蒂侦探小说.第三个女郎].Agatha.Christie.-.Third.Girl.(Hugh.Fraser).64Kbps.(2003).rar	174 MB
+ [阿加莎·克里斯蒂侦探小说.破镜谋杀案].Agatha.Christie.-.The.Mirror.Crack'D.-.BBC.(Complete.1Hr.25Min).mp3	19 MB
+ [阿加莎·克里斯蒂侦探小说.阳光下的罪恶].Agatha.Christie.-.Evil.Under.The.Sun.2CD.AudioBook.rar	38 MB
+ [阿加莎·克里斯蒂侦探小说.美索不达米亚谋杀案].Agatha.Christie.-.Murder.in.Mesopotamia.(BBC.Audio.Book).2CD.rar	127 MB
+ [阿加莎·克里斯蒂侦探小说.悬崖山庄奇案].AgathaChristie.-.Peril.At.End.House.(Hugh.Fraser).96Kbps.rar	223 MB
+ [阿加莎·克里斯蒂侦探小说.谋杀启事].Agatha.Christie.-.A.Murder.is.Announced.(Joan.Hickson).64Kbps.(2004).LotB.rar	208 MB
+ [阿加莎·克里斯蒂侦探小说.寓所迷案].Agatha.Christie.-.The.Murder.At.The.Vicarage.(Joan.Hickson).64Kbps.(2001).Lotb.rar	192 MB
+ [阿加莎·克里斯蒂侦探小说.空幻之屋].Agatha.Christie.-.The.Hollow.(Unabridged).iso	178 MB
+ [阿加莎·克里斯蒂侦探小说.万圣节前夜的谋杀案].Agatha.Christie.-.Hallowe'en.Party.(Unabridged).iso	170 MB
+ [阿加莎·克里斯蒂侦探小说.藏书室女尸].Agatha.Christie.-.The.Body.in.the.Library.(Stephanie.Cole).96Kbps.(2003).Jonboy.LotB.rar	181 MB
+ [阿加莎·克里斯蒂侦探小说.斯泰尔斯庄园奇案].Agatha.Christie.-.The.Mysterious.Affair.at.Styles.rar	228 MB
+ [阿加莎·克里斯蒂侦探小说.东方快车谋杀案].Agatha.Christie.-.Murder.on.the.Orient.Express.(unabr.D.Suchet).6MC.128-44.Lame.rar	378 MB
+ [阿加莎·克里斯蒂侦探小说.ABC谋杀案].Agatha.Christie.-.BBC.Drama.-.The.ABC.Murders.(Complete).mp3	19 MB
+ [阿加莎·克里斯蒂侦探小说.雪地上的女尸].Agatha.Christie.-.The.Adventure.of.the.Christmas.Pudding.20041224.rm	14 MB
+ [阿加莎·克里斯蒂侦探小说.云中奇案].Agatha.Christie.-.BBC.Radio.4.Full-cast.Dramatisation.-.Death.In.The.Clouds.mp3	79 MB
+ [阿加莎·克里斯蒂侦探小说.死亡约会].Agatha.Christie.-.Appointment.with.death.(Poirot).-.BBC.-.Audiobooks.mp3	39 MB
+ [阿加莎·克里斯蒂侦探小说.西班牙箱子之谜].Agatha.Christie.-.Mystery.Of.The.Spanish.Chest.mp3	19 MB
+ [阿加莎·克里斯蒂侦探小说.看房人之谜].Agatha.Christie.-.The.Case.of.the.Caretaker.(Miss.Marple).mp3	7 MB
+ [阿加莎·克里斯蒂侦探小说.四个嫌疑犯].Agatha.Christie.-.Miss.Marple.-.The.Four.Suspects.mp3	7 MB
+ [阿加莎·克里斯蒂侦探小说.黑麦奇案].Agatha.Christie.-.Miss.Marple.-.A.Pocket.Full.of.Rye(BBC).zip	19 MB
+ [阿加莎·克里斯蒂侦探小说.幽巷谋杀案].Agatha.Christie.-.Murder.In.The.Mews.rar	53 MB
+ [阿加莎·克里斯蒂侦探小说.古宅迷踪].Agatha.Christie.-.Hercule.Poirot.-.Dead.Man's.Folly.zip	50 MB
+ [阿加莎·克里斯蒂侦探小说.平静小镇的罪恶].Agatha.Christie.-.The.Moving.Finger.(Complete).mp3	19 MB
+ [阿加莎·克里斯蒂侦探小说.死亡草].Agatha.Christie.-.The.Tuesday.Club.Murders.zip	28 MB
+ [阿加莎·克里斯蒂侦探小说.庄园迷案].Agatha.Christie.-.BBC.Drama.-.They.Do.It.With.Mirrors.(Complete).mp3	31 MB
+ [阿加莎·克里斯蒂侦探小说.罗杰疑案].Agatha.Christie.-.Hercule.Poirot.-.The.Murder.of.Roger.Ackroyd(BBC.Drama).mp3	19 MB
+ [阿加莎·克里斯蒂侦探小说.三幕悲剧].Agatha.Christie.-.Three.Act.Tragedy.mp3	32 MB
+ [阿加莎·克里斯蒂侦探小说.神秘的镜子].Agatha.Christie.-.In.a.Glass.Darkly.-.BBC.-.Audiobooks.mp3	26 MB
+ [阿加莎·克里斯蒂侦探小说.失去的矿井].Agatha.Christie.-.The.Lost.Mine.mp3	10 MB
+ [阿加莎·克里斯蒂侦探小说.五彩茶具].Agatha.Christie.-.The.Harlequin.Tea.Set.mp3	32 MB
+ [阿加莎·克里斯蒂侦探小说.长夜].Agatha.Christie.-.Endless.Night.zip	18 MB
+ [阿加莎·克里斯蒂侦探小说.人行道上的血迹].Agatha.Christie.-.The.Bloodstained.Pavement.mp3	17 MB
+ [阿加莎·克里斯蒂侦探小说.清洁女工之死].Agatha.Christie.-.Mrs.McGinty's.Dead.rar	189 MB
+ [阿加莎·克里斯蒂侦探小说.埃及古墓历险记].Agatha.Christie.-.Hercule.Poirot.-.The.Adventure.Of.Egyptian.Tomb.mp3	15 MB
+ [阿加莎·克里斯蒂侦探小说.达文海姆先生失踪案].Agatha.Christie.-.Hercule.Poirot.-.The.Disappearance.Of.Mr.Davenheim.mp3	14 MB
+ [阿加莎·克里斯蒂侦探小说.高尔夫球场的疑云].Agatha.Christie.-.BBC.Drama.-.Murder.on.the.Links.zip	19 MB
+ [阿加莎·克里斯蒂侦探小说.夜莺山庄].Agatha.Christie.-.Philomel.Cottage.mp3	3 MB
+ [阿加莎·克里斯蒂侦探小说.不速之客].Agatha.Christie.-.The.Unexpected.Guest.mp3	6 MB
+ [阿加莎·克里斯蒂侦探小说.最后的演出].Agatha.Christie.-.Swan.Song.mp3	7 MB
+ [阿加莎·克里斯蒂侦探小说.死亡之犬].Agatha.Christie.-.The.Hound.of.Death.mp3	10 MB
+ [阿加莎·克里斯蒂侦探小说.原告的证人].Agatha.Christie.-.Witness.for.the.Prosecution.mp3	6 MB
+ [阿加莎·克里斯蒂侦探小说.死亡草].Agatha.Christie.-.The.Herb.of.Death.(Joan.Hickson).mp3	10 MB
+ [阿加莎·克里斯蒂侦探小说.黑咖啡].Agatha.Christie.-.Black.Coffee.-1.to.8.-.32Kbps.-.55MB.rar	55 MB
+ [阿加莎·克里斯蒂侦探小说.遗产风波].Agatha.Christie.-.BBC.Drama.-.Taken.At.The.Flood.(Complete).mp3	77 MB
+ [阿加莎·克里斯蒂侦探小说.死者之镜].Agatha.Christie.-.Dead.Man's.Mirror.-.32Kbps.mp3	33 MB
+ [阿加莎·克里斯蒂侦探小说.旧罪的阴影].Agatha.Christie.-.Elephants.Can.Remember.zip	43 MB
+ 阿加莎·克里斯蒂全集(ebook)(打开时请耐心等待).exe	25 MB
+ 阿加莎.克里斯蒂作品集(ebook).exe	0 MB
+ 阿加莎.克里斯蒂作品集续(ebook).exe	0 MB
+ 波洛（Hecule Poirot)的长篇小说全集.chm	4 MB
+ 马普尔（Miss Marple）的长篇小说全集.chm	1 MB
+ 其他侦探(Tom&Tuppence Battle Others)长篇小说集.chm	2 MB
+ 罗杰疑案.chm	0 MB
+ 罗杰疑案.pdf
 
 C++ kill ffmpeg.exe
 record mp3
@@ -28,6 +130,7 @@ PROCESSENTRY32 不存在的标识
 
 
 * [C++ 判断进程是否存在 - CSDN博客](http://blog.csdn.net/zhensoft163/article/details/7967993)
+* [Learning Twigs](http://jasonrenshaw.typepad.com/jason_renshaws_web_log/archives.html)
 * [关于在python中使用os.system运行批处理.bat文件_百度知道](https://zhidao.baidu.com/question/1430797217169664779.html)
 * [zhangn1985/ykdl: a video downloader focus on China mainland video sites.](https://github.com/zhangn1985/ykdl)
 * [How do I set up and use ffmpeg in Windows? - Video Production Stack Exchange](https://video.stackexchange.com/questions/20495/how-do-i-set-up-and-use-ffmpeg-in-windows)

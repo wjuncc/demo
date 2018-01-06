@@ -6,7 +6,7 @@ categories:
 tags: 
 ---
 
-
+首先需要安装一个软件,screen capture recorder
 
 ### MP3 ###
 ```

@@ -101,6 +101,8 @@ A table sppear in this code online but not local jekyll.
 | word | 单词名称 |
 ```
 ### ELSE ###
+
+
 ```
 pip install nltk
 Successfully installed nltk-3.2.5
@@ -112,7 +114,9 @@ import nltk
 nltk.download('wordnet')
 ``` 
 
-how to install `mysqlclient`? not `pip install MySQLdb` but `pip install mysqlclient`
+how to install `mysqlclient`?  
+
+not `pip install MySQLdb` but `pip install mysqlclient`
 
 
 
