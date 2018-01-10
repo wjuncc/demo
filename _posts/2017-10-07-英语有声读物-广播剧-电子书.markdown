@@ -111,9 +111,33 @@ eMule下载链接[用迅雷、eMule等软件下载]
  其他侦探(Tom&Tuppence Battle Others)长篇小说集.chm	2 MB
  罗杰疑案.chm	0 MB
  罗杰疑案.pdf
+<<<<<<< HEAD
 
 #### 参考 ####
 
+=======
+
+C++ kill ffmpeg.exe
+record mp3
+
+C++ 判断进程是否存在
+
+C++ 如果进程存在 关闭进程
+
+
+“lower”: 找不到标识符
+
+
+
+PROCESSENTRY32 不存在的标识
+#include <tlhelp32.h> 
+#include"tlhelp32.h"
+
+
+* [C++ 判断进程是否存在 - CSDN博客](http://blog.csdn.net/zhensoft163/article/details/7967993)
+* [Learning Twigs](http://jasonrenshaw.typepad.com/jason_renshaws_web_log/archives.html)
+* [关于在python中使用os.system运行批处理.bat文件_百度知道](https://zhidao.baidu.com/question/1430797217169664779.html)
+>>>>>>> 3e668541c0c26e9614ae417787a5c3cecf580014
 * [zhangn1985/ykdl: a video downloader focus on China mainland video sites.](https://github.com/zhangn1985/ykdl)
 
 Phonetics or Phonics?

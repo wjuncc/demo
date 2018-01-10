@@ -4,6 +4,8 @@ title:  "Python在SQLite中插入100万条数据 executemany"
 date:   2017-11-21 17:47:36 +0800
 categories:  
 tags: 
+    - sqlite
+
 ---
 
 
