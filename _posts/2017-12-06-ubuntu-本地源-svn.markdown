@@ -10,6 +10,12 @@ tags:
 
 # ubuntu 本地源 svn #
 
+
+```
+svnserve -d -r ""
+```
+VISUAL SVN
+
 ### 安装 ###
 
 	（1）sudo apt-get install subversion

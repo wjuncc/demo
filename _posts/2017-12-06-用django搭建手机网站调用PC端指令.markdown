@@ -12,11 +12,18 @@ tags:
 目标：一个工具，在手机端操作，能操作PC端上的脚本，如关机，重启，备份，遍历，搜索，代码转化，和任意扩展。    
 前端：jquery UI  
 后端：python  
-路径：
+路径： 
 
+
+```
+
+python -m pip install "django<2"
+
+```
 #### 参考 ####
 
 * [Django+Vue.js搭建前后端分离项目的示例，djangovue.js_Javascript - 帮客之家](http://www.bkjia.com/Javascript/1221117.html)
+* [Python tarfile模块解压报错 invalid mode ('wb') or filename](http://www.cnblogs.com/haoxi/p/6156232.html)
 * [Python之Web框架Django项目搭建全过程，pythondjango_Python教程 - 帮客之家](http://www.bkjia.com/Pythonjc/1210686.html)
 * [Django+Vue.js搭建前后端分离项目 - 简书](http://www.jianshu.com/p/a463e97def9c)
 * [Vue.js和Django搭建前后端分离项目示例详解-PHP中文网](http://m.php.cn/article/376100.html)
