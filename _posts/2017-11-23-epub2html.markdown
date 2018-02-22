@@ -1,0 +1,23 @@
+---
+layout: post
+title:  "epub2html"
+date:   2017-11-23 21:48:00 +0800
+categories:  
+tags: 
+---
+
+# epub2html #
+
+
+#### 参考 ####
+
+* [利用Python制作文本小说 - 简书](https://www.jianshu.com/p/1be0273f061f)
+* [顶点小说 - 小说免费阅读 - 最好看的小说阅读网](https://www.x23us.com)
+* [Python生成epub文档-svoid-ITPUB博客](http://blog.itpub.net/29733787/viewspace-1477082/)
+* [Simple EPUB ebooks with Python — Boldewyn’s Website](http://www.manuel-strehl.de/dev/simple_epub_ebooks_with_python.en.html)
+* [python 把txt 文本转为epub 格式电子书 - python列表](https://www.pylist.com/topic/1439197138)
+* [使用epublib解析epub文件（章节内容、书籍菜单） - sonnyching的博客 - CSDN博客](http://blog.csdn.net/sonnyching/article/details/47407549)
+* [epub 0.5.2 : Python Package Index](https://pypi.python.org/pypi/epub/)
+* [exirel / epub — Bitbucket](https://bitbucket.org/exirel/epub)
+* [Proxy error: 502 Server dropped connection.](http://epub.exirel.me)
+* [GitHub - Vaporbook/epub2html: Uses epub-parser to generate convenient html structures from epub metadata.](https://github.com/Vaporbook/epub2html)

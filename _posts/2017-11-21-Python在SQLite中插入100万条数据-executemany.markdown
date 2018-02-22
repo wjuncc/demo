@@ -8,6 +8,11 @@ tags:
 
 ---
 
+Tools:
+4 SQLiteSpy
+1  SQLite Expert 
+2 	Sqliteadmin 
+3 SQLite Database Browser
 
 Order: Insert date over 200000 into database.
 Recoding each word items as list data in `for` statements and then insert into db with `executemany` method of sqlite3.

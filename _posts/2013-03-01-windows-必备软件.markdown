@@ -11,6 +11,7 @@ tags:
 win7，win8 测试通用
 
 * MarkdownPad - Markdown编辑。
+* SpaceSniffer - 找出侵占你磁盘空间的罪魁祸首
 * Clover - 让资源管理器变身Chrome
 * shareX - 截图+录屏+上传一次搞定
 * Listary - 文件搜索

@@ -31,11 +31,6 @@ split letter
 ODE3 (Oxford Dictionary of English ) 
 
 
-### Convert mdx Data ###
-
-* dictionary->mdx [IDMSKconv](https://github.com/superfan89/IDMSKconv)
-* mdx->txt getdict
-
 
 ### Plan B ###
 * recording system sound in English By TTS.save as mp3
